@@ -4,28 +4,23 @@
 c#winfrom自定义控件
 
 #### 软件架构
-软件架构说明
+framework4.0
 
 
 #### 安装教程
 
-1. xxxx
-2. xxxx
-3. xxxx
+1. 添加引用即可
+2. 如果要用到手写需要将HandInput文件夹复制到执行文件目录下
 
-#### 使用说明
+#### 样例
 
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
-
+![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%871.png)
+![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%872.png)
+![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%873.png)
+![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%874.png)
+![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%875.png)
+![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%876.png)
+![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%877.png)
 
 #### 码云特技
 
