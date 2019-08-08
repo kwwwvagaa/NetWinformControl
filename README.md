@@ -4,7 +4,7 @@
 c#winfrom自定义控件
 
 #### 软件架构
-framework4.0
+framework4.0，完全基于原生控件开发，没有使用任何第三方控件，你可以放心的用在你的项目中。
 
 
 #### 安装教程
@@ -13,8 +13,6 @@ framework4.0
 2. 如果要用到手写需要将HandInput文件夹复制到执行文件目录下
 
 #### 效果图
-
-![样例图片](https://images.gitee.com/uploads/images/2019/0808/115451_58184685_301547.png "样例图片1.png")
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0808/115531_8a10e14a_301547.png "样例图片2.png")
 
