@@ -214,6 +214,3 @@ ControlHelper.ThreadRunExt(this, () =>
 最后，喜欢请点下stars，如果有其他一些什么常用的控件可以在留言哦
 
 对你有用的吗请打赏一下吧，谢谢。
-
-![打赏](https://images.gitee.com/uploads/images/2019/0808/120103_7e69fe7c_301547.jpeg "1.jpg")
-![打赏](https://images.gitee.com/uploads/images/2019/0808/120112_04613892_301547.jpeg "2.jpg")
