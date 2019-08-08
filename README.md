@@ -12,21 +12,19 @@ framework4.0
 1. 添加引用即可
 2. 如果要用到手写需要将HandInput文件夹复制到执行文件目录下
 
-#### 样例
+#### 效果图
 
-![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%871.png)
-![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%872.png)
-![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%873.png)
-![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%874.png)
-![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%875.png)
-![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%876.png)
-![image](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/%E6%A0%B7%E4%BE%8B%E5%9B%BE%E7%89%877.png)
+![样例图片](https://images.gitee.com/uploads/images/2019/0808/115451_58184685_301547.png "样例图片1.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0808/115531_8a10e14a_301547.png "样例图片2.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0808/115540_eeecc755_301547.png "样例图片3.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0808/115548_009dbad6_301547.png "样例图片4.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0808/115555_a7622fba_301547.png "样例图片5.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0808/115602_e63e6436_301547.png "样例图片6.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0808/115607_fe37ad95_301547.png "样例图片7.png")
 
-#### 码云特技
+#### 最后的话
+最后，喜欢请点下stars
+对你有用的吗请打赏一下吧，谢谢。
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+![打赏](https://images.gitee.com/uploads/images/2019/0808/120103_7e69fe7c_301547.jpeg "1.jpg")
+![打赏](https://images.gitee.com/uploads/images/2019/0808/120112_04613892_301547.jpeg "2.jpg")
