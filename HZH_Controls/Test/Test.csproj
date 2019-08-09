@@ -50,10 +50,46 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOKCancel1Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOKCancel1Test.Designer.cs">
+      <DependentUpon>FrmOKCancel1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOKCancel2Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOKCancel2Test.Designer.cs">
+      <DependentUpon>FrmOKCancel2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTemp1Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTemp1Test.Designer.cs">
+      <DependentUpon>FrmTemp1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWithTitleTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWithTitleTest.Designer.cs">
+      <DependentUpon>FrmWithTitleTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOKCancel1Test.resx">
+      <DependentUpon>FrmOKCancel1Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOKCancel2Test.resx">
+      <DependentUpon>FrmOKCancel2Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTemp1Test.resx">
+      <DependentUpon>FrmTemp1Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWithTitleTest.resx">
+      <DependentUpon>FrmWithTitleTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

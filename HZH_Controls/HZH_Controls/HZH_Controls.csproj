@@ -41,6 +41,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DataGridView\DataGridViewCellEntity.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewCellEventArgs.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewCellEventHandler.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumnEntity.cs" />
+    <Compile Include="Controls\DataGridView\IDataGridViewRow.cs" />
+    <Compile Include="Controls\DataGridView\UCDataGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\UCDataGridView.Designer.cs">
+      <DependentUpon>UCDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGridView\UCDataGridViewRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\UCDataGridViewRow.Designer.cs">
+      <DependentUpon>UCDataGridViewRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\List\IPageControl.cs" />
+    <Compile Include="Controls\List\PageControlEventHandler.cs" />
+    <Compile Include="Controls\List\UCPagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\List\UCPagerControl.Designer.cs">
+      <DependentUpon>UCPagerControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\ControlHelper.cs" />
     <Compile Include="Controls\Btn\UCBtnExt.cs">
       <SubType>UserControl</SubType>
@@ -136,11 +161,8 @@
     <Compile Include="Controls\List\UCListItemExt.Designer.cs">
       <DependentUpon>UCListItemExt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\List\UCPagerControl.cs">
+    <Compile Include="Controls\List\UCPagerControlBase.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\List\UCPagerControl.Designer.cs">
-      <DependentUpon>UCPagerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Process\ProcessExt.cs">
       <SubType>UserControl</SubType>
@@ -288,6 +310,12 @@
     <EmbeddedResource Include="Controls\ComboBox\UCComboBox.resx">
       <DependentUpon>UCComboBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGridView\UCDataGridView.resx">
+      <DependentUpon>UCDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGridView\UCDataGridViewRow.resx">
+      <DependentUpon>UCDataGridViewRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DateTime\UCDatePickerExt.resx">
       <DependentUpon>UCDatePickerExt.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\List\UCPagerControl.resx">
       <DependentUpon>UCPagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\List\UCPagerControlBase.resx">
+      <DependentUpon>UCPagerControlBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Process\ProcessExt.resx">
       <DependentUpon>ProcessExt.cs</DependentUpon>
@@ -435,9 +466,6 @@
     <None Include="Resources\keyboard.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\left.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\list_add.png" />
   </ItemGroup>
   <ItemGroup>
@@ -481,6 +509,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\handinput.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\first.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

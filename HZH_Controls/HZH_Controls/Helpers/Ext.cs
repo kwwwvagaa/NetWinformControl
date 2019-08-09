@@ -1,12 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace HZH_Controls
 {
     public static partial class Ext
     {
+        public static T CloneModel<T>(this T classObject) where T : class
+        {
+            T result;
+            if (classObject == null)
+            {
+                result = default(T);
+            }
+            else
+            {
+                object obj = Activator.CreateInstance(typeof(T));
+                PropertyInfo[] properties = typeof(T).GetProperties();
+                PropertyInfo[] array = properties;
+                for (int i = 0; i < array.Length; i++)
+                {
+                    PropertyInfo propertyInfo = array[i];
+                    if (propertyInfo.CanWrite)
+                        propertyInfo.SetValue(obj, propertyInfo.GetValue(classObject, null), null);
+                }
+                result = (obj as T);
+            }
+            return result;
+        }
+
         #region 转换为base64字符串
         /// <summary>
         /// 功能描述:转换为base64字符串
