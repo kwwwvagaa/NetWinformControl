@@ -257,7 +257,7 @@ this.dgv.DataSource = m_page.GetCurrentSource();
 
 ##### 10、气泡提示效果图(5种内置及自定义样式)
 
-![样例图片](https://images.gitee.com/uploads/images/2019/0808/143309_b71c7e49_301547.png "气泡.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0812/112144_6af9389c_301547.png "tips.png")
 
 ``` csharp
 FrmTips.ShowTipsError(this, "Error提示信息");
