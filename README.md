@@ -236,7 +236,7 @@ this.ucDataGridView1.First();
 
 >如果需要下标从10开始的一页数据，可以设置StartIndex=10，然后调用GetCurrentSource（）即可，用法如下：
 
-```
+``` csharp
 m_page.DataSource=lstSource;
 m_page.PageSize = ShowCount;
 m_page.StartIndex=10;
@@ -249,7 +249,7 @@ this.dgv.DataSource = m_page.GetCurrentSource();
 3. 设置时间ShowSourceChanged，在时间中向目标控件设置当前页数据源
 4. 如果页面加载后没有显示第一页数据，可以手动调用一下GetCurrentSource（）并赋值给目标控件即可，例如：
 
-```
+``` csharp
 m_page.DataSource=lstSource;
 m_page.PageSize = ShowCount;
 this.dgv.DataSource = m_page.GetCurrentSource();
@@ -295,7 +295,7 @@ ControlHelper.ThreadRunExt(this, () =>
 //ControlHelper.ThreadInvokerControl为异步委托 调用控件
 ```
 
-```
+``` csharp
 /// <summary>
 /// 使用一个线程执行一个操作
 /// </summary>
