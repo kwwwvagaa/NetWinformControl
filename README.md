@@ -41,6 +41,30 @@ if (FrmDialog.ShowDialog(this, "是否再显示一个没有取消按钮的提示
 frm.ShowDialog(this);
 ```
 
+``` csharp
+/// <summary>
+/// 功能描述:构造函数
+/// 作　　者:HZH
+/// 创建日期:2019-08-05 10:57:26
+/// 任务编号:POS
+/// </summary>
+/// <param name="strTitle">窗体标题</param>
+/// <param name="args">输入项名称</param>
+/// <param name="inTypes">输入项对应输入类型，key:输入项名称，如不设置默认不控制输入</param>
+/// <param name="regexs">输入项对应正则规则，当imTypes=Regex时有效，key:输入项名称，如不设置默认不控制输入</param>
+/// <param name="keyBoards">文本框键盘，key:输入项名称，如不设置默认英文键盘</param>
+/// <param name="mastInputs">必填输入项名称</param>
+/// <param name="defaultValues">输入项默认值，key:输入项名称</param>
+public FrmInputs(
+    string strTitle,
+    string[] inPutLabels,
+    Dictionary<string, TextInputType> inTypes = null,
+    Dictionary<string, string> regexs = null,
+    Dictionary<string, HZH_Controls.Controls.KeyBoardType> keyBoards = null,
+    List<string> mastInputs = null,
+    Dictionary<string, string> defaultValues = null)
+```
+
 ##### 3、Temp1窗体
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0808/143753_15610b9f_301547.png "temp.png")
