@@ -23,6 +23,7 @@ namespace HZH_Controls.Forms
     /// </summary>
     public partial class FrmAnchor : Form, IMessageFilter
     {
+        Control m_parentControl = null;
         private bool blnDown = true;
         #region 构造函数
         /// <summary>
@@ -36,6 +37,7 @@ namespace HZH_Controls.Forms
         /// <param name="deviation">偏移</param>
         public FrmAnchor(Control parentControl, Control childControl, Point? deviation = null)
         {
+            m_parentControl = parentControl;
             InitializeComponent();
             this.Size = childControl.Size;
             this.HandleCreated += FrmDownBoard_HandleCreated;
@@ -75,6 +77,7 @@ namespace HZH_Controls.Forms
 
         public FrmAnchor(Control parentControl, Size size, Point? deviation = null)
         {
+            m_parentControl = parentControl;
             InitializeComponent();
             this.Size = size;
             this.HandleCreated += FrmDownBoard_HandleCreated;

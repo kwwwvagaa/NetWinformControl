@@ -10,7 +10,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 数据源改变时发生
         /// </summary>
-        event PageControlEventHandler ShowChanged;
+        event PageControlEventHandler ShowSourceChanged;
         /// <summary>
         /// 数据源
         /// </summary>

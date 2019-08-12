@@ -11,15 +11,15 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// CheckBox选中事件
         /// </summary>
-        event DataGridViewCellEventHandler CheckBoxChangeEvent;
+        event DataGridViewEventHandler CheckBoxChangeEvent;
         /// <summary>
         /// 点击单元格事件
         /// </summary>
-        event DataGridViewCellEventHandler CellClick;
+        event DataGridViewEventHandler CellClick;
         /// <summary>
         /// 数据源改变事件
         /// </summary>
-        event DataGridViewCellEventHandler SourceChanged;
+        event DataGridViewEventHandler SourceChanged;
         /// <summary>
         /// 列参数，用于创建列数和宽度
         /// </summary>

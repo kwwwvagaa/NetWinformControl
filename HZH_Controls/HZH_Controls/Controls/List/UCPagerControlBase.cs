@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    [ToolboxItem(false)]
     public class UCPagerControlBase : UserControl, IPageControl
     {
         #region 构造
@@ -39,9 +40,13 @@ namespace HZH_Controls.Controls
         private void InitializeComponent()
         {
             this.SuspendLayout();
+            // 
+            // UCPagerControlBase
+            // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Name = "UCPagerControlBase";
             this.Size = new System.Drawing.Size(304, 58);
+            this.Load += new System.EventHandler(this.UCPagerControlBase_Load);
             this.ResumeLayout(false);
 
         }
@@ -52,13 +57,14 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 关联的数据源
         /// </summary>
-        public List<object> DataSource { get; set; }
-        public event PageControlEventHandler ShowChanged;
+        public virtual List<object> DataSource { get; set; }
+        public event PageControlEventHandler ShowSourceChanged;
         private int m_pageSize = 1;
         /// <summary>
         /// 每页显示数量
         /// </summary>
-        public int PageSize
+        [Description("每页显示数量"), Category("自定义")]
+        public virtual int PageSize
         {
             get { return m_pageSize; }
             set { m_pageSize = value; }
@@ -67,7 +73,8 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 开始的下标
         /// </summary>
-        public int StartIndex
+        [Description("开始的下标"), Category("自定义")]
+        public virtual int StartIndex
         {
             get { return startIndex; }
             set
@@ -83,18 +90,38 @@ namespace HZH_Controls.Controls
         {
             InitializeComponent();
         }
-        public void FirstPage()
+
+        private void UCPagerControlBase_Load(object sender, EventArgs e)
         {
+            if (DataSource == null)
+                ShowBtn(false, false);
+            else
+            {
+                ShowBtn(false, DataSource.Count > PageSize);
+            }
+        }
+        /// <summary>
+        /// 第一页
+        /// </summary>
+        public virtual void FirstPage()
+        {
+            if (DataSource == null)
+                return;
             startIndex = 0;
             var s = GetCurrentSource();
 
-            if (ShowChanged != null)
+            if (ShowSourceChanged != null)
             {
-                ShowChanged(s);
+                ShowSourceChanged(s);
             }
         }
-        public void PreviousPage()
+        /// <summary>
+        /// 上一页
+        /// </summary>
+        public virtual void PreviousPage()
         {
+            if (DataSource == null)
+                return;
             if (startIndex == 0)
                 return;
             startIndex -= m_pageSize;
@@ -102,13 +129,18 @@ namespace HZH_Controls.Controls
                 startIndex = 0;
             var s = GetCurrentSource();
 
-            if (ShowChanged != null)
+            if (ShowSourceChanged != null)
             {
-                ShowChanged(s);
+                ShowSourceChanged(s);
             }
         }
-        public void NextPage()
+        /// <summary>
+        /// 下一页
+        /// </summary>
+        public virtual void NextPage()
         {
+            if (DataSource == null)
+                return;
             if (startIndex + m_pageSize >= DataSource.Count)
             {
                 return;
@@ -118,38 +150,47 @@ namespace HZH_Controls.Controls
                 startIndex = 0;
             var s = GetCurrentSource();
 
-            if (ShowChanged != null)
+            if (ShowSourceChanged != null)
             {
-                ShowChanged(s);
+                ShowSourceChanged(s);
             }
         }
-
-        public void EndPage()
+        /// <summary>
+        /// 最后一页
+        /// </summary>
+        public virtual void EndPage()
         {
-            startIndex = DataSource.Count - 1 - m_pageSize;
+            if (DataSource == null)
+                return;
+            startIndex = DataSource.Count  - m_pageSize;
             if (startIndex < 0)
                 startIndex = 0;
             var s = GetCurrentSource();
 
-            if (ShowChanged != null)
+            if (ShowSourceChanged != null)
             {
-                ShowChanged(s);
+                ShowSourceChanged(s);
             }
         }
-
-        public void Reload()
+        /// <summary>
+        /// 刷新数据
+        /// </summary>
+        public virtual void Reload()
         {
             var s = GetCurrentSource();
-            if (ShowChanged != null)
+            if (ShowSourceChanged != null)
             {
-                ShowChanged(s);
+                ShowSourceChanged(s);
             }
         }
-
-
-
-        public List<object> GetCurrentSource()
+        /// <summary>
+        /// 获取当前页数据
+        /// </summary>
+        /// <returns></returns>
+        public virtual List<object> GetCurrentSource()
         {
+            if (DataSource == null)
+                return null;
             int intShowCount = m_pageSize;
             if (intShowCount + startIndex > DataSource.Count)
                 intShowCount = DataSource.Count - startIndex;
@@ -185,9 +226,11 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 控制按钮显示
         /// </summary>
-        /// <param name="blnLeftBtn"></param>
-        /// <param name="blnRightBtn"></param>
+        /// <param name="blnLeftBtn">是否显示上一页，第一页</param>
+        /// <param name="blnRightBtn">是否显示下一页，最后一页</param>
         protected virtual void ShowBtn(bool blnLeftBtn, bool blnRightBtn)
         { }
+
+        
     }
 }

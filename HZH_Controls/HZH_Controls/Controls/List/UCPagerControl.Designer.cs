@@ -1,4 +1,4 @@
-﻿namespace HZH_Controls.Controls.List
+﻿namespace HZH_Controls.Controls
 {
     partial class UCPagerControl
     {
@@ -64,7 +64,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(68, 46);
             this.panel4.TabIndex = 3;
-            this.panel4.Visible = false;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             // 
             // panel3
@@ -75,7 +74,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(68, 46);
             this.panel3.TabIndex = 2;
-            this.panel3.Visible = false;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // panel2
@@ -86,7 +84,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(68, 46);
             this.panel2.TabIndex = 1;
-            this.panel2.Visible = false;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // panel1
@@ -97,7 +94,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(68, 46);
             this.panel1.TabIndex = 0;
-            this.panel1.Visible = false;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // UCPagerControl

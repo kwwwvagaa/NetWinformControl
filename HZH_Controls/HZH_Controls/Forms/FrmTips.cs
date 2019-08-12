@@ -363,9 +363,9 @@ namespace HZH_Controls.Forms
     public enum TipsState
     {
         Default = -1,
-        Success = -11426991,
-        Info = -13658444,
-        Warning = -486394,
-        Error = -4377041
+        Success = -6566849,
+        Info = -12477983,
+        Warning = -357816,
+        Error = -1097849
     }
 }

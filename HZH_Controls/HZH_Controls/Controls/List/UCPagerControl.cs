@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HZH_Controls.Controls.List
+namespace HZH_Controls.Controls
 {
+    [ToolboxItem(true)]
     public partial class UCPagerControl : UCPagerControlBase
     {
         public UCPagerControl()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

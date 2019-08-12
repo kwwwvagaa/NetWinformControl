@@ -17,6 +17,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 标题字体
         /// </summary>
+        [Description("标题字体"), Category("自定义")]
         public Font HeadFont
         {
             get { return m_headFont; }
@@ -26,6 +27,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 标题字体颜色
         /// </summary>
+        [Description("标题文字颜色"), Category("自定义")]
         public Color HeadTextColor
         {
             get { return m_headTextColor; }
@@ -36,6 +38,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 是否显示标题
         /// </summary>
+        [Description("是否显示标题"), Category("自定义")]
         public bool IsShowHead
         {
             get { return m_isShowHead; }
@@ -43,12 +46,18 @@ namespace HZH_Controls.Controls
             {
                 m_isShowHead = value;
                 panHead.Visible = value;
+                if (m_page != null)
+                {
+                    ResetShowCount();
+                    m_page.PageSize = m_showCount;
+                }
             }
         }
         private int m_headHeight = 40;
         /// <summary>
         /// 标题高度
         /// </summary>
+        [Description("标题高度"), Category("自定义")]
         public int HeadHeight
         {
             get { return m_headHeight; }
@@ -63,6 +72,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 是否显示复选框
         /// </summary>
+        [Description("是否显示选择框"), Category("自定义")]
         public bool IsShowCheckBox
         {
             get { return m_isShowCheckBox; }
@@ -80,6 +90,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 行高
         /// </summary>
+        [Description("数据行高"), Category("自定义")]
         public int RowHeight
         {
             get { return m_rowHeight; }
@@ -90,15 +101,25 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 
         /// </summary>
+        [Description("可显示个数"), Category("自定义")]
         public int ShowCount
         {
             get { return m_showCount; }
+            private set
+            {
+                m_showCount = value;
+                if (m_page != null)
+                {
+                    m_page.PageSize = value;
+                }
+            }
         }
 
         private List<DataGridViewColumnEntity> m_columns;
         /// <summary>
         /// 列
         /// </summary>
+        [Description("列"), Category("自定义")]
         public List<DataGridViewColumnEntity> Columns
         {
             get { return m_columns; }
@@ -109,11 +130,11 @@ namespace HZH_Controls.Controls
             }
         }
 
-
         private object m_dataSource;
         /// <summary>
         /// 数据源,支持列表或table，如果使用翻页控件，请使用翻页控件的DataSource
         /// </summary>
+        [Description("数据源,支持列表或table，如果使用翻页控件，请使用翻页控件的DataSource"), Category("自定义")]
         public object DataSource
         {
             get { return m_dataSource; }
@@ -137,6 +158,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 行元素类型，默认UCDataGridViewItem
         /// </summary>
+        [Description("行控件类型，默认UCDataGridViewRow，如果不满足请自定义行控件实现接口IDataGridViewRow"), Category("自定义")]
         public Type RowType
         {
             get { return m_rowType; }
@@ -151,6 +173,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 选中的节点
         /// </summary>
+        [Description("选中行"), Category("自定义")]
         public IDataGridViewRow SelectRow
         {
             get { return m_selectRow; }
@@ -161,6 +184,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 选中的行，如果显示CheckBox，则以CheckBox选中为准
         /// </summary>
+        [Description("选中的行，如果显示CheckBox，则以CheckBox选中为准"), Category("自定义")]
         public List<IDataGridViewRow> SelectRows
         {
             get
@@ -173,14 +197,53 @@ namespace HZH_Controls.Controls
                     return new List<IDataGridViewRow>() { m_selectRow };
             }
         }
-        #region 事件
-        public EventHandler HeadCheckBoxChangeEvent;
 
+
+        private UCPagerControlBase m_page = null;
+        /// <summary>
+        /// 翻页控件
+        /// </summary>
+        [Description("翻页控件，如果UCPagerControl不满足你的需求，请自定义翻页控件并继承UCPagerControlBase"), Category("自定义")]
+        public UCPagerControlBase Page
+        {
+            get { return m_page; }
+            set
+            {
+                if (!typeof(IPageControl).IsAssignableFrom(value.GetType()) || !value.GetType().IsSubclassOf(typeof(UCPagerControlBase)))
+                    throw new Exception("翻页控件没有继承UCPagerControlBase");
+                panPage.Visible = value != null;
+                m_page = value;
+                if (value != null)
+                {
+                    m_page.ShowSourceChanged += page_ShowSourceChanged;
+                    m_page.Dock = DockStyle.Fill;
+                    this.panPage.Controls.Clear();
+                    this.panPage.Controls.Add(m_page);
+                    ResetShowCount();
+                    m_page.PageSize = ShowCount;
+                    this.DataSource = m_page.GetCurrentSource();
+                }
+                else
+                {
+                    m_page = null;
+                }
+            }
+        }
+
+        void page_ShowSourceChanged(object currentSource)
+        {
+            this.DataSource = currentSource;
+        }
+
+        #region 事件
+        [Description("选中标题选择框事件"), Category("自定义")]
+        public EventHandler HeadCheckBoxChangeEvent;
+        [Description("标题点击事件"), Category("自定义")]
         public EventHandler HeadColumnClickEvent;
         [Description("项点击事件"), Category("自定义")]
-        public event DataGridViewCellEventHandler ItemClick;
+        public event DataGridViewEventHandler ItemClick;
         [Description("数据源改变事件"), Category("自定义")]
-        public event DataGridViewCellEventHandler SourceChanged;
+        public event DataGridViewEventHandler SourceChanged;
         #endregion
         #endregion
 
@@ -268,7 +331,7 @@ namespace HZH_Controls.Controls
             }
         }
         #endregion
-      
+
         /// <summary>
         /// 功能描述:获取显示个数
         /// 作　　者:HZH
@@ -280,14 +343,16 @@ namespace HZH_Controls.Controls
         {
             if (DesignMode)
             { return; }
-            m_showCount = this.Height / (m_rowHeight);
-            int intCha = this.Height % (m_rowHeight);
-            m_rowHeight += intCha / m_showCount;
+            ShowCount = this.panRow.Height / (m_rowHeight);
+            int intCha = this.panRow.Height % (m_rowHeight);
+            m_rowHeight += intCha / ShowCount;
         }
         #endregion
 
         #region 公共函数
-
+        /// <summary>
+        /// 刷新数据
+        /// </summary>
         public void ReloadSource()
         {
             if (DesignMode)
@@ -366,7 +431,7 @@ namespace HZH_Controls.Controls
                             row.BindingCellData();
 
 
-                            Control rowControl = (row as Control);                         
+                            Control rowControl = (row as Control);
                             rowControl.Height = m_rowHeight;
                             this.panRow.Controls.Add(rowControl);
                             rowControl.Dock = DockStyle.Top;
@@ -382,7 +447,7 @@ namespace HZH_Controls.Controls
                     }
                     if (lastItem != null && intSourceCount == m_showCount)
                     {
-                        lastItem.Height = this.Height - (m_showCount - 1) * m_rowHeight;
+                        lastItem.Height = this.panRow.Height - (m_showCount - 1) * m_rowHeight;
                     }
                 }
             }
@@ -392,8 +457,13 @@ namespace HZH_Controls.Controls
             }
         }
 
-      
 
+        /// <summary>
+        /// 快捷键
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Up)
@@ -423,7 +493,7 @@ namespace HZH_Controls.Controls
                 return;
             Control c = null;
             c = (Rows[0] as Control);
-            SetSelectRow(c, new DataGridViewCellEventArgs() { RowIndex = 0 });
+            SetSelectRow(c, new DataGridViewEventArgs() { RowIndex = 0 });
         }
         /// <summary>
         /// 选中上一个
@@ -438,7 +508,7 @@ namespace HZH_Controls.Controls
             if (index - 1 >= 0)
             {
                 c = (Rows[index - 1] as Control);
-                SetSelectRow(c, new DataGridViewCellEventArgs() { RowIndex = index - 1 });
+                SetSelectRow(c, new DataGridViewEventArgs() { RowIndex = index - 1 });
             }
         }
         /// <summary>
@@ -454,7 +524,7 @@ namespace HZH_Controls.Controls
             if (index + 1 < Rows.Count)
             {
                 c = (Rows[index + 1] as Control);
-                SetSelectRow(c, new DataGridViewCellEventArgs() { RowIndex = index + 1 });
+                SetSelectRow(c, new DataGridViewEventArgs() { RowIndex = index + 1 });
             }
         }
         /// <summary>
@@ -466,38 +536,56 @@ namespace HZH_Controls.Controls
                 return;
             Control c = null;
             c = (Rows[Rows.Count - 1] as Control);
-            SetSelectRow(c, new DataGridViewCellEventArgs() { RowIndex = Rows.Count - 1 });
+            SetSelectRow(c, new DataGridViewEventArgs() { RowIndex = Rows.Count - 1 });
         }
 
         #endregion
 
         #region 事件
-        void RowSourceChanged(object sender, DataGridViewCellEventArgs e)
+        void RowSourceChanged(object sender, DataGridViewEventArgs e)
         {
             if (SourceChanged != null)
                 SourceChanged(sender, e);
         }
-        private void SetSelectRow(Control item, DataGridViewCellEventArgs e)
+        private void SetSelectRow(Control item, DataGridViewEventArgs e)
         {
-            if (item == null)
-                return;
-            if (item.Visible == false)
-                return;
-            this.FindForm().ActiveControl = this;
-            this.FindForm().ActiveControl = item;
-            if (m_selectRow != null)
+            try
             {
-                if (m_selectRow == item)
+                ControlHelper.FreezeControl(this, true);
+                if (item == null)
                     return;
-                m_selectRow.SetSelect(false);
+                if (item.Visible == false)
+                    return;
+                this.FindForm().ActiveControl = this;
+                this.FindForm().ActiveControl = item;
+                if (m_selectRow != null)
+                {
+                    if (m_selectRow == item)
+                        return;
+                    m_selectRow.SetSelect(false);
+                }
+                m_selectRow = item as IDataGridViewRow;
+                m_selectRow.SetSelect(true);
+                if (ItemClick != null)
+                {
+                    ItemClick(item, e);
+                }
+                if (this.panRow.Controls.Count > 0)
+                {
+                    if (item.Location.Y < 0)
+                    {
+                        this.panRow.AutoScrollPosition = new Point(0, Math.Abs(this.panRow.Controls[this.panRow.Controls.Count - 1].Location.Y) + item.Location.Y);
+                    }
+                    else if (item.Location.Y + m_rowHeight > this.panRow.Height)
+                    {
+                        this.panRow.AutoScrollPosition = new Point(0, Math.Abs(this.panRow.AutoScrollPosition.Y) + item.Location.Y - this.panRow.Height + m_rowHeight);
+                    }
+                }
             }
-            m_selectRow = item as IDataGridViewRow;
-            m_selectRow.SetSelect(true);
-            if (ItemClick != null)
+            finally
             {
-                ItemClick(item, e);
+                ControlHelper.FreezeControl(this, false);
             }
-            this.panRow.AutoScrollPosition = new Point(0, item.Location.Y);
         }
         private void UCDataGridView_Resize(object sender, EventArgs e)
         {

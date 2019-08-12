@@ -8,5 +8,5 @@ namespace HZH_Controls.Controls
 {
     [Serializable]
     [ComVisible(true)]
-    public delegate void DataGridViewCellEventHandler(object sender, DataGridViewCellEventArgs e);
+    public delegate void DataGridViewEventHandler(object sender, DataGridViewEventArgs e);
 }

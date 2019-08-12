@@ -57,13 +57,13 @@ namespace Test
             }
             this.ucListExt1.SetList(lst);
 
-List<KeyValuePair<string, string>> lstHL = new List<KeyValuePair<string, string>>();
-for (int i = 0; i < 30; i++)
-{
-    lstHL.Add(new KeyValuePair<string, string>(i.ToString(), "选项" + i));
-}
+            List<KeyValuePair<string, string>> lstHL = new List<KeyValuePair<string, string>>();
+            for (int i = 0; i < 30; i++)
+            {
+                lstHL.Add(new KeyValuePair<string, string>(i.ToString(), "选项" + i));
+            }
 
-this.ucHorizontalList1.DataSource = lstHL;
+            this.ucHorizontalList1.DataSource = lstHL;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -133,6 +133,11 @@ this.ucHorizontalList1.DataSource = lstHL;
         {
             FrmWithTitleTest frm = new FrmWithTitleTest();
             frm.ShowDialog(this);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

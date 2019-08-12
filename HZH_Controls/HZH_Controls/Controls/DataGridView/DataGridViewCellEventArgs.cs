@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
-    public class DataGridViewCellEventArgs : EventArgs
+    public class DataGridViewEventArgs : EventArgs
     {
         public Control CellControl { get; set; }
         public int CellIndex { get; set; }

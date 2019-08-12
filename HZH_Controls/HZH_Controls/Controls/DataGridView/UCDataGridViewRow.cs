@@ -9,15 +9,16 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    [ToolboxItem(false)]
     public partial class UCDataGridViewRow : UserControl, IDataGridViewRow
     {
 
         #region 属性
-        public event DataGridViewCellEventHandler CheckBoxChangeEvent;
+        public event DataGridViewEventHandler CheckBoxChangeEvent;
 
-        public event DataGridViewCellEventHandler CellClick;
+        public event DataGridViewEventHandler CellClick;
 
-        public event DataGridViewCellEventHandler SourceChanged;
+        public event DataGridViewEventHandler SourceChanged;
 
         public List<DataGridViewColumnEntity> Columns
         {
@@ -81,7 +82,7 @@ namespace HZH_Controls.Controls
         {
             if (CellClick != null)
             {
-                CellClick(sender, new DataGridViewCellEventArgs()
+                CellClick(sender, new DataGridViewEventArgs()
                 {
                     CellControl = this,
                     CellIndex = (sender as Control).Tag.ToInt()
@@ -134,7 +135,7 @@ namespace HZH_Controls.Controls
                                 IsChecked = box.Checked;
                                 if (CheckBoxChangeEvent != null)
                                 {
-                                    CheckBoxChangeEvent(a, new DataGridViewCellEventArgs()
+                                    CheckBoxChangeEvent(a, new DataGridViewEventArgs()
                                     {
                                         CellControl = box,
                                         CellIndex = 0

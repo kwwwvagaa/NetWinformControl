@@ -32,6 +32,7 @@
             this.panColumns = new System.Windows.Forms.TableLayoutPanel();
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
             this.panRow = new System.Windows.Forms.Panel();
+            this.panPage = new System.Windows.Forms.Panel();
             this.panHead.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,14 +75,24 @@
             this.panRow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panRow.Location = new System.Drawing.Point(0, 40);
             this.panRow.Name = "panRow";
-            this.panRow.Size = new System.Drawing.Size(1061, 525);
+            this.panRow.Size = new System.Drawing.Size(1061, 475);
             this.panRow.TabIndex = 1;
+            // 
+            // panPage
+            // 
+            this.panPage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panPage.Location = new System.Drawing.Point(0, 515);
+            this.panPage.Name = "panPage";
+            this.panPage.Size = new System.Drawing.Size(1061, 50);
+            this.panPage.TabIndex = 0;
+            this.panPage.Visible = false;
             // 
             // UCDataGridView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panRow);
+            this.Controls.Add(this.panPage);
             this.Controls.Add(this.panHead);
             this.Name = "UCDataGridView";
             this.Size = new System.Drawing.Size(1061, 565);
@@ -97,6 +108,7 @@
         private System.Windows.Forms.TableLayoutPanel panColumns;
         private UCSplitLine_H ucSplitLine_H1;
         private System.Windows.Forms.Panel panRow;
+        private System.Windows.Forms.Panel panPage;
 
     }
 }

@@ -18,8 +18,7 @@ namespace Test
         }
 
         private void FrmTemp1Test_Load(object sender, EventArgs e)
-        {
-           
+        {           
             List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "姓名", Width = 50, WidthType = SizeType.Percent });
@@ -27,7 +26,7 @@ namespace Test
             this.ucDataGridView1.Columns = lstCulumns;
             this.ucDataGridView1.IsShowCheckBox = true;
             List<object> lstSource = new List<object>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
                 TestModel model = new TestModel()
                 {
@@ -38,7 +37,9 @@ namespace Test
                 lstSource.Add(model);
             }
 
-            this.ucDataGridView1.DataSource = lstSource.ToArray();
+            UCPagerControl page = new UCPagerControl();
+            page.DataSource = lstSource;
+            this.ucDataGridView1.Page = page;
             this.ucDataGridView1.First();
         }
     }

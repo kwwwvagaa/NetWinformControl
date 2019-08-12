@@ -335,47 +335,55 @@ namespace HZH_Controls.Controls
 
         private void click_MouseDown(object sender, MouseEventArgs e)
         {
-            if (this.Source != null && this.Source.Count > 0)
+            if (_frmAnchor == null || _frmAnchor.IsDisposed || _frmAnchor.Visible == false)
             {
-                int intRow = 0;
-                int intCom = 1;
-                var p = this.PointToScreen(this.Location);
-                while (true)
+
+                if (this.Source != null && this.Source.Count > 0)
                 {
-                    int intScreenHeight = Screen.PrimaryScreen.Bounds.Height;
-                    if ((p.Y + this.Height + this.Source.Count / intCom * 50 < intScreenHeight || p.Y - this.Source.Count / intCom * 50 > 0)
-                        && (_dropPanelHeight <= 0 ? true : (this.Source.Count / intCom * 50 <= _dropPanelHeight)))
+                    int intRow = 0;
+                    int intCom = 1;
+                    var p = this.PointToScreen(this.Location);
+                    while (true)
                     {
-                        intRow = this.Source.Count / intCom + (this.Source.Count % intCom != 0 ? 1 : 0);
-                        break;
+                        int intScreenHeight = Screen.PrimaryScreen.Bounds.Height;
+                        if ((p.Y + this.Height + this.Source.Count / intCom * 50 < intScreenHeight || p.Y - this.Source.Count / intCom * 50 > 0)
+                            && (_dropPanelHeight <= 0 ? true : (this.Source.Count / intCom * 50 <= _dropPanelHeight)))
+                        {
+                            intRow = this.Source.Count / intCom + (this.Source.Count % intCom != 0 ? 1 : 0);
+                            break;
+                        }
+                        intCom++;
                     }
-                    intCom++;
+                    UCTimePanel ucTime = new UCTimePanel();
+                    ucTime.IsShowBorder = true;
+                    int intWidth = this.Width / intCom;
+                    if (intWidth < _ItemWidth)
+                        intWidth = _ItemWidth;
+                    Size size = new Size(intCom * intWidth, intRow * 50);
+                    ucTime.Size = size;
+                    ucTime.FirstEvent = true;
+                    ucTime.SelectSourceEvent += ucTime_SelectSourceEvent;
+                    ucTime.Row = intRow;
+                    ucTime.Column = intCom;
+                    List<KeyValuePair<string, string>> lst = new List<KeyValuePair<string, string>>();
+                    foreach (var item in this.Source)
+                    {
+                        lst.Add(new KeyValuePair<string, string>(item.Key, item.Value));
+                    }
+                    ucTime.Source = lst;
+
+                    ucTime.SetSelect(_selectedValue);
+
+                    _frmAnchor = new Forms.FrmAnchor(this, ucTime);
+                    _frmAnchor.Load += (a, b) => { (a as Form).Size = size; };
+
+                    _frmAnchor.Show(this.FindForm());
+
                 }
-                UCTimePanel ucTime = new UCTimePanel();
-                ucTime.IsShowBorder = true;
-                int intWidth = this.Width / intCom;
-                if (intWidth < _ItemWidth)
-                    intWidth = _ItemWidth;
-                Size size= new Size(intCom * intWidth, intRow * 50);
-                ucTime.Size =size;
-                ucTime.FirstEvent = true;
-                ucTime.SelectSourceEvent += ucTime_SelectSourceEvent;
-                ucTime.Row = intRow;
-                ucTime.Column = intCom;
-                List<KeyValuePair<string, string>> lst = new List<KeyValuePair<string, string>>();
-                foreach (var item in this.Source)
-                {
-                    lst.Add(new KeyValuePair<string, string>(item.Key, item.Value));
-                }
-                ucTime.Source = lst;
-
-                ucTime.SetSelect(_selectedValue);
-
-                _frmAnchor = new Forms.FrmAnchor(this, ucTime);
-                _frmAnchor.Load += (a, b) => { (a as Form).Size = size; };
-               
-                _frmAnchor.Show(this.FindForm());
-
+            }
+            else
+            {
+                _frmAnchor.Close();
             }
         }
 
