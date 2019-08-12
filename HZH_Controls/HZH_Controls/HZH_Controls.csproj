@@ -412,7 +412,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Resources\alarm.png" />
   </ItemGroup>
   <ItemGroup>

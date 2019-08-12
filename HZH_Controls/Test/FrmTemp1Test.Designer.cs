@@ -33,7 +33,7 @@
             // 
             // ucDataGridView1
             // 
-            this.ucDataGridView1.BackColor = System.Drawing.Color.White;          
+            this.ucDataGridView1.BackColor = System.Drawing.Color.White;
             this.ucDataGridView1.Columns = null;
             this.ucDataGridView1.DataSource = null;
             this.ucDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -44,9 +44,9 @@
             this.ucDataGridView1.IsShowHead = true;
             this.ucDataGridView1.Location = new System.Drawing.Point(0, 61);
             this.ucDataGridView1.Name = "ucDataGridView1";
+            this.ucDataGridView1.Page = null;
             this.ucDataGridView1.RowHeight = 41;
             this.ucDataGridView1.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
-           
             this.ucDataGridView1.Size = new System.Drawing.Size(679, 416);
             this.ucDataGridView1.TabIndex = 3;
             // 
@@ -56,7 +56,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 477);
             this.Controls.Add(this.ucDataGridView1);
-            this.FrmTitle = "Temp1测试";
+            this.FrmTitle = "表格测试";
             this.IsFullSize = false;
             this.Name = "FrmTemp1Test";
             this.Text = "FrmTemp1Test";

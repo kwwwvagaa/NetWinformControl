@@ -12,6 +12,6 @@ namespace HZH_Controls.Controls
         public int Width { get; set; }
         public System.Windows.Forms.SizeType WidthType { get; set; }
         public string DataField { get; set; }
-       
+        public Func<object, string> Format { get; set; }
     }
 }

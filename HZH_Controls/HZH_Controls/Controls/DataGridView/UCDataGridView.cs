@@ -209,12 +209,12 @@ namespace HZH_Controls.Controls
             get { return m_page; }
             set
             {
-                if (!typeof(IPageControl).IsAssignableFrom(value.GetType()) || !value.GetType().IsSubclassOf(typeof(UCPagerControlBase)))
-                    throw new Exception("翻页控件没有继承UCPagerControlBase");
-                panPage.Visible = value != null;
                 m_page = value;
                 if (value != null)
                 {
+                    if (!typeof(IPageControl).IsAssignableFrom(value.GetType()) || !value.GetType().IsSubclassOf(typeof(UCPagerControlBase)))
+                        throw new Exception("翻页控件没有继承UCPagerControlBase");
+                    panPage.Visible = value != null;
                     m_page.ShowSourceChanged += page_ShowSourceChanged;
                     m_page.Dock = DockStyle.Fill;
                     this.panPage.Controls.Clear();

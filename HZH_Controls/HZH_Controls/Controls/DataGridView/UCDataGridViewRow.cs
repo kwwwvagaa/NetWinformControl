@@ -73,7 +73,17 @@ namespace HZH_Controls.Controls
                 {
                     var pro = DataSource.GetType().GetProperty(com.DataField);
                     if (pro != null)
-                        cs[0].Text = pro.GetValue(DataSource, null).ToStringExt();
+                    {
+                        var value = pro.GetValue(DataSource, null);
+                        if (com.Format != null)
+                        {
+                            cs[0].Text = com.Format(value);
+                        }
+                        else
+                        {
+                            cs[0].Text = value.ToStringExt();
+                        }
+                    }
                 }
             }
         }
@@ -174,6 +184,6 @@ namespace HZH_Controls.Controls
             }
         }
 
-       
+
     }
 }
