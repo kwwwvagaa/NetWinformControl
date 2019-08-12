@@ -257,7 +257,7 @@ this.dgv.DataSource = m_page.GetCurrentSource();
 
 ##### 10、气泡提示效果图(5种内置及自定义样式)
 
-![样例图片](https://images.gitee.com/uploads/images/2019/0808/143309_b71c7e49_301547.png "气泡.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0812/112144_6af9389c_301547.png "tips.png")
 
 ``` csharp
 FrmTips.ShowTipsError(this, "Error提示信息");
@@ -293,6 +293,27 @@ ControlHelper.ThreadRunExt(this, () =>
 }, null, this);
 //ControlHelper.ThreadRunExt为开启一个线程执行任务
 //ControlHelper.ThreadInvokerControl为异步委托 调用控件
+```
+
+```
+/// <summary>
+/// 使用一个线程执行一个操作
+/// </summary>
+/// <param name="parent">父控件</param>
+/// <param name="func">执行内容</param>
+/// <param name="callback">执行后回调</param>
+/// <param name="enableControl">执行期间禁用控件列表</param>
+/// <param name="blnShowSplashScreen">执行期间是否显示等待提示</param>
+/// <param name="strMsg">执行期间等待提示内容，默认为“正在处理，请稍候...”</param>
+/// <param name="intSplashScreenDelayTime">延迟显示等待提示时间</param>
+public static void ThreadRunExt(
+    Control parent,
+    Action func,
+    Action<object> callback,
+    Control[] enableControl = null,
+    bool blnShowSplashScreen = true,
+    string strMsg = null,
+    int intSplashScreenDelayTime = 200)
 ```
 
 #### 整体样例效果
