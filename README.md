@@ -158,10 +158,106 @@ for (int i = 0; i < 30; i++)
 this.ucHorizontalList1.DataSource = lstHL;
 ```
 
+##### 8、Datagridview
 
-##### 8、气泡提示效果图(5种内置及自定义样式)
+![样例图片](https://images.gitee.com/uploads/images/2019/0812/105558_55920c3b_301547.png "table.png")
 
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0808/143309_b71c7e49_301547.png "气泡.png")
+``` csharp
+List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "姓名", Width = 50, WidthType = SizeType.Percent });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Age", HeadText = "年龄", Width = 50, WidthType = SizeType.Percent });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "生日", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((DateTime)a).ToString("yyyy-MM-dd"); } });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "性别", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((int)a) == 0 ? "女" : "男"; } });
+this.ucDataGridView1.Columns = lstCulumns;
+this.ucDataGridView1.IsShowCheckBox = true;
+List<object> lstSource = new List<object>();
+for (int i = 0; i < 20; i++)
+{
+    TestModel model = new TestModel()
+    {
+        ID = i.ToString(),
+        Age = 3 * i,
+        Name = "姓名——" + i,
+        Birthday = DateTime.Now.AddYears(-10),
+        Sex = i % 2
+    };
+    lstSource.Add(model);
+}
+
+this.ucDataGridView1.DataSource = lstSource;
+this.ucDataGridView1.First();
+```
+
+>当使用分页控件时，不再需要指定DataSource数据源属性，只需要指定翻页控件的DataSource属性即可
+
+>如果预置的表格行无法满足你的需求，你还可以自定义行控件，具体做法为：
+1. 新增自定义控件，实现接口IDataGridViewRow
+2. 参照UCDataGridViewRow实现你自定义的行
+3. 设置datagridview的RowType属性即可
+
+>Page属性定义了翻页控件，如果UCPagerControl不满足你的需求，请自定义翻页控件并继承UCPagerControlBase，
+当为空时不启用翻页控件，当启用翻页控件时每页将显示适当的数据，不再出现滚动条。
+
+##### 9、翻页控件
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0812/105558_55920c3b_301547.png "table.png")
+
+``` csharp
+List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "姓名", Width = 50, WidthType = SizeType.Percent });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Age", HeadText = "年龄", Width = 50, WidthType = SizeType.Percent });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "生日", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((DateTime)a).ToString("yyyy-MM-dd"); } });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "性别", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((int)a) == 0 ? "女" : "男"; } });
+this.ucDataGridView1.Columns = lstCulumns;
+this.ucDataGridView1.IsShowCheckBox = true;
+List<object> lstSource = new List<object>();
+for (int i = 0; i < 20; i++)
+{
+    TestModel model = new TestModel()
+    {
+        ID = i.ToString(),
+        Age = 3 * i,
+        Name = "姓名——" + i,
+        Birthday = DateTime.Now.AddYears(-10),
+        Sex = i % 2
+    };
+    lstSource.Add(model);
+}
+
+UCPagerControl page = new UCPagerControl();
+page.DataSource = lstSource;
+this.ucDataGridView1.Page = page;
+this.ucDataGridView1.First();
+```
+
+>如果UCPagerControl不满足你的需求，请自定义翻页控件并继承UCPagerControlBase，比如改变样式，增加逻辑等等
+
+>如果需要下标从10开始的一页数据，可以设置StartIndex=10，然后调用GetCurrentSource（）即可，用法如下：
+
+```
+m_page.DataSource=lstSource;
+m_page.PageSize = ShowCount;
+m_page.StartIndex=10;
+this.dgv.DataSource = m_page.GetCurrentSource();
+```
+
+>翻页控件可用于任何列表形式的控件，以上代码示例仅以datagridview说明用法,用法如下：
+1. 设置属性DataSource数据源 
+2. 设置属性PageSize每页显示数据量
+3. 设置时间ShowSourceChanged，在时间中向目标控件设置当前页数据源
+4. 如果页面加载后没有显示第一页数据，可以手动调用一下GetCurrentSource（）并赋值给目标控件即可，例如：
+
+```
+m_page.DataSource=lstSource;
+m_page.PageSize = ShowCount;
+this.dgv.DataSource = m_page.GetCurrentSource();
+```
+
+##### 10、气泡提示效果图(5种内置及自定义样式)
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0808/143309_b71c7e49_301547.png "气泡.png")
 
 ``` csharp
 FrmTips.ShowTipsError(this, "Error提示信息");
@@ -182,7 +278,7 @@ public static FrmTips ShowTips(
 */
 ```
 
-##### 9、多线程操作等待
+##### 11、多线程操作等待
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0808/144201_932c5259_301547.png "waiting.png")
 ``` csharp
