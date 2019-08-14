@@ -89,7 +89,7 @@ namespace HZH_Controls.Forms
             TipsState state = TipsState.Default)
         {
 
-            if (m_lastTips.Key == strMsg + state)
+            if (m_lastTips.Key == strMsg + state && !m_lastTips.Value.IsDisposed && m_lastTips.Value.Visible)
             {
                 m_lastTips.Value.ResetTimer();
                 return m_lastTips.Value;
