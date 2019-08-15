@@ -229,6 +229,8 @@ this.ucDataGridView1.First();
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0812/105558_55920c3b_301547.png "table.png")
 
+![样例图片](https://images.gitee.com/uploads/images/2019/0815/145459_59c24884_301547.png "page.png")
+
 ``` csharp
 List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
 lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
@@ -253,6 +255,7 @@ for (int i = 0; i < 20; i++)
 }
 
 UCPagerControl page = new UCPagerControl();
+//UCPagerControl2 page = new UCPagerControl2();
 page.DataSource = lstSource;
 this.ucDataGridView1.Page = page;
 this.ucDataGridView1.First();
