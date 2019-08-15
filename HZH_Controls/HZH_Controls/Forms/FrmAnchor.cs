@@ -1,9 +1,9 @@
-﻿// 版权所有 河南汇智创享信息科技有限公司
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
 // 文件名称：FrmAnchor.cs
-// 作　　者：HZH
-// 创建日期：2019-02-27 11:48:56
-// 功能描述：停靠窗体
-// 任务编号：POS
+// 创建日期：2019-08-15 16:04:24
+// 功能描述：FrmAnchor
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -82,7 +82,7 @@ namespace HZH_Controls.Forms
             this.Size = size;
             this.HandleCreated += FrmDownBoard_HandleCreated;
             this.HandleDestroyed += FrmDownBoard_HandleDestroyed;
-           
+
             Point p = parentControl.Parent.PointToScreen(parentControl.Location);
             int intX = 0;
             int intY = 0;
@@ -164,7 +164,7 @@ namespace HZH_Controls.Forms
 
         public bool PreFilterMessage(ref Message m)
         {
-            if (m.Msg != 0x0201 || this.Visible == false) 
+            if (m.Msg != 0x0201 || this.Visible == false)
                 return false;
             var pt = this.PointToClient(MousePosition);
             this.Visible = this.ClientRectangle.Contains(pt);
@@ -186,7 +186,7 @@ namespace HZH_Controls.Forms
                     ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_POSITIVE);
                 else
                 {
-                    ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_NEGATIVE);                
+                    ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_NEGATIVE);
                 }
             }
             else
@@ -196,17 +196,17 @@ namespace HZH_Controls.Forms
                 else
                 {
                     ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_POSITIVE | ControlHelper.AW_HIDE);
-                
+
                 }
             }
         }
-      
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (this.Owner != null)
             {
                 Form frm = this.Owner as Form;
-                IntPtr _ptr=ControlHelper.GetForegroundWindow() ; 
+                IntPtr _ptr = ControlHelper.GetForegroundWindow();
                 if (_ptr != frm.Handle)
                 {
                     this.Hide();

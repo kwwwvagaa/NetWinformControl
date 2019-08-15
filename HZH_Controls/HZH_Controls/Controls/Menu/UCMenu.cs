@@ -1,4 +1,9 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：UCMenu.cs
+// 创建日期：2019-08-15 16:02:22
+// 功能描述：Menu
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -255,7 +260,7 @@ namespace HZH_Controls.Controls
                     {
                         Control cMenu = menuitem as Control;
                         int index = m_lstParentItems.IndexOf(cMenu);
-                        this.Controls.SetChildIndex(m_panChildren,m_lstParentItems.Count- index-1 );
+                        this.Controls.SetChildIndex(m_panChildren, m_lstParentItems.Count - index - 1);
                         m_panChildren.Controls.Clear();
                         int intItemHeigth = 0;
                         foreach (var item in menuitem.DataSource.Childrens)

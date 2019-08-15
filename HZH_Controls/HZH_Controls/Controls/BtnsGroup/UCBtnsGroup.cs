@@ -1,4 +1,9 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：UCBtnsGroup.cs
+// 创建日期：2019-08-15 15:58:13
+// 功能描述：按钮组
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -41,6 +46,7 @@ namespace HZH_Controls.Controls
                 m_selectItem = value;
                 if (m_selectItem == null)
                     m_selectItem = new List<string>();
+                SetSelected();
             }
         }
 

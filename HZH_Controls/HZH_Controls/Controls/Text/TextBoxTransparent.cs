@@ -1,4 +1,9 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：TextBoxTransparent.cs
+// 创建日期：2019-08-15 16:03:49
+// 功能描述：TextBox
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
@@ -419,7 +424,7 @@ namespace HZH_Controls.Controls
                     //Draw the caret
                     Point caret = this.findCaret();
                     Pen p = new Pen(this.ForeColor, 3);
-                    tempGraphics2.DrawLine(p, caret.X+2, caret.Y + 0, caret.X+2, caret.Y + myFontHeight);
+                    tempGraphics2.DrawLine(p, caret.X + 2, caret.Y + 0, caret.X + 2, caret.Y + myFontHeight);
                     tempGraphics2.Dispose();
                 }
 

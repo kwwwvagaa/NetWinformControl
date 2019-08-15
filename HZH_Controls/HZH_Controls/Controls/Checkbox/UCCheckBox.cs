@@ -1,4 +1,9 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：UCCheckBox.cs
+// 创建日期：2019-08-15 15:58:34
+// 功能描述：CheckBox
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -14,12 +19,12 @@ namespace HZH_Controls.Controls
     {
         [Description("选中改变事件"), Category("自定义")]
         public event EventHandler CheckedChangeEvent;
-               
+
         [Description("字体"), Category("自定义")]
         public override Font Font
         {
             get
-            {                
+            {
                 return base.Font;
             }
             set

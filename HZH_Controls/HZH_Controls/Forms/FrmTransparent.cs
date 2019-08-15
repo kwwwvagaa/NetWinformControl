@@ -1,4 +1,9 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：FrmTransparent.cs
+// 创建日期：2019-08-15 16:05:00
+// 功能描述：FrmTransparent
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +38,7 @@ namespace HZH_Controls.Forms
         public FrmTransparent()
         {
             InitializeComponent();
-           
+
             base.SetStyle(ControlStyles.UserPaint, true);
             base.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             base.SetStyle(ControlStyles.DoubleBuffer, true);

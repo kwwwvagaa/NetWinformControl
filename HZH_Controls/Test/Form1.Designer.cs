@@ -50,6 +50,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.ucBtnsGroup2 = new HZH_Controls.Controls.UCBtnsGroup();
+            this.ucBtnsGroup1 = new HZH_Controls.Controls.UCBtnsGroup();
             this.ucPagerControl21 = new HZH_Controls.Controls.List.UCPagerControl2();
             this.ucMenu1 = new HZH_Controls.Controls.UCMenu();
             this.ucHorizontalList1 = new HZH_Controls.Controls.UCHorizontalList();
@@ -78,9 +83,6 @@
             this.ucBtnFillet1 = new HZH_Controls.Controls.UCBtnFillet();
             this.ucBtnExt2 = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.ucBtnsGroup1 = new HZH_Controls.Controls.UCBtnsGroup();
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -93,6 +95,7 @@
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -314,6 +317,60 @@
             this.groupBox10.TabIndex = 3;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "导航";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.ucPagerControl21);
+            this.groupBox11.Location = new System.Drawing.Point(19, 584);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(715, 61);
+            this.groupBox11.TabIndex = 5;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "分页控件";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.ucBtnsGroup1);
+            this.groupBox12.Location = new System.Drawing.Point(749, 584);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(221, 68);
+            this.groupBox12.TabIndex = 6;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "单选按钮组";
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.ucBtnsGroup2);
+            this.groupBox13.Location = new System.Drawing.Point(992, 584);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(367, 68);
+            this.groupBox13.TabIndex = 6;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "多选按钮组";
+            // 
+            // ucBtnsGroup2
+            // 
+            this.ucBtnsGroup2.BackColor = System.Drawing.Color.White;
+            this.ucBtnsGroup2.DataSource = ((System.Collections.Generic.Dictionary<string, string>)(resources.GetObject("ucBtnsGroup2.DataSource")));
+            this.ucBtnsGroup2.IsMultiple = false;
+            this.ucBtnsGroup2.Location = new System.Drawing.Point(6, 14);
+            this.ucBtnsGroup2.MinimumSize = new System.Drawing.Size(0, 50);
+            this.ucBtnsGroup2.Name = "ucBtnsGroup2";
+            this.ucBtnsGroup2.SelectItem = ((System.Collections.Generic.List<string>)(resources.GetObject("ucBtnsGroup2.SelectItem")));
+            this.ucBtnsGroup2.Size = new System.Drawing.Size(355, 50);
+            this.ucBtnsGroup2.TabIndex = 0;
+            // 
+            // ucBtnsGroup1
+            // 
+            this.ucBtnsGroup1.BackColor = System.Drawing.Color.White;
+            this.ucBtnsGroup1.DataSource = ((System.Collections.Generic.Dictionary<string, string>)(resources.GetObject("ucBtnsGroup1.DataSource")));
+            this.ucBtnsGroup1.IsMultiple = false;
+            this.ucBtnsGroup1.Location = new System.Drawing.Point(6, 14);
+            this.ucBtnsGroup1.MinimumSize = new System.Drawing.Size(0, 50);
+            this.ucBtnsGroup1.Name = "ucBtnsGroup1";
+            this.ucBtnsGroup1.SelectItem = ((System.Collections.Generic.List<string>)(resources.GetObject("ucBtnsGroup1.SelectItem")));
+            this.ucBtnsGroup1.Size = new System.Drawing.Size(194, 50);
+            this.ucBtnsGroup1.TabIndex = 0;
             // 
             // ucPagerControl21
             // 
@@ -908,43 +965,12 @@
             this.ucBtnExt1.TabStop = false;
             this.ucBtnExt1.TipsText = "";
             // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.ucPagerControl21);
-            this.groupBox11.Location = new System.Drawing.Point(19, 584);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(715, 61);
-            this.groupBox11.TabIndex = 5;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "分页控件";
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.ucBtnsGroup1);
-            this.groupBox12.Location = new System.Drawing.Point(749, 584);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(221, 68);
-            this.groupBox12.TabIndex = 6;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "按钮组";
-            // 
-            // ucBtnsGroup1
-            // 
-            this.ucBtnsGroup1.BackColor = System.Drawing.Color.White;
-            this.ucBtnsGroup1.DataSource = ((System.Collections.Generic.Dictionary<string, string>)(resources.GetObject("ucBtnsGroup1.DataSource")));
-            this.ucBtnsGroup1.IsMultiple = false;
-            this.ucBtnsGroup1.Location = new System.Drawing.Point(6, 14);
-            this.ucBtnsGroup1.MinimumSize = new System.Drawing.Size(0, 50);
-            this.ucBtnsGroup1.Name = "ucBtnsGroup1";
-            this.ucBtnsGroup1.SelectItem = ((System.Collections.Generic.List<string>)(resources.GetObject("ucBtnsGroup1.SelectItem")));
-            this.ucBtnsGroup1.Size = new System.Drawing.Size(194, 50);
-            this.ucBtnsGroup1.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1374, 709);
+            this.Controls.Add(this.groupBox13);
             this.Controls.Add(this.groupBox12);
             this.Controls.Add(this.groupBox11);
             this.Controls.Add(this.groupBox10);
@@ -974,6 +1000,7 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1031,6 +1058,8 @@
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox12;
         private HZH_Controls.Controls.UCBtnsGroup ucBtnsGroup1;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private HZH_Controls.Controls.UCBtnsGroup ucBtnsGroup2;
     }
 }
 

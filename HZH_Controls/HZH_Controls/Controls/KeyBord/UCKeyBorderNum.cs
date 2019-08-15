@@ -1,4 +1,9 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：UCKeyBorderNum.cs
+// 创建日期：2019-08-15 16:00:10
+// 功能描述：KeyBord
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -21,7 +26,7 @@ namespace HZH_Controls.Controls
             get { return useCustomEvent; }
             set { useCustomEvent = value; }
         }
-        [Description("数字点击事件"),Category("自定义")]
+        [Description("数字点击事件"), Category("自定义")]
         public event EventHandler NumClick;
         [Description("删除点击事件"), Category("自定义")]
         public event EventHandler BackspaceClick;
@@ -29,7 +34,7 @@ namespace HZH_Controls.Controls
         public event EventHandler EnterClick;
         public UCKeyBorderNum()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         private void Num_MouseDown(object sender, MouseEventArgs e)
@@ -63,8 +68,8 @@ namespace HZH_Controls.Controls
                 EnterClick(sender, e);
             }
             if (useCustomEvent)
-                return;  
-            SendKeys.Send("{ENTER}");            
+                return;
+            SendKeys.Send("{ENTER}");
         }
     }
 }

@@ -1,4 +1,9 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：UCTextBoxEx.cs
+// 创建日期：2019-08-15 16:03:58
+// 功能描述：TextBox
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -249,7 +254,7 @@ namespace HZH_Controls.Controls
             txtInput.GotFocus += (a, b) =>
             {
                 if (isFocusColor)
-                    this.RectColor = Color.FromArgb(78,169,255);
+                    this.RectColor = Color.FromArgb(78, 169, 255);
             };
             txtInput.LostFocus += (a, b) =>
             {
@@ -465,7 +470,7 @@ namespace HZH_Controls.Controls
                 }
                 m_HandAppWin = m_HandPWin.MainWindowHandle;
                 Control p = m_frmAnchor.Controls.Find("keyborder", false)[0];
-                SetParent(m_HandAppWin, p.Handle);              
+                SetParent(m_HandAppWin, p.Handle);
                 ControlHelper.SetForegroundWindow(this.FindForm().Handle);
                 MoveWindow(m_HandAppWin, -111, -41, 626, 412, true);
                 //this.txtInput.SelectionStart = m_intSelectionStart;

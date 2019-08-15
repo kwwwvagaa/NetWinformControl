@@ -100,6 +100,9 @@ namespace Test
             ucPagerControl21.DataSource = lstPage2;
 
             ucBtnsGroup1.DataSource = new Dictionary<string, string>() { { "1", "男" }, { "0", "女" } };
+            ucBtnsGroup2.IsMultiple = true;
+            ucBtnsGroup2.DataSource = new Dictionary<string, string>() { { "1", "河南" }, { "2", "北京" }, { "3", "湖南" }, { "4", "上海" } };
+            ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
         }
 
         private void timer1_Tick(object sender, EventArgs e)

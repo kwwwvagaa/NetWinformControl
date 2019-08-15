@@ -1,4 +1,9 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：UCRadioButton.cs
+// 创建日期：2019-08-15 16:03:13
+// 功能描述：RadioButton
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -169,7 +174,7 @@ namespace HZH_Controls.Controls
 
         private void UCRadioButton_Load(object sender, EventArgs e)
         {
-            if (this.Parent != null&&this._checked)
+            if (this.Parent != null && this._checked)
             {
                 foreach (Control c in this.Parent.Controls)
                 {

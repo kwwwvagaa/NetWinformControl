@@ -1,4 +1,9 @@
-﻿
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：TreeViewEx.cs
+// 创建日期：2019-08-15 16:00:55
+// 功能描述：TreeView
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -340,7 +345,7 @@ namespace HZH_Controls.Controls
         private void treeview_DrawNode(object sender, DrawTreeNodeEventArgs e)
         {
             try
-            {               
+            {
                 if (e.Node == null || !this._isShowByCustomModel || (e.Node.Bounds.Width <= 0 && e.Node.Bounds.Height <= 0 && e.Node.Bounds.X <= 0 && e.Node.Bounds.Y <= 0))
                 {
                     e.DrawDefault = true;

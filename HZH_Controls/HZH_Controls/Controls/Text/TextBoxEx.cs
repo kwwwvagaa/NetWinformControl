@@ -1,4 +1,9 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：TextBoxEx.cs
+// 创建日期：2019-08-15 16:03:44
+// 功能描述：TextBox
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -204,7 +209,7 @@ namespace HZH_Controls.Controls
 
         private void TextBoxEx_TextChanged(object sender, EventArgs e)
         {
-            if (this.Text=="")
+            if (this.Text == "")
             {
                 this.m_strOldValue = this.Text;
             }
@@ -238,7 +243,7 @@ namespace HZH_Controls.Controls
         }
 
         protected override void OnPaint(PaintEventArgs e)
-        {           
+        {
             base.OnPaint(e);
             if (string.IsNullOrEmpty(this.Text) && !string.IsNullOrEmpty(this._promptText))
             {
@@ -257,7 +262,7 @@ namespace HZH_Controls.Controls
                         }
                     }
                 }
-            }          
+            }
         }
 
         protected override void WndProc(ref Message m)
