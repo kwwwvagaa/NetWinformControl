@@ -87,6 +87,7 @@ namespace Test
                 }
                 lstMenu.Add(item);
             }
+            this.ucMenu1.ChildrenItemStyles = new Dictionary<string, object>() { {"BackColor",Color.Yellow } };            
             this.ucMenu1.DataSource = lstMenu;
         }
 

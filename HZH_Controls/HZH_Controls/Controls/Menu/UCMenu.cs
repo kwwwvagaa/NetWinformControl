@@ -216,7 +216,7 @@ namespace HZH_Controls.Controls
                         m_panChildren.Controls.Add(c);
                         m_panChildren.Controls.SetChildIndex(c, 0);
                     }
-                    m_panChildren.MinimumSize = new Size(0, menuitem.DataSource.Childrens.Count * intItemHeigth);
+                    //m_panChildren.MinimumSize = new Size(0, menuitem.DataSource.Childrens.Count * intItemHeigth);
                 }
                 else
                 {
