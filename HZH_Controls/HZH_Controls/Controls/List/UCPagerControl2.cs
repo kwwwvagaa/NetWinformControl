@@ -65,6 +65,8 @@ namespace HZH_Controls.Controls.List
 
         public override void FirstPage()
         {
+            if (PageIndex == 1)
+                return;
             PageIndex = 1;
             StartIndex = (PageIndex - 1) * PageSize;
             ReloadPage();
@@ -77,7 +79,12 @@ namespace HZH_Controls.Controls.List
 
         public override void PreviousPage()
         {
+            if (PageIndex <= 1)
+            {
+                return;
+            }
             PageIndex--;
+
             StartIndex = (PageIndex - 1) * PageSize;
             ReloadPage();
             var s = GetCurrentSource();
@@ -89,6 +96,10 @@ namespace HZH_Controls.Controls.List
 
         public override void NextPage()
         {
+            if (PageIndex >= PageCount)
+            {
+                return;
+            }
             PageIndex++;
             StartIndex = (PageIndex - 1) * PageSize;
             ReloadPage();
@@ -101,6 +112,8 @@ namespace HZH_Controls.Controls.List
 
         public override void EndPage()
         {
+            if (PageIndex == PageCount)
+                return;
             PageIndex = PageCount;
             StartIndex = (PageIndex - 1) * PageSize;
             ReloadPage();
@@ -128,35 +141,66 @@ namespace HZH_Controls.Controls.List
             {
                 ControlHelper.FreezeControl(tableLayoutPanel1, true);
                 List<int> lst = new List<int>();
-                if (PageCount > 0)
-                {
-                    if (PageCount <= 7)
-                    {
-                        for (int i = 0; i < PageCount; i++)
-                        {
-                            lst.Add(i + 1);
-                        }
-                    }
-                    else
-                    {
-                        int start = PageIndex; //开始按钮数字
-                        int end = 1; //结束按钮数字
-                        int pageCount = PageCount; //总页数
-                        int offset = 3; //偏移量
 
-                        start -= offset;//计算左偏移量
-                        start = start < 1 ? 1 : start;//限定最小页码
-                        end = start + 7 - 1;//根据偏移计算结束按钮
-                        end = end > pageCount ? pageCount : end;//限定最大页码
-                        start = end - 7 + 1;//根据偏移计算开始页码
-                        start = start < 1 ? 1 : start;//限定最小页码  
-                        for (int i = start; i <= end; i++)
+                if (PageCount <= 9)
+                {
+                    for (var i = 1; i <= PageCount; i++)
+                    {
+                        lst.Add(i);
+                    }
+                }
+                else
+                {
+                    if (this.PageIndex <= 6)
+                    {
+                        for (var i = 1; i <= 7; i++)
+                        {
+                            lst.Add(i);
+                        }
+                        lst.Add(-1);
+                        lst.Add(PageCount);
+                    }
+                    else if (this.PageIndex > PageCount - 6)
+                    {
+                        lst.Add(1);
+                        lst.Add(-1);
+                        for (var i = PageCount - 6; i <= PageCount; i++)
                         {
                             lst.Add(i);
                         }
                     }
+                    else
+                    {
+                        lst.Add(1);
+                        lst.Add(-1);
+                        var begin = PageIndex - 2;
+                        var end = PageIndex + 2;
+                        if (end > PageCount)
+                        {
+                            end = PageCount;
+                            begin = end - 4;
+                            if (PageIndex - begin < 2)
+                            {
+                                begin = begin - 1;
+                            }
+                        }
+                        else if (end + 1 == PageCount)
+                        {
+                            end = PageCount;
+                        }
+                        for (var i = begin; i <= end; i++)
+                        {
+                            lst.Add(i);
+                        }
+                        if (end != PageCount)
+                        {
+                            lst.Add(-1);
+                            lst.Add(PageCount);
+                        }
+                    }
                 }
-                for (int i = 0; i < 7; i++)
+
+                for (int i = 0; i < 9; i++)
                 {
                     UCBtnExt c = (UCBtnExt)this.tableLayoutPanel1.Controls.Find("p" + (i + 1), false)[0];
                     if (i >= lst.Count)
@@ -165,7 +209,16 @@ namespace HZH_Controls.Controls.List
                     }
                     else
                     {
-                        c.BtnText = lst[i].ToString();
+                        if (lst[i] == -1)
+                        {
+                            c.BtnText = "...";
+                            c.Enabled = false;
+                        }
+                        else
+                        {
+                            c.BtnText = lst[i].ToString();
+                            c.Enabled = true;
+                        }
                         c.Visible = true;
                         if (lst[i] == PageIndex)
                         {
