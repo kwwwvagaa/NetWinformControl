@@ -94,6 +94,16 @@ namespace HZH_Controls.Controls
             set { m_isShowFirstItem = value; }
         }
 
+        private MenuStyle m_menuStyle = MenuStyle.Fill;
+        /// <summary>
+        /// 菜单样式
+        /// </summary>
+        public MenuStyle MenuStyle
+        {
+            get { return m_menuStyle; }
+            set { m_menuStyle = value; }
+        }
+
         private List<Control> m_lstParentItems = new List<Control>();
 
         private IMenuItem m_selectParentItem = null;
@@ -125,10 +135,18 @@ namespace HZH_Controls.Controls
                     }
                 }
                 m_panChildren = new Panel();
-                m_panChildren.Dock = DockStyle.Fill;
+                if (m_menuStyle == HZH_Controls.Controls.MenuStyle.Fill)
+                {
+                    m_panChildren.Dock = DockStyle.Fill;
+                    m_panChildren.Height = 0;
+                }
+                else
+                {
+                    m_panChildren.Dock = DockStyle.Top;
+                    m_panChildren.Height = 0;
+                }
                 m_panChildren.AutoScroll = true;
                 this.Controls.Add(m_panChildren);
-                this.Controls.SetChildIndex(m_panChildren, 0);
             }
             finally
             {
@@ -143,6 +161,7 @@ namespace HZH_Controls.Controls
 
         void parentItem_SelectedItem(object sender, EventArgs e)
         {
+            this.FindForm().ActiveControl = this;
             IMenuItem item = sender as IMenuItem;
             if (m_lstParentItems.Contains(sender as Control))
             {
@@ -186,45 +205,79 @@ namespace HZH_Controls.Controls
             try
             {
                 ControlHelper.FreezeControl(this, true);
-                if (blnChildren)
+                if (m_menuStyle == HZH_Controls.Controls.MenuStyle.Fill)
                 {
-                    Control cMenu = menuitem as Control;
-                    int index = m_lstParentItems.IndexOf(cMenu);
-                    for (int i = 0; i <= index; i++)
+                    if (blnChildren)
                     {
-                        m_lstParentItems[i].Dock = DockStyle.Top;
-                        this.Controls.SetChildIndex(m_lstParentItems[i], 1);
+                        Control cMenu = menuitem as Control;
+                        int index = m_lstParentItems.IndexOf(cMenu);
+                        for (int i = 0; i <= index; i++)
+                        {
+                            m_lstParentItems[i].Dock = DockStyle.Top;
+                            this.Controls.SetChildIndex(m_lstParentItems[i], 1);
+                        }
+                        for (int i = index + 1; i < m_lstParentItems.Count; i++)
+                        {
+                            m_lstParentItems[i].Dock = DockStyle.Bottom;
+                            this.Controls.SetChildIndex(m_lstParentItems[i], m_lstParentItems.Count);
+                        }
+                        m_panChildren.Controls.Clear();
+                        int intItemHeigth = 0;
+                        foreach (var item in menuitem.DataSource.Childrens)
+                        {
+                            IMenuItem parentItem = (IMenuItem)Activator.CreateInstance(m_childrenItemType);
+                            parentItem.DataSource = item;
+                            if (m_childrenItemStyles != null)
+                                parentItem.SetStyle(m_childrenItemStyles);
+                            parentItem.SelectedItem += parentItem_SelectedItem;
+                            Control c = parentItem as Control;
+                            if (intItemHeigth == 0)
+                                intItemHeigth = c.Height;
+                            c.Dock = DockStyle.Top;
+                            m_panChildren.Controls.Add(c);
+                            m_panChildren.Controls.SetChildIndex(c, 0);
+                        }
+                        //m_panChildren.MinimumSize = new Size(0, menuitem.DataSource.Childrens.Count * intItemHeigth);
                     }
-                    for (int i = index + 1; i < m_lstParentItems.Count; i++)
+                    else
                     {
-                        m_lstParentItems[i].Dock = DockStyle.Bottom;
-                        this.Controls.SetChildIndex(m_lstParentItems[i], m_lstParentItems.Count);
+                        m_panChildren.Controls.Clear();
+                        foreach (var item in m_lstParentItems)
+                        {
+                            item.Dock = DockStyle.Top;
+                            this.Controls.SetChildIndex(item, 1);
+                        }
                     }
-                    m_panChildren.Controls.Clear();
-                    int intItemHeigth = 0;
-                    foreach (var item in menuitem.DataSource.Childrens)
-                    {
-                        IMenuItem parentItem = (IMenuItem)Activator.CreateInstance(m_childrenItemType);
-                        parentItem.DataSource = item;
-                        if (m_childrenItemStyles != null)
-                            parentItem.SetStyle(m_childrenItemStyles);
-                        parentItem.SelectedItem += parentItem_SelectedItem;
-                        Control c = parentItem as Control;
-                        if (intItemHeigth == 0)
-                            intItemHeigth = c.Height;
-                        c.Dock = DockStyle.Top;
-                        m_panChildren.Controls.Add(c);
-                        m_panChildren.Controls.SetChildIndex(c, 0);
-                    }
-                    //m_panChildren.MinimumSize = new Size(0, menuitem.DataSource.Childrens.Count * intItemHeigth);
                 }
                 else
                 {
-                    m_panChildren.Controls.Clear();
-                    foreach (var item in m_lstParentItems)
+                    if (blnChildren)
                     {
-                        item.Dock = DockStyle.Top;
-                        this.Controls.SetChildIndex(item, 1);
+                        Control cMenu = menuitem as Control;
+                        int index = m_lstParentItems.IndexOf(cMenu);
+                        this.Controls.SetChildIndex(m_panChildren,m_lstParentItems.Count- index-1 );
+                        m_panChildren.Controls.Clear();
+                        int intItemHeigth = 0;
+                        foreach (var item in menuitem.DataSource.Childrens)
+                        {
+                            IMenuItem parentItem = (IMenuItem)Activator.CreateInstance(m_childrenItemType);
+                            parentItem.DataSource = item;
+                            if (m_childrenItemStyles != null)
+                                parentItem.SetStyle(m_childrenItemStyles);
+                            parentItem.SelectedItem += parentItem_SelectedItem;
+                            Control c = parentItem as Control;
+                            if (intItemHeigth == 0)
+                                intItemHeigth = c.Height;
+                            c.Dock = DockStyle.Top;
+                            m_panChildren.Controls.Add(c);
+                            m_panChildren.Controls.SetChildIndex(c, 0);
+                        }
+                        m_panChildren.Height = menuitem.DataSource.Childrens.Count * intItemHeigth;
+                    }
+                    else
+                    {
+                        m_panChildren.Controls.Clear();
+                        m_panChildren.Height = 0;
                     }
                 }
             }
@@ -240,5 +293,16 @@ namespace HZH_Controls.Controls
         }
     }
 
+    public enum MenuStyle
+    {
+        /// <summary>
+        /// 平铺
+        /// </summary>
+        Fill = 1,
+        /// <summary>
+        /// 顶部对齐
+        /// </summary>
+        Top = 2,
+    }
 
 }

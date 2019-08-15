@@ -66,7 +66,7 @@ namespace Test
             this.ucHorizontalList1.DataSource = lstHL;
 
             List<MenuItemEntity> lstMenu = new List<MenuItemEntity>();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 20; i++)
             {
                 MenuItemEntity item = new MenuItemEntity()
                 {
@@ -75,7 +75,7 @@ namespace Test
                     DataSource = "这里编写一些自定义的数据源，用于扩展"
                 };
                 item.Childrens = new List<MenuItemEntity>();
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < 20; j++)
                 {
                     MenuItemEntity item2 = new MenuItemEntity()
                     {
@@ -87,7 +87,7 @@ namespace Test
                 }
                 lstMenu.Add(item);
             }
-            this.ucMenu1.ChildrenItemStyles = new Dictionary<string, object>() { {"BackColor",Color.Yellow } };            
+            this.ucMenu1.MenuStyle = MenuStyle.Top;  
             this.ucMenu1.DataSource = lstMenu;
         }
 
