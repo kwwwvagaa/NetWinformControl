@@ -342,6 +342,48 @@ public static void ThreadRunExt(
     int intSplashScreenDelayTime = 200)
 ```
 
+##### 11、菜单导航控件
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0815/103949_9fdb0d12_301547.png "menu.png")
+
+``` csharp
+List<MenuItemEntity> lstMenu = new List<MenuItemEntity>();
+for (int i = 0; i < 5; i++)
+{
+    MenuItemEntity item = new MenuItemEntity()
+    {
+        Key = "p" + i.ToString(),
+        Text = "菜单项" + i,
+        DataSource = "这里编写一些自定义的数据源，用于扩展"
+    };
+    item.Childrens = new List<MenuItemEntity>();
+    for (int j = 0; j < 5; j++)
+    {
+        MenuItemEntity item2 = new MenuItemEntity()
+        {
+            Key = "c" + i.ToString(),
+            Text = "菜单子项" + i + "-" + j,
+            DataSource = "这里编写一些自定义的数据源，用于扩展"
+        };
+        item.Childrens.Add(item2);
+    }
+    lstMenu.Add(item);
+}
+this.ucMenu1.DataSource = lstMenu;
+```
+
+>如果预置的样式无法满足你的需求，你还可以自定义节点控件，具体做法为：
+1. 新增自定义控件，实现接口IMenuItem，可分别定义父节点和子节点
+2. 参照UCMenuChildrenItem或UCMenuParentItem实现你自定义的节点
+3. 设置UCMenu的父节点ParentItemType属性和子节点ChildrenItemType属性即可
+
+>如果要修改节点样式，比如背景色等，可使用UCMenu的ParentItemStyles或ChildrenItemStyles，比如
+
+``` csharp
+this.ucMenu1.ParentItemStyles = new Dictionary<string, object>() { {"BackColor",Color.Red } }; 
+this.ucMenu1.ChildrenItemStyles = new Dictionary<string, object>() { {"BackColor",Color.Yellow } }; 
+```
+
 #### 整体样例效果
 
 ##### 1、效果1
