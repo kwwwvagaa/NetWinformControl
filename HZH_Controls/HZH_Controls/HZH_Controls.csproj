@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BtnsGroup\UCBtnsGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BtnsGroup\UCBtnsGroup.Designer.cs">
+      <DependentUpon>UCBtnsGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DataGridView\DataGridViewCellEntity.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewCellEventArgs.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewCellEventHandler.cs" />
@@ -321,6 +327,9 @@
     <Compile Include="Helpers\TextInputType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\BtnsGroup\UCBtnsGroup.resx">
+      <DependentUpon>UCBtnsGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Btn\UCBtnExt.resx">
       <DependentUpon>UCBtnExt.cs</DependentUpon>
     </EmbeddedResource>

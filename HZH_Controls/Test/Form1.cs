@@ -98,6 +98,8 @@ namespace Test
             }
             ucPagerControl21.PageSize = 10;
             ucPagerControl21.DataSource = lstPage2;
+
+            ucBtnsGroup1.DataSource = new Dictionary<string, string>() { { "1", "男" }, { "0", "女" } };
         }
 
         private void timer1_Tick(object sender, EventArgs e)
