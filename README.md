@@ -229,6 +229,8 @@ this.ucDataGridView1.First();
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0812/105558_55920c3b_301547.png "table.png")
 
+>另一种分页控件样式
+
 ![样例图片](https://images.gitee.com/uploads/images/2019/0815/145459_59c24884_301547.png "page.png")
 
 ``` csharp
