@@ -347,7 +347,7 @@ public static void ThreadRunExt(
     int intSplashScreenDelayTime = 200)
 ```
 
-##### 11、菜单导航控件
+##### 12、菜单导航控件
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0815/103949_9fdb0d12_301547.png "menu.png")
 
@@ -395,6 +395,18 @@ this.ucMenu1.ChildrenItemStyles = new Dictionary<string, object>() { {"BackColor
 this.ucMenu1.MenuStyle = MenuStyle.Top; 
 ```
  
+##### 13、按钮组
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0815/155103_ced4e03c_301547.png "btnGroup.png")
+
+``` csharp
+ucBtnsGroup1.DataSource = new Dictionary<string, string>() { { "1", "男" }, { "0", "女" } };
+ucBtnsGroup2.IsMultiple = true;
+ucBtnsGroup2.DataSource = new Dictionary<string, string>() { { "1", "河南" }, { "2", "北京" }, { "3", "湖南" }, { "4", "上海" } };
+ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
+```
+
+
 #### 整体样例效果
 
 ##### 1、效果1
