@@ -64,6 +64,30 @@ namespace Test
             }
 
             this.ucHorizontalList1.DataSource = lstHL;
+
+            List<MenuItemEntity> lstMenu = new List<MenuItemEntity>();
+            for (int i = 0; i < 5; i++)
+            {
+                MenuItemEntity item = new MenuItemEntity()
+                {
+                    Key = "p" + i.ToString(),
+                    Text = "菜单项" + i,
+                    DataSource = "这里编写一些自定义的数据源，用于扩展"
+                };
+                item.Childrens = new List<MenuItemEntity>();
+                for (int j = 0; j < 5; j++)
+                {
+                    MenuItemEntity item2 = new MenuItemEntity()
+                    {
+                        Key = "c" + i.ToString(),
+                        Text = "菜单子项" + i + "-" + j,
+                        DataSource = "这里编写一些自定义的数据源，用于扩展"
+                    };
+                    item.Childrens.Add(item2);
+                }
+                lstMenu.Add(item);
+            }
+            this.ucMenu1.DataSource = lstMenu;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

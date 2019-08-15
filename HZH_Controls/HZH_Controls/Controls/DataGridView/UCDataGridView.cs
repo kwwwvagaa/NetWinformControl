@@ -164,6 +164,8 @@ namespace HZH_Controls.Controls
             get { return m_rowType; }
             set
             {
+                if (value == null)
+                    return;
                 if (!typeof(IDataGridViewRow).IsAssignableFrom(value) || !value.IsSubclassOf(typeof(Control)))
                     throw new Exception("行控件没有实现IDataGridViewRow接口");
                 m_rowType = value;

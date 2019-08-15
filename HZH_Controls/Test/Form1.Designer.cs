@@ -41,28 +41,26 @@
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
             this.ucHorizontalList1 = new HZH_Controls.Controls.UCHorizontalList();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.ucDatePickerExt3 = new HZH_Controls.Controls.UCDatePickerExt();
             this.ucDatePickerExt2 = new HZH_Controls.Controls.UCDatePickerExt();
             this.ucDatePickerExt1 = new HZH_Controls.Controls.UCDatePickerExt();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.ucComboBox2 = new HZH_Controls.Controls.UCComboBox();
             this.ucComboBox1 = new HZH_Controls.Controls.UCComboBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.ucListExt1 = new HZH_Controls.Controls.UCListExt();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.treeViewEx1 = new HZH_Controls.Controls.TreeViewEx();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.ucTextBoxEx4 = new HZH_Controls.Controls.UCTextBoxEx();
             this.ucTextBoxEx3 = new HZH_Controls.Controls.UCTextBoxEx();
             this.ucTextBoxEx2 = new HZH_Controls.Controls.UCTextBoxEx();
             this.ucTextBoxEx1 = new HZH_Controls.Controls.UCTextBoxEx();
             this.ucNumTextBox1 = new HZH_Controls.Controls.UCNumTextBox();
             this.textBoxTransparent1 = new HZH_Controls.Controls.TextBoxTransparent();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ucCheckBox4 = new HZH_Controls.Controls.UCCheckBox();
             this.ucCheckBox3 = new HZH_Controls.Controls.UCCheckBox();
             this.ucCheckBox2 = new HZH_Controls.Controls.UCCheckBox();
@@ -71,11 +69,15 @@
             this.ucRadioButton3 = new HZH_Controls.Controls.UCRadioButton();
             this.ucRadioButton2 = new HZH_Controls.Controls.UCRadioButton();
             this.ucRadioButton1 = new HZH_Controls.Controls.UCRadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ucBtnImg1 = new HZH_Controls.Controls.UCBtnImg();
             this.ucBtnFillet1 = new HZH_Controls.Controls.UCBtnFillet();
             this.ucBtnExt2 = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
+            this.button9 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.ucMenu1 = new HZH_Controls.Controls.UCMenu();
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -85,6 +87,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -199,6 +202,16 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "横向列表";
             // 
+            // ucHorizontalList1
+            // 
+            this.ucHorizontalList1.DataSource = null;
+            this.ucHorizontalList1.IsAutoSelectFirst = true;
+            this.ucHorizontalList1.Location = new System.Drawing.Point(6, 25);
+            this.ucHorizontalList1.Name = "ucHorizontalList1";
+            this.ucHorizontalList1.SelectedItem = null;
+            this.ucHorizontalList1.Size = new System.Drawing.Size(473, 53);
+            this.ucHorizontalList1.TabIndex = 0;
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.ucDatePickerExt3);
@@ -210,102 +223,6 @@
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "日历";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.ucComboBox2);
-            this.groupBox6.Controls.Add(this.ucComboBox1);
-            this.groupBox6.Location = new System.Drawing.Point(25, 363);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(187, 119);
-            this.groupBox6.TabIndex = 6;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "下拉列表";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.ucListExt1);
-            this.groupBox8.Location = new System.Drawing.Point(876, 30);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(240, 324);
-            this.groupBox8.TabIndex = 4;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "列表";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.treeViewEx1);
-            this.groupBox5.Location = new System.Drawing.Point(625, 30);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(240, 327);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "树";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.ucTextBoxEx4);
-            this.groupBox4.Controls.Add(this.ucTextBoxEx3);
-            this.groupBox4.Controls.Add(this.ucTextBoxEx2);
-            this.groupBox4.Controls.Add(this.ucTextBoxEx1);
-            this.groupBox4.Controls.Add(this.ucNumTextBox1);
-            this.groupBox4.Controls.Add(this.textBoxTransparent1);
-            this.groupBox4.Location = new System.Drawing.Point(397, 30);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(209, 327);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "文本框";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.ucCheckBox4);
-            this.groupBox3.Controls.Add(this.ucCheckBox3);
-            this.groupBox3.Controls.Add(this.ucCheckBox2);
-            this.groupBox3.Controls.Add(this.ucCheckBox1);
-            this.groupBox3.Controls.Add(this.ucRadioButton4);
-            this.groupBox3.Controls.Add(this.ucRadioButton3);
-            this.groupBox3.Controls.Add(this.ucRadioButton2);
-            this.groupBox3.Controls.Add(this.ucRadioButton1);
-            this.groupBox3.Location = new System.Drawing.Point(232, 30);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(149, 327);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "单选/复选";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.ucBtnImg1);
-            this.groupBox2.Controls.Add(this.ucBtnFillet1);
-            this.groupBox2.Controls.Add(this.ucBtnExt2);
-            this.groupBox2.Controls.Add(this.ucBtnExt1);
-            this.groupBox2.Location = new System.Drawing.Point(25, 30);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(187, 327);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "按钮";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(964, 34);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(116, 23);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "FrmAnchor2";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // ucHorizontalList1
-            // 
-            this.ucHorizontalList1.DataSource = null;
-            this.ucHorizontalList1.IsAutoSelectFirst = true;
-            this.ucHorizontalList1.Location = new System.Drawing.Point(6, 25);
-            this.ucHorizontalList1.Name = "ucHorizontalList1";
-            this.ucHorizontalList1.SelectedItem = null;
-            this.ucHorizontalList1.Size = new System.Drawing.Size(473, 53);
-            this.ucHorizontalList1.TabIndex = 0;
             // 
             // ucDatePickerExt3
             // 
@@ -367,6 +284,17 @@
             this.ucDatePickerExt1.TimeFontSize = 20;
             this.ucDatePickerExt1.TimeType = HZH_Controls.Controls.DateTimePickerType.DateTime;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.ucComboBox2);
+            this.groupBox6.Controls.Add(this.ucComboBox1);
+            this.groupBox6.Location = new System.Drawing.Point(25, 363);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(187, 119);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "下拉列表";
+            // 
             // ucComboBox2
             // 
             this.ucComboBox2.BackColor = System.Drawing.Color.Transparent;
@@ -415,6 +343,16 @@
             this.ucComboBox1.TabIndex = 5;
             this.ucComboBox1.TextValue = null;
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.ucListExt1);
+            this.groupBox8.Location = new System.Drawing.Point(876, 30);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(240, 324);
+            this.groupBox8.TabIndex = 4;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "列表";
+            // 
             // ucListExt1
             // 
             this.ucListExt1.AutoScroll = true;
@@ -434,6 +372,16 @@
             this.ucListExt1.TabIndex = 0;
             this.ucListExt1.Title2Font = new System.Drawing.Font("微软雅黑", 14F);
             this.ucListExt1.TitleFont = new System.Drawing.Font("微软雅黑", 15F);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.treeViewEx1);
+            this.groupBox5.Location = new System.Drawing.Point(625, 30);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(240, 327);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "树";
             // 
             // treeViewEx1
             // 
@@ -466,6 +414,21 @@
             this.treeViewEx1.TabIndex = 3;
             this.treeViewEx1.TipFont = new System.Drawing.Font("Arial Unicode MS", 12F);
             this.treeViewEx1.TipImage = ((System.Drawing.Image)(resources.GetObject("treeViewEx1.TipImage")));
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.ucTextBoxEx4);
+            this.groupBox4.Controls.Add(this.ucTextBoxEx3);
+            this.groupBox4.Controls.Add(this.ucTextBoxEx2);
+            this.groupBox4.Controls.Add(this.ucTextBoxEx1);
+            this.groupBox4.Controls.Add(this.ucNumTextBox1);
+            this.groupBox4.Controls.Add(this.textBoxTransparent1);
+            this.groupBox4.Location = new System.Drawing.Point(397, 30);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(209, 327);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "文本框";
             // 
             // ucTextBoxEx4
             // 
@@ -683,6 +646,23 @@
             this.textBoxTransparent1.TabIndex = 0;
             this.textBoxTransparent1.Text = "这是一个透明文本框";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.ucCheckBox4);
+            this.groupBox3.Controls.Add(this.ucCheckBox3);
+            this.groupBox3.Controls.Add(this.ucCheckBox2);
+            this.groupBox3.Controls.Add(this.ucCheckBox1);
+            this.groupBox3.Controls.Add(this.ucRadioButton4);
+            this.groupBox3.Controls.Add(this.ucRadioButton3);
+            this.groupBox3.Controls.Add(this.ucRadioButton2);
+            this.groupBox3.Controls.Add(this.ucRadioButton1);
+            this.groupBox3.Location = new System.Drawing.Point(232, 30);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(149, 327);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "单选/复选";
+            // 
             // ucCheckBox4
             // 
             this.ucCheckBox4.BackColor = System.Drawing.Color.Transparent;
@@ -766,6 +746,19 @@
             this.ucRadioButton1.Size = new System.Drawing.Size(126, 30);
             this.ucRadioButton1.TabIndex = 0;
             this.ucRadioButton1.TextValue = "单选按钮1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ucBtnImg1);
+            this.groupBox2.Controls.Add(this.ucBtnFillet1);
+            this.groupBox2.Controls.Add(this.ucBtnExt2);
+            this.groupBox2.Controls.Add(this.ucBtnExt1);
+            this.groupBox2.Location = new System.Drawing.Point(25, 30);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(187, 327);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "按钮";
             // 
             // ucBtnImg1
             // 
@@ -859,6 +852,16 @@
             this.ucBtnExt1.TabStop = false;
             this.ucBtnExt1.TipsText = "";
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(964, 34);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(116, 23);
+            this.button9.TabIndex = 0;
+            this.button9.Text = "FrmAnchor2";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -876,11 +879,36 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 2;
             // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.ucMenu1);
+            this.groupBox10.Location = new System.Drawing.Point(1162, 88);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(200, 490);
+            this.groupBox10.TabIndex = 3;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "导航";
+            // 
+            // ucMenu1
+            // 
+            this.ucMenu1.ChildrenItemStyles = null;
+            this.ucMenu1.ChildrenItemType = typeof(HZH_Controls.Controls.UCMenuChildrenItem);
+            this.ucMenu1.DataSource = null;
+            this.ucMenu1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucMenu1.IsShowFirstItem = true;
+            this.ucMenu1.Location = new System.Drawing.Point(3, 17);
+            this.ucMenu1.Name = "ucMenu1";
+            this.ucMenu1.ParentItemStyles = null;
+            this.ucMenu1.ParentItemType = typeof(HZH_Controls.Controls.UCMenuParentItem);
+            this.ucMenu1.Size = new System.Drawing.Size(194, 470);
+            this.ucMenu1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1176, 616);
+            this.ClientSize = new System.Drawing.Size(1374, 616);
+            this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);
@@ -905,6 +933,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -957,6 +986,8 @@
         private HZH_Controls.Controls.UCHorizontalList ucHorizontalList1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private HZH_Controls.Controls.UCMenu ucMenu1;
     }
 }
 

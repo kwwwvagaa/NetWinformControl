@@ -66,6 +66,26 @@
     <Compile Include="Controls\List\UCPagerControl.Designer.cs">
       <DependentUpon>UCPagerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Menu\IMenuItem.cs" />
+    <Compile Include="Controls\Menu\MenuItemEntity.cs" />
+    <Compile Include="Controls\Menu\UCMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Menu\UCMenu.Designer.cs">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Menu\UCMenuChildrenItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Menu\UCMenuChildrenItem.Designer.cs">
+      <DependentUpon>UCMenuChildrenItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Menu\UCMenuParentItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Menu\UCMenuParentItem.Designer.cs">
+      <DependentUpon>UCMenuParentItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\ControlHelper.cs" />
     <Compile Include="Controls\Btn\UCBtnExt.cs">
       <SubType>UserControl</SubType>
@@ -352,6 +372,15 @@
     <EmbeddedResource Include="Controls\List\UCPagerControlBase.resx">
       <DependentUpon>UCPagerControlBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Menu\UCMenu.resx">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Menu\UCMenuChildrenItem.resx">
+      <DependentUpon>UCMenuChildrenItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Menu\UCMenuParentItem.resx">
+      <DependentUpon>UCMenuParentItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Process\ProcessExt.resx">
       <DependentUpon>ProcessExt.cs</DependentUpon>
     </EmbeddedResource>
@@ -521,6 +550,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sanjiao2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sanjiao1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -383,6 +383,26 @@ namespace HZH_Controls.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap sanjiao1 {
+            get {
+                object obj = ResourceManager.GetObject("sanjiao1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap sanjiao2 {
+            get {
+                object obj = ResourceManager.GetObject("sanjiao2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap success {
             get {
                 object obj = ResourceManager.GetObject("success", resourceCulture);
