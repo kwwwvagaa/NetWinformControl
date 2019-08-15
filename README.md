@@ -384,6 +384,12 @@ this.ucMenu1.ParentItemStyles = new Dictionary<string, object>() { {"BackColor",
 this.ucMenu1.ChildrenItemStyles = new Dictionary<string, object>() { {"BackColor",Color.Yellow } }; 
 ```
 
+>菜单默认显示样式为Fill，当菜单项较多时会导致子项无法显示，此时你应修改菜单样式为Top即可
+
+``` csharp
+this.ucMenu1.MenuStyle = MenuStyle.Top; 
+```
+ 
 #### 整体样例效果
 
 ##### 1、效果1
