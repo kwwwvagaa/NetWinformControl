@@ -231,7 +231,7 @@ this.ucDataGridView1.First();
 
 >另一种分页控件样式
 
-![样例图片](https://images.gitee.com/uploads/images/2019/0815/145459_59c24884_301547.png "page.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0815/164510_06392eeb_301547.png "page.png")
 
 ``` csharp
 List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
