@@ -53,12 +53,28 @@ namespace HZH_Controls.Controls
 
         #endregion
         #endregion
-
+        /// <summary>
+        /// 总页数
+        /// </summary>
+        public virtual int PageCount
+        {
+            get;
+            set;
+        }
+        private int m_pageIndex = 1;
+        /// <summary>
+        /// 当前页码
+        /// </summary>
+        public virtual int PageIndex
+        {
+            get { return m_pageIndex; }
+            set { m_pageIndex = value; }
+        }
         /// <summary>
         /// 关联的数据源
         /// </summary>
         public virtual List<object> DataSource { get; set; }
-        public event PageControlEventHandler ShowSourceChanged;
+        public virtual event PageControlEventHandler ShowSourceChanged;
         private int m_pageSize = 1;
         /// <summary>
         /// 每页显示数量
@@ -84,7 +100,6 @@ namespace HZH_Controls.Controls
                     startIndex = 0;
             }
         }
-       
 
         public UCPagerControlBase()
         {
@@ -162,7 +177,7 @@ namespace HZH_Controls.Controls
         {
             if (DataSource == null)
                 return;
-            startIndex = DataSource.Count  - m_pageSize;
+            startIndex = DataSource.Count - m_pageSize;
             if (startIndex < 0)
                 startIndex = 0;
             var s = GetCurrentSource();
@@ -230,7 +245,5 @@ namespace HZH_Controls.Controls
         /// <param name="blnRightBtn">是否显示下一页，最后一页</param>
         protected virtual void ShowBtn(bool blnLeftBtn, bool blnRightBtn)
         { }
-
-        
     }
 }

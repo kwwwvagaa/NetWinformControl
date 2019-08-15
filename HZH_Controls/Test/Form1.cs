@@ -89,6 +89,15 @@ namespace Test
             }
             this.ucMenu1.MenuStyle = MenuStyle.Top;  
             this.ucMenu1.DataSource = lstMenu;
+
+
+            List<object> lstPage2 = new List<object>();
+            for (int i = 0; i < 1000; i++)
+            {
+                lstPage2.Add(i);
+            }
+            ucPagerControl21.PageSize = 10;
+            ucPagerControl21.DataSource = lstPage2;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

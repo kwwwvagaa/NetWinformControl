@@ -48,5 +48,8 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <returns></returns>
         List<object> GetCurrentSource();
+
+        int PageCount { get; set; }
+        int PageIndex { get; set; }
     }
 }

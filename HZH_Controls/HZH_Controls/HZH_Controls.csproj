@@ -66,6 +66,12 @@
     <Compile Include="Controls\List\UCPagerControl.Designer.cs">
       <DependentUpon>UCPagerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\List\UCPagerControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\List\UCPagerControl2.Designer.cs">
+      <DependentUpon>UCPagerControl2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Menu\IMenuItem.cs" />
     <Compile Include="Controls\Menu\MenuItemEntity.cs" />
     <Compile Include="Controls\Menu\UCMenu.cs">
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\List\UCPagerControl.resx">
       <DependentUpon>UCPagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\List\UCPagerControl2.resx">
+      <DependentUpon>UCPagerControl2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\List\UCPagerControlBase.resx">
       <DependentUpon>UCPagerControlBase.cs</DependentUpon>
