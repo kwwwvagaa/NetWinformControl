@@ -172,6 +172,7 @@ namespace HZH_Controls.Controls.List
                         }
                     }
                 }
+                ShowBtn(PageIndex > 1, PageIndex < PageCount);
             }
             finally
             {
