@@ -289,36 +289,7 @@ namespace HZH_Controls.Forms
         protected virtual void DoEnter()
         {
         }
-        ///// <summary>
-        ///// 隐藏遮罩层
-        ///// </summary>
-        //public void HideMaskDialog()
-        //{
-        //    if (this._frmTransparent != null && !this._frmTransparent.IsDisposed)
-        //    {
-        //        this._frmTransparent.Hide();
-        //    }
-        //}
-        ///// <summary>
-        ///// 显示遮罩层
-        ///// </summary>
-        ///// <param name="frm"></param>
-        //public void ShowMaskDialog(FrmBase frm)
-        //{
-        //    if (this._frmTransparent == null || this._frmTransparent.IsDisposed)
-        //    {
-        //        this._frmTransparent = new FrmTransparent();
-        //    }
-        //    this._frmTransparent.Width = base.Width;
-        //    this._frmTransparent.Height = base.Height;
-        //    Point location = base.PointToScreen(new Point(0, 0));
-        //    this._frmTransparent.Location = location;
-        //    this._frmTransparent.frmchild = frm;
-        //    if (!this._frmTransparent.Visible)
-        //    {
-        //        this._frmTransparent.ShowDialog(this);
-        //    }
-        //}
+    
         /// <summary>
         /// 设置重绘区域
         /// </summary>
@@ -387,23 +358,7 @@ namespace HZH_Controls.Forms
 
         #region 事件区
 
-        /// <summary>
-        /// 加载时发生
-        /// </summary>
-        /// <param name="e"></param>
-        //protected override void OnLoad(EventArgs e)
-        //{
-        //    if (this._isShowMaskDialog && base.Owner != null)
-        //    {
-        //        FrmBase frmBase = base.Owner as FrmBase;
-        //        if (frmBase != null)
-        //        {
-        //            frmBase.ShowMaskDialog(this);
-        //        }
-        //    }
-        //    base.Focus();
-        //    base.OnLoad(e);
-        //}
+      
         /// <summary>
         /// 关闭时发生
         /// </summary>
@@ -416,27 +371,7 @@ namespace HZH_Controls.Forms
                 (base.Owner as FrmTransparent).Close();
             }
         }
-        ///// <summary>
-        ///// 处理消息过滤
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void FrmBase_HandleDestroyed(object sender, EventArgs e)
-        //{
-
-        //}
-        ///// <summary>
-        ///// 处理消息过滤
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void FrmBase_HandleCreated(object sender, EventArgs e)
-        //{
-        //    if (this._isLoseFocusClose)
-        //    {
-        //        m_hook.Start();
-        //    }
-        //}
+      
         /// <summary>
         /// 快捷键
         /// </summary>

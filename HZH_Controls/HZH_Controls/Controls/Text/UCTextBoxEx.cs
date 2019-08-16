@@ -473,8 +473,6 @@ namespace HZH_Controls.Controls
                 SetParent(m_HandAppWin, p.Handle);
                 ControlHelper.SetForegroundWindow(this.FindForm().Handle);
                 MoveWindow(m_HandAppWin, -111, -41, 626, 412, true);
-                //this.txtInput.SelectionStart = m_intSelectionStart;
-                //this.txtInput.SelectionLength = m_intSelectionLength;
             }
             else
             {

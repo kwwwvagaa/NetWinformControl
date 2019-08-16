@@ -122,14 +122,7 @@ namespace HZH_Controls.Forms
 
         private void FrmDialog_VisibleChanged(object sender, EventArgs e)
         {
-            //if (this.Visible)
-            //{
-            //    ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_CENTER);
-            //}
-            //else
-            //{
-            //    ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_CENTER | ControlHelper.AW_HIDE);
-            //}
+            
         }
     }
 }

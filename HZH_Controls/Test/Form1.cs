@@ -22,10 +22,10 @@ namespace Test
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
                 TreeNode tn = new TreeNode("  父节点" + i);
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     tn.Nodes.Add("    子节点" + j);
                 }
@@ -66,7 +66,7 @@ namespace Test
             this.ucHorizontalList1.DataSource = lstHL;
 
             List<MenuItemEntity> lstMenu = new List<MenuItemEntity>();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 5; i++)
             {
                 MenuItemEntity item = new MenuItemEntity()
                 {
@@ -75,7 +75,7 @@ namespace Test
                     DataSource = "这里编写一些自定义的数据源，用于扩展"
                 };
                 item.Childrens = new List<MenuItemEntity>();
-                for (int j = 0; j < 20; j++)
+                for (int j = 0; j < 5; j++)
                 {
                     MenuItemEntity item2 = new MenuItemEntity()
                     {
@@ -92,7 +92,7 @@ namespace Test
 
 
             List<object> lstPage2 = new List<object>();
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 lstPage2.Add(i);
             }
@@ -103,6 +103,8 @@ namespace Test
             ucBtnsGroup2.IsMultiple = true;
             ucBtnsGroup2.DataSource = new Dictionary<string, string>() { { "1", "河南" }, { "2", "北京" }, { "3", "湖南" }, { "4", "上海" } };
             ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
+
+            this.processExt1.Value = 50;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

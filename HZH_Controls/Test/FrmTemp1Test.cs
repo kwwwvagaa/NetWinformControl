@@ -10,7 +10,7 @@ using HZH_Controls.Controls;
 
 namespace Test
 {
-    public partial class FrmTemp1Test : HZH_Controls.Forms.FrmTemp1
+    public partial class FrmTemp1Test : HZH_Controls.Forms.FrmBack
     {
         public FrmTemp1Test()
         {

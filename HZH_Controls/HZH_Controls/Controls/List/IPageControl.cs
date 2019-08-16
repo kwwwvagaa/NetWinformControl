@@ -53,8 +53,13 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <returns></returns>
         List<object> GetCurrentSource();
-
+        /// <summary>
+        /// 总页数
+        /// </summary>
         int PageCount { get; set; }
+        /// <summary>
+        /// 当前页
+        /// </summary>
         int PageIndex { get; set; }
     }
 }

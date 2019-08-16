@@ -42,7 +42,7 @@
             this.lblTitle.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.lblTitle.Size = new System.Drawing.Size(118, 50);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "分类名称\r\n分类名称";
+            this.lblTitle.Text = "项目名称";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucSplitLine_H1

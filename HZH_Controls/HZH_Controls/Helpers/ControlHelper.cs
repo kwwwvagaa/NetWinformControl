@@ -75,7 +75,6 @@ namespace HZH_Controls
                     ThreadInvokerControl(parent, delegate
                     {
                         Exception ex = obj as Exception;
-                        // MsgHelper.ShowSimpleDilalogResult(parent, ex.Message, true, "");
                     });
                 }
             }
