@@ -4,7 +4,7 @@
 
 c#winfrom自定义控件，`对触屏具有更好的操作支持`，项目是基于framework4.0，完全原生控件开发，`没有使用任何第三方控件`，你可以放心的用在你的项目中。
 
-博客地址：[https://www.cnblogs.com/bfyx](https://www.cnblogs.com/bfyx)
+博客地址：[https://www.cnblogs.com/bfyx](https://www.cnblogs.com/bfyx/p/11364884.html)
 
 欢迎前来交流探讨： 企鹅群568015492 [![企鹅群568015492](//pub.idqqimg.com/wpa/images/group.png "企鹅群568015492")](//shang.qq.com/wpa/qunwpa?idkey=6e08741ef16fe53bf0314c1c9e336c4f626047943a8b76bac062361bab6b4f8d)
 
