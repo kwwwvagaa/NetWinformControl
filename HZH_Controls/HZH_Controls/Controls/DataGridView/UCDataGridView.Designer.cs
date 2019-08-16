@@ -75,15 +75,15 @@
             this.panRow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panRow.Location = new System.Drawing.Point(0, 40);
             this.panRow.Name = "panRow";
-            this.panRow.Size = new System.Drawing.Size(1061, 475);
+            this.panRow.Size = new System.Drawing.Size(1061, 481);
             this.panRow.TabIndex = 1;
             // 
             // panPage
             // 
             this.panPage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panPage.Location = new System.Drawing.Point(0, 515);
+            this.panPage.Location = new System.Drawing.Point(0, 521);
             this.panPage.Name = "panPage";
-            this.panPage.Size = new System.Drawing.Size(1061, 50);
+            this.panPage.Size = new System.Drawing.Size(1061, 44);
             this.panPage.TabIndex = 0;
             this.panPage.Visible = false;
             // 

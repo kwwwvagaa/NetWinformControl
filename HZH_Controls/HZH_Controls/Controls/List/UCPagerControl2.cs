@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HZH_Controls.Controls.List
+namespace HZH_Controls.Controls
 {
     [ToolboxItem(true)]
     public partial class UCPagerControl2 : UCPagerControlBase
@@ -34,31 +34,31 @@ namespace HZH_Controls.Controls.List
 
         public override event PageControlEventHandler ShowSourceChanged;
 
-        private List<object> m_dataSource;
+       
         public override List<object> DataSource
         {
             get
             {
-                return m_dataSource;
+                return base.DataSource;
             }
             set
             {
-                m_dataSource = value;
-                if (m_dataSource == null)
-                    m_dataSource = new List<object>();
+                base.DataSource = value;
+                if (base.DataSource == null)
+                    base.DataSource = new List<object>();
                 ResetPageCount();
             }
         }
-        private int m_intPageSize = 0;
+       
         public override int PageSize
         {
             get
             {
-                return m_intPageSize;
+                return base.PageSize;
             }
             set
             {
-                m_intPageSize = value;
+                base.PageSize = value;
                 ResetPageCount();
             }
         }
@@ -128,7 +128,7 @@ namespace HZH_Controls.Controls.List
         {
             if (PageSize > 0)
             {
-                PageCount = m_dataSource.Count / m_intPageSize + (m_dataSource.Count % m_intPageSize > 0 ? 1 : 0);
+                PageCount = base.DataSource.Count / base.PageSize + (base.DataSource.Count % base.PageSize > 0 ? 1 : 0);
             }
             txtPage.MaxValue = PageCount;
             txtPage.MinValue = 1;

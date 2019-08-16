@@ -1,4 +1,4 @@
-﻿namespace HZH_Controls.Controls.List
+﻿namespace HZH_Controls.Controls
 {
     partial class UCPagerControl2
     {

@@ -72,6 +72,9 @@ namespace HZH_Controls.Forms
         }
         #endregion
 
+        /// <summary>
+        /// 重置倒计时
+        /// </summary>
         public void ResetTimer()
         {
             if (m_CloseTime > 0)

@@ -78,7 +78,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.ucMenu1 = new HZH_Controls.Controls.UCMenu();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.ucPagerControl21 = new HZH_Controls.Controls.List.UCPagerControl2();
+            this.ucPagerControl21 = new HZH_Controls.Controls.UCPagerControl2();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.ucBtnsGroup1 = new HZH_Controls.Controls.UCBtnsGroup();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
@@ -1096,7 +1096,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox10;
         private HZH_Controls.Controls.UCMenu ucMenu1;
-        private HZH_Controls.Controls.List.UCPagerControl2 ucPagerControl21;
+        private HZH_Controls.Controls.UCPagerControl2 ucPagerControl21;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox12;
         private HZH_Controls.Controls.UCBtnsGroup ucBtnsGroup1;
