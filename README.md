@@ -407,6 +407,14 @@ ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0817/104555_cc0b40fc_301547.png "tab.png")
 
+##### 15、步骤控件
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0817/162039_98824330_301547.png "1.png")
+
+##### 16、有标题的面板
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0817/162107_8a576e36_301547.png "2.png")
+
 #### 整体样例效果
 
 ##### 1、效果1
