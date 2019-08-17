@@ -18,6 +18,7 @@ namespace HZH_Controls.Controls
         {
             SetStyles();
             this.Multiline = true;
+            this.ItemSize = new Size(this.ItemSize.Width, 50);
         }
 
         private void SetStyles()
@@ -274,7 +275,7 @@ namespace HZH_Controls.Controls
             {
                 Rectangle borderRect = this.TabPages[0].Bounds;
                 //borderRect.Inflate(1, 1);
-                Rectangle rect = new Rectangle(borderRect.X - 2, borderRect.Y-1, borderRect.Width + 5, borderRect.Height+2);
+                Rectangle rect = new Rectangle(borderRect.X - 2, borderRect.Y - 1, borderRect.Width + 5, borderRect.Height + 2);
                 ControlPaint.DrawBorder(e.Graphics, rect, this.BorderColor, ButtonBorderStyle.Solid);
             }
         }
@@ -318,9 +319,9 @@ namespace HZH_Controls.Controls
             }
 
             path.AddLine(rect.Left, rect.Top, rect.Left, rect.Bottom + 1);
-            path.AddLine(rect.Left, rect.Top, rect.Right , rect.Top);
-            path.AddLine(rect.Right , rect.Top, rect.Right , rect.Bottom + 1);
-            path.AddLine(rect.Right , rect.Bottom + 1, rect.Left, rect.Bottom + 1);
+            path.AddLine(rect.Left, rect.Top, rect.Right, rect.Top);
+            path.AddLine(rect.Right, rect.Top, rect.Right, rect.Bottom + 1);
+            path.AddLine(rect.Right, rect.Bottom + 1, rect.Left, rect.Bottom + 1);
 
             return path;
         }
