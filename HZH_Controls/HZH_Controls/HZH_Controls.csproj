@@ -98,6 +98,12 @@
     <Compile Include="Controls\Menu\UCMenuParentItem.Designer.cs">
       <DependentUpon>UCMenuParentItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Panel\UCPanelTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Panel\UCPanelTitle.Designer.cs">
+      <DependentUpon>UCPanelTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Step\UCStep.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -407,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Menu\UCMenuParentItem.resx">
       <DependentUpon>UCMenuParentItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Panel\UCPanelTitle.resx">
+      <DependentUpon>UCPanelTitle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Process\ProcessExt.resx">
       <DependentUpon>ProcessExt.cs</DependentUpon>

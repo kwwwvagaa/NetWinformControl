@@ -28,19 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
             this.SuspendLayout();
             // 
-            // button1
+            // ucPanelTitle1
             // 
-            this.button1.Location = new System.Drawing.Point(180, 175);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ucPanelTitle1.BackColor = System.Drawing.Color.Transparent;
+            this.ucPanelTitle1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.ucPanelTitle1.ConerRadius = 10;
+            this.ucPanelTitle1.FillColor = System.Drawing.Color.White;
+            this.ucPanelTitle1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucPanelTitle1.IsRadius = true;
+            this.ucPanelTitle1.IsShowRect = true;
+            this.ucPanelTitle1.Location = new System.Drawing.Point(406, 14);
+            this.ucPanelTitle1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucPanelTitle1.Name = "ucPanelTitle1";
+            this.ucPanelTitle1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.ucPanelTitle1.RectWidth = 1;
+            this.ucPanelTitle1.Size = new System.Drawing.Size(316, 182);
+            this.ucPanelTitle1.TabIndex = 1;
+            this.ucPanelTitle1.Title = "面板标题";
             // 
             // ucStep1
             // 
@@ -66,7 +74,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(825, 594);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ucPanelTitle1);
             this.Controls.Add(this.ucStep1);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -77,6 +85,6 @@
         #endregion
 
         private HZH_Controls.Controls.UCStep ucStep1;
-        private System.Windows.Forms.Button button1;
+        private HZH_Controls.Controls.UCPanelTitle ucPanelTitle1;
     }
 }
