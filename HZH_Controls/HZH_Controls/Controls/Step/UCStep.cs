@@ -12,6 +12,8 @@ namespace HZH_Controls.Controls
 {
     public partial class UCStep : UserControl
     {
+
+        [Description("步骤更改事件"), Category("自定义")]
         public event EventHandler IndexChecked;
 
         private Color m_stepBackColor = Color.FromArgb(100, 100, 100);
@@ -150,12 +152,12 @@ namespace HZH_Controls.Controls
                         {
                             if (m_stepIndex == i + 1)
                             {
-                                g.DrawLine(new Pen(m_stepForeColor, 2), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth, y + (m_stepWidth / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) - intSplitWidth / 2, y + (m_stepWidth / 2)));
+                                g.DrawLine(new Pen(m_stepForeColor, 2), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + (m_stepWidth / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) - intSplitWidth / 2, y + (m_stepWidth / 2)));
                                 g.DrawLine(new Pen(m_stepBackColor, 2), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth + intSplitWidth / 2, y + (m_stepWidth / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth), y + (m_stepWidth / 2)));
                             }
                             else
                             {
-                                g.DrawLine(new Pen(m_stepForeColor, 2), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth, y + (m_stepWidth / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth), y + (m_stepWidth / 2)));
+                                g.DrawLine(new Pen(m_stepForeColor, 2), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + (m_stepWidth / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth), y + (m_stepWidth / 2)));
                             }
                         }
                     }
@@ -163,7 +165,7 @@ namespace HZH_Controls.Controls
                     {
                         if (i != m_steps.Length - 1)
                         {
-                            g.DrawLine(new Pen(m_stepBackColor, 2), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth, y + (m_stepWidth / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth), y + (m_stepWidth / 2)));
+                            g.DrawLine(new Pen(m_stepBackColor, 2), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + (m_stepWidth / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth), y + (m_stepWidth / 2)));
                         }
                     }
 
