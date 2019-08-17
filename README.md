@@ -403,6 +403,9 @@ ucBtnsGroup2.DataSource = new Dictionary<string, string>() { { "1", "河南" }, 
 ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
 ```
 
+##### 14、Tab页
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0817/104555_cc0b40fc_301547.png "tab.png")
 
 #### 整体样例效果
 
