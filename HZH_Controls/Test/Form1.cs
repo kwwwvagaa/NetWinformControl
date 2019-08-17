@@ -178,7 +178,7 @@ namespace Test
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            new Form2().Show();
         }
 
     }
