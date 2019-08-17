@@ -25,7 +25,9 @@ namespace HZH_Controls.Controls
             set
             {
                 _DataSource = value;
-                int intWidth = ControlHelper.GetStringWidth(value.Value, lblTitle.CreateGraphics(), lblTitle.Font);
+                var g=lblTitle.CreateGraphics();
+                int intWidth = ControlHelper.GetStringWidth(value.Value, g, lblTitle.Font);
+                g.Dispose();
                 if (intWidth < 50)
                     intWidth = 50;
                 this.Width = intWidth + 20;

@@ -431,23 +431,16 @@ namespace HZH_Controls
            System.Drawing.Graphics g,
            System.Drawing.Font font)
         {
-            try
+            string[] strs = strSource.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            float fltWidth = 0;
+            foreach (var item in strs)
             {
-                string[] strs = strSource.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-                float fltWidth = 0;
-                foreach (var item in strs)
-                {
-                    System.Drawing.SizeF sizeF = g.MeasureString(strSource.Replace(" ", "A"), font);
-                    if (sizeF.Width > fltWidth)
-                        fltWidth = sizeF.Width;
-                }
+                System.Drawing.SizeF sizeF = g.MeasureString(strSource.Replace(" ", "A"), font);
+                if (sizeF.Width > fltWidth)
+                    fltWidth = sizeF.Width;
+            }
 
-                return (int)fltWidth;
-            }
-            finally
-            {
-                g.Dispose();
-            }
+            return (int)fltWidth;
         }
         #endregion
 

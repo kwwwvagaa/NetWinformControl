@@ -210,31 +210,6 @@ namespace HZH_Controls.Controls
             get { return _selectedText; }
             private set
             {
-                //if (_source == null || _source.Count <= 0)
-                //{
-                //    _selectText = "";
-                //    _selectValue = "";
-                //    _selectIndex = -1;
-                //    _selectItem = new KeyValuePair<string, string>();
-                //}
-                //else
-                //{
-                //    _selectText = "";
-                //    _selectValue = "";
-                //    _selectIndex = -1;
-                //    _selectItem = new KeyValuePair<string, string>();
-                //    for (int i = 0; i < _source.Count; i++)
-                //    {
-                //        if (_source[i].Value == value)
-                //        {
-                //            _selectText = value;
-                //            _selectValue = _source[i].Key;
-                //            _selectIndex = i;
-                //            _selectItem = _source[i];
-                //            break;
-                //        }
-                //    }
-                //}
                 _selectedText = value;
                 lblInput.Text = _selectedText;
                 txtInput.Text = _selectedText;
@@ -417,25 +392,6 @@ namespace HZH_Controls.Controls
                 base.FillColor = Color.White;
                 base.RectColor = Color.FromArgb(220, 220, 220);
             }
-
-            //if (this.Parent != null && BackColor == Color.Transparent)
-            //{
-            //    Control c = this;
-            //    while (true)
-            //    {
-            //        if (c.BackColor == Color.Transparent)
-            //        {
-            //            c = c.Parent;
-            //        }
-            //        else
-            //        {
-            //            txtInput.BackColor = c.BackColor;
-            //            base.FillColor = c.BackColor;
-            //            base.RectColor = c.BackColor;
-            //            break;
-            //        }
-            //    }
-            //}
         }
     }
 }

@@ -98,6 +98,9 @@
     <Compile Include="Controls\Menu\UCMenuParentItem.Designer.cs">
       <DependentUpon>UCMenuParentItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Tab\TabControlExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Helpers\ControlHelper.cs" />
     <Compile Include="Controls\Btn\UCBtnExt.cs">
       <SubType>UserControl</SubType>
