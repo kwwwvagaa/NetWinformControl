@@ -149,7 +149,7 @@ namespace HZH_Controls.Controls
             get { return m_value; }
             set
             {
-                if (m_maxValue < value || value <= 0)
+                if (m_maxValue < value || value < 0)
                     return;
                 m_value = value;
                 if (ValueChanged != null)
@@ -221,7 +221,7 @@ namespace HZH_Controls.Controls
             g.InterpolationMode = InterpolationMode.HighQualityBicubic;
             g.CompositingQuality = CompositingQuality.HighQuality;
 
-            int intWidth = Math.Min(this.Size.Width, this.Size.Height);
+            int intWidth = Math.Min(this.Size.Width, this.Size.Height) - 1;
             //底圆
             g.FillEllipse(new SolidBrush(m_backEllipseColor), new Rectangle(new Point(0, 0), new Size(intWidth, intWidth)));
             if (m_showType == HZH_Controls.Controls.ShowType.Ring)

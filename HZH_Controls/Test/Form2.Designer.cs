@@ -48,10 +48,10 @@
             this.ucProcessEllipse1.Location = new System.Drawing.Point(78, 117);
             this.ucProcessEllipse1.MaxValue = 100;
             this.ucProcessEllipse1.Name = "ucProcessEllipse1";
-            this.ucProcessEllipse1.ShowType = HZH_Controls.Controls.ShowType.Sector;
+            this.ucProcessEllipse1.ShowType = HZH_Controls.Controls.ShowType.Ring;
             this.ucProcessEllipse1.Size = new System.Drawing.Size(150, 150);
             this.ucProcessEllipse1.TabIndex = 2;
-            this.ucProcessEllipse1.Value = 45;
+            this.ucProcessEllipse1.Value = 0;
             this.ucProcessEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucProcessEllipse1.ValueMargin = 0;
             this.ucProcessEllipse1.ValueType = HZH_Controls.Controls.ValueType.Percent;
@@ -103,6 +103,7 @@
             this.Controls.Add(this.ucPanelTitle1);
             this.Controls.Add(this.ucStep1);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.ResumeLayout(false);
 
