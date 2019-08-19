@@ -104,6 +104,12 @@
     <Compile Include="Controls\Panel\UCPanelTitle.Designer.cs">
       <DependentUpon>UCPanelTitle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Process\UCProcessEllipse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Process\UCProcessEllipse.Designer.cs">
+      <DependentUpon>UCProcessEllipse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Step\UCStep.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,11 +217,11 @@
     <Compile Include="Controls\List\UCPagerControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Process\ProcessExt.cs">
+    <Compile Include="Controls\Process\UCProcessExt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Process\ProcessExt.Designer.cs">
-      <DependentUpon>ProcessExt.cs</DependentUpon>
+    <Compile Include="Controls\Process\UCProcessExt.Designer.cs">
+      <DependentUpon>UCProcessExt.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\RadioButton\UCRadioButton.cs">
       <SubType>UserControl</SubType>
@@ -417,8 +423,8 @@
     <EmbeddedResource Include="Controls\Panel\UCPanelTitle.resx">
       <DependentUpon>UCPanelTitle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Process\ProcessExt.resx">
-      <DependentUpon>ProcessExt.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Process\UCProcessExt.resx">
+      <DependentUpon>UCProcessExt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RadioButton\UCRadioButton.resx">
       <DependentUpon>UCRadioButton.cs</DependentUpon>

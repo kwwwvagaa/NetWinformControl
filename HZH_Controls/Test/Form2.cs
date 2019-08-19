@@ -20,5 +20,12 @@ namespace Test
         {
             this.ucStep1.StepIndex = 3;
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.ucProcessEllipse1.Value++;
+            if (this.ucProcessEllipse1.Value == 100)
+                timer1.Enabled = false;
+        }
     }
 }

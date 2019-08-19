@@ -28,9 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ucProcessEllipse1 = new HZH_Controls.Controls.UCProcessEllipse();
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
             this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // ucProcessEllipse1
+            // 
+            this.ucProcessEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.ucProcessEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.ucProcessEllipse1.IsShowCoreEllipseBorder = true;
+            this.ucProcessEllipse1.Location = new System.Drawing.Point(78, 117);
+            this.ucProcessEllipse1.MaxValue = 100;
+            this.ucProcessEllipse1.Name = "ucProcessEllipse1";
+            this.ucProcessEllipse1.ShowType = HZH_Controls.Controls.ShowType.Sector;
+            this.ucProcessEllipse1.Size = new System.Drawing.Size(150, 150);
+            this.ucProcessEllipse1.TabIndex = 2;
+            this.ucProcessEllipse1.Value = 45;
+            this.ucProcessEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucProcessEllipse1.ValueMargin = 0;
+            this.ucProcessEllipse1.ValueType = HZH_Controls.Controls.ValueType.Percent;
+            this.ucProcessEllipse1.ValueWidth = 30;
             // 
             // ucPanelTitle1
             // 
@@ -74,6 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(825, 594);
+            this.Controls.Add(this.ucProcessEllipse1);
             this.Controls.Add(this.ucPanelTitle1);
             this.Controls.Add(this.ucStep1);
             this.Name = "Form2";
@@ -86,5 +112,7 @@
 
         private HZH_Controls.Controls.UCStep ucStep1;
         private HZH_Controls.Controls.UCPanelTitle ucPanelTitle1;
+        private HZH_Controls.Controls.UCProcessEllipse ucProcessEllipse1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -83,7 +83,7 @@
             this.ucBtnsGroup1 = new HZH_Controls.Controls.UCBtnsGroup();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.ucBtnsGroup2 = new HZH_Controls.Controls.UCBtnsGroup();
-            this.processExt1 = new HZH_Controls.Controls.ProcessExt();
+            this.processExt1 = new HZH_Controls.Controls.UCProcessExt();
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
             this.ucSplitLine_V1 = new HZH_Controls.Controls.UCSplitLine_V();
             this.groupBox1.SuspendLayout();
@@ -1102,7 +1102,7 @@
         private HZH_Controls.Controls.UCBtnsGroup ucBtnsGroup1;
         private System.Windows.Forms.GroupBox groupBox13;
         private HZH_Controls.Controls.UCBtnsGroup ucBtnsGroup2;
-        private HZH_Controls.Controls.ProcessExt processExt1;
+        private HZH_Controls.Controls.UCProcessExt processExt1;
         private HZH_Controls.Controls.UCSplitLine_H ucSplitLine_H1;
         private HZH_Controls.Controls.UCSplitLine_V ucSplitLine_V1;
     }
