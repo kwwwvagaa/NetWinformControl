@@ -105,6 +105,7 @@ namespace HZH_Controls.Controls
             if (m_navigations != null && m_navigations.Length > 0)
             {
                 var g = e.Graphics;
+                g.SetGDIHigh();
                 int intLastX = 0;
                 int intLength = m_navigations.Length;
                 for (int i = 0; i < m_navigations.Length; i++)

@@ -5,6 +5,8 @@
 // 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -630,5 +632,15 @@ namespace HZH_Controls
         }
         #endregion
 
+        /// <summary>
+        /// 设置GDI高质量模式抗锯齿
+        /// </summary>
+        /// <param name="g"></param>
+        public static void SetGDIHigh(this Graphics g)
+        {
+            g.SmoothingMode = SmoothingMode.AntiAlias;  //使绘图质量最高，即消除锯齿
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            g.CompositingQuality = CompositingQuality.HighQuality;
+        }
     }
 }

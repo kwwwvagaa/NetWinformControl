@@ -122,6 +122,12 @@
     <Compile Include="Controls\Step\UCStep.Designer.cs">
       <DependentUpon>UCStep.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Switch\UCSwitch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Switch\UCSwitch.Designer.cs">
+      <DependentUpon>UCSwitch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Tab\TabControlExt.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -449,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Step\UCStep.resx">
       <DependentUpon>UCStep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Switch\UCSwitch.resx">
+      <DependentUpon>UCSwitch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Text\TextBoxTransparent.resx">
       <DependentUpon>TextBoxTransparent.cs</DependentUpon>

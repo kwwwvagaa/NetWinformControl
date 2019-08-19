@@ -217,9 +217,7 @@ namespace HZH_Controls.Controls
             base.OnPaint(e);
 
             var g = e.Graphics;
-            g.SmoothingMode = SmoothingMode.AntiAlias;  //使绘图质量最高，即消除锯齿
-            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            g.CompositingQuality = CompositingQuality.HighQuality;
+            g.SetGDIHigh();
 
             int intWidth = Math.Min(this.Size.Width, this.Size.Height) - 1;
             //底圆
