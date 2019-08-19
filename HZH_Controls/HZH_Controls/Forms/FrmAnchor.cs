@@ -73,6 +73,21 @@ namespace HZH_Controls.Forms
                 intY += deviation.Value.Y;
             }
             this.Location = new Point(intX, intY);
+
+            if (parentControl.FindForm() != null)
+            {
+                Form frmP = parentControl.FindForm();
+                if (!frmP.IsDisposed)
+                {
+                    frmP.LocationChanged += frmP_LocationChanged;
+                }
+            }
+            parentControl.LocationChanged += frmP_LocationChanged;
+        }
+
+        void frmP_LocationChanged(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         public FrmAnchor(Control parentControl, Size size, Point? deviation = null)
