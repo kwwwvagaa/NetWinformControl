@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>HZHControls</title>
     <authors>HuangZhengHui</authors>
     <owners>HuangZhengHui</owners>
@@ -13,6 +13,6 @@
     <description>C# winfrom custom control, has better operation support for touch screen. The project is based on framework 4.0, completely native control development, without using any third-party control, you can rest assured that it is used in your project.</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2019</copyright>
-    <tags>c# winfrom custom control</tags>
+    <tags>c# winfrom custom control HZH_Controls HZHControls</tags>
   </metadata>
 </package>

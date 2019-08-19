@@ -24,8 +24,11 @@ namespace Test
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.ucProcessEllipse1.Value++;
+            this.ucProcessEllipse2.Value++;
             if (this.ucProcessEllipse1.Value == 100)
-                timer1.Enabled = false;
+                this.ucProcessEllipse1.Value = 0;
+            if (this.ucProcessEllipse2.Value == 100)
+                this.ucProcessEllipse2.Value = 0;
         }
     }
 }

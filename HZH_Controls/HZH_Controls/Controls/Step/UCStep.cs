@@ -214,12 +214,12 @@ namespace HZH_Controls.Controls
                         {
                             if (m_stepIndex == i + 1)
                             {
-                                g.DrawLine(new Pen(m_stepForeColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) - intSplitWidth / 2, y + ((m_stepWidth) / 2)));
-                                g.DrawLine(new Pen(m_stepBackColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth + intSplitWidth / 2, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) + 3, y + ((m_stepWidth) / 2)));
+                                g.DrawLine(new Pen(m_stepForeColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) - intSplitWidth / 2 + 10, y + ((m_stepWidth) / 2)));
+                                g.DrawLine(new Pen(m_stepBackColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth + intSplitWidth / 2, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) + 10, y + ((m_stepWidth) / 2)));
                             }
                             else
                             {
-                                g.DrawLine(new Pen(m_stepForeColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) + 3, y + ((m_stepWidth) / 2)));
+                                g.DrawLine(new Pen(m_stepForeColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) + 10, y + ((m_stepWidth) / 2)));
                             }
                         }
                     }
@@ -227,7 +227,7 @@ namespace HZH_Controls.Controls
                     {
                         if (i != m_steps.Length - 1)
                         {
-                            g.DrawLine(new Pen(m_stepBackColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) + 3, y + ((m_stepWidth) / 2)));
+                            g.DrawLine(new Pen(m_stepBackColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) + 10, y + ((m_stepWidth) / 2)));
                         }
                     }
                 }
