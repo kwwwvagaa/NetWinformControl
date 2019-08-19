@@ -132,7 +132,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 0;
-            this.button3.Text = "FrmTemp1";
+            this.button3.Text = "表格测试";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -869,7 +869,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(116, 23);
             this.button9.TabIndex = 0;
-            this.button9.Text = "FrmAnchor2";
+            this.button9.Text = "更多控件";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
