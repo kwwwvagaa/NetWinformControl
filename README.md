@@ -114,6 +114,8 @@ frm.ShowDialog(this);
 ![样例图片](https://images.gitee.com/uploads/images/2019/0808/153820_31e8fea6_301547.png "k2.png")
 ![样例图片](https://images.gitee.com/uploads/images/2019/0808/153829_37e4dff5_301547.png "k3.png")
 
+`手写输入需要搜狗的手写支持，请复制HandInput文件夹到运行目录下`
+
 *时间控件效果*
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0808/160404_b8cf7353_301547.png "time1.png")
