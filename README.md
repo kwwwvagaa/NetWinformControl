@@ -12,6 +12,8 @@ c#winfrom自定义控件，`对触屏具有更好的操作支持`，项目是基
 
 #### 源码仅用于交流学习，开源协议为[GPL-3.0](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/LICENSE)，如商业使用请进群联系群主授权
 
+#### 来都来了，点个`Star`再走吧
+
 #### 样例
 
 ##### 1、提示窗效果图
