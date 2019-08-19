@@ -429,6 +429,10 @@ ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0819/111929_25c71140_301547.png "1.png")
 
+##### 19、开关
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0819/160415_121416e0_301547.png "switch.png")
+
 #### 整体样例效果
 
 ##### 1、效果1
