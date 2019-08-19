@@ -134,6 +134,10 @@ namespace HZH_Controls.Controls
                         parentItem.SelectedItem += parentItem_SelectedItem;
                         Control c = parentItem as Control;
                         c.Dock = DockStyle.Top;
+                        if (parent.Childrens.Count <= 0)
+                        {
+                            parentItem.SetSelectedStyle(null);
+                        }
                         this.Controls.Add(c);
                         this.Controls.SetChildIndex(c, 0);
                         m_lstParentItems.Add(c);
@@ -168,21 +172,22 @@ namespace HZH_Controls.Controls
         {
             this.FindForm().ActiveControl = this;
             IMenuItem item = sender as IMenuItem;
+            bool? blnNull = null;
             if (m_lstParentItems.Contains(sender as Control))
             {
                 if (m_selectParentItem != item)
                 {
                     if (m_selectParentItem != null)
                     {
-                        m_selectParentItem.SetSelectedStyle(false);
+                        m_selectParentItem.SetSelectedStyle((m_selectParentItem.DataSource == null || m_selectParentItem.DataSource.Childrens == null || m_selectParentItem.DataSource.Childrens.Count <= 0) ? blnNull : false);
                     }
                     m_selectParentItem = item;
-                    m_selectParentItem.SetSelectedStyle(true);
+                    m_selectParentItem.SetSelectedStyle((m_selectParentItem.DataSource == null || m_selectParentItem.DataSource.Childrens == null || m_selectParentItem.DataSource.Childrens.Count <= 0) ? blnNull : true);
                     SetChildrenControl(m_selectParentItem);
                 }
                 else
                 {
-                    m_selectParentItem.SetSelectedStyle(false);
+                    m_selectParentItem.SetSelectedStyle((m_selectParentItem.DataSource == null || m_selectParentItem.DataSource.Childrens == null || m_selectParentItem.DataSource.Childrens.Count <= 0) ? blnNull : false);
                     m_selectParentItem = null;
                     SetChildrenControl(m_selectParentItem, false);
                 }
@@ -193,10 +198,10 @@ namespace HZH_Controls.Controls
                 {
                     if (m_selectChildrenItem != null)
                     {
-                        m_selectChildrenItem.SetSelectedStyle(false);
+                        m_selectChildrenItem.SetSelectedStyle((m_selectParentItem.DataSource == null || m_selectParentItem.DataSource.Childrens == null || m_selectParentItem.DataSource.Childrens.Count <= 0) ? blnNull : false);
                     }
                     m_selectChildrenItem = item;
-                    m_selectChildrenItem.SetSelectedStyle(true);
+                    m_selectChildrenItem.SetSelectedStyle((m_selectParentItem.DataSource == null || m_selectParentItem.DataSource.Childrens == null || m_selectParentItem.DataSource.Childrens.Count <= 0) ? blnNull : true);
                 }
             }
             if (SelectedItem != null)

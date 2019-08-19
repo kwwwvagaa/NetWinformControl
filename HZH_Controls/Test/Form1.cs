@@ -66,7 +66,7 @@ namespace Test
             this.ucHorizontalList1.DataSource = lstHL;
 
             List<MenuItemEntity> lstMenu = new List<MenuItemEntity>();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 2; i++)
             {
                 MenuItemEntity item = new MenuItemEntity()
                 {
@@ -85,6 +85,16 @@ namespace Test
                     };
                     item.Childrens.Add(item2);
                 }
+                lstMenu.Add(item);
+            }
+            for (int i = 2; i < 4; i++)
+            {
+                MenuItemEntity item = new MenuItemEntity()
+                {
+                    Key = "p" + i.ToString(),
+                    Text = "菜单项" + i,
+                    DataSource = "这里编写一些自定义的数据源，用于扩展"
+                };
                 lstMenu.Add(item);
             }
             this.ucMenu1.MenuStyle = MenuStyle.Top;  

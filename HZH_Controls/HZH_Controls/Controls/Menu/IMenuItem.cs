@@ -23,6 +23,6 @@ namespace HZH_Controls.Controls
         /// 设置选中样式
         /// </summary>
         /// <param name="blnSelected">是否选中</param>
-        void SetSelectedStyle(bool blnSelected);
+        void SetSelectedStyle(bool? blnSelected);
     }
 }

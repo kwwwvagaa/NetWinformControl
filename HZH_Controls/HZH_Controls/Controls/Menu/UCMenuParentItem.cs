@@ -65,15 +65,22 @@ namespace HZH_Controls.Controls
             }
         }
 
-        public void SetSelectedStyle(bool blnSelected)
+        public void SetSelectedStyle(bool? blnSelected)
         {
-            if (blnSelected)
+            if (blnSelected.HasValue)
             {
-                this.lblTitle.Image = Properties.Resources.sanjiao1;
+                if (blnSelected.Value)
+                {
+                    this.lblTitle.Image = Properties.Resources.sanjiao1;
+                }
+                else
+                {
+                    this.lblTitle.Image = Properties.Resources.sanjiao2;
+                }
             }
             else
             {
-                this.lblTitle.Image = Properties.Resources.sanjiao2;
+                this.lblTitle.Image = null;
             }
         }
 

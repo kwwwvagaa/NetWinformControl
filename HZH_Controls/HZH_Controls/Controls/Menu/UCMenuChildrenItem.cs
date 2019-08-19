@@ -72,7 +72,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        public void SetSelectedStyle(bool blnSelected)
+        public void SetSelectedStyle(bool? blnSelected)
         {
 
         }
