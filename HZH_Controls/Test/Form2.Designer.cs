@@ -45,7 +45,7 @@
             this.ucProcessEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.ucProcessEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.ucProcessEllipse1.IsShowCoreEllipseBorder = true;
-            this.ucProcessEllipse1.Location = new System.Drawing.Point(78, 117);
+            this.ucProcessEllipse1.Location = new System.Drawing.Point(90, 288);
             this.ucProcessEllipse1.MaxValue = 100;
             this.ucProcessEllipse1.Name = "ucProcessEllipse1";
             this.ucProcessEllipse1.ShowType = HZH_Controls.Controls.ShowType.Ring;
@@ -78,20 +78,22 @@
             // ucStep1
             // 
             this.ucStep1.BackColor = System.Drawing.Color.Transparent;
+            this.ucStep1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.ucStep1.LineWidth = 10;
             this.ucStep1.Location = new System.Drawing.Point(12, 12);
             this.ucStep1.Name = "ucStep1";
-            this.ucStep1.Size = new System.Drawing.Size(361, 76);
+            this.ucStep1.Size = new System.Drawing.Size(360, 172);
             this.ucStep1.StepBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.ucStep1.StepFontColor = System.Drawing.Color.White;
-            this.ucStep1.StepForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(51)))));
-            this.ucStep1.StepIndex = 1;
+            this.ucStep1.StepForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
+            this.ucStep1.StepIndex = 2;
             this.ucStep1.Steps = new string[] {
         "step1",
         "step2",
         "step3",
         "step4",
         "step5"};
-            this.ucStep1.StepWidth = 35;
+            this.ucStep1.StepWidth = 50;
             this.ucStep1.TabIndex = 0;
             // 
             // Form2
