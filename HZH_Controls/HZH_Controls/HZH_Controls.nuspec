@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.0</version>
+    <title>HZHControls</title>
+    <authors>HuangZhengHui</authors>
+    <owners>HuangZhengHui</owners>
+    <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</licenseUrl>
+    <projectUrl>https://gitee.com/kwwwvagaa/net_winform_custom_control</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>C# winfrom custom control, has better operation support for touch screen. The project is based on framework 4.0, completely native control development, without using any third-party control, you can rest assured that it is used in your project.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>c# winfrom custom control</tags>
+  </metadata>
+</package>
