@@ -1,6 +1,6 @@
 ﻿namespace HZH_Controls.Controls
 {
-    partial class UCProcessEllipse
+    partial class UCCrumbNavigation
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -30,14 +30,20 @@
         {
             this.SuspendLayout();
             // 
-            // UCProcessEllipse
+            // UCCrumbNavigation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Name = "UCProcessEllipse";
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.MinimumSize = new System.Drawing.Size(0, 25);
+            this.Name = "UCCrumbNavigation";
+            this.Size = new System.Drawing.Size(220, 25);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+
     }
 }

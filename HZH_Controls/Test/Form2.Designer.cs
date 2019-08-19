@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ucCrumbNavigation1 = new HZH_Controls.Controls.UCCrumbNavigation();
             this.ucProcessEllipse1 = new HZH_Controls.Controls.UCProcessEllipse();
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
@@ -40,12 +42,28 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // ucCrumbNavigation1
+            // 
+            this.ucCrumbNavigation1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucCrumbNavigation1.ForeColor = System.Drawing.Color.White;
+            this.ucCrumbNavigation1.Location = new System.Drawing.Point(224, 254);
+            this.ucCrumbNavigation1.MinimumSize = new System.Drawing.Size(0, 25);
+            this.ucCrumbNavigation1.Name = "ucCrumbNavigation1";
+            this.ucCrumbNavigation1.NavColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.ucCrumbNavigation1.Navigations = new string[] {
+        "目录1",
+        "目录2",
+        "目录3",
+        "目录4"};
+            this.ucCrumbNavigation1.Size = new System.Drawing.Size(222, 25);
+            this.ucCrumbNavigation1.TabIndex = 3;
+            // 
             // ucProcessEllipse1
             // 
             this.ucProcessEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.ucProcessEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.ucProcessEllipse1.IsShowCoreEllipseBorder = true;
-            this.ucProcessEllipse1.Location = new System.Drawing.Point(90, 288);
+            this.ucProcessEllipse1.Location = new System.Drawing.Point(12, 173);
             this.ucProcessEllipse1.MaxValue = 100;
             this.ucProcessEllipse1.Name = "ucProcessEllipse1";
             this.ucProcessEllipse1.ShowType = HZH_Controls.Controls.ShowType.Ring;
@@ -79,10 +97,11 @@
             // 
             this.ucStep1.BackColor = System.Drawing.Color.Transparent;
             this.ucStep1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.ucStep1.ImgCompleted = ((System.Drawing.Image)(resources.GetObject("ucStep1.ImgCompleted")));
             this.ucStep1.LineWidth = 10;
             this.ucStep1.Location = new System.Drawing.Point(12, 12);
             this.ucStep1.Name = "ucStep1";
-            this.ucStep1.Size = new System.Drawing.Size(360, 172);
+            this.ucStep1.Size = new System.Drawing.Size(360, 130);
             this.ucStep1.StepBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.ucStep1.StepFontColor = System.Drawing.Color.White;
             this.ucStep1.StepForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
@@ -101,6 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(825, 594);
+            this.Controls.Add(this.ucCrumbNavigation1);
             this.Controls.Add(this.ucProcessEllipse1);
             this.Controls.Add(this.ucPanelTitle1);
             this.Controls.Add(this.ucStep1);
@@ -117,5 +137,6 @@
         private HZH_Controls.Controls.UCPanelTitle ucPanelTitle1;
         private HZH_Controls.Controls.UCProcessEllipse ucProcessEllipse1;
         private System.Windows.Forms.Timer timer1;
+        private HZH_Controls.Controls.UCCrumbNavigation ucCrumbNavigation1;
     }
 }

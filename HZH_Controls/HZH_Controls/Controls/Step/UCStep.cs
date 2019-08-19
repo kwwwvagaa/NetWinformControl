@@ -126,7 +126,7 @@ namespace HZH_Controls.Controls
         }
 
         private Image m_imgCompleted = null;
-        [Description("已完成步骤图片，当不为空时，已完成步骤将不再显示数字"), Category("自定义")]
+        [Description("已完成步骤图片，当不为空时，已完成步骤将不再显示数字,建议24*24大小"), Category("自定义")]
         public Image ImgCompleted
         {
             get { return m_imgCompleted; }

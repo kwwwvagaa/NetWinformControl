@@ -630,6 +630,5 @@ namespace HZH_Controls
         }
         #endregion
 
-
     }
 }

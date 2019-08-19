@@ -98,6 +98,12 @@
     <Compile Include="Controls\Menu\UCMenuParentItem.Designer.cs">
       <DependentUpon>UCMenuParentItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Navigation\UCCrumbNavigation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Navigation\UCCrumbNavigation.Designer.cs">
+      <DependentUpon>UCCrumbNavigation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Panel\UCPanelTitle.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -420,8 +426,14 @@
     <EmbeddedResource Include="Controls\Menu\UCMenuParentItem.resx">
       <DependentUpon>UCMenuParentItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Navigation\UCCrumbNavigation.resx">
+      <DependentUpon>UCCrumbNavigation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Panel\UCPanelTitle.resx">
       <DependentUpon>UCPanelTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Process\UCProcessEllipse.resx">
+      <DependentUpon>UCProcessEllipse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Process\UCProcessExt.resx">
       <DependentUpon>UCProcessExt.cs</DependentUpon>
