@@ -419,8 +419,8 @@ ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
 
 进度条支持圆环或扇形显示，支持百分比和数值显示
 
-![样例图片](https://images.gitee.com/uploads/images/2019/0817/180657_403b2092_301547.png "3.png")
-![样例图片](https://images.gitee.com/uploads/images/2019/0817/180705_71793832_301547.png "4.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0819/083846_335ab0b5_301547.gif "1.gif")
+![样例图片](https://images.gitee.com/uploads/images/2019/0819/083853_94e1f3f6_301547.gif "2.gif")
 
 #### 整体样例效果
 
