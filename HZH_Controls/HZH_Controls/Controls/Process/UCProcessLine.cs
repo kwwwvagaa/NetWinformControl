@@ -12,6 +12,8 @@ namespace HZH_Controls.Controls
 {
     public class UCProcessLine : Control
     {
+        [Description("值变更事件"), Category("自定义")]
+        public event EventHandler ValueChanged;
         int m_value = 0;
         [Description("当前属性"), Category("自定义")]
         public int Value
@@ -24,6 +26,8 @@ namespace HZH_Controls.Controls
                     m_value = 0;
                 else
                     m_value = value;
+                if (ValueChanged != null)
+                    ValueChanged(this, null);
                 Refresh();
             }
             get
