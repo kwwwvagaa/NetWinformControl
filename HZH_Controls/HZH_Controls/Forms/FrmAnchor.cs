@@ -195,25 +195,25 @@ namespace HZH_Controls.Forms
         private void FrmAnchor_VisibleChanged(object sender, EventArgs e)
         {
             timer1.Enabled = this.Visible;
-            if (Visible)
-            {
-                if (blnDown)
-                    ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_POSITIVE);
-                else
-                {
-                    ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_NEGATIVE);
-                }
-            }
-            else
-            {
-                if (blnDown)
-                    ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_NEGATIVE | ControlHelper.AW_HIDE);
-                else
-                {
-                    ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_POSITIVE | ControlHelper.AW_HIDE);
+            //if (Visible)
+            //{
+            //    if (blnDown)
+            //        ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_POSITIVE);
+            //    else
+            //    {
+            //        ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_NEGATIVE);
+            //    }
+            //}
+            //else
+            //{
+            //    if (blnDown)
+            //        ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_NEGATIVE | ControlHelper.AW_HIDE);
+            //    else
+            //    {
+            //        ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_POSITIVE | ControlHelper.AW_HIDE);
 
-                }
-            }
+            //    }
+            //}
         }
 
         private void timer1_Tick(object sender, EventArgs e)
