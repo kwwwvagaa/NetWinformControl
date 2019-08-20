@@ -16,7 +16,9 @@ c#winfrom自定义控件，`对触屏具有更好的操作支持`，项目是基
 
 #### NuGet
 
-`Install-Package HZH_Controls`
+``` csharp
+Install-Package HZH_Controls
+```
 
 #### 样例
 
