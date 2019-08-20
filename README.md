@@ -424,12 +424,14 @@ ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0817/162107_8a576e36_301547.png "2.png")
 
-##### 17、圆形进度条
+##### 17、进度条
 
 进度条支持圆环或扇形显示，支持百分比和数值显示
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0819/083846_335ab0b5_301547.gif "1.gif")
 ![样例图片](https://images.gitee.com/uploads/images/2019/0819/083853_94e1f3f6_301547.gif "2.gif")
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0820/115413_8a6564c5_301547.gif "2.gif")
 
 ##### 18、面包屑导航
 
