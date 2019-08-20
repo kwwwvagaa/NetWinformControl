@@ -15,7 +15,7 @@ namespace HZH_Controls.Controls
     {
         [Description("选中改变事件"), Category("自定义")]
         public event EventHandler CheckedChanged;
-        private Color m_trueColor = Color.FromArgb(34, 163, 169);
+        private Color m_trueColor = Color.FromArgb(73, 119, 232);
 
         [Description("选中时颜色"), Category("自定义")]
         public Color TrueColor
@@ -28,7 +28,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_falseColor = Color.FromArgb(111, 122, 126);
+        private Color m_falseColor = Color.FromArgb(180, 180, 180);
 
         [Description("没有选中时颜色"), Category("自定义")]
         public Color FalseColor

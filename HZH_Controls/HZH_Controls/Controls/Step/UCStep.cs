@@ -17,7 +17,7 @@ namespace HZH_Controls.Controls
         [Description("步骤更改事件"), Category("自定义")]
         public event EventHandler IndexChecked;
 
-        private Color m_stepBackColor = Color.FromArgb(100, 100, 100);
+        private Color m_stepBackColor = Color.FromArgb(180, 180, 180);
         /// <summary>
         /// 步骤背景色
         /// </summary>
@@ -32,7 +32,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_stepForeColor = Color.FromArgb(255, 85, 51);
+        private Color m_stepForeColor = Color.FromArgb(73, 119, 232);
         /// <summary>
         /// 步骤前景色
         /// </summary>
@@ -214,7 +214,7 @@ namespace HZH_Controls.Controls
                         {
                             if (m_stepIndex == i + 1)
                             {
-                                g.DrawLine(new Pen(m_stepForeColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) - intSplitWidth / 2 + 10, y + ((m_stepWidth) / 2)));
+                                g.DrawLine(new Pen(m_stepForeColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth - 3, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) - intSplitWidth / 2 + 1 + 6, y + ((m_stepWidth) / 2)));
                                 g.DrawLine(new Pen(m_stepBackColor, m_lineWidth), new Point(intLeft + i * (m_stepWidth + intSplitWidth) + m_stepWidth + intSplitWidth / 2, y + ((m_stepWidth) / 2)), new Point((i + 1) * (m_stepWidth + intSplitWidth) + 10, y + ((m_stepWidth) / 2)));
                             }
                             else

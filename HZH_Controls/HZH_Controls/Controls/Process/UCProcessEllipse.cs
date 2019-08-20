@@ -15,7 +15,7 @@ namespace HZH_Controls.Controls
         [Description("值改变事件"), Category("自定义")]
         public event EventHandler ValueChanged;
 
-        private Color m_backEllipseColor = Color.FromArgb(22, 160, 133);
+        private Color m_backEllipseColor = Color.FromArgb(73, 119, 232);
         /// <summary>
         /// 圆背景色
         /// </summary>

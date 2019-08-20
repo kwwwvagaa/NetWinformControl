@@ -45,8 +45,8 @@
             this.ucProcessEllipse2 = new HZH_Controls.Controls.UCProcessEllipse();
             this.ucProcessEllipse1 = new HZH_Controls.Controls.UCProcessEllipse();
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
-            this.ucStep1 = new HZH_Controls.Controls.UCStep();
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
+            this.ucStep1 = new HZH_Controls.Controls.UCStep();
             this.SuspendLayout();
             // 
             // timer1
@@ -67,7 +67,7 @@
             this.ucSwitch10.Texts = new string[] {
         "确定",
         "取消"};
-            this.ucSwitch10.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch10.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch9
             // 
@@ -82,7 +82,7 @@
             this.ucSwitch9.Texts = new string[] {
         "确定",
         "取消"};
-            this.ucSwitch9.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch9.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch6
             // 
@@ -95,7 +95,7 @@
             this.ucSwitch6.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
             this.ucSwitch6.TabIndex = 4;
             this.ucSwitch6.Texts = new string[0];
-            this.ucSwitch6.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch6.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch8
             // 
@@ -110,7 +110,7 @@
             this.ucSwitch8.Texts = new string[] {
         "确定",
         "取消"};
-            this.ucSwitch8.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch8.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch5
             // 
@@ -123,7 +123,7 @@
             this.ucSwitch5.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
             this.ucSwitch5.TabIndex = 4;
             this.ucSwitch5.Texts = new string[0];
-            this.ucSwitch5.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch5.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch7
             // 
@@ -138,7 +138,7 @@
             this.ucSwitch7.Texts = new string[] {
         "确定",
         "取消"};
-            this.ucSwitch7.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch7.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch4
             // 
@@ -151,7 +151,7 @@
             this.ucSwitch4.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
             this.ucSwitch4.TabIndex = 4;
             this.ucSwitch4.Texts = new string[0];
-            this.ucSwitch4.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch4.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch3
             // 
@@ -164,7 +164,7 @@
             this.ucSwitch3.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
             this.ucSwitch3.TabIndex = 4;
             this.ucSwitch3.Texts = new string[0];
-            this.ucSwitch3.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch3.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch2
             // 
@@ -177,7 +177,7 @@
             this.ucSwitch2.SwitchType = HZH_Controls.Controls.SwitchType.Line;
             this.ucSwitch2.TabIndex = 4;
             this.ucSwitch2.Texts = new string[0];
-            this.ucSwitch2.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch2.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch1
             // 
@@ -190,7 +190,7 @@
             this.ucSwitch1.SwitchType = HZH_Controls.Controls.SwitchType.Line;
             this.ucSwitch1.TabIndex = 4;
             this.ucSwitch1.Texts = new string[0];
-            this.ucSwitch1.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(169)))));
+            this.ucSwitch1.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucCrumbNavigation1
             // 
@@ -199,7 +199,7 @@
             this.ucCrumbNavigation1.Location = new System.Drawing.Point(12, 557);
             this.ucCrumbNavigation1.MinimumSize = new System.Drawing.Size(0, 25);
             this.ucCrumbNavigation1.Name = "ucCrumbNavigation1";
-            this.ucCrumbNavigation1.NavColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.ucCrumbNavigation1.NavColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(122)))), ((int)(((byte)(126)))));
             this.ucCrumbNavigation1.Navigations = new string[] {
         "目录1",
         "目录2",
@@ -210,7 +210,7 @@
             // 
             // ucProcessEllipse2
             // 
-            this.ucProcessEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.ucProcessEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.ucProcessEllipse2.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.ucProcessEllipse2.IsShowCoreEllipseBorder = true;
             this.ucProcessEllipse2.Location = new System.Drawing.Point(202, 173);
@@ -227,7 +227,7 @@
             // 
             // ucProcessEllipse1
             // 
-            this.ucProcessEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.ucProcessEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.ucProcessEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.ucProcessEllipse1.IsShowCoreEllipseBorder = true;
             this.ucProcessEllipse1.Location = new System.Drawing.Point(12, 173);
@@ -245,7 +245,7 @@
             // ucPanelTitle1
             // 
             this.ucPanelTitle1.BackColor = System.Drawing.Color.Transparent;
-            this.ucPanelTitle1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.ucPanelTitle1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.ucPanelTitle1.ConerRadius = 10;
             this.ucPanelTitle1.FillColor = System.Drawing.Color.White;
             this.ucPanelTitle1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -254,33 +254,11 @@
             this.ucPanelTitle1.Location = new System.Drawing.Point(406, 14);
             this.ucPanelTitle1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucPanelTitle1.Name = "ucPanelTitle1";
-            this.ucPanelTitle1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.ucPanelTitle1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.ucPanelTitle1.RectWidth = 1;
             this.ucPanelTitle1.Size = new System.Drawing.Size(316, 182);
             this.ucPanelTitle1.TabIndex = 1;
             this.ucPanelTitle1.Title = "面板标题";
-            // 
-            // ucStep1
-            // 
-            this.ucStep1.BackColor = System.Drawing.Color.Transparent;
-            this.ucStep1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.ucStep1.ImgCompleted = ((System.Drawing.Image)(resources.GetObject("ucStep1.ImgCompleted")));
-            this.ucStep1.LineWidth = 10;
-            this.ucStep1.Location = new System.Drawing.Point(12, -2);
-            this.ucStep1.Name = "ucStep1";
-            this.ucStep1.Size = new System.Drawing.Size(362, 77);
-            this.ucStep1.StepBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.ucStep1.StepFontColor = System.Drawing.Color.White;
-            this.ucStep1.StepForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
-            this.ucStep1.StepIndex = 2;
-            this.ucStep1.Steps = new string[] {
-        "step1",
-        "step2",
-        "step3",
-        "step4",
-        "step5"};
-            this.ucStep1.StepWidth = 35;
-            this.ucStep1.TabIndex = 0;
             // 
             // ucStep2
             // 
@@ -291,9 +269,9 @@
             this.ucStep2.Location = new System.Drawing.Point(12, 81);
             this.ucStep2.Name = "ucStep2";
             this.ucStep2.Size = new System.Drawing.Size(362, 86);
-            this.ucStep2.StepBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.ucStep2.StepBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.ucStep2.StepFontColor = System.Drawing.Color.White;
-            this.ucStep2.StepForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
+            this.ucStep2.StepForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.ucStep2.StepIndex = 2;
             this.ucStep2.Steps = new string[] {
         "step1",
@@ -303,6 +281,28 @@
         "step5"};
             this.ucStep2.StepWidth = 35;
             this.ucStep2.TabIndex = 0;
+            // 
+            // ucStep1
+            // 
+            this.ucStep1.BackColor = System.Drawing.Color.Transparent;
+            this.ucStep1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.ucStep1.ImgCompleted = ((System.Drawing.Image)(resources.GetObject("ucStep1.ImgCompleted")));
+            this.ucStep1.LineWidth = 10;
+            this.ucStep1.Location = new System.Drawing.Point(12, -2);
+            this.ucStep1.Name = "ucStep1";
+            this.ucStep1.Size = new System.Drawing.Size(362, 77);
+            this.ucStep1.StepBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.ucStep1.StepFontColor = System.Drawing.Color.White;
+            this.ucStep1.StepForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucStep1.StepIndex = 2;
+            this.ucStep1.Steps = new string[] {
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5"};
+            this.ucStep1.StepWidth = 35;
+            this.ucStep1.TabIndex = 0;
             // 
             // Form2
             // 
