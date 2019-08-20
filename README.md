@@ -14,6 +14,10 @@ c#winfrom自定义控件，`对触屏具有更好的操作支持`，项目是基
 
 #### 来都来了，点个`Star`再走吧
 
+#### NuGet
+
+Install-Package HZH_Controls
+
 #### 样例
 
 ##### 1、提示窗效果图
