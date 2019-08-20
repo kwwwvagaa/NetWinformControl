@@ -29,7 +29,15 @@ namespace HZH_Controls.Forms
         private const int WM_MOUSEACTIVATE = 33;
 
         private const int MA_NOACTIVATE = 3;
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
         public FrmBase frmchild
         {
             get;
@@ -39,9 +47,12 @@ namespace HZH_Controls.Forms
         {
             InitializeComponent();
 
-            base.SetStyle(ControlStyles.UserPaint, true);
-            base.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            base.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.SetStyle(ControlStyles.Selectable, true);
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
 
             MethodInfo method = base.GetType().GetMethod("SetStyle", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.InvokeMethod);
             method.Invoke(this, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.InvokeMethod, null, new object[]

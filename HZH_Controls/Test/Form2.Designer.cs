@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ucProcessLine1 = new HZH_Controls.Controls.UCProcessLine();
             this.ucSwitch10 = new HZH_Controls.Controls.UCSwitch();
             this.ucSwitch9 = new HZH_Controls.Controls.UCSwitch();
             this.ucSwitch6 = new HZH_Controls.Controls.UCSwitch();
@@ -53,6 +54,19 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // ucProcessLine1
+            // 
+            this.ucProcessLine1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ucProcessLine1.Location = new System.Drawing.Point(406, 224);
+            this.ucProcessLine1.MaxValue = 150;
+            this.ucProcessLine1.Name = "ucProcessLine1";
+            this.ucProcessLine1.Size = new System.Drawing.Size(269, 32);
+            this.ucProcessLine1.TabIndex = 5;
+            this.ucProcessLine1.Text = "ucProcessLine1";
+            this.ucProcessLine1.Value = 150;
+            this.ucProcessLine1.ValueBGColor = System.Drawing.Color.White;
+            this.ucProcessLine1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucSwitch10
             // 
@@ -247,6 +261,7 @@
             this.ucPanelTitle1.BackColor = System.Drawing.Color.Transparent;
             this.ucPanelTitle1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.ucPanelTitle1.ConerRadius = 10;
+            this.ucPanelTitle1.EnabledTheme = false;
             this.ucPanelTitle1.FillColor = System.Drawing.Color.White;
             this.ucPanelTitle1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucPanelTitle1.IsRadius = true;
@@ -309,6 +324,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(825, 594);
+            this.Controls.Add(this.ucProcessLine1);
             this.Controls.Add(this.ucSwitch10);
             this.Controls.Add(this.ucSwitch9);
             this.Controls.Add(this.ucSwitch6);
@@ -351,5 +367,6 @@
         private HZH_Controls.Controls.UCSwitch ucSwitch10;
         private HZH_Controls.Controls.UCProcessEllipse ucProcessEllipse2;
         private HZH_Controls.Controls.UCStep ucStep2;
+        private HZH_Controls.Controls.UCProcessLine ucProcessLine1;
     }
 }

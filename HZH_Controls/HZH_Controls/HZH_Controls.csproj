@@ -116,6 +116,9 @@
     <Compile Include="Controls\Process\UCProcessEllipse.Designer.cs">
       <DependentUpon>UCProcessEllipse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Process\UCProcessLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\Step\UCStep.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -349,6 +352,7 @@
     <Compile Include="Forms\FrmWithTitle.Designer.cs">
       <DependentUpon>FrmWithTitle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ITheme.cs" />
     <Compile Include="Helpers\MouseHook.cs" />
     <Compile Include="Helpers\NativeMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

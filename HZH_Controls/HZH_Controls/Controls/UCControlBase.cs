@@ -16,7 +16,7 @@ using System.Drawing.Drawing2D;
 namespace HZH_Controls.Controls
 {
     [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(System.ComponentModel.Design.IDesigner))]
-    public partial class UCControlBase : UserControl, IContainerControl
+    public partial class UCControlBase : UserControl, IContainerControl, ITheme
     {
         private bool _isRadius = false;
 
@@ -189,7 +189,16 @@ namespace HZH_Controls.Controls
                 base.WndProc(ref m);
             }
         }
+        
+        public virtual void ResetTheme(ThemeEntity theme)
+        {
+        }
 
-
+        [Description("是否启用主题"), Category("自定义")]
+        public bool EnabledTheme
+        {
+            get;
+            set;
+        }
     }
 }
