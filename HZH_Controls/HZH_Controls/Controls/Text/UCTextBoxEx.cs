@@ -297,6 +297,8 @@ namespace HZH_Controls.Controls
         Forms.FrmAnchor m_frmAnchor;
         private void btnKeybord_MouseDown(object sender, MouseEventArgs e)
         {
+            if (keyBoardType == HZH_Controls.Controls.KeyBoardType.Null)
+                return;
             m_intSelectionStart = this.txtInput.SelectionStart;
             m_intSelectionLength = this.txtInput.SelectionLength;
             this.FindForm().ActiveControl = this;

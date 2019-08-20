@@ -240,6 +240,7 @@
             this.ucDatePickerExt3.BackColor = System.Drawing.Color.Transparent;
             this.ucDatePickerExt3.ConerRadius = 5;
             this.ucDatePickerExt3.CurrentTime = new System.DateTime(2019, 8, 8, 15, 17, 11, 0);
+            this.ucDatePickerExt3.EnabledTheme = false;
             this.ucDatePickerExt3.FillColor = System.Drawing.Color.Transparent;
             this.ucDatePickerExt3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDatePickerExt3.IsRadius = true;
@@ -260,6 +261,7 @@
             this.ucDatePickerExt2.BackColor = System.Drawing.Color.Transparent;
             this.ucDatePickerExt2.ConerRadius = 5;
             this.ucDatePickerExt2.CurrentTime = new System.DateTime(2019, 8, 8, 15, 17, 11, 0);
+            this.ucDatePickerExt2.EnabledTheme = false;
             this.ucDatePickerExt2.FillColor = System.Drawing.Color.Transparent;
             this.ucDatePickerExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDatePickerExt2.IsRadius = true;
@@ -280,6 +282,7 @@
             this.ucDatePickerExt1.BackColor = System.Drawing.Color.Transparent;
             this.ucDatePickerExt1.ConerRadius = 5;
             this.ucDatePickerExt1.CurrentTime = new System.DateTime(2019, 8, 8, 15, 17, 11, 0);
+            this.ucDatePickerExt1.EnabledTheme = false;
             this.ucDatePickerExt1.FillColor = System.Drawing.Color.Transparent;
             this.ucDatePickerExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDatePickerExt1.IsRadius = true;
@@ -313,6 +316,7 @@
             this.ucComboBox2.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ucComboBox2.ConerRadius = 5;
             this.ucComboBox2.DropPanelHeight = -1;
+            this.ucComboBox2.EnabledTheme = false;
             this.ucComboBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ucComboBox2.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.ucComboBox2.IsRadius = false;
@@ -337,6 +341,7 @@
             this.ucComboBox1.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.ucComboBox1.ConerRadius = 5;
             this.ucComboBox1.DropPanelHeight = -1;
+            this.ucComboBox1.EnabledTheme = false;
             this.ucComboBox1.FillColor = System.Drawing.Color.White;
             this.ucComboBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.ucComboBox1.IsRadius = false;
@@ -447,6 +452,7 @@
             this.ucTextBoxEx4.ConerRadius = 5;
             this.ucTextBoxEx4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ucTextBoxEx4.DecLength = 2;
+            this.ucTextBoxEx4.EnabledTheme = false;
             this.ucTextBoxEx4.FillColor = System.Drawing.Color.Empty;
             this.ucTextBoxEx4.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucTextBoxEx4.InputText = "";
@@ -457,7 +463,7 @@
             this.ucTextBoxEx4.IsShowKeyboard = true;
             this.ucTextBoxEx4.IsShowRect = true;
             this.ucTextBoxEx4.IsShowSearchBtn = false;
-            this.ucTextBoxEx4.KeyBoardType = HZH_Controls.Controls.KeyBoardType.Null;
+            this.ucTextBoxEx4.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderAll_EN;
             this.ucTextBoxEx4.Location = new System.Drawing.Point(6, 275);
             this.ucTextBoxEx4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucTextBoxEx4.MaxValue = new decimal(new int[] {
@@ -487,6 +493,7 @@
             this.ucTextBoxEx3.ConerRadius = 5;
             this.ucTextBoxEx3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ucTextBoxEx3.DecLength = 2;
+            this.ucTextBoxEx3.EnabledTheme = false;
             this.ucTextBoxEx3.FillColor = System.Drawing.Color.Empty;
             this.ucTextBoxEx3.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucTextBoxEx3.InputText = "手写键盘";
@@ -527,6 +534,7 @@
             this.ucTextBoxEx2.ConerRadius = 5;
             this.ucTextBoxEx2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ucTextBoxEx2.DecLength = 2;
+            this.ucTextBoxEx2.EnabledTheme = false;
             this.ucTextBoxEx2.FillColor = System.Drawing.Color.Empty;
             this.ucTextBoxEx2.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucTextBoxEx2.InputText = "英文键盘";
@@ -567,6 +575,7 @@
             this.ucTextBoxEx1.ConerRadius = 5;
             this.ucTextBoxEx1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ucTextBoxEx1.DecLength = 2;
+            this.ucTextBoxEx1.EnabledTheme = false;
             this.ucTextBoxEx1.FillColor = System.Drawing.Color.Empty;
             this.ucTextBoxEx1.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucTextBoxEx1.InputText = "数字键盘";
@@ -780,6 +789,7 @@
             this.ucBtnImg1.BtnText = "按钮4";
             this.ucBtnImg1.ConerRadius = 10;
             this.ucBtnImg1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg1.EnabledTheme = false;
             this.ucBtnImg1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.ucBtnImg1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -803,6 +813,7 @@
             this.ucBtnFillet1.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet1.BtnImage")));
             this.ucBtnFillet1.BtnText = "按钮3  ";
             this.ucBtnFillet1.ConerRadius = 10;
+            this.ucBtnFillet1.EnabledTheme = false;
             this.ucBtnFillet1.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnFillet1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnFillet1.IsRadius = true;
@@ -824,6 +835,7 @@
             this.ucBtnExt2.BtnText = "按钮2";
             this.ucBtnExt2.ConerRadius = 10;
             this.ucBtnExt2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt2.EnabledTheme = false;
             this.ucBtnExt2.FillColor = System.Drawing.Color.White;
             this.ucBtnExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt2.IsRadius = true;
@@ -848,6 +860,7 @@
             this.ucBtnExt1.BtnText = "按钮1";
             this.ucBtnExt1.ConerRadius = 10;
             this.ucBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt1.EnabledTheme = false;
             this.ucBtnExt1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt1.IsRadius = true;
@@ -972,6 +985,7 @@
             // 
             this.processExt1.BackColor = System.Drawing.Color.White;
             this.processExt1.ConerRadius = 5;
+            this.processExt1.EnabledTheme = false;
             this.processExt1.FillColor = System.Drawing.Color.Transparent;
             this.processExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.processExt1.IsRadius = true;
