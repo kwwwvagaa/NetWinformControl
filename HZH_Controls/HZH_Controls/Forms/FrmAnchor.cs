@@ -87,7 +87,7 @@ namespace HZH_Controls.Forms
 
         void frmP_LocationChanged(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         public FrmAnchor(Control parentControl, Size size, Point? deviation = null)
