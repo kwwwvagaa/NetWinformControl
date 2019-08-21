@@ -37,7 +37,7 @@ GitHub：[https://github.com/kwwwvagaa/NetWinformControl](https://github.com/kww
 
 #### 源码仅用于交流学习，开源协议为[GPL-3.0](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/LICENSE)，如商业使用请进群联系群主授权
 
->#### The source code is only for communicative learning, and the open source protocol is [GPL-3.0] (https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/LICENSE). For commercial use, please contact the QQ group master authorization.
+>#### The source code is only for communicative learning, and the open source protocol is [GPL-3.0](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/LICENSE). For commercial use, please contact the QQ group master authorization.
 
 #### 来都来了，点个`Star`再走吧
 
