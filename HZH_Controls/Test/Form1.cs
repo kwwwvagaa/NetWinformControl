@@ -97,7 +97,7 @@ namespace Test
                 };
                 lstMenu.Add(item);
             }
-            this.ucMenu1.MenuStyle = MenuStyle.Top;  
+            this.ucMenu1.MenuStyle = MenuStyle.Top;
             this.ucMenu1.DataSource = lstMenu;
 
 
@@ -112,7 +112,7 @@ namespace Test
             ucBtnsGroup1.DataSource = new Dictionary<string, string>() { { "1", "男" }, { "0", "女" } };
             ucBtnsGroup2.IsMultiple = true;
             ucBtnsGroup2.DataSource = new Dictionary<string, string>() { { "1", "河南" }, { "2", "北京" }, { "3", "湖南" }, { "4", "上海" } };
-            ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
+            ucBtnsGroup2.SelectItem = new List<string>() { "2", "3" };
 
             this.processExt1.Value = 50;
         }
@@ -136,7 +136,7 @@ namespace Test
             FrmInputs frm = new FrmInputs("动态多输入窗体测试",
                 new string[] { "姓名", "电话", "身份证号", "住址" },
                 new Dictionary<string, HZH_Controls.TextInputType>() { { "电话", HZH_Controls.TextInputType.Regex }, { "身份证号", HZH_Controls.TextInputType.Regex } },
-                new Dictionary<string, string>() { { "电话", "^1\\d{10}$" }, { "身份证号", "^\\d{18}$" } },
+                new Dictionary<string, string>() { { "电话", "^1\\d{0,10}$" }, { "身份证号", "^\\d{0,18}$" } },
                 new Dictionary<string, KeyBoardType>() { { "电话", KeyBoardType.UCKeyBorderNum }, { "身份证号", KeyBoardType.UCKeyBorderNum } },
                 new List<string>() { "姓名", "电话", "身份证号" });
             frm.ShowDialog(this);

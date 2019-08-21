@@ -62,6 +62,7 @@ namespace HZH_Controls.Forms
         /// <param name="isShowMaskDialog">isShowMaskDialog</param>
         /// <param name="blnShowClose">blnShowClose</param>
         /// <param name="isEnterClose">isEnterClose</param>
+        /// <param name="deviationSize">大小偏移，当默认大小过大或过小时，可以进行调整（增量）</param>
         /// <returns>返回值</returns>
         public static DialogResult ShowDialog(
             IWin32Window owner,
@@ -70,17 +71,24 @@ namespace HZH_Controls.Forms
             bool blnShowCancel = false,
             bool isShowMaskDialog = true,
             bool blnShowClose = false,
-            bool blnIsEnterClose = true)
+            bool blnIsEnterClose = true,
+            Size? deviationSize = null)
         {
             DialogResult result = DialogResult.Cancel;
             if (owner == null || (owner is Control && (owner as Control).IsDisposed))
             {
-                result = new FrmDialog(strMessage, strTitle, blnShowCancel, blnShowClose, blnIsEnterClose)
+                var frm = new FrmDialog(strMessage, strTitle, blnShowCancel, blnShowClose, blnIsEnterClose)
                 {
                     StartPosition = FormStartPosition.CenterScreen,
                     IsShowMaskDialog = isShowMaskDialog,
                     TopMost = true
-                }.ShowDialog();
+                };
+                if (deviationSize != null)
+                {
+                    frm.Width += deviationSize.Value.Width;
+                    frm.Height += deviationSize.Value.Height;
+                }
+                result = frm.ShowDialog();
             }
             else
             {
@@ -88,12 +96,18 @@ namespace HZH_Controls.Forms
                 {
                     owner = (owner as Control).FindForm();
                 }
-                result = new FrmDialog(strMessage, strTitle, blnShowCancel, blnShowClose, blnIsEnterClose)
+                var frm = new FrmDialog(strMessage, strTitle, blnShowCancel, blnShowClose, blnIsEnterClose)
                 {
                     StartPosition = (owner != null) ? FormStartPosition.CenterParent : FormStartPosition.CenterScreen,
                     IsShowMaskDialog = isShowMaskDialog,
                     TopMost = true
-                }.ShowDialog(owner);
+                };
+                if (deviationSize != null)
+                {
+                    frm.Width += deviationSize.Value.Width;
+                    frm.Height += deviationSize.Value.Height;
+                }
+                result = frm.ShowDialog(owner);
             }
             return result;
         }
