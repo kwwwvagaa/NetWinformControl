@@ -1,6 +1,6 @@
 # NetWinformCustom Controls
 
-# My English is not good. The English below is from Google Translate. Please forgive me.
+# My english is poor. The English below is from Google Translate. Please forgive me.
 
 ### [中文README.md(github)](https://github.com/kwwwvagaa/NetWinformControl/blob/master/README_CN.md)
 
