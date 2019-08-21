@@ -19,9 +19,9 @@ GitHub：[https://github.com/kwwwvagaa/NetWinformControl](https://github.com/kww
 
 >C# winfrom custom control, `better operation support for touch screen', project is based on framework 4.0, completely native control development, `no use of any third-party controls', you can rest assured that in your project.
 
->Blog address: [https://www.cnblogs.com/bfyx](https://www.cnblogs.com/bfyx](https://www.cnblogs.com/bfyx/p/11364884.html)
+>Blog address: [https://www.cnblogs.com/bfyx](https://www.cnblogs.com/bfyx/p/11364884.html)
 
->GitHub: [https://github.com/kwwwvagaa/NetWinformControl] (https://github.com/kwwwvagaa/NetWinformControl)
+>GitHub: [https://github.com/kwwwvagaa/NetWinformControl](https://github.com/kwwwvagaa/NetWinformControl)
 
 >gitee: [https://gitee.com/kwwwvagaa/net_winform_custom_control.git](https://gitee.com/kwwwvagaa/net_winform_custom_control.git)
 
