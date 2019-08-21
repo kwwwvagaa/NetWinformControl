@@ -25,7 +25,7 @@ GitHub：[https://github.com/kwwwvagaa/NetWinformControl](https://github.com/kww
 
 >gitee: [https://gitee.com/kwwwvagaa/net_winform_custom_control.git](https://gitee.com/kwwwvagaa/net_winform_custom_control.git)
 
->Welcome to [join QQ group 568015492](//shang.qqq.com/wpa/qunwpa?Idkey=6e08741 ef16fe53bf0314c1e336c4f6247943a8b762361bab6b4f8d)
+>Welcome to [join QQ group 568015492](//shang.qq.com/wpa/qunwpa?idkey=6e08741ef16fe53bf0314c1c9e336c4f626047943a8b76bac062361bab6b4f8d)
 
 ## 控件持续增加中，请耐心等待...
 
