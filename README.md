@@ -8,6 +8,8 @@ c#winfrom自定义控件，`对触屏具有更好的操作支持`，项目是基
 
 GitHub：[https://github.com/kwwwvagaa/NetWinformControl](https://github.com/kwwwvagaa/NetWinformControl)
 
+码云：[https://gitee.com/kwwwvagaa/net_winform_custom_control.git](https://gitee.com/kwwwvagaa/net_winform_custom_control.git)
+
 欢迎前来交流探讨： 企鹅群568015492 [![企鹅群568015492](//pub.idqqimg.com/wpa/images/group.png "企鹅群568015492")](//shang.qq.com/wpa/qunwpa?idkey=6e08741ef16fe53bf0314c1c9e336c4f626047943a8b76bac062361bab6b4f8d)
 
 #### 如果我的代码对您有用，请打赏一点吧，谢谢，您的打赏是我的动力
