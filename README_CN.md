@@ -1,8 +1,8 @@
 # NetWinform自定义控件
 
-# [English README.md(github)](https://github.com/kwwwvagaa/NetWinformControl/blob/master/README.md)
+### [English README.md(github)](https://github.com/kwwwvagaa/NetWinformControl/blob/master/README.md)
 
-# [English README.md(gitee)](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/README.md)
+### [English README.md(gitee)](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/README.md)
 
 #### 介绍
 

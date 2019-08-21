@@ -2,9 +2,9 @@
 
 # My English is not good. The English below is from Google Translate. Please forgive me.
 
-# [中文README.md(github)]()
+### [中文README.md(github)](https://github.com/kwwwvagaa/NetWinformControl/blob/master/README_CN.md)
 
-# [中文README.md(码云)]()
+### [中文README.md(码云)](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/README_CN.md)
 
 #### Introduction
 
