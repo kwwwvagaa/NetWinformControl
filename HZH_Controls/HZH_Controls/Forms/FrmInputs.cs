@@ -131,7 +131,8 @@ namespace HZH_Controls.Forms
                     Values[i] = txt.InputText;
                     if (m_mastInputs.ContainsKey(i) && string.IsNullOrWhiteSpace(txt.InputText))
                     {
-                        HZH_Controls.Forms.FrmTips.ShowTipsInfo(this, "[" + m_mastInputs[i] + "]必须输入。");
+                        HZH_Controls.Forms.FrmTips.ShowTipsInfo(this, "[" + m_mastInputs[i] + "]必须输入。");                        
+                        this.ActiveControl = txt.txtInput;
                         return;
                     }
                 }
