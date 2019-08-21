@@ -16,6 +16,7 @@ using System.Windows.Forms;
 namespace HZH_Controls.Controls
 {
     [DefaultEvent("BtnClick")]
+  
     public partial class UCBtnExt : UCControlBase
     {
         #region 字段属性
@@ -57,7 +58,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color _btnForeColor = Color.Black;
+        private Color _btnForeColor = Color.White;
         /// <summary>
         /// 按钮字体颜色
         /// </summary>

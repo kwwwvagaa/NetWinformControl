@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCBtnExt));
             this.lbl = new System.Windows.Forms.Label();
             this.lblTips = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.SuspendLayout();
             // 
             // lbl
@@ -40,6 +39,7 @@
             this.lbl.BackColor = System.Drawing.Color.Transparent;
             this.lbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl.ForeColor = System.Drawing.Color.White;
             this.lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl.Location = new System.Drawing.Point(0, 0);
             this.lbl.Name = "lbl";
@@ -78,12 +78,12 @@
             this.Controls.Add(this.lblTips);
             this.Controls.Add(this.lbl);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.IsShowRect = true;
+            this.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.IsRadius = true;
+            this.IsShowRect = true;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCBtnExt";
-            this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.Size = new System.Drawing.Size(184, 60);
             this.ResumeLayout(false);
 
