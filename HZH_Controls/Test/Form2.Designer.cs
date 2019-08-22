@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.ucProcessLineExt1 = new HZH_Controls.Controls.UCProcessLineExt();
             this.ucProcessLine1 = new HZH_Controls.Controls.UCProcessLine();
             this.ucSwitch10 = new HZH_Controls.Controls.UCSwitch();
             this.ucSwitch9 = new HZH_Controls.Controls.UCSwitch();
@@ -55,9 +55,24 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // ucProcessLineExt1
+            // 
+            this.ucProcessLineExt1.BackColor = System.Drawing.Color.Transparent;
+            this.ucProcessLineExt1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ucProcessLineExt1.Location = new System.Drawing.Point(406, 287);
+            this.ucProcessLineExt1.MaxValue = 100;
+            this.ucProcessLineExt1.Name = "ucProcessLineExt1";
+            this.ucProcessLineExt1.Size = new System.Drawing.Size(269, 50);
+            this.ucProcessLineExt1.TabIndex = 6;
+            this.ucProcessLineExt1.Value = 20;
+            this.ucProcessLineExt1.ValueBGColor = System.Drawing.Color.White;
+            this.ucProcessLineExt1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            // 
             // ucProcessLine1
             // 
             this.ucProcessLine1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ucProcessLine1.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
+            this.ucProcessLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucProcessLine1.Location = new System.Drawing.Point(406, 224);
             this.ucProcessLine1.MaxValue = 150;
             this.ucProcessLine1.Name = "ucProcessLine1";
@@ -67,6 +82,7 @@
             this.ucProcessLine1.Value = 150;
             this.ucProcessLine1.ValueBGColor = System.Drawing.Color.White;
             this.ucProcessLine1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucProcessLine1.ValueTextType = HZH_Controls.Controls.ValueTextType.Percent;
             // 
             // ucSwitch10
             // 
@@ -324,6 +340,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(825, 594);
+            this.Controls.Add(this.ucProcessLineExt1);
             this.Controls.Add(this.ucProcessLine1);
             this.Controls.Add(this.ucSwitch10);
             this.Controls.Add(this.ucSwitch9);
@@ -368,5 +385,6 @@
         private HZH_Controls.Controls.UCProcessEllipse ucProcessEllipse2;
         private HZH_Controls.Controls.UCStep ucStep2;
         private HZH_Controls.Controls.UCProcessLine ucProcessLine1;
+        private HZH_Controls.Controls.UCProcessLineExt ucProcessLineExt1;
     }
 }
