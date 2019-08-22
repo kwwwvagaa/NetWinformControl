@@ -453,6 +453,31 @@ ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0819/160415_121416e0_301547.png "switch.png")
 
+##### 20、ListView
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0822/113629_bfa4fbc2_301547.png "listview.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0822/113641_3cd8df3f_301547.png "listview2.png")
+
+ListView的项元素提供了接口实现，当你觉得我写的子项并不能满足你的需求的时候，你可以添加一个控件，实现接口，然后将你的控件指定给Listview的属性ItemType即可了。
+
+同样的，我也提供了翻页控件，属性Page，只要是继承UCPagerControlBase的翻页控件都可以兼容哦，当然你也可以不用翻页控件。
+
+看一下调用吧
+
+``` csharp
+List<object> lstSource = new List<object>();
+for (int i = 0; i < 200; i++)
+{
+    lstSource.Add("项-" + i);
+}
+//使用分页控件
+var page = new UCPagerControl2();
+page.DataSource = lstSource;
+this.ucListView1.Page = page;
+//不使用分页控件
+//this.ucListView1.DataSource = lstSource;
+```
+
 #### 整体样例效果
 
 ##### 1、效果1
