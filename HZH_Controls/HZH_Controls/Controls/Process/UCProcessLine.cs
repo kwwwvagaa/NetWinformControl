@@ -154,7 +154,7 @@ namespace HZH_Controls.Controls
             g.FillRectangle(sb, new Rectangle(base.ClientRectangle.X, base.ClientRectangle.Y, base.ClientRectangle.Width - 3, base.ClientRectangle.Height - 2));
             GraphicsPath path1 = ControlHelper.CreateRoundedRectanglePath(new Rectangle(base.ClientRectangle.X, base.ClientRectangle.Y + 1, base.ClientRectangle.Width - 3, base.ClientRectangle.Height - 4), 2);
             g.DrawPath(new Pen(m_borderColor, 1), path1);
-            LinearGradientBrush lgb = new LinearGradientBrush(new Point(0, 0), new Point(0, base.ClientRectangle.Height - 3), m_valueColor, Color.FromArgb(200, m_valueColor.R, m_valueColor.G, m_valueColor.B));
+            LinearGradientBrush lgb = new LinearGradientBrush(new Point(0, 0), new Point(0, base.ClientRectangle.Height - 3), m_valueColor, Color.FromArgb(250, m_valueColor.R, m_valueColor.G, m_valueColor.B));
             g.FillPath(lgb, ControlHelper.CreateRoundedRectanglePath(new Rectangle(0, (base.ClientRectangle.Height - (base.ClientRectangle.Height - 3)) / 2, (base.ClientRectangle.Width - 3) * Value / m_maxValue, base.ClientRectangle.Height - 4), 2));
             string strValue = string.Empty;
             if (m_valueTextType == HZH_Controls.Controls.ValueTextType.Percent)
