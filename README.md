@@ -454,6 +454,31 @@ Progress bar supports ring or fan display, support for percentage and value disp
 
 ![sample image](https://images.gitee.com/uploads/images/2019/0819/160415_121416e0_301547.png "switch.png")
 
+##### 20、ListView
+
+![sample image](https://images.gitee.com/uploads/images/2019/0822/113629_bfa4fbc2_301547.png "listview.png")
+![sample image](https://images.gitee.com/uploads/images/2019/0822/113641_3cd8df3f_301547.png "listview2.png")
+
+The ListView item element provides an interface implementation. When you feel that the sub-items I wrote don't meet your needs, you can add a control, implement the interface, and then assign your control to the ListItem's property ItemType.
+
+Similarly, I also provide a page turning control, property Page, as long as the page flip control that inherits UCPagerControlBase can be compatible, of course, you can also use the page turning control.
+
+Take a look at the call.
+
+``` csharp
+List<object> lstSource = new List<object>();
+For (int i = 0; i < 200; i++)
+{
+     lstSource.Add("item-" + i);
+}
+/ / Use the paging control
+Var page = new UCPagerControl2();
+page.DataSource = lstSource;
+this.ucListView1.Page = page;
+/ / Do not use paging controls
+//this.ucListView1.DataSource = lstSource;
+```
+
 #### Overall sample effect
 
 ##### 1, effect 1

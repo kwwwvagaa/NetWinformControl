@@ -25,9 +25,11 @@ namespace Test
             {
                 lstSource.Add("项-" + i);
             }
+            //使用分页控件
             var page = new UCPagerControl2();
             page.DataSource = lstSource;
             this.ucListView1.Page = page;
+            //不使用分页控件
             //this.ucListView1.DataSource = lstSource;
         }
     }
