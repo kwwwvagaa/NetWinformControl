@@ -444,6 +444,8 @@ Progress bar supports ring or fan display, support for percentage and value disp
 
 ![sample image](https://images.gitee.com/uploads/images/2019/0820/115413_8a6564c5_301547.gif "2.gif")
 
+![sample image](https://images.gitee.com/uploads/images/2019/0822/085500_2943930c_301547.gif "1.gif")
+
 ##### 18, breadcrumb navigation
 
 ![sample image](https://images.gitee.com/uploads/images/2019/0819/111929_25c71140_301547.png "1.png")
