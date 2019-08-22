@@ -80,7 +80,7 @@ namespace HZH_Controls.Controls
                 {
                     throw new Exception("数据源不是有效的数据类型，列表");
                 }
-                m_dataSource = value;               
+                m_dataSource = value;
                 ReloadSource();
             }
         }
@@ -149,6 +149,10 @@ namespace HZH_Controls.Controls
         public void ReloadSource()
         {
             ControlHelper.FreezeControl(this, true);
+            if (this.panMain.Controls.Count <= 0)
+            {
+                ReloadGridStyle();
+            }
             if (m_dataSource == null || ((IList)m_dataSource).Count <= 0)
             {
                 for (int i = this.panMain.Controls.Count - 1; i >= 0; i--)
@@ -192,7 +196,6 @@ namespace HZH_Controls.Controls
         /// </summary>
         public void ReloadGridStyle()
         {
-
             Form frmMain = this.FindForm();
             if (frmMain != null && !frmMain.IsDisposed && frmMain.Visible && this.Visible)
             {
@@ -241,41 +244,41 @@ namespace HZH_Controls.Controls
         void UCListView_SelectedItemEvent(object sender, EventArgs e)
         {
             var selectedItem = sender as IListViewItem;
-           
-                if (m_selectedSource.Contains(selectedItem.DataSource))
+
+            if (m_selectedSource.Contains(selectedItem.DataSource))
+            {
+                m_selectedSource.Remove(selectedItem.DataSource);
+                selectedItem.SetSelected(false);
+            }
+            else
+            {
+                if (m_isMultiple)
                 {
-                    m_selectedSource.Remove(selectedItem.DataSource);
-                    selectedItem.SetSelected(false);
+                    m_selectedSource.Add(selectedItem.DataSource);
+                    selectedItem.SetSelected(true);
                 }
                 else
                 {
-                    if (m_isMultiple)
+                    if (m_selectedSource.Count > 0)
                     {
-                        m_selectedSource.Add(selectedItem.DataSource);
-                        selectedItem.SetSelected(true);
-                    }
-                    else
-                    {
-                        if (m_selectedSource.Count > 0)
+                        int intCount = Math.Min(((IList)m_dataSource).Count, this.panMain.Controls.Count);
+                        for (int i = 0; i < intCount; i++)
                         {
-                            int intCount = Math.Min(((IList)m_dataSource).Count, this.panMain.Controls.Count);
-                            for (int i = 0; i < intCount; i++)
+                            var item = ((IListViewItem)this.panMain.Controls[i]);
+                            if (m_selectedSource.Contains(item.DataSource))
                             {
-                                var item = ((IListViewItem)this.panMain.Controls[i]);
-                                if (m_selectedSource.Contains(item.DataSource))
-                                {
-                                    item.SetSelected(false);
-                                    break;
-                                }
+                                item.SetSelected(false);
+                                break;
                             }
                         }
-
-                        m_selectedSource = new List<object>() { selectedItem.DataSource };
-                        selectedItem.SetSelected(true);
-
                     }
-                }            
-         
+
+                    m_selectedSource = new List<object>() { selectedItem.DataSource };
+                    selectedItem.SetSelected(true);
+
+                }
+            }
+
             if (SelectedItemEvent != null)
             {
                 SelectedItemEvent(sender, e);
@@ -296,18 +299,36 @@ namespace HZH_Controls.Controls
                 return;
             Control item = (Control)Activator.CreateInstance(m_itemType);
 
+
             int intXCount = (this.panMain.Width - 10) / (item.Width + 10);
             m_intCellWidth = item.Width + ((this.panMain.Width - 10) % (item.Width + 10)) / intXCount;
 
             int intYCount = (this.panMain.Height - 10) / (item.Height + 10);
             m_intCellHeight = item.Height + ((this.panMain.Height - 10) % (item.Height + 10)) / intYCount;
-            CellCount = intXCount * intYCount;
+            int intCount = intXCount * intYCount;
+
+            if (Page == null)
+            {
+                if (((IList)m_dataSource).Count > intCount)
+                {
+                    intXCount = (this.panMain.Width - 10 - 20) / (item.Width + 10);
+                    m_intCellWidth = item.Width + ((this.panMain.Width - 10 - 20) % (item.Width + 10)) / intXCount;
+                }
+                intCount = Math.Max(intCount, ((IList)m_dataSource).Count);
+            }
+
+            CellCount = intCount;
         }
         #endregion
 
         private void panMain_Resize(object sender, EventArgs e)
         {
             ReloadGridStyle();
+        }
+
+        private void UCListView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

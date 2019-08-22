@@ -62,6 +62,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCListView";
             this.Size = new System.Drawing.Size(462, 363);
+            this.Load += new System.EventHandler(this.UCListView_Load);
             this.ResumeLayout(false);
 
         }

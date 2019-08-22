@@ -21,7 +21,7 @@ namespace Test
         private void FrmTestListView_Load(object sender, EventArgs e)
         {
             List<object> lstSource = new List<object>();
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 200; i++)
             {
                 lstSource.Add("项-" + i);
             }
