@@ -65,8 +65,21 @@
     <Compile Include="Controls\DataGridView\UCDataGridViewRow.Designer.cs">
       <DependentUpon>UCDataGridViewRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\List\IListViewItem.cs" />
     <Compile Include="Controls\List\IPageControl.cs" />
     <Compile Include="Controls\List\PageControlEventHandler.cs" />
+    <Compile Include="Controls\List\UCListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\List\UCListView.Designer.cs">
+      <DependentUpon>UCListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\List\UCListViewItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\List\UCListViewItem.Designer.cs">
+      <DependentUpon>UCListViewItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\List\UCPagerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -424,6 +437,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\List\UCListItemExt.resx">
       <DependentUpon>UCListItemExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\List\UCListView.resx">
+      <DependentUpon>UCListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\List\UCListViewItem.resx">
+      <DependentUpon>UCListViewItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\List\UCPagerControl.resx">
       <DependentUpon>UCPagerControl.cs</DependentUpon>

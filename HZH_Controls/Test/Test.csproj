@@ -74,6 +74,12 @@
     <Compile Include="FrmTemp1Test.Designer.cs">
       <DependentUpon>FrmTemp1Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTestListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTestListView.Designer.cs">
+      <DependentUpon>FrmTestListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmWithTitleTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTemp1Test.resx">
       <DependentUpon>FrmTemp1Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTestListView.resx">
+      <DependentUpon>FrmTestListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWithTitleTest.resx">
       <DependentUpon>FrmWithTitleTest.cs</DependentUpon>
