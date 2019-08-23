@@ -34,7 +34,7 @@ namespace HZH_Controls.Controls
         /// 是否圆角
         /// </summary>
         [Description("是否圆角"), Category("自定义")]
-        public bool IsRadius
+        public virtual bool IsRadius
         {
             get
             {
@@ -43,11 +43,12 @@ namespace HZH_Controls.Controls
             set
             {
                 this._isRadius = value;
+                Refresh();
             }
         }
         //圆角角度
         [Description("圆角角度"), Category("自定义")]
-        public int ConerRadius
+        public virtual int ConerRadius
         {
             get
             {
@@ -56,6 +57,7 @@ namespace HZH_Controls.Controls
             set
             {
                 this._cornerRadius = value;
+                Refresh();
             }
         }
 
@@ -63,7 +65,7 @@ namespace HZH_Controls.Controls
         /// 是否显示边框
         /// </summary>
         [Description("是否显示边框"), Category("自定义")]
-        public bool IsShowRect
+        public virtual bool IsShowRect
         {
             get
             {
@@ -72,13 +74,14 @@ namespace HZH_Controls.Controls
             set
             {
                 this._isShowRect = value;
+                Refresh();
             }
         }
         /// <summary>
         /// 边框颜色
         /// </summary>
         [Description("边框颜色"), Category("自定义")]
-        public Color RectColor
+        public virtual Color RectColor
         {
             get
             {
@@ -94,7 +97,7 @@ namespace HZH_Controls.Controls
         /// 边框宽度
         /// </summary>
         [Description("边框宽度"), Category("自定义")]
-        public int RectWidth
+        public virtual int RectWidth
         {
             get
             {
@@ -103,13 +106,14 @@ namespace HZH_Controls.Controls
             set
             {
                 this._rectWidth = value;
+                Refresh();
             }
         }
         /// <summary>
         /// 当使用边框时填充颜色，当值为背景色或透明色或空值则不填充
         /// </summary>
         [Description("当使用边框时填充颜色，当值为背景色或透明色或空值则不填充"), Category("自定义")]
-        public Color FillColor
+        public virtual Color FillColor
         {
             get
             {
@@ -118,6 +122,7 @@ namespace HZH_Controls.Controls
             set
             {
                 this._fillColor = value;
+                Refresh();
             }
         }
 

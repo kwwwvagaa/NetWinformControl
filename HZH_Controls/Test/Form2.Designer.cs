@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
+            this.ucProcessWave2 = new HZH_Controls.Controls.UCProcessWave();
             this.ucProcessWave1 = new HZH_Controls.Controls.UCProcessWave();
             this.ucWaveWithSource1 = new HZH_Controls.Controls.UCWaveWithSource();
             this.ucWave1 = new HZH_Controls.Controls.UCWave();
@@ -134,25 +135,47 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "波宽";
             // 
+            // ucProcessWave2
+            // 
+            this.ucProcessWave2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
+            this.ucProcessWave2.ConerRadius = 0;
+            this.ucProcessWave2.EnabledTheme = false;
+            this.ucProcessWave2.FillColor = System.Drawing.Color.Empty;
+            this.ucProcessWave2.Font = new System.Drawing.Font("微软雅黑", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucProcessWave2.IsRadius = false;
+            this.ucProcessWave2.IsRectangle = false;
+            this.ucProcessWave2.IsShowRect = true;
+            this.ucProcessWave2.Location = new System.Drawing.Point(910, 261);
+            this.ucProcessWave2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucProcessWave2.MaxValue = 100;
+            this.ucProcessWave2.Name = "ucProcessWave2";
+            this.ucProcessWave2.RectColor = System.Drawing.Color.White;
+            this.ucProcessWave2.RectWidth = 4;
+            this.ucProcessWave2.Size = new System.Drawing.Size(150, 150);
+            this.ucProcessWave2.TabIndex = 11;
+            this.ucProcessWave2.Value = 40;
+            this.ucProcessWave2.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            // 
             // ucProcessWave1
             // 
-            this.ucProcessWave1.BackColor = System.Drawing.Color.Transparent;
+            this.ucProcessWave1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.ucProcessWave1.ConerRadius = 0;
             this.ucProcessWave1.EnabledTheme = false;
             this.ucProcessWave1.FillColor = System.Drawing.Color.Empty;
             this.ucProcessWave1.Font = new System.Drawing.Font("微软雅黑", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucProcessWave1.IsRadius = false;
             this.ucProcessWave1.IsRectangle = true;
-            this.ucProcessWave1.IsShowRect = false;
+            this.ucProcessWave1.IsShowRect = true;
             this.ucProcessWave1.Location = new System.Drawing.Point(756, 221);
             this.ucProcessWave1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucProcessWave1.MaxValue = 100;
             this.ucProcessWave1.Name = "ucProcessWave1";
-            this.ucProcessWave1.RectColor = System.Drawing.Color.Empty;
-            this.ucProcessWave1.RectWidth = 0;
-            this.ucProcessWave1.Size = new System.Drawing.Size(150, 150);
+            this.ucProcessWave1.RectColor = System.Drawing.Color.White;
+            this.ucProcessWave1.RectWidth = 4;
+            this.ucProcessWave1.Size = new System.Drawing.Size(108, 236);
             this.ucProcessWave1.TabIndex = 11;
             this.ucProcessWave1.Value = 40;
+            this.ucProcessWave1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             // 
             // ucWaveWithSource1
             // 
@@ -474,6 +497,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 594);
+            this.Controls.Add(this.ucProcessWave2);
             this.Controls.Add(this.ucProcessWave1);
             this.Controls.Add(this.ucWaveWithSource1);
             this.Controls.Add(this.label3);
@@ -542,6 +566,7 @@
         private System.Windows.Forms.Label label3;
         private HZH_Controls.Controls.UCWaveWithSource ucWaveWithSource1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave1;
+        private HZH_Controls.Controls.UCProcessWave ucProcessWave2;
      
     }
 }

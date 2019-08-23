@@ -52,30 +52,6 @@ namespace HZH_Controls.Controls
         }
         #endregion
 
-        [Description("是否显示边框"), Category("自定义")]
-        public new bool IsShowRect
-        {
-            get;
-            set;
-        }
-        /// <summary>
-        /// 边框颜色
-        /// </summary>
-        [Description("边框颜色"), Category("自定义")]
-        public new Color RectColor
-        {
-            get;
-            set;
-        }
-        /// <summary>
-        /// 边框宽度
-        /// </summary>
-        [Description("边框宽度"), Category("自定义")]
-        public new int RectWidth
-        {
-            get;
-            set;
-        }
 
         [Description("值变更事件"), Category("自定义")]
         public event EventHandler ValueChanged;
@@ -142,6 +118,30 @@ namespace HZH_Controls.Controls
             }
         }
 
+        public Color ValueColor
+        {
+            get { return this.ucWave1.WaveColor; }
+            set
+            {
+                this.ucWave1.WaveColor = value;
+            }
+        }
+
+        public override int RectWidth
+        {
+            get
+            {
+                return base.RectWidth;
+            }
+            set
+            {
+                if (value < 4)
+                    base.RectWidth = 4;
+                else
+                    base.RectWidth = value;
+            }
+        }
+
         public UCProcessWave()
         {
             InitializeComponent();
@@ -153,6 +153,8 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.UserPaint, true);
             base.IsRadius = true;
             base.IsShowRect = false;
+            RectWidth = 4;
+            RectColor = Color.White;
             ucWave1.Height = (int)((double)m_value / (double)m_maxValue * this.Height) + ucWave1.WaveHeight;
             this.SizeChanged += UCProcessWave_SizeChanged;
             this.ucWave1.OnPainted += ucWave1_Painted;
@@ -161,13 +163,34 @@ namespace HZH_Controls.Controls
 
         void ucWave1_Painted(object sender, PaintEventArgs e)
         {
-        
             e.Graphics.SetGDIHigh();
+            if (IsShowRect)
+            {
+                if (m_isRectangle)
+                {
+                    Color rectColor = RectColor;
+                    Pen pen = new Pen(rectColor, (float)RectWidth);
+                    Rectangle clientRectangle = new Rectangle(0, this.ucWave1.Height - this.Height, this.Width, this.Height);
+                    GraphicsPath graphicsPath = new GraphicsPath();
+                    graphicsPath.AddArc(clientRectangle.X, clientRectangle.Y, 10, 10, 180f, 90f);
+                    graphicsPath.AddArc(clientRectangle.Width - 10 - 1, clientRectangle.Y, 10, 10, 270f, 90f);
+                    graphicsPath.AddArc(clientRectangle.Width - 10 - 1, clientRectangle.Bottom - 10 - 1, 10, 10, 0f, 90f);
+                    graphicsPath.AddArc(clientRectangle.X, clientRectangle.Bottom - 10 - 1, 10, 10, 90f, 90f);
+                    graphicsPath.CloseFigure();
+                    e.Graphics.DrawPath(pen, graphicsPath);
+                }
+                else
+                {
+                    SolidBrush solidBrush = new SolidBrush(RectColor);
+                    e.Graphics.DrawEllipse(new Pen(solidBrush, RectWidth), new Rectangle(0, this.ucWave1.Height - this.Height, this.Width, this.Height));
+                }
+            }
+
             if (!m_isRectangle)
             {
                 //这里曲线救国，因为设置了控件区域导致的毛边，通过画一个没有毛边的圆遮挡
-                SolidBrush solidBrush = new SolidBrush(Color.White);
-                e.Graphics.DrawEllipse(new Pen(solidBrush, 2), new Rectangle(-1, this.ucWave1.Height - this.Height - 1, this.Width + 2, this.Height + 2));
+                SolidBrush solidBrush1 = new SolidBrush(Color.White);
+                e.Graphics.DrawEllipse(new Pen(solidBrush1, 2), new Rectangle(-1, this.ucWave1.Height - this.Height - 1, this.Width + 2, this.Height + 2));
             }
             string strValue = ((double)m_value / (double)m_maxValue).ToString("0.%");
             System.Drawing.SizeF sizeF = e.Graphics.MeasureString(strValue, Font);

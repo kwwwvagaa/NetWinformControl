@@ -47,7 +47,7 @@
             // UCProcessWave
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.Controls.Add(this.ucWave1);
             this.Name = "UCProcessWave";
             this.Size = new System.Drawing.Size(150, 150);
