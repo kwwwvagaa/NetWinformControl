@@ -455,8 +455,8 @@ ucBtnsGroup2.SelectItem = new List<string>() { "2","3"};
 
 ##### 20、ListView
 
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0822/113629_bfa4fbc2_301547.png "listview.png")
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0822/113641_3cd8df3f_301547.png "listview2.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0822/113629_bfa4fbc2_301547.png "listview.png")
+![样例图片](https://images.gitee.com/uploads/images/2019/0822/113641_3cd8df3f_301547.png "listview2.png")
 
 ListView的项元素提供了接口实现，当你觉得我写的子项并不能满足你的需求的时候，你可以添加一个控件，实现接口，然后将你的控件指定给Listview的属性ItemType即可了。
 
@@ -476,6 +476,21 @@ page.DataSource = lstSource;
 this.ucListView1.Page = page;
 //不使用分页控件
 //this.ucListView1.DataSource = lstSource;
+```
+
+##### 20、水波
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0823/090215_71d3c692_301547.gif "2.gif")
+
+##### 20、波形图表
+
+![样例图片](https://images.gitee.com/uploads/images/2019/0823/090247_789712bc_301547.gif "1.gif")
+
+``` csharp
+//timer事件中定时随机添加数字
+Random r = new Random();
+int i = r.Next(100, 1000);
+this.ucWaveWithSource1.AddSource(i.ToString(), i);
 ```
 
 #### 整体样例效果
