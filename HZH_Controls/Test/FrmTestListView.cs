@@ -31,6 +31,7 @@ namespace Test
             this.ucListView1.Page = page;
             //不使用分页控件
             //this.ucListView1.DataSource = lstSource;
+
         }
     }
 }

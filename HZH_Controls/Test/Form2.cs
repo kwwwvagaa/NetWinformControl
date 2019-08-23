@@ -19,6 +19,7 @@ namespace Test
         private void button1_Click(object sender, EventArgs e)
         {
             this.ucStep1.StepIndex = 3;
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -36,6 +37,27 @@ namespace Test
                 this.ucProcessLine1.Value = 0;
             if (this.ucProcessLineExt1.Value >= this.ucProcessLineExt1.MaxValue)
                 this.ucProcessLineExt1.Value = 0;
+
+
+            Random r = new Random();
+            int i = r.Next(100, 1000);
+            this.ucWaveWithSource1.AddSource(i.ToString(), i);
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            this.ucWave1.WaveSleep = trackBar1.Value;
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            this.ucWave1.WaveHeight = trackBar2.Value;
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            this.ucWave1.WaveWidth = trackBar3.Value;
         }
     }
 }

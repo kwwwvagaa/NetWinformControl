@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ucWave1 = new HZH_Controls.Controls.UCWave();
             this.ucProcessLineExt1 = new HZH_Controls.Controls.UCProcessLineExt();
             this.ucProcessLine1 = new HZH_Controls.Controls.UCProcessLine();
             this.ucSwitch10 = new HZH_Controls.Controls.UCSwitch();
@@ -48,6 +56,10 @@
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
+            this.ucWaveWithSource1 = new HZH_Controls.Controls.UCWaveWithSource();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -55,11 +67,90 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(249, 423);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Minimum = 10;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(350, 45);
+            this.trackBar1.SmallChange = 10;
+            this.trackBar1.TabIndex = 8;
+            this.trackBar1.TickFrequency = 10;
+            this.trackBar1.Value = 50;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(390, 456);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "波速度";
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(249, 474);
+            this.trackBar2.Maximum = 50;
+            this.trackBar2.Minimum = 10;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(350, 45);
+            this.trackBar2.SmallChange = 10;
+            this.trackBar2.TabIndex = 8;
+            this.trackBar2.TickFrequency = 10;
+            this.trackBar2.Value = 30;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(390, 510);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "波高";
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(249, 537);
+            this.trackBar3.Maximum = 300;
+            this.trackBar3.Minimum = 50;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(350, 45);
+            this.trackBar3.SmallChange = 50;
+            this.trackBar3.TabIndex = 8;
+            this.trackBar3.TickFrequency = 50;
+            this.trackBar3.Value = 200;
+            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(390, 573);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "波宽";
+            // 
+            // ucWave1
+            // 
+            this.ucWave1.Location = new System.Drawing.Point(249, 337);
+            this.ucWave1.Name = "ucWave1";
+            this.ucWave1.Size = new System.Drawing.Size(350, 74);
+            this.ucWave1.TabIndex = 7;
+            this.ucWave1.Text = "ucWave1";
+            this.ucWave1.WaveColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucWave1.WaveHeight = 30;
+            this.ucWave1.WaveSleep = 50;
+            this.ucWave1.WaveWidth = 200;
+            // 
             // ucProcessLineExt1
             // 
             this.ucProcessLineExt1.BackColor = System.Drawing.Color.Transparent;
             this.ucProcessLineExt1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ucProcessLineExt1.Location = new System.Drawing.Point(406, 287);
+            this.ucProcessLineExt1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucProcessLineExt1.Location = new System.Drawing.Point(406, 253);
             this.ucProcessLineExt1.MaxValue = 100;
             this.ucProcessLineExt1.Name = "ucProcessLineExt1";
             this.ucProcessLineExt1.Size = new System.Drawing.Size(269, 50);
@@ -73,7 +164,7 @@
             this.ucProcessLine1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ucProcessLine1.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
             this.ucProcessLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucProcessLine1.Location = new System.Drawing.Point(406, 224);
+            this.ucProcessLine1.Location = new System.Drawing.Point(406, 204);
             this.ucProcessLine1.MaxValue = 150;
             this.ucProcessLine1.Name = "ucProcessLine1";
             this.ucProcessLine1.Size = new System.Drawing.Size(269, 32);
@@ -335,11 +426,41 @@
             this.ucStep1.StepWidth = 35;
             this.ucStep1.TabIndex = 0;
             // 
+            // ucWaveWithSource1
+            // 
+            this.ucWaveWithSource1.ConerRadius = 10;
+            this.ucWaveWithSource1.EnabledTheme = false;
+            this.ucWaveWithSource1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
+            this.ucWaveWithSource1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucWaveWithSource1.GridLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucWaveWithSource1.GridLineTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucWaveWithSource1.IsRadius = true;
+            this.ucWaveWithSource1.IsShowRect = true;
+            this.ucWaveWithSource1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucWaveWithSource1.LineTension = 0.5F;
+            this.ucWaveWithSource1.Location = new System.Drawing.Point(756, 14);
+            this.ucWaveWithSource1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucWaveWithSource1.Name = "ucWaveWithSource1";
+            this.ucWaveWithSource1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.ucWaveWithSource1.RectWidth = 1;
+            this.ucWaveWithSource1.Size = new System.Drawing.Size(586, 182);
+            this.ucWaveWithSource1.TabIndex = 10;
+            this.ucWaveWithSource1.SleepTime = 1000;
+            this.ucWaveWithSource1.WaveWidth = 50;
+            // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(825, 594);
+            this.ClientSize = new System.Drawing.Size(1438, 594);
+            this.Controls.Add(this.ucWaveWithSource1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.trackBar3);
+            this.Controls.Add(this.trackBar2);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.ucWave1);
             this.Controls.Add(this.ucProcessLineExt1);
             this.Controls.Add(this.ucProcessLine1);
             this.Controls.Add(this.ucSwitch10);
@@ -361,7 +482,11 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -386,5 +511,13 @@
         private HZH_Controls.Controls.UCStep ucStep2;
         private HZH_Controls.Controls.UCProcessLine ucProcessLine1;
         private HZH_Controls.Controls.UCProcessLineExt ucProcessLineExt1;
+        private HZH_Controls.Controls.UCWave ucWave1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.Label label3;
+        private HZH_Controls.Controls.UCWaveWithSource ucWaveWithSource1;
     }
 }
