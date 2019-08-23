@@ -157,8 +157,6 @@ namespace HZH_Controls.Controls
             timer.Interval = m_sleepTime;
             timer.Tick += timer_Tick;
             this.VisibleChanged += UCWave_VisibleChanged;
-
-
         }
 
      

@@ -124,9 +124,12 @@ namespace HZH_Controls.Controls
         public UCControlBase()
         {
             this.InitializeComponent();
-            base.SetStyle(ControlStyles.UserPaint, true);
-            base.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            base.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.SetStyle(ControlStyles.Selectable, true);
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -148,7 +151,7 @@ namespace HZH_Controls.Controls
                     graphicsPath.AddArc(clientRectangle.Width - _cornerRadius - 1, clientRectangle.Height - _cornerRadius - 1, _cornerRadius, _cornerRadius, 0f, 90f);
                     graphicsPath.AddArc(0, clientRectangle.Height - _cornerRadius - 1, _cornerRadius, _cornerRadius, 90f, 90f);
                     graphicsPath.CloseFigure();
-                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    e.Graphics.SetGDIHigh();
                     if (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor)
                         e.Graphics.FillPath(new SolidBrush(this._fillColor), graphicsPath);
                     e.Graphics.DrawPath(pen, graphicsPath);

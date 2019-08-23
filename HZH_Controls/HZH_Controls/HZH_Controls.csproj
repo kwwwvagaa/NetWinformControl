@@ -139,6 +139,12 @@
     <Compile Include="Controls\Process\UCProcessLineExt.Designer.cs">
       <DependentUpon>UCProcessLineExt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Process\UCProcessWave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Process\UCProcessWave.Designer.cs">
+      <DependentUpon>UCProcessWave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Step\UCStep.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -482,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Process\UCProcessLineExt.resx">
       <DependentUpon>UCProcessLineExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Process\UCProcessWave.resx">
+      <DependentUpon>UCProcessWave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RadioButton\UCRadioButton.resx">
       <DependentUpon>UCRadioButton.cs</DependentUpon>

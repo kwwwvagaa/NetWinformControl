@@ -11,6 +11,8 @@ namespace HZH_Controls.Controls
 {
     public class UCWave : Control
     {
+        public event PaintEventHandler OnPainted; 
+
         private Color m_waveColor = Color.FromArgb(73, 119, 232);
 
         [Description("波纹颜色"), Category("自定义")]
@@ -131,6 +133,11 @@ namespace HZH_Controls.Controls
 
             g.FillPath(new SolidBrush(Color.FromArgb(220, m_waveColor.R, m_waveColor.G, m_waveColor.B)), path1);
             g.FillPath(new SolidBrush(Color.FromArgb(220, m_waveColor.R, m_waveColor.G, m_waveColor.B)), path2);
+
+            if (OnPainted != null)
+            {
+                OnPainted(this, e);
+            }
         }
     }
 }
