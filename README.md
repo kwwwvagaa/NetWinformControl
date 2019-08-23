@@ -479,6 +479,21 @@ this.ucListView1.Page = page;
 //this.ucListView1.DataSource = lstSource;
 ```
 
+##### 21, water wave
+
+![sample image](https://images.gitee.com/uploads/images/2019/0823/090215_71d3c692_301547.gif "2.gif")
+
+##### 22, waveform chart
+
+![sample image](https://images.gitee.com/uploads/images/2019/0823/090247_789712bc_301547.gif "1.gif")
+
+``` csharp
+//Timer randomly adds numbers at regular intervals
+Random r = new Random();
+Int i = r.Next(100, 1000);
+this.ucWaveWithSource1.AddSource(i.ToString(), i);
+```
+
 #### Overall sample effect
 
 ##### 1, effect 1
