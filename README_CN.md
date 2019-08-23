@@ -478,11 +478,11 @@ this.ucListView1.Page = page;
 //this.ucListView1.DataSource = lstSource;
 ```
 
-##### 20、水波
+##### 21、水波
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0823/090215_71d3c692_301547.gif "2.gif")
 
-##### 20、波形图表
+##### 22、波形图表
 
 ![样例图片](https://images.gitee.com/uploads/images/2019/0823/090247_789712bc_301547.gif "1.gif")
 
