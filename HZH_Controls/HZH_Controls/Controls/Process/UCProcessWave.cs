@@ -118,6 +118,7 @@ namespace HZH_Controls.Controls
             }
         }
 
+        [Description("值颜色"), Category("自定义")]
         public Color ValueColor
         {
             get { return this.ucWave1.WaveColor; }
@@ -127,6 +128,7 @@ namespace HZH_Controls.Controls
             }
         }
 
+        [Description("边框宽度"), Category("自定义")]
         public override int RectWidth
         {
             get
@@ -189,7 +191,7 @@ namespace HZH_Controls.Controls
             if (!m_isRectangle)
             {
                 //这里曲线救国，因为设置了控件区域导致的毛边，通过画一个没有毛边的圆遮挡
-                SolidBrush solidBrush1 = new SolidBrush(Color.White);
+                SolidBrush solidBrush1 = new SolidBrush(RectColor);
                 e.Graphics.DrawEllipse(new Pen(solidBrush1, 2), new Rectangle(-1, this.ucWave1.Height - this.Height - 1, this.Width + 2, this.Height + 2));
             }
             string strValue = ((double)m_value / (double)m_maxValue).ToString("0.%");
@@ -216,7 +218,7 @@ namespace HZH_Controls.Controls
             if (!m_isRectangle)
             {
                 //这里曲线救国，因为设置了控件区域导致的毛边，通过画一个没有毛边的圆遮挡
-                SolidBrush solidBrush = new SolidBrush(Color.White);
+                SolidBrush solidBrush = new SolidBrush(RectColor);
                 e.Graphics.DrawEllipse(new Pen(solidBrush, 2), new Rectangle(-1, -1, this.Width + 2, this.Height + 2));
             }
             string strValue = ((double)m_value / (double)m_maxValue).ToString("0.%");
