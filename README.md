@@ -496,7 +496,7 @@ Int i = r.Next(100, 1000);
 this.ucWaveWithSource1.AddSource(i.ToString(), i);
 ```
 
-##### 23, Tree Form
+##### 23, TreeGrid
 
 ![Enter image description](https://images.gitee.com/uploads/images/2019/0826/154617_e0b57ff6_301547.png "treegrid.png")
 
