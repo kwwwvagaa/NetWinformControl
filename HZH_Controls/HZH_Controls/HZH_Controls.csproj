@@ -65,6 +65,12 @@
     <Compile Include="Controls\DataGridView\UCDataGridViewRow.Designer.cs">
       <DependentUpon>UCDataGridViewRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DataGridView\UCDataGridViewTreeRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\UCDataGridViewTreeRow.Designer.cs">
+      <DependentUpon>UCDataGridViewTreeRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\List\IListViewItem.cs" />
     <Compile Include="Controls\List\IPageControl.cs" />
     <Compile Include="Controls\List\PageControlEventHandler.cs" />
@@ -420,6 +426,9 @@
     <EmbeddedResource Include="Controls\DataGridView\UCDataGridViewRow.resx">
       <DependentUpon>UCDataGridViewRow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGridView\UCDataGridViewTreeRow.resx">
+      <DependentUpon>UCDataGridViewTreeRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DateTime\UCDatePickerExt.resx">
       <DependentUpon>UCDatePickerExt.cs</DependentUpon>
     </EmbeddedResource>
@@ -670,6 +679,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sanjiao1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -54,5 +54,9 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <param name="blnSelected">是否选中</param>
         void SetSelect(bool blnSelected);
+        /// <summary>
+        /// 行高
+        /// </summary>
+        int RowHeight { get; set; }
     }
 }

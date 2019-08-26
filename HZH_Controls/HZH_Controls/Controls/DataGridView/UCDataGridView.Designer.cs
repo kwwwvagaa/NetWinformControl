@@ -30,6 +30,7 @@
         {
             this.panHead = new System.Windows.Forms.Panel();
             this.panColumns = new System.Windows.Forms.TableLayoutPanel();
+            this.panHeadLeft = new System.Windows.Forms.Panel();
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
             this.panRow = new System.Windows.Forms.Panel();
             this.panPage = new System.Windows.Forms.Panel();
@@ -39,6 +40,7 @@
             // panHead
             // 
             this.panHead.Controls.Add(this.panColumns);
+            this.panHead.Controls.Add(this.panHeadLeft);
             this.panHead.Controls.Add(this.ucSplitLine_H1);
             this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHead.Location = new System.Drawing.Point(0, 0);
@@ -59,6 +61,14 @@
             this.panColumns.Size = new System.Drawing.Size(1061, 39);
             this.panColumns.TabIndex = 1;
             // 
+            // panHeadLeft
+            // 
+            this.panHeadLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panHeadLeft.Location = new System.Drawing.Point(0, 0);
+            this.panHeadLeft.Name = "panHeadLeft";
+            this.panHeadLeft.Size = new System.Drawing.Size(0, 39);
+            this.panHeadLeft.TabIndex = 2;
+            // 
             // ucSplitLine_H1
             // 
             this.ucSplitLine_H1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
@@ -77,6 +87,7 @@
             this.panRow.Name = "panRow";
             this.panRow.Size = new System.Drawing.Size(1061, 481);
             this.panRow.TabIndex = 1;
+            this.panRow.SizeChanged += new System.EventHandler(this.panRow_SizeChanged);
             // 
             // panPage
             // 
@@ -109,6 +120,7 @@
         private UCSplitLine_H ucSplitLine_H1;
         private System.Windows.Forms.Panel panRow;
         private System.Windows.Forms.Panel panPage;
+        private System.Windows.Forms.Panel panHeadLeft;
 
     }
 }

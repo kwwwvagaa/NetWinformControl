@@ -229,4 +229,10 @@
   <data name="sanjiao2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sanjiao2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="caret_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caret-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="caret_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caret-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

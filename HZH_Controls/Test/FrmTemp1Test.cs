@@ -19,6 +19,9 @@ namespace Test
 
         private void FrmTemp1Test_Load(object sender, EventArgs e)
         {
+            this.ucDataGridView1.RowType = typeof(UCDataGridViewTreeRow);
+            this.ucDataGridView1.IsAutoHeight = true;
+
             List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "姓名", Width = 50, WidthType = SizeType.Percent });
@@ -39,12 +42,33 @@ namespace Test
                     Sex = i % 2
                 };
                 lstSource.Add(model);
+                AddChilds(model, 5);
             }
 
             var page = new UCPagerControl2();
             page.DataSource = lstSource;
             this.ucDataGridView1.Page = page;
             this.ucDataGridView1.First();
+        }
+
+        private void AddChilds(TestModel tm, int intCount)
+        {
+            if (intCount <= 0)
+                return;
+            tm.Childrens = new List<TestModel>();
+            for (int i = 0; i < 5; i++)
+            {
+                TestModel model = new TestModel()
+                {
+                    ID = i.ToString(),
+                    Age = 3 * i,
+                    Name = intCount + "——" + i,
+                    Birthday = DateTime.Now.AddYears(-10),
+                    Sex = i % 2
+                };
+                tm.Childrens.Add(model);
+                AddChilds(model, intCount - 1);
+            }
         }
     }
 
@@ -55,5 +79,6 @@ namespace Test
         public int Age { get; set; }
         public DateTime Birthday { get; set; }
         public int Sex { get; set; }
+        public List<TestModel> Childrens { get; set; }
     }
 }

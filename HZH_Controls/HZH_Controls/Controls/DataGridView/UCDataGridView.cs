@@ -18,6 +18,19 @@ namespace HZH_Controls.Controls
     public partial class UCDataGridView : UserControl
     {
         #region 属性
+        private int m_headPadingLeft = 0;
+
+        [Description("标题左侧间距"), Category("自定义")]
+        public int HeadPadingLeft
+        {
+            get { return m_headPadingLeft; }
+            set
+            {
+                m_headPadingLeft = value;
+                this.panHeadLeft.Width = m_headPadingLeft;
+            }
+        }
+
         private Font m_headFont = new Font("微软雅黑", 12F);
         /// <summary>
         /// 标题字体
@@ -120,7 +133,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private List<DataGridViewColumnEntity> m_columns;
+        private List<DataGridViewColumnEntity> m_columns = null;
         /// <summary>
         /// 列
         /// </summary>
@@ -135,7 +148,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private object m_dataSource;
+        private object m_dataSource = null;
         /// <summary>
         /// 数据源,支持列表或table，如果使用翻页控件，请使用翻页控件的DataSource
         /// </summary>
@@ -145,15 +158,16 @@ namespace HZH_Controls.Controls
             get { return m_dataSource; }
             set
             {
-                if (value == null)
-                    return;
-                if (!(m_dataSource is DataTable) && (!typeof(IList).IsAssignableFrom(value.GetType())))
+                if (value != null)
                 {
-                    throw new Exception("数据源不是有效的数据类型，请使用Datatable或列表");
+                    if (!(m_dataSource is DataTable) && (!typeof(IList).IsAssignableFrom(value.GetType())))
+                    {
+                        throw new Exception("数据源不是有效的数据类型，请使用Datatable或列表");
+                    }
                 }
-
                 m_dataSource = value;
-                ReloadSource();
+                if (m_columns != null && m_columns.Count > 0)
+                    ReloadSource();
             }
         }
 
@@ -174,6 +188,9 @@ namespace HZH_Controls.Controls
                 if (!typeof(IDataGridViewRow).IsAssignableFrom(value) || !value.IsSubclassOf(typeof(Control)))
                     throw new Exception("行控件没有实现IDataGridViewRow接口");
                 m_rowType = value;
+                ResetShowCount();
+                if (m_columns != null && m_columns.Count > 0)
+                    ReloadSource();
             }
         }
         IDataGridViewRow m_selectRow = null;
@@ -196,15 +213,45 @@ namespace HZH_Controls.Controls
         {
             get
             {
-                if (m_isShowCheckBox)
-                {
-                    return Rows.FindAll(p => p.IsChecked);
-                }
-                else
-                    return new List<IDataGridViewRow>() { m_selectRow };
+                return GetSelectRows();
             }
         }
 
+        private List<IDataGridViewRow> GetSelectRows()
+        {
+            List<IDataGridViewRow> lst = new List<IDataGridViewRow>();
+            if (m_isShowCheckBox)
+            {
+                lst.AddRange(Rows.FindAll(p => p.IsChecked));
+            }
+            else
+            {
+                lst.AddRange(new List<IDataGridViewRow>() { m_selectRow });
+            }
+            foreach (var row in Rows)
+            {
+                Control c = row as Control;
+                UCDataGridView grid = FindChildGrid(c);
+                lst.AddRange(grid.SelectRows);
+            }
+            return lst;
+        }
+
+        private UCDataGridView FindChildGrid(Control c)
+        {
+            foreach (Control item in c.Controls)
+            {
+                if (item is UCDataGridView)
+                    return item as UCDataGridView;
+                else if (item.Controls.Count > 0)
+                {
+                    var grid = FindChildGrid(c);
+                    if (grid != null)
+                        return grid;
+                }
+            }
+            return null;
+        }
 
         private UCPagerControlBase m_page = null;
         /// <summary>
@@ -235,6 +282,17 @@ namespace HZH_Controls.Controls
                     m_page = null;
                 }
             }
+        }
+
+        private bool m_isAutoHeight = false;
+        /// <summary>
+        /// 自动适应最大高度(当为true时，需要手动计算高度，请慎用)
+        /// </summary>
+        [Browsable(false)]
+        public bool IsAutoHeight
+        {
+            get { return m_isAutoHeight; }
+            set { m_isAutoHeight = value; }
         }
 
         void page_ShowSourceChanged(object currentSource)
@@ -350,6 +408,8 @@ namespace HZH_Controls.Controls
         {
             if (DesignMode)
             { return; }
+            if (this.Height <= 0)
+                return;
             ShowCount = this.panRow.Height / (m_rowHeight);
             int intCha = this.panRow.Height % (m_rowHeight);
             m_rowHeight += intCha / ShowCount;
@@ -366,12 +426,14 @@ namespace HZH_Controls.Controls
             { return; }
             try
             {
-                if (m_columns == null || m_columns.Count <= 0)
-                    return;
+
 
                 ControlHelper.FreezeControl(this.panRow, true);
                 this.panRow.Controls.Clear();
+
                 Rows = new List<IDataGridViewRow>();
+                if (m_columns == null || m_columns.Count <= 0)
+                    return;
                 if (m_dataSource != null)
                 {
                     int intIndex = 0;
@@ -389,8 +451,6 @@ namespace HZH_Controls.Controls
 
                     foreach (Control item in this.panRow.Controls)
                     {
-
-
                         if (intIndex >= intSourceCount)
                         {
                             item.Visible = false;
@@ -408,7 +468,8 @@ namespace HZH_Controls.Controls
                                 row.DataSource = (m_dataSource as IList)[intIndex];
                             }
                             row.BindingCellData();
-                            item.Height = m_rowHeight;
+                            if (row.RowHeight != m_rowHeight)
+                                row.RowHeight = m_rowHeight;
                             item.Visible = true;
                             item.BringToFront();
                             if (lastItem == null)
@@ -439,10 +500,10 @@ namespace HZH_Controls.Controls
 
 
                             Control rowControl = (row as Control);
-                            rowControl.Height = m_rowHeight;
                             this.panRow.Controls.Add(rowControl);
+                            row.RowHeight = m_rowHeight;
                             rowControl.Dock = DockStyle.Top;
-                            row.CellClick += (a, b) => { SetSelectRow(rowControl, b); };
+                            row.CellClick += (a, b) => { SetSelectRow((Control)a, b); };
                             row.CheckBoxChangeEvent += (a, b) => { SetSelectRow(rowControl, b); };
                             row.SourceChanged += RowSourceChanged;
                             rowControl.BringToFront();
@@ -463,6 +524,29 @@ namespace HZH_Controls.Controls
                 ControlHelper.FreezeControl(this.panRow, false);
             }
         }
+
+        //void rowControl_SizeChanged(object sender, EventArgs e)
+        //{
+        //    if (m_isAutoHeight)
+        //    {
+        //        int intHeightCount = 0;
+        //        intHeightCount += (IsShowHead ? this.panHead.Height : 0) + (Page != null ? this.panPage.Height : 0);
+        //        foreach (Control item in this.panRow.Controls)
+        //        {
+        //            intHeightCount += item.Height;
+        //        }
+        //        if (this.Parent.Name == "panChildGrid")
+        //        {
+        //            if (this.Parent.Height != intHeightCount)
+        //                this.Parent.Height = intHeightCount;
+        //        }
+        //        else
+        //        {
+        //            if (this.Height != intHeightCount)
+        //                this.Height = intHeightCount;
+        //        }
+        //    }
+        //}
 
 
         /// <summary>
@@ -565,28 +649,32 @@ namespace HZH_Controls.Controls
                     return;
                 this.FindForm().ActiveControl = this;
                 this.FindForm().ActiveControl = item;
-                if (m_selectRow != null)
+                if (m_selectRow != item)
                 {
-                    if (m_selectRow == item)
-                        return;
-                    m_selectRow.SetSelect(false);
+                    if (m_selectRow != null)
+                    {
+                        m_selectRow.SetSelect(false);
+                    }
+                    m_selectRow = item as IDataGridViewRow;
+                    m_selectRow.SetSelect(true);
+
+                    if (this.panRow.Controls.Count > 0)
+                    {
+                        if (item.Location.Y < 0)
+                        {
+                            this.panRow.AutoScrollPosition = new Point(0, Math.Abs(this.panRow.Controls[this.panRow.Controls.Count - 1].Location.Y) + item.Location.Y);
+                        }
+                        else if (item.Location.Y + m_rowHeight > this.panRow.Height)
+                        {
+                            this.panRow.AutoScrollPosition = new Point(0, Math.Abs(this.panRow.AutoScrollPosition.Y) + item.Location.Y - this.panRow.Height + m_rowHeight);
+                        }
+                    }
                 }
-                m_selectRow = item as IDataGridViewRow;
-                m_selectRow.SetSelect(true);
+
+
                 if (ItemClick != null)
                 {
                     ItemClick(item, e);
-                }
-                if (this.panRow.Controls.Count > 0)
-                {
-                    if (item.Location.Y < 0)
-                    {
-                        this.panRow.AutoScrollPosition = new Point(0, Math.Abs(this.panRow.Controls[this.panRow.Controls.Count - 1].Location.Y) + item.Location.Y);
-                    }
-                    else if (item.Location.Y + m_rowHeight > this.panRow.Height)
-                    {
-                        this.panRow.AutoScrollPosition = new Point(0, Math.Abs(this.panRow.AutoScrollPosition.Y) + item.Location.Y - this.panRow.Height + m_rowHeight);
-                    }
                 }
             }
             finally
@@ -596,9 +684,23 @@ namespace HZH_Controls.Controls
         }
         private void UCDataGridView_Resize(object sender, EventArgs e)
         {
+            if (this.Height <= 0)
+                return;
+            if (m_isAutoHeight)
+                return;
             ResetShowCount();
             ReloadSource();
         }
         #endregion
+
+        private void panRow_SizeChanged(object sender, EventArgs e)
+        {
+            //if (m_isAutoHeight)
+            //{
+            //    int intHeightCount = (IsShowHead ? this.panHead.Height : 0) + (Page != null ? this.panPage.Height : 0) + panRow.Height;
+            //    if (this.Height != intHeightCount)
+            //        this.Height = intHeightCount;
+            //}
+        }
     }
 }

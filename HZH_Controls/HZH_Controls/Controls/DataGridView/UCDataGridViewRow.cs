@@ -59,7 +59,19 @@ namespace HZH_Controls.Controls
                 }
             }
         }
-
+        int m_rowHeight = 40;
+        public int RowHeight
+        {
+            get
+            {
+                return m_rowHeight;
+            }
+            set
+            {
+                m_rowHeight = value;
+                this.Height = value;
+            }
+        }
 
         #endregion
 
@@ -97,7 +109,7 @@ namespace HZH_Controls.Controls
         {
             if (CellClick != null)
             {
-                CellClick(sender, new DataGridViewEventArgs()
+                CellClick(this, new DataGridViewEventArgs()
                 {
                     CellControl = this,
                     CellIndex = (sender as Control).Tag.ToInt()
@@ -188,7 +200,6 @@ namespace HZH_Controls.Controls
                 ControlHelper.FreezeControl(this, false);
             }
         }
-
 
     }
 }
