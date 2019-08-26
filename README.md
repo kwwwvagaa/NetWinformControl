@@ -496,20 +496,6 @@ Int i = r.Next(100, 1000);
 this.ucWaveWithSource1.AddSource(i.ToString(), i);
 ```
 
-#### Overall sample effect
-
-##### 1, effect 1
-
-![sample image](https://images.gitee.com/uploads/images/2019/0808/115531_8a10e14a_301547.png "sample image 2.png")
-
-##### 2, effect 2
-
-![sample image](https://images.gitee.com/uploads/images/2019/0808/153522_8dacb90c_301547.png "xiaoguo.png")
-
-##### 3, effect 3
-
-![sample image](https://images.gitee.com/uploads/images/2019/0808/154011_3f4e0fb8_301547.png "xiaoguo2.png")
-
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
