@@ -495,20 +495,6 @@ int i = r.Next(100, 1000);
 this.ucWaveWithSource1.AddSource(i.ToString(), i);
 ```
 
-#### 整体样例效果
-
-##### 1、效果1
-
-![样例图片](https://images.gitee.com/uploads/images/2019/0808/115531_8a10e14a_301547.png "样例图片2.png")
-
-##### 2、效果2
-
-![样例图片](https://images.gitee.com/uploads/images/2019/0808/153522_8dacb90c_301547.png "xiaoguo.png")
-
-##### 3、效果3
-
-![样例图片](https://images.gitee.com/uploads/images/2019/0808/154011_3f4e0fb8_301547.png "xiaoguo2.png")
-
 #### 最后的话
 
 最后，喜欢请点下stars，如果有其他一些什么常用的控件可以在留言哦
