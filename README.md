@@ -496,6 +496,66 @@ Int i = r.Next(100, 1000);
 this.ucWaveWithSource1.AddSource(i.ToString(), i);
 ```
 
+##### 23, Tree Form
+
+![Enter image description](https://images.gitee.com/uploads/images/2019/0826/154617_e0b57ff6_301547.png "treegrid.png")
+
+``` csharp
+ Private void FrmTemp1Test_Load(object sender, EventArgs e)
+        {
+            this.ucDataGridView1.RowType = typeof(UCDataGridViewTreeRow);
+            this.ucDataGridView1.IsAutoHeight = true;
+
+            List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "Number", Width = 70, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "Name", Width = 50, WidthType = SizeType.Percent });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Age", HeadText = "Age", Width = 50, WidthType = SizeType.Percent });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "Birthday", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((DateTime)a).ToString(" yyyy-MM-dd"); } });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "Gender", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((int)a) == 0 ? "female": "male"; } });
+            this.ucDataGridView1.Columns = lstCulumns;
+            this.ucDataGridView1.IsShowCheckBox = true;
+            List<object> lstSource = new List<object>();
+            For (int i = 0; i < 200; i++)
+            {
+                TestModel model = new TestModel()
+                {
+                    ID = i.ToString(),
+                    Age = 3 * i,
+                    Name = "name -" + i,
+                    Birthday = DateTime.Now.AddYears(-10),
+                    Sex = i % 2
+                };
+                lstSource.Add(model);
+                AddChilds(model, 5);
+            }
+
+            Var page = new UCPagerControl2();
+            page.DataSource = lstSource;
+            this.ucDataGridView1.Page = page;
+            this.ucDataGridView1.First();
+        }
+
+        Private void AddChilds(TestModel tm, int intCount)
+        {
+            If (intCount <= 0)
+                Return;
+            tm.Childrens = new List<TestModel>();
+            For (int i = 0; i < 5; i++)
+            {
+                TestModel model = new TestModel()
+                {
+                    ID = i.ToString(),
+                    Age = 3 * i,
+                    Name = intCount + "-" + i,
+                    Birthday = DateTime.Now.AddYears(-10),
+                    Sex = i % 2
+                };
+                tm.Childrens.Add(model);
+                AddChilds(model, intCount - 1);
+            }
+        }
+```
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
