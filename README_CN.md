@@ -495,6 +495,67 @@ int i = r.Next(100, 1000);
 this.ucWaveWithSource1.AddSource(i.ToString(), i);
 ```
 
+##### 23、树表格
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0826/154617_e0b57ff6_301547.png "treegrid.png")
+
+``` csharp
+ private void FrmTemp1Test_Load(object sender, EventArgs e)
+        {
+            this.ucDataGridView1.RowType = typeof(UCDataGridViewTreeRow);
+            this.ucDataGridView1.IsAutoHeight = true;
+
+            List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "姓名", Width = 50, WidthType = SizeType.Percent });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Age", HeadText = "年龄", Width = 50, WidthType = SizeType.Percent });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "生日", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((DateTime)a).ToString("yyyy-MM-dd"); } });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "性别", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((int)a) == 0 ? "女" : "男"; } });
+            this.ucDataGridView1.Columns = lstCulumns;
+            this.ucDataGridView1.IsShowCheckBox = true;
+            List<object> lstSource = new List<object>();
+            for (int i = 0; i < 200; i++)
+            {
+                TestModel model = new TestModel()
+                {
+                    ID = i.ToString(),
+                    Age = 3 * i,
+                    Name = "姓名——" + i,
+                    Birthday = DateTime.Now.AddYears(-10),
+                    Sex = i % 2
+                };
+                lstSource.Add(model);
+                AddChilds(model, 5);
+            }
+
+            var page = new UCPagerControl2();
+            page.DataSource = lstSource;
+            this.ucDataGridView1.Page = page;
+            this.ucDataGridView1.First();
+        }
+
+        private void AddChilds(TestModel tm, int intCount)
+        {
+            if (intCount <= 0)
+                return;
+            tm.Childrens = new List<TestModel>();
+            for (int i = 0; i < 5; i++)
+            {
+                TestModel model = new TestModel()
+                {
+                    ID = i.ToString(),
+                    Age = 3 * i,
+                    Name = intCount + "——" + i,
+                    Birthday = DateTime.Now.AddYears(-10),
+                    Sex = i % 2
+                };
+                tm.Childrens.Add(model);
+                AddChilds(model, intCount - 1);
+            }
+        }
+```
+
+
 #### 最后的话
 
 最后，喜欢请点下stars，如果有其他一些什么常用的控件可以在留言哦
