@@ -122,7 +122,7 @@ frm.ShowDialog(this);
 
 ##### 7、控件
 
-![样例图片](https://images.gitee.com/uploads/images/2019/0808/153338_6d1de6b3_301547.png "control.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0827/113554_d1712a44_301547.png "1.png")
 
 *文本框键盘效果*
 
