@@ -23,8 +23,11 @@ namespace HZH_Controls.Forms
     /// </summary>
     public partial class FrmAnchor : Form, IMessageFilter
     {
+
         Control m_parentControl = null;
         private bool blnDown = true;
+        Size m_size;
+        Point? m_deviation;
         #region 构造函数
         /// <summary>
         /// 功能描述:构造函数
@@ -44,35 +47,39 @@ namespace HZH_Controls.Forms
             this.HandleDestroyed += FrmDownBoard_HandleDestroyed;
             this.Controls.Add(childControl);
             childControl.Dock = DockStyle.Fill;
-            Point p = parentControl.Parent.PointToScreen(parentControl.Location);
-            int intX = 0;
-            int intY = 0;
-            if (p.Y + parentControl.Height + childControl.Height > Screen.PrimaryScreen.Bounds.Height)
-            {
-                intY = p.Y - childControl.Height - 1;
-                blnDown = false;
-            }
-            else
-            {
-                intY = p.Y + parentControl.Height + 1;
-                blnDown = true;
-            }
 
-            if (p.X + childControl.Width > Screen.PrimaryScreen.Bounds.Width)
-            {
-                intX = Screen.PrimaryScreen.Bounds.Width - childControl.Width;
+            m_size = childControl.Size;
+            m_deviation = deviation;
 
-            }
-            else
-            {
-                intX = p.X;
-            }
-            if (deviation.HasValue)
-            {
-                intX += deviation.Value.X;
-                intY += deviation.Value.Y;
-            }
-            this.Location = new Point(intX, intY);
+            //Point p = parentControl.Parent.PointToScreen(parentControl.Location);
+            //int intX = 0;
+            //int intY = 0;
+            //if (p.Y + parentControl.Height + childControl.Height > Screen.PrimaryScreen.Bounds.Height)
+            //{
+            //    intY = p.Y - childControl.Height - 1;
+            //    blnDown = false;
+            //}
+            //else
+            //{
+            //    intY = p.Y + parentControl.Height + 1;
+            //    blnDown = true;
+            //}
+
+            //if (p.X + childControl.Width > Screen.PrimaryScreen.Bounds.Width)
+            //{
+            //    intX = Screen.PrimaryScreen.Bounds.Width - childControl.Width;
+
+            //}
+            //else
+            //{
+            //    intX = p.X;
+            //}
+            //if (deviation.HasValue)
+            //{
+            //    intX += deviation.Value.X;
+            //    intY += deviation.Value.Y;
+            //}
+            //this.Location = new Point(intX, intY);
 
             if (parentControl.FindForm() != null)
             {
@@ -98,35 +105,8 @@ namespace HZH_Controls.Forms
             this.HandleCreated += FrmDownBoard_HandleCreated;
             this.HandleDestroyed += FrmDownBoard_HandleDestroyed;
 
-            Point p = parentControl.Parent.PointToScreen(parentControl.Location);
-            int intX = 0;
-            int intY = 0;
-            if (p.Y + parentControl.Height + size.Height > Screen.PrimaryScreen.Bounds.Height)
-            {
-                intY = p.Y - size.Height - 1;
-                blnDown = false;
-            }
-            else
-            {
-                intY = p.Y + parentControl.Height + 1;
-                blnDown = true;
-            }
-
-            if (p.X + size.Width > Screen.PrimaryScreen.Bounds.Width)
-            {
-                intX = Screen.PrimaryScreen.Bounds.Width - size.Width;
-
-            }
-            else
-            {
-                intX = p.X;
-            }
-            if (deviation.HasValue)
-            {
-                intX += deviation.Value.X;
-                intY += deviation.Value.Y;
-            }
-            this.Location = new Point(intX, intY);
+            m_size = size;
+            m_deviation = deviation;           
         }
 
         #endregion
@@ -195,25 +175,38 @@ namespace HZH_Controls.Forms
         private void FrmAnchor_VisibleChanged(object sender, EventArgs e)
         {
             timer1.Enabled = this.Visible;
-            //if (Visible)
-            //{
-            //    if (blnDown)
-            //        ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_POSITIVE);
-            //    else
-            //    {
-            //        ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_NEGATIVE);
-            //    }
-            //}
-            //else
-            //{
-            //    if (blnDown)
-            //        ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_NEGATIVE | ControlHelper.AW_HIDE);
-            //    else
-            //    {
-            //        ControlHelper.AnimateWindow(this.Handle, 100, ControlHelper.AW_VER_POSITIVE | ControlHelper.AW_HIDE);
+            if (this.Visible)
+            {
+                Point p = m_parentControl.Parent.PointToScreen(m_parentControl.Location);
+                int intX = 0;
+                int intY = 0;
+                if (p.Y + m_parentControl.Height + m_size.Height > Screen.PrimaryScreen.Bounds.Height)
+                {
+                    intY = p.Y - m_size.Height - 1;
+                    blnDown = false;
+                }
+                else
+                {
+                    intY = p.Y + m_parentControl.Height + 1;
+                    blnDown = true;
+                }
 
-            //    }
-            //}
+                if (p.X + m_size.Width > Screen.PrimaryScreen.Bounds.Width)
+                {
+                    intX = Screen.PrimaryScreen.Bounds.Width - m_size.Width;
+
+                }
+                else
+                {
+                    intX = p.X;
+                }
+                if (m_deviation.HasValue)
+                {
+                    intX += m_deviation.Value.X;
+                    intY += m_deviation.Value.Y;
+                }
+                this.Location = new Point(intX, intY);
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
