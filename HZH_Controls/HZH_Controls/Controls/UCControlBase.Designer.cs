@@ -30,17 +30,19 @@ namespace HZH_Controls.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // UCControlBase
+            // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            base.SuspendLayout();
-            base.AutoScaleDimensions = new SizeF(9f, 20f);
-            base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.DoubleBuffered = true;
-            this.Font = new Font("微软雅黑", 15f, FontStyle.Regular, GraphicsUnit.Pixel);
-            base.Margin = new Padding(4, 5, 4, 5);
-            base.Name = "UCBase";
-            base.Size = new Size(237, 154);
-            base.ResumeLayout(false);
+            this.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "UCControlBase";
+            this.Size = new System.Drawing.Size(237, 154);
+            this.Load += new System.EventHandler(this.UCControlBase_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

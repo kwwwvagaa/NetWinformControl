@@ -396,7 +396,6 @@
     <Compile Include="Forms\FrmWithTitle.Designer.cs">
       <DependentUpon>FrmWithTitle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\ITheme.cs" />
     <Compile Include="Helpers\MouseHook.cs" />
     <Compile Include="Helpers\NativeMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -406,6 +405,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\TextInputType.cs" />
+    <Compile Include="Theme\Blue.cs" />
+    <Compile Include="Theme\Default.cs" />
+    <Compile Include="Theme\IControlTheme.cs" />
+    <Compile Include="Theme\UCTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\BtnsGroup\UCBtnsGroup.resx">
@@ -533,6 +538,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Text\UCTextBoxEx.resx">
       <DependentUpon>UCTextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCControlBase.resx">
+      <DependentUpon>UCControlBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAnchor.resx">
       <DependentUpon>FrmAnchor.cs</DependentUpon>

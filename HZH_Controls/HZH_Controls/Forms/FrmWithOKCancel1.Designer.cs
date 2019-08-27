@@ -47,8 +47,7 @@
             this.btnOK.BtnText = "确定";
             this.btnOK.ConerRadius = 5;
             this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOK.EnabledTheme = false;
+            this.btnOK.Dock = System.Windows.Forms.DockStyle.Fill;            
             this.btnOK.FillColor = System.Drawing.Color.White;
             this.btnOK.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnOK.IsRadius = false;
@@ -75,7 +74,6 @@
             this.btnCancel.ConerRadius = 5;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.EnabledTheme = false;
             this.btnCancel.FillColor = System.Drawing.Color.White;
             this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnCancel.IsRadius = false;

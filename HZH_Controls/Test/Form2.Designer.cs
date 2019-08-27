@@ -150,7 +150,6 @@
             this.ucDropDownBtn1.ConerRadius = 5;
             this.ucDropDownBtn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDropDownBtn1.DropPanelHeight = -1;
-            this.ucDropDownBtn1.EnabledTheme = false;
             this.ucDropDownBtn1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.ucDropDownBtn1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDropDownBtn1.ForeColor = System.Drawing.Color.White;
@@ -174,7 +173,6 @@
             // 
             this.ucProcessWave2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.ucProcessWave2.ConerRadius = 0;
-            this.ucProcessWave2.EnabledTheme = false;
             this.ucProcessWave2.FillColor = System.Drawing.Color.Empty;
             this.ucProcessWave2.Font = new System.Drawing.Font("微软雅黑", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucProcessWave2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -196,7 +194,6 @@
             // 
             this.ucProcessWave1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.ucProcessWave1.ConerRadius = 0;
-            this.ucProcessWave1.EnabledTheme = false;
             this.ucProcessWave1.FillColor = System.Drawing.Color.Empty;
             this.ucProcessWave1.Font = new System.Drawing.Font("微软雅黑", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucProcessWave1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -217,7 +214,6 @@
             // ucWaveWithSource1
             // 
             this.ucWaveWithSource1.ConerRadius = 10;
-            this.ucWaveWithSource1.EnabledTheme = false;
             this.ucWaveWithSource1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.ucWaveWithSource1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucWaveWithSource1.GridLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
@@ -471,7 +467,6 @@
             this.ucPanelTitle1.BackColor = System.Drawing.Color.Transparent;
             this.ucPanelTitle1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.ucPanelTitle1.ConerRadius = 10;
-            this.ucPanelTitle1.EnabledTheme = false;
             this.ucPanelTitle1.FillColor = System.Drawing.Color.White;
             this.ucPanelTitle1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucPanelTitle1.IsRadius = true;

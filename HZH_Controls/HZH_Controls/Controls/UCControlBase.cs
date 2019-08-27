@@ -12,11 +12,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.Reflection;
+using HZH_Controls.Theme;
 
 namespace HZH_Controls.Controls
 {
     [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(System.ComponentModel.Design.IDesigner))]
-    public partial class UCControlBase : UserControl, IContainerControl, ITheme
+    public partial class UCControlBase : UserControl, IContainerControl
     {
         private bool _isRadius = false;
 
@@ -201,15 +203,42 @@ namespace HZH_Controls.Controls
             }
         }
 
-        public virtual void ResetTheme(ThemeEntity theme)
+        private void UCControlBase_Load(object sender, EventArgs e)
         {
-        }
+            string ThemeType = "";
+            /*
+             * 新拖动的控件为了继承已经选择的主题，需要再加载后根据主题绘制属性
+             * 1.循环所有页面控件，找到样式控件
+             * 2.得到样式控件主题
+             * 3.调用实现类
+             */
+            try
+            {
+                //1.循环所有页面控件，找到样式控件
+                foreach (var item in this.Container.Components)
+                {
+                    if (ThemeType == "")
+                    {
+                        try
+                        {
+                            HZH_Controls.Theme.UCTheme con = (HZH_Controls.Theme.UCTheme)item;
+                            //2.得到样式控件主题
+                            ThemeType = con.ThemeType.ToString();
+                            break;
+                        }
+                        catch { }
+                    }
+                }
+            }
+            catch { }
 
-        [Description("是否启用主题"), Category("自定义")]
-        public bool EnabledTheme
-        {
-            get;
-            set;
+            if (ThemeType != "")
+            {
+                // 3.调用实现类
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                IControlTheme uct = (IControlTheme)assembly.CreateInstance("HZH_Controls.Theme." + ThemeType);
+                uct.ControlTheme(this);
+            }
         }
     }
 }

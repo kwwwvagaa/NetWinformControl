@@ -119,15 +119,6 @@ namespace HZH_Controls.Controls
         {
             if (this.BtnClick != null)
                 BtnClick(this, e);
-        }
-
-        public override void ResetTheme(ThemeEntity theme)
-        {
-            if (theme.BackColor.HasValue && theme.BackColor.Value != Color.Empty)
-            {
-                BtnBackColor = theme.BackColor.Value;
-            }
-
-        }
+        }       
     }
 }
