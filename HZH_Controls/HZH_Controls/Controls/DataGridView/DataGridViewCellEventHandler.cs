@@ -14,4 +14,8 @@ namespace HZH_Controls.Controls
     [Serializable]
     [ComVisible(true)]
     public delegate void DataGridViewEventHandler(object sender, DataGridViewEventArgs e);
+
+    [Serializable]
+    [ComVisible(true)]
+    public delegate void DataGridViewRowCustomEventHandler(object sender, DataGridViewRowCustomEventArgs e);
 }

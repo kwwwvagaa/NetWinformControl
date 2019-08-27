@@ -939,7 +939,7 @@
             this.ucBtnFillet1.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet1.BtnImage")));
             this.ucBtnFillet1.BtnText = "按钮3  ";
             this.ucBtnFillet1.ConerRadius = 10;
-            this.ucBtnFillet1.FillColor = System.Drawing.Color.Blue;
+            this.ucBtnFillet1.FillColor = System.Drawing.Color.White;
             this.ucBtnFillet1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnFillet1.ForeColor = System.Drawing.Color.White;
             this.ucBtnFillet1.IsRadius = true;

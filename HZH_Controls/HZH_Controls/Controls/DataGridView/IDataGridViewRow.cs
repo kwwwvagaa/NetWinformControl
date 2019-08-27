@@ -13,6 +13,7 @@ namespace HZH_Controls.Controls
 {
     public interface IDataGridViewRow
     {
+        event DataGridViewRowCustomEventHandler RowCustomEvent;
         /// <summary>
         /// CheckBox选中事件
         /// </summary>

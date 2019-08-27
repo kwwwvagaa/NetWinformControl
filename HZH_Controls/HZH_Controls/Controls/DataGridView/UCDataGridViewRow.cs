@@ -20,7 +20,7 @@ namespace HZH_Controls.Controls
 
         #region 属性
         public event DataGridViewEventHandler CheckBoxChangeEvent;
-
+        public event DataGridViewRowCustomEventHandler RowCustomEvent;
         public event DataGridViewEventHandler CellClick;
 
         public event DataGridViewEventHandler SourceChanged;

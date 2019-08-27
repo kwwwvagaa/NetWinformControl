@@ -19,7 +19,7 @@ namespace HZH_Controls.Controls
         public event DataGridViewEventHandler CellClick;
 
         public event DataGridViewEventHandler SourceChanged;
-
+        public event DataGridViewRowCustomEventHandler RowCustomEvent;
         public List<DataGridViewColumnEntity> Columns
         {
             get;

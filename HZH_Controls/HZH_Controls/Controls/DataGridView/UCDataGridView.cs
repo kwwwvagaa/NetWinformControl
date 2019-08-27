@@ -309,6 +309,8 @@ namespace HZH_Controls.Controls
         public event DataGridViewEventHandler ItemClick;
         [Description("数据源改变事件"), Category("自定义")]
         public event DataGridViewEventHandler SourceChanged;
+        [Description("预留的自定义的事件，比如你需要在行上放置删改等按钮时，可以通过此事件传递出来"), Category("自定义")]
+        public event DataGridViewRowCustomEventHandler RowCustomEvent;
         #endregion
         #endregion
 
@@ -505,6 +507,7 @@ namespace HZH_Controls.Controls
                             rowControl.Dock = DockStyle.Top;
                             row.CellClick += (a, b) => { SetSelectRow((Control)a, b); };
                             row.CheckBoxChangeEvent += (a, b) => { SetSelectRow(rowControl, b); };
+                            row.RowCustomEvent += (a, b) => { if (RowCustomEvent != null) { RowCustomEvent(a, b); } };
                             row.SourceChanged += RowSourceChanged;
                             rowControl.BringToFront();
                             Rows.Add(row);

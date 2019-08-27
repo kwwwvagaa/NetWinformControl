@@ -58,6 +58,7 @@
     <Compile Include="Controls\DataGridView\DataGridViewCellEventArgs.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewCellEventHandler.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewColumnEntity.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewRowCustomEventArgs.cs" />
     <Compile Include="Controls\DataGridView\IDataGridViewRow.cs" />
     <Compile Include="Controls\DataGridView\UCDataGridView.cs">
       <SubType>UserControl</SubType>

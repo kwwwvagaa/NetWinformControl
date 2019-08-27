@@ -17,6 +17,5 @@ namespace HZH_Controls.Controls
         public int CellIndex { get; set; }
         public int RowIndex { get; set; }
 
-
     }
 }
