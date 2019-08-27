@@ -59,6 +59,7 @@
             this.tabControlExt1.Controls.Add(this.tabPage5);
             this.tabControlExt1.Controls.Add(this.tabPage6);
             this.tabControlExt1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlExt1.IsShowCloseBtn = true;
             this.tabControlExt1.ItemSize = new System.Drawing.Size(142, 50);
             this.tabControlExt1.Location = new System.Drawing.Point(0, 0);
             this.tabControlExt1.Multiline = true;
@@ -67,6 +68,7 @@
             this.tabControlExt1.Size = new System.Drawing.Size(528, 321);
             this.tabControlExt1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControlExt1.TabIndex = 0;
+            this.tabControlExt1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tabControlExt1_KeyDown);
             // 
             // tabPage7
             // 

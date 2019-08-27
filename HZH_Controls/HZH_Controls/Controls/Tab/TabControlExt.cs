@@ -21,6 +21,10 @@ namespace HZH_Controls.Controls
             this.ItemSize = new Size(this.ItemSize.Width, 50);
         }
 
+
+
+
+
         private void SetStyles()
         {
             base.SetStyle(
@@ -32,6 +36,8 @@ namespace HZH_Controls.Controls
                 ControlStyles.SupportsTransparentBackColor, true);
             base.UpdateStyles();
         }
+        [Description("是否显示关闭按钮"), Category("自定义")]
+        public bool IsShowCloseBtn { get; set; }
 
         private Color _backColor = Color.White;
         [Browsable(true)]
@@ -172,6 +178,12 @@ namespace HZH_Controls.Controls
             this.PaintTabBorder(e.Graphics, index, path);
             this.PaintTabText(e.Graphics, index);
             this.PaintTabImage(e.Graphics, index);
+            if (IsShowCloseBtn)
+            {
+                Rectangle rect = this.GetTabRect(index);
+                e.Graphics.DrawLine(new Pen(_borderColor, 1F), new Point(rect.Right - 15, rect.Top + 5), new Point(rect.Right - 5, rect.Top + 15));
+                e.Graphics.DrawLine(new Pen(_borderColor, 1F), new Point(rect.Right - 5, rect.Top + 5), new Point(rect.Right - 15, rect.Top + 15));
+            }
         }
 
         /// <summary>
@@ -345,6 +357,51 @@ namespace HZH_Controls.Controls
             SendMessage(this.Handle, WM_SETFONT, hFont, (IntPtr)(-1));
             SendMessage(this.Handle, WM_FONTCHANGE, IntPtr.Zero, IntPtr.Zero);
             this.UpdateStyles();
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x0201) // WM_LBUTTONDOWN
+            {
+                if (!DesignMode)
+                {
+                    if (IsShowCloseBtn)
+                    {
+                        var mouseLocation = this.PointToClient(Control.MousePosition);
+                        int index = GetMouseDownTabHead(mouseLocation);
+                        if (index >= 0)
+                        {
+                            Rectangle rect = this.GetTabRect(index);
+                            var closeRect = new Rectangle(rect.Right - 15, rect.Top + 5, 10, 10);
+                            if (closeRect.Contains(mouseLocation))
+                            {
+                                this.TabPages.RemoveAt(index);
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+
+            base.WndProc(ref m);
+        }
+        public override bool PreProcessMessage(ref Message msg)
+        {
+
+            return base.PreProcessMessage(ref msg);
+        }
+
+        private int GetMouseDownTabHead(Point point)
+        {
+            for (int i = 0; i < this.TabCount; i++)
+            {
+                Rectangle rect = this.GetTabRect(i);
+                if (rect.Contains(point))
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
 }
