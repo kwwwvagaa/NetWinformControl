@@ -28,7 +28,7 @@ namespace HZH_Controls.Forms
             set
             {
                 _frmTitle = value;
-                btnBack1.BtnText = value;
+                btnBack1.BtnText = "   " + value;
             }
         }
         [Description("帮助按钮点击事件"), Category("自定义")]

@@ -46,6 +46,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 246);
@@ -55,6 +56,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(227, 0);
@@ -64,6 +66,7 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.panel1);
             this.panel5.Controls.Add(this.btnOK);
             this.panel5.Controls.Add(this.btnCancel);
@@ -75,6 +78,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.ucSplitLine_V1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(99, 0);
@@ -104,7 +108,8 @@
             this.btnOK.ConerRadius = 5;
             this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnOK.EnabledTheme = false;
+            this.btnOK.FillColor = System.Drawing.Color.White;
             this.btnOK.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnOK.IsRadius = false;
             this.btnOK.IsShowRect = false;
@@ -130,7 +135,8 @@
             this.btnCancel.ConerRadius = 5;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnCancel.EnabledTheme = false;
+            this.btnCancel.FillColor = System.Drawing.Color.White;
             this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnCancel.IsRadius = false;
             this.btnCancel.IsShowRect = false;
