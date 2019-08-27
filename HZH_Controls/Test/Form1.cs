@@ -114,7 +114,7 @@ namespace Test
             ucBtnsGroup2.DataSource = new Dictionary<string, string>() { { "1", "河南" }, { "2", "北京" }, { "3", "湖南" }, { "4", "上海" } };
             ucBtnsGroup2.SelectItem = new List<string>() { "2", "3" };
 
-            this.processExt1.Value = 50;
+           
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -194,6 +194,11 @@ namespace Test
         private void button10_Click(object sender, EventArgs e)
         {
             new FrmTestListView().Show();
+        }
+
+        private void ucDropDownBtn1_BtnClick(object sender, EventArgs e)
+        {
+            HZH_Controls.Forms.FrmTips.ShowTipsSuccess(this, sender.ToString());
         }
 
     }

@@ -145,22 +145,25 @@ namespace HZH_Controls.Controls
                 {
                     this.SetWindowRegion();
                 }
-                if (this._isShowRect)
+                GraphicsPath graphicsPath = new GraphicsPath();
+                if (this._isShowRect || (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor))
                 {
-                    Color rectColor = this._rectColor;
-                    Pen pen = new Pen(rectColor, (float)this._rectWidth);
                     Rectangle clientRectangle = base.ClientRectangle;
-                    GraphicsPath graphicsPath = new GraphicsPath();
                     graphicsPath.AddArc(0, 0, _cornerRadius, _cornerRadius, 180f, 90f);
                     graphicsPath.AddArc(clientRectangle.Width - _cornerRadius - 1, 0, _cornerRadius, _cornerRadius, 270f, 90f);
                     graphicsPath.AddArc(clientRectangle.Width - _cornerRadius - 1, clientRectangle.Height - _cornerRadius - 1, _cornerRadius, _cornerRadius, 0f, 90f);
                     graphicsPath.AddArc(0, clientRectangle.Height - _cornerRadius - 1, _cornerRadius, _cornerRadius, 90f, 90f);
                     graphicsPath.CloseFigure();
-                    e.Graphics.SetGDIHigh();
-                    if (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor)
-                        e.Graphics.FillPath(new SolidBrush(this._fillColor), graphicsPath);
+                }
+                e.Graphics.SetGDIHigh();
+                if (this._isShowRect)
+                {
+                    Color rectColor = this._rectColor;
+                    Pen pen = new Pen(rectColor, (float)this._rectWidth);                   
                     e.Graphics.DrawPath(pen, graphicsPath);
                 }
+                if (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor)
+                    e.Graphics.FillPath(new SolidBrush(this._fillColor), graphicsPath);
             }
             base.OnPaint(e);
         }
@@ -197,7 +200,7 @@ namespace HZH_Controls.Controls
                 base.WndProc(ref m);
             }
         }
-        
+
         public virtual void ResetTheme(ThemeEntity theme)
         {
         }

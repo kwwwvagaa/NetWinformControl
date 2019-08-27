@@ -24,13 +24,13 @@ namespace HZH_Controls.Controls
         /// 按钮文字
         /// </summary>
         [Description("按钮文字"), Category("自定义")]
-        public new string BtnText
+        public override string BtnText
         {
             get { return _btnText; }
             set
             {
                 _btnText = value;
-                lbl.Text = "    " + value;
+                lbl.Text = value;
                 lbl.Refresh();
             }
         }
@@ -38,7 +38,7 @@ namespace HZH_Controls.Controls
         /// 图片
         /// </summary>
         [Description("图片"), Category("自定义")]
-        public Image Image
+        public virtual Image Image
         {
             get
             {
@@ -50,6 +50,13 @@ namespace HZH_Controls.Controls
                 this.imageList1.Images.Add(value);
                 this.lbl.ImageIndex = 0;
             }
+        }
+
+        [Description("图片位置"), Category("自定义")]
+        public virtual ContentAlignment ImageAlign
+        {
+            get { return this.lbl.ImageAlign; }
+            set { lbl.ImageAlign = value; }
         }
 
         public UCBtnImg()

@@ -16,7 +16,7 @@ using System.Windows.Forms;
 namespace HZH_Controls.Controls
 {
     [DefaultEvent("BtnClick")]
-  
+
     public partial class UCBtnExt : UCControlBase
     {
         #region 字段属性
@@ -99,7 +99,7 @@ namespace HZH_Controls.Controls
         /// 按钮文字
         /// </summary>
         [Description("按钮文字"), Category("自定义")]
-        public string BtnText
+        public virtual string BtnText
         {
             get { return _btnText; }
             set

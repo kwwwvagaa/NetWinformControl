@@ -48,6 +48,12 @@
     <Compile Include="Controls\BtnsGroup\UCBtnsGroup.Designer.cs">
       <DependentUpon>UCBtnsGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Btn\UCDropDownBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Btn\UCDropDownBtn.Designer.cs">
+      <DependentUpon>UCDropDownBtn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DataGridView\DataGridViewCellEntity.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewCellEventArgs.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewCellEventHandler.cs" />
@@ -413,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Btn\UCBtnImg.resx">
       <DependentUpon>UCBtnImg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Btn\UCDropDownBtn.resx">
+      <DependentUpon>UCDropDownBtn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Checkbox\UCCheckBox.resx">
       <DependentUpon>UCCheckBox.cs</DependentUpon>

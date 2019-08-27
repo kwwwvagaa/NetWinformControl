@@ -70,6 +70,10 @@
             this.ucRadioButton2 = new HZH_Controls.Controls.UCRadioButton();
             this.ucRadioButton1 = new HZH_Controls.Controls.UCRadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ucControlBase1 = new HZH_Controls.Controls.UCControlBase();
+            this.ucBtnExt3 = new HZH_Controls.Controls.UCBtnExt();
+            this.ucBtnExt4 = new HZH_Controls.Controls.UCBtnExt();
+            this.ucBtnExt5 = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnImg1 = new HZH_Controls.Controls.UCBtnImg();
             this.ucBtnFillet1 = new HZH_Controls.Controls.UCBtnFillet();
             this.ucBtnExt2 = new HZH_Controls.Controls.UCBtnExt();
@@ -83,10 +87,10 @@
             this.ucBtnsGroup1 = new HZH_Controls.Controls.UCBtnsGroup();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.ucBtnsGroup2 = new HZH_Controls.Controls.UCBtnsGroup();
+            this.button10 = new System.Windows.Forms.Button();
             this.ucSplitLine_V1 = new HZH_Controls.Controls.UCSplitLine_V();
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
-            this.processExt1 = new HZH_Controls.Controls.UCProcessExt();
-            this.button10 = new System.Windows.Forms.Button();
+            this.ucDropDownBtn1 = new HZH_Controls.Controls.Btn.UCDropDownBtn();
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -96,6 +100,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.ucControlBase1.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -199,7 +204,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(19, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1124, 499);
+            this.groupBox1.Size = new System.Drawing.Size(1124, 544);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "控件";
@@ -303,7 +308,7 @@
             // 
             this.groupBox6.Controls.Add(this.ucComboBox2);
             this.groupBox6.Controls.Add(this.ucComboBox1);
-            this.groupBox6.Location = new System.Drawing.Point(25, 363);
+            this.groupBox6.Location = new System.Drawing.Point(24, 419);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(187, 119);
             this.groupBox6.TabIndex = 6;
@@ -770,24 +775,124 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ucDropDownBtn1);
+            this.groupBox2.Controls.Add(this.ucControlBase1);
             this.groupBox2.Controls.Add(this.ucBtnImg1);
             this.groupBox2.Controls.Add(this.ucBtnFillet1);
             this.groupBox2.Controls.Add(this.ucBtnExt2);
             this.groupBox2.Controls.Add(this.ucBtnExt1);
             this.groupBox2.Location = new System.Drawing.Point(25, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(187, 327);
+            this.groupBox2.Size = new System.Drawing.Size(187, 383);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "按钮";
+            // 
+            // ucControlBase1
+            // 
+            this.ucControlBase1.BackColor = System.Drawing.Color.Transparent;
+            this.ucControlBase1.ConerRadius = 10;
+            this.ucControlBase1.Controls.Add(this.ucBtnExt3);
+            this.ucControlBase1.Controls.Add(this.ucBtnExt4);
+            this.ucControlBase1.Controls.Add(this.ucBtnExt5);
+            this.ucControlBase1.EnabledTheme = false;
+            this.ucControlBase1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucControlBase1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucControlBase1.IsRadius = true;
+            this.ucControlBase1.IsShowRect = true;
+            this.ucControlBase1.Location = new System.Drawing.Point(7, 271);
+            this.ucControlBase1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucControlBase1.Name = "ucControlBase1";
+            this.ucControlBase1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ucControlBase1.RectWidth = 1;
+            this.ucControlBase1.Size = new System.Drawing.Size(167, 44);
+            this.ucControlBase1.TabIndex = 13;
+            // 
+            // ucBtnExt3
+            // 
+            this.ucBtnExt3.BackColor = System.Drawing.Color.Transparent;
+            this.ucBtnExt3.BtnBackColor = System.Drawing.Color.Transparent;
+            this.ucBtnExt3.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt3.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt3.BtnText = "按钮3";
+            this.ucBtnExt3.ConerRadius = 5;
+            this.ucBtnExt3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnExt3.EnabledTheme = false;
+            this.ucBtnExt3.FillColor = System.Drawing.Color.Transparent;
+            this.ucBtnExt3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt3.IsRadius = false;
+            this.ucBtnExt3.IsShowRect = false;
+            this.ucBtnExt3.IsShowTips = false;
+            this.ucBtnExt3.Location = new System.Drawing.Point(110, 0);
+            this.ucBtnExt3.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt3.Name = "ucBtnExt3";
+            this.ucBtnExt3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt3.RectWidth = 0;
+            this.ucBtnExt3.Size = new System.Drawing.Size(57, 44);
+            this.ucBtnExt3.TabIndex = 2;
+            this.ucBtnExt3.TabStop = false;
+            this.ucBtnExt3.TipsText = "";
+            // 
+            // ucBtnExt4
+            // 
+            this.ucBtnExt4.BackColor = System.Drawing.Color.Transparent;
+            this.ucBtnExt4.BtnBackColor = System.Drawing.Color.Transparent;
+            this.ucBtnExt4.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt4.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt4.BtnText = "按钮2";
+            this.ucBtnExt4.ConerRadius = 5;
+            this.ucBtnExt4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnExt4.EnabledTheme = false;
+            this.ucBtnExt4.FillColor = System.Drawing.Color.Transparent;
+            this.ucBtnExt4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt4.IsRadius = false;
+            this.ucBtnExt4.IsShowRect = false;
+            this.ucBtnExt4.IsShowTips = false;
+            this.ucBtnExt4.Location = new System.Drawing.Point(57, 0);
+            this.ucBtnExt4.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt4.Name = "ucBtnExt4";
+            this.ucBtnExt4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt4.RectWidth = 0;
+            this.ucBtnExt4.Size = new System.Drawing.Size(53, 44);
+            this.ucBtnExt4.TabIndex = 1;
+            this.ucBtnExt4.TabStop = false;
+            this.ucBtnExt4.TipsText = "";
+            // 
+            // ucBtnExt5
+            // 
+            this.ucBtnExt5.BackColor = System.Drawing.Color.Transparent;
+            this.ucBtnExt5.BtnBackColor = System.Drawing.Color.Transparent;
+            this.ucBtnExt5.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt5.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt5.BtnText = "按钮1";
+            this.ucBtnExt5.ConerRadius = 5;
+            this.ucBtnExt5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnExt5.EnabledTheme = false;
+            this.ucBtnExt5.FillColor = System.Drawing.Color.Transparent;
+            this.ucBtnExt5.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt5.IsRadius = false;
+            this.ucBtnExt5.IsShowRect = false;
+            this.ucBtnExt5.IsShowTips = false;
+            this.ucBtnExt5.Location = new System.Drawing.Point(0, 0);
+            this.ucBtnExt5.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt5.Name = "ucBtnExt5";
+            this.ucBtnExt5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt5.RectWidth = 0;
+            this.ucBtnExt5.Size = new System.Drawing.Size(57, 44);
+            this.ucBtnExt5.TabIndex = 0;
+            this.ucBtnExt5.TabStop = false;
+            this.ucBtnExt5.TipsText = "";
             // 
             // ucBtnImg1
             // 
             this.ucBtnImg1.BackColor = System.Drawing.Color.White;
             this.ucBtnImg1.BtnBackColor = System.Drawing.Color.White;
-            this.ucBtnImg1.BtnFont = new System.Drawing.Font("微软雅黑", 17F);
+            this.ucBtnImg1.BtnFont = new System.Drawing.Font("微软雅黑", 15F);
             this.ucBtnImg1.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.ucBtnImg1.BtnText = "按钮4";
+            this.ucBtnImg1.BtnText = "    按钮4";
             this.ucBtnImg1.ConerRadius = 10;
             this.ucBtnImg1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnImg1.EnabledTheme = false;
@@ -795,10 +900,11 @@
             this.ucBtnImg1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.ucBtnImg1.Image = ((System.Drawing.Image)(resources.GetObject("ucBtnImg1.Image")));
+            this.ucBtnImg1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ucBtnImg1.IsRadius = true;
             this.ucBtnImg1.IsShowRect = true;
             this.ucBtnImg1.IsShowTips = false;
-            this.ucBtnImg1.Location = new System.Drawing.Point(23, 251);
+            this.ucBtnImg1.Location = new System.Drawing.Point(20, 207);
             this.ucBtnImg1.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnImg1.Name = "ucBtnImg1";
             this.ucBtnImg1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
@@ -819,7 +925,7 @@
             this.ucBtnFillet1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnFillet1.IsRadius = true;
             this.ucBtnFillet1.IsShowRect = true;
-            this.ucBtnFillet1.Location = new System.Drawing.Point(23, 174);
+            this.ucBtnFillet1.Location = new System.Drawing.Point(20, 145);
             this.ucBtnFillet1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucBtnFillet1.Name = "ucBtnFillet1";
             this.ucBtnFillet1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -843,7 +949,7 @@
             this.ucBtnExt2.IsRadius = true;
             this.ucBtnExt2.IsShowRect = true;
             this.ucBtnExt2.IsShowTips = false;
-            this.ucBtnExt2.Location = new System.Drawing.Point(23, 94);
+            this.ucBtnExt2.Location = new System.Drawing.Point(20, 83);
             this.ucBtnExt2.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt2.Name = "ucBtnExt2";
             this.ucBtnExt2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
@@ -869,7 +975,7 @@
             this.ucBtnExt1.IsRadius = true;
             this.ucBtnExt1.IsShowRect = true;
             this.ucBtnExt1.IsShowTips = false;
-            this.ucBtnExt1.Location = new System.Drawing.Point(23, 21);
+            this.ucBtnExt1.Location = new System.Drawing.Point(20, 21);
             this.ucBtnExt1.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt1.Name = "ucBtnExt1";
             this.ucBtnExt1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
@@ -919,7 +1025,7 @@
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.ucPagerControl21);
-            this.groupBox11.Location = new System.Drawing.Point(19, 584);
+            this.groupBox11.Location = new System.Drawing.Point(21, 629);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(715, 61);
             this.groupBox11.TabIndex = 5;
@@ -943,7 +1049,7 @@
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.ucBtnsGroup1);
-            this.groupBox12.Location = new System.Drawing.Point(749, 584);
+            this.groupBox12.Location = new System.Drawing.Point(751, 629);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(221, 68);
             this.groupBox12.TabIndex = 6;
@@ -965,7 +1071,7 @@
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.ucBtnsGroup2);
-            this.groupBox13.Location = new System.Drawing.Point(992, 584);
+            this.groupBox13.Location = new System.Drawing.Point(994, 629);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(367, 68);
             this.groupBox13.TabIndex = 6;
@@ -983,6 +1089,16 @@
             this.ucBtnsGroup2.SelectItem = ((System.Collections.Generic.List<string>)(resources.GetObject("ucBtnsGroup2.SelectItem")));
             this.ucBtnsGroup2.Size = new System.Drawing.Size(355, 50);
             this.ucBtnsGroup2.TabIndex = 0;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(43, 49);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(89, 23);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "TestListView";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // ucSplitLine_V1
             // 
@@ -1002,34 +1118,39 @@
             this.ucSplitLine_H1.TabIndex = 8;
             this.ucSplitLine_H1.TabStop = false;
             // 
-            // processExt1
+            // ucDropDownBtn1
             // 
-            this.processExt1.BackColor = System.Drawing.Color.White;
-            this.processExt1.ConerRadius = 5;
-            this.processExt1.EnabledTheme = false;
-            this.processExt1.FillColor = System.Drawing.Color.Transparent;
-            this.processExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.processExt1.IsRadius = true;
-            this.processExt1.IsShowRect = false;
-            this.processExt1.Location = new System.Drawing.Point(22, 657);
-            this.processExt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.processExt1.MaxValue = 100;
-            this.processExt1.Name = "processExt1";
-            this.processExt1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.processExt1.RectWidth = 1;
-            this.processExt1.Size = new System.Drawing.Size(291, 22);
-            this.processExt1.TabIndex = 7;
-            this.processExt1.Value = 0;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(43, 49);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(89, 23);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "TestListView";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.ucDropDownBtn1.BackColor = System.Drawing.Color.White;
+            this.ucDropDownBtn1.BtnBackColor = System.Drawing.Color.White;
+            this.ucDropDownBtn1.BtnFont = new System.Drawing.Font("微软雅黑", 12F);
+            this.ucDropDownBtn1.BtnForeColor = System.Drawing.Color.White;
+            this.ucDropDownBtn1.Btns = new string[] {
+        "按钮1",
+        "按钮2",
+        "按钮3"};
+            this.ucDropDownBtn1.BtnText = "测试下拉按钮";
+            this.ucDropDownBtn1.ConerRadius = 5;
+            this.ucDropDownBtn1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucDropDownBtn1.DropPanelHeight = -1;
+            this.ucDropDownBtn1.EnabledTheme = false;
+            this.ucDropDownBtn1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucDropDownBtn1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucDropDownBtn1.ForeColor = System.Drawing.Color.White;
+            this.ucDropDownBtn1.Image = ((System.Drawing.Image)(resources.GetObject("ucDropDownBtn1.Image")));
+            this.ucDropDownBtn1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ucDropDownBtn1.IsRadius = true;
+            this.ucDropDownBtn1.IsShowRect = true;
+            this.ucDropDownBtn1.IsShowTips = false;
+            this.ucDropDownBtn1.Location = new System.Drawing.Point(18, 329);
+            this.ucDropDownBtn1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucDropDownBtn1.Name = "ucDropDownBtn1";
+            this.ucDropDownBtn1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucDropDownBtn1.RectWidth = 1;
+            this.ucDropDownBtn1.Size = new System.Drawing.Size(143, 39);
+            this.ucDropDownBtn1.TabIndex = 14;
+            this.ucDropDownBtn1.TabStop = false;
+            this.ucDropDownBtn1.TipsText = "";
+            this.ucDropDownBtn1.BtnClick += new System.EventHandler(this.ucDropDownBtn1_BtnClick);
             // 
             // Form1
             // 
@@ -1038,7 +1159,6 @@
             this.ClientSize = new System.Drawing.Size(1374, 709);
             this.Controls.Add(this.ucSplitLine_V1);
             this.Controls.Add(this.ucSplitLine_H1);
-            this.Controls.Add(this.processExt1);
             this.Controls.Add(this.groupBox13);
             this.Controls.Add(this.groupBox12);
             this.Controls.Add(this.groupBox11);
@@ -1067,6 +1187,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.ucControlBase1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
@@ -1130,10 +1251,14 @@
         private HZH_Controls.Controls.UCBtnsGroup ucBtnsGroup1;
         private System.Windows.Forms.GroupBox groupBox13;
         private HZH_Controls.Controls.UCBtnsGroup ucBtnsGroup2;
-        private HZH_Controls.Controls.UCProcessExt processExt1;
         private HZH_Controls.Controls.UCSplitLine_H ucSplitLine_H1;
         private HZH_Controls.Controls.UCSplitLine_V ucSplitLine_V1;
         private System.Windows.Forms.Button button10;
+        private HZH_Controls.Controls.UCControlBase ucControlBase1;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt3;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt4;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt5;
+        private HZH_Controls.Controls.Btn.UCDropDownBtn ucDropDownBtn1;
     }
 }
 

@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCBtnImg));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.SuspendLayout();
             // 
             // lbl
             // 
-            //this.lbl.Font = new System.Drawing.Font("微软雅黑", 17F);
-            //this.lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.lbl.ImageIndex = 0;
             this.lbl.ImageList = this.imageList1;
             this.lbl.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -49,11 +46,11 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "back.png");
             // 
-            // BtnBack
+            // UCBtnImg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Name = "BtnBack";
+            this.IsShowTips = true;
+            this.Name = "UCBtnImg";
             this.ResumeLayout(false);
 
         }

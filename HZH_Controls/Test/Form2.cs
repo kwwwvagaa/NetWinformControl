@@ -64,5 +64,10 @@ namespace Test
         {
             this.ucWave1.WaveWidth = trackBar3.Value;
         }
+
+        private void ucDropDownBtn1_BtnClick(object sender, EventArgs e)
+        {
+            HZH_Controls.Forms.FrmTips.ShowTipsSuccess(this,sender.ToString());
+        }
     }
 }
