@@ -10,7 +10,6 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -290,7 +289,7 @@ namespace HZH_Controls.Forms
         protected virtual void DoEnter()
         {
         }
-
+    
         /// <summary>
         /// 设置重绘区域
         /// </summary>
@@ -359,7 +358,7 @@ namespace HZH_Controls.Forms
 
         #region 事件区
 
-
+      
         /// <summary>
         /// 关闭时发生
         /// </summary>
@@ -372,7 +371,7 @@ namespace HZH_Controls.Forms
                 (base.Owner as FrmTransparent).Close();
             }
         }
-
+      
         /// <summary>
         /// 快捷键
         /// </summary>
@@ -467,44 +466,5 @@ namespace HZH_Controls.Forms
         }
         #endregion
 
-
-        #region 窗体拖动    English:Form drag
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-        [DllImport("user32.dll")]
-        public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
-
-        public const int WM_SYSCOMMAND = 0x0112;
-        public const int SC_MOVE = 0xF010;
-        public const int HTCAPTION = 0x0002;
-
-        /// <summary>
-        /// 通过Windows的API控制窗体的拖动
-        /// </summary>
-        /// <param name="hwnd"></param>
-        public static void MouseDown(IntPtr hwnd)
-        {
-            ReleaseCapture();
-            SendMessage(hwnd, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
-        }
-        #endregion
-
-        /// <summary>
-        /// 在构造函数中调用设置窗体移动
-        /// </summary>
-        /// <param name="c">拖动控件，一般为标题栏</param>
-        protected void InitFormMove(params Control[] cs)
-        {
-            foreach (Control c in cs)
-            {
-                if (c != null && !c.IsDisposed)
-                    c.MouseDown += c_MouseDown;
-            }
-        }
-
-        void c_MouseDown(object sender, MouseEventArgs e)
-        {
-            MouseDown(this.Handle);
-        }
     }
 }

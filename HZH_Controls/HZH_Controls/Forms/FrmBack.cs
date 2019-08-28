@@ -37,7 +37,6 @@ namespace HZH_Controls.Forms
         public FrmBack()
         {
             InitializeComponent();
-            InitFormMove(this.panTop);
         }
 
         private void btnBack1_btnClick(object sender, EventArgs e)
