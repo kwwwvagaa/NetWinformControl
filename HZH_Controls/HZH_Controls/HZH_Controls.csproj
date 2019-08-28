@@ -406,12 +406,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\TextInputType.cs" />
-    <Compile Include="Theme\Blue.cs" />
-    <Compile Include="Theme\Default.cs" />
-    <Compile Include="Theme\IControlTheme.cs" />
-    <Compile Include="Theme\UCTheme.cs">
-      <SubType>Component</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\BtnsGroup\UCBtnsGroup.resx">

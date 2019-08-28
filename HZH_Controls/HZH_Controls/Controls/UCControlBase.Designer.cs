@@ -40,7 +40,6 @@ namespace HZH_Controls.Controls
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UCControlBase";
             this.Size = new System.Drawing.Size(237, 154);
-            this.Load += new System.EventHandler(this.UCControlBase_Load);
             this.ResumeLayout(false);
 
         }
