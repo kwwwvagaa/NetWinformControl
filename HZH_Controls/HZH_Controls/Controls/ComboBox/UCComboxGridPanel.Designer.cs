@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ucControlBase1 = new HZH_Controls.Controls.UCControlBase();
             this.ucDataGridView1 = new HZH_Controls.Controls.UCDataGridView();
             this.txtSearch = new HZH_Controls.Controls.UCTextBoxEx();
@@ -142,7 +143,7 @@
             this.txtSearch.Padding = new System.Windows.Forms.Padding(5);
             this.txtSearch.PromptColor = System.Drawing.Color.Gray;
             this.txtSearch.PromptFont = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtSearch.PromptText = "";
+            this.txtSearch.PromptText = "输入内容模糊搜索";
             this.txtSearch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.txtSearch.RectWidth = 1;
             this.txtSearch.RegexPattern = "";
