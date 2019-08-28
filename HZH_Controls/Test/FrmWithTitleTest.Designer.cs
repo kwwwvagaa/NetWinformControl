@@ -35,6 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 310);
+            this.IsShowCloseBtn = true;
             this.Name = "FrmWithTitleTest";
             this.Text = "FrmWithTitleTest";
             this.Title = "单标题窗体测试";

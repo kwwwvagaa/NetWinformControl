@@ -62,7 +62,6 @@
             this.btnClose.BackgroundImage = global::HZH_Controls.Properties.Resources.dialog_close;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.Location = new System.Drawing.Point(399, 0);
-            this.btnClose.MaximumSize = new System.Drawing.Size(0, 60);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(28, 60);
             this.btnClose.TabIndex = 6;

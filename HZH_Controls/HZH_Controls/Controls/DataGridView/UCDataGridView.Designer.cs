@@ -81,7 +81,6 @@
             // 
             // panRow
             // 
-            this.panRow.AutoScroll = true;
             this.panRow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panRow.Location = new System.Drawing.Point(0, 40);
             this.panRow.Name = "panRow";

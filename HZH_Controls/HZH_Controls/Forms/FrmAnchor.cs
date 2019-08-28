@@ -51,36 +51,6 @@ namespace HZH_Controls.Forms
             m_size = childControl.Size;
             m_deviation = deviation;
 
-            //Point p = parentControl.Parent.PointToScreen(parentControl.Location);
-            //int intX = 0;
-            //int intY = 0;
-            //if (p.Y + parentControl.Height + childControl.Height > Screen.PrimaryScreen.Bounds.Height)
-            //{
-            //    intY = p.Y - childControl.Height - 1;
-            //    blnDown = false;
-            //}
-            //else
-            //{
-            //    intY = p.Y + parentControl.Height + 1;
-            //    blnDown = true;
-            //}
-
-            //if (p.X + childControl.Width > Screen.PrimaryScreen.Bounds.Width)
-            //{
-            //    intX = Screen.PrimaryScreen.Bounds.Width - childControl.Width;
-
-            //}
-            //else
-            //{
-            //    intX = p.X;
-            //}
-            //if (deviation.HasValue)
-            //{
-            //    intX += deviation.Value.X;
-            //    intY += deviation.Value.Y;
-            //}
-            //this.Location = new Point(intX, intY);
-
             if (parentControl.FindForm() != null)
             {
                 Form frmP = parentControl.FindForm();
@@ -123,37 +93,37 @@ namespace HZH_Controls.Forms
 
         #region 无焦点窗体
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        private extern static IntPtr SetActiveWindow(IntPtr handle);
-        private const int WM_ACTIVATE = 0x006;
-        private const int WM_ACTIVATEAPP = 0x01C;
-        private const int WM_NCACTIVATE = 0x086;
-        private const int WA_INACTIVE = 0;
-        private const int WM_MOUSEACTIVATE = 0x21;
-        private const int MA_NOACTIVATE = 3;
-        protected override void WndProc(ref Message m)
-        {
-            if (m.Msg == WM_MOUSEACTIVATE)
-            {
-                m.Result = new IntPtr(MA_NOACTIVATE);
-                return;
-            }
-            else if (m.Msg == WM_NCACTIVATE)
-            {
-                if (((int)m.WParam & 0xFFFF) != WA_INACTIVE)
-                {
-                    if (m.LParam != IntPtr.Zero)
-                    {
-                        SetActiveWindow(m.LParam);
-                    }
-                    else
-                    {
-                        SetActiveWindow(IntPtr.Zero);
-                    }
-                }
-            }
-            base.WndProc(ref m);
-        }
+        //[System.Runtime.InteropServices.DllImport("user32.dll")]
+        //private extern static IntPtr SetActiveWindow(IntPtr handle);
+        //private const int WM_ACTIVATE = 0x006;
+        //private const int WM_ACTIVATEAPP = 0x01C;
+        //private const int WM_NCACTIVATE = 0x086;
+        //private const int WA_INACTIVE = 0;
+        //private const int WM_MOUSEACTIVATE = 0x21;
+        //private const int MA_NOACTIVATE = 3;
+        //protected override void WndProc(ref Message m)
+        //{
+        //    if (m.Msg == WM_MOUSEACTIVATE)
+        //    {
+        //        m.Result = new IntPtr(MA_NOACTIVATE);
+        //        return;
+        //    }
+        //    else if (m.Msg == WM_NCACTIVATE)
+        //    {
+        //        if (((int)m.WParam & 0xFFFF) != WA_INACTIVE)
+        //        {
+        //            if (m.LParam != IntPtr.Zero)
+        //            {
+        //                SetActiveWindow(m.LParam);
+        //            }
+        //            else
+        //            {
+        //                SetActiveWindow(IntPtr.Zero);
+        //            }
+        //        }
+        //    }
+        //    base.WndProc(ref m);
+        //}
 
         #endregion
 
@@ -215,12 +185,14 @@ namespace HZH_Controls.Forms
             {
                 Form frm = this.Owner as Form;
                 IntPtr _ptr = ControlHelper.GetForegroundWindow();
-                if (_ptr != frm.Handle)
+                if (_ptr != frm.Handle && _ptr!=this.Handle)
                 {
                     this.Hide();
                 }
             }
         }
+
+        
 
     }
 }

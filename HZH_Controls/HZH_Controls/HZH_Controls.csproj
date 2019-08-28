@@ -54,6 +54,18 @@
     <Compile Include="Controls\Btn\UCDropDownBtn.Designer.cs">
       <DependentUpon>UCDropDownBtn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ComboBox\UCComboxGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBox\UCComboxGrid.Designer.cs">
+      <DependentUpon>UCComboxGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComboBox\UCComboxGridPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBox\UCComboxGridPanel.Designer.cs">
+      <DependentUpon>UCComboxGridPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DataGridView\DataGridViewCellEntity.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewCellEventArgs.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewCellEventHandler.cs" />
@@ -204,11 +216,11 @@
     <Compile Include="Controls\Checkbox\UCCheckBox.Designer.cs">
       <DependentUpon>UCCheckBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ComboBox\UCComboBox.cs">
+    <Compile Include="Controls\ComboBox\UCCombox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ComboBox\UCComboBox.Designer.cs">
-      <DependentUpon>UCComboBox.cs</DependentUpon>
+    <Compile Include="Controls\ComboBox\UCCombox.Designer.cs">
+      <DependentUpon>UCCombox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\DateTime\DateTimePickerType.cs" />
     <Compile Include="Controls\DateTime\UCDatePickerExt.cs">
@@ -426,8 +438,14 @@
     <EmbeddedResource Include="Controls\Checkbox\UCCheckBox.resx">
       <DependentUpon>UCCheckBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ComboBox\UCComboBox.resx">
-      <DependentUpon>UCComboBox.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ComboBox\UCCombox.resx">
+      <DependentUpon>UCCombox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ComboBox\UCComboxGrid.resx">
+      <DependentUpon>UCComboxGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ComboBox\UCComboxGridPanel.resx">
+      <DependentUpon>UCComboxGridPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DataGridView\UCDataGridView.resx">
       <DependentUpon>UCDataGridView.cs</DependentUpon>

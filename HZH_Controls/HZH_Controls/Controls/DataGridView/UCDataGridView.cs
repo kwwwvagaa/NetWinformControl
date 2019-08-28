@@ -167,7 +167,9 @@ namespace HZH_Controls.Controls
                 }
                 m_dataSource = value;
                 if (m_columns != null && m_columns.Count > 0)
+                {
                     ReloadSource();
+                }
             }
         }
 
@@ -222,17 +224,22 @@ namespace HZH_Controls.Controls
             List<IDataGridViewRow> lst = new List<IDataGridViewRow>();
             if (m_isShowCheckBox)
             {
-                lst.AddRange(Rows.FindAll(p => p.IsChecked));
+                if (Rows != null && Rows.Count > 0)
+                    lst.AddRange(Rows.FindAll(p => p.IsChecked));
             }
             else
             {
-                lst.AddRange(new List<IDataGridViewRow>() { m_selectRow });
+                if (m_selectRow != null)
+                    lst.AddRange(new List<IDataGridViewRow>() { m_selectRow });
             }
-            foreach (var row in Rows)
+            if (Rows != null && Rows.Count > 0)
             {
-                Control c = row as Control;
-                UCDataGridView grid = FindChildGrid(c);
-                lst.AddRange(grid.SelectRows);
+                foreach (var row in Rows)
+                {
+                    Control c = row as Control;
+                    UCDataGridView grid = FindChildGrid(c);
+                    lst.AddRange(grid.SelectRows);
+                }
             }
             return lst;
         }
@@ -271,6 +278,7 @@ namespace HZH_Controls.Controls
                     panPage.Visible = value != null;
                     m_page.ShowSourceChanged += page_ShowSourceChanged;
                     m_page.Dock = DockStyle.Fill;
+                    //this.panPage.Height = value.Height;
                     this.panPage.Controls.Clear();
                     this.panPage.Controls.Add(m_page);
                     ResetShowCount();
@@ -292,7 +300,11 @@ namespace HZH_Controls.Controls
         public bool IsAutoHeight
         {
             get { return m_isAutoHeight; }
-            set { m_isAutoHeight = value; }
+            set
+            {
+                m_isAutoHeight = value;
+                this.AutoScroll = value;
+            }
         }
 
         void page_ShowSourceChanged(object currentSource)
@@ -432,7 +444,6 @@ namespace HZH_Controls.Controls
 
                 ControlHelper.FreezeControl(this.panRow, true);
                 this.panRow.Controls.Clear();
-
                 Rows = new List<IDataGridViewRow>();
                 if (m_columns == null || m_columns.Count <= 0)
                     return;
@@ -505,7 +516,7 @@ namespace HZH_Controls.Controls
                             this.panRow.Controls.Add(rowControl);
                             row.RowHeight = m_rowHeight;
                             rowControl.Dock = DockStyle.Top;
-                            row.CellClick += (a, b) => { SetSelectRow((Control)a, b); };
+                            row.CellClick += (a, b) => { SetSelectRow(rowControl, b); };
                             row.CheckBoxChangeEvent += (a, b) => { SetSelectRow(rowControl, b); };
                             row.RowCustomEvent += (a, b) => { if (RowCustomEvent != null) { RowCustomEvent(a, b); } };
                             row.SourceChanged += RowSourceChanged;

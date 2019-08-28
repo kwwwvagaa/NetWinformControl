@@ -40,6 +40,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ucComboxGrid1 = new HZH_Controls.Controls.ComboBox.UCComboxGrid();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.ucHorizontalList1 = new HZH_Controls.Controls.UCHorizontalList();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -47,8 +48,8 @@
             this.ucDatePickerExt2 = new HZH_Controls.Controls.UCDatePickerExt();
             this.ucDatePickerExt1 = new HZH_Controls.Controls.UCDatePickerExt();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.ucComboBox2 = new HZH_Controls.Controls.UCComboBox();
-            this.ucComboBox1 = new HZH_Controls.Controls.UCComboBox();
+            this.ucComboBox2 = new HZH_Controls.Controls.UCCombox();
+            this.ucComboBox1 = new HZH_Controls.Controls.UCCombox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.ucListExt1 = new HZH_Controls.Controls.UCListExt();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -194,6 +195,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ucComboxGrid1);
             this.groupBox1.Controls.Add(this.groupBox9);
             this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.groupBox6);
@@ -208,6 +210,35 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "控件";
+            // 
+            // ucComboxGrid1
+            // 
+            this.ucComboxGrid1.BackColor = System.Drawing.Color.Transparent;
+            this.ucComboxGrid1.BackColorExt = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboxGrid1.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ucComboxGrid1.ConerRadius = 5;
+            this.ucComboxGrid1.DropPanelHeight = -1;
+            this.ucComboxGrid1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboxGrid1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.ucComboxGrid1.GridColumns = null;
+            this.ucComboxGrid1.GridDataSource = null;
+            this.ucComboxGrid1.GridRowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
+            this.ucComboxGrid1.IsRadius = false;
+            this.ucComboxGrid1.IsShowRect = true;
+            this.ucComboxGrid1.ItemWidth = 70;
+            this.ucComboxGrid1.Location = new System.Drawing.Point(233, 490);
+            this.ucComboxGrid1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucComboxGrid1.Name = "ucComboxGrid1";
+            this.ucComboxGrid1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboxGrid1.RectWidth = 1;
+            this.ucComboxGrid1.SelectedIndex = -1;
+            this.ucComboxGrid1.SelectedValue = "";
+            this.ucComboxGrid1.SelectSource = null;
+            this.ucComboxGrid1.Size = new System.Drawing.Size(173, 32);
+            this.ucComboxGrid1.Source = null;
+            this.ucComboxGrid1.TabIndex = 9;
+            this.ucComboxGrid1.TextField = "Name";
+            this.ucComboxGrid1.TextValue = null;
             // 
             // groupBox9
             // 
@@ -1214,8 +1245,8 @@
         private HZH_Controls.Controls.UCBtnFillet ucBtnFillet1;
         private HZH_Controls.Controls.UCBtnExt ucBtnExt2;
         private System.Windows.Forms.GroupBox groupBox6;
-        private HZH_Controls.Controls.UCComboBox ucComboBox2;
-        private HZH_Controls.Controls.UCComboBox ucComboBox1;
+        private HZH_Controls.Controls.UCCombox ucComboBox2;
+        private HZH_Controls.Controls.UCCombox ucComboBox1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox7;
         private HZH_Controls.Controls.UCDatePickerExt ucDatePickerExt3;
@@ -1242,6 +1273,7 @@
         private HZH_Controls.Controls.UCBtnExt ucBtnExt4;
         private HZH_Controls.Controls.UCBtnExt ucBtnExt5;
         private HZH_Controls.Controls.Btn.UCDropDownBtn ucDropDownBtn1;
+        private HZH_Controls.Controls.ComboBox.UCComboxGrid ucComboxGrid1;
     }
 }
 

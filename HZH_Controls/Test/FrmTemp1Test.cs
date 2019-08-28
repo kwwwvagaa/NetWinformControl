@@ -31,7 +31,7 @@ namespace Test
             this.ucDataGridView1.Columns = lstCulumns;
             this.ucDataGridView1.IsShowCheckBox = true;
             List<object> lstSource = new List<object>();
-            for (int i = 0; i < 200; i++)
+            for (int i = 0; i < 50; i++)
             {
                 TestModel model = new TestModel()
                 {
@@ -42,13 +42,15 @@ namespace Test
                     Sex = i % 2
                 };
                 lstSource.Add(model);
-                AddChilds(model, 5);
+                //AddChilds(model, 5);
             }
 
             var page = new UCPagerControl2();
             page.DataSource = lstSource;
             this.ucDataGridView1.Page = page;
             this.ucDataGridView1.First();
+
+            //this.ucDataGridView1.DataSource = lstSource;
         }
 
         private void AddChilds(TestModel tm, int intCount)
