@@ -555,6 +555,33 @@ this.ucWaveWithSource1.AddSource(i.ToString(), i);
         }
 ```
 
+##### 24、表格下拉框
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0828/174756_ecc838e5_301547.png "dropdowngrid.png")
+
+``` csharp
+List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "姓名", Width = 100, WidthType = SizeType.Absolute });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Age", HeadText = "年龄", Width = 100, WidthType = SizeType.Absolute });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "生日", Width = 120, WidthType = SizeType.Absolute, Format = (a) => { return ((DateTime)a).ToString("yyyy-MM-dd"); } });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "性别", Width = 100, WidthType = SizeType.Absolute, Format = (a) => { return ((int)a) == 0 ? "女" : "男"; } });
+this.ucComboxGrid1.GridColumns = lstCulumns;
+List<object> lstSourceGrid = new List<object>();
+for (int i = 0; i < 100; i++)
+{
+    TestModel model = new TestModel()
+    {
+        ID = i.ToString(),
+        Age = 3 * i,
+        Name = "姓名——" + i,
+        Birthday = DateTime.Now.AddYears(-10),
+        Sex = i % 2
+    };
+    lstSourceGrid.Add(model);
+}
+this.ucComboxGrid1.GridDataSource = lstSourceGrid;
+```
 
 #### 最后的话
 
