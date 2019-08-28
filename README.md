@@ -556,6 +556,34 @@ this.ucWaveWithSource1.AddSource(i.ToString(), i);
         }
 ```
 
+##### 24, table drop-down box
+
+![Enter image description](https://images.gitee.com/uploads/images/2019/0828/174756_ecc838e5_301547.png "dropdowngrid.png")
+
+``` csharp
+List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "Number", Width = 70, WidthType = SizeType.Absolute });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "Name", Width = 100, WidthType = SizeType.Absolute });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Age", HeadText = "Age", Width = 100, WidthType = SizeType.Absolute });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "Birthday", Width = 120, WidthType = SizeType.Absolute, Format = (a) => { return ((DateTime)a).ToString(" yyyy-MM-dd"); } });
+lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "Gender", Width = 100, WidthType = SizeType.Absolute, Format = (a) => { return ((int)a) == 0 ? "female": "male"; } });
+this.ucComboxGrid1.GridColumns = lstCulumns;
+List<object> lstSourceGrid = new List<object>();
+For (int i = 0; i < 100; i++)
+{
+    TestModel model = new TestModel()
+    {
+        ID = i.ToString(),
+        Age = 3 * i,
+        Name = "name -" + i,
+        Birthday = DateTime.Now.AddYears(-10),
+        Sex = i % 2
+    };
+    lstSourceGrid.Add(model);
+}
+this.ucComboxGrid1.GridDataSource = lstSourceGrid;
+```
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
