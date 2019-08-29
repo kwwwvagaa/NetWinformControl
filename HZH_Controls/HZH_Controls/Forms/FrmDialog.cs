@@ -25,6 +25,7 @@ namespace HZH_Controls.Forms
             bool blnisEnterClose = true)
         {
             InitializeComponent();
+            InitFormMove(this.lblTitle);
             if (!string.IsNullOrWhiteSpace(strTitle))
                 lblTitle.Text = strTitle;
             lblMsg.Text = strMessage;

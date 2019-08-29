@@ -52,6 +52,7 @@ namespace HZH_Controls.Forms
         public FrmWithTitle()
         {
             InitializeComponent();
+            InitFormMove(this.lblTitle);
         }
 
         private void btnClose_MouseDown(object sender, MouseEventArgs e)
