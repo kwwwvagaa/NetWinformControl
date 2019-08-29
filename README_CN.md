@@ -587,6 +587,17 @@ this.ucComboxGrid1.GridDataSource = lstSourceGrid;
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0829/112813_d4d2a09b_301547.gif "1.gif")
 
+##### 26、文字提示（toolTips）
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0829/154507_199fdff5_301547.png "anchorTips.png")
+
+``` csharp
+HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nLEFT", AnchorTipsLocation.LEFT);
+HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nRIGHT", AnchorTipsLocation.RIGHT);
+HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nTOP", AnchorTipsLocation.TOP);
+HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM", AnchorTipsLocation.BOTTOM);
+```
+
 #### 最后的话
 
 最后，喜欢请点下stars，如果有其他一些什么常用的控件可以在留言哦
