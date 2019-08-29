@@ -28,6 +28,7 @@ namespace HZH_Controls.Forms
         private bool blnDown = true;
         Size m_size;
         Point? m_deviation;
+        bool m_isNotFocus = true;
         #region 构造函数
         /// <summary>
         /// 功能描述:构造函数
@@ -38,8 +39,9 @@ namespace HZH_Controls.Forms
         /// <param name="parentControl">父控件</param>
         /// <param name="childControl">子控件</param>
         /// <param name="deviation">偏移</param>
-        public FrmAnchor(Control parentControl, Control childControl, Point? deviation = null)
+        public FrmAnchor(Control parentControl, Control childControl, Point? deviation = null,bool isNotFocus=true)
         {
+            m_isNotFocus = isNotFocus;
             m_parentControl = parentControl;
             InitializeComponent();
             this.Size = childControl.Size;
@@ -62,13 +64,10 @@ namespace HZH_Controls.Forms
             parentControl.LocationChanged += frmP_LocationChanged;
         }
 
-        void frmP_LocationChanged(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
 
-        public FrmAnchor(Control parentControl, Size size, Point? deviation = null)
+        public FrmAnchor(Control parentControl, Size size, Point? deviation = null, bool isNotFocus = true)
         {
+            m_isNotFocus = isNotFocus;
             m_parentControl = parentControl;
             InitializeComponent();
             this.Size = size;
@@ -79,6 +78,10 @@ namespace HZH_Controls.Forms
             m_deviation = deviation;           
         }
 
+        void frmP_LocationChanged(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
         #endregion
 
         private void FrmDownBoard_HandleDestroyed(object sender, EventArgs e)
@@ -93,37 +96,40 @@ namespace HZH_Controls.Forms
 
         #region 无焦点窗体
 
-        //[System.Runtime.InteropServices.DllImport("user32.dll")]
-        //private extern static IntPtr SetActiveWindow(IntPtr handle);
-        //private const int WM_ACTIVATE = 0x006;
-        //private const int WM_ACTIVATEAPP = 0x01C;
-        //private const int WM_NCACTIVATE = 0x086;
-        //private const int WA_INACTIVE = 0;
-        //private const int WM_MOUSEACTIVATE = 0x21;
-        //private const int MA_NOACTIVATE = 3;
-        //protected override void WndProc(ref Message m)
-        //{
-        //    if (m.Msg == WM_MOUSEACTIVATE)
-        //    {
-        //        m.Result = new IntPtr(MA_NOACTIVATE);
-        //        return;
-        //    }
-        //    else if (m.Msg == WM_NCACTIVATE)
-        //    {
-        //        if (((int)m.WParam & 0xFFFF) != WA_INACTIVE)
-        //        {
-        //            if (m.LParam != IntPtr.Zero)
-        //            {
-        //                SetActiveWindow(m.LParam);
-        //            }
-        //            else
-        //            {
-        //                SetActiveWindow(IntPtr.Zero);
-        //            }
-        //        }
-        //    }
-        //    base.WndProc(ref m);
-        //}
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private extern static IntPtr SetActiveWindow(IntPtr handle);
+        private const int WM_ACTIVATE = 0x006;
+        private const int WM_ACTIVATEAPP = 0x01C;
+        private const int WM_NCACTIVATE = 0x086;
+        private const int WA_INACTIVE = 0;
+        private const int WM_MOUSEACTIVATE = 0x21;
+        private const int MA_NOACTIVATE = 3;
+        protected override void WndProc(ref Message m)
+        {
+            if (m_isNotFocus)
+            {
+                if (m.Msg == WM_MOUSEACTIVATE)
+                {
+                    m.Result = new IntPtr(MA_NOACTIVATE);
+                    return;
+                }
+                else if (m.Msg == WM_NCACTIVATE)
+                {
+                    if (((int)m.WParam & 0xFFFF) != WA_INACTIVE)
+                    {
+                        if (m.LParam != IntPtr.Zero)
+                        {
+                            SetActiveWindow(m.LParam);
+                        }
+                        else
+                        {
+                            SetActiveWindow(IntPtr.Zero);
+                        }
+                    }
+                }
+            }
+            base.WndProc(ref m);
+        }
 
         #endregion
 

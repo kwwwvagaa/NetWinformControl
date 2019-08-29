@@ -84,7 +84,7 @@ namespace HZH_Controls.Controls.ComboBox
             }
         }
 
-      
+
 
         [Description("选中数据源改变事件"), Category("自定义")]
         public new event EventHandler SelectedChangedEvent;
@@ -119,7 +119,7 @@ namespace HZH_Controls.Controls.ComboBox
             m_ucPanel.DataSource = m_dataSource;
             if (_frmAnchor == null || _frmAnchor.IsDisposed || _frmAnchor.Visible == false)
             {
-                _frmAnchor = new Forms.FrmAnchor(this, m_ucPanel);
+                _frmAnchor = new Forms.FrmAnchor(this, m_ucPanel, isNotFocus: false);
                 _frmAnchor.Show(this.FindForm());
             }
 

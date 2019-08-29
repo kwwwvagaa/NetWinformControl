@@ -35,7 +35,7 @@ namespace Test
             if (this.ucProcessEllipse1.Value == 100)
                 this.ucProcessEllipse1.Value = 0;
             if (this.ucProcessEllipse2.Value == 100)
-                this.ucProcessEllipse2.Value = 0;          
+                this.ucProcessEllipse2.Value = 0;
             if (this.ucProcessLine1.Value >= this.ucProcessLine1.MaxValue)
                 this.ucProcessLine1.Value = 0;
             if (this.ucProcessLineExt1.Value >= this.ucProcessLineExt1.MaxValue)
@@ -68,7 +68,7 @@ namespace Test
 
         private void ucDropDownBtn1_BtnClick(object sender, EventArgs e)
         {
-            HZH_Controls.Forms.FrmTips.ShowTipsSuccess(this,sender.ToString());
+            HZH_Controls.Forms.FrmTips.ShowTipsSuccess(this, sender.ToString());
         }
 
         private void button1_Click_1(object sender, EventArgs e)
