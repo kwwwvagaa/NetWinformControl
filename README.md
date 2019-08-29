@@ -587,6 +587,17 @@ this.ucComboxGrid1.GridDataSource = lstSourceGrid;
 
 ![Enter image description](https://images.gitee.com/uploads/images/2019/0829/112813_d4d2a09b_301547.gif "1.gif")
 
+##### 26, toolTips (toolTips)
+
+![Enter image description](https://images.gitee.com/uploads/images/2019/0829/154507_199fdff5_301547.png "anchorTips.png")
+
+``` csharp
+HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "test prompt information \nLEFT", AnchorTipsLocation.LEFT);
+HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nRIGHT", AnchorTipsLocation.RIGHT);
+HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nTOP", AnchorTipsLocation.TOP);
+HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBOTTOM", AnchorTipsLocation.BOTTOM);
+```
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
