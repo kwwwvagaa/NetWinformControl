@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
+            this.ucTrackBar1 = new HZH_Controls.Controls.UCTrackBar();
             this.ucProcessWave2 = new HZH_Controls.Controls.UCProcessWave();
             this.ucProcessWave1 = new HZH_Controls.Controls.UCProcessWave();
             this.ucWaveWithSource1 = new HZH_Controls.Controls.UCWaveWithSource();
@@ -134,6 +135,18 @@
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 9;
             this.label3.Text = "波宽";
+            // 
+            // ucTrackBar1
+            // 
+            this.ucTrackBar1.LineWidth = 10;
+            this.ucTrackBar1.Location = new System.Drawing.Point(833, 403);
+            this.ucTrackBar1.MaxValue = 100;
+            this.ucTrackBar1.MinValue = 0;
+            this.ucTrackBar1.Name = "ucTrackBar1";
+            this.ucTrackBar1.Size = new System.Drawing.Size(212, 32);
+            this.ucTrackBar1.TabIndex = 12;
+            this.ucTrackBar1.Text = "ucTrackBar1";
+            this.ucTrackBar1.Value = 100;
             // 
             // ucProcessWave2
             // 
@@ -497,6 +510,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 594);
+            this.Controls.Add(this.ucTrackBar1);
             this.Controls.Add(this.ucProcessWave2);
             this.Controls.Add(this.ucProcessWave1);
             this.Controls.Add(this.ucWaveWithSource1);
@@ -567,6 +581,7 @@
         private HZH_Controls.Controls.UCWaveWithSource ucWaveWithSource1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave2;
+        private HZH_Controls.Controls.UCTrackBar ucTrackBar1;
      
     }
 }

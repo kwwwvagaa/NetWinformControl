@@ -185,6 +185,9 @@
     <Compile Include="Controls\Tab\TabControlExt.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\TrackBar\UCTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\Wave\UCWaveChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
