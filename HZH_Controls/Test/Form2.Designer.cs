@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
-            this.ucDropDownBtn1 = new HZH_Controls.Controls.Btn.UCDropDownBtn();
             this.ucProcessWave2 = new HZH_Controls.Controls.UCProcessWave();
             this.ucProcessWave1 = new HZH_Controls.Controls.UCProcessWave();
             this.ucWaveWithSource1 = new HZH_Controls.Controls.UCWaveWithSource();
@@ -60,6 +59,7 @@
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
+            this.ucBtnImg1 = new HZH_Controls.Controls.UCBtnImg();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -135,39 +135,6 @@
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 9;
             this.label3.Text = "波宽";
-            // 
-            // ucDropDownBtn1
-            // 
-            this.ucDropDownBtn1.BackColor = System.Drawing.Color.White;
-            this.ucDropDownBtn1.BtnBackColor = System.Drawing.Color.White;
-            this.ucDropDownBtn1.BtnFont = new System.Drawing.Font("微软雅黑", 12F);
-            this.ucDropDownBtn1.BtnForeColor = System.Drawing.Color.White;
-            this.ucDropDownBtn1.Btns = new string[] {
-        "按钮1",
-        "按钮2",
-        "按钮3"};
-            this.ucDropDownBtn1.BtnText = "测试下拉按钮";
-            this.ucDropDownBtn1.ConerRadius = 5;
-            this.ucDropDownBtn1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucDropDownBtn1.DropPanelHeight = -1;
-            this.ucDropDownBtn1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.ucDropDownBtn1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucDropDownBtn1.ForeColor = System.Drawing.Color.White;
-            this.ucDropDownBtn1.Image = ((System.Drawing.Image)(resources.GetObject("ucDropDownBtn1.Image")));
-            this.ucDropDownBtn1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ucDropDownBtn1.IsRadius = true;
-            this.ucDropDownBtn1.IsShowRect = true;
-            this.ucDropDownBtn1.IsShowTips = false;
-            this.ucDropDownBtn1.Location = new System.Drawing.Point(995, 242);
-            this.ucDropDownBtn1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucDropDownBtn1.Name = "ucDropDownBtn1";
-            this.ucDropDownBtn1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.ucDropDownBtn1.RectWidth = 1;
-            this.ucDropDownBtn1.Size = new System.Drawing.Size(143, 39);
-            this.ucDropDownBtn1.TabIndex = 12;
-            this.ucDropDownBtn1.TabStop = false;
-            this.ucDropDownBtn1.TipsText = "";
-            this.ucDropDownBtn1.BtnClick += new System.EventHandler(this.ucDropDownBtn1_BtnClick);
             // 
             // ucProcessWave2
             // 
@@ -524,12 +491,40 @@
             this.ucStep1.StepWidth = 35;
             this.ucStep1.TabIndex = 0;
             // 
+            // ucBtnImg1
+            // 
+            this.ucBtnImg1.BackColor = System.Drawing.Color.White;
+            this.ucBtnImg1.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnImg1.BtnFont = new System.Drawing.Font("微软雅黑", 17F);
+            this.ucBtnImg1.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnImg1.BtnText = "自定义按钮";
+            this.ucBtnImg1.ConerRadius = 5;
+            this.ucBtnImg1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnImg1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnImg1.ForeColor = System.Drawing.Color.White;
+            this.ucBtnImg1.Image = ((System.Drawing.Image)(resources.GetObject("ucBtnImg1.Image")));
+            this.ucBtnImg1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ucBtnImg1.IsRadius = true;
+            this.ucBtnImg1.IsShowRect = true;
+            this.ucBtnImg1.IsShowTips = false;
+            this.ucBtnImg1.Location = new System.Drawing.Point(1016, 263);
+            this.ucBtnImg1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnImg1.Name = "ucBtnImg1";
+            this.ucBtnImg1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnImg1.RectWidth = 1;
+            this.ucBtnImg1.Size = new System.Drawing.Size(184, 108);
+            this.ucBtnImg1.TabIndex = 12;
+            this.ucBtnImg1.TabStop = false;
+            this.ucBtnImg1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ucBtnImg1.TipsText = "";
+            // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 594);
-            this.Controls.Add(this.ucDropDownBtn1);
+            this.Controls.Add(this.ucBtnImg1);
             this.Controls.Add(this.ucProcessWave2);
             this.Controls.Add(this.ucProcessWave1);
             this.Controls.Add(this.ucWaveWithSource1);
@@ -600,7 +595,7 @@
         private HZH_Controls.Controls.UCWaveWithSource ucWaveWithSource1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave2;
-        private HZH_Controls.Controls.Btn.UCDropDownBtn ucDropDownBtn1;
+        private HZH_Controls.Controls.UCBtnImg ucBtnImg1;
      
     }
 }

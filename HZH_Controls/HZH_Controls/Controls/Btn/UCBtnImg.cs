@@ -42,13 +42,11 @@ namespace HZH_Controls.Controls
         {
             get
             {
-                return this.imageList1.Images[0];
+                return this.lbl.Image;
             }
             set
             {
-                this.imageList1.Images.Clear();
-                this.imageList1.Images.Add(value);
-                this.lbl.ImageIndex = 0;
+                this.lbl.Image = value;
             }
         }
 
@@ -59,9 +57,17 @@ namespace HZH_Controls.Controls
             set { lbl.ImageAlign = value; }
         }
 
+        [Description("文字位置"), Category("自定义")]
+        public virtual ContentAlignment TextAlign
+        {
+            get { return this.lbl.TextAlign; }
+            set { lbl.TextAlign = value; }
+        }
+
         public UCBtnImg()
         {
             InitializeComponent();
+            IsShowTips = false;
             base.BtnForeColor = ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             base.BtnFont = new System.Drawing.Font("微软雅黑", 17F);
             base.BtnText = "    自定义按钮";

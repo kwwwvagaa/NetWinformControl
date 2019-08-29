@@ -28,23 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCBtnImg));
-            this.imageList1 = new System.Windows.Forms.ImageList();
             this.SuspendLayout();
             // 
             // lbl
             // 
-            this.lbl.ImageIndex = 0;
-            this.lbl.ImageList = this.imageList1;
+            this.lbl.Image = global::HZH_Controls.Properties.Resources.back;
             this.lbl.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lbl.Text = "    自定义按钮";
-            this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "back.png");
             // 
             // UCBtnImg
             // 
@@ -57,6 +46,5 @@
 
         #endregion
 
-        private System.Windows.Forms.ImageList imageList1;
     }
 }

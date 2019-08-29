@@ -84,20 +84,10 @@ namespace HZH_Controls.Controls.ComboBox
             }
         }
 
-        private void SetText()
-        {
-            if (!string.IsNullOrEmpty(m_textField) && selectSource != null)
-            {
-                var pro = selectSource.GetType().GetProperty(m_textField);
-                if (pro != null)
-                {
-                    TextValue = pro.GetValue(selectSource, null).ToStringExt();
-                }
-            }
-        }
+      
 
         [Description("选中数据源改变事件"), Category("自定义")]
-        public event EventHandler SelectedChangedEvent;
+        public new event EventHandler SelectedChangedEvent;
         public UCComboxGrid()
         {
             InitializeComponent();
@@ -139,6 +129,18 @@ namespace HZH_Controls.Controls.ComboBox
         {
             _frmAnchor.Hide();
             SelectSource = sender;
+        }
+
+        private void SetText()
+        {
+            if (!string.IsNullOrEmpty(m_textField) && selectSource != null)
+            {
+                var pro = selectSource.GetType().GetProperty(m_textField);
+                if (pro != null)
+                {
+                    TextValue = pro.GetValue(selectSource, null).ToStringExt();
+                }
+            }
         }
     }
 }
