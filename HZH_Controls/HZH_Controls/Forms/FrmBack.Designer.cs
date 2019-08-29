@@ -69,7 +69,7 @@
             this.btnBack1.BtnBackColor = System.Drawing.Color.Transparent;
             this.btnBack1.BtnFont = new System.Drawing.Font("微软雅黑", 17F);
             this.btnBack1.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnBack1.BtnText = "自定义按钮";
+            this.btnBack1.BtnText = "   自定义按钮";
             this.btnBack1.ConerRadius = 5;
             this.btnBack1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -77,6 +77,7 @@
             this.btnBack1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnBack1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnBack1.Image = ((System.Drawing.Image)(resources.GetObject("btnBack1.Image")));
+            this.btnBack1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBack1.IsRadius = true;
             this.btnBack1.IsShowRect = true;
             this.btnBack1.IsShowTips = false;
@@ -88,6 +89,7 @@
             this.btnBack1.Size = new System.Drawing.Size(200, 60);
             this.btnBack1.TabIndex = 0;
             this.btnBack1.TabStop = false;
+            this.btnBack1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBack1.TipsText = "";
             this.btnBack1.BtnClick += new System.EventHandler(this.btnBack1_btnClick);
             // 
@@ -108,7 +110,7 @@
             this.ucSplitLine_H1.TabIndex = 0;
             this.ucSplitLine_H1.TabStop = false;
             // 
-            // FrmTemp1
+            // FrmBack
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
@@ -116,7 +118,7 @@
             this.Controls.Add(this.ucSplitLine_H1);
             this.Controls.Add(this.panTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmTemp1";
+            this.Name = "FrmBack";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FrmTemp1";

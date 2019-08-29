@@ -36,12 +36,14 @@
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(253, 34);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "面板";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTitle_MouseDown);
             // 
             // UCPanelTitle
             // 
@@ -55,6 +57,7 @@
             this.Name = "UCPanelTitle";
             this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.Size = new System.Drawing.Size(253, 171);
+            this.SizeChanged += new System.EventHandler(this.UCPanelTitle_SizeChanged);
             this.ResumeLayout(false);
 
         }

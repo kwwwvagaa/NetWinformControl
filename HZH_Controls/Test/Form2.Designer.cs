@@ -59,7 +59,6 @@
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
-            this.ucBtnImg1 = new HZH_Controls.Controls.UCBtnImg();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -142,7 +141,7 @@
             this.ucProcessWave2.ConerRadius = 0;
             this.ucProcessWave2.FillColor = System.Drawing.Color.Empty;
             this.ucProcessWave2.Font = new System.Drawing.Font("微软雅黑", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucProcessWave2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ucProcessWave2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucProcessWave2.IsRadius = false;
             this.ucProcessWave2.IsRectangle = false;
             this.ucProcessWave2.IsShowRect = true;
@@ -163,7 +162,7 @@
             this.ucProcessWave1.ConerRadius = 0;
             this.ucProcessWave1.FillColor = System.Drawing.Color.Empty;
             this.ucProcessWave1.Font = new System.Drawing.Font("微软雅黑", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucProcessWave1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ucProcessWave1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucProcessWave1.IsRadius = false;
             this.ucProcessWave1.IsRectangle = true;
             this.ucProcessWave1.IsShowRect = true;
@@ -436,6 +435,8 @@
             this.ucPanelTitle1.ConerRadius = 10;
             this.ucPanelTitle1.FillColor = System.Drawing.Color.White;
             this.ucPanelTitle1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucPanelTitle1.IsCanExpand = true;
+            this.ucPanelTitle1.IsExpand = false;
             this.ucPanelTitle1.IsRadius = true;
             this.ucPanelTitle1.IsShowRect = true;
             this.ucPanelTitle1.Location = new System.Drawing.Point(406, 14);
@@ -491,40 +492,11 @@
             this.ucStep1.StepWidth = 35;
             this.ucStep1.TabIndex = 0;
             // 
-            // ucBtnImg1
-            // 
-            this.ucBtnImg1.BackColor = System.Drawing.Color.White;
-            this.ucBtnImg1.BtnBackColor = System.Drawing.Color.White;
-            this.ucBtnImg1.BtnFont = new System.Drawing.Font("微软雅黑", 17F);
-            this.ucBtnImg1.BtnForeColor = System.Drawing.Color.White;
-            this.ucBtnImg1.BtnText = "自定义按钮";
-            this.ucBtnImg1.ConerRadius = 5;
-            this.ucBtnImg1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucBtnImg1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.ucBtnImg1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucBtnImg1.ForeColor = System.Drawing.Color.White;
-            this.ucBtnImg1.Image = ((System.Drawing.Image)(resources.GetObject("ucBtnImg1.Image")));
-            this.ucBtnImg1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.ucBtnImg1.IsRadius = true;
-            this.ucBtnImg1.IsShowRect = true;
-            this.ucBtnImg1.IsShowTips = false;
-            this.ucBtnImg1.Location = new System.Drawing.Point(1016, 263);
-            this.ucBtnImg1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucBtnImg1.Name = "ucBtnImg1";
-            this.ucBtnImg1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.ucBtnImg1.RectWidth = 1;
-            this.ucBtnImg1.Size = new System.Drawing.Size(184, 108);
-            this.ucBtnImg1.TabIndex = 12;
-            this.ucBtnImg1.TabStop = false;
-            this.ucBtnImg1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ucBtnImg1.TipsText = "";
-            // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 594);
-            this.Controls.Add(this.ucBtnImg1);
             this.Controls.Add(this.ucProcessWave2);
             this.Controls.Add(this.ucProcessWave1);
             this.Controls.Add(this.ucWaveWithSource1);
@@ -595,7 +567,6 @@
         private HZH_Controls.Controls.UCWaveWithSource ucWaveWithSource1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave2;
-        private HZH_Controls.Controls.UCBtnImg ucBtnImg1;
      
     }
 }
