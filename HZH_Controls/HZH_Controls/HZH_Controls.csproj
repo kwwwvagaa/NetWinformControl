@@ -194,6 +194,12 @@
     <Compile Include="Controls\Wave\UCWave.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\FrmAnchorTips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAnchorTips.Designer.cs">
+      <DependentUpon>FrmAnchorTips.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\ControlHelper.cs" />
     <Compile Include="Controls\Btn\UCBtnExt.cs">
       <SubType>UserControl</SubType>
@@ -560,6 +566,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAnchor.resx">
       <DependentUpon>FrmAnchor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAnchorTips.resx">
+      <DependentUpon>FrmAnchorTips.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>

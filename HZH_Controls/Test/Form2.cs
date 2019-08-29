@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using HZH_Controls.Forms;
 
 namespace Test
 {
@@ -68,6 +69,14 @@ namespace Test
         private void ucDropDownBtn1_BtnClick(object sender, EventArgs e)
         {
             HZH_Controls.Forms.FrmTips.ShowTipsSuccess(this,sender.ToString());
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nLEFT", AnchorTipsLocation.LEFT);
+            HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nRIGHT", AnchorTipsLocation.RIGHT);
+            HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nTOP", AnchorTipsLocation.TOP);
+            HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM", AnchorTipsLocation.BOTTOM);
         }
     }
 }

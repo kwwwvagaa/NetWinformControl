@@ -60,6 +60,7 @@
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -141,7 +142,7 @@
             this.ucTrackBar1.DcimalDigits = 0;
             this.ucTrackBar1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar1.LineWidth = 10F;
-            this.ucTrackBar1.Location = new System.Drawing.Point(999, 367);
+            this.ucTrackBar1.Location = new System.Drawing.Point(881, 206);
             this.ucTrackBar1.MaxValue = 100F;
             this.ucTrackBar1.MinValue = 0F;
             this.ucTrackBar1.Name = "ucTrackBar1";
@@ -508,11 +509,22 @@
             this.ucStep1.StepWidth = 35;
             this.ucStep1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1087, 412);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 56);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "FrmAnchorTips";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 594);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ucTrackBar1);
             this.Controls.Add(this.ucProcessWave2);
             this.Controls.Add(this.ucProcessWave1);
@@ -585,6 +597,7 @@
         private HZH_Controls.Controls.UCProcessWave ucProcessWave1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave2;
         private HZH_Controls.Controls.UCTrackBar ucTrackBar1;
+        private System.Windows.Forms.Button button1;
      
     }
 }
