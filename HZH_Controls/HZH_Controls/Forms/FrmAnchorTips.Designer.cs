@@ -37,6 +37,8 @@
             this.ClientSize = new System.Drawing.Size(226, 83);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAnchorTips";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmAnchorTips";
             this.ResumeLayout(false);
