@@ -138,15 +138,18 @@
             // 
             // ucTrackBar1
             // 
-            this.ucTrackBar1.LineWidth = 10;
-            this.ucTrackBar1.Location = new System.Drawing.Point(833, 403);
-            this.ucTrackBar1.MaxValue = 100;
-            this.ucTrackBar1.MinValue = 0;
+            this.ucTrackBar1.DcimalDigits = 0;
+            this.ucTrackBar1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucTrackBar1.LineWidth = 10F;
+            this.ucTrackBar1.Location = new System.Drawing.Point(999, 367);
+            this.ucTrackBar1.MaxValue = 100F;
+            this.ucTrackBar1.MinValue = 0F;
             this.ucTrackBar1.Name = "ucTrackBar1";
-            this.ucTrackBar1.Size = new System.Drawing.Size(212, 32);
+            this.ucTrackBar1.Size = new System.Drawing.Size(250, 30);
             this.ucTrackBar1.TabIndex = 12;
             this.ucTrackBar1.Text = "ucTrackBar1";
-            this.ucTrackBar1.Value = 100;
+            this.ucTrackBar1.Value = 40F;
+            this.ucTrackBar1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             // 
             // ucProcessWave2
             // 

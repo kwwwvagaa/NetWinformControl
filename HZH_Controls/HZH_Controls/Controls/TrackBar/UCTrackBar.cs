@@ -73,7 +73,7 @@ namespace HZH_Controls.Controls
                 if (value > maxValue || value < minValue)
                     return;
                 var v = (float)Math.Round((double)value, dcimalDigits);
-                if (value == v)
+                if (m_value == v)
                     return;
                 this.m_value = v;
                 this.Refresh();
@@ -84,7 +84,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_lineColor = Color.FromArgb(255, 77, 59);
+        private Color m_lineColor = Color.FromArgb(228, 231, 237);
 
         [Description("线颜色"), Category("自定义")]
         public Color LineColor
@@ -96,6 +96,20 @@ namespace HZH_Controls.Controls
                 this.Refresh();
             }
         }
+
+        private Color m_valueColor = Color.FromArgb(255, 77, 59);
+
+        [Description("值颜色"), Category("自定义")]
+        public Color ValueColor
+        {
+            get { return m_valueColor; }
+            set
+            {
+                m_valueColor = value;
+                this.Refresh();
+            }
+        }
+
         RectangleF m_lineRectangle;
         RectangleF m_trackRectangle;
 
@@ -143,8 +157,13 @@ namespace HZH_Controls.Controls
             m_lineRectangle = new RectangleF(lineWidth, (this.Size.Height - lineWidth) / 2, this.Size.Width - lineWidth * 2, lineWidth);
             GraphicsPath pathLine = ControlHelper.CreateRoundedRectanglePath(m_lineRectangle, 5);
             g.FillPath(new SolidBrush(m_lineColor), pathLine);
+
+
+            GraphicsPath valueLine = ControlHelper.CreateRoundedRectanglePath(new RectangleF(lineWidth, (this.Size.Height - lineWidth) / 2, ((float)m_value / (float)(maxValue - minValue)) * m_lineRectangle.Width, lineWidth), 5);
+            g.FillPath(new SolidBrush(m_valueColor), valueLine);
+
             m_trackRectangle = new RectangleF(m_lineRectangle.Left - lineWidth + (((float)m_value / (float)(maxValue - minValue)) * (this.Size.Width - lineWidth * 2)), (this.Size.Height - lineWidth * 2) / 2, lineWidth * 2, lineWidth * 2);
-            g.FillEllipse(new SolidBrush(m_lineColor), m_trackRectangle);
+            g.FillEllipse(new SolidBrush(m_valueColor), m_trackRectangle);
             g.FillEllipse(Brushes.White, new RectangleF(m_trackRectangle.X + m_trackRectangle.Width / 4, m_trackRectangle.Y + m_trackRectangle.Height / 4, m_trackRectangle.Width / 2, m_trackRectangle.Height / 2));
         }
     }
