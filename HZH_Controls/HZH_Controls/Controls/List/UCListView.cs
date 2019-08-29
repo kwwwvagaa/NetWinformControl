@@ -148,6 +148,8 @@ namespace HZH_Controls.Controls
         /// </summary>
         public void ReloadSource()
         {
+            if (DesignMode)
+                return;
             ControlHelper.FreezeControl(this, true);
             if (this.panMain.Controls.Count <= 0)
             {
@@ -196,6 +198,8 @@ namespace HZH_Controls.Controls
         /// </summary>
         public void ReloadGridStyle()
         {
+            if (DesignMode)
+                return;
             Form frmMain = this.FindForm();
             if (frmMain != null && !frmMain.IsDisposed && frmMain.Visible && this.Visible)
             {
@@ -295,6 +299,8 @@ namespace HZH_Controls.Controls
         /// </summary>
         private void GetCellCount()
         {
+            if (DesignMode)
+                return;
             if (this.panMain.Width == 0)
                 return;
             Control item = (Control)Activator.CreateInstance(m_itemType);
