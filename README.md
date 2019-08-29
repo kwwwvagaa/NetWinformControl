@@ -583,6 +583,9 @@ For (int i = 0; i < 100; i++)
 }
 this.ucComboxGrid1.GridDataSource = lstSourceGrid;
 ```
+##### 25, TrackBar
+
+![Enter image description](https://images.gitee.com/uploads/images/2019/0829/112813_d4d2a09b_301547.gif "1.gif")
 
 #### The last words
 
