@@ -185,7 +185,7 @@ namespace HZH_Controls.Controls
 
                 if (frmTips == null || frmTips.IsDisposed || !frmTips.Visible)
                 {
-                    frmTips = Forms.FrmAnchorTips.ShowTips(new Rectangle(p.X, p.Y, (int)m_trackRectangle.Width, (int)m_trackRectangle.Height), strValue, Forms.AnchorTipsLocation.TOP, autoCloseTime: -1);
+                    frmTips = Forms.FrmAnchorTips.ShowTips(new Rectangle(p.X, p.Y, (int)m_trackRectangle.Width, (int)m_trackRectangle.Height), strValue, Forms.AnchorTipsLocation.TOP, ValueColor, autoCloseTime: -1);
                 }
                 else
                 {
