@@ -587,6 +587,8 @@ this.ucComboxGrid1.GridDataSource = lstSourceGrid;
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0829/112813_d4d2a09b_301547.gif "1.gif")
 
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0830/102356_7cbfed3b_301547.gif "2.gif")
+
 ##### 26、文字提示（toolTips）
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0829/154507_199fdff5_301547.png "anchorTips.png")
