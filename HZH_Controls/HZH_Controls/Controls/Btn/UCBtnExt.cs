@@ -108,17 +108,36 @@ namespace HZH_Controls.Controls
                 lbl.Text = value;
             }
         }
+
+        private Color m_tipsColor = Color.FromArgb(232, 30, 99);
+
+        [Description("角标颜色"), Category("自定义")]
+        public Color TipsColor
+        {
+            get { return m_tipsColor; }
+            set { m_tipsColor = value; }
+        }
         #endregion
         public UCBtnExt()
         {
             InitializeComponent();
             this.TabStop = false;
+            lblTips.Paint += lblTips_Paint;
+        }
+
+        void lblTips_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SetGDIHigh();
+            e.Graphics.FillEllipse(new SolidBrush(m_tipsColor), new Rectangle(0, 0, lblTips.Width - 1, lblTips.Height - 1));
+            System.Drawing.SizeF sizeEnd = e.Graphics.MeasureString(TipsText, lblTips.Font);
+
+            e.Graphics.DrawString(TipsText, lblTips.Font, new SolidBrush(lblTips.ForeColor), new PointF((lblTips.Width - sizeEnd.Width) / 2, (lblTips.Height - sizeEnd.Height) / 2 + 1));
         }
 
         private void lbl_MouseDown(object sender, MouseEventArgs e)
         {
             if (this.BtnClick != null)
                 BtnClick(this, e);
-        }       
+        }
     }
 }

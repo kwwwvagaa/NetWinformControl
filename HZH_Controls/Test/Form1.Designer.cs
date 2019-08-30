@@ -54,6 +54,10 @@
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.button10 = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.ucSplitLine_V1 = new HZH_Controls.Controls.UCSplitLine_V();
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
             this.ucBtnsGroup2 = new HZH_Controls.Controls.UCBtnsGroup();
@@ -92,10 +96,6 @@
             this.ucBtnFillet1 = new HZH_Controls.Controls.UCBtnFillet();
             this.ucBtnExt2 = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -374,6 +374,26 @@
             this.button10.Text = "TestListView";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(32, 19);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 6);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
             // ucSplitLine_V1
             // 
@@ -978,6 +998,7 @@
             this.ucDropDownBtn1.TabIndex = 14;
             this.ucDropDownBtn1.TabStop = false;
             this.ucDropDownBtn1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucDropDownBtn1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucDropDownBtn1.TipsText = "";
             this.ucDropDownBtn1.BtnClick += new System.EventHandler(this.ucDropDownBtn1_BtnClick);
             // 
@@ -1023,6 +1044,7 @@
             this.ucBtnExt3.Size = new System.Drawing.Size(57, 44);
             this.ucBtnExt3.TabIndex = 2;
             this.ucBtnExt3.TabStop = false;
+            this.ucBtnExt3.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnExt3.TipsText = "";
             // 
             // ucBtnExt4
@@ -1048,6 +1070,7 @@
             this.ucBtnExt4.Size = new System.Drawing.Size(53, 44);
             this.ucBtnExt4.TabIndex = 1;
             this.ucBtnExt4.TabStop = false;
+            this.ucBtnExt4.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnExt4.TipsText = "";
             // 
             // ucBtnExt5
@@ -1073,6 +1096,7 @@
             this.ucBtnExt5.Size = new System.Drawing.Size(57, 44);
             this.ucBtnExt5.TabIndex = 0;
             this.ucBtnExt5.TabStop = false;
+            this.ucBtnExt5.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnExt5.TipsText = "";
             // 
             // ucBtnImg1
@@ -1101,6 +1125,7 @@
             this.ucBtnImg1.TabIndex = 3;
             this.ucBtnImg1.TabStop = false;
             this.ucBtnImg1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnImg1.TipsText = "";
             // 
             // ucBtnFillet1
@@ -1145,6 +1170,7 @@
             this.ucBtnExt2.Size = new System.Drawing.Size(141, 58);
             this.ucBtnExt2.TabIndex = 1;
             this.ucBtnExt2.TabStop = false;
+            this.ucBtnExt2.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnExt2.TipsText = "";
             // 
             // ucBtnExt1
@@ -1170,9 +1196,8 @@
             this.ucBtnExt1.Size = new System.Drawing.Size(141, 58);
             this.ucBtnExt1.TabIndex = 0;
             this.ucBtnExt1.TabStop = false;
+            this.ucBtnExt1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnExt1.TipsText = "";
-           
-            
             // 
             // Form1
             // 

@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCBtnExt));
             this.lbl = new System.Windows.Forms.Label();
             this.lblTips = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList();
             this.SuspendLayout();
             // 
             // lbl
@@ -56,19 +54,12 @@
             this.lblTips.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTips.ForeColor = System.Drawing.Color.White;
             this.lblTips.ImageIndex = 0;
-            this.lblTips.ImageList = this.imageList1;
             this.lblTips.Location = new System.Drawing.Point(158, 0);
             this.lblTips.Name = "lblTips";
             this.lblTips.Size = new System.Drawing.Size(24, 24);
             this.lblTips.TabIndex = 1;
             this.lblTips.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTips.Visible = false;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "tips.png");
             // 
             // UCBtnExt
             // 
@@ -93,7 +84,6 @@
 
         public System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Label lblTips;
-        private System.Windows.Forms.ImageList imageList1;
 
 
     }
