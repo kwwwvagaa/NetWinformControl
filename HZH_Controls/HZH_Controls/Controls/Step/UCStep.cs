@@ -100,7 +100,7 @@ namespace HZH_Controls.Controls
             get { return m_stepIndex; }
             set
             {
-                if (m_stepIndex >= Steps.Length)
+                if (value > Steps.Length)
                     return;
                 m_stepIndex = value;
                 Refresh();
@@ -138,6 +138,8 @@ namespace HZH_Controls.Controls
             }
         }
 
+        List<Rectangle> m_lstCacheRect = new List<Rectangle>();
+
         public UCStep()
         {
             InitializeComponent();
@@ -147,6 +149,16 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.Selectable, true);
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SetStyle(ControlStyles.UserPaint, true);
+            this.MouseDown += UCStep_MouseDown;
+        }
+
+        void UCStep_MouseDown(object sender, MouseEventArgs e)
+        {
+            var index = m_lstCacheRect.FindIndex(p => p.Contains(e.Location));
+            if (index >= 0)
+            {
+                StepIndex = index+1;
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -180,11 +192,13 @@ namespace HZH_Controls.Controls
                 intSplitWidth = (this.Width - m_steps.Length - (m_steps.Length * m_stepWidth) - intRight) / (m_steps.Length - 1);
                 if (intSplitWidth < 20)
                     intSplitWidth = 20;
-
+                m_lstCacheRect = new List<Rectangle>();
                 for (int i = 0; i < m_steps.Length; i++)
                 {
                     #region 画圆，横线
-                    g.FillEllipse(new SolidBrush(m_stepBackColor), new Rectangle(new Point(intLeft + i * (m_stepWidth + intSplitWidth), y), new Size(m_stepWidth, m_stepWidth)));
+                    Rectangle rectEllipse = new Rectangle(new Point(intLeft + i * (m_stepWidth + intSplitWidth), y), new Size(m_stepWidth, m_stepWidth));
+                    m_lstCacheRect.Add(rectEllipse);
+                    g.FillEllipse(new SolidBrush(m_stepBackColor), rectEllipse);
 
                     if (m_stepIndex > i)
                     {

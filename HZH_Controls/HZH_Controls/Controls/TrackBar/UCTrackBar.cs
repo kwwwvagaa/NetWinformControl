@@ -137,7 +137,10 @@ namespace HZH_Controls.Controls
             this.MouseDown += UCTrackBar_MouseDown;
             this.MouseMove += UCTrackBar_MouseMove;
             this.MouseUp += UCTrackBar_MouseUp;
+           
         }
+
+       
 
         bool blnDown = false;
         void UCTrackBar_MouseDown(object sender, MouseEventArgs e)
@@ -160,7 +163,8 @@ namespace HZH_Controls.Controls
         void UCTrackBar_MouseUp(object sender, MouseEventArgs e)
         {
             blnDown = false;
-            if (frmTips != null && !frmTips.IsDisposed)
+
+            if ( frmTips != null && !frmTips.IsDisposed)
             {
                 frmTips.Close();
                 frmTips = null;
