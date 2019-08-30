@@ -39,6 +39,7 @@ namespace HZH_Controls.Forms
         /// <param name="parentControl">父控件</param>
         /// <param name="childControl">子控件</param>
         /// <param name="deviation">偏移</param>
+        /// <param name="isNotFocus">是否无焦点窗体</param>
         public FrmAnchor(Control parentControl, Control childControl, Point? deviation = null,bool isNotFocus=true)
         {
             m_isNotFocus = isNotFocus;
@@ -197,8 +198,5 @@ namespace HZH_Controls.Forms
                 }
             }
         }
-
-        
-
     }
 }

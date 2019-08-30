@@ -149,7 +149,7 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.Selectable, true);
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SetStyle(ControlStyles.UserPaint, true);
-            this.MouseDown += UCStep_MouseDown;
+            this.MouseDown += UCStep_MouseDown;           
         }
 
         void UCStep_MouseDown(object sender, MouseEventArgs e)
@@ -157,7 +157,7 @@ namespace HZH_Controls.Controls
             var index = m_lstCacheRect.FindIndex(p => p.Contains(e.Location));
             if (index >= 0)
             {
-                StepIndex = index+1;
+                StepIndex = index + 1;
             }
         }
 

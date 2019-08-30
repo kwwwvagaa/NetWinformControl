@@ -92,6 +92,10 @@
             this.ucBtnFillet1 = new HZH_Controls.Controls.UCBtnFillet();
             this.ucBtnExt2 = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -1167,6 +1171,8 @@
             this.ucBtnExt1.TabIndex = 0;
             this.ucBtnExt1.TabStop = false;
             this.ucBtnExt1.TipsText = "";
+           
+            
             // 
             // Form1
             // 
@@ -1276,6 +1282,10 @@
         private HZH_Controls.Controls.UCBtnExt ucBtnExt5;
         private HZH_Controls.Controls.Btn.UCDropDownBtn ucDropDownBtn1;
         private HZH_Controls.Controls.ComboBox.UCComboxGrid ucComboxGrid1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }
 

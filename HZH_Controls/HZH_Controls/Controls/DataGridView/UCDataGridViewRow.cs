@@ -183,7 +183,7 @@ namespace HZH_Controls.Controls
                             lbl.ForeColor = Color.Black;
                             lbl.AutoSize = false;
                             lbl.Dock = DockStyle.Fill;
-                            lbl.TextAlign = ContentAlignment.MiddleCenter;
+                            lbl.TextAlign = item.TextAlign;
                             lbl.MouseDown += (a, b) =>
                             {
                                 Item_MouseDown(a, b);
