@@ -112,8 +112,8 @@ namespace HZH_Controls.Controls
                 lst1.Add(new Point(m_intX, 1));
                 lst1.Add(new Point(m_intX + m_waveWidth / 2, m_waveHeight));
 
-                lst2.Add(new Point(m_intX + m_waveWidth / 4, 1));
-                lst2.Add(new Point(m_intX + m_waveWidth / 4 + m_waveWidth / 2, m_waveHeight));
+                lst2.Add(new Point(m_intX + m_waveWidth / 2, 1));
+                lst2.Add(new Point(m_intX + m_waveWidth / 2 + m_waveWidth / 2, m_waveHeight));
                 m_intX += m_waveWidth;
                 if (m_intX > this.Width + m_waveWidth)
                     break;
