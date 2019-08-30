@@ -13,7 +13,33 @@ namespace HZH_Controls.Forms
 {
     public partial class FrmAnchorTips : Form
     {
+        private string m_strMsg = string.Empty;
+
+        public string StrMsg
+        {
+            get { return m_strMsg; }
+            set
+            {
+                m_strMsg = value;
+                if (string.IsNullOrEmpty(value))
+                    return;
+                ResetForm(value);
+            }
+        }
         bool haveHandle = false;
+        Rectangle m_rectControl;
+        public Rectangle RectControl
+        {
+            get { return m_rectControl; }
+            set
+            {
+                m_rectControl = value;
+            }
+        }
+        AnchorTipsLocation m_location;
+        Color? m_background = null;
+        Color? m_foreColor = null;
+        int m_fontSize = 10;
         #region 构造函数    English:Constructor
         /// <summary>
         /// 功能描述:构造函数    English:Constructor
@@ -38,10 +64,30 @@ namespace HZH_Controls.Forms
             int autoCloseTime = 5000)
         {
             InitializeComponent();
+            m_rectControl = rectControl;
+            m_location = location;
+            m_background = background;
+            m_foreColor = foreColor;
+            m_fontSize = fontSize;
+            StrMsg = strMsg;
+            if (autoCloseTime > 0)
+            {
+                Timer t = new Timer();
+                t.Interval = autoCloseTime;
+                t.Tick += (a, b) =>
+                {
+                    this.Close();
+                };
+                t.Enabled = true;
+            }
+        }
+
+        private void ResetForm(string strMsg)
+        {
             Graphics g = this.CreateGraphics();
-            Font _font = new Font("微软雅黑", fontSize);
-            Color _background = background == null ? Color.FromArgb(255, 77, 58) : background.Value;
-            Color _foreColor = foreColor == null ? Color.White : foreColor.Value;
+            Font _font = new Font("微软雅黑", m_fontSize);
+            Color _background = m_background == null ? Color.FromArgb(255, 77, 58) : m_background.Value;
+            Color _foreColor = m_foreColor == null ? Color.White : m_foreColor.Value;
             System.Drawing.SizeF sizeText = g.MeasureString(strMsg, _font);
             g.Dispose();
             var formSize = new Size((int)sizeText.Width + 20, (int)sizeText.Height + 20);
@@ -49,42 +95,42 @@ namespace HZH_Controls.Forms
                 formSize.Width = 20;
             if (formSize.Height < 20)
                 formSize.Height = 20;
-            if (location == AnchorTipsLocation.LEFT || location == AnchorTipsLocation.RIGHT)
+            if (m_location == AnchorTipsLocation.LEFT || m_location == AnchorTipsLocation.RIGHT)
             {
                 formSize.Width += 20;
             }
             else
             {
                 formSize.Height += 20;
-            }          
+            }
 
             #region 获取窗体path    English:Get the form path
             GraphicsPath path = new GraphicsPath();
             Rectangle rect;
-            switch (location)
+            switch (m_location)
             {
                 case AnchorTipsLocation.TOP:
                     rect = new Rectangle(1, 1, formSize.Width - 2, formSize.Height - 20 - 1);
-                    this.Location = new Point(rectControl.X + (rectControl.Width - rect.Width) / 2, rectControl.Y - rect.Height - 20);
+                    this.Location = new Point(m_rectControl.X + (m_rectControl.Width - rect.Width) / 2, m_rectControl.Y - rect.Height - 20);
                     break;
                 case AnchorTipsLocation.RIGHT:
                     rect = new Rectangle(20, 1, formSize.Width - 20 - 1, formSize.Height - 2);
-                    this.Location = new Point(rectControl.Right, rectControl.Y + (rectControl.Height - rect.Height) / 2);
+                    this.Location = new Point(m_rectControl.Right, m_rectControl.Y + (m_rectControl.Height - rect.Height) / 2);
                     break;
                 case AnchorTipsLocation.BOTTOM:
                     rect = new Rectangle(1, 20, formSize.Width - 2, formSize.Height - 20 - 1);
-                    this.Location = new Point(rectControl.X + (rectControl.Width - rect.Width) / 2, rectControl.Bottom);
+                    this.Location = new Point(m_rectControl.X + (m_rectControl.Width - rect.Width) / 2, m_rectControl.Bottom);
                     break;
                 default:
                     rect = new Rectangle(1, 1, formSize.Width - 20 - 1, formSize.Height - 2);
-                    this.Location = new Point(rectControl.X - rect.Width - 20, rectControl.Y + (rectControl.Height - rect.Height) / 2);
+                    this.Location = new Point(m_rectControl.X - rect.Width - 20, m_rectControl.Y + (m_rectControl.Height - rect.Height) / 2);
                     break;
             }
             int cornerRadius = 2;
 
             path.AddArc(rect.X, rect.Y, cornerRadius * 2, cornerRadius * 2, 180, 90);//左上角
             #region 上边
-            if (location == AnchorTipsLocation.BOTTOM)
+            if (m_location == AnchorTipsLocation.BOTTOM)
             {
                 path.AddLine(rect.X + cornerRadius, rect.Y, rect.Left + rect.Width / 2 - 10, rect.Y);//上
                 path.AddLine(rect.Left + rect.Width / 2 - 10, rect.Y, rect.Left + rect.Width / 2, rect.Y - 19);//上
@@ -98,7 +144,7 @@ namespace HZH_Controls.Forms
             #endregion
             path.AddArc(rect.X + rect.Width - cornerRadius * 2, rect.Y, cornerRadius * 2, cornerRadius * 2, 270, 90);//右上角
             #region 右边
-            if (location == AnchorTipsLocation.LEFT)
+            if (m_location == AnchorTipsLocation.LEFT)
             {
                 path.AddLine(rect.Right, rect.Y + cornerRadius * 2, rect.Right, rect.Y + rect.Height / 2 - 10);//右
                 path.AddLine(rect.Right, rect.Y + rect.Height / 2 - 10, rect.Right + 19, rect.Y + rect.Height / 2);//右
@@ -112,7 +158,7 @@ namespace HZH_Controls.Forms
             #endregion
             path.AddArc(rect.X + rect.Width - cornerRadius * 2, rect.Y + rect.Height - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2, 0, 90);//右下角
             #region 下边
-            if (location == AnchorTipsLocation.TOP)
+            if (m_location == AnchorTipsLocation.TOP)
             {
                 path.AddLine(rect.Right - cornerRadius * 2, rect.Bottom, rect.Left + rect.Width / 2 + 10, rect.Bottom);
                 path.AddLine(rect.Left + rect.Width / 2 + 10, rect.Bottom, rect.Left + rect.Width / 2, rect.Bottom + 19);
@@ -126,7 +172,7 @@ namespace HZH_Controls.Forms
             #endregion
             path.AddArc(rect.X, rect.Bottom - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2, 90, 90);//左下角
             #region 左边
-            if (location == AnchorTipsLocation.RIGHT)
+            if (m_location == AnchorTipsLocation.RIGHT)
             {
                 path.AddLine(rect.Left, rect.Y + cornerRadius * 2, rect.Left, rect.Y + rect.Height / 2 - 10);//左
                 path.AddLine(rect.Left, rect.Y + rect.Height / 2 - 10, rect.Left - 19, rect.Y + rect.Height / 2);//左
@@ -153,16 +199,6 @@ namespace HZH_Controls.Forms
             #endregion
 
             SetBits(bit);
-            if (autoCloseTime > 0)
-            {
-                Timer t = new Timer();
-                t.Interval = autoCloseTime;
-                t.Tick += (a, b) =>
-                {
-                    this.Close();
-                };
-                t.Enabled = true;
-            }
         }
         #endregion
 
@@ -204,7 +240,7 @@ namespace HZH_Controls.Forms
             {
                 p = p + deviation.Value;
             }
-            return ShowTips(parentControl.FindForm(), new Rectangle(p, parentControl.Size), strMsg, location, background, foreColor, fontSize, autoCloseTime);
+            return ShowTips(new Rectangle(p, parentControl.Size), strMsg, location, background, foreColor, fontSize, autoCloseTime);
         }
         #endregion
 
@@ -215,7 +251,6 @@ namespace HZH_Controls.Forms
         /// 创建日期:2019-08-29 15:29:07
         /// 任务编号:
         /// </summary>
-        /// <param name="parentForm">父窗体</param>
         /// <param name="rectControl">停靠区域</param>
         /// <param name="strMsg">消息</param>
         /// <param name="location">显示方位</param>
@@ -225,7 +260,6 @@ namespace HZH_Controls.Forms
         /// <param name="autoCloseTime">自动关闭时间，当<=0时不自动关闭</param>
         /// <returns>返回值</returns>
         public static FrmAnchorTips ShowTips(
-            Form parentForm,
             Rectangle rectControl,
             string strMsg,
             AnchorTipsLocation location = AnchorTipsLocation.RIGHT,
@@ -236,7 +270,7 @@ namespace HZH_Controls.Forms
         {
             FrmAnchorTips frm = new FrmAnchorTips(rectControl, strMsg, location, background, foreColor, fontSize, autoCloseTime);
             frm.TopMost = true;
-            frm.Show(parentForm);
+            frm.Show();
             return frm;
         }
         #endregion
@@ -326,6 +360,11 @@ namespace HZH_Controls.Forms
             }
         }
         #endregion
+
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    base.OnPaint(e);
+        //}
     }
 
     public enum AnchorTipsLocation

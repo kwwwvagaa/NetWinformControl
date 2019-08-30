@@ -110,6 +110,18 @@ namespace HZH_Controls.Controls
             }
         }
 
+        private bool isShowTips = true;
+
+        [Description("点击滑动时是否显示数值提示"), Category("自定义")]
+        public bool IsShowTips
+        {
+            get { return isShowTips; }
+            set { isShowTips = value; }
+        }
+
+        [Description("显示数值提示的格式化形式"), Category("自定义")]
+        public string TipsFormat { get; set; }
+
         RectangleF m_lineRectangle;
         RectangleF m_trackRectangle;
 
@@ -134,6 +146,7 @@ namespace HZH_Controls.Controls
             {
                 blnDown = true;
                 Value = ((float)e.Location.X / (float)this.Width) * (maxValue - minValue);
+                ShowTips();
             }
         }
         void UCTrackBar_MouseMove(object sender, MouseEventArgs e)
@@ -141,11 +154,45 @@ namespace HZH_Controls.Controls
             if (blnDown)
             {
                 Value = ((float)e.Location.X / (float)this.Width) * (maxValue - minValue);
+                ShowTips();
             }
         }
         void UCTrackBar_MouseUp(object sender, MouseEventArgs e)
         {
             blnDown = false;
+            if (frmTips != null && !frmTips.IsDisposed)
+            {
+                frmTips.Close();
+                frmTips = null;
+            }
+        }
+        Forms.FrmAnchorTips frmTips = null;
+
+        private void ShowTips()
+        {
+            if (isShowTips)
+            {
+                string strValue = Value.ToString();
+                if (!string.IsNullOrEmpty(TipsFormat))
+                {
+                    try
+                    {
+                        strValue = Value.ToString(TipsFormat);
+                    }
+                    catch { }
+                }
+                var p = this.PointToScreen(new Point((int)m_trackRectangle.X, (int)m_trackRectangle.Y));
+
+                if (frmTips == null || frmTips.IsDisposed || !frmTips.Visible)
+                {
+                    frmTips = Forms.FrmAnchorTips.ShowTips(new Rectangle(p.X, p.Y, (int)m_trackRectangle.Width, (int)m_trackRectangle.Height), strValue, Forms.AnchorTipsLocation.TOP, autoCloseTime: -1);
+                }
+                else
+                {
+                    frmTips.RectControl = new Rectangle(p.X, p.Y, (int)m_trackRectangle.Width, (int)m_trackRectangle.Height);
+                    frmTips.StrMsg = strValue;
+                }
+            }
         }
 
 

@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.ucTrackBar1 = new HZH_Controls.Controls.UCTrackBar();
             this.ucProcessWave2 = new HZH_Controls.Controls.UCProcessWave();
             this.ucProcessWave1 = new HZH_Controls.Controls.UCProcessWave();
@@ -60,7 +61,6 @@
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -137,9 +137,20 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "波宽";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1087, 412);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 56);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "FrmAnchorTips";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // ucTrackBar1
             // 
-            this.ucTrackBar1.DcimalDigits = 0;
+            this.ucTrackBar1.DcimalDigits = 1;
+            this.ucTrackBar1.IsShowTips = true;
             this.ucTrackBar1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucTrackBar1.LineWidth = 10F;
             this.ucTrackBar1.Location = new System.Drawing.Point(881, 206);
@@ -149,6 +160,7 @@
             this.ucTrackBar1.Size = new System.Drawing.Size(250, 30);
             this.ucTrackBar1.TabIndex = 12;
             this.ucTrackBar1.Text = "ucTrackBar1";
+            this.ucTrackBar1.TipsFormat = "0.0摄氏度";
             this.ucTrackBar1.Value = 40F;
             this.ucTrackBar1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             // 
@@ -508,16 +520,6 @@
         "step5"};
             this.ucStep1.StepWidth = 35;
             this.ucStep1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1087, 412);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 56);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "FrmAnchorTips";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form2
             // 
