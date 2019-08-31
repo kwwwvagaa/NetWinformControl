@@ -361,10 +361,41 @@ namespace HZH_Controls.Forms
         }
         #endregion
 
-        //protected override void OnPaint(PaintEventArgs e)
-        //{
-        //    base.OnPaint(e);
-        //}
+        #region 无焦点窗体处理
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private extern static IntPtr SetActiveWindow(IntPtr handle);
+        private const int WM_ACTIVATE = 0x006;
+        private const int WM_ACTIVATEAPP = 0x01C;
+        private const int WM_NCACTIVATE = 0x086;
+        private const int WA_INACTIVE = 0;
+        private const int WM_MOUSEACTIVATE = 0x21;
+        private const int MA_NOACTIVATE = 3;
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WM_MOUSEACTIVATE)
+            {
+                m.Result = new IntPtr(MA_NOACTIVATE);
+                return;
+            }
+            else if (m.Msg == WM_NCACTIVATE)
+            {
+                if (((int)m.WParam & 0xFFFF) != WA_INACTIVE)
+                {
+                    if (m.LParam != IntPtr.Zero)
+                    {
+                        SetActiveWindow(m.LParam);
+                    }
+                    else
+                    {
+                        SetActiveWindow(IntPtr.Zero);
+                    }
+                }
+            }
+            base.WndProc(ref m);
+        }
+
+        #endregion
     }
 
     public enum AnchorTipsLocation
