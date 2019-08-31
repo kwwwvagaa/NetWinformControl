@@ -72,6 +72,11 @@ namespace Test
                 AddChilds(model, intCount - 1);
             }
         }
+
+        private void FrmTemp1Test_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var v = this.ucDataGridView1.SelectRows;
+        }
     }
 
     public class TestModel

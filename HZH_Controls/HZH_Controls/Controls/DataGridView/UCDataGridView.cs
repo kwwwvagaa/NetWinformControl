@@ -252,7 +252,7 @@ namespace HZH_Controls.Controls
                     return item as UCDataGridView;
                 else if (item.Controls.Count > 0)
                 {
-                    var grid = FindChildGrid(c);
+                    var grid = FindChildGrid(item);
                     if (grid != null)
                         return grid;
                 }
