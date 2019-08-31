@@ -1,4 +1,12 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：UCDataGridViewTreeRow.cs
+// 作　　者：HZH
+// 创建日期：2019-08-31 16:02:55
+// 功能描述：UCDataGridViewTreeRow    English:UCDataGridViewTreeRow
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
+// 如果你使用了此类，请保留以上说明
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -305,7 +313,7 @@ namespace HZH_Controls.Controls
                                 this.ucDGVChild.HeadPadingLeft = this.panLeft.Width;
                                 this.ucDGVChild.IsShowCheckBox = IsShowCheckBox;
                                 this.ucDGVChild.DataSource = value;
-                                this.ucDGVChild.Rows.ForEach(p => p.IsChecked =this.IsChecked);
+                                this.ucDGVChild.Rows.ForEach(p => p.IsChecked = this.IsChecked);
                             }
                         }
                     }

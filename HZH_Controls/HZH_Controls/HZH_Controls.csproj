@@ -170,6 +170,9 @@
     <Compile Include="Controls\Process\UCProcessWave.Designer.cs">
       <DependentUpon>UCProcessWave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Roll\UCRollText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\Step\UCStep.cs">
       <SubType>UserControl</SubType>
     </Compile>

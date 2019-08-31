@@ -1,4 +1,12 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：UCProcessLineExt.cs
+// 作　　者：HZH
+// 创建日期：2019-08-31 16:04:44
+// 功能描述：UCProcessLineExt    English:UCProcessLineExt
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
+// 如果你使用了此类，请保留以上说明
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -153,7 +161,7 @@ namespace HZH_Controls.Controls
 
             string strValue = ((float)Value / (float)MaxValue).ToString("0%");
             System.Drawing.SizeF sizeF = e.Graphics.MeasureString(strValue, Font);
-            e.Graphics.DrawString(strValue, Font, new SolidBrush(Color.White), new PointF(x + (30 - sizeF.Width) / 2+1, (20 - sizeF.Height) / 2 + 1));
+            e.Graphics.DrawString(strValue, Font, new SolidBrush(Color.White), new PointF(x + (30 - sizeF.Width) / 2 + 1, (20 - sizeF.Height) / 2 + 1));
         }
     }
 }

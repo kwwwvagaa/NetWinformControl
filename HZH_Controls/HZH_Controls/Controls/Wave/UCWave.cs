@@ -1,4 +1,12 @@
-﻿using System;
+﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
+// 文件名称：UCWave.cs
+// 作　　者：HZH
+// 创建日期：2019-08-31 16:05:54
+// 功能描述：UCWave    English:UCWave
+// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
+// 如果你使用了此类，请保留以上说明
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -11,7 +19,7 @@ namespace HZH_Controls.Controls
 {
     public class UCWave : Control
     {
-        public event PaintEventHandler OnPainted; 
+        public event PaintEventHandler OnPainted;
 
         private Color m_waveColor = Color.FromArgb(73, 119, 232);
 
