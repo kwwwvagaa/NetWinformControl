@@ -69,7 +69,7 @@
             this.Controls.Add(this.lblTips);
             this.Controls.Add(this.lbl);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.IsRadius = true;
             this.IsShowRect = true;
             this.Margin = new System.Windows.Forms.Padding(0);

@@ -23,7 +23,7 @@ namespace HZH_Controls.Controls
         [Description("值改变事件"), Category("自定义")]
         public event EventHandler ValueChanged;
 
-        private Color m_backEllipseColor = Color.FromArgb(73, 119, 232);
+        private Color m_backEllipseColor = Color.FromArgb(228, 231, 237);
         /// <summary>
         /// 圆背景色
         /// </summary>
@@ -38,7 +38,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_coreEllipseColor = Color.FromArgb(180, 180, 180);
+        private Color m_coreEllipseColor = Color.FromArgb(228, 231, 237);
         /// <summary>
         /// 内圆颜色，ShowType=Ring 有效
         /// </summary>

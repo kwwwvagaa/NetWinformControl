@@ -11,6 +11,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace HZH_Controls.Controls
 {
@@ -276,6 +277,31 @@ namespace HZH_Controls.Controls
                     base.FillColor = Color.White;
                     base.RectColor = Color.FromArgb(220, 220, 220);
                 }
+            }
+        }
+
+        private Color triangleColor = Color.FromArgb(255, 77, 59);
+
+        public Color TriangleColor
+        {
+            get { return triangleColor; }
+            set
+            {
+                triangleColor = value;
+                Bitmap bit = new Bitmap(12, 10);
+                Graphics g = Graphics.FromImage(bit);
+                g.SetGDIHigh();
+                GraphicsPath path = new GraphicsPath();
+                path.AddLines(new Point[] 
+                {
+                    new Point(1,1),
+                    new Point(11,1),
+                    new Point(6,10),
+                    new Point(1,1)
+                });
+                g.FillPath(new SolidBrush(value), path);
+                g.Dispose();
+                panel1.BackgroundImage = bit;
             }
         }
 

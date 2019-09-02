@@ -776,6 +776,9 @@
   <ItemGroup>
     <None Include="Resources\caret-right.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>md "$(TargetDir)HandInput"

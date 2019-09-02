@@ -137,7 +137,7 @@ namespace HZH_Controls.Forms
             }
             set
             {
-                this._regionRadius = value;
+                this._regionRadius = Math.Max(value, 1);
             }
         }
         /// <summary>
@@ -290,7 +290,7 @@ namespace HZH_Controls.Forms
         protected virtual void DoEnter()
         {
         }
-    
+
         /// <summary>
         /// 设置重绘区域
         /// </summary>
@@ -359,7 +359,7 @@ namespace HZH_Controls.Forms
 
         #region 事件区
 
-      
+
         /// <summary>
         /// 关闭时发生
         /// </summary>
@@ -372,7 +372,7 @@ namespace HZH_Controls.Forms
                 (base.Owner as FrmTransparent).Close();
             }
         }
-      
+
         /// <summary>
         /// 快捷键
         /// </summary>

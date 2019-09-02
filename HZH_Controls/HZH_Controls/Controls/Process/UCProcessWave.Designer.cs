@@ -39,7 +39,7 @@
             this.ucWave1.Size = new System.Drawing.Size(150, 10);
             this.ucWave1.TabIndex = 0;
             this.ucWave1.Text = "ucWave1";
-            this.ucWave1.WaveColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucWave1.WaveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucWave1.WaveHeight = 15;
             this.ucWave1.WaveSleep = 100;
             this.ucWave1.WaveWidth = 100;
@@ -47,7 +47,7 @@
             // UCProcessWave
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.Controls.Add(this.ucWave1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Name = "UCProcessWave";

@@ -165,6 +165,7 @@ namespace HZH_Controls.Controls
             base.IsShowRect = false;
             RectWidth = 4;
             RectColor = Color.White;
+            ForeColor = Color.White;
             ucWave1.Height = (int)((double)m_value / (double)m_maxValue * this.Height) + ucWave1.WaveHeight;
             this.SizeChanged += UCProcessWave_SizeChanged;
             this.ucWave1.OnPainted += ucWave1_Painted;

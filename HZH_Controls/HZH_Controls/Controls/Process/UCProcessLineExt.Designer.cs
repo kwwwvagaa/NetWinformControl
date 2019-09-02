@@ -36,9 +36,9 @@
             this.ucProcessLine1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucProcessLine1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ucProcessLine1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucProcessLine1.Font = new System.Drawing.Font("Arial Unicode MS", 10F);
-            this.ucProcessLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucProcessLine1.ForeColor = System.Drawing.Color.White;
             this.ucProcessLine1.Location = new System.Drawing.Point(18, 33);
             this.ucProcessLine1.MaxValue = 100;
             this.ucProcessLine1.Name = "ucProcessLine1";
@@ -46,8 +46,8 @@
             this.ucProcessLine1.TabIndex = 0;
             this.ucProcessLine1.Text = "ucProcessLine1";
             this.ucProcessLine1.Value = 0;
-            this.ucProcessLine1.ValueBGColor = System.Drawing.Color.White;
-            this.ucProcessLine1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucProcessLine1.ValueBGColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucProcessLine1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucProcessLine1.ValueTextType = HZH_Controls.Controls.ValueTextType.None;
             // 
             // UCProcessLineExt

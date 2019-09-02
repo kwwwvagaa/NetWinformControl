@@ -40,15 +40,15 @@ namespace HZH_Controls.Controls
 
         private Image _nodeUpPic = Resources.list_subtract;
 
-        private Color _nodeBackgroundColor = Color.FromArgb(61, 60, 66);
+        private Color _nodeBackgroundColor = Color.White;
 
-        private Color _nodeForeColor = Color.White;
+        private Color _nodeForeColor = Color.FromArgb(62, 62, 62);
 
         private bool _nodeIsShowSplitLine = false;
 
-        private Color _nodeSplitLineColor = Color.FromArgb(54, 53, 58);
+        private Color _nodeSplitLineColor = Color.FromArgb(232, 232, 232);
 
-        private Color m_nodeSelectedColor = Color.FromArgb(255, 121, 74);
+        private Color m_nodeSelectedColor = Color.FromArgb(255, 77, 59);
 
         private Color m_nodeSelectedForeColor = Color.White;
 
@@ -264,7 +264,8 @@ namespace HZH_Controls.Controls
             base.ShowLines = false;
             base.ShowPlusMinus = false;
             base.ShowRootLines = false;
-            this.BackColor = Color.FromArgb(61, 60, 66);
+            this.BackColor = Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.None;
             DoubleBuffered = true;
         }
         protected override void WndProc(ref Message m)

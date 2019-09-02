@@ -33,7 +33,7 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -55,7 +55,7 @@
             this.IsRadius = true;
             this.IsShowRect = true;
             this.Name = "UCPanelTitle";
-            this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.Size = new System.Drawing.Size(253, 171);
             this.SizeChanged += new System.EventHandler(this.UCPanelTitle_SizeChanged);
             this.ResumeLayout(false);

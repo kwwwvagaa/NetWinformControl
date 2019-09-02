@@ -21,7 +21,7 @@ namespace HZH_Controls.Controls
     {
         public event PaintEventHandler OnPainted;
 
-        private Color m_waveColor = Color.FromArgb(73, 119, 232);
+        private Color m_waveColor = Color.FromArgb(255, 77, 59);
 
         [Description("波纹颜色"), Category("自定义")]
         public Color WaveColor

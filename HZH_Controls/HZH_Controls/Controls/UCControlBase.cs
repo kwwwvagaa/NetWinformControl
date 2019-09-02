@@ -57,7 +57,7 @@ namespace HZH_Controls.Controls
             }
             set
             {
-                this._cornerRadius = value;
+                this._cornerRadius = Math.Max(value, 1);
                 Refresh();
             }
         }
@@ -160,7 +160,7 @@ namespace HZH_Controls.Controls
                 if (this._isShowRect)
                 {
                     Color rectColor = this._rectColor;
-                    Pen pen = new Pen(rectColor, (float)this._rectWidth);                   
+                    Pen pen = new Pen(rectColor, (float)this._rectWidth);
                     e.Graphics.DrawPath(pen, graphicsPath);
                 }
                 if (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor)
@@ -200,6 +200,6 @@ namespace HZH_Controls.Controls
             {
                 base.WndProc(ref m);
             }
-        }       
+        }
     }
 }

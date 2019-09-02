@@ -40,7 +40,7 @@ namespace HZH_Controls.Controls
             set { _itemBackColor = value; }
         }
 
-        private Color _itemSelectedBackColor = Color.FromArgb(73, 119, 232);
+        private Color _itemSelectedBackColor = Color.FromArgb(255, 77, 59);
 
         [Description("标题选中背景色"), Category("自定义")]
         public Color ItemSelectedBackColor
@@ -65,7 +65,7 @@ namespace HZH_Controls.Controls
             get { return _itemSelectedForeColor; }
             set { _itemSelectedForeColor = value; }
         }
-        private Color _itemForeColor2 = Color.FromArgb(73, 119, 232);
+        private Color _itemForeColor2 = Color.FromArgb(255, 77, 59);
 
         [Description("副标题文本色"), Category("自定义")]
         public Color ItemForeColor2

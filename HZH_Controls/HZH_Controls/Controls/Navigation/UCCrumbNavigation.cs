@@ -20,7 +20,7 @@ namespace HZH_Controls.Controls
 {
     public partial class UCCrumbNavigation : UserControl
     {
-        private Color m_navColor = Color.FromArgb(111, 122, 126);
+        private Color m_navColor = Color.FromArgb(255, 77, 59);
 
         public Color NavColor
         {

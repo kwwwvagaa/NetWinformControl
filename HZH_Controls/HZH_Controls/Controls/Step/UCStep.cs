@@ -25,7 +25,7 @@ namespace HZH_Controls.Controls
         [Description("步骤更改事件"), Category("自定义")]
         public event EventHandler IndexChecked;
 
-        private Color m_stepBackColor = Color.FromArgb(180, 180, 180);
+        private Color m_stepBackColor = Color.FromArgb(189, 189, 189);
         /// <summary>
         /// 步骤背景色
         /// </summary>
@@ -40,7 +40,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_stepForeColor = Color.FromArgb(73, 119, 232);
+        private Color m_stepForeColor = Color.FromArgb(255, 77, 59);
         /// <summary>
         /// 步骤前景色
         /// </summary>

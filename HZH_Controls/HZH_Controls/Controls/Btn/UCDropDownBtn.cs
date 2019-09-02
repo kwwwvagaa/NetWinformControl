@@ -14,6 +14,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace HZH_Controls.Controls.Btn
 {
@@ -51,11 +53,36 @@ namespace HZH_Controls.Controls.Btn
             set;
         }
 
+        public override Color BtnForeColor
+        {
+            get
+            {
+                return base.BtnForeColor;
+            }
+            set
+            {
+                base.BtnForeColor = value;
+                Bitmap bit = new Bitmap(12, 10);
+                Graphics g = Graphics.FromImage(bit);
+                g.SetGDIHigh();
+                GraphicsPath path = new GraphicsPath();
+                path.AddLines(new Point[] 
+                {
+                    new Point(1,1),
+                    new Point(11,1),
+                    new Point(6,10),
+                    new Point(1,1)
+                });
+                g.FillPath(new SolidBrush(value), path);
+                g.Dispose();
+                this.lbl.Image = bit;
+            }
+        }
+
         public UCDropDownBtn()
         {
             InitializeComponent();
             IsShowTips = false;
-            this.lbl.Image = Properties.Resources.ComboBox;
             this.lbl.ImageAlign = ContentAlignment.MiddleRight;
             base.BtnClick += UCDropDownBtn_BtnClick;
         }

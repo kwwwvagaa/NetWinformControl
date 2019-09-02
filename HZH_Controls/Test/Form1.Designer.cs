@@ -496,6 +496,7 @@
             this.ucComboxGrid1.TabIndex = 9;
             this.ucComboxGrid1.TextField = "Name";
             this.ucComboxGrid1.TextValue = null;
+            this.ucComboxGrid1.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             // 
             // ucHorizontalList1
             // 
@@ -590,6 +591,7 @@
             this.ucComboBox2.Source = null;
             this.ucComboBox2.TabIndex = 5;
             this.ucComboBox2.TextValue = null;
+            this.ucComboBox2.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             // 
             // ucComboBox1
             // 
@@ -614,6 +616,7 @@
             this.ucComboBox1.Source = null;
             this.ucComboBox1.TabIndex = 5;
             this.ucComboBox1.TextValue = null;
+            this.ucComboBox1.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             // 
             // ucListExt1
             // 
@@ -622,9 +625,9 @@
             this.ucListExt1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucListExt1.ItemBackColor = System.Drawing.Color.White;
             this.ucListExt1.ItemForeColor = System.Drawing.Color.Black;
-            this.ucListExt1.ItemForeColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucListExt1.ItemForeColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucListExt1.ItemHeight = 60;
-            this.ucListExt1.ItemSelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
+            this.ucListExt1.ItemSelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucListExt1.ItemSelectedForeColor = System.Drawing.Color.White;
             this.ucListExt1.ItemSelectedForeColor2 = System.Drawing.Color.White;
             this.ucListExt1.Location = new System.Drawing.Point(3, 17);
@@ -651,19 +654,19 @@
             this.treeViewEx1.Name = "treeViewEx1";
             this.treeViewEx1.NodeBackgroundColor = System.Drawing.Color.White;
             this.treeViewEx1.NodeDownPic = ((System.Drawing.Image)(resources.GetObject("treeViewEx1.NodeDownPic")));
-            this.treeViewEx1.NodeForeColor = System.Drawing.Color.Black;
+            this.treeViewEx1.NodeForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.treeViewEx1.NodeHeight = 50;
-            this.treeViewEx1.NodeIsShowSplitLine = true;
-            this.treeViewEx1.NodeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(121)))), ((int)(((byte)(74)))));
+            this.treeViewEx1.NodeIsShowSplitLine = false;
+            this.treeViewEx1.NodeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.treeViewEx1.NodeSelectedForeColor = System.Drawing.Color.White;
-            this.treeViewEx1.NodeSplitLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.treeViewEx1.NodeSplitLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.treeViewEx1.NodeUpPic = ((System.Drawing.Image)(resources.GetObject("treeViewEx1.NodeUpPic")));
             this.treeViewEx1.ParentNodeCanSelect = true;
             this.treeViewEx1.ShowLines = false;
             this.treeViewEx1.ShowPlusMinus = false;
             this.treeViewEx1.ShowRootLines = false;
             this.treeViewEx1.Size = new System.Drawing.Size(234, 307);
-            this.treeViewEx1.TabIndex = 3;
+            this.treeViewEx1.TabIndex = 0;
             this.treeViewEx1.TipFont = new System.Drawing.Font("Arial Unicode MS", 12F);
             this.treeViewEx1.TipImage = ((System.Drawing.Image)(resources.GetObject("treeViewEx1.TipImage")));
             // 
@@ -674,6 +677,7 @@
             this.ucTextBoxEx4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ucTextBoxEx4.DecLength = 2;
             this.ucTextBoxEx4.FillColor = System.Drawing.Color.Empty;
+            this.ucTextBoxEx4.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucTextBoxEx4.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucTextBoxEx4.InputText = "";
             this.ucTextBoxEx4.InputType = HZH_Controls.TextInputType.NotControl;
@@ -714,6 +718,7 @@
             this.ucTextBoxEx3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ucTextBoxEx3.DecLength = 2;
             this.ucTextBoxEx3.FillColor = System.Drawing.Color.Empty;
+            this.ucTextBoxEx3.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucTextBoxEx3.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucTextBoxEx3.InputText = "手写键盘";
             this.ucTextBoxEx3.InputType = HZH_Controls.TextInputType.NotControl;
@@ -754,6 +759,7 @@
             this.ucTextBoxEx2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ucTextBoxEx2.DecLength = 2;
             this.ucTextBoxEx2.FillColor = System.Drawing.Color.Empty;
+            this.ucTextBoxEx2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucTextBoxEx2.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucTextBoxEx2.InputText = "英文键盘";
             this.ucTextBoxEx2.InputType = HZH_Controls.TextInputType.NotControl;
@@ -794,6 +800,7 @@
             this.ucTextBoxEx1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ucTextBoxEx1.DecLength = 2;
             this.ucTextBoxEx1.FillColor = System.Drawing.Color.Empty;
+            this.ucTextBoxEx1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucTextBoxEx1.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucTextBoxEx1.InputText = "数字键盘";
             this.ucTextBoxEx1.InputType = HZH_Controls.TextInputType.NotControl;
@@ -981,7 +988,7 @@
             this.ucDropDownBtn1.ConerRadius = 5;
             this.ucDropDownBtn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDropDownBtn1.DropPanelHeight = -1;
-            this.ucDropDownBtn1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucDropDownBtn1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucDropDownBtn1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDropDownBtn1.ForeColor = System.Drawing.Color.White;
             this.ucDropDownBtn1.Image = ((System.Drawing.Image)(resources.GetObject("ucDropDownBtn1.Image")));
@@ -1031,7 +1038,7 @@
             this.ucBtnExt3.ConerRadius = 5;
             this.ucBtnExt3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnExt3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucBtnExt3.FillColor = System.Drawing.Color.Red;
+            this.ucBtnExt3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucBtnExt3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt3.IsRadius = false;
             this.ucBtnExt3.IsShowRect = false;
@@ -1057,7 +1064,7 @@
             this.ucBtnExt4.ConerRadius = 5;
             this.ucBtnExt4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnExt4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucBtnExt4.FillColor = System.Drawing.Color.Red;
+            this.ucBtnExt4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucBtnExt4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt4.IsRadius = false;
             this.ucBtnExt4.IsShowRect = false;
@@ -1083,7 +1090,7 @@
             this.ucBtnExt5.ConerRadius = 5;
             this.ucBtnExt5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnExt5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucBtnExt5.FillColor = System.Drawing.Color.Red;
+            this.ucBtnExt5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucBtnExt5.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt5.IsRadius = false;
             this.ucBtnExt5.IsShowRect = false;
@@ -1156,7 +1163,7 @@
             this.ucBtnExt2.BtnText = "按钮2";
             this.ucBtnExt2.ConerRadius = 10;
             this.ucBtnExt2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucBtnExt2.FillColor = System.Drawing.Color.Red;
+            this.ucBtnExt2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucBtnExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt2.ForeColor = System.Drawing.Color.White;
             this.ucBtnExt2.IsRadius = true;
@@ -1182,7 +1189,7 @@
             this.ucBtnExt1.BtnText = "按钮1";
             this.ucBtnExt1.ConerRadius = 10;
             this.ucBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucBtnExt1.FillColor = System.Drawing.Color.Red;
+            this.ucBtnExt1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt1.ForeColor = System.Drawing.Color.White;
             this.ucBtnExt1.IsRadius = true;
@@ -1257,7 +1264,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private HZH_Controls.Controls.UCBtnExt ucBtnExt1;
-        private HZH_Controls.Controls.TreeViewEx treeViewEx1;
         private System.Windows.Forms.GroupBox groupBox4;
         private HZH_Controls.Controls.UCTextBoxEx ucTextBoxEx4;
         private HZH_Controls.Controls.UCTextBoxEx ucTextBoxEx3;
@@ -1286,7 +1292,6 @@
         private HZH_Controls.Controls.UCDatePickerExt ucDatePickerExt2;
         private HZH_Controls.Controls.UCDatePickerExt ucDatePickerExt1;
         private System.Windows.Forms.GroupBox groupBox8;
-        private HZH_Controls.Controls.UCListExt ucListExt1;
         private System.Windows.Forms.GroupBox groupBox9;
         private HZH_Controls.Controls.UCHorizontalList ucHorizontalList1;
         private System.Windows.Forms.Button button9;
@@ -1311,6 +1316,8 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private HZH_Controls.Controls.TreeViewEx treeViewEx1;
+        private HZH_Controls.Controls.UCListExt ucListExt1;
     }
 }
 

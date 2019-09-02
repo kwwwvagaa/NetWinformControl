@@ -63,7 +63,7 @@ namespace HZH_Controls.Controls
         /// 按钮字体颜色
         /// </summary>
         [Description("按钮字体颜色"), Category("自定义")]
-        public Color BtnForeColor
+        public virtual Color BtnForeColor
         {
             get { return _btnForeColor; }
             set

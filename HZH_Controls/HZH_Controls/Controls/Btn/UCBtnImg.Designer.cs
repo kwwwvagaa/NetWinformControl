@@ -38,6 +38,7 @@
             // UCBtnImg
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.IsShowTips = true;
             this.Name = "UCBtnImg";
             this.ResumeLayout(false);

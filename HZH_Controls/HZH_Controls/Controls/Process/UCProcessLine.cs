@@ -61,7 +61,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        Color m_valueColor = Color.FromArgb(73, 119, 232);
+        Color m_valueColor = Color.FromArgb(255, 77, 59);
 
         [Description("值进度条颜色"), Category("自定义")]
         public Color ValueColor
@@ -74,7 +74,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_valueBGColor = Color.White;
+        private Color m_valueBGColor = Color.FromArgb(228, 231, 237);
 
         [Description("值背景色"), Category("自定义")]
         public Color ValueBGColor
@@ -87,7 +87,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_borderColor = Color.FromArgb(192, 192, 192);
+        private Color m_borderColor = Color.FromArgb(228, 231, 237);
 
         [Description("边框颜色"), Category("自定义")]
         public Color BorderColor
@@ -142,7 +142,7 @@ namespace HZH_Controls.Controls
         public UCProcessLine()
         {
             Size = new Size(200, 15);
-            ForeColor = Color.FromArgb(255, 77, 59);
+            ForeColor = Color.White;
             Font = new Font("Arial Unicode MS", 10);
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.DoubleBuffer, true);

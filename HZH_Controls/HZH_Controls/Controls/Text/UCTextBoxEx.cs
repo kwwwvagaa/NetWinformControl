@@ -225,6 +225,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        private Color focusBorderColor = Color.FromArgb(255, 77, 59);
+
+        [Description("获取焦点时边框颜色，当IsFocusColor=true有效"), Category("自定义")]
+        public Color FocusBorderColor
+        {
+            get { return focusBorderColor; }
+            set { focusBorderColor = value; }
+        }
+
         private bool isFocusColor = true;
         [Description("获取焦点是否变色"), Category("自定义")]
         public bool IsFocusColor
@@ -254,7 +263,7 @@ namespace HZH_Controls.Controls
             txtInput.GotFocus += (a, b) =>
             {
                 if (isFocusColor)
-                    this.RectColor = Color.FromArgb(78, 169, 255);
+                    this.RectColor = focusBorderColor;
             };
             txtInput.LostFocus += (a, b) =>
             {
