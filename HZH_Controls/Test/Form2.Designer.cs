@@ -79,6 +79,7 @@
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
             this.ucledNums2 = new HZH_Controls.Controls.LED.UCLEDNums();
+            this.ucledNum13 = new HZH_Controls.Controls.UCLEDNum();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -722,11 +723,21 @@
             this.ucledNums2.TabIndex = 18;
             this.ucledNums2.Value = "1.234";
             // 
+            // ucledNum13
+            // 
+            this.ucledNum13.LineWidth = 8;
+            this.ucledNum13.Location = new System.Drawing.Point(756, 463);
+            this.ucledNum13.Name = "ucledNum13";
+            this.ucledNum13.Size = new System.Drawing.Size(40, 70);
+            this.ucledNum13.TabIndex = 19;
+            this.ucledNum13.Value = '0';
+            // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 594);
+            this.Controls.Add(this.ucledNum13);
             this.Controls.Add(this.ucledNums2);
             this.Controls.Add(this.ucledNums1);
             this.Controls.Add(this.ucledDataTime1);
@@ -837,6 +848,7 @@
         private HZH_Controls.Controls.UCLEDDataTime ucledDataTime1;
         private HZH_Controls.Controls.LED.UCLEDNums ucledNums1;
         private HZH_Controls.Controls.LED.UCLEDNums ucledNums2;
+        private HZH_Controls.Controls.UCLEDNum ucledNum13;
      
     }
 }
