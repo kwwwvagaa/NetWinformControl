@@ -600,6 +600,10 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nTOP", An
 HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM", AnchorTipsLocation.BOTTOM);
 ```
 
+##### 26、LED数字
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0902/162513_b8551475_301547.png "led.png")
+
 #### 最后的话
 
 最后，喜欢请点下stars，如果有其他一些什么常用的控件可以在留言哦
