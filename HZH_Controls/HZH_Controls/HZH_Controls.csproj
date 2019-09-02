@@ -90,6 +90,33 @@
     <Compile Include="Controls\DataGridView\UCDataGridViewTreeRow.Designer.cs">
       <DependentUpon>UCDataGridViewTreeRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LED\UCLEDDataTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LED\UCLEDDataTime.Designer.cs">
+      <DependentUpon>UCLEDDataTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LED\UCLEDNum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LED\UCLEDData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LED\UCLEDData.Designer.cs">
+      <DependentUpon>UCLEDData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LED\UCLEDNums.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LED\UCLEDNums.Designer.cs">
+      <DependentUpon>UCLEDNums.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LED\UCLEDTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LED\UCLEDTime.Designer.cs">
+      <DependentUpon>UCLEDTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\List\IListViewItem.cs" />
     <Compile Include="Controls\List\IPageControl.cs" />
     <Compile Include="Controls\List\PageControlEventHandler.cs" />
@@ -485,6 +512,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\KeyBord\UCKeyBorderPay.resx">
       <DependentUpon>UCKeyBorderPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LED\UCLEDData.resx">
+      <DependentUpon>UCLEDData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LED\UCLEDDataTime.resx">
+      <DependentUpon>UCLEDDataTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LED\UCLEDNums.resx">
+      <DependentUpon>UCLEDNums.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LED\UCLEDTime.resx">
+      <DependentUpon>UCLEDTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\List\UCHorizontalList.resx">
       <DependentUpon>UCHorizontalList.cs</DependentUpon>

@@ -48,6 +48,9 @@ namespace Test
             Random r = new Random();
             int i = r.Next(100, 1000);
             this.ucWaveWithSource1.AddSource(i.ToString(), i);
+
+            ucledDataTime1.Value = DateTime.Now;
+            ucledTime2.Value = DateTime.Now;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
