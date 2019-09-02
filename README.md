@@ -600,6 +600,10 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nTO
 HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBOTTOM", AnchorTipsLocation.BOTTOM);
 ```
 
+##### 26、LED Number
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0902/162513_b8551475_301547.png "led.png")
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
