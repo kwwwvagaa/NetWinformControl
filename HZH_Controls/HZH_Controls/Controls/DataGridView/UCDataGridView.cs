@@ -428,6 +428,8 @@ namespace HZH_Controls.Controls
             if (this.Height <= 0)
                 return;
             ShowCount = this.panRow.Height / (m_rowHeight);
+            if (ShowCount == 0)
+                return;
             int intCha = this.panRow.Height % (m_rowHeight);
             m_rowHeight += intCha / ShowCount;
         }
@@ -443,8 +445,6 @@ namespace HZH_Controls.Controls
             { return; }
             try
             {
-
-
                 ControlHelper.FreezeControl(this.panRow, true);
                 this.panRow.Controls.Clear();
                 Rows = new List<IDataGridViewRow>();
