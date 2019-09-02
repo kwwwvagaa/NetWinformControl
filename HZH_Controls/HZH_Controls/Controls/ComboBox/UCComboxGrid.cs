@@ -121,6 +121,8 @@ namespace HZH_Controls.Controls.ComboBox
                 if (m_dataSource != null && m_dataSource.Count > 0)
                 {
                     int _intHeight = Math.Min(110 + m_dataSource.Count * 36, m_ucPanel.Height);
+                    if (_intHeight <= 0)
+                        _intHeight = 100;
                     m_ucPanel.Height = _intHeight;
                 }
             }
