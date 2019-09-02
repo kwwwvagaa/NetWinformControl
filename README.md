@@ -602,7 +602,7 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBO
 
 ##### 26、LED Number
 
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0902/162513_b8551475_301547.png "led.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0902/181109_92cf14c4_301547.gif "1.gif")
 
 #### The last words
 
