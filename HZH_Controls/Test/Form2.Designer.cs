@@ -181,7 +181,7 @@
             this.ucRollText1.Location = new System.Drawing.Point(843, 554);
             this.ucRollText1.MoveSleepTime = 50;
             this.ucRollText1.Name = "ucRollText1";
-            this.ucRollText1.RollStyle = HZH_Controls.Controls.RollStyle.LeftToRight;
+            this.ucRollText1.RollStyle = HZH_Controls.Controls.RollStyle.BackAndForth;
             this.ucRollText1.Size = new System.Drawing.Size(555, 30);
             this.ucRollText1.TabIndex = 23;
             // 

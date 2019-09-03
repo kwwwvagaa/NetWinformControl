@@ -53,6 +53,12 @@ namespace HZH_Controls.Controls
 
         public UCLEDNum()
         {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.SetStyle(ControlStyles.Selectable, true);
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
             SizeChanged += LEDNum_SizeChanged;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             Size = new System.Drawing.Size(40, 70);

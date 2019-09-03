@@ -109,6 +109,13 @@ namespace HZH_Controls.Controls
         Timer m_timer;
         public UCRollText()
         {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.DoubleBuffer, true);
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.SetStyle(ControlStyles.Selectable, true);
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
+
             this.SizeChanged += UCRollText_SizeChanged;
             this.Size = new Size(450, 30);
             Text = "滚动文字";
