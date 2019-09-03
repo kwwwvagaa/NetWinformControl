@@ -608,6 +608,12 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBO
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0902/181109_92cf14c4_301547.gif "1.gif")
 
+##### 27, scrolling text
+
+![Enter picture description](https://images.gitee.com/uploads/images/2019/0903/100148_7d7f8980_301547.gif "4.gif")
+![Enter image description](https://images.gitee.com/uploads/images/2019/0903/100217_d09dff79_301547.gif "5.gif")
+![Enter image description](https://images.gitee.com/uploads/images/2019/0903/100225_6cf0a534_301547.gif "6.gif")
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
