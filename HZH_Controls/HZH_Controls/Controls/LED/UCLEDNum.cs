@@ -66,6 +66,21 @@ namespace HZH_Controls.Controls
             m_nums['7'] = new int[] { 1, 2, 3 };
             m_nums['8'] = new int[] { 1, 2, 3, 4, 5, 6, 7 };
             m_nums['9'] = new int[] { 1, 2, 3, 4, 7, 6 };
+            m_nums['A'] = new int[] { 1, 2, 3, 5, 6, 7 };
+            m_nums['b'] = new int[] { 3, 4, 5, 6, 7 };
+            m_nums['C'] = new int[] { 1, 6, 5, 4 };
+            m_nums['c'] = new int[] { 7, 5, 4 };
+            m_nums['d'] = new int[] { 2, 3, 4, 5, 7 };
+            m_nums['E'] = new int[] { 1, 4, 5, 6, 7 };
+            m_nums['F'] = new int[] { 1, 5, 6, 7 };
+            m_nums['H'] = new int[] { 2, 3, 5, 6, 7 };
+            m_nums['h'] = new int[] { 3, 5, 6, 7 };
+            m_nums['J'] = new int[] { 2, 3, 4 };
+            m_nums['L'] = new int[] { 4, 5, 6 };
+            m_nums['o'] = new int[] { 3, 4, 5, 7 };
+            m_nums['P'] = new int[] { 1, 2, 5, 6, 7 };
+            m_nums['r'] = new int[] { 5, 7 };
+            m_nums['U'] = new int[] { 2, 3, 4, 5, 6 };
             m_nums['-'] = new int[] { 7 };
             m_nums[':'] = new int[0];
             m_nums['.'] = new int[0];
@@ -124,6 +139,22 @@ namespace HZH_Controls.Controls
                     m_value = value;
                     Refresh();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Sets the character value.
+        /// </summary>
+        /// <value>The character value.</value>
+        public LEDNumChar ValueChar
+        {
+            get
+            {
+                return (LEDNumChar)((int)m_value);
+            }
+            set
+            {
+                Value = (char)value;
             }
         }
 
@@ -303,5 +334,118 @@ namespace HZH_Controls.Controls
                 }
             }
         }
+    }
+    /// <summary>Enum LEDNumChar</summary>
+    public enum LEDNumChar : int
+    {
+        /// <summary>
+        /// The character 0
+        /// </summary>
+        CHAR_0 = (int)'0',
+        /// <summary>
+        /// The character 1
+        /// </summary>
+        CHAR_1 = (int)'1',
+        /// <summary>
+        /// The character 2
+        /// </summary>
+        CHAR_2 = (int)'2',
+        /// <summary>
+        /// The character 3
+        /// </summary>
+        CHAR_3 = (int)'3',
+        /// <summary>
+        /// The character 4
+        /// </summary>
+        CHAR_4 = (int)'4',
+        CHAR_5 = (int)'5',
+        /// <summary>
+        /// The character 6
+        /// </summary>
+        CHAR_6 = (int)'6',
+        /// <summary>
+        /// The character 7
+        /// </summary>
+        CHAR_7 = (int)'7',
+        /// <summary>
+        /// The character 8
+        /// </summary>
+        CHAR_8 = (int)'8',
+        /// <summary>
+        /// The character 9
+        /// </summary>
+        CHAR_9 = (int)'9',
+        /// <summary>
+        /// The character a
+        /// </summary>
+        CHAR_A = (int)'A',
+        /// <summary>
+        /// The character b
+        /// </summary>
+        CHAR_b = (int)'b',
+        /// <summary>
+        /// The character c
+        /// </summary>
+        CHAR_C = (int)'C',
+        /// <summary>
+        /// The character c
+        /// </summary>
+        CHAR_c = (int)'c',
+        /// <summary>
+        /// The character d
+        /// </summary>
+        CHAR_d = (int)'d',
+        /// <summary>
+        /// The character e
+        /// </summary>
+        CHAR_E = (int)'E',
+        /// <summary>
+        /// The character f
+        /// </summary>
+        CHAR_F = (int)'F',
+        /// <summary>
+        /// The character h
+        /// </summary>
+        CHAR_H = (int)'H',
+        /// <summary>
+        /// The character h
+        /// </summary>
+        CHAR_h = (int)'h',
+        /// <summary>
+        /// The character j
+        /// </summary>
+        CHAR_J = (int)'J',
+        /// <summary>
+        /// The character l
+        /// </summary>
+        CHAR_L = (int)'L',
+        /// <summary>
+        /// The character o
+        /// </summary>
+        CHAR_o = (int)'o',
+        /// <summary>
+        /// The character p
+        /// </summary>
+        CHAR_P = (int)'P',
+        /// <summary>
+        /// The character r
+        /// </summary>
+        CHAR_r = (int)'r',
+        /// <summary>
+        /// The character u
+        /// </summary>
+        CHAR_U = (int)'U',
+        /// <summary>
+        /// The character horizontal line
+        /// </summary>
+        CHAR_HorizontalLine = (int)'-',
+        /// <summary>
+        /// The character colon
+        /// </summary>
+        CHAR_Colon = (int)':',
+        /// <summary>
+        /// The character dot
+        /// </summary>
+        CHAR_Dot = (int)'.',
     }
 }
