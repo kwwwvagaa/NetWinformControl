@@ -607,6 +607,12 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM",
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0902/181109_92cf14c4_301547.gif "1.gif")
 
+##### 27、滚动文字
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0903/100148_7d7f8980_301547.gif "4.gif")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0903/100217_d09dff79_301547.gif "5.gif")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0903/100225_6cf0a534_301547.gif "6.gif")
+
 #### 最后的话
 
 最后，喜欢请点下stars，如果有其他一些什么常用的控件可以在留言哦
