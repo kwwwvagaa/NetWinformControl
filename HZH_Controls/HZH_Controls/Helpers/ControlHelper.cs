@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：ControlHelper.cs
-// 创建日期：2019-08-15 16:05:35
-// 功能描述：ControlHelper
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="ControlHelper.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -16,6 +26,9 @@ using System.Windows.Forms;
 
 namespace HZH_Controls
 {
+    /// <summary>
+    /// Class ControlHelper.
+    /// </summary>
     public static class ControlHelper
     {
         #region 设置控件Enabled，切不改变控件颜色
@@ -59,15 +72,37 @@ namespace HZH_Controls
             }
         }
         #endregion
+        /// <summary>
+        /// Sets the window long.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <param name="nIndex">Index of the n.</param>
+        /// <param name="wndproc">The wndproc.</param>
+        /// <returns>System.Int32.</returns>
         [DllImport("user32.dll ")]
         public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int wndproc);
 
+        /// <summary>
+        /// Gets the window long.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <param name="nIndex">Index of the n.</param>
+        /// <returns>System.Int32.</returns>
         [DllImport("user32.dll ")]
         public static extern int GetWindowLong(IntPtr hWnd, int nIndex);
 
+        /// <summary>
+        /// Gets the foreground window.
+        /// </summary>
+        /// <returns>IntPtr.</returns>
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         public static extern IntPtr GetForegroundWindow();
 
+        /// <summary>
+        /// Threads the base call back.
+        /// </summary>
+        /// <param name="parent">The parent.</param>
+        /// <param name="obj">The object.</param>
         private static void ThreadBaseCallBack(Control parent, object obj)
         {
             if (obj is Exception)
@@ -229,8 +264,19 @@ namespace HZH_Controls
             });
         }
 
+        /// <summary>
+        /// Sets the foreground window.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         [DllImport("user32.dll")]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
+        /// <summary>
+        /// Shows the process panel.
+        /// </summary>
+        /// <param name="parent">The parent.</param>
+        /// <param name="strMessage">The string message.</param>
+        /// <param name="intSplashScreenDelayTime">The int splash screen delay time.</param>
         public static void ShowProcessPanel(Control parent, string strMessage, int intSplashScreenDelayTime = 0)
         {
             if (parent.InvokeRequired)
@@ -262,6 +308,11 @@ namespace HZH_Controls
             }
         }
 
+        /// <summary>
+        /// Handles the FormClosing event of the ControlHelper control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosingEventArgs" /> instance containing the event data.</param>
         static void ControlHelper_FormClosing(object sender, FormClosingEventArgs e)
         {
             Control control = sender as Control;
@@ -269,6 +320,11 @@ namespace HZH_Controls
             CloseWaiting(control);
         }
 
+        /// <summary>
+        /// Handles the VisibleChanged event of the parent control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private static void parent_VisibleChanged(object sender, EventArgs e)
         {
             Control control = sender as Control;
@@ -279,6 +335,10 @@ namespace HZH_Controls
             }
         }
 
+        /// <summary>
+        /// Closes the waiting.
+        /// </summary>
+        /// <param name="control">The control.</param>
         private static void CloseWaiting(Control control)
         {
             Control[] array = control.Controls.Find("myprogressPanelext", false);
@@ -296,6 +356,10 @@ namespace HZH_Controls
             }
         }
 
+        /// <summary>
+        /// Closes the process panel.
+        /// </summary>
+        /// <param name="parent">The parent.</param>
         public static void CloseProcessPanel(Control parent)
         {
             if (parent.InvokeRequired)
@@ -329,6 +393,11 @@ namespace HZH_Controls
             }
         }
 
+        /// <summary>
+        /// Haves the process panel control.
+        /// </summary>
+        /// <param name="parent">The parent.</param>
+        /// <returns>Control.</returns>
         public static Control HaveProcessPanelControl(Control parent)
         {
             Control[] array = parent.Controls.Find("myprogressPanelext", false);
@@ -344,6 +413,10 @@ namespace HZH_Controls
             return result;
         }
 
+        /// <summary>
+        /// Creates the progress panel.
+        /// </summary>
+        /// <returns>Control.</returns>
         public static Control CreateProgressPanel()
         {
             return new Label
@@ -358,6 +431,11 @@ namespace HZH_Controls
             };
         }
 
+        /// <summary>
+        /// Converts to array.
+        /// </summary>
+        /// <param name="controls">The controls.</param>
+        /// <returns>Control[].</returns>
         public static Control[] ToArray(this System.Windows.Forms.Control.ControlCollection controls)
         {
             if (controls == null || controls.Count <= 0)
@@ -447,25 +525,59 @@ namespace HZH_Controls
         #endregion
 
         #region 动画特效
+        /// <summary>
+        /// Animates the window.
+        /// </summary>
+        /// <param name="whnd">The WHND.</param>
+        /// <param name="dwtime">The dwtime.</param>
+        /// <param name="dwflag">The dwflag.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         [DllImport("user32.dll")]
         public static extern bool AnimateWindow(IntPtr whnd, int dwtime, int dwflag);
         //dwflag的取值如下
+        /// <summary>
+        /// The aw hor positive
+        /// </summary>
         public const Int32 AW_HOR_POSITIVE = 0x00000001;
         //从左到右显示
+        /// <summary>
+        /// The aw hor negative
+        /// </summary>
         public const Int32 AW_HOR_NEGATIVE = 0x00000002;
         //从右到左显示
+        /// <summary>
+        /// The aw ver positive
+        /// </summary>
         public const Int32 AW_VER_POSITIVE = 0x00000004;
         //从上到下显示
+        /// <summary>
+        /// The aw ver negative
+        /// </summary>
         public const Int32 AW_VER_NEGATIVE = 0x00000008;
         //从下到上显示
+        /// <summary>
+        /// The aw center
+        /// </summary>
         public const Int32 AW_CENTER = 0x00000010;
         //若使用了AW_HIDE标志，则使窗口向内重叠，即收缩窗口；否则使窗口向外扩展，即展开窗口
+        /// <summary>
+        /// The aw hide
+        /// </summary>
         public const Int32 AW_HIDE = 0x00010000;
         //隐藏窗口，缺省则显示窗口
+        /// <summary>
+        /// The aw activate
+        /// </summary>
         public const Int32 AW_ACTIVATE = 0x00020000;
         //激活窗口。在使用了AW_HIDE标志后不能使用这个标志
+        /// <summary>
+        /// The aw slide
+        /// </summary>
         public const Int32 AW_SLIDE = 0x00040000;
         //使用滑动类型。缺省则为滚动动画类型。当使用AW_CENTER标志时，这个标志就被忽略
+        /// <summary>
+        /// The aw blend
+        /// </summary>
         public const Int32 AW_BLEND = 0x00080000;
         //透明度从高到低
         #endregion
@@ -596,6 +708,9 @@ namespace HZH_Controls
         #endregion
 
         #region 冻结控件
+        /// <summary>
+        /// The m LST freeze control
+        /// </summary>
         static Dictionary<Control, bool> m_lstFreezeControl = new Dictionary<Control, bool>();
         /// <summary>
         /// 功能描述:停止更新控件
@@ -621,6 +736,11 @@ namespace HZH_Controls
             }
         }
 
+        /// <summary>
+        /// Handles the Disposed event of the control control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         static void control_Disposed(object sender, EventArgs e)
         {
             try
@@ -635,7 +755,7 @@ namespace HZH_Controls
         /// <summary>
         /// 设置GDI高质量模式抗锯齿
         /// </summary>
-        /// <param name="g"></param>
+        /// <param name="g">The g.</param>
         public static void SetGDIHigh(this Graphics g)
         {
             g.SmoothingMode = SmoothingMode.AntiAlias;  //使绘图质量最高，即消除锯齿
@@ -646,9 +766,9 @@ namespace HZH_Controls
         /// <summary>
         /// 根据矩形和圆得到一个圆角矩形Path
         /// </summary>
-        /// <param name="rect"></param>
-        /// <param name="cornerRadius"></param>
-        /// <returns></returns>
+        /// <param name="rect">The rect.</param>
+        /// <param name="cornerRadius">The corner radius.</param>
+        /// <returns>GraphicsPath.</returns>
         public static GraphicsPath CreateRoundedRectanglePath(Rectangle rect, int cornerRadius)
         {
             GraphicsPath roundedRect = new GraphicsPath();
@@ -664,6 +784,12 @@ namespace HZH_Controls
             return roundedRect;
         }
 
+        /// <summary>
+        /// Creates the rounded rectangle path.
+        /// </summary>
+        /// <param name="rect">The rect.</param>
+        /// <param name="cornerRadius">The corner radius.</param>
+        /// <returns>GraphicsPath.</returns>
         public static GraphicsPath CreateRoundedRectanglePath(RectangleF rect, int cornerRadius)
         {
             GraphicsPath roundedRect = new GraphicsPath();

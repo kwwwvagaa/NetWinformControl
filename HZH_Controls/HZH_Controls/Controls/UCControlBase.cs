@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCControlBase.cs
-// 创建日期：2019-08-15 16:04:12
-// 功能描述：ControlBase
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCControlBase.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,24 +26,50 @@ using System.Reflection;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCControlBase.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// Implements the <see cref="System.Windows.Forms.IContainerControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
+    /// <seealso cref="System.Windows.Forms.IContainerControl" />
     [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(System.ComponentModel.Design.IDesigner))]
     public partial class UCControlBase : UserControl, IContainerControl
     {
+        /// <summary>
+        /// The is radius
+        /// </summary>
         private bool _isRadius = false;
 
+        /// <summary>
+        /// The corner radius
+        /// </summary>
         private int _cornerRadius = 24;
 
 
+        /// <summary>
+        /// The is show rect
+        /// </summary>
         private bool _isShowRect = false;
 
+        /// <summary>
+        /// The rect color
+        /// </summary>
         private Color _rectColor = Color.FromArgb(220, 220, 220);
 
+        /// <summary>
+        /// The rect width
+        /// </summary>
         private int _rectWidth = 1;
 
+        /// <summary>
+        /// The fill color
+        /// </summary>
         private Color _fillColor = Color.Transparent;
         /// <summary>
         /// 是否圆角
         /// </summary>
+        /// <value><c>true</c> if this instance is radius; otherwise, <c>false</c>.</value>
         [Description("是否圆角"), Category("自定义")]
         public virtual bool IsRadius
         {
@@ -47,7 +83,10 @@ namespace HZH_Controls.Controls
                 Refresh();
             }
         }
-        //圆角角度
+        /// <summary>
+        /// 圆角角度
+        /// </summary>
+        /// <value>The coner radius.</value>
         [Description("圆角角度"), Category("自定义")]
         public virtual int ConerRadius
         {
@@ -65,6 +104,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 是否显示边框
         /// </summary>
+        /// <value><c>true</c> if this instance is show rect; otherwise, <c>false</c>.</value>
         [Description("是否显示边框"), Category("自定义")]
         public virtual bool IsShowRect
         {
@@ -81,6 +121,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 边框颜色
         /// </summary>
+        /// <value>The color of the rect.</value>
         [Description("边框颜色"), Category("自定义")]
         public virtual Color RectColor
         {
@@ -97,6 +138,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 边框宽度
         /// </summary>
+        /// <value>The width of the rect.</value>
         [Description("边框宽度"), Category("自定义")]
         public virtual int RectWidth
         {
@@ -113,6 +155,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 当使用边框时填充颜色，当值为背景色或透明色或空值则不填充
         /// </summary>
+        /// <value>The color of the fill.</value>
         [Description("当使用边框时填充颜色，当值为背景色或透明色或空值则不填充"), Category("自定义")]
         public virtual Color FillColor
         {
@@ -127,6 +170,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCControlBase" /> class.
+        /// </summary>
         public UCControlBase()
         {
             this.InitializeComponent();
@@ -138,6 +184,10 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.UserPaint, true);
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             if (this.Visible)
@@ -169,6 +219,9 @@ namespace HZH_Controls.Controls
             base.OnPaint(e);
         }
 
+        /// <summary>
+        /// Sets the window region.
+        /// </summary>
         private void SetWindowRegion()
         {
             GraphicsPath path = new GraphicsPath();
@@ -177,6 +230,12 @@ namespace HZH_Controls.Controls
             base.Region = new Region(path);
         }
 
+        /// <summary>
+        /// Gets the rounded rect path.
+        /// </summary>
+        /// <param name="rect">The rect.</param>
+        /// <param name="radius">The radius.</param>
+        /// <returns>GraphicsPath.</returns>
         private GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
         {
             Rectangle rect2 = new Rectangle(rect.Location, new Size(radius, radius));
@@ -194,6 +253,10 @@ namespace HZH_Controls.Controls
             return graphicsPath;
         }
 
+        /// <summary>
+        /// WNDs the proc.
+        /// </summary>
+        /// <param name="m">要处理的 Windows <see cref="T:System.Windows.Forms.Message" />。</param>
         protected override void WndProc(ref Message m)
         {
             if (m.Msg != 20)

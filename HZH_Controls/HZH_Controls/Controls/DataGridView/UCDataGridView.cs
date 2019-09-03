@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCDataGridView.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:00:49
-// 功能描述：UCDataGridView    English:UCDataGridView
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-09-2019
+//
+// ***********************************************************************
+// <copyright file="UCDataGridView.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +25,23 @@ using System.Collections;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCDataGridView.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCDataGridView : UserControl
     {
         #region 属性
+        /// <summary>
+        /// The m head pading left
+        /// </summary>
         private int m_headPadingLeft = 0;
 
+        /// <summary>
+        /// Gets or sets the head pading left.
+        /// </summary>
+        /// <value>The head pading left.</value>
         [Description("标题左侧间距"), Category("自定义")]
         public int HeadPadingLeft
         {
@@ -34,20 +53,28 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m head font
+        /// </summary>
         private Font m_headFont = new Font("微软雅黑", 12F);
         /// <summary>
         /// 标题字体
         /// </summary>
+        /// <value>The head font.</value>
         [Description("标题字体"), Category("自定义")]
         public Font HeadFont
         {
             get { return m_headFont; }
             set { m_headFont = value; }
         }
+        /// <summary>
+        /// The m head text color
+        /// </summary>
         private Color m_headTextColor = Color.Black;
         /// <summary>
         /// 标题字体颜色
         /// </summary>
+        /// <value>The color of the head text.</value>
         [Description("标题文字颜色"), Category("自定义")]
         public Color HeadTextColor
         {
@@ -55,10 +82,14 @@ namespace HZH_Controls.Controls
             set { m_headTextColor = value; }
         }
 
+        /// <summary>
+        /// The m is show head
+        /// </summary>
         private bool m_isShowHead = true;
         /// <summary>
         /// 是否显示标题
         /// </summary>
+        /// <value><c>true</c> if this instance is show head; otherwise, <c>false</c>.</value>
         [Description("是否显示标题"), Category("自定义")]
         public bool IsShowHead
         {
@@ -74,10 +105,14 @@ namespace HZH_Controls.Controls
                 }
             }
         }
+        /// <summary>
+        /// The m head height
+        /// </summary>
         private int m_headHeight = 40;
         /// <summary>
         /// 标题高度
         /// </summary>
+        /// <value>The height of the head.</value>
         [Description("标题高度"), Category("自定义")]
         public int HeadHeight
         {
@@ -89,10 +124,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m is show CheckBox
+        /// </summary>
         private bool m_isShowCheckBox = false;
         /// <summary>
         /// 是否显示复选框
         /// </summary>
+        /// <value><c>true</c> if this instance is show CheckBox; otherwise, <c>false</c>.</value>
         [Description("是否显示选择框"), Category("自定义")]
         public bool IsShowCheckBox
         {
@@ -107,10 +146,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m row height
+        /// </summary>
         private int m_rowHeight = 40;
         /// <summary>
         /// 行高
         /// </summary>
+        /// <value>The height of the row.</value>
         [Description("数据行高"), Category("自定义")]
         public int RowHeight
         {
@@ -118,10 +161,14 @@ namespace HZH_Controls.Controls
             set { m_rowHeight = value; }
         }
 
+        /// <summary>
+        /// The m show count
+        /// </summary>
         private int m_showCount = 0;
         /// <summary>
-        /// 
+        /// Gets the show count.
         /// </summary>
+        /// <value>The show count.</value>
         [Description("可显示个数"), Category("自定义")]
         public int ShowCount
         {
@@ -136,10 +183,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m columns
+        /// </summary>
         private List<DataGridViewColumnEntity> m_columns = null;
         /// <summary>
         /// 列
         /// </summary>
+        /// <value>The columns.</value>
         [Description("列"), Category("自定义")]
         public List<DataGridViewColumnEntity> Columns
         {
@@ -151,10 +202,16 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m data source
+        /// </summary>
         private object m_dataSource = null;
         /// <summary>
         /// 数据源,支持列表或table，如果使用翻页控件，请使用翻页控件的DataSource
         /// </summary>
+        /// <value>The data source.</value>
+        /// <exception cref="System.Exception">数据源不是有效的数据类型，请使用Datatable或列表</exception>
+        /// <exception cref="Exception">数据源不是有效的数据类型，请使用Datatable或列表</exception>
         [Description("数据源,支持列表或table，如果使用翻页控件，请使用翻页控件的DataSource"), Category("自定义")]
         public object DataSource
         {
@@ -176,12 +233,22 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets the rows.
+        /// </summary>
+        /// <value>The rows.</value>
         public List<IDataGridViewRow> Rows { get; private set; }
 
+        /// <summary>
+        /// The m row type
+        /// </summary>
         private Type m_rowType = typeof(UCDataGridViewRow);
         /// <summary>
         /// 行元素类型，默认UCDataGridViewItem
         /// </summary>
+        /// <value>The type of the row.</value>
+        /// <exception cref="System.Exception">行控件没有实现IDataGridViewRow接口</exception>
+        /// <exception cref="Exception">行控件没有实现IDataGridViewRow接口</exception>
         [Description("行控件类型，默认UCDataGridViewRow，如果不满足请自定义行控件实现接口IDataGridViewRow"), Category("自定义")]
         public Type RowType
         {
@@ -198,10 +265,14 @@ namespace HZH_Controls.Controls
                     ReloadSource();
             }
         }
+        /// <summary>
+        /// The m select row
+        /// </summary>
         IDataGridViewRow m_selectRow = null;
         /// <summary>
         /// 选中的节点
         /// </summary>
+        /// <value>The select row.</value>
         [Description("选中行"), Category("自定义")]
         public IDataGridViewRow SelectRow
         {
@@ -213,6 +284,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 选中的行，如果显示CheckBox，则以CheckBox选中为准
         /// </summary>
+        /// <value>The select rows.</value>
         [Description("选中的行，如果显示CheckBox，则以CheckBox选中为准"), Category("自定义")]
         public List<IDataGridViewRow> SelectRows
         {
@@ -222,6 +294,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets the select rows.
+        /// </summary>
+        /// <returns>List&lt;IDataGridViewRow&gt;.</returns>
         private List<IDataGridViewRow> GetSelectRows()
         {
             List<IDataGridViewRow> lst = new List<IDataGridViewRow>();
@@ -247,6 +323,11 @@ namespace HZH_Controls.Controls
             return lst;
         }
 
+        /// <summary>
+        /// Finds the child grid.
+        /// </summary>
+        /// <param name="c">The c.</param>
+        /// <returns>UCDataGridView.</returns>
         private UCDataGridView FindChildGrid(Control c)
         {
             foreach (Control item in c.Controls)
@@ -263,10 +344,16 @@ namespace HZH_Controls.Controls
             return null;
         }
 
+        /// <summary>
+        /// The m page
+        /// </summary>
         private UCPagerControlBase m_page = null;
         /// <summary>
         /// 翻页控件
         /// </summary>
+        /// <value>The page.</value>
+        /// <exception cref="System.Exception">翻页控件没有继承UCPagerControlBase</exception>
+        /// <exception cref="Exception">翻页控件没有继承UCPagerControlBase</exception>
         [Description("翻页控件，如果UCPagerControl不满足你的需求，请自定义翻页控件并继承UCPagerControlBase"), Category("自定义")]
         public UCPagerControlBase Page
         {
@@ -295,10 +382,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m is automatic height
+        /// </summary>
         private bool m_isAutoHeight = false;
         /// <summary>
         /// 自动适应最大高度(当为true时，需要手动计算高度，请慎用)
         /// </summary>
+        /// <value><c>true</c> if this instance is automatic height; otherwise, <c>false</c>.</value>
         [Browsable(false)]
         public bool IsAutoHeight
         {
@@ -310,25 +401,47 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Pages the show source changed.
+        /// </summary>
+        /// <param name="currentSource">The current source.</param>
         void page_ShowSourceChanged(object currentSource)
         {
             this.DataSource = currentSource;
         }
 
         #region 事件
+        /// <summary>
+        /// The head CheckBox change event
+        /// </summary>
         [Description("选中标题选择框事件"), Category("自定义")]
         public EventHandler HeadCheckBoxChangeEvent;
+        /// <summary>
+        /// The head column click event
+        /// </summary>
         [Description("标题点击事件"), Category("自定义")]
         public EventHandler HeadColumnClickEvent;
+        /// <summary>
+        /// Occurs when [item click].
+        /// </summary>
         [Description("项点击事件"), Category("自定义")]
         public event DataGridViewEventHandler ItemClick;
+        /// <summary>
+        /// Occurs when [source changed].
+        /// </summary>
         [Description("数据源改变事件"), Category("自定义")]
         public event DataGridViewEventHandler SourceChanged;
+        /// <summary>
+        /// Occurs when [row custom event].
+        /// </summary>
         [Description("预留的自定义的事件，比如你需要在行上放置删改等按钮时，可以通过此事件传递出来"), Category("自定义")]
         public event DataGridViewRowCustomEventHandler RowCustomEvent;
         #endregion
         #endregion
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCDataGridView" /> class.
+        /// </summary>
         public UCDataGridView()
         {
             InitializeComponent();
@@ -569,9 +682,9 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 快捷键
         /// </summary>
-        /// <param name="msg"></param>
-        /// <param name="keyData"></param>
-        /// <returns></returns>
+        /// <param name="msg">通过引用传递的 <see cref="T:System.Windows.Forms.Message" />，它表示要处理的窗口消息。</param>
+        /// <param name="keyData"><see cref="T:System.Windows.Forms.Keys" /> 值之一，它表示要处理的键。</param>
+        /// <returns>如果字符已由控件处理，则为 true；否则为 false。</returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Up)
@@ -650,11 +763,21 @@ namespace HZH_Controls.Controls
         #endregion
 
         #region 事件
+        /// <summary>
+        /// Rows the source changed.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="DataGridViewEventArgs" /> instance containing the event data.</param>
         void RowSourceChanged(object sender, DataGridViewEventArgs e)
         {
             if (SourceChanged != null)
                 SourceChanged(sender, e);
         }
+        /// <summary>
+        /// Sets the select row.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <param name="e">The <see cref="DataGridViewEventArgs" /> instance containing the event data.</param>
         private void SetSelectRow(Control item, DataGridViewEventArgs e)
         {
             try
@@ -699,6 +822,11 @@ namespace HZH_Controls.Controls
                 ControlHelper.FreezeControl(this, false);
             }
         }
+        /// <summary>
+        /// Handles the Resize event of the UCDataGridView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void UCDataGridView_Resize(object sender, EventArgs e)
         {
             if (this.Height <= 0)
@@ -710,6 +838,11 @@ namespace HZH_Controls.Controls
         }
         #endregion
 
+        /// <summary>
+        /// Handles the SizeChanged event of the panRow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void panRow_SizeChanged(object sender, EventArgs e)
         {
             //if (m_isAutoHeight)

@@ -1,5 +1,25 @@
-﻿namespace HZH_Controls.Forms
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmWithOKCancel2.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmWithOKCancel2.
+    /// Implements the <see cref="HZH_Controls.Forms.FrmWithTitle" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Forms.FrmWithTitle" />
     partial class FrmWithOKCancel2
     {
         /// <summary>
@@ -193,14 +213,41 @@
 
         #endregion
 
+        /// <summary>
+        /// The panel4
+        /// </summary>
         private System.Windows.Forms.Panel panel4;
+        /// <summary>
+        /// The panel5
+        /// </summary>
         private System.Windows.Forms.Panel panel5;
+        /// <summary>
+        /// The uc split line v1
+        /// </summary>
         private Controls.UCSplitLine_V ucSplitLine_V1;
+        /// <summary>
+        /// The BTN ok
+        /// </summary>
         private Controls.UCBtnExt btnOK;
+        /// <summary>
+        /// The BTN cancel
+        /// </summary>
         private Controls.UCBtnExt btnCancel;
+        /// <summary>
+        /// The panel3
+        /// </summary>
         public System.Windows.Forms.Panel panel3;
+        /// <summary>
+        /// The panel2
+        /// </summary>
         public System.Windows.Forms.Panel panel2;
+        /// <summary>
+        /// The panel1
+        /// </summary>
         private System.Windows.Forms.Panel panel1;
+        /// <summary>
+        /// The uc split line h2
+        /// </summary>
         private Controls.UCSplitLine_H ucSplitLine_H2;
     }
 }

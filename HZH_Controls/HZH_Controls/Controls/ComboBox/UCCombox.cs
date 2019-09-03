@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCComboBox.cs
-// 创建日期：2019-08-15 15:58:51
-// 功能描述：ComboBox
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCCombox.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +25,25 @@ using System.Drawing.Drawing2D;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCCombox.
+    /// Implements the <see cref="HZH_Controls.Controls.UCControlBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCControlBase" />
     [DefaultEvent("SelectedChangedEvent")]
     public partial class UCCombox : UCControlBase
     {
+        /// <summary>
+        /// The fore color
+        /// </summary>
         Color _ForeColor = Color.FromArgb(64, 64, 64);
+        /// <summary>
+        /// 文字颜色
+        /// </summary>
+        /// <value>The color of the fore.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Description("文字颜色"), Category("自定义")]
         public override Color ForeColor
         {
@@ -33,12 +58,25 @@ namespace HZH_Controls.Controls
                 txtInput.ForeColor = value;
             }
         }
-
+        /// <summary>
+        /// 选中事件
+        /// </summary>
+        [Description("选中事件"), Category("自定义")]
         public event EventHandler SelectedChangedEvent;
+        /// <summary>
+        /// 文本改变事件
+        /// </summary>
+        [Description("文本改变事件"), Category("自定义")]
         public event EventHandler TextChangedEvent;
 
+        /// <summary>
+        /// The box style
+        /// </summary>
         private ComboBoxStyle _BoxStyle = ComboBoxStyle.DropDown;
-
+        /// <summary>
+        /// 控件样式
+        /// </summary>
+        /// <value>The box style.</value>
         [Description("控件样式"), Category("自定义")]
         public ComboBoxStyle BoxStyle
         {
@@ -72,7 +110,20 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The font
+        /// </summary>
         private Font _Font = new Font("微软雅黑", 12);
+        /// <summary>
+        /// 字体
+        /// </summary>
+        /// <value>The font.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Description("字体"), Category("自定义")]
         public new Font Font
         {
@@ -89,6 +140,10 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// 当使用边框时填充颜色，当值为背景色或透明色或空值则不填充
+        /// </summary>
+        /// <value>The color of the fill.</value>
         [Obsolete("不再可用的属性")]
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         private new Color FillColor
@@ -97,6 +152,10 @@ namespace HZH_Controls.Controls
             set;
         }
 
+        /// <summary>
+        /// 边框颜色
+        /// </summary>
+        /// <value>The color of the rect.</value>
         [Obsolete("不再可用的属性")]
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         private new Color RectColor
@@ -105,8 +164,15 @@ namespace HZH_Controls.Controls
             set;
         }
 
+        /// <summary>
+        /// The text value
+        /// </summary>
         private string _TextValue;
-
+        /// <summary>
+        /// 文字
+        /// </summary>
+        /// <value>The text value.</value>
+        [Description("文字"), Category("自定义")]
         public string TextValue
         {
             get { return _TextValue; }
@@ -120,8 +186,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The source
+        /// </summary>
         private List<KeyValuePair<string, string>> _source = null;
-
+        /// <summary>
+        /// 数据源
+        /// </summary>
+        /// <value>The source.</value>
+        [Description("数据源"), Category("自定义")]
         public List<KeyValuePair<string, string>> Source
         {
             get { return _source; }
@@ -137,10 +210,20 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The selected item
+        /// </summary>
         private KeyValuePair<string, string> _selectedItem = new KeyValuePair<string, string>();
 
+        /// <summary>
+        /// The selected index
+        /// </summary>
         private int _selectedIndex = -1;
-
+        /// <summary>
+        /// 选中的数据下标
+        /// </summary>
+        /// <value>The index of the selected.</value>
+        [Description("选中的数据下标"), Category("自定义")]
         public int SelectedIndex
         {
             get
@@ -166,8 +249,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The selected value
+        /// </summary>
         private string _selectedValue = "";
-
+        /// <summary>
+        /// 选中的值
+        /// </summary>
+        /// <value>The selected value.</value>
+        [Description("选中的值"), Category("自定义")]
         public string SelectedValue
         {
             get
@@ -204,8 +294,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The selected text
+        /// </summary>
         private string _selectedText = "";
-
+        /// <summary>
+        /// 选中的文本
+        /// </summary>
+        /// <value>The selected text.</value>
+        [Description("选中的文本"), Category("自定义")]
         public string SelectedText
         {
             get { return _selectedText; }
@@ -221,21 +318,42 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The item width
+        /// </summary>
         private int _ItemWidth = 70;
-
+        /// <summary>
+        /// 项宽度
+        /// </summary>
+        /// <value>The width of the item.</value>
+        [Description("项宽度"), Category("自定义")]
         public int ItemWidth
         {
             get { return _ItemWidth; }
             set { _ItemWidth = value; }
         }
 
+        /// <summary>
+        /// The drop panel height
+        /// </summary>
         private int _dropPanelHeight = -1;
-
+        /// <summary>
+        /// 下拉面板高度
+        /// </summary>
+        /// <value>The height of the drop panel.</value>
+        [Description("下拉面板高度"), Category("自定义")]
         public int DropPanelHeight
         {
             get { return _dropPanelHeight; }
             set { _dropPanelHeight = value; }
         }
+        /// <summary>
+        /// 获取或设置控件的背景色。
+        /// </summary>
+        /// <value>The color of the back.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Obsolete("不再可用的属性,如需要改变背景色，请使用BackColorExt")]
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         private new Color BackColor
@@ -250,8 +368,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The back color
+        /// </summary>
         private Color _BackColor = Color.FromArgb(240, 240, 240);
-
+        /// <summary>
+        /// 背景色
+        /// </summary>
+        /// <value>The back color ext.</value>
+        [Description("背景色"), Category("自定义")]
         public Color BackColorExt
         {
             get
@@ -280,8 +405,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The triangle color
+        /// </summary>
         private Color triangleColor = Color.FromArgb(255, 77, 59);
-
+        /// <summary>
+        /// 三角颜色
+        /// </summary>
+        /// <value>The color of the triangle.</value>
+        [Description("三角颜色"), Category("自定义")]
         public Color TriangleColor
         {
             get { return triangleColor; }
@@ -305,6 +437,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCCombox" /> class.
+        /// </summary>
         public UCCombox()
         {
             InitializeComponent();
@@ -324,12 +459,22 @@ namespace HZH_Controls.Controls
             base.BackColor = Color.Transparent;
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the UCComboBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void UCComboBox_SizeChanged(object sender, EventArgs e)
         {
             this.txtInput.Location = new Point(this.txtInput.Location.X, (this.Height - txtInput.Height) / 2);
             this.lblInput.Location = new Point(this.lblInput.Location.X, (this.Height - lblInput.Height) / 2);
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtInput control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
             TextValue = txtInput.Text;
@@ -339,6 +484,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         protected virtual void click_MouseDown(object sender, MouseEventArgs e)
         {
             if (_frmAnchor == null || _frmAnchor.IsDisposed || _frmAnchor.Visible == false)
@@ -394,7 +544,15 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// The FRM anchor
+        /// </summary>
         Forms.FrmAnchor _frmAnchor;
+        /// <summary>
+        /// Handles the SelectSourceEvent event of the ucTime control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void ucTime_SelectSourceEvent(object sender, EventArgs e)
         {
             if (_frmAnchor != null && !_frmAnchor.IsDisposed && _frmAnchor.Visible)
@@ -404,6 +562,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the Load event of the UCComboBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void UCComboBox_Load(object sender, EventArgs e)
         {
             if (this._BoxStyle == ComboBoxStyle.DropDownList)

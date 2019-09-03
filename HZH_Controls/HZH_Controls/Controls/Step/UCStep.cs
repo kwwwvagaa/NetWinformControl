@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCStep.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:05:12
-// 功能描述：UCStep    English:UCStep
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-17-2019
+//
+// ***********************************************************************
+// <copyright file="UCStep.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,17 +25,29 @@ using System.Drawing.Drawing2D;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCStep.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     [DefaultEvent("IndexChecked")]
     public partial class UCStep : UserControl
     {
 
+        /// <summary>
+        /// Occurs when [index checked].
+        /// </summary>
         [Description("步骤更改事件"), Category("自定义")]
         public event EventHandler IndexChecked;
 
+        /// <summary>
+        /// The m step back color
+        /// </summary>
         private Color m_stepBackColor = Color.FromArgb(189, 189, 189);
         /// <summary>
         /// 步骤背景色
         /// </summary>
+        /// <value>The color of the step back.</value>
         [Description("步骤背景色"), Category("自定义")]
         public Color StepBackColor
         {
@@ -40,10 +59,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m step fore color
+        /// </summary>
         private Color m_stepForeColor = Color.FromArgb(255, 77, 59);
         /// <summary>
         /// 步骤前景色
         /// </summary>
+        /// <value>The color of the step fore.</value>
         [Description("步骤前景色"), Category("自定义")]
         public Color StepForeColor
         {
@@ -55,10 +78,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m step font color
+        /// </summary>
         private Color m_stepFontColor = Color.White;
         /// <summary>
         /// 步骤文字颜色
         /// </summary>
+        /// <value>The color of the step font.</value>
         [Description("步骤文字景色"), Category("自定义")]
         public Color StepFontColor
         {
@@ -70,10 +97,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m step width
+        /// </summary>
         private int m_stepWidth = 35;
         /// <summary>
         /// 步骤宽度
         /// </summary>
+        /// <value>The width of the step.</value>
         [Description("步骤宽度景色"), Category("自定义")]
         public int StepWidth
         {
@@ -85,8 +116,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m steps
+        /// </summary>
         private string[] m_steps = new string[] { "step1", "step2", "step3" };
 
+        /// <summary>
+        /// Gets or sets the steps.
+        /// </summary>
+        /// <value>The steps.</value>
         [Description("步骤"), Category("自定义")]
         public string[] Steps
         {
@@ -100,8 +138,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m step index
+        /// </summary>
         private int m_stepIndex = 0;
 
+        /// <summary>
+        /// Gets or sets the index of the step.
+        /// </summary>
+        /// <value>The index of the step.</value>
         [Description("步骤位置"), Category("自定义")]
         public int StepIndex
         {
@@ -119,8 +164,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m line width
+        /// </summary>
         private int m_lineWidth = 2;
 
+        /// <summary>
+        /// Gets or sets the width of the line.
+        /// </summary>
+        /// <value>The width of the line.</value>
         [Description("连接线宽度,最小2"), Category("自定义")]
         public int LineWidth
         {
@@ -134,7 +186,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m img completed
+        /// </summary>
         private Image m_imgCompleted = null;
+        /// <summary>
+        /// Gets or sets the img completed.
+        /// </summary>
+        /// <value>The img completed.</value>
         [Description("已完成步骤图片，当不为空时，已完成步骤将不再显示数字,建议24*24大小"), Category("自定义")]
         public Image ImgCompleted
         {
@@ -146,8 +205,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m LST cache rect
+        /// </summary>
         List<Rectangle> m_lstCacheRect = new List<Rectangle>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCStep" /> class.
+        /// </summary>
         public UCStep()
         {
             InitializeComponent();
@@ -160,6 +225,11 @@ namespace HZH_Controls.Controls
             this.MouseDown += UCStep_MouseDown;
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the UCStep control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void UCStep_MouseDown(object sender, MouseEventArgs e)
         {
             var index = m_lstCacheRect.FindIndex(p => p.Contains(e.Location));
@@ -169,6 +239,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

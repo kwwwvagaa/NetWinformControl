@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCHorizontalListItem.cs
-// 创建日期：2019-08-15 16:01:13
-// 功能描述：HorizontalList
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCHorizontalListItem.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +24,26 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCHorizontalListItem.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     [ToolboxItem(false)]
     public partial class UCHorizontalListItem : UserControl
     {
+        /// <summary>
+        /// Occurs when [selected item].
+        /// </summary>
         public event EventHandler SelectedItem;
+        /// <summary>
+        /// The data source
+        /// </summary>
         private KeyValuePair<string, string> _DataSource = new KeyValuePair<string, string>();
+        /// <summary>
+        /// Gets or sets the data source.
+        /// </summary>
+        /// <value>The data source.</value>
         public KeyValuePair<string, string> DataSource
         {
             get { return _DataSource; }
@@ -35,6 +60,9 @@ namespace HZH_Controls.Controls
                 SetSelect(false);
             }
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCHorizontalListItem" /> class.
+        /// </summary>
         public UCHorizontalListItem()
         {
             InitializeComponent();
@@ -44,12 +72,21 @@ namespace HZH_Controls.Controls
             this.ucSplitLine_H1.MouseDown += Item_MouseDown;
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the Item control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void Item_MouseDown(object sender, MouseEventArgs e)
         {
             if (SelectedItem != null)
                 SelectedItem(this, e);
         }
 
+        /// <summary>
+        /// Sets the select.
+        /// </summary>
+        /// <param name="bln">if set to <c>true</c> [BLN].</param>
         public void SetSelect(bool bln)
         {
             if (bln)

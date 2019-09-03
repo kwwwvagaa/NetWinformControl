@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCWaveChart.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:05:59
-// 功能描述：UCWaveWithSource    English:UCWaveWithSource
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-22-2019
+//
+// ***********************************************************************
+// <copyright file="UCWaveChart.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +24,27 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCWaveChart.
+    /// Implements the <see cref="HZH_Controls.Controls.UCControlBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCControlBase" />
     public class UCWaveChart : UCControlBase
     {
+        /// <summary>
+        /// The m wave actual width
+        /// </summary>
         private int m_waveActualWidth = 50;
 
+        /// <summary>
+        /// The m wave width
+        /// </summary>
         private int m_waveWidth = 50;
 
+        /// <summary>
+        /// Gets or sets the width of the wave.
+        /// </summary>
+        /// <value>The width of the wave.</value>
         [Description("波形宽度"), Category("自定义")]
         public int WaveWidth
         {
@@ -37,10 +59,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m sleep time
+        /// </summary>
         private int m_sleepTime = 1000;
         /// <summary>
         /// 波运行速度（运行时间间隔，毫秒）
         /// </summary>
+        /// <value>The sleep time.</value>
         [Description("运行速度（运行时间间隔，毫秒）"), Category("自定义")]
         public int SleepTime
         {
@@ -59,10 +85,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m line tension
+        /// </summary>
         private float m_lineTension = 0.5f;
         /// <summary>
         /// 线弯曲程度
         /// </summary>
+        /// <value>The line tension.</value>
         [Description("线弯曲程度(0-1）"), Category("自定义")]
         public float LineTension
         {
@@ -78,8 +108,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m line color
+        /// </summary>
         private Color m_lineColor = Color.FromArgb(150, 255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the line.
+        /// </summary>
+        /// <value>The color of the line.</value>
         [Description("曲线颜色"), Category("自定义")]
         public Color LineColor
         {
@@ -92,8 +129,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m grid line color
+        /// </summary>
         private Color m_gridLineColor = Color.FromArgb(50, 255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the grid line.
+        /// </summary>
+        /// <value>The color of the grid line.</value>
         [Description("网格线颜色"), Category("自定义")]
         public Color GridLineColor
         {
@@ -105,8 +149,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m grid line text color
+        /// </summary>
         private Color m_gridLineTextColor = Color.FromArgb(150, 255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the grid line text.
+        /// </summary>
+        /// <value>The color of the grid line text.</value>
         [Description("网格文本颜色"), Category("自定义")]
         public Color GridLineTextColor
         {
@@ -118,6 +169,16 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 获取或设置控件显示的文字的字体。
+        /// </summary>
+        /// <value>The font.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public override Font Font
         {
             get
@@ -137,13 +198,22 @@ namespace HZH_Controls.Controls
         /// 当前需要显示的数据
         /// </summary>
         List<KeyValuePair<string, double>> m_currentSource = new List<KeyValuePair<string, double>>();
+        /// <summary>
+        /// The timer
+        /// </summary>
         Timer timer = new Timer();
         /// <summary>
         /// 画图区域
         /// </summary>
         Rectangle m_drawRect;
 
+        /// <summary>
+        /// The m wave count
+        /// </summary>
         int m_waveCount = 0;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCWaveChart" /> class.
+        /// </summary>
         public UCWaveChart()
         {
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
@@ -178,6 +248,11 @@ namespace HZH_Controls.Controls
             m_dataSource.Add(new KeyValuePair<string, double>(key, value));
         }
 
+        /// <summary>
+        /// Handles the VisibleChanged event of the UCWave control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCWave_VisibleChanged(object sender, EventArgs e)
         {
             if (!DesignMode)
@@ -186,18 +261,32 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the Tick event of the timer control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void timer_Tick(object sender, EventArgs e)
         {
             m_currentSource = GetCurrentList();
             m_dataSource.RemoveAt(0);
             this.Refresh();
         }
+        /// <summary>
+        /// Handles the SizeChanged event of the UCWaveWithSource control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCWaveWithSource_SizeChanged(object sender, EventArgs e)
         {
             m_drawRect = new Rectangle(60, 20, this.Width - 80, this.Height - 60);
             ResetWaveCount();
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -269,7 +358,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 得到当前需要画图的数据
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List&lt;KeyValuePair&lt;System.String, System.Double&gt;&gt;.</returns>
         private List<KeyValuePair<string, double>> GetCurrentList()
         {
             if (m_dataSource.Count < m_waveCount)

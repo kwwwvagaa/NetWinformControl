@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCSwitch.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:05:21
-// 功能描述：UCSwitch    English:UCSwitch
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-19-2019
+//
+// ***********************************************************************
+// <copyright file="UCSwitch.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,13 +25,28 @@ using System.Drawing.Drawing2D;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCSwitch.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     [DefaultEvent("CheckedChanged")]
     public partial class UCSwitch : UserControl
     {
+        /// <summary>
+        /// Occurs when [checked changed].
+        /// </summary>
         [Description("选中改变事件"), Category("自定义")]
         public event EventHandler CheckedChanged;
+        /// <summary>
+        /// The m true color
+        /// </summary>
         private Color m_trueColor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the true.
+        /// </summary>
+        /// <value>The color of the true.</value>
         [Description("选中时颜色"), Category("自定义")]
         public Color TrueColor
         {
@@ -36,8 +58,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m false color
+        /// </summary>
         private Color m_falseColor = Color.FromArgb(189, 189, 189);
 
+        /// <summary>
+        /// Gets or sets the color of the false.
+        /// </summary>
+        /// <value>The color of the false.</value>
         [Description("没有选中时颜色"), Category("自定义")]
         public Color FalseColor
         {
@@ -49,8 +78,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m checked
+        /// </summary>
         private bool m_checked;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="UCSwitch" /> is checked.
+        /// </summary>
+        /// <value><c>true</c> if checked; otherwise, <c>false</c>.</value>
         [Description("是否选中"), Category("自定义")]
         public bool Checked
         {
@@ -66,8 +102,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m texts
+        /// </summary>
         private string[] m_texts;
 
+        /// <summary>
+        /// Gets or sets the texts.
+        /// </summary>
+        /// <value>The texts.</value>
         [Description("文本值，当选中或没有选中时显示，必须是长度为2的数组"), Category("自定义")]
         public string[] Texts
         {
@@ -78,8 +121,15 @@ namespace HZH_Controls.Controls
                 Refresh();
             }
         }
+        /// <summary>
+        /// The m switch type
+        /// </summary>
         private SwitchType m_switchType = SwitchType.Ellipse;
 
+        /// <summary>
+        /// Gets or sets the type of the switch.
+        /// </summary>
+        /// <value>The type of the switch.</value>
         [Description("显示类型"), Category("自定义")]
         public SwitchType SwitchType
         {
@@ -91,6 +141,16 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 获取或设置控件显示的文字的字体。
+        /// </summary>
+        /// <value>The font.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public override Font Font
         {
             get
@@ -105,6 +165,9 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCSwitch" /> class.
+        /// </summary>
         public UCSwitch()
         {
             InitializeComponent();
@@ -117,11 +180,20 @@ namespace HZH_Controls.Controls
             this.MouseDown += UCSwitch_MouseDown;
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the UCSwitch control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void UCSwitch_MouseDown(object sender, MouseEventArgs e)
         {
             Checked = !Checked;
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -273,6 +345,9 @@ namespace HZH_Controls.Controls
 
     }
 
+    /// <summary>
+    /// Enum SwitchType
+    /// </summary>
     public enum SwitchType
     {
         /// <summary>

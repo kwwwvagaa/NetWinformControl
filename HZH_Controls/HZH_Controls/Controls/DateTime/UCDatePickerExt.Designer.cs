@@ -1,13 +1,33 @@
-﻿namespace HZH_Controls.Controls
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCDatePickerExt.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCDatePickerExt.
+    /// Implements the <see cref="HZH_Controls.Controls.UCControlBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCControlBase" />
     partial class UCDatePickerExt
     {
-        /// <summary> 
+        /// <summary>
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// 清理所有正在使用的资源。
         /// </summary>
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
@@ -22,7 +42,7 @@
 
         #region 组件设计器生成的代码
 
-        /// <summary> 
+        /// <summary>
         /// 设计器支持所需的方法 - 不要
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
@@ -316,16 +336,49 @@
 
         #endregion
 
+        /// <summary>
+        /// The panel1
+        /// </summary>
         private System.Windows.Forms.Panel panel1;
+        /// <summary>
+        /// The label4
+        /// </summary>
         private System.Windows.Forms.Label label4;
+        /// <summary>
+        /// The label3
+        /// </summary>
         private System.Windows.Forms.Label label3;
+        /// <summary>
+        /// The label2
+        /// </summary>
         private System.Windows.Forms.Label label2;
+        /// <summary>
+        /// The label1
+        /// </summary>
         private System.Windows.Forms.Label label1;
+        /// <summary>
+        /// The text minute
+        /// </summary>
         private TextBoxEx txtMinute;
+        /// <summary>
+        /// The text hour
+        /// </summary>
         private TextBoxEx txtHour;
+        /// <summary>
+        /// The text day
+        /// </summary>
         private TextBoxEx txtDay;
+        /// <summary>
+        /// The text month
+        /// </summary>
         private TextBoxEx txtMonth;
+        /// <summary>
+        /// The text year
+        /// </summary>
         private TextBoxEx txtYear;
+        /// <summary>
+        /// The label5
+        /// </summary>
         private System.Windows.Forms.Label label5;
     }
 }

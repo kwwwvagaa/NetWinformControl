@@ -1,13 +1,33 @@
-﻿namespace HZH_Controls.Controls
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-15-2019
+//
+// ***********************************************************************
+// <copyright file="UCPagerControl2.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCPagerControl2.
+    /// Implements the <see cref="HZH_Controls.Controls.UCPagerControlBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCPagerControlBase" />
     partial class UCPagerControl2
     {
-        /// <summary> 
+        /// <summary>
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// 清理所有正在使用的资源。
         /// </summary>
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
@@ -22,7 +42,7 @@
 
         #region 组件设计器生成的代码
 
-        /// <summary> 
+        /// <summary>
         /// 设计器支持所需的方法 - 不要
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
@@ -507,21 +527,69 @@
 
         #endregion
 
+        /// <summary>
+        /// The BTN first
+        /// </summary>
         private UCBtnExt btnFirst;
+        /// <summary>
+        /// The BTN previous
+        /// </summary>
         private UCBtnExt btnPrevious;
+        /// <summary>
+        /// The table layout panel1
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        /// <summary>
+        /// The BTN end
+        /// </summary>
         private UCBtnExt btnEnd;
+        /// <summary>
+        /// The BTN next
+        /// </summary>
         private UCBtnExt btnNext;
+        /// <summary>
+        /// The p8
+        /// </summary>
         private UCBtnExt p8;
+        /// <summary>
+        /// The p7
+        /// </summary>
         private UCBtnExt p7;
+        /// <summary>
+        /// The p6
+        /// </summary>
         private UCBtnExt p6;
+        /// <summary>
+        /// The p5
+        /// </summary>
         private UCBtnExt p5;
+        /// <summary>
+        /// The p4
+        /// </summary>
         private UCBtnExt p4;
+        /// <summary>
+        /// The p3
+        /// </summary>
         private UCBtnExt p3;
+        /// <summary>
+        /// The p2
+        /// </summary>
         private UCBtnExt p2;
+        /// <summary>
+        /// The BTN to page
+        /// </summary>
         private UCBtnExt btnToPage;
+        /// <summary>
+        /// The text page
+        /// </summary>
         private UCTextBoxEx txtPage;
+        /// <summary>
+        /// The p9
+        /// </summary>
         private UCBtnExt p9;
+        /// <summary>
+        /// The p1
+        /// </summary>
         private UCBtnExt p1;
     }
 }

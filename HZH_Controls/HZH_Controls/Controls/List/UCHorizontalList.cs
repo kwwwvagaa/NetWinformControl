@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCHorizontalList.cs
-// 创建日期：2019-08-15 16:01:06
-// 功能描述：HorizontalList
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCHorizontalList.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,21 +24,50 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCHorizontalList.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCHorizontalList : UserControl
     {
+        /// <summary>
+        /// Gets or sets the selected item.
+        /// </summary>
+        /// <value>The selected item.</value>
         public UCHorizontalListItem SelectedItem { get; set; }
+        /// <summary>
+        /// Occurs when [selected item event].
+        /// </summary>
         public event EventHandler SelectedItemEvent;
+        /// <summary>
+        /// The m start item index
+        /// </summary>
         private int m_startItemIndex = 0;
+        /// <summary>
+        /// The is automatic select first
+        /// </summary>
         private bool isAutoSelectFirst = true;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is automatic select first.
+        /// </summary>
+        /// <value><c>true</c> if this instance is automatic select first; otherwise, <c>false</c>.</value>
         public bool IsAutoSelectFirst
         {
             get { return isAutoSelectFirst; }
             set { isAutoSelectFirst = value; }
         }
 
+        /// <summary>
+        /// The data source
+        /// </summary>
         private List<KeyValuePair<string, string>> dataSource = null;
 
+        /// <summary>
+        /// Gets or sets the data source.
+        /// </summary>
+        /// <value>The data source.</value>
         public List<KeyValuePair<string, string>> DataSource
         {
             get { return dataSource; }
@@ -39,11 +78,17 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCHorizontalList" /> class.
+        /// </summary>
         public UCHorizontalList()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Reloads the source.
+        /// </summary>
         public void ReloadSource()
         {
             try
@@ -85,11 +130,20 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the SelectItem event of the uc control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void uc_SelectItem(object sender, EventArgs e)
         {
             SelectItem(sender as UCHorizontalListItem);
         }
 
+        /// <summary>
+        /// Selects the item.
+        /// </summary>
+        /// <param name="item">The item.</param>
         private void SelectItem(UCHorizontalListItem item)
         {
             if (SelectedItem != null && !SelectedItem.IsDisposed)
@@ -100,6 +154,11 @@ namespace HZH_Controls.Controls
                 SelectedItemEvent(item, null);
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the panLeft control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void panLeft_MouseDown(object sender, MouseEventArgs e)
         {
             if (this.panList.Location.X >= 0)
@@ -135,6 +194,11 @@ namespace HZH_Controls.Controls
             panRight.SendToBack();
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the panRight control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void panRight_MouseDown(object sender, MouseEventArgs e)
         {
             if (this.panList.Location.X + this.panList.Width <= this.panMain.Width)
@@ -159,6 +223,9 @@ namespace HZH_Controls.Controls
             panRight.SendToBack();
         }
 
+        /// <summary>
+        /// Resets the list location.
+        /// </summary>
         private void ResetListLocation()
         {
             if (this.panList.Controls.Count > 0)
@@ -167,6 +234,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Sets the select.
+        /// </summary>
+        /// <param name="strKey">The string key.</param>
         public void SetSelect(string strKey)
         {
             foreach (UCHorizontalListItem item in this.panList.Controls)

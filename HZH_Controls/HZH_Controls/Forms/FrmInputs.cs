@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：FrmInputs.cs
-// 创建日期：2019-08-15 16:04:41
-// 功能描述：FrmInputs
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmInputs.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +24,21 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmInputs.
+    /// Implements the <see cref="HZH_Controls.Forms.FrmWithOKCancel1" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Forms.FrmWithOKCancel1" />
     public partial class FrmInputs : FrmWithOKCancel1
     {
+        /// <summary>
+        /// Gets the values.
+        /// </summary>
+        /// <value>The values.</value>
         public string[] Values { get; private set; }
+        /// <summary>
+        /// The m mast inputs
+        /// </summary>
         private Dictionary<int, string> m_mastInputs = new Dictionary<int, string>();
         #region 构造函数
         /// <summary>
@@ -26,12 +48,14 @@ namespace HZH_Controls.Forms
         /// 任务编号:POS
         /// </summary>
         /// <param name="strTitle">窗体标题</param>
-        /// <param name="args">输入项名称</param>
+        /// <param name="inPutLabels">The in put labels.</param>
         /// <param name="inTypes">输入项对应输入类型，key:输入项名称，如不设置默认不控制输入</param>
         /// <param name="regexs">输入项对应正则规则，当imTypes=Regex时有效，key:输入项名称，如不设置默认不控制输入</param>
         /// <param name="keyBoards">文本框键盘，key:输入项名称，如不设置默认英文键盘</param>
         /// <param name="mastInputs">必填输入项名称</param>
         /// <param name="defaultValues">输入项默认值，key:输入项名称</param>
+        /// <exception cref="System.Exception">输入数量不能为空</exception>
+        /// <exception cref="Exception">输入数量不能为空</exception>
         public FrmInputs(
             string strTitle,
             string[] inPutLabels,
@@ -120,6 +144,9 @@ namespace HZH_Controls.Forms
         }
         #endregion
 
+        /// <summary>
+        /// Does the enter.
+        /// </summary>
         protected override void DoEnter()
         {
             for (int i = 0; i < Values.Length; i++)

@@ -1,13 +1,33 @@
-﻿namespace HZH_Controls.Controls
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 09-02-2019
+//
+// ***********************************************************************
+// <copyright file="UCLEDData.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCLEDData.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     partial class UCLEDData
     {
-        /// <summary> 
+        /// <summary>
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// 清理所有正在使用的资源。
         /// </summary>
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
@@ -22,7 +42,7 @@
 
         #region 组件设计器生成的代码
 
-        /// <summary> 
+        /// <summary>
         /// 设计器支持所需的方法 - 不要
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
@@ -188,16 +208,49 @@
 
         #endregion
 
+        /// <summary>
+        /// The table layout panel1
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        /// <summary>
+        /// The d1
+        /// </summary>
         private UCLEDNum D1;
+        /// <summary>
+        /// The d2
+        /// </summary>
         private UCLEDNum D2;
+        /// <summary>
+        /// The d3
+        /// </summary>
         private UCLEDNum D3;
+        /// <summary>
+        /// The d4
+        /// </summary>
         private UCLEDNum D4;
+        /// <summary>
+        /// The d5
+        /// </summary>
         private UCLEDNum D5;
+        /// <summary>
+        /// The d6
+        /// </summary>
         private UCLEDNum D6;
+        /// <summary>
+        /// The d7
+        /// </summary>
         private UCLEDNum D7;
+        /// <summary>
+        /// The d8
+        /// </summary>
         private UCLEDNum D8;
+        /// <summary>
+        /// The d9
+        /// </summary>
         private UCLEDNum D9;
+        /// <summary>
+        /// The D10
+        /// </summary>
         private UCLEDNum D10;
 
     }

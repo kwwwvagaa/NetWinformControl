@@ -1,5 +1,25 @@
-﻿namespace HZH_Controls.Controls
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="TextBoxEx.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class TextBoxEx.
+    /// Implements the <see cref="System.Windows.Forms.TextBox" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.TextBox" />
     partial class TextBoxEx
     {
         /// <summary>
@@ -7,7 +27,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// 清理所有正在使用的资源。
         /// </summary>
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>

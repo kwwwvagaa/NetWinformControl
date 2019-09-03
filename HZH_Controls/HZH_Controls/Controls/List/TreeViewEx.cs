@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：TreeViewEx.cs
-// 创建日期：2019-08-15 16:00:55
-// 功能描述：TreeView
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="TreeViewEx.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 
 using System;
 using System.Collections.Generic;
@@ -17,47 +27,113 @@ using HZH_Controls.Properties;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class TreeViewEx.
+    /// Implements the <see cref="System.Windows.Forms.TreeView" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.TreeView" />
     public partial class TreeViewEx : TreeView
     {
 
+        /// <summary>
+        /// The ws vscroll
+        /// </summary>
         private const int WS_VSCROLL = 2097152;
 
+        /// <summary>
+        /// The GWL style
+        /// </summary>
         private const int GWL_STYLE = -16;
 
+        /// <summary>
+        /// The LST tips
+        /// </summary>
         private Dictionary<string, string> _lstTips = new Dictionary<string, string>();
 
+        /// <summary>
+        /// The tip font
+        /// </summary>
         private Font _tipFont = new Font("Arial Unicode MS", 12f);
 
+        /// <summary>
+        /// The tip image
+        /// </summary>
         private Image _tipImage = Resources.tips;
 
+        /// <summary>
+        /// The is show tip
+        /// </summary>
         private bool _isShowTip = false;
 
+        /// <summary>
+        /// The is show by custom model
+        /// </summary>
         private bool _isShowByCustomModel = true;
 
+        /// <summary>
+        /// The node height
+        /// </summary>
         private int _nodeHeight = 50;
 
+        /// <summary>
+        /// The node down pic
+        /// </summary>
         private Image _nodeDownPic = Resources.list_add;
 
+        /// <summary>
+        /// The node up pic
+        /// </summary>
         private Image _nodeUpPic = Resources.list_subtract;
 
+        /// <summary>
+        /// The node background color
+        /// </summary>
         private Color _nodeBackgroundColor = Color.White;
 
+        /// <summary>
+        /// The node fore color
+        /// </summary>
         private Color _nodeForeColor = Color.FromArgb(62, 62, 62);
 
+        /// <summary>
+        /// The node is show split line
+        /// </summary>
         private bool _nodeIsShowSplitLine = false;
 
+        /// <summary>
+        /// The node split line color
+        /// </summary>
         private Color _nodeSplitLineColor = Color.FromArgb(232, 232, 232);
 
+        /// <summary>
+        /// The m node selected color
+        /// </summary>
         private Color m_nodeSelectedColor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// The m node selected fore color
+        /// </summary>
         private Color m_nodeSelectedForeColor = Color.White;
 
+        /// <summary>
+        /// The parent node can select
+        /// </summary>
         private bool _parentNodeCanSelect = true;
 
+        /// <summary>
+        /// The tree font size
+        /// </summary>
         private SizeF treeFontSize = SizeF.Empty;
 
+        /// <summary>
+        /// The BLN has v bar
+        /// </summary>
         private bool blnHasVBar = false;
 
+        /// <summary>
+        /// Gets or sets the LST tips.
+        /// </summary>
+        /// <value>The LST tips.</value>
         public Dictionary<string, string> LstTips
         {
             get
@@ -70,6 +146,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the tip font.
+        /// </summary>
+        /// <value>The tip font.</value>
         [Category("自定义属性"), Description("角标文字字体")]
         public Font TipFont
         {
@@ -83,6 +163,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the tip image.
+        /// </summary>
+        /// <value>The tip image.</value>
         [Category("自定义属性"), Description("是否显示角标")]
         public Image TipImage
         {
@@ -96,6 +180,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is show tip.
+        /// </summary>
+        /// <value><c>true</c> if this instance is show tip; otherwise, <c>false</c>.</value>
         [Category("自定义属性"), Description("是否显示角标")]
         public bool IsShowTip
         {
@@ -109,6 +197,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is show by custom model.
+        /// </summary>
+        /// <value><c>true</c> if this instance is show by custom model; otherwise, <c>false</c>.</value>
         [Category("自定义属性"), Description("使用自定义模式")]
         public bool IsShowByCustomModel
         {
@@ -122,6 +214,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the height of the node.
+        /// </summary>
+        /// <value>The height of the node.</value>
         [Category("自定义属性"), Description("节点高度（IsShowByCustomModel=true时生效）")]
         public int NodeHeight
         {
@@ -136,6 +232,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the node down pic.
+        /// </summary>
+        /// <value>The node down pic.</value>
         [Category("自定义属性"), Description("下翻图标（IsShowByCustomModel=true时生效）")]
         public Image NodeDownPic
         {
@@ -149,6 +249,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the node up pic.
+        /// </summary>
+        /// <value>The node up pic.</value>
         [Category("自定义属性"), Description("上翻图标（IsShowByCustomModel=true时生效）")]
         public Image NodeUpPic
         {
@@ -162,6 +266,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the color of the node background.
+        /// </summary>
+        /// <value>The color of the node background.</value>
         [Category("自定义属性"), Description("节点背景颜色（IsShowByCustomModel=true时生效）")]
         public Color NodeBackgroundColor
         {
@@ -175,6 +283,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the color of the node fore.
+        /// </summary>
+        /// <value>The color of the node fore.</value>
         [Category("自定义属性"), Description("节点字体颜色（IsShowByCustomModel=true时生效）")]
         public Color NodeForeColor
         {
@@ -188,6 +300,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [node is show split line].
+        /// </summary>
+        /// <value><c>true</c> if [node is show split line]; otherwise, <c>false</c>.</value>
         [Category("自定义属性"), Description("节点是否显示分割线（IsShowByCustomModel=true时生效）")]
         public bool NodeIsShowSplitLine
         {
@@ -201,6 +317,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the color of the node split line.
+        /// </summary>
+        /// <value>The color of the node split line.</value>
         [Category("自定义属性"), Description("节点分割线颜色（IsShowByCustomModel=true时生效）")]
         public Color NodeSplitLineColor
         {
@@ -214,6 +334,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the color of the node selected.
+        /// </summary>
+        /// <value>The color of the node selected.</value>
         [Category("自定义属性"), Description("选中节点背景颜色（IsShowByCustomModel=true时生效）")]
         public Color NodeSelectedColor
         {
@@ -227,6 +351,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the color of the node selected fore.
+        /// </summary>
+        /// <value>The color of the node selected fore.</value>
         [Category("自定义属性"), Description("选中节点字体颜色（IsShowByCustomModel=true时生效）")]
         public Color NodeSelectedForeColor
         {
@@ -240,6 +368,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [parent node can select].
+        /// </summary>
+        /// <value><c>true</c> if [parent node can select]; otherwise, <c>false</c>.</value>
         [Category("自定义属性"), Description("父节点是否可选中")]
         public bool ParentNodeCanSelect
         {
@@ -252,6 +384,9 @@ namespace HZH_Controls.Controls
                 this._parentNodeCanSelect = value;
             }
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TreeViewEx" /> class.
+        /// </summary>
         public TreeViewEx()
         {
             base.HideSelection = false;
@@ -268,6 +403,10 @@ namespace HZH_Controls.Controls
             this.BorderStyle = System.Windows.Forms.BorderStyle.None;
             DoubleBuffered = true;
         }
+        /// <summary>
+        /// 重写 <see cref="M:System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message@)" />。
+        /// </summary>
+        /// <param name="m">要处理的 Windows<see cref="T:System.Windows.Forms.Message" />。</param>
         protected override void WndProc(ref Message m)
         {
 
@@ -278,6 +417,11 @@ namespace HZH_Controls.Controls
             base.WndProc(ref m);
 
         }
+        /// <summary>
+        /// Handles the AfterSelect event of the TreeViewEx control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TreeViewEventArgs" /> instance containing the event data.</param>
         private void TreeViewEx_AfterSelect(object sender, TreeViewEventArgs e)
         {
             try
@@ -300,11 +444,21 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the TreeViewEx control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void TreeViewEx_SizeChanged(object sender, EventArgs e)
         {
             this.Refresh();
         }
 
+        /// <summary>
+        /// Handles the NodeMouseClick event of the TreeViewEx control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TreeNodeMouseClickEventArgs" /> instance containing the event data.</param>
         private void TreeViewEx_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             try
@@ -343,6 +497,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the DrawNode event of the treeview control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DrawTreeNodeEventArgs" /> instance containing the event data.</param>
         private void treeview_DrawNode(object sender, DrawTreeNodeEventArgs e)
         {
             try
@@ -425,6 +584,12 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets the size of the font.
+        /// </summary>
+        /// <param name="font">The font.</param>
+        /// <param name="g">The g.</param>
+        /// <returns>SizeF.</returns>
         private SizeF GetFontSize(Font font, Graphics g = null)
         {
             SizeF result;
@@ -450,9 +615,19 @@ namespace HZH_Controls.Controls
             return result;
         }
 
+        /// <summary>
+        /// Gets the window long.
+        /// </summary>
+        /// <param name="hwnd">The HWND.</param>
+        /// <param name="nIndex">Index of the n.</param>
+        /// <returns>System.Int32.</returns>
         [DllImport("user32", CharSet = CharSet.Auto)]
         private static extern int GetWindowLong(IntPtr hwnd, int nIndex);
 
+        /// <summary>
+        /// Determines whether [is vertical scroll bar visible].
+        /// </summary>
+        /// <returns><c>true</c> if [is vertical scroll bar visible]; otherwise, <c>false</c>.</returns>
         private bool IsVerticalScrollBarVisible()
         {
             return base.IsHandleCreated && (TreeViewEx.GetWindowLong(base.Handle, -16) & 2097152) != 0;

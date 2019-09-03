@@ -1,13 +1,33 @@
-﻿namespace HZH_Controls.Controls
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCDateTimeSelectPan.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCDateTimeSelectPan.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCDateTimeSelectPan
     {
-        /// <summary> 
+        /// <summary>
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// 清理所有正在使用的资源。
         /// </summary>
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
@@ -22,7 +42,7 @@
 
         #region 组件设计器生成的代码
 
-        /// <summary> 
+        /// <summary>
         /// 设计器支持所需的方法 - 不要
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
@@ -399,25 +419,85 @@
 
         #endregion
 
+        /// <summary>
+        /// The panel1
+        /// </summary>
         private System.Windows.Forms.Panel panel1;
+        /// <summary>
+        /// The uc split line h1
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H1;
+        /// <summary>
+        /// The panel2
+        /// </summary>
         private System.Windows.Forms.Panel panel2;
+        /// <summary>
+        /// The uc split line h2
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H2;
+        /// <summary>
+        /// The pan mian
+        /// </summary>
         private System.Windows.Forms.Panel panMian;
+        /// <summary>
+        /// The BTN minute
+        /// </summary>
         private UCBtnExt btnMinute;
+        /// <summary>
+        /// The BTN day
+        /// </summary>
         private UCBtnExt btnDay;
+        /// <summary>
+        /// The BTN hour
+        /// </summary>
         private UCBtnExt btnHour;
+        /// <summary>
+        /// The BTN month
+        /// </summary>
         private UCBtnExt btnMonth;
+        /// <summary>
+        /// The BTN year
+        /// </summary>
         private UCBtnExt btnYear;
+        /// <summary>
+        /// The pan time
+        /// </summary>
         private UCTimePanel panTime;
+        /// <summary>
+        /// The BTN cancel
+        /// </summary>
         private UCBtnExt btnCancel;
+        /// <summary>
+        /// The BTN ok
+        /// </summary>
         private UCBtnExt btnOk;
+        /// <summary>
+        /// The pan right
+        /// </summary>
         private System.Windows.Forms.Panel panRight;
+        /// <summary>
+        /// The pan left
+        /// </summary>
         private System.Windows.Forms.Panel panLeft;
+        /// <summary>
+        /// The SP4
+        /// </summary>
         private System.Windows.Forms.Panel sp4;
+        /// <summary>
+        /// The SP3
+        /// </summary>
         private System.Windows.Forms.Panel sp3;
+        /// <summary>
+        /// The SP2
+        /// </summary>
         private System.Windows.Forms.Panel sp2;
+        /// <summary>
+        /// The SP1
+        /// </summary>
         private System.Windows.Forms.Panel sp1;
+        /// <summary>
+        /// The panel3
+        /// </summary>
         private System.Windows.Forms.Panel panel3;
 
     }

@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：FrmAnchor.cs
-// 创建日期：2019-08-15 16:04:24
-// 功能描述：FrmAnchor
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmAnchor.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 
 using System;
 using System.Collections.Generic;
@@ -21,13 +31,30 @@ namespace HZH_Controls.Forms
     /// 创建日期:2019-02-27 11:49:03
     /// 任务编号:POS
     /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
+    /// <seealso cref="System.Windows.Forms.IMessageFilter" />
     public partial class FrmAnchor : Form, IMessageFilter
     {
 
+        /// <summary>
+        /// The m parent control
+        /// </summary>
         Control m_parentControl = null;
+        /// <summary>
+        /// The BLN down
+        /// </summary>
         private bool blnDown = true;
+        /// <summary>
+        /// The m size
+        /// </summary>
         Size m_size;
+        /// <summary>
+        /// The m deviation
+        /// </summary>
         Point? m_deviation;
+        /// <summary>
+        /// The m is not focus
+        /// </summary>
         bool m_isNotFocus = true;
         #region 构造函数
         /// <summary>
@@ -66,6 +93,13 @@ namespace HZH_Controls.Forms
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FrmAnchor" /> class.
+        /// </summary>
+        /// <param name="parentControl">The parent control.</param>
+        /// <param name="size">The size.</param>
+        /// <param name="deviation">The deviation.</param>
+        /// <param name="isNotFocus">if set to <c>true</c> [is not focus].</param>
         public FrmAnchor(Control parentControl, Size size, Point? deviation = null, bool isNotFocus = true)
         {
             m_isNotFocus = isNotFocus;
@@ -79,17 +113,32 @@ namespace HZH_Controls.Forms
             m_deviation = deviation;           
         }
 
+        /// <summary>
+        /// Handles the LocationChanged event of the frmP control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void frmP_LocationChanged(object sender, EventArgs e)
         {
             this.Hide();
         }
         #endregion
 
+        /// <summary>
+        /// Handles the HandleDestroyed event of the FrmDownBoard control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmDownBoard_HandleDestroyed(object sender, EventArgs e)
         {
             Application.RemoveMessageFilter(this);
         }
 
+        /// <summary>
+        /// Handles the HandleCreated event of the FrmDownBoard control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmDownBoard_HandleCreated(object sender, EventArgs e)
         {
             Application.AddMessageFilter(this);
@@ -97,14 +146,41 @@ namespace HZH_Controls.Forms
 
         #region 无焦点窗体
 
+        /// <summary>
+        /// Sets the active window.
+        /// </summary>
+        /// <param name="handle">The handle.</param>
+        /// <returns>IntPtr.</returns>
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private extern static IntPtr SetActiveWindow(IntPtr handle);
+        /// <summary>
+        /// The wm activate
+        /// </summary>
         private const int WM_ACTIVATE = 0x006;
+        /// <summary>
+        /// The wm activateapp
+        /// </summary>
         private const int WM_ACTIVATEAPP = 0x01C;
+        /// <summary>
+        /// The wm ncactivate
+        /// </summary>
         private const int WM_NCACTIVATE = 0x086;
+        /// <summary>
+        /// The wa inactive
+        /// </summary>
         private const int WA_INACTIVE = 0;
+        /// <summary>
+        /// The wm mouseactivate
+        /// </summary>
         private const int WM_MOUSEACTIVATE = 0x21;
+        /// <summary>
+        /// The ma noactivate
+        /// </summary>
         private const int MA_NOACTIVATE = 3;
+        /// <summary>
+        /// WNDs the proc.
+        /// </summary>
+        /// <param name="m">要处理的 Windows <see cref="T:System.Windows.Forms.Message" />。</param>
         protected override void WndProc(ref Message m)
         {
             if (m_isNotFocus)
@@ -134,6 +210,11 @@ namespace HZH_Controls.Forms
 
         #endregion
 
+        /// <summary>
+        /// 在调度消息之前将其筛选出来。
+        /// </summary>
+        /// <param name="m">要调度的消息。无法修改此消息。</param>
+        /// <returns>如果筛选消息并禁止消息被调度，则为 true；如果允许消息继续到达下一个筛选器或控件，则为 false。</returns>
         public bool PreFilterMessage(ref Message m)
         {
             if (m.Msg != 0x0201 || this.Visible == false)
@@ -143,12 +224,22 @@ namespace HZH_Controls.Forms
             return false;
         }
 
+        /// <summary>
+        /// Handles the Load event of the FrmAnchor control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmAnchor_Load(object sender, EventArgs e)
         {
 
         }
 
 
+        /// <summary>
+        /// Handles the VisibleChanged event of the FrmAnchor control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmAnchor_VisibleChanged(object sender, EventArgs e)
         {
             timer1.Enabled = this.Visible;
@@ -186,6 +277,11 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Handles the Tick event of the timer1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (this.Owner != null)

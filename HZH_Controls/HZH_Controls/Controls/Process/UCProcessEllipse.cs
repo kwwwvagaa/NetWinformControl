@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCProcessEllipse.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:04:30
-// 功能描述：UCProcessEllipse    English:UCProcessEllipse
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-17-2019
+//
+// ***********************************************************************
+// <copyright file="UCProcessEllipse.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,15 +25,27 @@ using System.Drawing.Drawing2D;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCProcessEllipse.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCProcessEllipse : UserControl
     {
+        /// <summary>
+        /// Occurs when [value changed].
+        /// </summary>
         [Description("值改变事件"), Category("自定义")]
         public event EventHandler ValueChanged;
 
+        /// <summary>
+        /// The m back ellipse color
+        /// </summary>
         private Color m_backEllipseColor = Color.FromArgb(228, 231, 237);
         /// <summary>
         /// 圆背景色
         /// </summary>
+        /// <value>The color of the back ellipse.</value>
         [Description("圆背景色"), Category("自定义")]
         public Color BackEllipseColor
         {
@@ -38,10 +57,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m core ellipse color
+        /// </summary>
         private Color m_coreEllipseColor = Color.FromArgb(228, 231, 237);
         /// <summary>
         /// 内圆颜色，ShowType=Ring 有效
         /// </summary>
+        /// <value>The color of the core ellipse.</value>
         [Description("内圆颜色，ShowType=Ring 有效"), Category("自定义")]
         public Color CoreEllipseColor
         {
@@ -53,8 +76,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m value color
+        /// </summary>
         private Color m_valueColor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the value.
+        /// </summary>
+        /// <value>The color of the value.</value>
         [Description("值圆颜色"), Category("自定义")]
         public Color ValueColor
         {
@@ -66,10 +96,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m is show core ellipse border
+        /// </summary>
         private bool m_isShowCoreEllipseBorder = true;
         /// <summary>
         /// 内圆是否显示边框，ShowType=Ring 有效
         /// </summary>
+        /// <value><c>true</c> if this instance is show core ellipse border; otherwise, <c>false</c>.</value>
         [Description("内圆是否显示边框，ShowType=Ring 有效"), Category("自定义")]
         public bool IsShowCoreEllipseBorder
         {
@@ -81,10 +115,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m value type
+        /// </summary>
         private ValueType m_valueType = ValueType.Percent;
         /// <summary>
         /// 值文字类型
         /// </summary>
+        /// <value>The type of the value.</value>
         [Description("值文字类型"), Category("自定义")]
         public ValueType ValueType
         {
@@ -96,10 +134,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m value width
+        /// </summary>
         private int m_valueWidth = 30;
         /// <summary>
         /// 外圆值宽度
         /// </summary>
+        /// <value>The width of the value.</value>
         [Description("外圆值宽度，ShowType=Ring 有效"), Category("自定义")]
         public int ValueWidth
         {
@@ -113,10 +155,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m value margin
+        /// </summary>
         private int m_valueMargin = 5;
         /// <summary>
         /// 外圆值间距
         /// </summary>
+        /// <value>The value margin.</value>
         [Description("外圆值间距"), Category("自定义")]
         public int ValueMargin
         {
@@ -130,10 +176,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m maximum value
+        /// </summary>
         private int m_maxValue = 100;
         /// <summary>
         /// 最大值
         /// </summary>
+        /// <value>The maximum value.</value>
         [Description("最大值"), Category("自定义")]
         public int MaxValue
         {
@@ -147,10 +197,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m value
+        /// </summary>
         private int m_value = 0;
         /// <summary>
         /// 当前值
         /// </summary>
+        /// <value>The value.</value>
         [Description("当前值"), Category("自定义")]
         public int Value
         {
@@ -167,7 +221,20 @@ namespace HZH_Controls.Controls
                 Refresh();
             }
         }
+        /// <summary>
+        /// The m font
+        /// </summary>
         private Font m_font = new Font("Arial Unicode MS", 20);
+        /// <summary>
+        /// 获取或设置控件显示的文字的字体。
+        /// </summary>
+        /// <value>The font.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Description("文字字体"), Category("自定义")]
         public override Font Font
         {
@@ -181,7 +248,17 @@ namespace HZH_Controls.Controls
                 Refresh();
             }
         }
+        /// <summary>
+        /// The m fore color
+        /// </summary>
         Color m_foreColor = Color.White;
+        /// <summary>
+        /// 获取或设置控件的前景色。
+        /// </summary>
+        /// <value>The color of the fore.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Description("文字颜色"), Category("自定义")]
         public override Color ForeColor
         {
@@ -196,8 +273,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m show type
+        /// </summary>
         private ShowType m_showType = ShowType.Ring;
 
+        /// <summary>
+        /// Gets or sets the type of the show.
+        /// </summary>
+        /// <value>The type of the show.</value>
         [Description("显示类型"), Category("自定义")]
         public ShowType ShowType
         {
@@ -209,6 +293,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCProcessEllipse" /> class.
+        /// </summary>
         public UCProcessEllipse()
         {
             InitializeComponent();
@@ -220,6 +307,10 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.UserPaint, true);
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -276,6 +367,9 @@ namespace HZH_Controls.Controls
         }
     }
 
+    /// <summary>
+    /// Enum ValueType
+    /// </summary>
     public enum ValueType
     {
         /// <summary>
@@ -288,6 +382,9 @@ namespace HZH_Controls.Controls
         Absolute
     }
 
+    /// <summary>
+    /// Enum ShowType
+    /// </summary>
     public enum ShowType
     {
         /// <summary>

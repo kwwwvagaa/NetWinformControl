@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCListViewItem.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:03:51
-// 功能描述：UCListViewItem    English:UCListViewItem
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-22-2019
+//
+// ***********************************************************************
+// <copyright file="UCListViewItem.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +24,24 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCListViewItem.
+    /// Implements the <see cref="HZH_Controls.Controls.UCControlBase" />
+    /// Implements the <see cref="HZH_Controls.Controls.IListViewItem" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCControlBase" />
+    /// <seealso cref="HZH_Controls.Controls.IListViewItem" />
     [ToolboxItem(false)]
     public partial class UCListViewItem : UCControlBase, IListViewItem
     {
+        /// <summary>
+        /// The m data source
+        /// </summary>
         private object m_dataSource;
+        /// <summary>
+        /// 数据源
+        /// </summary>
+        /// <value>The data source.</value>
         public object DataSource
         {
             get
@@ -34,13 +55,24 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 选中项事件
+        /// </summary>
         public event EventHandler SelectedItemEvent;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCListViewItem" /> class.
+        /// </summary>
         public UCListViewItem()
         {
             InitializeComponent();
             lblTitle.MouseDown += lblTitle_MouseDown;
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the lblTitle control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void lblTitle_MouseDown(object sender, MouseEventArgs e)
         {
             if (SelectedItemEvent != null)
@@ -49,6 +81,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Sets the selected.
+        /// </summary>
+        /// <param name="blnSelected">if set to <c>true</c> [BLN selected].</param>
         public void SetSelected(bool blnSelected)
         {
             if (blnSelected)

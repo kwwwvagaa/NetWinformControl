@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCListExt.cs
-// 创建日期：2019-08-15 16:01:22
-// 功能描述：List
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCListExt.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,17 +24,36 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCListExt.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     [DefaultEvent("ItemClick")]
     public partial class UCListExt : UserControl
     {
+        /// <summary>
+        /// The title font
+        /// </summary>
         private Font _titleFont = new Font("微软雅黑", 15F);
+        /// <summary>
+        /// Gets or sets the title font.
+        /// </summary>
+        /// <value>The title font.</value>
         [Description("标题字体"), Category("自定义")]
         public Font TitleFont
         {
             get { return _titleFont; }
             set { _titleFont = value; }
         }
+        /// <summary>
+        /// The title2 font
+        /// </summary>
         private Font _title2Font = new Font("微软雅黑", 14F);
+        /// <summary>
+        /// Gets or sets the title2 font.
+        /// </summary>
+        /// <value>The title2 font.</value>
         [Description("副标题字体"), Category("自定义")]
         public Font Title2Font
         {
@@ -32,7 +61,14 @@ namespace HZH_Controls.Controls
             set { _title2Font = value; }
         }
 
+        /// <summary>
+        /// The item back color
+        /// </summary>
         private Color _itemBackColor = Color.White;
+        /// <summary>
+        /// Gets or sets the color of the item back.
+        /// </summary>
+        /// <value>The color of the item back.</value>
         [Description("标题背景色"), Category("自定义")]
         public Color ItemBackColor
         {
@@ -40,8 +76,15 @@ namespace HZH_Controls.Controls
             set { _itemBackColor = value; }
         }
 
+        /// <summary>
+        /// The item selected back color
+        /// </summary>
         private Color _itemSelectedBackColor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the item selected back.
+        /// </summary>
+        /// <value>The color of the item selected back.</value>
         [Description("标题选中背景色"), Category("自定义")]
         public Color ItemSelectedBackColor
         {
@@ -49,32 +92,60 @@ namespace HZH_Controls.Controls
             set { _itemSelectedBackColor = value; }
         }
 
+        /// <summary>
+        /// The item fore color
+        /// </summary>
         private Color _itemForeColor = Color.Black;
 
+        /// <summary>
+        /// Gets or sets the color of the item fore.
+        /// </summary>
+        /// <value>The color of the item fore.</value>
         [Description("标题文本色"), Category("自定义")]
         public Color ItemForeColor
         {
             get { return _itemForeColor; }
             set { _itemForeColor = value; }
         }
+        /// <summary>
+        /// The item selected fore color
+        /// </summary>
         private Color _itemSelectedForeColor = Color.White;
 
+        /// <summary>
+        /// Gets or sets the color of the item selected fore.
+        /// </summary>
+        /// <value>The color of the item selected fore.</value>
         [Description("标题选中文本色"), Category("自定义")]
         public Color ItemSelectedForeColor
         {
             get { return _itemSelectedForeColor; }
             set { _itemSelectedForeColor = value; }
         }
+        /// <summary>
+        /// The item fore color2
+        /// </summary>
         private Color _itemForeColor2 = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the item fore color2.
+        /// </summary>
+        /// <value>The item fore color2.</value>
         [Description("副标题文本色"), Category("自定义")]
         public Color ItemForeColor2
         {
             get { return _itemForeColor2; }
             set { _itemForeColor2 = value; }
         }
+        /// <summary>
+        /// The item selected fore color2
+        /// </summary>
         private Color _itemSelectedForeColor2 = Color.White;
 
+        /// <summary>
+        /// Gets or sets the item selected fore color2.
+        /// </summary>
+        /// <value>The item selected fore color2.</value>
         [Description("副标题选中文本色"), Category("自定义")]
         public Color ItemSelectedForeColor2
         {
@@ -82,8 +153,15 @@ namespace HZH_Controls.Controls
             set { _itemSelectedForeColor2 = value; }
         }
 
+        /// <summary>
+        /// The item height
+        /// </summary>
         private int _itemHeight = 60;
 
+        /// <summary>
+        /// Gets or sets the height of the item.
+        /// </summary>
+        /// <value>The height of the item.</value>
         [Description("项高度"), Category("自定义")]
         public int ItemHeight
         {
@@ -91,18 +169,39 @@ namespace HZH_Controls.Controls
             set { _itemHeight = value; }
         }
 
+        /// <summary>
+        /// The automatic select first
+        /// </summary>
         private bool _autoSelectFirst = true;
+        /// <summary>
+        /// Gets or sets a value indicating whether [automatic select first].
+        /// </summary>
+        /// <value><c>true</c> if [automatic select first]; otherwise, <c>false</c>.</value>
         [Description("自动选中第一项"), Category("自定义")]
         public bool AutoSelectFirst
         {
             get { return _autoSelectFirst; }
             set { _autoSelectFirst = value; }
         }
+        /// <summary>
+        /// Delegate ItemClickEvent
+        /// </summary>
+        /// <param name="item">The item.</param>
         public delegate void ItemClickEvent(UCListItemExt item);
+        /// <summary>
+        /// Occurs when [item click].
+        /// </summary>
         [Description("选中项事件"), Category("自定义")]
         public event ItemClickEvent ItemClick;
 
+        /// <summary>
+        /// The selected can click
+        /// </summary>
         private bool _selectedCanClick = false;
+        /// <summary>
+        /// Gets or sets a value indicating whether [selected can click].
+        /// </summary>
+        /// <value><c>true</c> if [selected can click]; otherwise, <c>false</c>.</value>
         [Description("选中后是否可以再次触发点击事件"), Category("自定义")]
         public bool SelectedCanClick
         {
@@ -113,11 +212,18 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 选中的节点
         /// </summary>
+        /// <value>The select item.</value>
         public UCListItemExt SelectItem
         {
             get { return _current; }
         }
+        /// <summary>
+        /// The current
+        /// </summary>
         UCListItemExt _current = null;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCListExt" /> class.
+        /// </summary>
         public UCListExt()
         {
             InitializeComponent();
@@ -125,6 +231,10 @@ namespace HZH_Controls.Controls
             this.UpdateStyles();
         }
 
+        /// <summary>
+        /// Sets the list.
+        /// </summary>
+        /// <param name="lst">The LST.</param>
         public void SetList(List<ListEntity> lst)
         {
             try
@@ -170,6 +280,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Selects the label.
+        /// </summary>
+        /// <param name="li">The li.</param>
         private void SelectLabel(UCListItemExt li)
         {
             try
@@ -211,22 +325,27 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 编码，唯一值
         /// </summary>
+        /// <value>The identifier.</value>
         public string ID { get; set; }
         /// <summary>
         /// 大标题
         /// </summary>
+        /// <value>The title.</value>
         public string Title { get; set; }
         /// <summary>
         /// 右侧更多按钮
         /// </summary>
+        /// <value><c>true</c> if [show more BTN]; otherwise, <c>false</c>.</value>
         public bool ShowMoreBtn { get; set; }
         /// <summary>
         /// 右侧副标题
         /// </summary>
+        /// <value>The title2.</value>
         public string Title2 { get; set; }
         /// <summary>
         /// 关联的数据源
         /// </summary>
+        /// <value>The source.</value>
         public object Source { get; set; }
     }
 }

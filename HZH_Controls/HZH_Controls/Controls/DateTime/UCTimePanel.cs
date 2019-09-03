@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCTimePanel.cs
-// 创建日期：2019-08-15 15:59:56
-// 功能描述：DateTime
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCTimePanel.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +25,32 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCTimePanel.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     [ToolboxItem(false)]
     public partial class UCTimePanel : UserControl
     {
+        /// <summary>
+        /// Occurs when [select source event].
+        /// </summary>
         public event EventHandler SelectSourceEvent;
+        /// <summary>
+        /// The source
+        /// </summary>
         private List<KeyValuePair<string, string>> source = null;
+        /// <summary>
+        /// Gets or sets a value indicating whether [first event].
+        /// </summary>
+        /// <value><c>true</c> if [first event]; otherwise, <c>false</c>.</value>
         public bool FirstEvent { get; set; }
 
+        /// <summary>
+        /// Gets or sets the source.
+        /// </summary>
+        /// <value>The source.</value>
         public List<KeyValuePair<string, string>> Source
         {
             get { return source; }
@@ -32,8 +61,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The is show border
+        /// </summary>
         private bool _IsShowBorder = false;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is show border.
+        /// </summary>
+        /// <value><c>true</c> if this instance is show border; otherwise, <c>false</c>.</value>
         public bool IsShowBorder
         {
             get { return _IsShowBorder; }
@@ -47,10 +83,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The select BTN
+        /// </summary>
         UCBtnExt selectBtn;
         /// <summary>
         /// 选中按钮
         /// </summary>
+        /// <value>The select BTN.</value>
         public UCBtnExt SelectBtn
         {
             get { return selectBtn; }
@@ -74,19 +114,34 @@ namespace HZH_Controls.Controls
                 }
             }
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCTimePanel" /> class.
+        /// </summary>
         public UCTimePanel()
         {
             InitializeComponent();
             this.SizeChanged += UCTimePanel_SizeChanged;
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the UCTimePanel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCTimePanel_SizeChanged(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// The row
+        /// </summary>
         private int row = 0;
 
+        /// <summary>
+        /// Gets or sets the row.
+        /// </summary>
+        /// <value>The row.</value>
         public int Row
         {
             get { return row; }
@@ -98,8 +153,15 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// The column
+        /// </summary>
         private int column = 0;
 
+        /// <summary>
+        /// Gets or sets the column.
+        /// </summary>
+        /// <value>The column.</value>
         public int Column
         {
             get { return column; }
@@ -110,6 +172,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the Load event of the UCTimePanel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void UCTimePanel_Load(object sender, EventArgs e)
         {
 
@@ -158,7 +225,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 设置选中项
         /// </summary>
-        /// <param name="strKey"></param>
+        /// <param name="strKey">The string key.</param>
         public void SetSelect(string strKey)
         {
             foreach (UCBtnExt item in this.panMain.Controls)
@@ -234,6 +301,11 @@ namespace HZH_Controls.Controls
         }
         #endregion
 
+        /// <summary>
+        /// Handles the BtnClick event of the btn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void btn_BtnClick(object sender, EventArgs e)
         {
             var btn = (UCBtnExt)sender;

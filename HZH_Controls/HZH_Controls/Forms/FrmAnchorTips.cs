@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：FrmAnchorTips.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:06:09
-// 功能描述：FrmAnchorTips    English:FrmAnchorTips
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-29-2019
+//
+// ***********************************************************************
+// <copyright file="FrmAnchorTips.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,10 +26,22 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmAnchorTips.
+    /// Implements the <see cref="System.Windows.Forms.Form" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class FrmAnchorTips : Form
     {
+        /// <summary>
+        /// The m string MSG
+        /// </summary>
         private string m_strMsg = string.Empty;
 
+        /// <summary>
+        /// Gets or sets the string MSG.
+        /// </summary>
+        /// <value>The string MSG.</value>
         public string StrMsg
         {
             get { return m_strMsg; }
@@ -34,8 +53,18 @@ namespace HZH_Controls.Forms
                 ResetForm(value);
             }
         }
+        /// <summary>
+        /// The have handle
+        /// </summary>
         bool haveHandle = false;
+        /// <summary>
+        /// The m rect control
+        /// </summary>
         Rectangle m_rectControl;
+        /// <summary>
+        /// Gets or sets the rect control.
+        /// </summary>
+        /// <value>The rect control.</value>
         public Rectangle RectControl
         {
             get { return m_rectControl; }
@@ -44,24 +73,33 @@ namespace HZH_Controls.Forms
                 m_rectControl = value;
             }
         }
+        /// <summary>
+        /// The m location
+        /// </summary>
         AnchorTipsLocation m_location;
+        /// <summary>
+        /// The m background
+        /// </summary>
         Color? m_background = null;
+        /// <summary>
+        /// The m fore color
+        /// </summary>
         Color? m_foreColor = null;
+        /// <summary>
+        /// The m font size
+        /// </summary>
         int m_fontSize = 10;
         #region 构造函数    English:Constructor
         /// <summary>
-        /// 功能描述:构造函数    English:Constructor
-        /// 作　　者:HZH
-        /// 创建日期:2019-08-29 15:27:51
-        /// 任务编号:
+        /// Initializes a new instance of the <see cref="FrmAnchorTips"/> class.
         /// </summary>
-        /// <param name="rectControl">停靠区域</param>
-        /// <param name="strMsg">消息</param>
-        /// <param name="location">显示方位</param>
-        /// <param name="background">背景色</param>
-        /// <param name="foreColor">文字颜色</param>
-        /// <param name="fontSize">文字大小</param>
-        /// <param name="autoCloseTime">自动关闭时间，当<=0时不自动关闭</param>
+        /// <param name="rectControl">The rect control.</param>
+        /// <param name="strMsg">The string MSG.</param>
+        /// <param name="location">The location.</param>
+        /// <param name="background">The background.</param>
+        /// <param name="foreColor">Color of the fore.</param>
+        /// <param name="fontSize">Size of the font.</param>
+        /// <param name="autoCloseTime">The automatic close time.</param>
         private FrmAnchorTips(
             Rectangle rectControl,
             string strMsg,
@@ -90,6 +128,10 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Resets the form.
+        /// </summary>
+        /// <param name="strMsg">The string MSG.</param>
         private void ResetForm(string strMsg)
         {
             Graphics g = this.CreateGraphics();
@@ -212,19 +254,17 @@ namespace HZH_Controls.Forms
 
         #region 显示一个提示    English:Show a hint
         /// <summary>
-        /// 功能描述:显示一个提示    English:Show a hint
-        /// 作　　者:HZH
-        /// 创建日期:2019-08-29 15:28:58
-        /// 任务编号:
+        /// Shows the tips.
         /// </summary>
-        /// <param name="parentControl">停靠控件</param>
-        /// <param name="strMsg">消息</param>
-        /// <param name="location">显示方位</param>
-        /// <param name="background">背景色</param>
-        /// <param name="foreColor">文字颜色</param>
-        /// <param name="deviation">偏移量</param>
-        /// <param name="fontSize">文字大小</param>
-        /// <param name="autoCloseTime">自动关闭时间，当<=0时不自动关闭</param>
+        /// <param name="parentControl">The parent control.</param>
+        /// <param name="strMsg">The string MSG.</param>
+        /// <param name="location">The location.</param>
+        /// <param name="background">The background.</param>
+        /// <param name="foreColor">Color of the fore.</param>
+        /// <param name="deviation">The deviation.</param>
+        /// <param name="fontSize">Size of the font.</param>
+        /// <param name="autoCloseTime">The automatic close time.</param>
+        /// <returns>FrmAnchorTips.</returns>
         public static FrmAnchorTips ShowTips(
             Control parentControl,
             string strMsg,
@@ -254,19 +294,16 @@ namespace HZH_Controls.Forms
 
         #region 显示一个提示    English:Show a hint
         /// <summary>
-        /// 功能描述:显示一个提示    English:Show a hint
-        /// 作　　者:HZH
-        /// 创建日期:2019-08-29 15:29:07
-        /// 任务编号:
+        /// Shows the tips.
         /// </summary>
-        /// <param name="rectControl">停靠区域</param>
-        /// <param name="strMsg">消息</param>
-        /// <param name="location">显示方位</param>
-        /// <param name="background">背景色</param>
-        /// <param name="foreColor">文字颜色</param>
-        /// <param name="fontSize">文字大小</param>
-        /// <param name="autoCloseTime">自动关闭时间，当<=0时不自动关闭</param>
-        /// <returns>返回值</returns>
+        /// <param name="rectControl">The rect control.</param>
+        /// <param name="strMsg">The string MSG.</param>
+        /// <param name="location">The location.</param>
+        /// <param name="background">The background.</param>
+        /// <param name="foreColor">Color of the fore.</param>
+        /// <param name="fontSize">Size of the font.</param>
+        /// <param name="autoCloseTime">The automatic close time.</param>
+        /// <returns>FrmAnchorTips.</returns>
         public static FrmAnchorTips ShowTips(
             Rectangle rectControl,
             string strMsg,
@@ -285,6 +322,10 @@ namespace HZH_Controls.Forms
 
         #region Override
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Form.Closing" /> 事件。
+        /// </summary>
+        /// <param name="e">一个包含事件数据的 <see cref="T:System.ComponentModel.CancelEventArgs" />。</param>
         protected override void OnClosing(CancelEventArgs e)
         {
             e.Cancel = true;
@@ -293,6 +334,10 @@ namespace HZH_Controls.Forms
             this.Dispose();
         }
 
+        /// <summary>
+        /// Handles the <see cref="E:HandleCreated" /> event.
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
         protected override void OnHandleCreated(EventArgs e)
         {
             InitializeStyles();
@@ -300,6 +345,10 @@ namespace HZH_Controls.Forms
             haveHandle = true;
         }
 
+        /// <summary>
+        /// Gets the create parameters.
+        /// </summary>
+        /// <value>The create parameters.</value>
         protected override CreateParams CreateParams
         {
             get
@@ -312,6 +361,9 @@ namespace HZH_Controls.Forms
 
         #endregion
 
+        /// <summary>
+        /// Initializes the styles.
+        /// </summary>
         private void InitializeStyles()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
@@ -327,6 +379,8 @@ namespace HZH_Controls.Forms
         /// 任务编号:
         /// </summary>
         /// <param name="bitmap">bitmap</param>
+        /// <exception cref="System.ApplicationException">The picture must be 32bit picture with alpha channel.</exception>
+        /// <exception cref="ApplicationException">The picture must be 32bit picture with alpha channel.</exception>
         private void SetBits(Bitmap bitmap)
         {
             if (!haveHandle) return;
@@ -371,14 +425,41 @@ namespace HZH_Controls.Forms
 
         #region 无焦点窗体处理
 
+        /// <summary>
+        /// Sets the active window.
+        /// </summary>
+        /// <param name="handle">The handle.</param>
+        /// <returns>IntPtr.</returns>
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private extern static IntPtr SetActiveWindow(IntPtr handle);
+        /// <summary>
+        /// The wm activate
+        /// </summary>
         private const int WM_ACTIVATE = 0x006;
+        /// <summary>
+        /// The wm activateapp
+        /// </summary>
         private const int WM_ACTIVATEAPP = 0x01C;
+        /// <summary>
+        /// The wm ncactivate
+        /// </summary>
         private const int WM_NCACTIVATE = 0x086;
+        /// <summary>
+        /// The wa inactive
+        /// </summary>
         private const int WA_INACTIVE = 0;
+        /// <summary>
+        /// The wm mouseactivate
+        /// </summary>
         private const int WM_MOUSEACTIVATE = 0x21;
+        /// <summary>
+        /// The ma noactivate
+        /// </summary>
         private const int MA_NOACTIVATE = 3;
+        /// <summary>
+        /// WNDs the proc.
+        /// </summary>
+        /// <param name="m">要处理的 Windows <see cref="T:System.Windows.Forms.Message" />。</param>
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == WM_MOUSEACTIVATE)
@@ -406,22 +487,54 @@ namespace HZH_Controls.Forms
         #endregion
     }
 
+    /// <summary>
+    /// Enum AnchorTipsLocation
+    /// </summary>
     public enum AnchorTipsLocation
     {
+        /// <summary>
+        /// The left
+        /// </summary>
         LEFT,
+        /// <summary>
+        /// The top
+        /// </summary>
         TOP,
+        /// <summary>
+        /// The right
+        /// </summary>
         RIGHT,
+        /// <summary>
+        /// The bottom
+        /// </summary>
         BOTTOM
     }
 
+    /// <summary>
+    /// Class Win32.
+    /// </summary>
     class Win32
     {
+        /// <summary>
+        /// Struct Size
+        /// </summary>
         [StructLayout(LayoutKind.Sequential)]
         public struct Size
         {
+            /// <summary>
+            /// The cx
+            /// </summary>
             public Int32 cx;
+            /// <summary>
+            /// The cy
+            /// </summary>
             public Int32 cy;
 
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Size" /> struct.
+            /// </summary>
+            /// <param name="x">The x.</param>
+            /// <param name="y">The y.</param>
             public Size(Int32 x, Int32 y)
             {
                 cx = x;
@@ -429,21 +542,50 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Struct BLENDFUNCTION
+        /// </summary>
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct BLENDFUNCTION
         {
+            /// <summary>
+            /// The blend op
+            /// </summary>
             public byte BlendOp;
+            /// <summary>
+            /// The blend flags
+            /// </summary>
             public byte BlendFlags;
+            /// <summary>
+            /// The source constant alpha
+            /// </summary>
             public byte SourceConstantAlpha;
+            /// <summary>
+            /// The alpha format
+            /// </summary>
             public byte AlphaFormat;
         }
 
+        /// <summary>
+        /// Struct Point
+        /// </summary>
         [StructLayout(LayoutKind.Sequential)]
         public struct Point
         {
+            /// <summary>
+            /// The x
+            /// </summary>
             public Int32 x;
+            /// <summary>
+            /// The y
+            /// </summary>
             public Int32 y;
 
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Point" /> struct.
+            /// </summary>
+            /// <param name="x">The x.</param>
+            /// <param name="y">The y.</param>
             public Point(Int32 x, Int32 y)
             {
                 this.x = x;
@@ -451,31 +593,92 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// The ac source over
+        /// </summary>
         public const byte AC_SRC_OVER = 0;
+        /// <summary>
+        /// The ulw alpha
+        /// </summary>
         public const Int32 ULW_ALPHA = 2;
+        /// <summary>
+        /// The ac source alpha
+        /// </summary>
         public const byte AC_SRC_ALPHA = 1;
 
+        /// <summary>
+        /// Creates the compatible dc.
+        /// </summary>
+        /// <param name="hDC">The h dc.</param>
+        /// <returns>IntPtr.</returns>
         [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
         public static extern IntPtr CreateCompatibleDC(IntPtr hDC);
 
+        /// <summary>
+        /// Gets the dc.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <returns>IntPtr.</returns>
         [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
         public static extern IntPtr GetDC(IntPtr hWnd);
 
+        /// <summary>
+        /// Selects the object.
+        /// </summary>
+        /// <param name="hDC">The h dc.</param>
+        /// <param name="hObj">The h object.</param>
+        /// <returns>IntPtr.</returns>
         [DllImport("gdi32.dll", ExactSpelling = true)]
         public static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObj);
 
+        /// <summary>
+        /// Releases the dc.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <param name="hDC">The h dc.</param>
+        /// <returns>System.Int32.</returns>
         [DllImport("user32.dll", ExactSpelling = true)]
         public static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);
 
+        /// <summary>
+        /// Deletes the dc.
+        /// </summary>
+        /// <param name="hDC">The h dc.</param>
+        /// <returns>System.Int32.</returns>
         [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
         public static extern int DeleteDC(IntPtr hDC);
 
+        /// <summary>
+        /// Deletes the object.
+        /// </summary>
+        /// <param name="hObj">The h object.</param>
+        /// <returns>System.Int32.</returns>
         [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
         public static extern int DeleteObject(IntPtr hObj);
 
+        /// <summary>
+        /// Updates the layered window.
+        /// </summary>
+        /// <param name="hwnd">The HWND.</param>
+        /// <param name="hdcDst">The HDC DST.</param>
+        /// <param name="pptDst">The PPT DST.</param>
+        /// <param name="psize">The psize.</param>
+        /// <param name="hdcSrc">The HDC source.</param>
+        /// <param name="pptSrc">The PPT source.</param>
+        /// <param name="crKey">The cr key.</param>
+        /// <param name="pblend">The pblend.</param>
+        /// <param name="dwFlags">The dw flags.</param>
+        /// <returns>System.Int32.</returns>
         [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
         public static extern int UpdateLayeredWindow(IntPtr hwnd, IntPtr hdcDst, ref Point pptDst, ref Size psize, IntPtr hdcSrc, ref Point pptSrc, Int32 crKey, ref BLENDFUNCTION pblend, Int32 dwFlags);
 
+        /// <summary>
+        /// Exts the create region.
+        /// </summary>
+        /// <param name="lpXform">The lp xform.</param>
+        /// <param name="nCount">The n count.</param>
+        /// <param name="rgnData">The RGN data.</param>
+        /// <returns>IntPtr.</returns>
         [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
         public static extern IntPtr ExtCreateRegion(IntPtr lpXform, uint nCount, IntPtr rgnData);
     }

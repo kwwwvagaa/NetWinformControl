@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCMenu.cs
-// 创建日期：2019-08-15 16:02:22
-// 功能描述：Menu
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-15-2019
+//
+// ***********************************************************************
+// <copyright file="UCMenu.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +24,27 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCMenu.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCMenu : UserControl
     {
         /// <summary>
         /// 选中项事件
         /// </summary>
         public event EventHandler SelectedItem;
+        /// <summary>
+        /// The m parent item type
+        /// </summary>
         private Type m_parentItemType = typeof(UCMenuParentItem);
         /// <summary>
         /// 父类节点类型
         /// </summary>
+        /// <value>The type of the parent item.</value>
+        /// <exception cref="System.Exception">节点控件没有实现IMenuItem接口</exception>
+        /// <exception cref="Exception">节点控件没有实现IMenuItem接口</exception>
         public Type ParentItemType
         {
             get { return m_parentItemType; }
@@ -38,10 +59,16 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m children item type
+        /// </summary>
         private Type m_childrenItemType = typeof(UCMenuChildrenItem);
         /// <summary>
         /// 子类节点类型
         /// </summary>
+        /// <value>The type of the children item.</value>
+        /// <exception cref="System.Exception">节点控件没有实现IMenuItem接口</exception>
+        /// <exception cref="Exception">节点控件没有实现IMenuItem接口</exception>
         public Type ChildrenItemType
         {
             get { return m_childrenItemType; }
@@ -55,30 +82,42 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m parent item styles
+        /// </summary>
         private Dictionary<string, object> m_parentItemStyles;
         /// <summary>
         /// 父类节点样式设置，key：属性名称，value：属性值
         /// </summary>
+        /// <value>The parent item styles.</value>
         public Dictionary<string, object> ParentItemStyles
         {
             get { return m_parentItemStyles; }
             set { m_parentItemStyles = value; }
         }
 
+        /// <summary>
+        /// The m children item styles
+        /// </summary>
         private Dictionary<string, object> m_childrenItemStyles;
         /// <summary>
         /// 子类节点样式设置，key：属性名称，value：属性值
         /// </summary>
+        /// <value>The children item styles.</value>
         public Dictionary<string, object> ChildrenItemStyles
         {
             get { return m_childrenItemStyles; }
             set { m_childrenItemStyles = value; }
         }
 
+        /// <summary>
+        /// The m data source
+        /// </summary>
         private List<MenuItemEntity> m_dataSource;
         /// <summary>
         /// 数据源
         /// </summary>
+        /// <value>The data source.</value>
         public List<MenuItemEntity> DataSource
         {
             get { return m_dataSource; }
@@ -89,33 +128,56 @@ namespace HZH_Controls.Controls
                 ReloadItems();
             }
         }
+        /// <summary>
+        /// The m is show first item
+        /// </summary>
         private bool m_isShowFirstItem = true;
         /// <summary>
         /// 是否自动展开第一个节点
         /// </summary>
+        /// <value><c>true</c> if this instance is show first item; otherwise, <c>false</c>.</value>
         public bool IsShowFirstItem
         {
             get { return m_isShowFirstItem; }
             set { m_isShowFirstItem = value; }
         }
 
+        /// <summary>
+        /// The m menu style
+        /// </summary>
         private MenuStyle m_menuStyle = MenuStyle.Fill;
         /// <summary>
         /// 菜单样式
         /// </summary>
+        /// <value>The menu style.</value>
         public MenuStyle MenuStyle
         {
             get { return m_menuStyle; }
             set { m_menuStyle = value; }
         }
 
+        /// <summary>
+        /// The m LST parent items
+        /// </summary>
         private List<Control> m_lstParentItems = new List<Control>();
 
+        /// <summary>
+        /// The m select parent item
+        /// </summary>
         private IMenuItem m_selectParentItem = null;
+        /// <summary>
+        /// The m select children item
+        /// </summary>
         private IMenuItem m_selectChildrenItem = null;
 
+        /// <summary>
+        /// The m pan children
+        /// </summary>
         private Panel m_panChildren = null;
 
+        /// <summary>
+        /// Reloads the items.
+        /// </summary>
         private void ReloadItems()
         {
             try
@@ -168,6 +230,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the SelectedItem event of the parentItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void parentItem_SelectedItem(object sender, EventArgs e)
         {
             this.FindForm().ActiveControl = this;
@@ -210,6 +277,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Sets the children control.
+        /// </summary>
+        /// <param name="menuitem">The menuitem.</param>
+        /// <param name="blnChildren">if set to <c>true</c> [BLN children].</param>
         private void SetChildrenControl(IMenuItem menuitem, bool blnChildren = true)
         {
             try
@@ -297,12 +369,18 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCMenu" /> class.
+        /// </summary>
         public UCMenu()
         {
             InitializeComponent();
         }
     }
 
+    /// <summary>
+    /// Enum MenuStyle
+    /// </summary>
     public enum MenuStyle
     {
         /// <summary>

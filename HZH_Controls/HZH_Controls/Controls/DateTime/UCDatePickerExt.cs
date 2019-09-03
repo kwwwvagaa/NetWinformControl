@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCDatePickerExt.cs
-// 创建日期：2019-08-15 15:59:46
-// 功能描述：DateTime
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCDatePickerExt.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +25,29 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCDatePickerExt.
+    /// Implements the <see cref="HZH_Controls.Controls.UCControlBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCControlBase" />
     public partial class UCDatePickerExt : UCControlBase
     {
+        /// <summary>
+        /// The m FRM anchor
+        /// </summary>
         Forms.FrmAnchor m_frmAnchor;
+        /// <summary>
+        /// The m select pan
+        /// </summary>
         UCDateTimeSelectPan m_selectPan = null;
+        /// <summary>
+        /// The m type
+        /// </summary>
         DateTimePickerType m_type = DateTimePickerType.DateTime;
+        /// <summary>
+        /// Gets or sets the type of the time.
+        /// </summary>
+        /// <value>The type of the time.</value>
         [Description("时间类型"), Category("自定义")]
         public DateTimePickerType TimeType
         {
@@ -69,9 +97,19 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The current time
+        /// </summary>
         private DateTime currentTime = DateTime.Now;
 
+        /// <summary>
+        /// The time font size
+        /// </summary>
         private int timeFontSize = 20;
+        /// <summary>
+        /// Gets or sets the size of the time font.
+        /// </summary>
+        /// <value>The size of the time font.</value>
         [Description("时间字体大小"), Category("自定义")]
         public int TimeFontSize
         {
@@ -89,6 +127,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the current time.
+        /// </summary>
+        /// <value>The current time.</value>
         [Description("时间"), Category("自定义")]
         public DateTime CurrentTime
         {
@@ -100,6 +142,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Sets the time to control.
+        /// </summary>
         private void SetTimeToControl()
         {
             this.txtYear.Text = currentTime.Year.ToString();
@@ -108,11 +153,19 @@ namespace HZH_Controls.Controls
             this.txtHour.Text = currentTime.Hour.ToString().PadLeft(2, '0');
             this.txtMinute.Text = currentTime.Minute.ToString().PadLeft(2, '0');
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCDatePickerExt" /> class.
+        /// </summary>
         public UCDatePickerExt()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Load event of the UCDatePickerExt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void UCDatePickerExt_Load(object sender, EventArgs e)
         {
             SetTimeToControl();
@@ -121,6 +174,10 @@ namespace HZH_Controls.Controls
             SetEvent(this);
         }
 
+        /// <summary>
+        /// Sets the event.
+        /// </summary>
+        /// <param name="c">The c.</param>
         private void SetEvent(Control c)
         {
             if (c != null)
@@ -133,6 +190,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the c control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void c_MouseDown(object sender, MouseEventArgs e)
         {
             if (m_selectPan == null)
@@ -147,23 +209,43 @@ namespace HZH_Controls.Controls
             m_frmAnchor.Show(this.FindForm());
         }
 
+        /// <summary>
+        /// Handles the CancelTimeEvent event of the m_selectPan control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void m_selectPan_CancelTimeEvent(object sender, EventArgs e)
         {
             m_frmAnchor.Hide();
         }
 
+        /// <summary>
+        /// Handles the SelectedTimeEvent event of the uc control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void uc_SelectedTimeEvent(object sender, EventArgs e)
         {
             CurrentTime = m_selectPan.CurrentTime;
             m_frmAnchor.Hide();
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtYear control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtYear_TextChanged(object sender, EventArgs e)
         {
             if (txtYear.Text.Length == 4)
                 this.ActiveControl = txtMonth;
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtMonth control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtMonth_TextChanged(object sender, EventArgs e)
         {
             if (txtMonth.Text.Length == 2 || txtMonth.Text.ToInt() >= 3)
@@ -172,6 +254,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtDay control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtDay_TextChanged(object sender, EventArgs e)
         {
             if (m_type == DateTimePickerType.Date)
@@ -182,6 +269,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtHour control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtHour_TextChanged(object sender, EventArgs e)
         {
             if (txtHour.Text.Length == 2 || txtHour.Text.ToInt() >= 3)
@@ -190,6 +282,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the Leave event of the txtYear control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtYear_Leave(object sender, EventArgs e)
         {
             if (txtYear.Text.ToInt() < 1990)
@@ -199,6 +296,11 @@ namespace HZH_Controls.Controls
             currentTime = (txtYear.Text + currentTime.ToString("-MM-dd HH:mm:ss")).ToDate();
         }
 
+        /// <summary>
+        /// Handles the Leave event of the txtMonth control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtMonth_Leave(object sender, EventArgs e)
         {
             if (txtMonth.Text.ToInt() < 1)
@@ -209,6 +311,11 @@ namespace HZH_Controls.Controls
             currentTime = (currentTime.ToString("yyyy-" + txtMonth.Text + "-dd HH:mm:ss")).ToDate();
         }
 
+        /// <summary>
+        /// Handles the Leave event of the txtDay control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtDay_Leave(object sender, EventArgs e)
         {
             if (txtDay.Text.ToInt() < 1 || txtDay.Text.ToInt() > DateTime.DaysInMonth(currentTime.Year, currentTime.Month))
@@ -219,6 +326,11 @@ namespace HZH_Controls.Controls
             currentTime = (currentTime.ToString("yyyy-MM-" + txtDay.Text + " HH:mm:ss")).ToDate();
         }
 
+        /// <summary>
+        /// Handles the Leave event of the txtHour control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtHour_Leave(object sender, EventArgs e)
         {
             if (txtHour.Text.ToInt() < 1)
@@ -229,6 +341,11 @@ namespace HZH_Controls.Controls
             currentTime = (currentTime.ToString("yyyy-MM-dd " + txtHour.Text + ":mm:ss")).ToDate();
         }
 
+        /// <summary>
+        /// Handles the Leave event of the txtMinute control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtMinute_Leave(object sender, EventArgs e)
         {
             if (txtMinute.Text.ToInt() < 1)
@@ -239,6 +356,11 @@ namespace HZH_Controls.Controls
             currentTime = (currentTime.ToString("yyyy-MM-dd HH:" + txtMinute.Text + ":ss")).ToDate();
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the txt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txt_SizeChanged(object sender, EventArgs e)
         {
             panel1.Height = (sender as TextBoxEx).Height;

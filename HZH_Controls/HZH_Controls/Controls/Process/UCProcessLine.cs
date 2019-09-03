@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCProcessLine.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:04:39
-// 功能描述：UCProcessLine    English:UCProcessLine
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-20-2019
+//
+// ***********************************************************************
+// <copyright file="UCProcessLine.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,12 +25,27 @@ using System.Drawing.Drawing2D;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCProcessLine.
+    /// Implements the <see cref="System.Windows.Forms.Control" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Control" />
     [DefaultEvent("ValueChanged")]
     public class UCProcessLine : Control
     {
+        /// <summary>
+        /// Occurs when [value changed].
+        /// </summary>
         [Description("值变更事件"), Category("自定义")]
         public event EventHandler ValueChanged;
+        /// <summary>
+        /// The m value
+        /// </summary>
         int m_value = 0;
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        /// <value>The value.</value>
         [Description("当前属性"), Category("自定义")]
         public int Value
         {
@@ -45,8 +67,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m maximum value
+        /// </summary>
         private int m_maxValue = 100;
 
+        /// <summary>
+        /// Gets or sets the maximum value.
+        /// </summary>
+        /// <value>The maximum value.</value>
         [Description("最大值"), Category("自定义")]
         public int MaxValue
         {
@@ -61,8 +90,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m value color
+        /// </summary>
         Color m_valueColor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the value.
+        /// </summary>
+        /// <value>The color of the value.</value>
         [Description("值进度条颜色"), Category("自定义")]
         public Color ValueColor
         {
@@ -74,8 +110,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m value bg color
+        /// </summary>
         private Color m_valueBGColor = Color.FromArgb(228, 231, 237);
 
+        /// <summary>
+        /// Gets or sets the color of the value bg.
+        /// </summary>
+        /// <value>The color of the value bg.</value>
         [Description("值背景色"), Category("自定义")]
         public Color ValueBGColor
         {
@@ -87,8 +130,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m border color
+        /// </summary>
         private Color m_borderColor = Color.FromArgb(228, 231, 237);
 
+        /// <summary>
+        /// Gets or sets the color of the border.
+        /// </summary>
+        /// <value>The color of the border.</value>
         [Description("边框颜色"), Category("自定义")]
         public Color BorderColor
         {
@@ -100,6 +150,16 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 获取或设置控件显示的文字的字体。
+        /// </summary>
+        /// <value>The font.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Description("值字体"), Category("自定义")]
         public override Font Font
         {
@@ -114,6 +174,13 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 获取或设置控件的前景色。
+        /// </summary>
+        /// <value>The color of the fore.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Description("值字体颜色"), Category("自定义")]
         public override System.Drawing.Color ForeColor
         {
@@ -127,8 +194,15 @@ namespace HZH_Controls.Controls
                 Refresh();
             }
         }
+        /// <summary>
+        /// The m value text type
+        /// </summary>
         private ValueTextType m_valueTextType = ValueTextType.Percent;
 
+        /// <summary>
+        /// Gets or sets the type of the value text.
+        /// </summary>
+        /// <value>The type of the value text.</value>
         [Description("值显示样式"), Category("自定义")]
         public ValueTextType ValueTextType
         {
@@ -139,6 +213,9 @@ namespace HZH_Controls.Controls
                 Refresh();
             }
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCProcessLine" /> class.
+        /// </summary>
         public UCProcessLine()
         {
             Size = new Size(200, 15);
@@ -152,6 +229,10 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.UserPaint, true);
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -178,8 +259,14 @@ namespace HZH_Controls.Controls
 
     }
 
+    /// <summary>
+    /// Enum ValueTextType
+    /// </summary>
     public enum ValueTextType
     {
+        /// <summary>
+        /// The none
+        /// </summary>
         None,
         /// <summary>
         /// 百分比

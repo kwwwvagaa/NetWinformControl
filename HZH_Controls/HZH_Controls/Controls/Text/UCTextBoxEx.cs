@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCTextBoxEx.cs
-// 创建日期：2019-08-15 16:03:58
-// 功能描述：TextBox
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCTextBoxEx.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,17 +27,32 @@ using System.Threading;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCTextBoxEx.
+    /// Implements the <see cref="HZH_Controls.Controls.UCControlBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCControlBase" />
     [DefaultEvent("TextChanged")]
     public partial class UCTextBoxEx : UCControlBase
     {
+        /// <summary>
+        /// The m is show clear BTN
+        /// </summary>
         private bool m_isShowClearBtn = true;
+        /// <summary>
+        /// The m int selection start
+        /// </summary>
         int m_intSelectionStart = 0;
+        /// <summary>
+        /// The m int selection length
+        /// </summary>
         int m_intSelectionLength = 0;
         /// <summary>
         /// 功能描述:是否显示清理按钮
         /// 作　　者:HZH
         /// 创建日期:2019-02-28 16:13:52
-        /// </summary>        
+        /// </summary>
+        /// <value><c>true</c> if this instance is show clear BTN; otherwise, <c>false</c>.</value>
         [Description("是否显示清理按钮"), Category("自定义")]
         public bool IsShowClearBtn
         {
@@ -46,10 +71,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m is show search BTN
+        /// </summary>
         private bool m_isShowSearchBtn = false;
         /// <summary>
         /// 是否显示查询按钮
         /// </summary>
+        /// <value><c>true</c> if this instance is show search BTN; otherwise, <c>false</c>.</value>
 
         [Description("是否显示查询按钮"), Category("自定义")]
         public bool IsShowSearchBtn
@@ -62,6 +91,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is show keyboard.
+        /// </summary>
+        /// <value><c>true</c> if this instance is show keyboard; otherwise, <c>false</c>.</value>
         [Description("是否显示键盘"), Category("自定义")]
         public bool IsShowKeyboard
         {
@@ -74,6 +107,16 @@ namespace HZH_Controls.Controls
                 btnKeybord.Visible = value;
             }
         }
+        /// <summary>
+        /// 获取或设置控件显示的文字的字体。
+        /// </summary>
+        /// <value>The font.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Description("字体"), Category("自定义")]
         public new Font Font
         {
@@ -87,6 +130,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the type of the input.
+        /// </summary>
+        /// <value>The type of the input.</value>
         [Description("输入类型"), Category("自定义")]
         public TextInputType InputType
         {
@@ -97,6 +144,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 水印文字
         /// </summary>
+        /// <value>The prompt text.</value>
         [Description("水印文字"), Category("自定义")]
         public string PromptText
         {
@@ -110,6 +158,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the prompt font.
+        /// </summary>
+        /// <value>The prompt font.</value>
         [Description("水印字体"), Category("自定义")]
         public Font PromptFont
         {
@@ -123,6 +175,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the color of the prompt.
+        /// </summary>
+        /// <value>The color of the prompt.</value>
         [Description("水印颜色"), Category("自定义")]
         public Color PromptColor
         {
@@ -139,6 +195,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 获取或设置一个值，该值指示当输入类型InputType=Regex时，使用的正则表达式。
         /// </summary>
+        /// <value>The regex pattern.</value>
         [Description("获取或设置一个值，该值指示当输入类型InputType=Regex时，使用的正则表达式。")]
         public string RegexPattern
         {
@@ -154,6 +211,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 当InputType为数字类型时，能输入的最大值
         /// </summary>
+        /// <value>The maximum value.</value>
         [Description("当InputType为数字类型时，能输入的最大值。")]
         public decimal MaxValue
         {
@@ -169,6 +227,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 当InputType为数字类型时，能输入的最小值
         /// </summary>
+        /// <value>The minimum value.</value>
         [Description("当InputType为数字类型时，能输入的最小值。")]
         public decimal MinValue
         {
@@ -184,6 +243,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// 当InputType为数字类型时，能输入的最小值
         /// </summary>
+        /// <value>The length of the decimal.</value>
         [Description("当InputType为数字类型时，小数位数。")]
         public int DecLength
         {
@@ -197,21 +257,41 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The key board type
+        /// </summary>
         private KeyBoardType keyBoardType = KeyBoardType.UCKeyBorderAll_EN;
+        /// <summary>
+        /// Gets or sets the type of the key board.
+        /// </summary>
+        /// <value>The type of the key board.</value>
         [Description("键盘打开样式"), Category("自定义")]
         public KeyBoardType KeyBoardType
         {
             get { return keyBoardType; }
             set { keyBoardType = value; }
         }
+        /// <summary>
+        /// Occurs when [search click].
+        /// </summary>
         [Description("查询按钮点击事件"), Category("自定义")]
         public event EventHandler SearchClick;
 
+        /// <summary>
+        /// Occurs when [text changed].
+        /// </summary>
         [Description("文本改变事件"), Category("自定义")]
         public new event EventHandler TextChanged;
+        /// <summary>
+        /// Occurs when [keyboard click].
+        /// </summary>
         [Description("键盘按钮点击事件"), Category("自定义")]
         public event EventHandler KeyboardClick;
 
+        /// <summary>
+        /// Gets or sets the input text.
+        /// </summary>
+        /// <value>The input text.</value>
         [Description("文本"), Category("自定义")]
         public string InputText
         {
@@ -225,8 +305,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The focus border color
+        /// </summary>
         private Color focusBorderColor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the focus border.
+        /// </summary>
+        /// <value>The color of the focus border.</value>
         [Description("获取焦点时边框颜色，当IsFocusColor=true有效"), Category("自定义")]
         public Color FocusBorderColor
         {
@@ -234,14 +321,28 @@ namespace HZH_Controls.Controls
             set { focusBorderColor = value; }
         }
 
+        /// <summary>
+        /// The is focus color
+        /// </summary>
         private bool isFocusColor = true;
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is focus color.
+        /// </summary>
+        /// <value><c>true</c> if this instance is focus color; otherwise, <c>false</c>.</value>
         [Description("获取焦点是否变色"), Category("自定义")]
         public bool IsFocusColor
         {
             get { return isFocusColor; }
             set { isFocusColor = value; }
         }
+        /// <summary>
+        /// The fill color
+        /// </summary>
         private Color _FillColor;
+        /// <summary>
+        /// 当使用边框时填充颜色，当值为背景色或透明色或空值则不填充
+        /// </summary>
+        /// <value>The color of the fill.</value>
         public new Color FillColor
         {
             get
@@ -255,6 +356,9 @@ namespace HZH_Controls.Controls
                 this.txtInput.BackColor = value;
             }
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCTextBoxEx" /> class.
+        /// </summary>
         public UCTextBoxEx()
         {
             InitializeComponent();
@@ -272,12 +376,22 @@ namespace HZH_Controls.Controls
             };
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the UCTextBoxEx control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCTextBoxEx_SizeChanged(object sender, EventArgs e)
         {
             this.txtInput.Location = new Point(this.txtInput.Location.X, (this.Height - txtInput.Height) / 2);
         }
 
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtInput control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
             if (m_isShowClearBtn)
@@ -290,12 +404,22 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the btnClear control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void btnClear_MouseDown(object sender, MouseEventArgs e)
         {
             txtInput.Clear();
             txtInput.Focus();
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the btnSearch control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void btnSearch_MouseDown(object sender, MouseEventArgs e)
         {
             if (SearchClick != null)
@@ -303,7 +427,15 @@ namespace HZH_Controls.Controls
                 SearchClick(sender, e);
             }
         }
+        /// <summary>
+        /// The m FRM anchor
+        /// </summary>
         Forms.FrmAnchor m_frmAnchor;
+        /// <summary>
+        /// Handles the MouseDown event of the btnKeybord control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void btnKeybord_MouseDown(object sender, MouseEventArgs e)
         {
             if (keyBoardType == HZH_Controls.Controls.KeyBoardType.Null)
@@ -438,6 +570,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the Disposed event of the m_frmAnchor control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void m_frmAnchor_Disposed(object sender, EventArgs e)
         {
             if (m_HandAppWin != IntPtr.Zero)
@@ -450,10 +587,24 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// The m hand application win
+        /// </summary>
         IntPtr m_HandAppWin;
+        /// <summary>
+        /// The m hand p win
+        /// </summary>
         Process m_HandPWin = null;
+        /// <summary>
+        /// The m hand executable name
+        /// </summary>
         string m_HandExeName = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "HandInput\\handinput.exe");
 
+        /// <summary>
+        /// Handles the VisibleChanged event of the m_frmAnchor control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void m_frmAnchor_VisibleChanged(object sender, EventArgs e)
         {
             if (m_frmAnchor.Visible)
@@ -497,11 +648,21 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the UCTextBoxEx control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void UCTextBoxEx_MouseDown(object sender, MouseEventArgs e)
         {
             this.ActiveControl = txtInput;
         }
 
+        /// <summary>
+        /// Handles the Load event of the UCTextBoxEx control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void UCTextBoxEx_Load(object sender, EventArgs e)
         {
             if (!Enabled)
@@ -515,24 +676,81 @@ namespace HZH_Controls.Controls
                 txtInput.BackColor = _FillColor;
             }
         }
+        /// <summary>
+        /// Sets the parent.
+        /// </summary>
+        /// <param name="hWndChild">The h WND child.</param>
+        /// <param name="hWndNewParent">The h WND new parent.</param>
+        /// <returns>System.Int64.</returns>
         [DllImport("user32.dll", SetLastError = true)]
         private static extern long SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
 
+        /// <summary>
+        /// Moves the window.
+        /// </summary>
+        /// <param name="hwnd">The HWND.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="cx">The cx.</param>
+        /// <param name="cy">The cy.</param>
+        /// <param name="repaint">if set to <c>true</c> [repaint].</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         [DllImport("user32.dll", SetLastError = true)]
         private static extern bool MoveWindow(IntPtr hwnd, int x, int y, int cx, int cy, bool repaint);
+        /// <summary>
+        /// Shows the window.
+        /// </summary>
+        /// <param name="hwnd">The HWND.</param>
+        /// <param name="nCmdShow">The n command show.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         [DllImport("user32.dll", EntryPoint = "ShowWindow")]
         private static extern bool ShowWindow(IntPtr hwnd, int nCmdShow);
+        /// <summary>
+        /// Sets the window position.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <param name="hWndlnsertAfter">The h wndlnsert after.</param>
+        /// <param name="X">The x.</param>
+        /// <param name="Y">The y.</param>
+        /// <param name="cx">The cx.</param>
+        /// <param name="cy">The cy.</param>
+        /// <param name="Flags">The flags.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         [DllImport("user32.dll")]
         private static extern bool SetWindowPos(IntPtr hWnd, int hWndlnsertAfter, int X, int Y, int cx, int cy, uint Flags);
+        /// <summary>
+        /// The GWL style
+        /// </summary>
         private const int GWL_STYLE = -16;
+        /// <summary>
+        /// The ws child
+        /// </summary>
         private const int WS_CHILD = 0x40000000;//设置窗口属性为child
 
+        /// <summary>
+        /// Gets the window long.
+        /// </summary>
+        /// <param name="hwnd">The HWND.</param>
+        /// <param name="nIndex">Index of the n.</param>
+        /// <returns>System.Int32.</returns>
         [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
         public static extern int GetWindowLong(IntPtr hwnd, int nIndex);
 
+        /// <summary>
+        /// Sets the window long.
+        /// </summary>
+        /// <param name="hwnd">The HWND.</param>
+        /// <param name="nIndex">Index of the n.</param>
+        /// <param name="dwNewLong">The dw new long.</param>
+        /// <returns>System.Int32.</returns>
         [DllImport("user32.dll", EntryPoint = "SetWindowLong")]
         public static extern int SetWindowLong(IntPtr hwnd, int nIndex, int dwNewLong);
 
+        /// <summary>
+        /// Sets the active window.
+        /// </summary>
+        /// <param name="handle">The handle.</param>
+        /// <returns>IntPtr.</returns>
         [DllImport("user32.dll")]
         private extern static IntPtr SetActiveWindow(IntPtr handle);
     }

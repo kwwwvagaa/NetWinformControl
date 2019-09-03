@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCWave.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:05:54
-// 功能描述：UCWave    English:UCWave
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-22-2019
+//
+// ***********************************************************************
+// <copyright file="UCWave.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +24,27 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCWave.
+    /// Implements the <see cref="System.Windows.Forms.Control" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Control" />
     public class UCWave : Control
     {
+        /// <summary>
+        /// Occurs when [on painted].
+        /// </summary>
         public event PaintEventHandler OnPainted;
 
+        /// <summary>
+        /// The m wave color
+        /// </summary>
         private Color m_waveColor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the wave.
+        /// </summary>
+        /// <value>The color of the wave.</value>
         [Description("波纹颜色"), Category("自定义")]
         public Color WaveColor
         {
@@ -30,10 +52,14 @@ namespace HZH_Controls.Controls
             set { m_waveColor = value; }
         }
 
+        /// <summary>
+        /// The m wave width
+        /// </summary>
         private int m_waveWidth = 200;
         /// <summary>
         /// 为方便计算，强制使用10的倍数
         /// </summary>
+        /// <value>The width of the wave.</value>
         [Description("波纹宽度（为方便计算，强制使用10的倍数）"), Category("自定义")]
         public int WaveWidth
         {
@@ -46,10 +72,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m wave height
+        /// </summary>
         private int m_waveHeight = 30;
         /// <summary>
         /// 波高
         /// </summary>
+        /// <value>The height of the wave.</value>
         [Description("波高"), Category("自定义")]
         public int WaveHeight
         {
@@ -57,10 +87,14 @@ namespace HZH_Controls.Controls
             set { m_waveHeight = value; }
         }
 
+        /// <summary>
+        /// The m wave sleep
+        /// </summary>
         private int m_waveSleep = 50;
         /// <summary>
         /// 波运行速度（运行时间间隔，毫秒）
         /// </summary>
+        /// <value>The wave sleep.</value>
         [Description("波运行速度（运行时间间隔，毫秒）"), Category("自定义")]
         public int WaveSleep
         {
@@ -79,8 +113,17 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The timer
+        /// </summary>
         Timer timer = new Timer();
+        /// <summary>
+        /// The int left x
+        /// </summary>
         int intLeftX = -200;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCWave" /> class.
+        /// </summary>
         public UCWave()
         {
             this.Size = new Size(600, 100);
@@ -95,11 +138,21 @@ namespace HZH_Controls.Controls
             this.VisibleChanged += UCWave_VisibleChanged;
         }
 
+        /// <summary>
+        /// Handles the VisibleChanged event of the UCWave control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCWave_VisibleChanged(object sender, EventArgs e)
         {
             timer.Enabled = this.Visible;
         }
 
+        /// <summary>
+        /// Handles the Tick event of the timer control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void timer_Tick(object sender, EventArgs e)
         {
             intLeftX -= 10;
@@ -107,6 +160,10 @@ namespace HZH_Controls.Controls
                 intLeftX = m_waveWidth * -1;
             this.Refresh();
         }
+        /// <summary>
+        /// Handles the <see cref="E:Paint" /> event.
+        /// </summary>
+        /// <param name="e">The <see cref="PaintEventArgs" /> instance containing the event data.</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

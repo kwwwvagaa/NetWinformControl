@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：IMenuItem.cs
-// 创建日期：2019-08-15 16:02:14
-// 功能描述：Menu
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-15-2019
+//
+// ***********************************************************************
+// <copyright file="IMenuItem.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +20,19 @@ using System.Text;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Interface IMenuItem
+    /// </summary>
     public interface IMenuItem
     {
+        /// <summary>
+        /// Occurs when [selected item].
+        /// </summary>
         event EventHandler SelectedItem;
+        /// <summary>
+        /// Gets or sets the data source.
+        /// </summary>
+        /// <value>The data source.</value>
         MenuItemEntity DataSource { get; set; }
         /// <summary>
         /// 设置样式

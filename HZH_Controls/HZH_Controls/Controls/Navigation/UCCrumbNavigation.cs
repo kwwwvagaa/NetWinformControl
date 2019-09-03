@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCCrumbNavigation.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:04:18
-// 功能描述：UCCrumbNavigation    English:UCCrumbNavigation
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-19-2019
+//
+// ***********************************************************************
+// <copyright file="UCCrumbNavigation.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +25,22 @@ using System.Drawing.Drawing2D;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCCrumbNavigation.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCCrumbNavigation : UserControl
     {
+        /// <summary>
+        /// The m nav color
+        /// </summary>
         private Color m_navColor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the nav.
+        /// </summary>
+        /// <value>The color of the nav.</value>
         public Color NavColor
         {
             get { return m_navColor; }
@@ -35,8 +54,18 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// The m navigations
+        /// </summary>
         private string[] m_navigations = new string[] { "目录1", "目录2", "目录3" };
+        /// <summary>
+        /// The m paths
+        /// </summary>
         GraphicsPath[] m_paths;
+        /// <summary>
+        /// Gets or sets the navigations.
+        /// </summary>
+        /// <value>The navigations.</value>
         public string[] Navigations
         {
             get { return m_navigations; }
@@ -51,6 +80,16 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 获取或设置控件显示的文字的字体。
+        /// </summary>
+        /// <value>The font.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public override Font Font
         {
             get
@@ -64,6 +103,13 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 获取或设置控件的前景色。
+        /// </summary>
+        /// <value>The color of the fore.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public override System.Drawing.Color ForeColor
         {
             get
@@ -77,6 +123,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCCrumbNavigation" /> class.
+        /// </summary>
         public UCCrumbNavigation()
         {
             InitializeComponent();
@@ -89,6 +138,11 @@ namespace HZH_Controls.Controls
             this.MouseDown += UCCrumbNavigation_MouseDown;
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the UCCrumbNavigation control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void UCCrumbNavigation_MouseDown(object sender, MouseEventArgs e)
         {
             if (!DesignMode)
@@ -106,6 +160,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the <see cref="E:Paint" /> event.
+        /// </summary>
+        /// <param name="e">The <see cref="PaintEventArgs" /> instance containing the event data.</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

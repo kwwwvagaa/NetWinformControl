@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCLEDNum.cs
-// 作　　者：HZH
-// 创建日期：2019-09-02 16:22:59
-// 功能描述：UCLEDNum    English:UCLEDNum
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 09-02-2019
+//
+// ***********************************************************************
+// <copyright file="UCLEDNum.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,11 +35,25 @@ namespace HZH_Controls.Controls
      *  *      *
      *  ****4***
      */
+    /// <summary>
+    /// Class UCLEDNum.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public class UCLEDNum : UserControl
     {
+        /// <summary>
+        /// The m draw rect
+        /// </summary>
         Rectangle m_drawRect = Rectangle.Empty;
 
+        /// <summary>
+        /// The m nums
+        /// </summary>
         private static Dictionary<char, int[]> m_nums = new Dictionary<char, int[]>();
+        /// <summary>
+        /// Initializes static members of the <see cref="UCLEDNum" /> class.
+        /// </summary>
         static UCLEDNum()
         {
             m_nums['0'] = new int[] { 1, 2, 3, 4, 5, 6 };
@@ -51,6 +72,9 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCLEDNum" /> class.
+        /// </summary>
         public UCLEDNum()
         {
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
@@ -66,13 +90,25 @@ namespace HZH_Controls.Controls
                 m_drawRect = new Rectangle(1, 1, this.Width - 2, this.Height - 2);
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the LEDNum control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void LEDNum_SizeChanged(object sender, EventArgs e)
         {
             m_drawRect = new Rectangle(1, 1, this.Width - 2, this.Height - 2);
         }
 
+        /// <summary>
+        /// The m value
+        /// </summary>
         private char m_value = '0';
 
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        /// <value>The value.</value>
         [Description("值"), Category("自定义")]
         public char Value
         {
@@ -91,8 +127,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m line width
+        /// </summary>
         private int m_lineWidth = 8;
 
+        /// <summary>
+        /// Gets or sets the width of the line.
+        /// </summary>
+        /// <value>The width of the line.</value>
         [Description("线宽度，为了更好的显示效果，请使用偶数"), Category("自定义")]
         public int LineWidth
         {
@@ -104,6 +147,13 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 获取或设置控件的前景色。
+        /// </summary>
+        /// <value>The color of the fore.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Description("颜色"), Category("自定义")]
         public override System.Drawing.Color ForeColor
         {
@@ -117,6 +167,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

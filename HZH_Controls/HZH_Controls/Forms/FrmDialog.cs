@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：FrmDialog.cs
-// 创建日期：2019-08-15 16:04:36
-// 功能描述：FrmDialog
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmDialog.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +24,25 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmDialog.
+    /// Implements the <see cref="HZH_Controls.Forms.FrmBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Forms.FrmBase" />
     public partial class FrmDialog : FrmBase
     {
+        /// <summary>
+        /// The BLN enter close
+        /// </summary>
         bool blnEnterClose = true;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FrmDialog" /> class.
+        /// </summary>
+        /// <param name="strMessage">The string message.</param>
+        /// <param name="strTitle">The string title.</param>
+        /// <param name="blnShowCancel">if set to <c>true</c> [BLN show cancel].</param>
+        /// <param name="blnShowClose">if set to <c>true</c> [BLN show close].</param>
+        /// <param name="blnisEnterClose">if set to <c>true</c> [blnis enter close].</param>
         private FrmDialog(
             string strMessage,
             string strTitle,
@@ -62,7 +88,7 @@ namespace HZH_Controls.Forms
         /// <param name="blnShowCancel">blnShowCancel</param>
         /// <param name="isShowMaskDialog">isShowMaskDialog</param>
         /// <param name="blnShowClose">blnShowClose</param>
-        /// <param name="isEnterClose">isEnterClose</param>
+        /// <param name="blnIsEnterClose">if set to <c>true</c> [BLN is enter close].</param>
         /// <param name="deviationSize">大小偏移，当默认大小过大或过小时，可以进行调整（增量）</param>
         /// <returns>返回值</returns>
         public static DialogResult ShowDialog(
@@ -114,27 +140,50 @@ namespace HZH_Controls.Forms
         }
         #endregion
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnOK control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnOK_BtnClick(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnCancel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnCancel_BtnClick(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the btnClose control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void btnClose_MouseDown(object sender, MouseEventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
 
+        /// <summary>
+        /// Does the enter.
+        /// </summary>
         protected override void DoEnter()
         {
             if (blnEnterClose)
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
 
+        /// <summary>
+        /// Handles the VisibleChanged event of the FrmDialog control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmDialog_VisibleChanged(object sender, EventArgs e)
         {
             

@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCPagerControl2.cs
-// 创建日期：2019-08-15 16:00:37
-// 功能描述：PageControl
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-15-2019
+//
+// ***********************************************************************
+// <copyright file="UCPagerControl2.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +24,28 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCPagerControl2.
+    /// Implements the <see cref="HZH_Controls.Controls.UCPagerControlBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCPagerControlBase" />
     [ToolboxItem(true)]
     public partial class UCPagerControl2 : UCPagerControlBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCPagerControl2" /> class.
+        /// </summary>
         public UCPagerControl2()
         {
             InitializeComponent();
             txtPage.txtInput.KeyDown += txtInput_KeyDown;
         }
 
+        /// <summary>
+        /// Handles the KeyDown event of the txtInput control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="KeyEventArgs" /> instance containing the event data.</param>
         void txtInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -32,9 +55,16 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Occurs when [show source changed].
+        /// </summary>
         public override event PageControlEventHandler ShowSourceChanged;
 
-       
+
+        /// <summary>
+        /// 关联的数据源
+        /// </summary>
+        /// <value>The data source.</value>
         public override List<object> DataSource
         {
             get
@@ -49,7 +79,11 @@ namespace HZH_Controls.Controls
                 ResetPageCount();
             }
         }
-       
+
+        /// <summary>
+        /// 每页显示数量
+        /// </summary>
+        /// <value>The size of the page.</value>
         public override int PageSize
         {
             get
@@ -63,6 +97,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 第一页
+        /// </summary>
         public override void FirstPage()
         {
             if (PageIndex == 1)
@@ -77,6 +114,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 上一页
+        /// </summary>
         public override void PreviousPage()
         {
             if (PageIndex <= 1)
@@ -94,6 +134,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 下一页
+        /// </summary>
         public override void NextPage()
         {
             if (PageIndex >= PageCount)
@@ -110,6 +153,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 最后一页
+        /// </summary>
         public override void EndPage()
         {
             if (PageIndex == PageCount)
@@ -124,6 +170,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Resets the page count.
+        /// </summary>
         private void ResetPageCount()
         {
             if (PageSize > 0)
@@ -135,6 +184,9 @@ namespace HZH_Controls.Controls
             ReloadPage();
         }
 
+        /// <summary>
+        /// Reloads the page.
+        /// </summary>
         private void ReloadPage()
         {
             try
@@ -238,6 +290,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the page control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void page_BtnClick(object sender, EventArgs e)
         {
             PageIndex = (sender as UCBtnExt).BtnText.ToInt();
@@ -251,32 +308,62 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 控制按钮显示
+        /// </summary>
+        /// <param name="blnLeftBtn">是否显示上一页，第一页</param>
+        /// <param name="blnRightBtn">是否显示下一页，最后一页</param>
         protected override void ShowBtn(bool blnLeftBtn, bool blnRightBtn)
         {
             btnFirst.Enabled = btnPrevious.Enabled = blnLeftBtn;
             btnNext.Enabled = btnEnd.Enabled = blnRightBtn;
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnFirst control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnFirst_BtnClick(object sender, EventArgs e)
         {
             FirstPage();
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnPrevious control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnPrevious_BtnClick(object sender, EventArgs e)
         {
             PreviousPage();
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnNext control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnNext_BtnClick(object sender, EventArgs e)
         {
             NextPage();
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnEnd control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnEnd_BtnClick(object sender, EventArgs e)
         {
             EndPage();
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnToPage control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnToPage_BtnClick(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtPage.InputText))

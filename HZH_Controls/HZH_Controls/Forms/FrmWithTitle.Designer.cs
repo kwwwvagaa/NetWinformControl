@@ -1,5 +1,25 @@
-﻿namespace HZH_Controls.Forms
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmWithTitle.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmWithTitle.
+    /// Implements the <see cref="HZH_Controls.Forms.FrmBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Forms.FrmBase" />
     partial class FrmWithTitle
     {
         /// <summary>
@@ -93,8 +113,17 @@
 
         #endregion
 
+        /// <summary>
+        /// The label title
+        /// </summary>
         private System.Windows.Forms.Label lblTitle;
+        /// <summary>
+        /// The uc split line h1
+        /// </summary>
         private Controls.UCSplitLine_H ucSplitLine_H1;
+        /// <summary>
+        /// The BTN close
+        /// </summary>
         private System.Windows.Forms.Panel btnClose;
 
     }

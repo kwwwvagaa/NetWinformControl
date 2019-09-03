@@ -1,13 +1,33 @@
-﻿namespace HZH_Controls.Controls
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCKeyBorderNum.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCKeyBorderNum.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     partial class UCKeyBorderNum
     {
-        /// <summary> 
+        /// <summary>
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// 清理所有正在使用的资源。
         /// </summary>
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
@@ -22,7 +42,7 @@
 
         #region 组件设计器生成的代码
 
-        /// <summary> 
+        /// <summary>
         /// 设计器支持所需的方法 - 不要
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
@@ -830,60 +850,225 @@
 
         #endregion
 
+        /// <summary>
+        /// The table layout panel1
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        /// <summary>
+        /// The panel1
+        /// </summary>
         private System.Windows.Forms.Panel panel1;
+        /// <summary>
+        /// The panel14
+        /// </summary>
         private System.Windows.Forms.Panel panel14;
+        /// <summary>
+        /// The uc split line V14
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V14;
+        /// <summary>
+        /// The panel13
+        /// </summary>
         private System.Windows.Forms.Panel panel13;
+        /// <summary>
+        /// The uc split line V13
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V13;
+        /// <summary>
+        /// The panel12
+        /// </summary>
         private System.Windows.Forms.Panel panel12;
+        /// <summary>
+        /// The uc split line V12
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V12;
+        /// <summary>
+        /// The panel11
+        /// </summary>
         private System.Windows.Forms.Panel panel11;
+        /// <summary>
+        /// The uc split line H11
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H11;
+        /// <summary>
+        /// The uc split line V11
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V11;
+        /// <summary>
+        /// The panel10
+        /// </summary>
         private System.Windows.Forms.Panel panel10;
+        /// <summary>
+        /// The uc split line H10
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H10;
+        /// <summary>
+        /// The uc split line V10
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V10;
+        /// <summary>
+        /// The panel9
+        /// </summary>
         private System.Windows.Forms.Panel panel9;
+        /// <summary>
+        /// The uc split line h9
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H9;
+        /// <summary>
+        /// The uc split line v9
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V9;
+        /// <summary>
+        /// The panel8
+        /// </summary>
         private System.Windows.Forms.Panel panel8;
+        /// <summary>
+        /// The uc split line h8
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H8;
+        /// <summary>
+        /// The uc split line v8
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V8;
+        /// <summary>
+        /// The panel7
+        /// </summary>
         private System.Windows.Forms.Panel panel7;
+        /// <summary>
+        /// The panel6
+        /// </summary>
         private System.Windows.Forms.Panel panel6;
+        /// <summary>
+        /// The uc split line h6
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H6;
+        /// <summary>
+        /// The uc split line v6
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V6;
+        /// <summary>
+        /// The panel5
+        /// </summary>
         private System.Windows.Forms.Panel panel5;
+        /// <summary>
+        /// The uc split line h5
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H5;
+        /// <summary>
+        /// The uc split line v5
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V5;
+        /// <summary>
+        /// The panel4
+        /// </summary>
         private System.Windows.Forms.Panel panel4;
+        /// <summary>
+        /// The uc split line h4
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H4;
+        /// <summary>
+        /// The uc split line v4
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V4;
+        /// <summary>
+        /// The panel3
+        /// </summary>
         private System.Windows.Forms.Panel panel3;
+        /// <summary>
+        /// The uc split line h3
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H3;
+        /// <summary>
+        /// The panel2
+        /// </summary>
         private System.Windows.Forms.Panel panel2;
+        /// <summary>
+        /// The uc split line h2
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H2;
+        /// <summary>
+        /// The uc split line v2
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V2;
+        /// <summary>
+        /// The uc split line h1
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H1;
+        /// <summary>
+        /// The uc split line v1
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V1;
+        /// <summary>
+        /// The label11
+        /// </summary>
         private System.Windows.Forms.Label label11;
+        /// <summary>
+        /// The label12
+        /// </summary>
         private System.Windows.Forms.Label label12;
+        /// <summary>
+        /// The label13
+        /// </summary>
         private System.Windows.Forms.Label label13;
+        /// <summary>
+        /// The label10
+        /// </summary>
         private System.Windows.Forms.Label label10;
+        /// <summary>
+        /// The label9
+        /// </summary>
         private System.Windows.Forms.Label label9;
+        /// <summary>
+        /// The label8
+        /// </summary>
         private System.Windows.Forms.Label label8;
+        /// <summary>
+        /// The label6
+        /// </summary>
         private System.Windows.Forms.Label label6;
+        /// <summary>
+        /// The label14
+        /// </summary>
         private System.Windows.Forms.Label label14;
+        /// <summary>
+        /// The label7
+        /// </summary>
         private System.Windows.Forms.Label label7;
+        /// <summary>
+        /// The label3
+        /// </summary>
         private System.Windows.Forms.Label label3;
+        /// <summary>
+        /// The label5
+        /// </summary>
         private System.Windows.Forms.Label label5;
+        /// <summary>
+        /// The label4
+        /// </summary>
         private System.Windows.Forms.Label label4;
+        /// <summary>
+        /// The label2
+        /// </summary>
         private System.Windows.Forms.Label label2;
+        /// <summary>
+        /// The label1
+        /// </summary>
         private System.Windows.Forms.Label label1;
+        /// <summary>
+        /// The uc split line v3
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V3;
+        /// <summary>
+        /// The uc split line v7
+        /// </summary>
         private UCSplitLine_V ucSplitLine_V7;
+        /// <summary>
+        /// The uc split line h7
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H7;
+        /// <summary>
+        /// The uc split line H12
+        /// </summary>
         private UCSplitLine_H ucSplitLine_H12;
     }
 }

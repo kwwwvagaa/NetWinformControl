@@ -43,8 +43,8 @@
             this.ucWaveChart1 = new HZH_Controls.Controls.UCWaveChart();
             this.ucProcessEllipse1 = new HZH_Controls.Controls.UCProcessEllipse();
             this.ucProcessEllipse2 = new HZH_Controls.Controls.UCProcessEllipse();
-            this.ucledNums2 = new HZH_Controls.Controls.LED.UCLEDNums();
-            this.ucledNums1 = new HZH_Controls.Controls.LED.UCLEDNums();
+            this.ucledNums2 = new HZH_Controls.Controls.UCLEDNums();
+            this.ucledNums1 = new HZH_Controls.Controls.UCLEDNums();
             this.ucledDataTime1 = new HZH_Controls.Controls.UCLEDDataTime();
             this.ucledTime2 = new HZH_Controls.Controls.UCLEDTime();
             this.ucledDate1 = new HZH_Controls.Controls.UCLEDData();
@@ -853,8 +853,8 @@
         private HZH_Controls.Controls.UCLEDData ucledDate1;
         private HZH_Controls.Controls.UCLEDTime ucledTime2;
         private HZH_Controls.Controls.UCLEDDataTime ucledDataTime1;
-        private HZH_Controls.Controls.LED.UCLEDNums ucledNums1;
-        private HZH_Controls.Controls.LED.UCLEDNums ucledNums2;
+        private HZH_Controls.Controls.UCLEDNums ucledNums1;
+        private HZH_Controls.Controls.UCLEDNums ucledNums2;
         private HZH_Controls.Controls.UCProcessEllipse ucProcessEllipse2;
         private HZH_Controls.Controls.UCProcessEllipse ucProcessEllipse1;
         private System.Windows.Forms.Timer timer2;

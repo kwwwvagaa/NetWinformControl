@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCListView.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:03:44
-// 功能描述：UCListView    English:UCListView
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-22-2019
+//
+// ***********************************************************************
+// <copyright file="UCListView.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,14 +25,34 @@ using System.Collections;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCListView.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     [DefaultEvent("SelectedItemEvent")]
     public partial class UCListView : UserControl
     {
+        /// <summary>
+        /// The m int cell width
+        /// </summary>
         int m_intCellWidth = 130;//单元格宽度
+        /// <summary>
+        /// The m int cell height
+        /// </summary>
         int m_intCellHeight = 120;//单元格高度
 
+        /// <summary>
+        /// The m item type
+        /// </summary>
         private Type m_itemType = typeof(UCListViewItem);
 
+        /// <summary>
+        /// Gets or sets the type of the item.
+        /// </summary>
+        /// <value>The type of the item.</value>
+        /// <exception cref="System.Exception">单元格控件没有继承实现接口IListViewItem</exception>
+        /// <exception cref="Exception">单元格控件没有继承实现接口IListViewItem</exception>
         [Description("单元格类型，如果无法满足您的需求，你可以自定义单元格控件，并实现接口IListViewItem"), Category("自定义")]
         public Type ItemType
         {
@@ -38,10 +65,16 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m page
+        /// </summary>
         private UCPagerControlBase m_page = null;
         /// <summary>
         /// 翻页控件
         /// </summary>
+        /// <value>The page.</value>
+        /// <exception cref="System.Exception">翻页控件没有继承UCPagerControlBase</exception>
+        /// <exception cref="Exception">翻页控件没有继承UCPagerControlBase</exception>
         [Description("翻页控件，如果UCPagerControl不满足你的需求，请自定义翻页控件并继承UCPagerControlBase"), Category("自定义")]
         public UCPagerControlBase Page
         {
@@ -74,8 +107,17 @@ namespace HZH_Controls.Controls
 
 
 
+        /// <summary>
+        /// The m data source
+        /// </summary>
         private object m_dataSource = null;
 
+        /// <summary>
+        /// Gets or sets the data source.
+        /// </summary>
+        /// <value>The data source.</value>
+        /// <exception cref="System.Exception">数据源不是有效的数据类型，列表</exception>
+        /// <exception cref="Exception">数据源不是有效的数据类型，列表</exception>
         [Description("数据源,如果使用翻页控件，请使用翻页控件的DataSource"), Category("自定义")]
         public object DataSource
         {
@@ -93,7 +135,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m int cell count
+        /// </summary>
         int m_intCellCount = 0;//单元格总数
+        /// <summary>
+        /// Gets the cell count.
+        /// </summary>
+        /// <value>The cell count.</value>
         [Description("单元格总数"), Category("自定义")]
         public int CellCount
         {
@@ -109,8 +158,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m selected source
+        /// </summary>
         private List<object> m_selectedSource = new List<object>();
 
+        /// <summary>
+        /// Gets or sets the selected source.
+        /// </summary>
+        /// <value>The selected source.</value>
         [Description("选中的数据"), Category("自定义")]
         public List<object> SelectedSource
         {
@@ -122,8 +178,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m is multiple
+        /// </summary>
         private bool m_isMultiple = true;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is multiple.
+        /// </summary>
+        /// <value><c>true</c> if this instance is multiple; otherwise, <c>false</c>.</value>
         [Description("是否多选"), Category("自定义")]
         public bool IsMultiple
         {
@@ -131,18 +194,32 @@ namespace HZH_Controls.Controls
             set { m_isMultiple = value; }
         }
 
+        /// <summary>
+        /// Occurs when [selected item event].
+        /// </summary>
         [Description("选中项事件"), Category("自定义")]
         public event EventHandler SelectedItemEvent;
+        /// <summary>
+        /// Delegate ReloadGridStyleEventHandle
+        /// </summary>
+        /// <param name="intCellCount">The int cell count.</param>
         public delegate void ReloadGridStyleEventHandle(int intCellCount);
         /// <summary>
         /// 样式改变事件
         /// </summary>
         [Description("样式改变事件"), Category("自定义")]
         public event ReloadGridStyleEventHandle ReloadGridStyleEvent;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCListView" /> class.
+        /// </summary>
         public UCListView()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// ms the page show source changed.
+        /// </summary>
+        /// <param name="currentSource">The current source.</param>
         void m_page_ShowSourceChanged(object currentSource)
         {
             this.DataSource = currentSource;
@@ -253,6 +330,11 @@ namespace HZH_Controls.Controls
 
         }
 
+        /// <summary>
+        /// Handles the SelectedItemEvent event of the UCListView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCListView_SelectedItemEvent(object sender, EventArgs e)
         {
             var selectedItem = sender as IListViewItem;
@@ -335,11 +417,21 @@ namespace HZH_Controls.Controls
         }
         #endregion
 
+        /// <summary>
+        /// Handles the Resize event of the panMain control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void panMain_Resize(object sender, EventArgs e)
         {
             ReloadGridStyle();
         }
 
+        /// <summary>
+        /// Handles the Load event of the UCListView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void UCListView_Load(object sender, EventArgs e)
         {
 

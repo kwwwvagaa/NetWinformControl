@@ -1,5 +1,25 @@
-﻿namespace HZH_Controls.Forms
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmDialog.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmDialog.
+    /// Implements the <see cref="HZH_Controls.Forms.FrmBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Forms.FrmBase" />
     partial class FrmDialog
     {
         /// <summary>
@@ -217,15 +237,45 @@
 
         #endregion
 
+        /// <summary>
+        /// The label title
+        /// </summary>
         private System.Windows.Forms.Label lblTitle;
+        /// <summary>
+        /// The BTN ok
+        /// </summary>
         private Controls.UCBtnExt btnOK;
+        /// <summary>
+        /// The BTN cancel
+        /// </summary>
         private Controls.UCBtnExt btnCancel;
+        /// <summary>
+        /// The label MSG
+        /// </summary>
         private System.Windows.Forms.Label lblMsg;
+        /// <summary>
+        /// The panel1
+        /// </summary>
         private System.Windows.Forms.Panel panel1;
+        /// <summary>
+        /// The uc split line v1
+        /// </summary>
         private Controls.UCSplitLine_V ucSplitLine_V1;
+        /// <summary>
+        /// The BTN close
+        /// </summary>
         private System.Windows.Forms.Panel btnClose;
+        /// <summary>
+        /// The table layout panel1
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        /// <summary>
+        /// The uc split line h1
+        /// </summary>
         private Controls.UCSplitLine_H ucSplitLine_H1;
+        /// <summary>
+        /// The uc split line h2
+        /// </summary>
         private Controls.UCSplitLine_H ucSplitLine_H2;
     }
 }

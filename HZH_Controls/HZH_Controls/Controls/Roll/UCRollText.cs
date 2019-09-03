@@ -1,4 +1,19 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-31-2019
+//
+// ***********************************************************************
+// <copyright file="UCRollText.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +24,23 @@ using System.ComponentModel;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCRollText.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public class UCRollText : UserControl
     {
+        /// <summary>
+        /// 获取或设置控件显示的文字的字体。
+        /// </summary>
+        /// <value>The font.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public override Font Font
         {
             get
@@ -30,6 +60,13 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 获取或设置控件的前景色。
+        /// </summary>
+        /// <value>The color of the fore.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public override Color ForeColor
         {
             get
@@ -42,6 +79,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the text.
+        /// </summary>
+        /// <value>The text.</value>
         public override string Text
         {
             get
@@ -64,8 +105,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The roll style
+        /// </summary>
         private RollStyle _RollStyle = RollStyle.LeftToRight;
 
+        /// <summary>
+        /// Gets or sets the roll style.
+        /// </summary>
+        /// <value>The roll style.</value>
         [Description("滚动样式"), Category("自定义")]
         public RollStyle RollStyle
         {
@@ -85,10 +133,20 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The move step
+        /// </summary>
         private int _moveStep = 5;
 
+        /// <summary>
+        /// The move sleep time
+        /// </summary>
         private int _moveSleepTime = 100;
 
+        /// <summary>
+        /// Gets or sets the move sleep time.
+        /// </summary>
+        /// <value>The move sleep time.</value>
         [Description("每次滚动间隔时间，越小速度越快"), Category("自定义")]
         public int MoveSleepTime
         {
@@ -103,10 +161,22 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m intdirection
+        /// </summary>
         int m_intdirection = 1;
 
+        /// <summary>
+        /// The rect text
+        /// </summary>
         Rectangle rectText;
+        /// <summary>
+        /// The m timer
+        /// </summary>
         Timer m_timer;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCRollText" /> class.
+        /// </summary>
         public UCRollText()
         {
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
@@ -131,6 +201,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the Tick event of the m_timer control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void m_timer_Tick(object sender, EventArgs e)
         {
             if (rectText == Rectangle.Empty)
@@ -168,11 +243,21 @@ namespace HZH_Controls.Controls
             Refresh();
         }
 
+        /// <summary>
+        /// Handles the VisibleChanged event of the UCRollText control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCRollText_VisibleChanged(object sender, EventArgs e)
         {
             m_timer.Enabled = this.Visible;
         }
 
+        /// <summary>
+        /// Handles the Load event of the UCRollText control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCRollText_Load(object sender, EventArgs e)
         {
             if (_RollStyle == HZH_Controls.Controls.RollStyle.LeftToRight)
@@ -205,6 +290,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the UCRollText control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCRollText_SizeChanged(object sender, EventArgs e)
         {
             if (rectText != Rectangle.Empty)
@@ -213,6 +303,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -224,10 +318,22 @@ namespace HZH_Controls.Controls
         }
     }
 
+    /// <summary>
+    /// Enum RollStyle
+    /// </summary>
     public enum RollStyle
     {
+        /// <summary>
+        /// The left to right
+        /// </summary>
         LeftToRight,
+        /// <summary>
+        /// The right to left
+        /// </summary>
         RightToLeft,
+        /// <summary>
+        /// The back and forth
+        /// </summary>
         BackAndForth
     }
 }

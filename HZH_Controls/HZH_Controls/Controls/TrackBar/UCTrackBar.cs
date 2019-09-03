@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCTrackBar.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:05:48
-// 功能描述：UCTrackBar    English:UCTrackBar
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-29-2019
+//
+// ***********************************************************************
+// <copyright file="UCTrackBar.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +24,28 @@ using System.ComponentModel;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCTrackBar.
+    /// Implements the <see cref="System.Windows.Forms.Control" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Control" />
     public class UCTrackBar : Control
     {
+        /// <summary>
+        /// Occurs when [value changed].
+        /// </summary>
         [Description("值改变事件"), Category("自定义")]
         public event EventHandler ValueChanged;
 
+        /// <summary>
+        /// The dcimal digits
+        /// </summary>
         private int dcimalDigits = 0;
 
+        /// <summary>
+        /// Gets or sets the dcimal digits.
+        /// </summary>
+        /// <value>The dcimal digits.</value>
         [Description("值小数精确位数"), Category("自定义")]
         public int DcimalDigits
         {
@@ -31,8 +53,15 @@ namespace HZH_Controls.Controls
             set { dcimalDigits = value; }
         }
 
+        /// <summary>
+        /// The line width
+        /// </summary>
         private float lineWidth = 10;
 
+        /// <summary>
+        /// Gets or sets the width of the line.
+        /// </summary>
+        /// <value>The width of the line.</value>
         [Description("线宽度"), Category("自定义")]
         public float LineWidth
         {
@@ -40,8 +69,15 @@ namespace HZH_Controls.Controls
             set { lineWidth = value; }
         }
 
+        /// <summary>
+        /// The minimum value
+        /// </summary>
         private float minValue = 0;
 
+        /// <summary>
+        /// Gets or sets the minimum value.
+        /// </summary>
+        /// <value>The minimum value.</value>
         [Description("最小值"), Category("自定义")]
         public float MinValue
         {
@@ -55,8 +91,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The maximum value
+        /// </summary>
         private float maxValue = 100;
 
+        /// <summary>
+        /// Gets or sets the maximum value.
+        /// </summary>
+        /// <value>The maximum value.</value>
         [Description("最大值"), Category("自定义")]
         public float MaxValue
         {
@@ -70,8 +113,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m value
+        /// </summary>
         private float m_value = 0;
 
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        /// <value>The value.</value>
         [Description("值"), Category("自定义")]
         public float Value
         {
@@ -92,8 +142,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m line color
+        /// </summary>
         private Color m_lineColor = Color.FromArgb(228, 231, 237);
 
+        /// <summary>
+        /// Gets or sets the color of the line.
+        /// </summary>
+        /// <value>The color of the line.</value>
         [Description("线颜色"), Category("自定义")]
         public Color LineColor
         {
@@ -105,8 +162,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m value color
+        /// </summary>
         private Color m_valueColor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the color of the value.
+        /// </summary>
+        /// <value>The color of the value.</value>
         [Description("值颜色"), Category("自定义")]
         public Color ValueColor
         {
@@ -118,8 +182,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The is show tips
+        /// </summary>
         private bool isShowTips = true;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is show tips.
+        /// </summary>
+        /// <value><c>true</c> if this instance is show tips; otherwise, <c>false</c>.</value>
         [Description("点击滑动时是否显示数值提示"), Category("自定义")]
         public bool IsShowTips
         {
@@ -127,12 +198,25 @@ namespace HZH_Controls.Controls
             set { isShowTips = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the tips format.
+        /// </summary>
+        /// <value>The tips format.</value>
         [Description("显示数值提示的格式化形式"), Category("自定义")]
         public string TipsFormat { get; set; }
 
+        /// <summary>
+        /// The m line rectangle
+        /// </summary>
         RectangleF m_lineRectangle;
+        /// <summary>
+        /// The m track rectangle
+        /// </summary>
         RectangleF m_trackRectangle;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCTrackBar" /> class.
+        /// </summary>
         public UCTrackBar()
         {
             this.Size = new Size(250, 30);
@@ -150,7 +234,15 @@ namespace HZH_Controls.Controls
 
 
 
+        /// <summary>
+        /// The BLN down
+        /// </summary>
         bool blnDown = false;
+        /// <summary>
+        /// Handles the MouseDown event of the UCTrackBar control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void UCTrackBar_MouseDown(object sender, MouseEventArgs e)
         {
             if (m_lineRectangle.Contains(e.Location) || m_trackRectangle.Contains(e.Location))
@@ -160,6 +252,11 @@ namespace HZH_Controls.Controls
                 ShowTips();
             }
         }
+        /// <summary>
+        /// Handles the MouseMove event of the UCTrackBar control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void UCTrackBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (blnDown)
@@ -168,6 +265,11 @@ namespace HZH_Controls.Controls
                 ShowTips();
             }
         }
+        /// <summary>
+        /// Handles the MouseUp event of the UCTrackBar control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void UCTrackBar_MouseUp(object sender, MouseEventArgs e)
         {
             blnDown = false;
@@ -178,8 +280,14 @@ namespace HZH_Controls.Controls
                 frmTips = null;
             }
         }
+        /// <summary>
+        /// The FRM tips
+        /// </summary>
         Forms.FrmAnchorTips frmTips = null;
 
+        /// <summary>
+        /// Shows the tips.
+        /// </summary>
         private void ShowTips()
         {
             if (isShowTips)
@@ -208,6 +316,10 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// Handles the <see cref="E:Paint" /> event.
+        /// </summary>
+        /// <param name="e">The <see cref="PaintEventArgs" /> instance containing the event data.</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

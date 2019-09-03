@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCDataGridViewTreeRow.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:02:55
-// 功能描述：UCDataGridViewTreeRow    English:UCDataGridViewTreeRow
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-23-2019
+//
+// ***********************************************************************
+// <copyright file="UCDataGridViewTreeRow.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,34 +25,72 @@ using System.Collections;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCDataGridViewTreeRow.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// Implements the <see cref="HZH_Controls.Controls.IDataGridViewRow" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
+    /// <seealso cref="HZH_Controls.Controls.IDataGridViewRow" />
     [ToolboxItem(false)]
     public partial class UCDataGridViewTreeRow : UserControl, IDataGridViewRow
     {
         #region 属性
+        /// <summary>
+        /// CheckBox选中事件
+        /// </summary>
         public event DataGridViewEventHandler CheckBoxChangeEvent;
 
+        /// <summary>
+        /// 点击单元格事件
+        /// </summary>
         public event DataGridViewEventHandler CellClick;
 
+        /// <summary>
+        /// 数据源改变事件
+        /// </summary>
         public event DataGridViewEventHandler SourceChanged;
+        /// <summary>
+        /// Occurs when [row custom event].
+        /// </summary>
         public event DataGridViewRowCustomEventHandler RowCustomEvent;
+        /// <summary>
+        /// 列参数，用于创建列数和宽度
+        /// </summary>
+        /// <value>The columns.</value>
         public List<DataGridViewColumnEntity> Columns
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// 数据源
+        /// </summary>
+        /// <value>The data source.</value>
         public object DataSource
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is show CheckBox.
+        /// </summary>
+        /// <value><c>true</c> if this instance is show CheckBox; otherwise, <c>false</c>.</value>
         public bool IsShowCheckBox
         {
             get;
             set;
         }
+        /// <summary>
+        /// The m is checked
+        /// </summary>
         private bool m_isChecked;
+        /// <summary>
+        /// 是否选中
+        /// </summary>
+        /// <value><c>true</c> if this instance is checked; otherwise, <c>false</c>.</value>
         public bool IsChecked
         {
             get
@@ -63,7 +108,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m row height
+        /// </summary>
         int m_rowHeight = 40;
+        /// <summary>
+        /// 行高
+        /// </summary>
+        /// <value>The height of the row.</value>
         public int RowHeight
         {
             get
@@ -78,6 +130,9 @@ namespace HZH_Controls.Controls
         }
         #endregion
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCDataGridViewTreeRow" /> class.
+        /// </summary>
         public UCDataGridViewTreeRow()
         {
             InitializeComponent();
@@ -98,6 +153,11 @@ namespace HZH_Controls.Controls
 
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the UCDataGridViewTreeRow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCDataGridViewTreeRow_SizeChanged(object sender, EventArgs e)
         {
             if (this.Parent.Parent.Parent != null && this.Parent.Parent.Parent.Name == "panChildGrid" && this.panLeft.Tag.ToInt() == 1)
@@ -109,6 +169,10 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// 绑定数据到Cell
+        /// </summary>
+        /// <returns>返回true则表示已处理过，否则将进行默认绑定（通常只针对有Text值的控件）</returns>
         public void BindingCellData()
         {
             for (int i = 0; i < Columns.Count; i++)
@@ -176,6 +240,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the Item control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void Item_MouseDown(object sender, MouseEventArgs e)
         {
             if (CellClick != null)
@@ -188,6 +257,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 设置选中状态，通常为设置颜色即可
+        /// </summary>
+        /// <param name="blnSelected">是否选中</param>
         public void SetSelect(bool blnSelected)
         {
             if (blnSelected)
@@ -200,6 +273,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 添加单元格元素，仅做添加控件操作，不做数据绑定，数据绑定使用BindingCells
+        /// </summary>
         public void ReloadCells()
         {
             try
@@ -273,6 +349,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the panChildGrid control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void panChildGrid_SizeChanged(object sender, EventArgs e)
         {
             int intHeight = RowHeight + panChildGrid.Height;
@@ -282,6 +363,11 @@ namespace HZH_Controls.Controls
                 this.Height = intHeight;
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the panLeft control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void panLeft_MouseDown(object sender, MouseEventArgs e)
         {
             try
@@ -332,6 +418,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the ucDGVChild control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void ucDGVChild_SizeChanged(object sender, EventArgs e)
         {
 

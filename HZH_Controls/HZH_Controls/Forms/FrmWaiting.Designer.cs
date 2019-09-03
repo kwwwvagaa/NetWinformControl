@@ -1,5 +1,25 @@
-﻿namespace HZH_Controls.Forms
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmWaiting.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmWaiting.
+    /// Implements the <see cref="HZH_Controls.Forms.FrmBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Forms.FrmBase" />
     partial class FrmWaiting
     {
         /// <summary>
@@ -116,10 +136,25 @@
 
         #endregion
 
+        /// <summary>
+        /// The image list1
+        /// </summary>
         private System.Windows.Forms.ImageList imageList1;
+        /// <summary>
+        /// The label1
+        /// </summary>
         private System.Windows.Forms.Label label1;
+        /// <summary>
+        /// The timer1
+        /// </summary>
         private System.Windows.Forms.Timer timer1;
+        /// <summary>
+        /// The label2
+        /// </summary>
         private System.Windows.Forms.Label label2;
+        /// <summary>
+        /// The timer2
+        /// </summary>
         private System.Windows.Forms.Timer timer2;
 
 

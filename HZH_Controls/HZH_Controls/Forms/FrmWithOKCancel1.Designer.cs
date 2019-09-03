@@ -1,5 +1,25 @@
-﻿namespace HZH_Controls.Forms
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmWithOKCancel1.Designer.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmWithOKCancel1.
+    /// Implements the <see cref="HZH_Controls.Forms.FrmWithTitle" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Forms.FrmWithTitle" />
     partial class FrmWithOKCancel1
     {
         /// <summary>
@@ -159,11 +179,29 @@
 
         #endregion
 
+        /// <summary>
+        /// The BTN ok
+        /// </summary>
         private Controls.UCBtnExt btnOK;
+        /// <summary>
+        /// The BTN cancel
+        /// </summary>
         private Controls.UCBtnExt btnCancel;
+        /// <summary>
+        /// The panel3
+        /// </summary>
         public System.Windows.Forms.Panel panel3;
+        /// <summary>
+        /// The table layout panel1
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        /// <summary>
+        /// The uc split line h2
+        /// </summary>
         private Controls.UCSplitLine_H ucSplitLine_H2;
+        /// <summary>
+        /// The uc split line v1
+        /// </summary>
         private Controls.UCSplitLine_V ucSplitLine_V1;
 
     }

@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：FrmBase.cs
-// 创建日期：2019-08-15 16:04:31
-// 功能描述：FrmBase
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmBase.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +26,25 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmBase.
+    /// Implements the <see cref="System.Windows.Forms.Form" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(System.ComponentModel.Design.IDesigner))]
     public partial class FrmBase : Form
     {
+        /// <summary>
+        /// Gets or sets the hot keys.
+        /// </summary>
+        /// <value>The hot keys.</value>
         [Description("定义的热键列表"), Category("自定义")]
         public Dictionary<int, string> HotKeys { get; set; }
+        /// <summary>
+        /// Delegate HotKeyEventHandler
+        /// </summary>
+        /// <param name="strHotKey">The string hot key.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public delegate bool HotKeyEventHandler(string strHotKey);
         /// <summary>
         /// 热键事件
@@ -64,10 +88,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 蒙版窗体
         /// </summary>
-        //private FrmTransparent _frmTransparent = null;
-        /// <summary>
-        /// 是否显示蒙版窗体
-        /// </summary>
+        /// <value><c>true</c> if this instance is show mask dialog; otherwise, <c>false</c>.</value>
         [Description("是否显示蒙版窗体")]
         public bool IsShowMaskDialog
         {
@@ -83,6 +104,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 边框宽度
         /// </summary>
+        /// <value>The size of the border style.</value>
         [Description("边框宽度")]
         public int BorderStyleSize
         {
@@ -98,6 +120,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 边框颜色
         /// </summary>
+        /// <value>The color of the border style.</value>
         [Description("边框颜色")]
         public Color BorderStyleColor
         {
@@ -113,6 +136,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 边框样式
         /// </summary>
+        /// <value>The type of the border style.</value>
         [Description("边框样式")]
         public ButtonBorderStyle BorderStyleType
         {
@@ -128,6 +152,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 边框圆角
         /// </summary>
+        /// <value>The region radius.</value>
         [Description("边框圆角")]
         public int RegionRadius
         {
@@ -143,6 +168,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 是否显示自定义绘制内容
         /// </summary>
+        /// <value><c>true</c> if this instance is show region; otherwise, <c>false</c>.</value>
         [Description("是否显示自定义绘制内容")]
         public bool IsShowRegion
         {
@@ -158,6 +184,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 是否显示重绘边框
         /// </summary>
+        /// <value><c>true</c> if redraw; otherwise, <c>false</c>.</value>
         [Description("是否显示重绘边框")]
         public bool Redraw
         {
@@ -171,10 +198,14 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// The is full size
+        /// </summary>
         private bool _isFullSize = true;
         /// <summary>
         /// 是否全屏
         /// </summary>
+        /// <value><c>true</c> if this instance is full size; otherwise, <c>false</c>.</value>
         [Description("是否全屏")]
         public bool IsFullSize
         {
@@ -184,6 +215,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 失去焦点自动关闭
         /// </summary>
+        /// <value><c>true</c> if this instance is lose focus close; otherwise, <c>false</c>.</value>
         [Description("失去焦点自动关闭")]
         public bool IsLoseFocusClose
         {
@@ -198,6 +230,10 @@ namespace HZH_Controls.Forms
         }
         #endregion
 
+        /// <summary>
+        /// Gets a value indicating whether this instance is desing mode.
+        /// </summary>
+        /// <value><c>true</c> if this instance is desing mode; otherwise, <c>false</c>.</value>
         private bool IsDesingMode
         {
             get
@@ -212,6 +248,9 @@ namespace HZH_Controls.Forms
         }
 
         #region 初始化
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FrmBase" /> class.
+        /// </summary>
         public FrmBase()
         {
             InitializeComponent();
@@ -224,6 +263,11 @@ namespace HZH_Controls.Forms
             this.FormClosing += FrmBase_FormClosing;
         }
 
+        /// <summary>
+        /// Handles the FormClosing event of the FrmBase control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosingEventArgs" /> instance containing the event data.</param>
         void FrmBase_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (_isLoseFocusClose)
@@ -233,6 +277,11 @@ namespace HZH_Controls.Forms
         }
 
 
+        /// <summary>
+        /// Handles the Load event of the FrmBase control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmBase_Load(object sender, EventArgs e)
         {
             if (!IsDesingMode)
@@ -251,6 +300,11 @@ namespace HZH_Controls.Forms
         #region 方法区
 
 
+        /// <summary>
+        /// Handles the OnMouseActivity event of the hook control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void hook_OnMouseActivity(object sender, MouseEventArgs e)
         {
             try
@@ -282,11 +336,17 @@ namespace HZH_Controls.Forms
 
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
+        /// <summary>
+        /// Does the escape.
+        /// </summary>
         protected virtual void DoEsc()
         {
             base.Close();
         }
 
+        /// <summary>
+        /// Does the enter.
+        /// </summary>
         protected virtual void DoEnter()
         {
         }
@@ -304,9 +364,9 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 获取重绘区域
         /// </summary>
-        /// <param name="rect"></param>
-        /// <param name="radius"></param>
-        /// <returns></returns>
+        /// <param name="rect">The rect.</param>
+        /// <param name="radius">The radius.</param>
+        /// <returns>GraphicsPath.</returns>
         private GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
         {
             Rectangle rect2 = new Rectangle(rect.Location, new Size(radius, radius));
@@ -324,6 +384,18 @@ namespace HZH_Controls.Forms
             return graphicsPath;
         }
 
+        /// <summary>
+        /// 将窗体显示为具有指定所有者的模式对话框。
+        /// </summary>
+        /// <param name="owner">任何实现 <see cref="T:System.Windows.Forms.IWin32Window" />（表示将拥有模式对话框的顶级窗口）的对象。</param>
+        /// <returns><see cref="T:System.Windows.Forms.DialogResult" /> 值之一。</returns>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Security.Permissions.UIPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public new DialogResult ShowDialog(IWin32Window owner)
         {
             try
@@ -351,6 +423,17 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// 将窗体显示为模式对话框，并将当前活动窗口设置为它的所有者。
+        /// </summary>
+        /// <returns><see cref="T:System.Windows.Forms.DialogResult" /> 值之一。</returns>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Security.Permissions.UIPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public new DialogResult ShowDialog()
         {
             return base.ShowDialog();
@@ -363,7 +446,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 关闭时发生
         /// </summary>
-        /// <param name="e"></param>
+        /// <param name="e">一个包含事件数据的 <see cref="T:System.EventArgs" />。</param>
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -376,9 +459,9 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 快捷键
         /// </summary>
-        /// <param name="msg"></param>
-        /// <param name="keyData"></param>
-        /// <returns></returns>
+        /// <param name="msg">通过引用传递的 <see cref="T:System.Windows.Forms.Message" />，它表示要处理的 Win32 消息。</param>
+        /// <param name="keyData"><see cref="T:System.Windows.Forms.Keys" /> 值之一，它表示要处理的键。</param>
+        /// <returns>如果控件处理并使用击键，则为 true；否则为 false，以允许进一步处理。</returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             int num = 256;
@@ -410,6 +493,11 @@ namespace HZH_Controls.Forms
                 return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        /// <summary>
+        /// Handles the KeyDown event of the FrmBase control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="KeyEventArgs" /> instance containing the event data.</param>
         protected void FrmBase_KeyDown(object sender, KeyEventArgs e)
         {
             if (HotKeyDown != null && HotKeys != null)
@@ -452,7 +540,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 重绘事件
         /// </summary>
-        /// <param name="e"></param>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             if (this._isShowRegion)
@@ -469,19 +557,40 @@ namespace HZH_Controls.Forms
 
 
         #region 窗体拖动    English:Form drag
+        /// <summary>
+        /// Releases the capture.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+        /// <summary>
+        /// Sends the message.
+        /// </summary>
+        /// <param name="hwnd">The HWND.</param>
+        /// <param name="wMsg">The w MSG.</param>
+        /// <param name="wParam">The w parameter.</param>
+        /// <param name="lParam">The l parameter.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         [DllImport("user32.dll")]
         public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
 
+        /// <summary>
+        /// The wm syscommand
+        /// </summary>
         public const int WM_SYSCOMMAND = 0x0112;
+        /// <summary>
+        /// The sc move
+        /// </summary>
         public const int SC_MOVE = 0xF010;
+        /// <summary>
+        /// The htcaption
+        /// </summary>
         public const int HTCAPTION = 0x0002;
 
         /// <summary>
         /// 通过Windows的API控制窗体的拖动
         /// </summary>
-        /// <param name="hwnd"></param>
+        /// <param name="hwnd">The HWND.</param>
         public static void MouseDown(IntPtr hwnd)
         {
             ReleaseCapture();
@@ -492,7 +601,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// 在构造函数中调用设置窗体移动
         /// </summary>
-        /// <param name="c">拖动控件，一般为标题栏</param>
+        /// <param name="cs">The cs.</param>
         protected void InitFormMove(params Control[] cs)
         {
             foreach (Control c in cs)
@@ -502,6 +611,11 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the c control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void c_MouseDown(object sender, MouseEventArgs e)
         {
             MouseDown(this.Handle);

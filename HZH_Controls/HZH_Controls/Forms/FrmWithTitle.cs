@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：FrmWithTitle.cs
-// 创建日期：2019-08-15 16:05:30
-// 功能描述：FrmWithTitle
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmWithTitle.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +24,18 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmWithTitle.
+    /// Implements the <see cref="HZH_Controls.Forms.FrmBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Forms.FrmBase" />
     [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(System.ComponentModel.Design.IDesigner))]
     public partial class FrmWithTitle : FrmBase
     {
+        /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
+        /// <value>The title.</value>
         [Description("窗体标题"), Category("自定义")]
         public string Title
         {
@@ -29,7 +48,14 @@ namespace HZH_Controls.Forms
                 lblTitle.Text = value;
             }
         }
+        /// <summary>
+        /// The is show close BTN
+        /// </summary>
         private bool _isShowCloseBtn = false;
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is show close BTN.
+        /// </summary>
+        /// <value><c>true</c> if this instance is show close BTN; otherwise, <c>false</c>.</value>
         [Description("是否显示右上角关闭按钮"), Category("自定义")]
         public bool IsShowCloseBtn
         {
@@ -49,17 +75,30 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FrmWithTitle" /> class.
+        /// </summary>
         public FrmWithTitle()
         {
             InitializeComponent();
             InitFormMove(this.lblTitle);
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the btnClose control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void btnClose_MouseDown(object sender, MouseEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the Shown event of the FrmWithTitle control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmWithTitle_Shown(object sender, EventArgs e)
         {
             if (IsShowCloseBtn)
@@ -69,11 +108,21 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Handles the 1 event of the btnClose_MouseDown control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void btnClose_MouseDown_1(object sender, MouseEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the VisibleChanged event of the FrmWithTitle control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmWithTitle_VisibleChanged(object sender, EventArgs e)
         {
         }

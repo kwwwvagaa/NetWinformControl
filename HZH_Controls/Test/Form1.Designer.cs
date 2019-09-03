@@ -64,7 +64,7 @@
             this.ucBtnsGroup1 = new HZH_Controls.Controls.UCBtnsGroup();
             this.ucPagerControl21 = new HZH_Controls.Controls.UCPagerControl2();
             this.ucMenu1 = new HZH_Controls.Controls.UCMenu();
-            this.ucComboxGrid1 = new HZH_Controls.Controls.ComboBox.UCComboxGrid();
+            this.ucComboxGrid1 = new HZH_Controls.Controls.UCComboxGrid();
             this.ucHorizontalList1 = new HZH_Controls.Controls.UCHorizontalList();
             this.ucDatePickerExt3 = new HZH_Controls.Controls.UCDatePickerExt();
             this.ucDatePickerExt2 = new HZH_Controls.Controls.UCDatePickerExt();
@@ -87,7 +87,7 @@
             this.ucRadioButton3 = new HZH_Controls.Controls.UCRadioButton();
             this.ucRadioButton2 = new HZH_Controls.Controls.UCRadioButton();
             this.ucRadioButton1 = new HZH_Controls.Controls.UCRadioButton();
-            this.ucDropDownBtn1 = new HZH_Controls.Controls.Btn.UCDropDownBtn();
+            this.ucDropDownBtn1 = new HZH_Controls.Controls.UCDropDownBtn();
             this.ucControlBase1 = new HZH_Controls.Controls.UCControlBase();
             this.ucBtnExt3 = new HZH_Controls.Controls.UCBtnExt();
             this.ucBtnExt4 = new HZH_Controls.Controls.UCBtnExt();
@@ -1310,8 +1310,8 @@
         private HZH_Controls.Controls.UCBtnExt ucBtnExt3;
         private HZH_Controls.Controls.UCBtnExt ucBtnExt4;
         private HZH_Controls.Controls.UCBtnExt ucBtnExt5;
-        private HZH_Controls.Controls.Btn.UCDropDownBtn ucDropDownBtn1;
-        private HZH_Controls.Controls.ComboBox.UCComboxGrid ucComboxGrid1;
+        private HZH_Controls.Controls.UCDropDownBtn ucDropDownBtn1;
+        private HZH_Controls.Controls.UCComboxGrid ucComboxGrid1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

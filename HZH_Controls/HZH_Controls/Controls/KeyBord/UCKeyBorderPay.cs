@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCKeyBorderPay.cs
-// 创建日期：2019-08-15 16:00:14
-// 功能描述：KeyBord
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCKeyBorderPay.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,22 +24,45 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCKeyBorderPay.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCKeyBorderPay : UserControl
     {
+        /// <summary>
+        /// Occurs when [number click].
+        /// </summary>
         [Description("数字点击事件"), Category("自定义")]
         public event EventHandler NumClick;
 
+        /// <summary>
+        /// Occurs when [cancel click].
+        /// </summary>
         [Description("取消点击事件"), Category("自定义")]
         public event EventHandler CancelClick;
 
+        /// <summary>
+        /// Occurs when [ok click].
+        /// </summary>
         [Description("确定点击事件"), Category("自定义")]
         public event EventHandler OKClick;
 
+        /// <summary>
+        /// Occurs when [backspace click].
+        /// </summary>
         [Description("删除点击事件"), Category("自定义")]
         public event EventHandler BackspaceClick;
 
+        /// <summary>
+        /// Occurs when [money click].
+        /// </summary>
         [Description("金额点击事件"), Category("自定义")]
         public event EventHandler MoneyClick;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCKeyBorderPay" /> class.
+        /// </summary>
         public UCKeyBorderPay()
         {
             InitializeComponent();
@@ -149,6 +182,10 @@ namespace HZH_Controls.Controls
         }
         #endregion
 
+        /// <summary>
+        /// Sets the fast money to contrl.
+        /// </summary>
+        /// <param name="values">The values.</param>
         private void SetFastMoneyToContrl(List<decimal> values)
         {
             List<Label> lbl = new List<Label>() { lblFast1, lblFast2, lblFast3, lblFast4 };
@@ -179,51 +216,88 @@ namespace HZH_Controls.Controls
                 lbl[i].Tag = lbl[i].Text = values[i].ToString("0.##");
             }
         }
+        /// <summary>
+        /// Handles the MouseDown event of the Num control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void Num_MouseDown(object sender, MouseEventArgs e)
         {
             if (NumClick != null)
                 NumClick((sender as Label).Tag, e);
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the Backspace control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void Backspace_MouseDown(object sender, MouseEventArgs e)
         {
             if (BackspaceClick != null)
                 BackspaceClick((sender as Label).Tag, e);
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the Cancel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void Cancel_MouseDown(object sender, MouseEventArgs e)
         {
             if (CancelClick != null)
                 CancelClick((sender as Label).Tag, e);
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the OK control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void OK_MouseDown(object sender, MouseEventArgs e)
         {
             if (OKClick != null)
                 OKClick((sender as Label).Tag, e);
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the Money control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void Money_MouseDown(object sender, MouseEventArgs e)
         {
             if (MoneyClick != null)
                 MoneyClick((sender as Label).Tag, e);
         }
 
+        /// <summary>
+        /// Money1s the click.
+        /// </summary>
         public void Money1Click()
         {
             Money_MouseDown(lblFast1, null);
         }
 
+        /// <summary>
+        /// Money2s the click.
+        /// </summary>
         public void Money2Click()
         {
             Money_MouseDown(lblFast2, null);
         }
 
+        /// <summary>
+        /// Money3s the click.
+        /// </summary>
         public void Money3Click()
         {
             Money_MouseDown(lblFast3, null);
         }
 
+        /// <summary>
+        /// Money4s the click.
+        /// </summary>
         public void Money4Click()
         {
             Money_MouseDown(lblFast4, null);

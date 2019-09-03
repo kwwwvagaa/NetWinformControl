@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCBtnsGroup.cs
-// 创建日期：2019-08-15 15:58:13
-// 功能描述：按钮组
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-15-2019
+//
+// ***********************************************************************
+// <copyright file="UCBtnsGroup.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +24,27 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCBtnsGroup.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCBtnsGroup : UserControl
     {
         /// <summary>
         /// 选中改变事件
         /// </summary>
+        [Description("选中改变事件"), Category("自定义")]
         public event EventHandler SelectedItemChanged;
+        /// <summary>
+        /// The m data source
+        /// </summary>
         private Dictionary<string, string> m_dataSource = new Dictionary<string, string>();
         /// <summary>
         /// 数据源
         /// </summary>
+        /// <value>The data source.</value>
+        [Description("数据源"), Category("自定义")]
         public Dictionary<string, string> DataSource
         {
             get { return m_dataSource; }
@@ -34,10 +55,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m select item
+        /// </summary>
         private List<string> m_selectItem = new List<string>();
         /// <summary>
         /// 选中项
         /// </summary>
+        /// <value>The select item.</value>
+        [Description("选中项"), Category("自定义")]
         public List<string> SelectItem
         {
             get { return m_selectItem; }
@@ -50,20 +76,31 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The m is multiple
+        /// </summary>
         private bool m_isMultiple = false;
         /// <summary>
         /// 是否多选
         /// </summary>
+        /// <value><c>true</c> if this instance is multiple; otherwise, <c>false</c>.</value>
+        [Description("是否多选"), Category("自定义")]
         public bool IsMultiple
         {
             get { return m_isMultiple; }
             set { m_isMultiple = value; }
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCBtnsGroup" /> class.
+        /// </summary>
         public UCBtnsGroup()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Reloads this instance.
+        /// </summary>
         private void Reload()
         {
             try
@@ -106,6 +143,11 @@ namespace HZH_Controls.Controls
             SetSelected();
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void btn_BtnClick(object sender, EventArgs e)
         {
             var btn = sender as UCBtnExt;
@@ -136,6 +178,9 @@ namespace HZH_Controls.Controls
                 SelectedItemChanged(this, e);
         }
 
+        /// <summary>
+        /// Sets the selected.
+        /// </summary>
         private void SetSelected()
         {
             if (m_selectItem != null && m_selectItem.Count > 0 && DataSource != null && DataSource.Count > 0)

@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCDropDownBtn.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:01:36
-// 功能描述：UCDropDownBtn    English:UCDropDownBtn
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-27-2019
+//
+// ***********************************************************************
+// <copyright file="UCDropDownBtn.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,27 +24,56 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace HZH_Controls.Controls.Btn
+namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCDropDownBtn.
+    /// Implements the <see cref="HZH_Controls.Controls.UCBtnImg" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCBtnImg" />
     [DefaultEvent("BtnClick")]
     public partial class UCDropDownBtn : UCBtnImg
     {
+        /// <summary>
+        /// The FRM anchor
+        /// </summary>
         Forms.FrmAnchor _frmAnchor;
+        /// <summary>
+        /// The drop panel height
+        /// </summary>
         private int _dropPanelHeight = -1;
+        /// <summary>
+        /// 按钮点击事件
+        /// </summary>
         public new event EventHandler BtnClick;
+        /// <summary>
+        /// 下拉框高度
+        /// </summary>
+        /// <value>The height of the drop panel.</value>
         [Description("下拉框高度"), Category("自定义")]
         public int DropPanelHeight
         {
             get { return _dropPanelHeight; }
             set { _dropPanelHeight = value; }
         }
+        /// <summary>
+        /// The BTNS
+        /// </summary>
         private string[] btns;
-        [Description("按钮"), Category("自定义")]
+        /// <summary>
+        /// 需要显示的按钮文字
+        /// </summary>
+        /// <value>The BTNS.</value>
+        [Description("需要显示的按钮文字"), Category("自定义")]
         public string[] Btns
         {
             get { return btns; }
             set { btns = value; }
         }
+        /// <summary>
+        /// 图片
+        /// </summary>
+        /// <value>The image.</value>
         [Obsolete("不再可用的属性")]
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public override Image Image
@@ -45,6 +81,10 @@ namespace HZH_Controls.Controls.Btn
             get;
             set;
         }
+        /// <summary>
+        /// 图片位置
+        /// </summary>
+        /// <value>The image align.</value>
         [Obsolete("不再可用的属性")]
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public override ContentAlignment ImageAlign
@@ -52,7 +92,11 @@ namespace HZH_Controls.Controls.Btn
             get;
             set;
         }
-
+        /// <summary>
+        /// 按钮字体颜色
+        /// </summary>
+        /// <value>The color of the BTN fore.</value>
+        [Description("按钮字体颜色"), Category("自定义")]
         public override Color BtnForeColor
         {
             get
@@ -79,6 +123,9 @@ namespace HZH_Controls.Controls.Btn
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCDropDownBtn" /> class.
+        /// </summary>
         public UCDropDownBtn()
         {
             InitializeComponent();
@@ -87,6 +134,11 @@ namespace HZH_Controls.Controls.Btn
             base.BtnClick += UCDropDownBtn_BtnClick;
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the UCDropDownBtn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCDropDownBtn_BtnClick(object sender, EventArgs e)
         {
             if (_frmAnchor == null || _frmAnchor.IsDisposed || _frmAnchor.Visible == false)
@@ -138,6 +190,11 @@ namespace HZH_Controls.Controls.Btn
                 _frmAnchor.Close();
             }
         }
+        /// <summary>
+        /// Handles the SelectSourceEvent event of the ucTime control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void ucTime_SelectSourceEvent(object sender, EventArgs e)
         {
             if (_frmAnchor != null && !_frmAnchor.IsDisposed && _frmAnchor.Visible)

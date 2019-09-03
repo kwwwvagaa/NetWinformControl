@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：TextBoxTransparent.cs
-// 创建日期：2019-08-15 16:03:49
-// 功能描述：TextBox
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="TextBoxTransparent.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -14,28 +24,66 @@ using System.Drawing.Imaging;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class TextBoxTransparent.
+    /// Implements the <see cref="HZH_Controls.Controls.TextBoxEx" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.TextBoxEx" />
     public class TextBoxTransparent : TextBoxEx
     {
         #region private variables
 
+        /// <summary>
+        /// My PictureBox
+        /// </summary>
         private uPictureBox myPictureBox;
+        /// <summary>
+        /// My up to date
+        /// </summary>
         private bool myUpToDate = false;
+        /// <summary>
+        /// My caret up to date
+        /// </summary>
         private bool myCaretUpToDate = false;
+        /// <summary>
+        /// My bitmap
+        /// </summary>
         private Bitmap myBitmap;
+        /// <summary>
+        /// My alpha bitmap
+        /// </summary>
         private Bitmap myAlphaBitmap;
 
+        /// <summary>
+        /// My font height
+        /// </summary>
         private int myFontHeight = 10;
 
+        /// <summary>
+        /// My timer1
+        /// </summary>
         private System.Windows.Forms.Timer myTimer1;
 
+        /// <summary>
+        /// My caret state
+        /// </summary>
         private bool myCaretState = true;
 
+        /// <summary>
+        /// My painted first time
+        /// </summary>
         private bool myPaintedFirstTime = false;
 
+        /// <summary>
+        /// My back color
+        /// </summary>
         private Color myBackColor = Color.White;
+        /// <summary>
+        /// My back alpha
+        /// </summary>
         private int myBackAlpha = 10;
 
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.Container components = null;
@@ -45,6 +93,9 @@ namespace HZH_Controls.Controls
 
         #region public methods and overrides
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextBoxTransparent" /> class.
+        /// </summary>
         public TextBoxTransparent()
         {
             // This call is required by the Windows.Forms Form Designer.
@@ -64,6 +115,10 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.Resize" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
         protected override void OnResize(EventArgs e)
         {
 
@@ -77,6 +132,10 @@ namespace HZH_Controls.Controls
 
         //Some of these should be moved to the WndProc later
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.KeyDown" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
@@ -84,6 +143,10 @@ namespace HZH_Controls.Controls
             this.Invalidate();
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.KeyUp" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
         protected override void OnKeyUp(KeyEventArgs e)
         {
             base.OnKeyUp(e);
@@ -92,6 +155,10 @@ namespace HZH_Controls.Controls
 
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.KeyPress" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.KeyPressEventArgs" />。</param>
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
             base.OnKeyPress(e);
@@ -99,12 +166,20 @@ namespace HZH_Controls.Controls
             this.Invalidate();
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.MouseUp" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
             this.Invalidate();
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.GiveFeedback" /> 事件。
+        /// </summary>
+        /// <param name="gfbevent">包含事件数据的 <see cref="T:System.Windows.Forms.GiveFeedbackEventArgs" />。</param>
         protected override void OnGiveFeedback(GiveFeedbackEventArgs gfbevent)
         {
             base.OnGiveFeedback(gfbevent);
@@ -113,6 +188,10 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.MouseLeave" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
         protected override void OnMouseLeave(EventArgs e)
         {
             //found this code to find the current cursor location
@@ -127,6 +206,10 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.ChangeUICues" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.UICuesEventArgs" />。</param>
         protected override void OnChangeUICues(UICuesEventArgs e)
         {
             base.OnChangeUICues(e);
@@ -136,6 +219,10 @@ namespace HZH_Controls.Controls
 
 
         //--
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.GotFocus" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
         protected override void OnGotFocus(EventArgs e)
         {
             base.OnGotFocus(e);
@@ -152,6 +239,10 @@ namespace HZH_Controls.Controls
 
         }
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.LostFocus" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
         protected override void OnLostFocus(EventArgs e)
         {
             base.OnLostFocus(e);
@@ -164,6 +255,10 @@ namespace HZH_Controls.Controls
 
         //--		
 
+        /// <summary>
+        /// 引发 <see cref="E:System.Windows.Forms.Control.FontChanged" /> 事件。
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
         protected override void OnFontChanged(EventArgs e)
         {
             if (this.myPaintedFirstTime)
@@ -182,6 +277,10 @@ namespace HZH_Controls.Controls
             this.Invalidate();
         }
 
+        /// <summary>
+        /// Handles the <see cref="E:TextChanged" /> event.
+        /// </summary>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         protected override void OnTextChanged(EventArgs e)
         {
             base.OnTextChanged(e);
@@ -190,6 +289,10 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// 处理 Windows 消息。
+        /// </summary>
+        /// <param name="m">一个 Windows 消息对象。</param>
         protected override void WndProc(ref Message m)
         {
 
@@ -260,9 +363,10 @@ namespace HZH_Controls.Controls
         }
 
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
+        /// <param name="disposing">为 true 则释放托管资源和非托管资源；为 false 则仅释放非托管资源。</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -281,6 +385,16 @@ namespace HZH_Controls.Controls
 
         #region public property overrides
 
+        /// <summary>
+        /// 获取或设置文本框控件的边框类型。
+        /// </summary>
+        /// <value>The border style.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public new BorderStyle BorderStyle
         {
             get { return base.BorderStyle; }
@@ -301,6 +415,13 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// 获取或设置控件的背景色。
+        /// </summary>
+        /// <value>The color of the back.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public new Color BackColor
         {
             get
@@ -314,6 +435,16 @@ namespace HZH_Controls.Controls
                 myUpToDate = false;
             }
         }
+        /// <summary>
+        /// 获取或设置一个值，该值指示此控件是否为多行 <see cref="T:System.Windows.Forms.TextBox" /> 控件。
+        /// </summary>
+        /// <value><c>true</c> if multiline; otherwise, <c>false</c>.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public override bool Multiline
         {
             get { return base.Multiline; }
@@ -340,6 +471,10 @@ namespace HZH_Controls.Controls
 
         #region private functions and classes
 
+        /// <summary>
+        /// Gets the height of the font.
+        /// </summary>
+        /// <returns>System.Int32.</returns>
         private int GetFontHeight()
         {
             Graphics g = this.CreateGraphics();
@@ -349,6 +484,9 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// Gets the bitmaps.
+        /// </summary>
         private void GetBitmaps()
         {
 
@@ -436,6 +574,10 @@ namespace HZH_Controls.Controls
 
 
 
+        /// <summary>
+        /// Finds the caret.
+        /// </summary>
+        /// <returns>Point.</returns>
         private Point findCaret()
         {
             /*  Find the caret translated from code at 
@@ -493,6 +635,11 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// Handles the Tick event of the myTimer1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void myTimer1_Tick(object sender, EventArgs e)
         {
             //Timer used to turn caret on and off for focused control
@@ -503,8 +650,16 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// Class uPictureBox.
+        /// Implements the <see cref="System.Windows.Forms.PictureBox" />
+        /// </summary>
+        /// <seealso cref="System.Windows.Forms.PictureBox" />
         private class uPictureBox : PictureBox
         {
+            /// <summary>
+            /// Initializes a new instance of the <see cref="uPictureBox" /> class.
+            /// </summary>
             public uPictureBox()
             {
                 this.SetStyle(ControlStyles.Selectable, false);
@@ -522,6 +677,10 @@ namespace HZH_Controls.Controls
 
 
             //uPictureBox
+            /// <summary>
+            /// 处理 Windows 消息。
+            /// </summary>
+            /// <param name="m">要处理的 Windows<see cref="T:System.Windows.Forms.Message" />。</param>
             protected override void WndProc(ref Message m)
             {
                 if (m.Msg == win32.WM_LBUTTONDOWN
@@ -552,8 +711,8 @@ namespace HZH_Controls.Controls
 
 
         #region Component Designer generated code
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -565,6 +724,10 @@ namespace HZH_Controls.Controls
 
         #region New Public Properties
 
+        /// <summary>
+        /// Gets or sets the back alpha.
+        /// </summary>
+        /// <value>The back alpha.</value>
         [
         Category("Appearance"),
         Description("The alpha value used to blend the control's background. Valid values are 0 through 255."),

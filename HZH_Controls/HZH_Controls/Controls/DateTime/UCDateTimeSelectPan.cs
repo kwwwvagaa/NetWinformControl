@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCDateTimeSelectPan.cs
-// 创建日期：2019-08-15 15:59:51
-// 功能描述：DateTime
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="UCDateTimeSelectPan.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +25,32 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCDateTimeSelectPan.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     [ToolboxItem(false)]
     public partial class UCDateTimeSelectPan : UserControl
     {
+        /// <summary>
+        /// Occurs when [selected time event].
+        /// </summary>
         [Description("确定事件"), Category("自定义")]
         public event EventHandler SelectedTimeEvent;
+        /// <summary>
+        /// Occurs when [cancel time event].
+        /// </summary>
         [Description("取消事件"), Category("自定义")]
         public event EventHandler CancelTimeEvent;
+        /// <summary>
+        /// The automatic select next
+        /// </summary>
         private bool autoSelectNext = true;
+        /// <summary>
+        /// Gets or sets a value indicating whether [automatic select next].
+        /// </summary>
+        /// <value><c>true</c> if [automatic select next]; otherwise, <c>false</c>.</value>
         [Description("自动选中下一级"), Category("自定义")]
         public bool AutoSelectNext
         {
@@ -30,8 +58,15 @@ namespace HZH_Controls.Controls
             set { autoSelectNext = value; }
         }
 
+        /// <summary>
+        /// The m dt
+        /// </summary>
         DateTime m_dt = DateTime.Now;
 
+        /// <summary>
+        /// Gets or sets the current time.
+        /// </summary>
+        /// <value>The current time.</value>
         public DateTime CurrentTime
         {
             get { return m_dt; }
@@ -41,21 +76,38 @@ namespace HZH_Controls.Controls
                 SetTimeToControl();
             }
         }
+        /// <summary>
+        /// The m this BTN
+        /// </summary>
         UCBtnExt m_thisBtn = null;
 
+        /// <summary>
+        /// The m type
+        /// </summary>
         DateTimePickerType m_type = DateTimePickerType.DateTime;
+        /// <summary>
+        /// Gets or sets the type of the time.
+        /// </summary>
+        /// <value>The type of the time.</value>
         [Description("时间类型"), Category("自定义")]
         public DateTimePickerType TimeType
         {
             get { return m_type; }
             set { m_type = value; }
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCDateTimeSelectPan" /> class.
+        /// </summary>
         public UCDateTimeSelectPan()
         {
             InitializeComponent();
             panTime.SelectSourceEvent += panTime_SelectSourceEvent;
             this.TabStop = false;
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCDateTimeSelectPan" /> class.
+        /// </summary>
+        /// <param name="dt">The dt.</param>
         public UCDateTimeSelectPan(DateTime dt)
         {
             m_dt = dt;
@@ -64,6 +116,11 @@ namespace HZH_Controls.Controls
             this.TabStop = false;
         }
 
+        /// <summary>
+        /// Handles the SelectSourceEvent event of the panTime control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void panTime_SelectSourceEvent(object sender, EventArgs e)
         {
             string strKey = sender.ToString();
@@ -113,6 +170,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the Load event of the UCDateTimePickerExt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void UCDateTimePickerExt_Load(object sender, EventArgs e)
         {
             SetTimeToControl();
@@ -141,6 +203,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Sets the time to control.
+        /// </summary>
         private void SetTimeToControl()
         {
             btnYear.Tag = m_dt.Year;
@@ -155,6 +220,10 @@ namespace HZH_Controls.Controls
             btnMinute.BtnText = m_dt.Minute.ToString().PadLeft(2, '0') + "分";
         }
 
+        /// <summary>
+        /// Sets the type of the select.
+        /// </summary>
+        /// <param name="btn">The BTN.</param>
         private void SetSelectType(UCBtnExt btn)
         {
             try
@@ -250,11 +319,21 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnTime control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnTime_BtnClick(object sender, EventArgs e)
         {
             SetSelectType((UCBtnExt)sender);
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the panLeft control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void panLeft_MouseDown(object sender, MouseEventArgs e)
         {
             List<KeyValuePair<string, string>> lstSource = new List<KeyValuePair<string, string>>();
@@ -271,6 +350,11 @@ namespace HZH_Controls.Controls
             panTime.ResumeLayout(true);
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the panRight control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void panRight_MouseDown(object sender, MouseEventArgs e)
         {
             List<KeyValuePair<string, string>> lstSource = new List<KeyValuePair<string, string>>();
@@ -287,12 +371,22 @@ namespace HZH_Controls.Controls
             panTime.ResumeLayout(true);
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnOk control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnOk_BtnClick(object sender, EventArgs e)
         {
             if (SelectedTimeEvent != null)
                 SelectedTimeEvent(m_dt, null);
         }
 
+        /// <summary>
+        /// Handles the BtnClick event of the btnCancel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void btnCancel_BtnClick(object sender, EventArgs e)
         {
             if (CancelTimeEvent != null)

@@ -1,8 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：FrmTips.cs
-// 创建日期：2019-08-15 16:04:54
-// 功能描述：FrmTips
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-08-2019
+//
+// ***********************************************************************
+// <copyright file="FrmTips.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,23 +24,42 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Forms
 {
+    /// <summary>
+    /// Class FrmTips.
+    /// Implements the <see cref="HZH_Controls.Forms.FrmBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Forms.FrmBase" />
     public partial class FrmTips : FrmBase
     {
+        /// <summary>
+        /// The m show align
+        /// </summary>
         private ContentAlignment m_showAlign = ContentAlignment.BottomLeft;
 
         /// <summary>
         /// 显示位置
         /// </summary>
+        /// <value>The show align.</value>
         public ContentAlignment ShowAlign
         {
             get { return m_showAlign; }
             set { m_showAlign = value; }
         }
 
+        /// <summary>
+        /// The m LST tips
+        /// </summary>
         private static List<FrmTips> m_lstTips = new List<FrmTips>();
 
+        /// <summary>
+        /// The m close time
+        /// </summary>
         private int m_CloseTime = 0;
 
+        /// <summary>
+        /// Gets or sets the close time.
+        /// </summary>
+        /// <value>The close time.</value>
         public int CloseTime
         {
             get { return m_CloseTime; }
@@ -42,6 +71,9 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FrmTips" /> class.
+        /// </summary>
         public FrmTips()
         {
             base.SetStyle(ControlStyles.UserPaint, true);
@@ -83,8 +115,24 @@ namespace HZH_Controls.Forms
                 timer1.Enabled = true;
             }
         }
+        /// <summary>
+        /// The m last tips
+        /// </summary>
         private static KeyValuePair<string, FrmTips> m_lastTips = new KeyValuePair<string, FrmTips>();
 
+        /// <summary>
+        /// Shows the tips.
+        /// </summary>
+        /// <param name="frm">The FRM.</param>
+        /// <param name="strMsg">The string MSG.</param>
+        /// <param name="intAutoColseTime">The int automatic colse time.</param>
+        /// <param name="blnShowCoseBtn">if set to <c>true</c> [BLN show cose BTN].</param>
+        /// <param name="align">The align.</param>
+        /// <param name="point">The point.</param>
+        /// <param name="mode">The mode.</param>
+        /// <param name="size">The size.</param>
+        /// <param name="state">The state.</param>
+        /// <returns>FrmTips.</returns>
         public static FrmTips ShowTips(
             Form frm,
             string strMsg,
@@ -283,6 +331,11 @@ namespace HZH_Controls.Forms
         }
         #endregion
 
+        /// <summary>
+        /// Handles the FormClosing event of the FrmTips control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosingEventArgs" /> instance containing the event data.</param>
         private void FrmTips_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (m_lastTips.Value == this)
@@ -313,6 +366,11 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Handles the Load event of the FrmTips control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmTips_Load(object sender, EventArgs e)
         {
             if (m_CloseTime > 0)
@@ -322,37 +380,76 @@ namespace HZH_Controls.Forms
             }
         }
 
+        /// <summary>
+        /// Handles the Tick event of the timer1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.timer1.Enabled = false;
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the btnClose control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void btnClose_MouseDown(object sender, MouseEventArgs e)
         {
             this.timer1.Enabled = false;
             this.Close();
         }
 
+        /// <summary>
+        /// Shows the tips success.
+        /// </summary>
+        /// <param name="frm">The FRM.</param>
+        /// <param name="strMsg">The string MSG.</param>
+        /// <returns>FrmTips.</returns>
         public static FrmTips ShowTipsSuccess(Form frm, string strMsg)
         {
             return FrmTips.ShowTips(frm, strMsg, 3000, false, ContentAlignment.BottomCenter, null, TipsSizeMode.Large, null, TipsState.Success);
         }
 
+        /// <summary>
+        /// Shows the tips error.
+        /// </summary>
+        /// <param name="frm">The FRM.</param>
+        /// <param name="strMsg">The string MSG.</param>
+        /// <returns>FrmTips.</returns>
         public static FrmTips ShowTipsError(Form frm, string strMsg)
         {
             return FrmTips.ShowTips(frm, strMsg, 3000, false, ContentAlignment.BottomCenter, null, TipsSizeMode.Large, null, TipsState.Error);
         }
 
+        /// <summary>
+        /// Shows the tips information.
+        /// </summary>
+        /// <param name="frm">The FRM.</param>
+        /// <param name="strMsg">The string MSG.</param>
+        /// <returns>FrmTips.</returns>
         public static FrmTips ShowTipsInfo(Form frm, string strMsg)
         {
             return FrmTips.ShowTips(frm, strMsg, 3000, false, ContentAlignment.BottomCenter, null, TipsSizeMode.Large, null, TipsState.Info);
         }
+        /// <summary>
+        /// Shows the tips warning.
+        /// </summary>
+        /// <param name="frm">The FRM.</param>
+        /// <param name="strMsg">The string MSG.</param>
+        /// <returns>FrmTips.</returns>
         public static FrmTips ShowTipsWarning(Form frm, string strMsg)
         {
             return FrmTips.ShowTips(frm, strMsg, 3000, false, ContentAlignment.BottomCenter, null, TipsSizeMode.Large, null, TipsState.Warning);
         }
 
+        /// <summary>
+        /// Handles the FormClosed event of the FrmTips control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosedEventArgs" /> instance containing the event data.</param>
         private void FrmTips_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
@@ -361,19 +458,52 @@ namespace HZH_Controls.Forms
 
     }
 
+    /// <summary>
+    /// Enum TipsSizeMode
+    /// </summary>
     public enum TipsSizeMode
     {
+        /// <summary>
+        /// The small
+        /// </summary>
         Small,
+        /// <summary>
+        /// The medium
+        /// </summary>
         Medium,
+        /// <summary>
+        /// The large
+        /// </summary>
         Large,
+        /// <summary>
+        /// The none
+        /// </summary>
         None
     }
+    /// <summary>
+    /// Enum TipsState
+    /// </summary>
     public enum TipsState
     {
+        /// <summary>
+        /// The default
+        /// </summary>
         Default = -1,
+        /// <summary>
+        /// The success
+        /// </summary>
         Success = -6566849,
+        /// <summary>
+        /// The information
+        /// </summary>
         Info = -12477983,
+        /// <summary>
+        /// The warning
+        /// </summary>
         Warning = -357816,
+        /// <summary>
+        /// The error
+        /// </summary>
         Error = -1097849
     }
 }

@@ -1,11 +1,18 @@
-﻿// 版权所有  黄正辉  交流群：568015492   QQ：623128629
-// 文件名称：UCPanelTitle.cs
-// 作　　者：HZH
-// 创建日期：2019-08-31 16:04:24
-// 功能描述：UCPanelTitle    English:UCPanelTitle
-// 项目地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
-// 项目地址：https://github.com/kwwwvagaa/NetWinformControl
-// 如果你使用了此类，请保留以上说明
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 08-17-2019
+//
+// ***********************************************************************
+// <copyright file="UCPanelTitle.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +25,26 @@ using System.Drawing.Drawing2D;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCPanelTitle.
+    /// Implements the <see cref="HZH_Controls.Controls.UCControlBase" />
+    /// </summary>
+    /// <seealso cref="HZH_Controls.Controls.UCControlBase" />
     public partial class UCPanelTitle : UCControlBase
     {
+        /// <summary>
+        /// The m int maximum height
+        /// </summary>
         private int m_intMaxHeight = 0;
+        /// <summary>
+        /// The is can expand
+        /// </summary>
         private bool isCanExpand = true;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is can expand.
+        /// </summary>
+        /// <value><c>true</c> if this instance is can expand; otherwise, <c>false</c>.</value>
         [Description("是否可折叠"), Category("自定义")]
         public bool IsCanExpand
         {
@@ -40,8 +62,15 @@ namespace HZH_Controls.Controls
                 }
             }
         }
+        /// <summary>
+        /// The is expand
+        /// </summary>
         private bool isExpand = false;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is expand.
+        /// </summary>
+        /// <value><c>true</c> if this instance is expand; otherwise, <c>false</c>.</value>
         [Description("是否已折叠"), Category("自定义")]
         public bool IsExpand
         {
@@ -63,6 +92,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the color of the border.
+        /// </summary>
+        /// <value>The color of the border.</value>
         [Description("边框颜色"), Category("自定义")]
         public Color BorderColor
         {
@@ -74,6 +107,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
+        /// <value>The title.</value>
         [Description("面板标题"), Category("自定义")]
         public string Title
         {
@@ -81,6 +118,13 @@ namespace HZH_Controls.Controls
             set { lblTitle.Text = value; }
         }
 
+        /// <summary>
+        /// 获取或设置控件的前景色。
+        /// </summary>
+        /// <value>The color of the fore.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         public override Color ForeColor
         {
             get
@@ -101,6 +145,9 @@ namespace HZH_Controls.Controls
                 }
             }
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCPanelTitle" /> class.
+        /// </summary>
         public UCPanelTitle()
         {
             InitializeComponent();
@@ -114,8 +161,19 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The bit down
+        /// </summary>
         Bitmap bitDown = null;
+        /// <summary>
+        /// The bit up
+        /// </summary>
         Bitmap bitUp = null;
+        /// <summary>
+        /// Gets the img.
+        /// </summary>
+        /// <param name="blnRefresh">if set to <c>true</c> [BLN refresh].</param>
+        /// <returns>Bitmap.</returns>
         private Bitmap GetImg(bool blnRefresh = false)
         {
             if (isExpand)
@@ -153,6 +211,11 @@ namespace HZH_Controls.Controls
 
         }
 
+        /// <summary>
+        /// Handles the MouseDown event of the lblTitle control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         private void lblTitle_MouseDown(object sender, MouseEventArgs e)
         {
             if (isCanExpand)
@@ -161,6 +224,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the UCPanelTitle control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void UCPanelTitle_SizeChanged(object sender, EventArgs e)
         {
             if (this.Height != lblTitle.Height)
