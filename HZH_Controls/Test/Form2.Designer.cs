@@ -38,6 +38,9 @@
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.ucProcessEllipse1 = new HZH_Controls.Controls.UCProcessEllipse();
+            this.ucProcessEllipse2 = new HZH_Controls.Controls.UCProcessEllipse();
             this.ucledNums2 = new HZH_Controls.Controls.LED.UCLEDNums();
             this.ucledNums1 = new HZH_Controls.Controls.LED.UCLEDNums();
             this.ucledDataTime1 = new HZH_Controls.Controls.UCLEDDataTime();
@@ -59,7 +62,6 @@
             this.ucTrackBar1 = new HZH_Controls.Controls.UCTrackBar();
             this.ucProcessWave2 = new HZH_Controls.Controls.UCProcessWave();
             this.ucProcessWave1 = new HZH_Controls.Controls.UCProcessWave();
-            this.ucWaveWithSource1 = new HZH_Controls.Controls.UCWaveWithSource();
             this.ucWave1 = new HZH_Controls.Controls.UCWave();
             this.ucProcessLineExt1 = new HZH_Controls.Controls.UCProcessLineExt();
             this.ucProcessLine1 = new HZH_Controls.Controls.UCProcessLine();
@@ -77,8 +79,7 @@
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
-            this.ucProcessEllipse2 = new HZH_Controls.Controls.UCProcessEllipse();
-            this.ucProcessEllipse1 = new HZH_Controls.Controls.UCProcessEllipse();
+            this.ucWaveChart1 = new HZH_Controls.Controls.UCWaveChart();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -165,14 +166,54 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // ucProcessEllipse1
+            // 
+            this.ucProcessEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucProcessEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucProcessEllipse1.IsShowCoreEllipseBorder = true;
+            this.ucProcessEllipse1.Location = new System.Drawing.Point(30, 173);
+            this.ucProcessEllipse1.MaxValue = 100;
+            this.ucProcessEllipse1.Name = "ucProcessEllipse1";
+            this.ucProcessEllipse1.ShowType = HZH_Controls.Controls.ShowType.Ring;
+            this.ucProcessEllipse1.Size = new System.Drawing.Size(150, 150);
+            this.ucProcessEllipse1.TabIndex = 21;
+            this.ucProcessEllipse1.Value = 0;
+            this.ucProcessEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucProcessEllipse1.ValueMargin = 5;
+            this.ucProcessEllipse1.ValueType = HZH_Controls.Controls.ValueType.Percent;
+            this.ucProcessEllipse1.ValueWidth = 30;
+            // 
+            // ucProcessEllipse2
+            // 
+            this.ucProcessEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucProcessEllipse2.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucProcessEllipse2.IsShowCoreEllipseBorder = true;
+            this.ucProcessEllipse2.Location = new System.Drawing.Point(224, 173);
+            this.ucProcessEllipse2.MaxValue = 100;
+            this.ucProcessEllipse2.Name = "ucProcessEllipse2";
+            this.ucProcessEllipse2.ShowType = HZH_Controls.Controls.ShowType.Sector;
+            this.ucProcessEllipse2.Size = new System.Drawing.Size(150, 150);
+            this.ucProcessEllipse2.TabIndex = 20;
+            this.ucProcessEllipse2.Value = 0;
+            this.ucProcessEllipse2.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucProcessEllipse2.ValueMargin = 5;
+            this.ucProcessEllipse2.ValueType = HZH_Controls.Controls.ValueType.Percent;
+            this.ucProcessEllipse2.ValueWidth = 30;
+            // 
             // ucledNums2
             // 
             this.ucledNums2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucledNums2.LineWidth = 8;
-            this.ucledNums2.Location = new System.Drawing.Point(1158, 296);
+            this.ucledNums2.Location = new System.Drawing.Point(1138, 296);
             this.ucledNums2.Name = "ucledNums2";
             this.ucledNums2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ucledNums2.Size = new System.Drawing.Size(253, 58);
+            this.ucledNums2.Size = new System.Drawing.Size(273, 58);
             this.ucledNums2.TabIndex = 18;
             this.ucledNums2.Value = "1.234";
             // 
@@ -183,7 +224,7 @@
             this.ucledNums1.Location = new System.Drawing.Point(856, 296);
             this.ucledNums1.Name = "ucledNums1";
             this.ucledNums1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ucledNums1.Size = new System.Drawing.Size(253, 58);
+            this.ucledNums1.Size = new System.Drawing.Size(285, 58);
             this.ucledNums1.TabIndex = 18;
             this.ucledNums1.Value = "1.234";
             // 
@@ -406,27 +447,6 @@
             this.ucProcessWave1.TabIndex = 11;
             this.ucProcessWave1.Value = 40;
             this.ucProcessWave1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucWaveWithSource1
-            // 
-            this.ucWaveWithSource1.ConerRadius = 10;
-            this.ucWaveWithSource1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.ucWaveWithSource1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucWaveWithSource1.GridLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
-            this.ucWaveWithSource1.GridLineTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
-            this.ucWaveWithSource1.IsRadius = true;
-            this.ucWaveWithSource1.IsShowRect = true;
-            this.ucWaveWithSource1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
-            this.ucWaveWithSource1.LineTension = 0.5F;
-            this.ucWaveWithSource1.Location = new System.Drawing.Point(756, 14);
-            this.ucWaveWithSource1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucWaveWithSource1.Name = "ucWaveWithSource1";
-            this.ucWaveWithSource1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.ucWaveWithSource1.RectWidth = 1;
-            this.ucWaveWithSource1.Size = new System.Drawing.Size(385, 182);
-            this.ucWaveWithSource1.SleepTime = 1000;
-            this.ucWaveWithSource1.TabIndex = 10;
-            this.ucWaveWithSource1.WaveWidth = 50;
             // 
             // ucWave1
             // 
@@ -688,45 +708,33 @@
             this.ucStep1.StepWidth = 35;
             this.ucStep1.TabIndex = 0;
             // 
-            // ucProcessEllipse2
+            // ucWaveChart1
             // 
-            this.ucProcessEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
-            this.ucProcessEllipse2.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
-            this.ucProcessEllipse2.IsShowCoreEllipseBorder = true;
-            this.ucProcessEllipse2.Location = new System.Drawing.Point(224, 173);
-            this.ucProcessEllipse2.MaxValue = 100;
-            this.ucProcessEllipse2.Name = "ucProcessEllipse2";
-            this.ucProcessEllipse2.ShowType = HZH_Controls.Controls.ShowType.Sector;
-            this.ucProcessEllipse2.Size = new System.Drawing.Size(150, 150);
-            this.ucProcessEllipse2.TabIndex = 20;
-            this.ucProcessEllipse2.Value = 0;
-            this.ucProcessEllipse2.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucProcessEllipse2.ValueMargin = 5;
-            this.ucProcessEllipse2.ValueType = HZH_Controls.Controls.ValueType.Percent;
-            this.ucProcessEllipse2.ValueWidth = 30;
-            // 
-            // ucProcessEllipse1
-            // 
-            this.ucProcessEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
-            this.ucProcessEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
-            this.ucProcessEllipse1.IsShowCoreEllipseBorder = true;
-            this.ucProcessEllipse1.Location = new System.Drawing.Point(30, 173);
-            this.ucProcessEllipse1.MaxValue = 100;
-            this.ucProcessEllipse1.Name = "ucProcessEllipse1";
-            this.ucProcessEllipse1.ShowType = HZH_Controls.Controls.ShowType.Ring;
-            this.ucProcessEllipse1.Size = new System.Drawing.Size(150, 150);
-            this.ucProcessEllipse1.TabIndex = 21;
-            this.ucProcessEllipse1.Value = 0;
-            this.ucProcessEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucProcessEllipse1.ValueMargin = 5;
-            this.ucProcessEllipse1.ValueType = HZH_Controls.Controls.ValueType.Percent;
-            this.ucProcessEllipse1.ValueWidth = 30;
+            this.ucWaveChart1.ConerRadius = 10;
+            this.ucWaveChart1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucWaveChart1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucWaveChart1.GridLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucWaveChart1.GridLineTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucWaveChart1.IsRadius = true;
+            this.ucWaveChart1.IsShowRect = true;
+            this.ucWaveChart1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucWaveChart1.LineTension = 0.5F;
+            this.ucWaveChart1.Location = new System.Drawing.Point(781, 14);
+            this.ucWaveChart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucWaveChart1.Name = "ucWaveChart1";
+            this.ucWaveChart1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.ucWaveChart1.RectWidth = 1;
+            this.ucWaveChart1.Size = new System.Drawing.Size(374, 180);
+            this.ucWaveChart1.SleepTime = 1000;
+            this.ucWaveChart1.TabIndex = 22;
+            this.ucWaveChart1.WaveWidth = 50;
             // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 594);
+            this.Controls.Add(this.ucWaveChart1);
             this.Controls.Add(this.ucProcessEllipse1);
             this.Controls.Add(this.ucProcessEllipse2);
             this.Controls.Add(this.ucledNums2);
@@ -751,7 +759,6 @@
             this.Controls.Add(this.ucTrackBar1);
             this.Controls.Add(this.ucProcessWave2);
             this.Controls.Add(this.ucProcessWave1);
-            this.Controls.Add(this.ucWaveWithSource1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -812,7 +819,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TrackBar trackBar3;
         private System.Windows.Forms.Label label3;
-        private HZH_Controls.Controls.UCWaveWithSource ucWaveWithSource1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave1;
         private HZH_Controls.Controls.UCProcessWave ucProcessWave2;
         private HZH_Controls.Controls.UCTrackBar ucTrackBar1;
@@ -837,6 +843,8 @@
         private HZH_Controls.Controls.LED.UCLEDNums ucledNums2;
         private HZH_Controls.Controls.UCProcessEllipse ucProcessEllipse2;
         private HZH_Controls.Controls.UCProcessEllipse ucProcessEllipse1;
+        private System.Windows.Forms.Timer timer2;
+        private HZH_Controls.Controls.UCWaveChart ucWaveChart1;
      
     }
 }

@@ -47,7 +47,7 @@ namespace Test
 
             Random r = new Random();
             int i = r.Next(100, 1000);
-            this.ucWaveWithSource1.AddSource(i.ToString(), i);
+            this.ucWaveChart1.AddSource(i.ToString(), i);
 
             ucledDataTime1.Value = DateTime.Now;
             ucledTime2.Value = DateTime.Now;
@@ -80,6 +80,16 @@ namespace Test
             HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nRIGHT", AnchorTipsLocation.RIGHT);
             HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nTOP", AnchorTipsLocation.TOP);
             HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM", AnchorTipsLocation.BOTTOM);
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            Random r = new Random();
+            int i = r.Next(1, 10000);
+            double dbl = ((double)i) / 100.0000;
+            string str = dbl.ToString("0.000");
+            this.ucledNums1.Value = str;
+            this.ucledNums2.Value = str;
         }
     }
 }

@@ -17,7 +17,7 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
-    public class UCWaveWithSource : UCControlBase
+    public class UCWaveChart : UCControlBase
     {
         private int m_waveActualWidth = 50;
 
@@ -78,7 +78,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_lineColor = Color.FromArgb(150, 73, 119, 232);
+        private Color m_lineColor = Color.FromArgb(150, 255, 77, 59);
 
         [Description("曲线颜色"), Category("自定义")]
         public Color LineColor
@@ -92,7 +92,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_gridLineColor = Color.FromArgb(50, 73, 119, 232);
+        private Color m_gridLineColor = Color.FromArgb(50, 255, 77, 59);
 
         [Description("网格线颜色"), Category("自定义")]
         public Color GridLineColor
@@ -105,7 +105,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        private Color m_gridLineTextColor = Color.FromArgb(150, 73, 119, 232);
+        private Color m_gridLineTextColor = Color.FromArgb(150, 255, 77, 59);
 
         [Description("网格文本颜色"), Category("自定义")]
         public Color GridLineTextColor
@@ -144,7 +144,7 @@ namespace HZH_Controls.Controls
         Rectangle m_drawRect;
 
         int m_waveCount = 0;
-        public UCWaveWithSource()
+        public UCWaveChart()
         {
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.DoubleBuffer, true);
@@ -156,7 +156,7 @@ namespace HZH_Controls.Controls
             this.SizeChanged += UCWaveWithSource_SizeChanged;
             this.IsShowRect = true;
             this.RectColor = Color.FromArgb(232, 232, 232);
-            this.FillColor = Color.FromArgb(197, 229, 250);
+            this.FillColor = Color.FromArgb(50, 255, 77, 59);
             this.RectWidth = 1;
             this.ConerRadius = 10;
             this.IsRadius = true;
