@@ -39,6 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.ucRollText1 = new HZH_Controls.Controls.UCRollText();
+            this.ucWaveChart1 = new HZH_Controls.Controls.UCWaveChart();
             this.ucProcessEllipse1 = new HZH_Controls.Controls.UCProcessEllipse();
             this.ucProcessEllipse2 = new HZH_Controls.Controls.UCProcessEllipse();
             this.ucledNums2 = new HZH_Controls.Controls.LED.UCLEDNums();
@@ -79,7 +81,6 @@
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
-            this.ucWaveChart1 = new HZH_Controls.Controls.UCWaveChart();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -171,6 +172,39 @@
             this.timer2.Enabled = true;
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // ucRollText1
+            // 
+            this.ucRollText1.BackColor = System.Drawing.Color.White;
+            this.ucRollText1.Font = new System.Drawing.Font("宋体", 20F);
+            this.ucRollText1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucRollText1.Location = new System.Drawing.Point(843, 554);
+            this.ucRollText1.MoveSleepTime = 50;
+            this.ucRollText1.Name = "ucRollText1";
+            this.ucRollText1.RollStyle = HZH_Controls.Controls.RollStyle.LeftToRight;
+            this.ucRollText1.Size = new System.Drawing.Size(555, 30);
+            this.ucRollText1.TabIndex = 23;
+            // 
+            // ucWaveChart1
+            // 
+            this.ucWaveChart1.ConerRadius = 10;
+            this.ucWaveChart1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucWaveChart1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucWaveChart1.GridLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucWaveChart1.GridLineTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucWaveChart1.IsRadius = true;
+            this.ucWaveChart1.IsShowRect = true;
+            this.ucWaveChart1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucWaveChart1.LineTension = 0.5F;
+            this.ucWaveChart1.Location = new System.Drawing.Point(781, 14);
+            this.ucWaveChart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucWaveChart1.Name = "ucWaveChart1";
+            this.ucWaveChart1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.ucWaveChart1.RectWidth = 1;
+            this.ucWaveChart1.Size = new System.Drawing.Size(374, 180);
+            this.ucWaveChart1.SleepTime = 1000;
+            this.ucWaveChart1.TabIndex = 22;
+            this.ucWaveChart1.WaveWidth = 50;
             // 
             // ucProcessEllipse1
             // 
@@ -708,32 +742,12 @@
             this.ucStep1.StepWidth = 35;
             this.ucStep1.TabIndex = 0;
             // 
-            // ucWaveChart1
-            // 
-            this.ucWaveChart1.ConerRadius = 10;
-            this.ucWaveChart1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucWaveChart1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucWaveChart1.GridLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucWaveChart1.GridLineTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucWaveChart1.IsRadius = true;
-            this.ucWaveChart1.IsShowRect = true;
-            this.ucWaveChart1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucWaveChart1.LineTension = 0.5F;
-            this.ucWaveChart1.Location = new System.Drawing.Point(781, 14);
-            this.ucWaveChart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucWaveChart1.Name = "ucWaveChart1";
-            this.ucWaveChart1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.ucWaveChart1.RectWidth = 1;
-            this.ucWaveChart1.Size = new System.Drawing.Size(374, 180);
-            this.ucWaveChart1.SleepTime = 1000;
-            this.ucWaveChart1.TabIndex = 22;
-            this.ucWaveChart1.WaveWidth = 50;
-            // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 594);
+            this.Controls.Add(this.ucRollText1);
             this.Controls.Add(this.ucWaveChart1);
             this.Controls.Add(this.ucProcessEllipse1);
             this.Controls.Add(this.ucProcessEllipse2);
@@ -845,6 +859,7 @@
         private HZH_Controls.Controls.UCProcessEllipse ucProcessEllipse1;
         private System.Windows.Forms.Timer timer2;
         private HZH_Controls.Controls.UCWaveChart ucWaveChart1;
+        private HZH_Controls.Controls.UCRollText ucRollText1;
      
     }
 }
