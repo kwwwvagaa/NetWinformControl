@@ -29,6 +29,10 @@ Welcome to exchange discussion: [Click to join QQ group 568015492](//shang.qq.co
 ``` csharp
 Install-Package HZH_Controls
 ```
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0903/084635_85b9e4a3_301547.gif "1.gif")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0903/084848_9aaca7d2_301547.gif "3.gif")
+
 #### Sample
 
 ##### 1, prompt window renderings
@@ -602,7 +606,7 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBO
 
 ##### 26、LED Number
 
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0902/162513_b8551475_301547.png "led.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0902/181109_92cf14c4_301547.gif "1.gif")
 
 #### The last words
 
