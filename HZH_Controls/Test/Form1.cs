@@ -227,6 +227,11 @@ namespace Test
         {
             new Form3().Show();
         }
-        
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            new Form4().Show();
+        }
+
     }
 }

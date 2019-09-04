@@ -66,6 +66,9 @@
     <Compile Include="Controls\ComboBox\UCComboxGridPanel.Designer.cs">
       <DependentUpon>UCComboxGridPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Conduit\UCConduit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\DataGridView\DataGridViewCellEntity.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewCellEventArgs.cs" />
     <Compile Include="Controls\DataGridView\DataGridViewCellEventHandler.cs" />
