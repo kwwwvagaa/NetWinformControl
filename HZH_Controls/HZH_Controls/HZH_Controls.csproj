@@ -164,6 +164,9 @@
     <Compile Include="Controls\Menu\UCMenuParentItem.Designer.cs">
       <DependentUpon>UCMenuParentItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Meter\UCMeter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\Navigation\UCCrumbNavigation.cs">
       <SubType>UserControl</SubType>
     </Compile>

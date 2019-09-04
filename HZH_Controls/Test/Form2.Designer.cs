@@ -193,7 +193,7 @@
             this.ucRollText1.BackColor = System.Drawing.Color.White;
             this.ucRollText1.Font = new System.Drawing.Font("宋体", 20F);
             this.ucRollText1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucRollText1.Location = new System.Drawing.Point(818, 190);
+            this.ucRollText1.Location = new System.Drawing.Point(856, 206);
             this.ucRollText1.MoveSleepTime = 50;
             this.ucRollText1.Name = "ucRollText1";
             this.ucRollText1.RollStyle = HZH_Controls.Controls.RollStyle.BackAndForth;

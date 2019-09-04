@@ -222,6 +222,11 @@ namespace Test
         {
             HZH_Controls.Forms.FrmTips.ShowTipsSuccess(this, sender.ToString());
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            new Form3().Show();
+        }
         
     }
 }
