@@ -617,6 +617,10 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM",
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0904/095910_0dd8ec1e_301547.png "yibiao.png")
 
+##### 29、管道
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0904/181918_43024834_301547.gif "1.gif")
+
 #### 最后的话
 
 最后，喜欢请点下stars，如果有其他一些什么常用的控件可以在留言哦
