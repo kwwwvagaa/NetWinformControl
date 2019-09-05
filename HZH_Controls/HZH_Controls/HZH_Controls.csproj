@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Bottle\UCBottle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\BtnsGroup\UCBtnsGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
