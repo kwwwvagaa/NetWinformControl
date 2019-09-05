@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Bottle\UCBottle.cs">
+    <Compile Include="Controls\FactoryControls\Bottle\UCBottle.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\BtnsGroup\UCBtnsGroup.cs">
@@ -69,7 +69,7 @@
     <Compile Include="Controls\ComboBox\UCComboxGridPanel.Designer.cs">
       <DependentUpon>UCComboxGridPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Conduit\UCConduit.cs">
+    <Compile Include="Controls\FactoryControls\Conduit\UCConduit.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\DataGridView\DataGridViewCellEntity.cs" />
@@ -95,6 +95,9 @@
     </Compile>
     <Compile Include="Controls\DataGridView\UCDataGridViewTreeRow.Designer.cs">
       <DependentUpon>UCDataGridViewTreeRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FactoryControls\Conveyor\UCConveyor.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\LED\UCLEDDataTime.cs">
       <SubType>UserControl</SubType>

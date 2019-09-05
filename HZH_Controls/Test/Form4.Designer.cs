@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
+            this.ucConveyor2 = new HZH_Controls.Controls.UCConveyor();
+            this.ucConveyor4 = new HZH_Controls.Controls.UCConveyor();
+            this.ucConveyor3 = new HZH_Controls.Controls.UCConveyor();
+            this.ucConveyor1 = new HZH_Controls.Controls.UCConveyor();
             this.ucConduit9 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit22 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit24 = new HZH_Controls.Controls.Conduit.UCConduit();
@@ -54,29 +57,63 @@
             this.ucConduit11 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit10 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit1 = new HZH_Controls.Controls.Conduit.UCConduit();
+            this.ucBottle2 = new HZH_Controls.Controls.UCBottle();
+            this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
+            this.ucConveyor5 = new HZH_Controls.Controls.UCConveyor();
+            this.ucConveyor6 = new HZH_Controls.Controls.UCConveyor();
             this.SuspendLayout();
             // 
-            // ucBottle1
+            // ucConveyor2
             // 
-            this.ucBottle1.BottleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucBottle1.BottleMouthColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.ucBottle1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucBottle1.Location = new System.Drawing.Point(816, -16);
-            this.ucBottle1.MaxValue = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.ucBottle1.Name = "ucBottle1";
-            this.ucBottle1.NO = "1#";
-            this.ucBottle1.Size = new System.Drawing.Size(73, 168);
-            this.ucBottle1.TabIndex = 20;
-            this.ucBottle1.Title = "瓶子1";
-            this.ucBottle1.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
+            this.ucConveyor2.BackColor = System.Drawing.Color.Transparent;
+            this.ucConveyor2.ConveyorColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucConveyor2.ConveyorDirection = HZH_Controls.Controls.ConveyorDirection.Forward;
+            this.ucConveyor2.ConveyorHeight = 30;
+            this.ucConveyor2.ConveyorSpeed = 100;
+            this.ucConveyor2.Inclination = 30D;
+            this.ucConveyor2.Location = new System.Drawing.Point(850, 439);
+            this.ucConveyor2.Name = "ucConveyor2";
+            this.ucConveyor2.Size = new System.Drawing.Size(183, 154);
+            this.ucConveyor2.TabIndex = 21;
+            // 
+            // ucConveyor4
+            // 
+            this.ucConveyor4.BackColor = System.Drawing.Color.Transparent;
+            this.ucConveyor4.ConveyorColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucConveyor4.ConveyorDirection = HZH_Controls.Controls.ConveyorDirection.Forward;
+            this.ucConveyor4.ConveyorHeight = 30;
+            this.ucConveyor4.ConveyorSpeed = 100;
+            this.ucConveyor4.Inclination = 90D;
+            this.ucConveyor4.Location = new System.Drawing.Point(742, 396);
+            this.ucConveyor4.Name = "ucConveyor4";
+            this.ucConveyor4.Size = new System.Drawing.Size(72, 197);
+            this.ucConveyor4.TabIndex = 21;
+            // 
+            // ucConveyor3
+            // 
+            this.ucConveyor3.BackColor = System.Drawing.Color.Transparent;
+            this.ucConveyor3.ConveyorColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucConveyor3.ConveyorDirection = HZH_Controls.Controls.ConveyorDirection.Forward;
+            this.ucConveyor3.ConveyorHeight = 30;
+            this.ucConveyor3.ConveyorSpeed = 100;
+            this.ucConveyor3.Inclination = 0D;
+            this.ucConveyor3.Location = new System.Drawing.Point(820, 380);
+            this.ucConveyor3.Name = "ucConveyor3";
+            this.ucConveyor3.Size = new System.Drawing.Size(213, 53);
+            this.ucConveyor3.TabIndex = 21;
+            // 
+            // ucConveyor1
+            // 
+            this.ucConveyor1.BackColor = System.Drawing.Color.Transparent;
+            this.ucConveyor1.ConveyorColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucConveyor1.ConveyorDirection = HZH_Controls.Controls.ConveyorDirection.Forward;
+            this.ucConveyor1.ConveyorHeight = 30;
+            this.ucConveyor1.ConveyorSpeed = 100;
+            this.ucConveyor1.Inclination = -30D;
+            this.ucConveyor1.Location = new System.Drawing.Point(1039, 428);
+            this.ucConveyor1.Name = "ucConveyor1";
+            this.ucConveyor1.Size = new System.Drawing.Size(183, 157);
+            this.ucConveyor1.TabIndex = 21;
             // 
             // ucConduit9
             // 
@@ -378,11 +415,87 @@
             this.ucConduit1.Size = new System.Drawing.Size(136, 37);
             this.ucConduit1.TabIndex = 19;
             // 
+            // ucBottle2
+            // 
+            this.ucBottle2.BottleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBottle2.BottleMouthColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.ucBottle2.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBottle2.Location = new System.Drawing.Point(1032, 12);
+            this.ucBottle2.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.ucBottle2.Name = "ucBottle2";
+            this.ucBottle2.NO = "1#";
+            this.ucBottle2.Size = new System.Drawing.Size(73, 168);
+            this.ucBottle2.TabIndex = 20;
+            this.ucBottle2.Title = "瓶子1";
+            this.ucBottle2.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // ucBottle1
+            // 
+            this.ucBottle1.BottleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBottle1.BottleMouthColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.ucBottle1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBottle1.Location = new System.Drawing.Point(816, 2);
+            this.ucBottle1.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.ucBottle1.Name = "ucBottle1";
+            this.ucBottle1.NO = "1#";
+            this.ucBottle1.Size = new System.Drawing.Size(73, 150);
+            this.ucBottle1.TabIndex = 20;
+            this.ucBottle1.Title = "";
+            this.ucBottle1.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // ucConveyor5
+            // 
+            this.ucConveyor5.BackColor = System.Drawing.Color.Transparent;
+            this.ucConveyor5.ConveyorColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucConveyor5.ConveyorDirection = HZH_Controls.Controls.ConveyorDirection.Backward;
+            this.ucConveyor5.ConveyorHeight = 30;
+            this.ucConveyor5.ConveyorSpeed = 100;
+            this.ucConveyor5.Inclination = 0D;
+            this.ucConveyor5.Location = new System.Drawing.Point(1039, 380);
+            this.ucConveyor5.Name = "ucConveyor5";
+            this.ucConveyor5.Size = new System.Drawing.Size(213, 53);
+            this.ucConveyor5.TabIndex = 21;
+            // 
+            // ucConveyor6
+            // 
+            this.ucConveyor6.BackColor = System.Drawing.Color.Transparent;
+            this.ucConveyor6.ConveyorColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucConveyor6.ConveyorDirection = HZH_Controls.Controls.ConveyorDirection.Backward;
+            this.ucConveyor6.ConveyorHeight = 30;
+            this.ucConveyor6.ConveyorSpeed = 100;
+            this.ucConveyor6.Inclination = 90D;
+            this.ucConveyor6.Location = new System.Drawing.Point(1258, 396);
+            this.ucConveyor6.Name = "ucConveyor6";
+            this.ucConveyor6.Size = new System.Drawing.Size(72, 197);
+            this.ucConveyor6.TabIndex = 21;
+            // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1368, 680);
+            this.Controls.Add(this.ucConveyor2);
+            this.Controls.Add(this.ucConveyor6);
+            this.Controls.Add(this.ucConveyor4);
+            this.Controls.Add(this.ucConveyor5);
+            this.Controls.Add(this.ucConveyor3);
+            this.Controls.Add(this.ucConveyor1);
             this.Controls.Add(this.ucConduit9);
             this.Controls.Add(this.ucConduit22);
             this.Controls.Add(this.ucConduit24);
@@ -408,6 +521,7 @@
             this.Controls.Add(this.ucConduit11);
             this.Controls.Add(this.ucConduit10);
             this.Controls.Add(this.ucConduit1);
+            this.Controls.Add(this.ucBottle2);
             this.Controls.Add(this.ucBottle1);
             this.Name = "Form4";
             this.Text = "Form4";
@@ -443,5 +557,12 @@
         private HZH_Controls.Controls.Conduit.UCConduit ucConduit25;
         private HZH_Controls.Controls.Conduit.UCConduit ucConduit27;
         private HZH_Controls.Controls.UCBottle ucBottle1;
+        private HZH_Controls.Controls.UCBottle ucBottle2;
+        private HZH_Controls.Controls.UCConveyor ucConveyor1;
+        private HZH_Controls.Controls.UCConveyor ucConveyor2;
+        private HZH_Controls.Controls.UCConveyor ucConveyor3;
+        private HZH_Controls.Controls.UCConveyor ucConveyor4;
+        private HZH_Controls.Controls.UCConveyor ucConveyor5;
+        private HZH_Controls.Controls.UCConveyor ucConveyor6;
     }
 }
