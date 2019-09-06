@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -97,6 +98,9 @@
       <DependentUpon>UCDataGridViewTreeRow.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\FactoryControls\Conveyor\UCConveyor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FactoryControls\Pond\UCPond.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\FactoryControls\Valve\UCValve.cs">
