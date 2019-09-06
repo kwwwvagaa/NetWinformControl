@@ -124,6 +124,13 @@ namespace HZH_Controls.Controls
         /// The liquid color
         /// </summary>
         private Color liquidColor = Color.FromArgb(3, 169, 243);
+
+        [Description("液体颜色"), Category("自定义")]
+        public Color LiquidColor
+        {
+            get { return liquidColor; }
+            set { liquidColor = value; }
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="UCPond"/> class.
         /// </summary>
