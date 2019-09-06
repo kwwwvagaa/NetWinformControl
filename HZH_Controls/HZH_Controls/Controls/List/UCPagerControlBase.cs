@@ -97,11 +97,19 @@ namespace HZH_Controls.Controls
             get { return m_pageIndex; }
             set { m_pageIndex = value; }
         }
+        private List<object> dataSource;
         /// <summary>
         /// 关联的数据源
         /// </summary>
         /// <value>The data source.</value>
-        public virtual List<object> DataSource { get; set; }
+        public virtual List<object> DataSource
+        {
+            get { return dataSource; }
+            set
+            {
+                dataSource = value;
+            }
+        }
         /// <summary>
         /// 数据源改变时发生
         /// </summary>
@@ -167,8 +175,6 @@ namespace HZH_Controls.Controls
         /// </summary>
         public virtual void FirstPage()
         {
-            if (DataSource == null)
-                return;
             startIndex = 0;
             var s = GetCurrentSource();
 
@@ -182,8 +188,6 @@ namespace HZH_Controls.Controls
         /// </summary>
         public virtual void PreviousPage()
         {
-            if (DataSource == null)
-                return;
             if (startIndex == 0)
                 return;
             startIndex -= m_pageSize;
@@ -201,8 +205,7 @@ namespace HZH_Controls.Controls
         /// </summary>
         public virtual void NextPage()
         {
-            if (DataSource == null)
-                return;
+
             if (startIndex + m_pageSize >= DataSource.Count)
             {
                 return;
@@ -223,7 +226,13 @@ namespace HZH_Controls.Controls
         public virtual void EndPage()
         {
             if (DataSource == null)
+            {
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(null);
+                }
                 return;
+            }
             startIndex = DataSource.Count - m_pageSize;
             if (startIndex < 0)
                 startIndex = 0;
@@ -251,7 +260,7 @@ namespace HZH_Controls.Controls
         /// <returns>List&lt;System.Object&gt;.</returns>
         public virtual List<object> GetCurrentSource()
         {
-            if (DataSource == null)
+            if (DataSource == null || DataSource.Count <= 0)
                 return null;
             int intShowCount = m_pageSize;
             if (intShowCount + startIndex > DataSource.Count)

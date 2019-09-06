@@ -73,10 +73,22 @@ namespace HZH_Controls.Controls
             }
             set
             {
-                base.DataSource = value;
-                if (base.DataSource == null)
+                if (value == null)
+                {
                     base.DataSource = new List<object>();
+                }
+                else
+                {
+                    base.DataSource = value;
+                
+                }
+                PageIndex = 1;
                 ResetPageCount();
+                var s = GetCurrentSource();
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(s);
+                }              
             }
         }
 

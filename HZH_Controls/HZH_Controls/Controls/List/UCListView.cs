@@ -125,7 +125,11 @@ namespace HZH_Controls.Controls
             set
             {
                 if (value == null)
+                {
+                    m_dataSource = value;
+                    ReloadSource();
                     return;
+                }
                 if (!typeof(IList).IsAssignableFrom(value.GetType()))
                 {
                     throw new Exception("数据源不是有效的数据类型，列表");
@@ -233,44 +237,52 @@ namespace HZH_Controls.Controls
         /// </summary>
         public void ReloadSource()
         {
-            if (DesignMode)
-                return;
-            ControlHelper.FreezeControl(this, true);
-            if (this.panMain.Controls.Count <= 0)
+            try
             {
-                ReloadGridStyle();
-            }
-            if (m_dataSource == null || ((IList)m_dataSource).Count <= 0)
-            {
-                for (int i = this.panMain.Controls.Count - 1; i >= 0; i--)
+                if (DesignMode)
+                    return;
+                ControlHelper.FreezeControl(this, true);
+
+                if (this.panMain.Controls.Count <= 0)
                 {
-                    this.panMain.Controls[i].Visible = false;
+                    ReloadGridStyle();
+                }
+                if (m_dataSource == null || ((IList)m_dataSource).Count <= 0)
+                {
+                    for (int i = this.panMain.Controls.Count - 1; i >= 0; i--)
+                    {
+                        this.panMain.Controls[i].Visible = false;
+                    }
+
+                    return;
+                }
+                int intCount = Math.Min(((IList)m_dataSource).Count, this.panMain.Controls.Count);
+
+                for (int i = 0; i < intCount; i++)
+                {
+                    ((IListViewItem)this.panMain.Controls[i]).DataSource = ((IList)m_dataSource)[i];
+                    if (m_selectedSource.Contains(((IList)m_dataSource)[i]))
+                    {
+                        ((IListViewItem)this.panMain.Controls[i]).SetSelected(true);
+                    }
+                    else
+                    {
+                        ((IListViewItem)this.panMain.Controls[i]).SetSelected(false);
+                    }
+                    this.panMain.Controls[i].Visible = true;
                 }
 
-                return;
-            }
-            int intCount = Math.Min(((IList)m_dataSource).Count, this.panMain.Controls.Count);
-
-            for (int i = 0; i < intCount; i++)
-            {
-                ((IListViewItem)this.panMain.Controls[i]).DataSource = ((IList)m_dataSource)[i];
-                if (m_selectedSource.Contains(((IList)m_dataSource)[i]))
+                for (int i = this.panMain.Controls.Count - 1; i >= intCount; i--)
                 {
-                    ((IListViewItem)this.panMain.Controls[i]).SetSelected(true);
+                    if (this.panMain.Controls[i].Visible)
+                        this.panMain.Controls[i].Visible = false;
                 }
-                else
-                {
-                    ((IListViewItem)this.panMain.Controls[i]).SetSelected(false);
-                }
-                this.panMain.Controls[i].Visible = true;
-            }
 
-            for (int i = this.panMain.Controls.Count - 1; i >= intCount; i--)
-            {
-                if (this.panMain.Controls[i].Visible)
-                    this.panMain.Controls[i].Visible = false;
             }
-            ControlHelper.FreezeControl(this, false);
+            finally
+            {
+                ControlHelper.FreezeControl(this, false);
+            }
         }
         #endregion
 

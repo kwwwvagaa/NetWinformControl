@@ -16,6 +16,12 @@ namespace Test
         public FrmTestListView()
         {
             InitializeComponent();
+            BtnHelpClick += FrmTestListView_BtnHelpClick;
+        }
+
+        void FrmTestListView_BtnHelpClick(object sender, EventArgs e)
+        {
+            this.ucListView1.Page.DataSource = null;
         }
 
         private void FrmTestListView_Load(object sender, EventArgs e)
@@ -33,5 +39,7 @@ namespace Test
             //this.ucListView1.DataSource = lstSource;
 
         }
+
+   
     }
 }
