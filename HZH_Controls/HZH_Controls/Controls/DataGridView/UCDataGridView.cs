@@ -648,6 +648,13 @@ namespace HZH_Controls.Controls
                         lastItem.Height = this.panRow.Height - (m_showCount - 1) * m_rowHeight;
                     }
                 }
+                else
+                {
+                    foreach (Control item in this.panRow.Controls)
+                    {
+                        item.Visible = false;
+                    }
+                }
             }
             finally
             {
