@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.ucValve1 = new HZH_Controls.Controls.UCValve();
+            this.ucValve2 = new HZH_Controls.Controls.UCValve();
+            this.ucValve3 = new HZH_Controls.Controls.UCValve();
             this.ucConveyor2 = new HZH_Controls.Controls.UCConveyor();
             this.ucConveyor6 = new HZH_Controls.Controls.UCConveyor();
             this.ucConveyor4 = new HZH_Controls.Controls.UCConveyor();
@@ -65,15 +67,53 @@
             this.ucConduit10 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit1 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
+            this.ucValve4 = new HZH_Controls.Controls.UCValve();
             this.SuspendLayout();
             // 
             // ucValve1
             // 
-            this.ucValve1.Location = new System.Drawing.Point(563, 553);
+            this.ucValve1.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve1.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucValve1.LiquidSpeed = 100;
+            this.ucValve1.Location = new System.Drawing.Point(910, 12);
             this.ucValve1.Name = "ucValve1";
-            this.ucValve1.Size = new System.Drawing.Size(145, 100);
+            this.ucValve1.Opened = true;
+            this.ucValve1.Size = new System.Drawing.Size(169, 106);
+            this.ucValve1.SwitchColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucValve1.TabIndex = 22;
-            this.ucValve1.ValveDirection = HZH_Controls.Controls.ValveDirection.Horizontal;
+            this.ucValve1.ValveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucValve1.ValveStyle = HZH_Controls.Controls.ValveStyle.Horizontal_Top;
+            // 
+            // ucValve2
+            // 
+            this.ucValve2.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve2.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve2.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucValve2.LiquidSpeed = 100;
+            this.ucValve2.Location = new System.Drawing.Point(1222, 307);
+            this.ucValve2.Name = "ucValve2";
+            this.ucValve2.Opened = true;
+            this.ucValve2.Size = new System.Drawing.Size(97, 131);
+            this.ucValve2.SwitchColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucValve2.TabIndex = 22;
+            this.ucValve2.ValveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucValve2.ValveStyle = HZH_Controls.Controls.ValveStyle.Vertical_Right;
+            // 
+            // ucValve3
+            // 
+            this.ucValve3.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve3.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve3.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucValve3.LiquidSpeed = 100;
+            this.ucValve3.Location = new System.Drawing.Point(1259, 176);
+            this.ucValve3.Name = "ucValve3";
+            this.ucValve3.Opened = true;
+            this.ucValve3.Size = new System.Drawing.Size(97, 131);
+            this.ucValve3.SwitchColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucValve3.TabIndex = 22;
+            this.ucValve3.ValveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucValve3.ValveStyle = HZH_Controls.Controls.ValveStyle.Vertical_Left;
             // 
             // ucConveyor2
             // 
@@ -83,7 +123,7 @@
             this.ucConveyor2.ConveyorHeight = 30;
             this.ucConveyor2.ConveyorSpeed = 100;
             this.ucConveyor2.Inclination = 30D;
-            this.ucConveyor2.Location = new System.Drawing.Point(850, 439);
+            this.ucConveyor2.Location = new System.Drawing.Point(753, 515);
             this.ucConveyor2.Name = "ucConveyor2";
             this.ucConveyor2.Size = new System.Drawing.Size(183, 154);
             this.ucConveyor2.TabIndex = 21;
@@ -96,7 +136,7 @@
             this.ucConveyor6.ConveyorHeight = 30;
             this.ucConveyor6.ConveyorSpeed = 100;
             this.ucConveyor6.Inclination = 90D;
-            this.ucConveyor6.Location = new System.Drawing.Point(1258, 396);
+            this.ucConveyor6.Location = new System.Drawing.Point(1161, 472);
             this.ucConveyor6.Name = "ucConveyor6";
             this.ucConveyor6.Size = new System.Drawing.Size(72, 197);
             this.ucConveyor6.TabIndex = 21;
@@ -109,7 +149,7 @@
             this.ucConveyor4.ConveyorHeight = 30;
             this.ucConveyor4.ConveyorSpeed = 100;
             this.ucConveyor4.Inclination = 90D;
-            this.ucConveyor4.Location = new System.Drawing.Point(742, 396);
+            this.ucConveyor4.Location = new System.Drawing.Point(645, 472);
             this.ucConveyor4.Name = "ucConveyor4";
             this.ucConveyor4.Size = new System.Drawing.Size(72, 197);
             this.ucConveyor4.TabIndex = 21;
@@ -122,7 +162,7 @@
             this.ucConveyor5.ConveyorHeight = 30;
             this.ucConveyor5.ConveyorSpeed = 100;
             this.ucConveyor5.Inclination = 0D;
-            this.ucConveyor5.Location = new System.Drawing.Point(1039, 380);
+            this.ucConveyor5.Location = new System.Drawing.Point(942, 456);
             this.ucConveyor5.Name = "ucConveyor5";
             this.ucConveyor5.Size = new System.Drawing.Size(213, 53);
             this.ucConveyor5.TabIndex = 21;
@@ -135,7 +175,7 @@
             this.ucConveyor3.ConveyorHeight = 30;
             this.ucConveyor3.ConveyorSpeed = 100;
             this.ucConveyor3.Inclination = 0D;
-            this.ucConveyor3.Location = new System.Drawing.Point(820, 380);
+            this.ucConveyor3.Location = new System.Drawing.Point(723, 456);
             this.ucConveyor3.Name = "ucConveyor3";
             this.ucConveyor3.Size = new System.Drawing.Size(213, 53);
             this.ucConveyor3.TabIndex = 21;
@@ -148,7 +188,7 @@
             this.ucConveyor1.ConveyorHeight = 30;
             this.ucConveyor1.ConveyorSpeed = 100;
             this.ucConveyor1.Inclination = -30D;
-            this.ucConveyor1.Location = new System.Drawing.Point(1039, 428);
+            this.ucConveyor1.Location = new System.Drawing.Point(942, 504);
             this.ucConveyor1.Name = "ucConveyor1";
             this.ucConveyor1.Size = new System.Drawing.Size(183, 157);
             this.ucConveyor1.TabIndex = 21;
@@ -552,12 +592,30 @@
             0,
             0});
             // 
+            // ucValve4
+            // 
+            this.ucValve4.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve4.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve4.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucValve4.LiquidSpeed = 100;
+            this.ucValve4.Location = new System.Drawing.Point(1079, 52);
+            this.ucValve4.Name = "ucValve4";
+            this.ucValve4.Opened = true;
+            this.ucValve4.Size = new System.Drawing.Size(169, 106);
+            this.ucValve4.SwitchColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucValve4.TabIndex = 22;
+            this.ucValve4.ValveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucValve4.ValveStyle = HZH_Controls.Controls.ValveStyle.Horizontal_Bottom;
+            // 
             // Form4
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1368, 680);
+            this.Controls.Add(this.ucValve4);
             this.Controls.Add(this.ucValve1);
+            this.Controls.Add(this.ucValve2);
+            this.Controls.Add(this.ucValve3);
             this.Controls.Add(this.ucConveyor2);
             this.Controls.Add(this.ucConveyor6);
             this.Controls.Add(this.ucConveyor4);
@@ -633,11 +691,14 @@
         private HZH_Controls.Controls.UCConveyor ucConveyor4;
         private HZH_Controls.Controls.UCConveyor ucConveyor5;
         private HZH_Controls.Controls.UCConveyor ucConveyor6;
-        private HZH_Controls.Controls.UCValve ucValve1;
         private HZH_Controls.Controls.Conduit.UCConduit ucConduit5;
         private HZH_Controls.Controls.Conduit.UCConduit ucConduit26;
         private HZH_Controls.Controls.Conduit.UCConduit ucConduit28;
         private HZH_Controls.Controls.Conduit.UCConduit ucConduit29;
         private HZH_Controls.Controls.Conduit.UCConduit ucConduit30;
+        private HZH_Controls.Controls.UCValve ucValve3;
+        private HZH_Controls.Controls.UCValve ucValve1;
+        private HZH_Controls.Controls.UCValve ucValve2;
+        private HZH_Controls.Controls.UCValve ucValve4;
     }
 }

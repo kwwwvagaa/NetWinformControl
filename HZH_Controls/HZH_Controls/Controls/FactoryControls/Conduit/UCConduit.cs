@@ -113,6 +113,11 @@ namespace HZH_Controls.Controls.Conduit
             set
             {
                 liquidDirection = value;
+                if (value == Conduit.LiquidDirection.None)
+                    m_timer.Enabled = false;
+                else
+                    m_timer.Enabled = true;
+
                 Refresh();
             }
         }
@@ -145,7 +150,7 @@ namespace HZH_Controls.Controls.Conduit
         /// Gets or sets the width of the conduit.
         /// </summary>
         /// <value>The width of the conduit.</value>
-        [Description("管道宽度，此值为管道入口处的宽度，当ConduitStyle的值是Horizontal_Tilt_Up,Horizontal_Tilt_Down,Vertical_Tilt_Left,Vertical_Tilt_Right时有效，其他时候将根据管道大小使用自动宽度"), Category("自定义")]
+        [Description("管道宽度，当ConduitStyle的值是Horizontal_Tilt_Up,Horizontal_Tilt_Down,Vertical_Tilt_Left,Vertical_Tilt_Right时有效，其他时候将根据管道大小使用自动宽度"), Category("自定义")]
         public int ConduitWidth
         {
             get { return conduitWidth; }
@@ -616,8 +621,7 @@ namespace HZH_Controls.Controls.Conduit
             {
                 _intPenWidth = conduitWidth;
             }
-            int intCount = _intPenWidth / 2 / 4;
-            int intSplit = (255 - 100) / intCount;
+            int intCount = _intPenWidth / 2 / 4;            
             for (int i = 0; i < intCount; i++)
             {
                 int _penWidth = _intPenWidth / 2 - 4 * i;
