@@ -99,6 +99,9 @@
     <Compile Include="Controls\FactoryControls\Conveyor\UCConveyor.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\FactoryControls\Valve\UCValve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\LED\UCLEDDataTime.cs">
       <SubType>UserControl</SubType>
     </Compile>

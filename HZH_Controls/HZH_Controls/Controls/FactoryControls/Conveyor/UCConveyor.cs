@@ -225,7 +225,6 @@ namespace HZH_Controls.Controls
                     intHeight = this.Height;
                 m_workingRect = new Rectangle((this.Width - intWidth) / 2 + 1, (this.Height - intHeight) / 2 + 1, intWidth - 2, intHeight - 2);
             }
-
         }
 
         /// <summary>
@@ -248,8 +247,7 @@ namespace HZH_Controls.Controls
             var rectRight = new Rectangle(m_workingRect.Right - conveyorHeight + 5, (inclination >= 0 ? (m_workingRect.Top) : (m_workingRect.Bottom - conveyorHeight)) + 5, conveyorHeight - 10, conveyorHeight - 10);
             g.FillEllipse(new SolidBrush(conveyorColor), rectRight);
             g.FillEllipse(new SolidBrush(Color.White), new Rectangle(rectRight.Left + (rectRight.Width - 6) / 2, rectRight.Top + (rectRight.Height - 6) / 2, 6, 6));
-
-
+            
             //传送带
             //左端
             GraphicsPath path = new GraphicsPath();

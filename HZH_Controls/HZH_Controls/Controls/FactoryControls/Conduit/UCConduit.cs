@@ -363,46 +363,60 @@ namespace HZH_Controls.Controls.Conduit
                     break;
 
                 case Conduit.ConduitStyle.Horizontal_Tilt_Up:
-                    Point[] psTilt_Up = new Point[] 
-                    { 
-                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Bottom-conduitWidth),
-                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Top),
-                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Top+conduitWidth),
-                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Bottom)
-                    };
-                    path.AddLines(psTilt_Up);
+
+                    double angleUp = Math.Atan((this.ClientRectangle.Height - conduitWidth) / (double)this.ClientRectangle.Width);
+                    angleUp = angleUp / Math.PI * 180f;
+                    path.AddArc(new Rectangle(this.ClientRectangle.Left - conduitWidth, this.ClientRectangle.Bottom - conduitWidth * 2, conduitWidth * 2, conduitWidth * 2), 90, -1 * (float)angleUp);
+                    path.AddLine(new Point(this.ClientRectangle.Right, this.ClientRectangle.Top + conduitWidth), new Point(this.ClientRectangle.Right, this.ClientRectangle.Top));
+                    path.AddArc(new Rectangle(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Top, conduitWidth * 2, conduitWidth * 2), 270, -1 * (float)angleUp);
+                    path.AddLine(new Point(this.ClientRectangle.Left, this.ClientRectangle.Bottom - conduitWidth), new Point(this.ClientRectangle.Left, this.ClientRectangle.Bottom));
                     path.CloseAllFigures();
 
-                    float angleUp = ((this.ClientRectangle.Height - conduitWidth) / (float)this.ClientRectangle.Width);
-                    int _intUpLeft = 0;
-                    if (angleUp != 0)
-                        _intUpLeft = (int)(((float)conduitWidth / 2) / angleUp);
 
-                    linePath.AddLine(this.ClientRectangle.Left - _intUpLeft, this.ClientRectangle.Bottom, this.ClientRectangle.Right + _intUpLeft, this.ClientRectangle.Top);
+                    linePath.AddArc(new Rectangle(this.ClientRectangle.Right - conduitWidth / 2, this.ClientRectangle.Top + conduitWidth / 2, conduitWidth, conduitWidth), 270, -1 * (float)angleUp);
+                    linePath.AddArc(new Rectangle(this.ClientRectangle.Left - conduitWidth / 2, this.ClientRectangle.Bottom - 1 - conduitWidth - conduitWidth / 2, conduitWidth, conduitWidth), 95 - (float)angleUp, (float)angleUp + 5);
 
-                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Left, this.ClientRectangle.Bottom - conduitWidth), new Point(this.ClientRectangle.Right, this.ClientRectangle.Top) });
-                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Right, this.ClientRectangle.Top + conduitWidth), new Point(this.ClientRectangle.Left, this.ClientRectangle.Bottom) });
+                    lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Left - conduitWidth, this.ClientRectangle.Bottom - conduitWidth * 2, conduitWidth * 2, conduitWidth * 2), startAngle = 90, sweepAngle = -1 * (float)angleUp });
+                    lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Top, conduitWidth * 2, conduitWidth * 2), startAngle = 270, sweepAngle = -1 * (float)angleUp });
+
+                    tileLine.Add(new Point[] 
+                    { 
+                        new Point((int)(this.ClientRectangle.Right+1 - Math.Sin(Math.PI * (angleUp / 180.00F)) * conduitWidth),(int)( this.ClientRectangle.Top + conduitWidth - Math.Cos(Math.PI * (angleUp / 180.00F)) * conduitWidth)), 
+                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Bottom-conduitWidth-1) 
+                    });
+                    tileLine.Add(new Point[] 
+                    {
+                        new Point((int)(this.ClientRectangle.Left+1 + Math.Sin(Math.PI * (angleUp / 180.00F)) * conduitWidth),(int)( this.ClientRectangle.Bottom - conduitWidth + Math.Cos(Math.PI * (angleUp / 180.00F)) * conduitWidth)), 
+                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Top+conduitWidth) 
+                    });
+
                     break;
                 case Conduit.ConduitStyle.Horizontal_Tilt_Down:
-                    Point[] psTilt_Down = new Point[] 
-                    { 
-                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Top),
-                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Bottom-conduitWidth),
-                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Bottom),
-                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Top+conduitWidth)
-                    };
-                    path.AddLines(psTilt_Down);
+                    double angleDown = Math.Atan((this.ClientRectangle.Height - conduitWidth) / (double)this.ClientRectangle.Width);
+                    angleDown = angleDown / Math.PI * 180f;
+                    path.AddArc(new Rectangle(this.ClientRectangle.Left - conduitWidth, this.ClientRectangle.Top, conduitWidth * 2, conduitWidth * 2), 270, (float)angleDown);
+                    path.AddLine(new Point(this.ClientRectangle.Right, this.ClientRectangle.Bottom - conduitWidth), new Point(this.ClientRectangle.Right, this.ClientRectangle.Bottom));
+                    path.AddArc(new Rectangle(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Bottom - conduitWidth * 2, conduitWidth * 2, conduitWidth * 2), 90, (float)angleDown);
+                    path.AddLine(new Point(this.ClientRectangle.Left, this.ClientRectangle.Top + conduitWidth), new Point(this.ClientRectangle.Left, this.ClientRectangle.Top));
                     path.CloseAllFigures();
 
-                    float angleDown = ((this.ClientRectangle.Height - conduitWidth) / (float)this.ClientRectangle.Width);
-                    int _intDownLeft = 0;
-                    if (angleDown != 0)
-                        _intDownLeft = (int)(((float)conduitWidth / 2) / angleDown);
 
-                    linePath.AddLine(this.ClientRectangle.Left - _intDownLeft, this.ClientRectangle.Top, this.ClientRectangle.Right + _intDownLeft, this.ClientRectangle.Bottom);
+                    linePath.AddArc(new Rectangle(this.ClientRectangle.Left - conduitWidth / 2, this.ClientRectangle.Top + conduitWidth / 2, conduitWidth, conduitWidth), 265, (float)angleDown + 5);
+                    linePath.AddArc(new Rectangle(this.ClientRectangle.Right - conduitWidth / 2, this.ClientRectangle.Bottom - conduitWidth - conduitWidth / 2 - 1, conduitWidth, conduitWidth), 90 + (float)angleDown, -1 * (float)angleDown - 5);
 
-                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Left, this.ClientRectangle.Top), new Point(this.ClientRectangle.Right, this.ClientRectangle.Bottom - conduitWidth) });
-                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Right, this.ClientRectangle.Bottom), new Point(this.ClientRectangle.Left, this.ClientRectangle.Top + conduitWidth) });
+                    lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Left - conduitWidth, this.ClientRectangle.Top, conduitWidth * 2, conduitWidth * 2), startAngle = 270, sweepAngle = (float)angleDown });
+                    lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Bottom - conduitWidth * 2, conduitWidth * 2, conduitWidth * 2), startAngle = 90, sweepAngle = (float)angleDown });
+
+                    tileLine.Add(new Point[] 
+                    { 
+                        new Point((int)(this.ClientRectangle.Left + Math.Sin(Math.PI * (angleDown / 180.00F)) * conduitWidth),(int)( this.ClientRectangle.Top + conduitWidth - Math.Cos(Math.PI * (angleDown / 180.00F)) * conduitWidth)), 
+                        new Point(this.ClientRectangle.Right-1,this.ClientRectangle.Bottom-conduitWidth-1) 
+                    });
+                    tileLine.Add(new Point[] 
+                    {
+                        new Point((int)(this.ClientRectangle.Right - Math.Sin(Math.PI * (angleDown / 180.00F)) * conduitWidth),(int)( this.ClientRectangle.Bottom - conduitWidth + Math.Cos(Math.PI * (angleDown / 180.00F)) * conduitWidth)), 
+                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Top+conduitWidth) 
+                    });
                     break;
                 #endregion
 
@@ -539,46 +553,58 @@ namespace HZH_Controls.Controls.Conduit
                     lstArcs.Add(new ArcEntity() { rect = new Rectangle(-1, this.Height - intPenWidth * 2, intPenWidth * 2, intPenWidth * 2), startAngle = 90, sweepAngle = 90 });
                     break;
                 case Conduit.ConduitStyle.Vertical_Tilt_Left:
-                    Point[] psTilt_Left = new Point[] 
-                    { 
-                        new Point(this.ClientRectangle.Left+conduitWidth,this.ClientRectangle.Top),
-                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Bottom),
-                        new Point(this.ClientRectangle.Right-conduitWidth,this.ClientRectangle.Bottom),
-                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Top)
-                    };
-                    path.AddLines(psTilt_Left);
+                    double angleLeft = Math.Atan((this.ClientRectangle.Width - conduitWidth) / (double)this.ClientRectangle.Height);
+                    angleLeft = angleLeft / Math.PI * 180f;
+                    path.AddArc(new Rectangle(this.ClientRectangle.Left - 1, ClientRectangle.Top - conduitWidth, conduitWidth * 2, conduitWidth * 2), 180, -1 * (float)angleLeft);
+                    path.AddLine(new Point(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Bottom), new Point(this.ClientRectangle.Right, this.ClientRectangle.Bottom));
+                    path.AddArc(new Rectangle(this.ClientRectangle.Right - conduitWidth * 2, this.ClientRectangle.Bottom - conduitWidth, conduitWidth * 2, conduitWidth * 2), 0, -1 * (float)angleLeft);
+                    path.AddLine(new Point(this.ClientRectangle.Left + conduitWidth, this.ClientRectangle.Top), new Point(this.ClientRectangle.Left, this.ClientRectangle.Top));
                     path.CloseAllFigures();
 
-                    float angleLeft = ((this.ClientRectangle.Width - conduitWidth) / (float)this.ClientRectangle.Height);
-                    int _intLeftUp = 0;
-                    if (angleLeft != 0)
-                        _intLeftUp = (int)(((float)conduitWidth / 2) / angleLeft);
 
-                    linePath.AddLine(this.ClientRectangle.Left, this.ClientRectangle.Top - _intLeftUp, this.ClientRectangle.Right, this.ClientRectangle.Bottom + _intLeftUp);
+                    linePath.AddArc(new Rectangle(this.ClientRectangle.Left + conduitWidth / 2, this.ClientRectangle.Top - conduitWidth / 2, conduitWidth, conduitWidth), 185, -1 * (float)angleLeft - 5);
+                    linePath.AddArc(new Rectangle(this.ClientRectangle.Right - conduitWidth - conduitWidth / 2, this.ClientRectangle.Bottom - conduitWidth / 2, conduitWidth, conduitWidth), -1 * (float)angleLeft, (float)angleLeft);
 
-                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Left + conduitWidth, this.ClientRectangle.Top), new Point(this.ClientRectangle.Right, this.ClientRectangle.Bottom) });
-                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Bottom), new Point(this.ClientRectangle.Left, this.ClientRectangle.Top) });
+                    lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Left - 1, ClientRectangle.Top - conduitWidth, conduitWidth * 2, conduitWidth * 2), startAngle = 180, sweepAngle = -1 * (float)angleLeft });
+                    lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Right - conduitWidth * 2, this.ClientRectangle.Bottom - conduitWidth, conduitWidth * 2, conduitWidth * 2), startAngle = 0, sweepAngle = -1 * (float)angleLeft });
+
+                    tileLine.Add(new Point[] 
+                    { 
+                        new Point((int)(this.ClientRectangle.Left + conduitWidth),this.ClientRectangle.Top), 
+                        new Point((int)(this.ClientRectangle.Right-conduitWidth+Math.Cos(Math.PI * (angleLeft / 180.00F)) * conduitWidth),(int)(this.ClientRectangle.Bottom-Math.Sin(Math.PI * (angleLeft / 180.00F)) * conduitWidth)) 
+                    });
+                    tileLine.Add(new Point[] 
+                    {
+                        new Point((int)(this.ClientRectangle.Left-1+conduitWidth-Math.Cos(Math.PI * (angleLeft / 180.00F)) * conduitWidth),(int)(this.ClientRectangle.Top+Math.Sin(Math.PI * (angleLeft / 180.00F)) * conduitWidth)), 
+                        new Point(this.ClientRectangle.Right-conduitWidth,this.ClientRectangle.Bottom) 
+                    });
                     break;
                 case Conduit.ConduitStyle.Vertical_Tilt_Right:
-                    Point[] psTilt_Right = new Point[] 
-                    { 
-                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Top),
-                        new Point(this.ClientRectangle.Left+conduitWidth,this.ClientRectangle.Bottom),                        
-                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Bottom),
-                        new Point(this.ClientRectangle.Right-conduitWidth,this.ClientRectangle.Top)
-                    };
-                    path.AddLines(psTilt_Right);
+                    double angleRight = Math.Atan((this.ClientRectangle.Width - conduitWidth) / (double)this.ClientRectangle.Height);
+                    angleRight = angleRight / Math.PI * 180f;
+                    path.AddArc(new Rectangle(this.ClientRectangle.Right - conduitWidth * 2, ClientRectangle.Top - conduitWidth, conduitWidth * 2, conduitWidth * 2), 0, (float)angleRight);
+                    path.AddLine(new Point(this.ClientRectangle.Left + conduitWidth, this.ClientRectangle.Bottom), new Point(this.ClientRectangle.Left, this.ClientRectangle.Bottom));
+                    path.AddArc(new Rectangle(this.ClientRectangle.Left - 1, this.ClientRectangle.Bottom - conduitWidth, conduitWidth * 2, conduitWidth * 2), 180, (float)angleRight);
+                    path.AddLine(new Point(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Top), new Point(this.ClientRectangle.Right, this.ClientRectangle.Top));
                     path.CloseAllFigures();
 
-                    float angleRight = ((this.ClientRectangle.Width - conduitWidth) / (float)this.ClientRectangle.Height);
-                    int _intRightUp = 0;
-                    if (angleRight != 0)
-                        _intRightUp = (int)(((float)conduitWidth / 2) / angleRight);
 
-                    linePath.AddLine(this.ClientRectangle.Right, this.ClientRectangle.Top - _intRightUp, this.ClientRectangle.Left, this.ClientRectangle.Bottom + _intRightUp);
+                    linePath.AddArc(new Rectangle(this.ClientRectangle.Right - conduitWidth - conduitWidth / 2, this.ClientRectangle.Top - conduitWidth / 2, conduitWidth, conduitWidth), -5, (float)angleRight + 5);
+                    linePath.AddArc(new Rectangle(this.ClientRectangle.Left + conduitWidth / 2, this.ClientRectangle.Bottom - conduitWidth / 2, conduitWidth, conduitWidth), 180 + (float)angleRight, -1 * (float)angleRight);
 
-                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Right, this.ClientRectangle.Top), new Point(this.ClientRectangle.Left + conduitWidth, this.ClientRectangle.Bottom) });
-                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Left, this.ClientRectangle.Bottom), new Point(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Top) });
+                    lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Right - conduitWidth * 2, ClientRectangle.Top - conduitWidth, conduitWidth * 2, conduitWidth * 2), startAngle = 0, sweepAngle = (float)angleRight });
+                    lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Left - 1, this.ClientRectangle.Bottom - conduitWidth, conduitWidth * 2, conduitWidth * 2), startAngle = 180, sweepAngle = (float)angleRight });
+
+                    tileLine.Add(new Point[] 
+                    { 
+                        new Point((int)(this.ClientRectangle.Right - conduitWidth),this.ClientRectangle.Top), 
+                        new Point((int)(this.ClientRectangle.Left + conduitWidth - Math.Cos(Math.PI * (angleRight / 180.00F)) * conduitWidth),(int)(this.ClientRectangle.Bottom-Math.Sin(Math.PI * (angleRight / 180.00F)) * conduitWidth)) 
+                    });
+                    tileLine.Add(new Point[] 
+                    {
+                        new Point((int)(this.ClientRectangle.Right - conduitWidth+Math.Cos(Math.PI * (angleRight / 180.00F)) * conduitWidth),(int)(this.ClientRectangle.Top+Math.Sin(Math.PI * (angleRight / 180.00F)) * conduitWidth)), 
+                        new Point(this.ClientRectangle.Left + conduitWidth,this.ClientRectangle.Bottom) 
+                    });
                     break;
                 #endregion
             }
