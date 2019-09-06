@@ -139,6 +139,23 @@ namespace HZH_Controls.Controls.Conduit
             }
         }
 
+        int conduitWidth = 50;
+
+        /// <summary>
+        /// Gets or sets the width of the conduit.
+        /// </summary>
+        /// <value>The width of the conduit.</value>
+        [Description("管道宽度，此值为管道入口处的宽度，当ConduitStyle的值是Horizontal_Tilt_Up,Horizontal_Tilt_Down,Vertical_Tilt_Left,Vertical_Tilt_Right时有效，其他时候将根据管道大小使用自动宽度"), Category("自定义")]
+        public int ConduitWidth
+        {
+            get { return conduitWidth; }
+            set
+            {
+                conduitWidth = value;
+                Refresh();
+            }
+        }
+
         /// <summary>
         /// The int pen width
         /// </summary>
@@ -209,6 +226,7 @@ namespace HZH_Controls.Controls.Conduit
 
             GraphicsPath path = new GraphicsPath();
             GraphicsPath linePath = new GraphicsPath();
+            List<Point[]> tileLine = new List<Point[]>();
             switch (conduitStyle)
             {
                 #region H    English:H
@@ -342,6 +360,49 @@ namespace HZH_Controls.Controls.Conduit
 
                     lstArcs.Add(new ArcEntity() { rect = new Rectangle(0, -1, intPenWidth * 2, intPenWidth * 2), startAngle = 180, sweepAngle = 90 });
                     lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Right - intPenWidth * 2, -1, intPenWidth * 2, intPenWidth * 2), startAngle = 270, sweepAngle = 90 });
+                    break;
+
+                case Conduit.ConduitStyle.Horizontal_Tilt_Up:
+                    Point[] psTilt_Up = new Point[] 
+                    { 
+                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Bottom-conduitWidth),
+                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Top),
+                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Top+conduitWidth),
+                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Bottom)
+                    };
+                    path.AddLines(psTilt_Up);
+                    path.CloseAllFigures();
+
+                    float angleUp = ((this.ClientRectangle.Height - conduitWidth) / (float)this.ClientRectangle.Width);
+                    int _intUpLeft = 0;
+                    if (angleUp != 0)
+                        _intUpLeft = (int)(((float)conduitWidth / 2) / angleUp);
+
+                    linePath.AddLine(this.ClientRectangle.Left - _intUpLeft, this.ClientRectangle.Bottom, this.ClientRectangle.Right + _intUpLeft, this.ClientRectangle.Top);
+
+                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Left, this.ClientRectangle.Bottom - conduitWidth), new Point(this.ClientRectangle.Right, this.ClientRectangle.Top) });
+                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Right, this.ClientRectangle.Top + conduitWidth), new Point(this.ClientRectangle.Left, this.ClientRectangle.Bottom) });
+                    break;
+                case Conduit.ConduitStyle.Horizontal_Tilt_Down:
+                    Point[] psTilt_Down = new Point[] 
+                    { 
+                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Top),
+                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Bottom-conduitWidth),
+                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Bottom),
+                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Top+conduitWidth)
+                    };
+                    path.AddLines(psTilt_Down);
+                    path.CloseAllFigures();
+
+                    float angleDown = ((this.ClientRectangle.Height - conduitWidth) / (float)this.ClientRectangle.Width);
+                    int _intDownLeft = 0;
+                    if (angleDown != 0)
+                        _intDownLeft = (int)(((float)conduitWidth / 2) / angleDown);
+
+                    linePath.AddLine(this.ClientRectangle.Left - _intDownLeft, this.ClientRectangle.Top, this.ClientRectangle.Right + _intDownLeft, this.ClientRectangle.Bottom);
+
+                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Left, this.ClientRectangle.Top), new Point(this.ClientRectangle.Right, this.ClientRectangle.Bottom - conduitWidth) });
+                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Right, this.ClientRectangle.Bottom), new Point(this.ClientRectangle.Left, this.ClientRectangle.Top + conduitWidth) });
                     break;
                 #endregion
 
@@ -477,16 +538,63 @@ namespace HZH_Controls.Controls.Conduit
                     lstArcs.Add(new ArcEntity() { rect = new Rectangle(-1, 0, intPenWidth * 2, intPenWidth * 2), startAngle = 180, sweepAngle = 90 });
                     lstArcs.Add(new ArcEntity() { rect = new Rectangle(-1, this.Height - intPenWidth * 2, intPenWidth * 2, intPenWidth * 2), startAngle = 90, sweepAngle = 90 });
                     break;
+                case Conduit.ConduitStyle.Vertical_Tilt_Left:
+                    Point[] psTilt_Left = new Point[] 
+                    { 
+                        new Point(this.ClientRectangle.Left+conduitWidth,this.ClientRectangle.Top),
+                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Bottom),
+                        new Point(this.ClientRectangle.Right-conduitWidth,this.ClientRectangle.Bottom),
+                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Top)
+                    };
+                    path.AddLines(psTilt_Left);
+                    path.CloseAllFigures();
+
+                    float angleLeft = ((this.ClientRectangle.Width - conduitWidth) / (float)this.ClientRectangle.Height);
+                    int _intLeftUp = 0;
+                    if (angleLeft != 0)
+                        _intLeftUp = (int)(((float)conduitWidth / 2) / angleLeft);
+
+                    linePath.AddLine(this.ClientRectangle.Left, this.ClientRectangle.Top - _intLeftUp, this.ClientRectangle.Right, this.ClientRectangle.Bottom + _intLeftUp);
+
+                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Left + conduitWidth, this.ClientRectangle.Top), new Point(this.ClientRectangle.Right, this.ClientRectangle.Bottom) });
+                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Bottom), new Point(this.ClientRectangle.Left, this.ClientRectangle.Top) });
+                    break;
+                case Conduit.ConduitStyle.Vertical_Tilt_Right:
+                    Point[] psTilt_Right = new Point[] 
+                    { 
+                        new Point(this.ClientRectangle.Right,this.ClientRectangle.Top),
+                        new Point(this.ClientRectangle.Left+conduitWidth,this.ClientRectangle.Bottom),                        
+                        new Point(this.ClientRectangle.Left,this.ClientRectangle.Bottom),
+                        new Point(this.ClientRectangle.Right-conduitWidth,this.ClientRectangle.Top)
+                    };
+                    path.AddLines(psTilt_Right);
+                    path.CloseAllFigures();
+
+                    float angleRight = ((this.ClientRectangle.Width - conduitWidth) / (float)this.ClientRectangle.Height);
+                    int _intRightUp = 0;
+                    if (angleRight != 0)
+                        _intRightUp = (int)(((float)conduitWidth / 2) / angleRight);
+
+                    linePath.AddLine(this.ClientRectangle.Right, this.ClientRectangle.Top - _intRightUp, this.ClientRectangle.Left, this.ClientRectangle.Bottom + _intRightUp);
+
+                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Right, this.ClientRectangle.Top), new Point(this.ClientRectangle.Left + conduitWidth, this.ClientRectangle.Bottom) });
+                    tileLine.Add(new Point[] { new Point(this.ClientRectangle.Left, this.ClientRectangle.Bottom), new Point(this.ClientRectangle.Right - conduitWidth, this.ClientRectangle.Top) });
+                    break;
                 #endregion
             }
             g.FillPath(new SolidBrush(conduitColor), path);
 
             //渐变色
-            int intCount = intPenWidth / 2 / 4;
+            int _intPenWidth = intPenWidth;
+            if (conduitStyle.ToString().Contains("Tilt"))
+            {
+                _intPenWidth = conduitWidth;
+            }
+            int intCount = _intPenWidth / 2 / 4;
             int intSplit = (255 - 100) / intCount;
             for (int i = 0; i < intCount; i++)
             {
-                int _penWidth = intPenWidth / 2 - 4 * i;
+                int _penWidth = _intPenWidth / 2 - 4 * i;
                 if (_penWidth <= 0)
                     _penWidth = 1;
                 g.DrawPath(new Pen(new SolidBrush(Color.FromArgb(40, Color.White.R, Color.White.G, Color.White.B)), _penWidth), linePath);
@@ -499,6 +607,14 @@ namespace HZH_Controls.Controls.Conduit
             foreach (var item in lstArcs)
             {
                 g.DrawArc(new Pen(new SolidBrush(this.BackColor)), item.rect, item.startAngle, item.sweepAngle);
+            }
+
+            if (tileLine.Count > 0)
+            {
+                foreach (var item in tileLine)
+                {
+                    g.DrawLine(new Pen(new SolidBrush(this.BackColor)), item[0], item[1]);
+                }
             }
 
             //液体流动
@@ -596,6 +712,14 @@ namespace HZH_Controls.Controls.Conduit
         /// 左下右下The horizontal down down
         /// </summary>
         Horizontal_Down_Down,
+        /// <summary>
+        /// 向上倾斜The horizontal tilt up
+        /// </summary>
+        Horizontal_Tilt_Up,
+        /// <summary>
+        /// 向下倾斜The horizontal tilt down
+        /// </summary>
+        Horizontal_Tilt_Down,
 
         /// <summary>
         /// 竖线The vertical none none
@@ -633,5 +757,13 @@ namespace HZH_Controls.Controls.Conduit
         /// 上右下右The vertical right left
         /// </summary>
         Vertical_Right_Right,
+        /// <summary>
+        /// 向左倾斜The vertical tilt
+        /// </summary>
+        Vertical_Tilt_Left,
+        /// <summary>
+        /// 向右倾斜The vertical tilt right
+        /// </summary>
+        Vertical_Tilt_Right
     }
 }
