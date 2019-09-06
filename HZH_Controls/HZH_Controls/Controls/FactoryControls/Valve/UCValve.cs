@@ -41,6 +41,7 @@ namespace HZH_Controls.Controls
         /// Gets or sets the valve style.
         /// </summary>
         /// <value>The valve style.</value>
+        [Description("阀门样式"), Category("自定义")]
         public ValveStyle ValveStyle
         {
             get { return valveStyle; }
@@ -60,6 +61,7 @@ namespace HZH_Controls.Controls
         /// Gets or sets the color of the valve.
         /// </summary>
         /// <value>The color of the valve.</value>
+        [Description("阀门颜色"), Category("自定义")]
         public Color ValveColor
         {
             get { return valveColor; }
@@ -79,6 +81,7 @@ namespace HZH_Controls.Controls
         /// Gets or sets the color of the switch.
         /// </summary>
         /// <value>The color of the switch.</value>
+        [Description("开关把手颜色"), Category("自定义")]
         public Color SwitchColor
         {
             get { return switchColor; }
@@ -98,6 +101,7 @@ namespace HZH_Controls.Controls
         /// Gets or sets the color of the axis.
         /// </summary>
         /// <value>The color of the axis.</value>
+        [Description("轴颜色"), Category("自定义")]
         public Color AxisColor
         {
             get { return axisColor; }
@@ -109,14 +113,31 @@ namespace HZH_Controls.Controls
         }
 
         /// <summary>
+        /// The asis bottom color
+        /// </summary>
+        private Color asisBottomColor = Color.FromArgb(3, 169, 243);
+
+        /// <summary>
+        /// Gets or sets the color of the asis bottom.
+        /// </summary>
+        /// <value>The color of the asis bottom.</value>
+        [Description("轴底座颜色"), Category("自定义")]
+        public Color AsisBottomColor
+        {
+            get { return asisBottomColor; }
+            set { asisBottomColor = value; }
+        }
+
+        /// <summary>
         /// The opened
         /// </summary>
         private bool opened = true;
 
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="UCValve"/> is opened.
+        /// Gets or sets a value indicating whether this <see cref="UCValve" /> is opened.
         /// </summary>
         /// <value><c>true</c> if opened; otherwise, <c>false</c>.</value>
+        [Description("是否打开"), Category("自定义")]
         public bool Opened
         {
             get { return opened; }
@@ -203,7 +224,7 @@ namespace HZH_Controls.Controls
         int intLineLeft = 0;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCValve"/> class.
+        /// Initializes a new instance of the <see cref="UCValve" /> class.
         /// </summary>
         public UCValve()
         {
@@ -225,7 +246,7 @@ namespace HZH_Controls.Controls
         /// Handles the Tick event of the timer control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void timer_Tick(object sender, EventArgs e)
         {
             intLineLeft += 2;
@@ -243,13 +264,13 @@ namespace HZH_Controls.Controls
         {
             base.OnPaint(e);
             var g = e.Graphics;
-            Rectangle rectGuan = Rectangle.Empty;
-            Rectangle rectJK1 = Rectangle.Empty;
-            Rectangle rectJK2 = Rectangle.Empty;
-            Rectangle rectZ = Rectangle.Empty;
-            GraphicsPath linePath = new GraphicsPath();
-            GraphicsPath dzPath = new GraphicsPath();
-            GraphicsPath bsPath = new GraphicsPath();
+            Rectangle rectGuan = Rectangle.Empty;//管道
+            Rectangle rectJK1 = Rectangle.Empty;//接口1
+            Rectangle rectJK2 = Rectangle.Empty;//接口2
+            Rectangle rectZ = Rectangle.Empty;//轴
+            GraphicsPath linePath = new GraphicsPath();//管道中心线
+            GraphicsPath dzPath = new GraphicsPath();//轴底座
+            GraphicsPath bsPath = new GraphicsPath();//开关把手
             switch (valveStyle)
             {
                 case ValveStyle.Horizontal_Top:
@@ -377,7 +398,7 @@ namespace HZH_Controls.Controls
             g.FillRectangle(new SolidBrush(axisColor), rectZ);
 
             //阀门底座           
-            g.FillPath(new SolidBrush(Color.FromArgb(3, 169, 243)), dzPath);
+            g.FillPath(new SolidBrush(asisBottomColor), dzPath);
             g.FillPath(new SolidBrush(Color.FromArgb(50, Color.White)), dzPath);
 
             //把手
