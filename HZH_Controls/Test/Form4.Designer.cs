@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ucBlower1 = new HZH_Controls.Controls.UCBlower();
+            this.ucValve2 = new HZH_Controls.Controls.UCValve();
+            this.ucPond1 = new HZH_Controls.Controls.UCPond();
             this.ucValve4 = new HZH_Controls.Controls.UCValve();
             this.ucValve1 = new HZH_Controls.Controls.UCValve();
-            this.ucValve2 = new HZH_Controls.Controls.UCValve();
             this.ucValve3 = new HZH_Controls.Controls.UCValve();
             this.ucConveyor2 = new HZH_Controls.Controls.UCConveyor();
             this.ucConveyor6 = new HZH_Controls.Controls.UCConveyor();
@@ -68,8 +70,59 @@
             this.ucConduit10 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit1 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
-            this.ucPond1 = new HZH_Controls.Controls.UCPond();
+            this.ucBlower2 = new HZH_Controls.Controls.UCBlower();
+            this.ucBlower3 = new HZH_Controls.Controls.UCBlower();
+            this.ucBlower4 = new HZH_Controls.Controls.UCBlower();
+            this.ucBlower5 = new HZH_Controls.Controls.UCBlower();
+            this.ucBlower6 = new HZH_Controls.Controls.UCBlower();
             this.SuspendLayout();
+            // 
+            // ucBlower1
+            // 
+            this.ucBlower1.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower1.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Left;
+            this.ucBlower1.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Left;
+            this.ucBlower1.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower1.Location = new System.Drawing.Point(657, 366);
+            this.ucBlower1.Name = "ucBlower1";
+            this.ucBlower1.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower1.TabIndex = 24;
+            // 
+            // ucValve2
+            // 
+            this.ucValve2.AsisBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve2.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve2.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucValve2.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucValve2.LiquidSpeed = 100;
+            this.ucValve2.Location = new System.Drawing.Point(1222, 279);
+            this.ucValve2.Name = "ucValve2";
+            this.ucValve2.Opened = true;
+            this.ucValve2.Size = new System.Drawing.Size(97, 131);
+            this.ucValve2.SwitchColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucValve2.TabIndex = 22;
+            this.ucValve2.ValveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucValve2.ValveStyle = HZH_Controls.Controls.ValveStyle.Vertical_Right;
+            // 
+            // ucPond1
+            // 
+            this.ucPond1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucPond1.Location = new System.Drawing.Point(1206, 384);
+            this.ucPond1.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.ucPond1.Name = "ucPond1";
+            this.ucPond1.Size = new System.Drawing.Size(150, 71);
+            this.ucPond1.TabIndex = 23;
+            this.ucPond1.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.ucPond1.WallColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucPond1.WallWidth = 2;
             // 
             // ucValve4
             // 
@@ -103,22 +156,6 @@
             this.ucValve1.ValveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucValve1.ValveStyle = HZH_Controls.Controls.ValveStyle.Horizontal_Top;
             // 
-            // ucValve2
-            // 
-            this.ucValve2.AsisBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucValve2.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucValve2.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucValve2.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
-            this.ucValve2.LiquidSpeed = 100;
-            this.ucValve2.Location = new System.Drawing.Point(1222, 279);
-            this.ucValve2.Name = "ucValve2";
-            this.ucValve2.Opened = true;
-            this.ucValve2.Size = new System.Drawing.Size(97, 131);
-            this.ucValve2.SwitchColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.ucValve2.TabIndex = 22;
-            this.ucValve2.ValveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucValve2.ValveStyle = HZH_Controls.Controls.ValveStyle.Vertical_Right;
-            // 
             // ucValve3
             // 
             this.ucValve3.AsisBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
@@ -143,9 +180,9 @@
             this.ucConveyor2.ConveyorHeight = 30;
             this.ucConveyor2.ConveyorSpeed = 100;
             this.ucConveyor2.Inclination = 30D;
-            this.ucConveyor2.Location = new System.Drawing.Point(753, 515);
+            this.ucConveyor2.Location = new System.Drawing.Point(604, 549);
             this.ucConveyor2.Name = "ucConveyor2";
-            this.ucConveyor2.Size = new System.Drawing.Size(183, 154);
+            this.ucConveyor2.Size = new System.Drawing.Size(183, 112);
             this.ucConveyor2.TabIndex = 21;
             // 
             // ucConveyor6
@@ -156,9 +193,9 @@
             this.ucConveyor6.ConveyorHeight = 30;
             this.ucConveyor6.ConveyorSpeed = 100;
             this.ucConveyor6.Inclination = 90D;
-            this.ucConveyor6.Location = new System.Drawing.Point(1161, 472);
+            this.ucConveyor6.Location = new System.Drawing.Point(1048, 495);
             this.ucConveyor6.Name = "ucConveyor6";
-            this.ucConveyor6.Size = new System.Drawing.Size(72, 197);
+            this.ucConveyor6.Size = new System.Drawing.Size(72, 173);
             this.ucConveyor6.TabIndex = 21;
             // 
             // ucConveyor4
@@ -169,9 +206,9 @@
             this.ucConveyor4.ConveyorHeight = 30;
             this.ucConveyor4.ConveyorSpeed = 100;
             this.ucConveyor4.Inclination = 90D;
-            this.ucConveyor4.Location = new System.Drawing.Point(645, 472);
+            this.ucConveyor4.Location = new System.Drawing.Point(529, 503);
             this.ucConveyor4.Name = "ucConveyor4";
-            this.ucConveyor4.Size = new System.Drawing.Size(72, 197);
+            this.ucConveyor4.Size = new System.Drawing.Size(72, 165);
             this.ucConveyor4.TabIndex = 21;
             // 
             // ucConveyor5
@@ -182,7 +219,7 @@
             this.ucConveyor5.ConveyorHeight = 30;
             this.ucConveyor5.ConveyorSpeed = 100;
             this.ucConveyor5.Inclination = 0D;
-            this.ucConveyor5.Location = new System.Drawing.Point(942, 456);
+            this.ucConveyor5.Location = new System.Drawing.Point(823, 489);
             this.ucConveyor5.Name = "ucConveyor5";
             this.ucConveyor5.Size = new System.Drawing.Size(213, 53);
             this.ucConveyor5.TabIndex = 21;
@@ -195,7 +232,7 @@
             this.ucConveyor3.ConveyorHeight = 30;
             this.ucConveyor3.ConveyorSpeed = 100;
             this.ucConveyor3.Inclination = 0D;
-            this.ucConveyor3.Location = new System.Drawing.Point(723, 456);
+            this.ucConveyor3.Location = new System.Drawing.Point(604, 495);
             this.ucConveyor3.Name = "ucConveyor3";
             this.ucConveyor3.Size = new System.Drawing.Size(213, 53);
             this.ucConveyor3.TabIndex = 21;
@@ -208,9 +245,9 @@
             this.ucConveyor1.ConveyorHeight = 30;
             this.ucConveyor1.ConveyorSpeed = 100;
             this.ucConveyor1.Inclination = -30D;
-            this.ucConveyor1.Location = new System.Drawing.Point(942, 504);
+            this.ucConveyor1.Location = new System.Drawing.Point(802, 548);
             this.ucConveyor1.Name = "ucConveyor1";
-            this.ucConveyor1.Size = new System.Drawing.Size(183, 157);
+            this.ucConveyor1.Size = new System.Drawing.Size(183, 120);
             this.ucConveyor1.TabIndex = 21;
             // 
             // ucConduit9
@@ -612,30 +649,72 @@
             0,
             0});
             // 
-            // ucPond1
+            // ucBlower2
             // 
-            this.ucPond1.Location = new System.Drawing.Point(1206, 384);
-            this.ucPond1.MaxValue = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.ucPond1.Name = "ucPond1";
-            this.ucPond1.Size = new System.Drawing.Size(150, 71);
-            this.ucPond1.TabIndex = 23;
-            this.ucPond1.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.ucPond1.WallColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucPond1.WallWidth = 2;
+            this.ucBlower2.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower2.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Left;
+            this.ucBlower2.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Right;
+            this.ucBlower2.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower2.Location = new System.Drawing.Point(741, 367);
+            this.ucBlower2.Name = "ucBlower2";
+            this.ucBlower2.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower2.TabIndex = 24;
+            // 
+            // ucBlower3
+            // 
+            this.ucBlower3.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower3.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Left;
+            this.ucBlower3.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Up;
+            this.ucBlower3.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower3.Location = new System.Drawing.Point(834, 366);
+            this.ucBlower3.Name = "ucBlower3";
+            this.ucBlower3.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower3.TabIndex = 24;
+            // 
+            // ucBlower4
+            // 
+            this.ucBlower4.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower4.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Right;
+            this.ucBlower4.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Left;
+            this.ucBlower4.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower4.Location = new System.Drawing.Point(918, 366);
+            this.ucBlower4.Name = "ucBlower4";
+            this.ucBlower4.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower4.TabIndex = 24;
+            // 
+            // ucBlower5
+            // 
+            this.ucBlower5.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower5.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Right;
+            this.ucBlower5.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Right;
+            this.ucBlower5.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower5.Location = new System.Drawing.Point(1001, 366);
+            this.ucBlower5.Name = "ucBlower5";
+            this.ucBlower5.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower5.TabIndex = 24;
+            // 
+            // ucBlower6
+            // 
+            this.ucBlower6.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower6.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Up;
+            this.ucBlower6.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Up;
+            this.ucBlower6.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower6.Location = new System.Drawing.Point(1085, 366);
+            this.ucBlower6.Name = "ucBlower6";
+            this.ucBlower6.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower6.TabIndex = 24;
             // 
             // Form4
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1368, 680);
+            this.Controls.Add(this.ucBlower6);
+            this.Controls.Add(this.ucBlower5);
+            this.Controls.Add(this.ucBlower4);
+            this.Controls.Add(this.ucBlower3);
+            this.Controls.Add(this.ucBlower2);
+            this.Controls.Add(this.ucBlower1);
             this.Controls.Add(this.ucValve2);
             this.Controls.Add(this.ucPond1);
             this.Controls.Add(this.ucValve4);
@@ -726,5 +805,11 @@
         private HZH_Controls.Controls.UCValve ucValve2;
         private HZH_Controls.Controls.UCValve ucValve4;
         private HZH_Controls.Controls.UCPond ucPond1;
+        private HZH_Controls.Controls.UCBlower ucBlower1;
+        private HZH_Controls.Controls.UCBlower ucBlower2;
+        private HZH_Controls.Controls.UCBlower ucBlower3;
+        private HZH_Controls.Controls.UCBlower ucBlower4;
+        private HZH_Controls.Controls.UCBlower ucBlower5;
+        private HZH_Controls.Controls.UCBlower ucBlower6;
     }
 }

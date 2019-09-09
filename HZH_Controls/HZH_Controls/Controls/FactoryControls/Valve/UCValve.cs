@@ -32,6 +32,8 @@ namespace HZH_Controls.Controls
     /// <seealso cref="System.Windows.Forms.UserControl" />
     public class UCValve : UserControl
     {
+        [Description("打开状态改变事件"), Category("自定义")]
+        public event EventHandler OpenChecked;
         /// <summary>
         /// The valve style
         /// </summary>
@@ -145,6 +147,10 @@ namespace HZH_Controls.Controls
             {
                 opened = value;
                 Refresh();
+                if (OpenChecked != null)
+                {
+                    OpenChecked(this, null);
+                }
             }
         }
 
@@ -350,7 +356,7 @@ namespace HZH_Controls.Controls
                     rectJK1 = new Rectangle(this.Width - (rectGuan.Width + this.Width / 4), this.Width / 8, rectGuan.Width + this.Width / 4, rectGuan.Width / 2);
                     rectJK2 = new Rectangle(this.Width - (rectGuan.Width + this.Width / 4), this.Height - this.Width / 8 - rectGuan.Width / 2, rectGuan.Width + this.Width / 4, rectGuan.Width / 2);
                     linePath.AddLine(new Point(rectGuan.Left + rectGuan.Width / 2, rectGuan.Top - 10), new Point(rectGuan.Left + rectGuan.Width / 2, rectGuan.Bottom + 10));
-                    rectZ = new Rectangle(10, rectGuan.Top + (rectGuan.Height - rectGuan.Width / 4) / 2, rectGuan.Left-10, rectGuan.Width / 4);
+                    rectZ = new Rectangle(10, rectGuan.Top + (rectGuan.Height - rectGuan.Width / 4) / 2, rectGuan.Left - 10, rectGuan.Width / 4);
                     Point[] psRight = new Point[]             
                     {
                         new Point(rectGuan.Left- (this.Width / 8+ 5) ,rectGuan.Top + (rectGuan.Height - rectGuan.Width / 2) / 2),
@@ -363,11 +369,11 @@ namespace HZH_Controls.Controls
 
                     if (opened)
                     {
-                        bsPath.AddLine( (10 + (rectGuan.Width / 3) / 2), rectGuan.Top + (rectGuan.Height - rectGuan.Width - 10) / 2, (10 + (rectGuan.Width / 3) / 2), rectGuan.Top + (rectGuan.Height - rectGuan.Width - 10) / 2 + rectGuan.Width + 10);
+                        bsPath.AddLine((10 + (rectGuan.Width / 3) / 2), rectGuan.Top + (rectGuan.Height - rectGuan.Width - 10) / 2, (10 + (rectGuan.Width / 3) / 2), rectGuan.Top + (rectGuan.Height - rectGuan.Width - 10) / 2 + rectGuan.Width + 10);
                     }
                     else
                     {
-                        bsPath.AddLine(new Point( 1, rectGuan.Top + rectGuan.Height / 2 - 3), new Point( (rectGuan.Width + 10), rectGuan.Top + rectGuan.Height / 2 + 4));
+                        bsPath.AddLine(new Point(1, rectGuan.Top + rectGuan.Height / 2 - 3), new Point((rectGuan.Width + 10), rectGuan.Top + rectGuan.Height / 2 + 4));
                     }
                     break;
             }
