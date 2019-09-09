@@ -642,6 +642,10 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBO
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0909/134327_6e99dd33_301547.png "fj.png")
 
+##### 34, signal light
+
+![Enter picture description](https://images.gitee.com/uploads/images/2019/0909/162334_5a8c6b42_301547.gif "1.gif")
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
