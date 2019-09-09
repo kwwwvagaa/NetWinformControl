@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ucSignalLamp1 = new HZH_Controls.Controls.FactoryControls.Lamp.UCSignalLamp();
+            this.ucBlower6 = new HZH_Controls.Controls.UCBlower();
+            this.ucBlower5 = new HZH_Controls.Controls.UCBlower();
+            this.ucBlower4 = new HZH_Controls.Controls.UCBlower();
+            this.ucBlower3 = new HZH_Controls.Controls.UCBlower();
+            this.ucBlower2 = new HZH_Controls.Controls.UCBlower();
             this.ucBlower1 = new HZH_Controls.Controls.UCBlower();
             this.ucValve2 = new HZH_Controls.Controls.UCValve();
             this.ucPond1 = new HZH_Controls.Controls.UCPond();
@@ -70,12 +76,75 @@
             this.ucConduit10 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit1 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
-            this.ucBlower2 = new HZH_Controls.Controls.UCBlower();
-            this.ucBlower3 = new HZH_Controls.Controls.UCBlower();
-            this.ucBlower4 = new HZH_Controls.Controls.UCBlower();
-            this.ucBlower5 = new HZH_Controls.Controls.UCBlower();
-            this.ucBlower6 = new HZH_Controls.Controls.UCBlower();
             this.SuspendLayout();
+            // 
+            // ucSignalLamp1
+            // 
+            this.ucSignalLamp1.IsHighlight = true;
+            this.ucSignalLamp1.IsShowBorder = true;
+            this.ucSignalLamp1.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))))};
+            this.ucSignalLamp1.Location = new System.Drawing.Point(314, 104);
+            this.ucSignalLamp1.Name = "ucSignalLamp1";
+            this.ucSignalLamp1.Size = new System.Drawing.Size(74, 74);
+            this.ucSignalLamp1.TabIndex = 25;
+            this.ucSignalLamp1.TwinkleSpeed = 300;
+            // 
+            // ucBlower6
+            // 
+            this.ucBlower6.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower6.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Up;
+            this.ucBlower6.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Up;
+            this.ucBlower6.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower6.Location = new System.Drawing.Point(1085, 366);
+            this.ucBlower6.Name = "ucBlower6";
+            this.ucBlower6.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower6.TabIndex = 24;
+            // 
+            // ucBlower5
+            // 
+            this.ucBlower5.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower5.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Right;
+            this.ucBlower5.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Right;
+            this.ucBlower5.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower5.Location = new System.Drawing.Point(1001, 366);
+            this.ucBlower5.Name = "ucBlower5";
+            this.ucBlower5.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower5.TabIndex = 24;
+            // 
+            // ucBlower4
+            // 
+            this.ucBlower4.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower4.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Right;
+            this.ucBlower4.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Left;
+            this.ucBlower4.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower4.Location = new System.Drawing.Point(918, 366);
+            this.ucBlower4.Name = "ucBlower4";
+            this.ucBlower4.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower4.TabIndex = 24;
+            // 
+            // ucBlower3
+            // 
+            this.ucBlower3.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower3.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Left;
+            this.ucBlower3.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Up;
+            this.ucBlower3.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower3.Location = new System.Drawing.Point(834, 366);
+            this.ucBlower3.Name = "ucBlower3";
+            this.ucBlower3.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower3.TabIndex = 24;
+            // 
+            // ucBlower2
+            // 
+            this.ucBlower2.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBlower2.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Left;
+            this.ucBlower2.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Right;
+            this.ucBlower2.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBlower2.Location = new System.Drawing.Point(741, 367);
+            this.ucBlower2.Name = "ucBlower2";
+            this.ucBlower2.Size = new System.Drawing.Size(78, 89);
+            this.ucBlower2.TabIndex = 24;
             // 
             // ucBlower1
             // 
@@ -649,66 +718,12 @@
             0,
             0});
             // 
-            // ucBlower2
-            // 
-            this.ucBlower2.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucBlower2.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Left;
-            this.ucBlower2.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Right;
-            this.ucBlower2.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucBlower2.Location = new System.Drawing.Point(741, 367);
-            this.ucBlower2.Name = "ucBlower2";
-            this.ucBlower2.Size = new System.Drawing.Size(78, 89);
-            this.ucBlower2.TabIndex = 24;
-            // 
-            // ucBlower3
-            // 
-            this.ucBlower3.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucBlower3.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Left;
-            this.ucBlower3.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Up;
-            this.ucBlower3.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucBlower3.Location = new System.Drawing.Point(834, 366);
-            this.ucBlower3.Name = "ucBlower3";
-            this.ucBlower3.Size = new System.Drawing.Size(78, 89);
-            this.ucBlower3.TabIndex = 24;
-            // 
-            // ucBlower4
-            // 
-            this.ucBlower4.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucBlower4.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Right;
-            this.ucBlower4.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Left;
-            this.ucBlower4.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucBlower4.Location = new System.Drawing.Point(918, 366);
-            this.ucBlower4.Name = "ucBlower4";
-            this.ucBlower4.Size = new System.Drawing.Size(78, 89);
-            this.ucBlower4.TabIndex = 24;
-            // 
-            // ucBlower5
-            // 
-            this.ucBlower5.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucBlower5.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Right;
-            this.ucBlower5.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Right;
-            this.ucBlower5.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucBlower5.Location = new System.Drawing.Point(1001, 366);
-            this.ucBlower5.Name = "ucBlower5";
-            this.ucBlower5.Size = new System.Drawing.Size(78, 89);
-            this.ucBlower5.TabIndex = 24;
-            // 
-            // ucBlower6
-            // 
-            this.ucBlower6.BlowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucBlower6.EntranceDirection = HZH_Controls.Controls.BlowerEntranceDirection.Up;
-            this.ucBlower6.ExitDirection = HZH_Controls.Controls.BlowerExitDirection.Up;
-            this.ucBlower6.FanColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucBlower6.Location = new System.Drawing.Point(1085, 366);
-            this.ucBlower6.Name = "ucBlower6";
-            this.ucBlower6.Size = new System.Drawing.Size(78, 89);
-            this.ucBlower6.TabIndex = 24;
-            // 
             // Form4
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1368, 680);
+            this.Controls.Add(this.ucSignalLamp1);
             this.Controls.Add(this.ucBlower6);
             this.Controls.Add(this.ucBlower5);
             this.Controls.Add(this.ucBlower4);
@@ -811,5 +826,6 @@
         private HZH_Controls.Controls.UCBlower ucBlower4;
         private HZH_Controls.Controls.UCBlower ucBlower5;
         private HZH_Controls.Controls.UCBlower ucBlower6;
+        private HZH_Controls.Controls.FactoryControls.Lamp.UCSignalLamp ucSignalLamp1;
     }
 }
