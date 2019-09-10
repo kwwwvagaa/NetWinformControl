@@ -40,14 +40,9 @@ namespace HZH_Controls.Controls
             : base()
         {
             SetStyles();
-            this.Multiline = true;
+            //this.Multiline = true;
             this.ItemSize = new Size(this.ItemSize.Width, 50);
         }
-
-
-
-
-
         /// <summary>
         /// Sets the styles.
         /// </summary>
