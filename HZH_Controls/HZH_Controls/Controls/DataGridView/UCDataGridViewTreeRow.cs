@@ -137,7 +137,7 @@ namespace HZH_Controls.Controls
         {
             InitializeComponent();
             this.ucDGVChild.RowType = this.GetType();
-            this.ucDGVChild.IsAutoHeight = true;
+            this.ucDGVChild.IsCloseAutoHeight = true;
             this.SizeChanged += UCDataGridViewTreeRow_SizeChanged;
             this.ucDGVChild.ItemClick += (a, b) =>
             {

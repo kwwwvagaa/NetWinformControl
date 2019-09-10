@@ -105,7 +105,7 @@ namespace HZH_Controls.Controls
         {
             InitializeComponent();
             this.ucDataGridView1.Page = m_page;
-            this.ucDataGridView1.IsAutoHeight = false;
+            this.ucDataGridView1.IsCloseAutoHeight = false;
             this.txtSearch.txtInput.TextChanged += txtInput_TextChanged;
             this.ucDataGridView1.ItemClick += ucDataGridView1_ItemClick;
         }

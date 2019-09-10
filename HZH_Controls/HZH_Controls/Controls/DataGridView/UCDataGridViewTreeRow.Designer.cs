@@ -136,7 +136,7 @@ namespace HZH_Controls.Controls
             this.ucDGVChild.HeadHeight = 40;
             this.ucDGVChild.HeadPadingLeft = 0;
             this.ucDGVChild.HeadTextColor = System.Drawing.Color.Black;
-            this.ucDGVChild.IsAutoHeight = false;
+            this.ucDGVChild.IsCloseAutoHeight = false;
             this.ucDGVChild.IsShowCheckBox = false;
             this.ucDGVChild.IsShowHead = false;
             this.ucDGVChild.Location = new System.Drawing.Point(25, 0);

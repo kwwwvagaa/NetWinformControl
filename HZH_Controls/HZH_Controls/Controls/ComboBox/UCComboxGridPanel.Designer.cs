@@ -117,7 +117,7 @@ namespace HZH_Controls.Controls
             this.ucDataGridView1.HeadHeight = 40;
             this.ucDataGridView1.HeadPadingLeft = 0;
             this.ucDataGridView1.HeadTextColor = System.Drawing.Color.Black;
-            this.ucDataGridView1.IsAutoHeight = false;
+            this.ucDataGridView1.IsCloseAutoHeight = false;
             this.ucDataGridView1.IsShowCheckBox = false;
             this.ucDataGridView1.IsShowHead = true;
             this.ucDataGridView1.Location = new System.Drawing.Point(5, 5);

@@ -20,7 +20,6 @@ namespace Test
         private void FrmTemp1Test_Load(object sender, EventArgs e)
         {
             this.ucDataGridView1.RowType = typeof(UCDataGridViewTreeRow);
-            this.ucDataGridView1.IsAutoHeight = true;
 
             List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
@@ -42,7 +41,7 @@ namespace Test
                     Sex = i % 2
                 };
                 lstSource.Add(model);
-                //AddChilds(model, 5);
+                AddChilds(model, 5);
             }
 
             var page = new UCPagerControl2();

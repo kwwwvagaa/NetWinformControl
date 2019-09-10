@@ -260,6 +260,8 @@ namespace HZH_Controls.Controls
                 if (!typeof(IDataGridViewRow).IsAssignableFrom(value) || !value.IsSubclassOf(typeof(Control)))
                     throw new Exception("行控件没有实现IDataGridViewRow接口");
                 m_rowType = value;
+                if (value == typeof(UCDataGridViewTreeRow))
+                    IsCloseAutoHeight = true;
                 ResetShowCount();
                 if (m_columns != null && m_columns.Count > 0)
                     ReloadSource();
@@ -385,18 +387,18 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The m is automatic height
         /// </summary>
-        private bool m_isAutoHeight = false;
+        private bool m_isCloseAutoHeight = false;
         /// <summary>
         /// 自动适应最大高度(当为true时，需要手动计算高度，请慎用)
         /// </summary>
         /// <value><c>true</c> if this instance is automatic height; otherwise, <c>false</c>.</value>
         [Browsable(false)]
-        public bool IsAutoHeight
+        public bool IsCloseAutoHeight
         {
-            get { return m_isAutoHeight; }
+            get { return m_isCloseAutoHeight; }
             set
             {
-                m_isAutoHeight = value;
+                m_isCloseAutoHeight = value;
                 this.AutoScroll = value;
             }
         }
@@ -838,7 +840,7 @@ namespace HZH_Controls.Controls
         {
             if (this.Height <= 0)
                 return;
-            if (m_isAutoHeight)
+            if (m_isCloseAutoHeight)
                 return;
             ResetShowCount();
             ReloadSource();
