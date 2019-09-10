@@ -1,9 +1,9 @@
 ﻿// ***********************************************************************
 // Assembly         : HZH_Controls
-// Created          : 2019-09-09
+// Created          : 2019-09-10
 //
 // ***********************************************************************
-// <copyright file="UCSignalLamp.cs">
+// <copyright file="UCAlarmLamp.cs">
 //     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
 // </copyright>
 //
@@ -25,32 +25,12 @@ using System.ComponentModel;
 namespace HZH_Controls.Controls
 {
     /// <summary>
-    /// Class UCSignalLamp.
+    /// Class UCAlarmLamp.
     /// Implements the <see cref="System.Windows.Forms.UserControl" />
     /// </summary>
     /// <seealso cref="System.Windows.Forms.UserControl" />
-    public class UCSignalLamp : UserControl
+    public class UCAlarmLamp : UserControl
     {
-        /// <summary>
-        /// The is show border
-        /// </summary>
-        private bool isShowBorder = false;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is show border.
-        /// </summary>
-        /// <value><c>true</c> if this instance is show border; otherwise, <c>false</c>.</value>
-        [Description("是否显示边框"), Category("自定义")]
-        public bool IsShowBorder
-        {
-            get { return isShowBorder; }
-            set
-            {
-                isShowBorder = value;
-                Refresh();
-            }
-        }
-
         /// <summary>
         /// The lamp color
         /// </summary>
@@ -74,23 +54,18 @@ namespace HZH_Controls.Controls
         }
 
         /// <summary>
-        /// The is highlight
+        /// The lampstand
         /// </summary>
-        private bool isHighlight = true;
+        private Color lampstand = Color.FromArgb(105, 105, 105);
 
         /// <summary>
-        /// Gets or sets a value indicating whether this instance is highlight.
+        /// Gets or sets the lampstand.
         /// </summary>
-        /// <value><c>true</c> if this instance is highlight; otherwise, <c>false</c>.</value>
-        [Description("是否高亮显示"), Category("自定义")]
-        public bool IsHighlight
+        /// <value>The lampstand.</value>
+        public Color Lampstand
         {
-            get { return isHighlight; }
-            set
-            {
-                isHighlight = value;
-                Refresh();
-            }
+            get { return lampstand; }
+            set { lampstand = value; }
         }
 
         /// <summary>
@@ -133,9 +108,13 @@ namespace HZH_Controls.Controls
         /// </summary>
         int intColorIndex = 0;
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCSignalLamp"/> class.
+        /// The m rect working
         /// </summary>
-        public UCSignalLamp()
+        Rectangle m_rectWorking;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCAlarmLamp"/> class.
+        /// </summary>
+        public UCAlarmLamp()
         {
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.DoubleBuffer, true);
@@ -144,13 +123,22 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.SizeChanged += UCAlarmLamp_SizeChanged;
             this.Size = new Size(50, 50);
-            this.SizeChanged += UCSignalLamp_SizeChanged;
             timer = new Timer();
             timer.Interval = 200;
             timer.Tick += timer_Tick;
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the UCAlarmLamp control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        void UCAlarmLamp_SizeChanged(object sender, EventArgs e)
+        {
+            m_rectWorking = new Rectangle(10, 0, this.Width - 20, this.Height);
+        }
         /// <summary>
         /// Handles the Tick event of the timer control.
         /// </summary>
@@ -164,20 +152,6 @@ namespace HZH_Controls.Controls
             Refresh();
         }
         /// <summary>
-        /// Handles the SizeChanged event of the UCSignalLamp control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        void UCSignalLamp_SizeChanged(object sender, EventArgs e)
-        {
-            var maxSize = Math.Min(this.Width, this.Height);
-            if (this.Width != maxSize)
-                this.Width = maxSize;
-            if (this.Height != maxSize)
-                this.Height = maxSize;
-        }
-
-        /// <summary>
         /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
         /// </summary>
         /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
@@ -186,27 +160,17 @@ namespace HZH_Controls.Controls
             base.OnPaint(e);
             var g = e.Graphics;
             g.SetGDIHigh();
+
             Color c1 = lampColor[intColorIndex];
-            g.FillEllipse(new SolidBrush(c1), this.ClientRectangle);
+            GraphicsPath path = new GraphicsPath();
+            path.AddLine(new Point(m_rectWorking.Left, m_rectWorking.Bottom), new Point(m_rectWorking.Left, m_rectWorking.Top + m_rectWorking.Width));
+            path.AddArc(new Rectangle(m_rectWorking.Left, m_rectWorking.Top, m_rectWorking.Width, m_rectWorking.Width), 180f, 180f);
+            path.AddLine(new Point(m_rectWorking.Right, m_rectWorking.Top + m_rectWorking.Width), new Point(m_rectWorking.Right, m_rectWorking.Bottom));
+            path.CloseAllFigures();
+            g.FillPath(new SolidBrush(c1), path);
 
-            if (isHighlight)
-            {
-                GraphicsPath gp = new GraphicsPath();
-
-                Rectangle rec = new Rectangle(5, 5, this.Width - 10, this.Height - 10);
-                gp.AddEllipse(rec);
-
-                Color[] surroundColor = new Color[] { c1 };
-                PathGradientBrush pb = new PathGradientBrush(gp);
-                pb.CenterColor = Color.White;
-                pb.SurroundColors = surroundColor;
-                g.FillPath(pb, gp);
-            }
-
-            if (isShowBorder)
-            {
-                g.DrawEllipse(new Pen(new SolidBrush(this.BackColor), 2), new Rectangle(4, 4, this.Width - 8, this.Height - 8));
-            }
+            g.FillRectangle(new SolidBrush(lampstand), new Rectangle(5, m_rectWorking.Bottom - 19, this.Width - 10, 10));
+            g.FillRectangle(new SolidBrush(lampstand), new Rectangle(0, m_rectWorking.Bottom - 10, this.Width, 10));
         }
     }
 }

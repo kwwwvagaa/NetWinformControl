@@ -103,6 +103,9 @@
     <Compile Include="Controls\FactoryControls\Conveyor\UCConveyor.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\FactoryControls\Lamp\UCAlarmLamp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\FactoryControls\Lamp\UCSignalLamp.cs">
       <SubType>UserControl</SubType>
     </Compile>
