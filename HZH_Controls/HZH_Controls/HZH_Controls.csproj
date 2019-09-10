@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\FactoryControls\Arrow\UCArrow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\FactoryControls\Blower\UCBlower.cs">
       <SubType>UserControl</SubType>
     </Compile>

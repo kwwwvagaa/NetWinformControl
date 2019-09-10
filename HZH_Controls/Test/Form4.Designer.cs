@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ucArrow1 = new HZH_Controls.Controls.UCArrow();
             this.ucAlarmLamp1 = new HZH_Controls.Controls.UCAlarmLamp();
             this.ucSignalLamp1 = new HZH_Controls.Controls.UCSignalLamp();
             this.ucBlower6 = new HZH_Controls.Controls.UCBlower();
@@ -75,7 +76,24 @@
             this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
             this.ucPond2 = new HZH_Controls.Controls.UCPond();
             this.ucBlower4 = new HZH_Controls.Controls.UCBlower();
+            this.ucArrow2 = new HZH_Controls.Controls.UCArrow();
+            this.ucArrow3 = new HZH_Controls.Controls.UCArrow();
+            this.ucArrow4 = new HZH_Controls.Controls.UCArrow();
+            this.ucArrow5 = new HZH_Controls.Controls.UCArrow();
+            this.ucArrow6 = new HZH_Controls.Controls.UCArrow();
             this.SuspendLayout();
+            // 
+            // ucArrow1
+            // 
+            this.ucArrow1.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow1.BorderColor = null;
+            this.ucArrow1.Direction = HZH_Controls.Controls.ArrowDirection.Right;
+            this.ucArrow1.ForeColor = System.Drawing.Color.White;
+            this.ucArrow1.Location = new System.Drawing.Point(1222, 383);
+            this.ucArrow1.Name = "ucArrow1";
+            this.ucArrow1.Size = new System.Drawing.Size(100, 50);
+            this.ucArrow1.TabIndex = 27;
+            this.ucArrow1.Text = "右";
             // 
             // ucAlarmLamp1
             // 
@@ -164,7 +182,7 @@
             this.ucValve2.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve2.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
             this.ucValve2.LiquidSpeed = 100;
-            this.ucValve2.Location = new System.Drawing.Point(1222, 279);
+            this.ucValve2.Location = new System.Drawing.Point(1222, 158);
             this.ucValve2.Name = "ucValve2";
             this.ucValve2.Opened = true;
             this.ucValve2.Size = new System.Drawing.Size(97, 131);
@@ -176,7 +194,7 @@
             // ucPond1
             // 
             this.ucPond1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucPond1.Location = new System.Drawing.Point(1206, 384);
+            this.ucPond1.Location = new System.Drawing.Point(1206, 263);
             this.ucPond1.MaxValue = new decimal(new int[] {
             100,
             0,
@@ -200,7 +218,7 @@
             this.ucValve4.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve4.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
             this.ucValve4.LiquidSpeed = 100;
-            this.ucValve4.Location = new System.Drawing.Point(1079, 52);
+            this.ucValve4.Location = new System.Drawing.Point(1073, 52);
             this.ucValve4.Name = "ucValve4";
             this.ucValve4.Opened = true;
             this.ucValve4.Size = new System.Drawing.Size(169, 106);
@@ -216,7 +234,7 @@
             this.ucValve1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve1.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
             this.ucValve1.LiquidSpeed = 100;
-            this.ucValve1.Location = new System.Drawing.Point(910, 12);
+            this.ucValve1.Location = new System.Drawing.Point(904, 12);
             this.ucValve1.Name = "ucValve1";
             this.ucValve1.Opened = true;
             this.ucValve1.Size = new System.Drawing.Size(169, 106);
@@ -232,7 +250,7 @@
             this.ucValve3.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve3.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
             this.ucValve3.LiquidSpeed = 100;
-            this.ucValve3.Location = new System.Drawing.Point(1259, 148);
+            this.ucValve3.Location = new System.Drawing.Point(1259, 27);
             this.ucValve3.Name = "ucValve3";
             this.ucValve3.Opened = true;
             this.ucValve3.Size = new System.Drawing.Size(97, 131);
@@ -710,11 +728,77 @@
             this.ucBlower4.Size = new System.Drawing.Size(116, 154);
             this.ucBlower4.TabIndex = 24;
             // 
+            // ucArrow2
+            // 
+            this.ucArrow2.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow2.BorderColor = null;
+            this.ucArrow2.Direction = HZH_Controls.Controls.ArrowDirection.Left;
+            this.ucArrow2.ForeColor = System.Drawing.Color.White;
+            this.ucArrow2.Location = new System.Drawing.Point(1112, 383);
+            this.ucArrow2.Name = "ucArrow2";
+            this.ucArrow2.Size = new System.Drawing.Size(100, 50);
+            this.ucArrow2.TabIndex = 27;
+            this.ucArrow2.Text = "左";
+            // 
+            // ucArrow3
+            // 
+            this.ucArrow3.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow3.BorderColor = null;
+            this.ucArrow3.Direction = HZH_Controls.Controls.ArrowDirection.Left_Right;
+            this.ucArrow3.ForeColor = System.Drawing.Color.White;
+            this.ucArrow3.Location = new System.Drawing.Point(1112, 438);
+            this.ucArrow3.Name = "ucArrow3";
+            this.ucArrow3.Size = new System.Drawing.Size(210, 50);
+            this.ucArrow3.TabIndex = 27;
+            this.ucArrow3.Text = "左右";
+            // 
+            // ucArrow4
+            // 
+            this.ucArrow4.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow4.BorderColor = null;
+            this.ucArrow4.Direction = HZH_Controls.Controls.ArrowDirection.Top;
+            this.ucArrow4.ForeColor = System.Drawing.Color.White;
+            this.ucArrow4.Location = new System.Drawing.Point(1148, 494);
+            this.ucArrow4.Name = "ucArrow4";
+            this.ucArrow4.Size = new System.Drawing.Size(64, 84);
+            this.ucArrow4.TabIndex = 27;
+            this.ucArrow4.Text = "上";
+            // 
+            // ucArrow5
+            // 
+            this.ucArrow5.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow5.BorderColor = null;
+            this.ucArrow5.Direction = HZH_Controls.Controls.ArrowDirection.Bottom;
+            this.ucArrow5.ForeColor = System.Drawing.Color.White;
+            this.ucArrow5.Location = new System.Drawing.Point(1148, 584);
+            this.ucArrow5.Name = "ucArrow5";
+            this.ucArrow5.Size = new System.Drawing.Size(64, 84);
+            this.ucArrow5.TabIndex = 27;
+            this.ucArrow5.Text = "下";
+            // 
+            // ucArrow6
+            // 
+            this.ucArrow6.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow6.BorderColor = null;
+            this.ucArrow6.Direction = HZH_Controls.Controls.ArrowDirection.Top_Bottom;
+            this.ucArrow6.ForeColor = System.Drawing.Color.White;
+            this.ucArrow6.Location = new System.Drawing.Point(1222, 495);
+            this.ucArrow6.Name = "ucArrow6";
+            this.ucArrow6.Size = new System.Drawing.Size(64, 173);
+            this.ucArrow6.TabIndex = 27;
+            this.ucArrow6.Text = "上下";
+            // 
             // Form4
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1368, 680);
+            this.Controls.Add(this.ucArrow5);
+            this.Controls.Add(this.ucArrow6);
+            this.Controls.Add(this.ucArrow4);
+            this.Controls.Add(this.ucArrow2);
+            this.Controls.Add(this.ucArrow3);
+            this.Controls.Add(this.ucArrow1);
             this.Controls.Add(this.ucAlarmLamp1);
             this.Controls.Add(this.ucSignalLamp1);
             this.Controls.Add(this.ucBlower6);
@@ -817,5 +901,11 @@
         private HZH_Controls.Controls.UCSignalLamp ucSignalLamp1;
         private HZH_Controls.Controls.UCPond ucPond2;
         private HZH_Controls.Controls.UCAlarmLamp ucAlarmLamp1;
+        private HZH_Controls.Controls.UCArrow ucArrow1;
+        private HZH_Controls.Controls.UCArrow ucArrow2;
+        private HZH_Controls.Controls.UCArrow ucArrow3;
+        private HZH_Controls.Controls.UCArrow ucArrow4;
+        private HZH_Controls.Controls.UCArrow ucArrow5;
+        private HZH_Controls.Controls.UCArrow ucArrow6;
     }
 }
