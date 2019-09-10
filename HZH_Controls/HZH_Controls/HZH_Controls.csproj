@@ -115,6 +115,9 @@
     <Compile Include="Controls\FactoryControls\Pond\UCPond.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\FactoryControls\Thermometer\UCThermometer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\FactoryControls\Valve\UCValve.cs">
       <SubType>UserControl</SubType>
     </Compile>

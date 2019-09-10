@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ucThermometer1 = new HZH_Controls.Controls.UCThermometer();
+            this.ucArrow5 = new HZH_Controls.Controls.UCArrow();
+            this.ucArrow6 = new HZH_Controls.Controls.UCArrow();
+            this.ucArrow4 = new HZH_Controls.Controls.UCArrow();
+            this.ucArrow2 = new HZH_Controls.Controls.UCArrow();
+            this.ucArrow3 = new HZH_Controls.Controls.UCArrow();
             this.ucArrow1 = new HZH_Controls.Controls.UCArrow();
             this.ucAlarmLamp1 = new HZH_Controls.Controls.UCAlarmLamp();
             this.ucSignalLamp1 = new HZH_Controls.Controls.UCSignalLamp();
@@ -76,12 +82,95 @@
             this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
             this.ucPond2 = new HZH_Controls.Controls.UCPond();
             this.ucBlower4 = new HZH_Controls.Controls.UCBlower();
-            this.ucArrow2 = new HZH_Controls.Controls.UCArrow();
-            this.ucArrow3 = new HZH_Controls.Controls.UCArrow();
-            this.ucArrow4 = new HZH_Controls.Controls.UCArrow();
-            this.ucArrow5 = new HZH_Controls.Controls.UCArrow();
-            this.ucArrow6 = new HZH_Controls.Controls.UCArrow();
             this.SuspendLayout();
+            // 
+            // ucThermometer1
+            // 
+            this.ucThermometer1.ForeColor = System.Drawing.Color.Black;
+            this.ucThermometer1.GlassTubeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.ucThermometer1.LeftTemperatureUnit = HZH_Controls.Controls.TemperatureUnit.C;
+            this.ucThermometer1.Location = new System.Drawing.Point(1377, 49);
+            this.ucThermometer1.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.ucThermometer1.MercuryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucThermometer1.MinValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ucThermometer1.Name = "ucThermometer1";
+            this.ucThermometer1.RightTemperatureUnit = HZH_Controls.Controls.TemperatureUnit.F;
+            this.ucThermometer1.Size = new System.Drawing.Size(101, 481);
+            this.ucThermometer1.SplitCount = 10;
+            this.ucThermometer1.TabIndex = 28;
+            this.ucThermometer1.Value = new decimal(new int[] {
+            55,
+            0,
+            0,
+            0});
+            // 
+            // ucArrow5
+            // 
+            this.ucArrow5.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow5.BorderColor = null;
+            this.ucArrow5.Direction = HZH_Controls.Controls.ArrowDirection.Bottom;
+            this.ucArrow5.ForeColor = System.Drawing.Color.White;
+            this.ucArrow5.Location = new System.Drawing.Point(1148, 584);
+            this.ucArrow5.Name = "ucArrow5";
+            this.ucArrow5.Size = new System.Drawing.Size(64, 84);
+            this.ucArrow5.TabIndex = 27;
+            this.ucArrow5.Text = "下";
+            // 
+            // ucArrow6
+            // 
+            this.ucArrow6.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow6.BorderColor = null;
+            this.ucArrow6.Direction = HZH_Controls.Controls.ArrowDirection.Top_Bottom;
+            this.ucArrow6.ForeColor = System.Drawing.Color.White;
+            this.ucArrow6.Location = new System.Drawing.Point(1222, 495);
+            this.ucArrow6.Name = "ucArrow6";
+            this.ucArrow6.Size = new System.Drawing.Size(64, 173);
+            this.ucArrow6.TabIndex = 27;
+            this.ucArrow6.Text = "上下";
+            // 
+            // ucArrow4
+            // 
+            this.ucArrow4.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow4.BorderColor = null;
+            this.ucArrow4.Direction = HZH_Controls.Controls.ArrowDirection.Top;
+            this.ucArrow4.ForeColor = System.Drawing.Color.White;
+            this.ucArrow4.Location = new System.Drawing.Point(1148, 494);
+            this.ucArrow4.Name = "ucArrow4";
+            this.ucArrow4.Size = new System.Drawing.Size(64, 84);
+            this.ucArrow4.TabIndex = 27;
+            this.ucArrow4.Text = "上";
+            // 
+            // ucArrow2
+            // 
+            this.ucArrow2.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow2.BorderColor = null;
+            this.ucArrow2.Direction = HZH_Controls.Controls.ArrowDirection.Left;
+            this.ucArrow2.ForeColor = System.Drawing.Color.White;
+            this.ucArrow2.Location = new System.Drawing.Point(1112, 383);
+            this.ucArrow2.Name = "ucArrow2";
+            this.ucArrow2.Size = new System.Drawing.Size(100, 50);
+            this.ucArrow2.TabIndex = 27;
+            this.ucArrow2.Text = "左";
+            // 
+            // ucArrow3
+            // 
+            this.ucArrow3.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucArrow3.BorderColor = null;
+            this.ucArrow3.Direction = HZH_Controls.Controls.ArrowDirection.Left_Right;
+            this.ucArrow3.ForeColor = System.Drawing.Color.White;
+            this.ucArrow3.Location = new System.Drawing.Point(1112, 438);
+            this.ucArrow3.Name = "ucArrow3";
+            this.ucArrow3.Size = new System.Drawing.Size(210, 50);
+            this.ucArrow3.TabIndex = 27;
+            this.ucArrow3.Text = "左右";
             // 
             // ucArrow1
             // 
@@ -728,71 +817,12 @@
             this.ucBlower4.Size = new System.Drawing.Size(116, 154);
             this.ucBlower4.TabIndex = 24;
             // 
-            // ucArrow2
-            // 
-            this.ucArrow2.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucArrow2.BorderColor = null;
-            this.ucArrow2.Direction = HZH_Controls.Controls.ArrowDirection.Left;
-            this.ucArrow2.ForeColor = System.Drawing.Color.White;
-            this.ucArrow2.Location = new System.Drawing.Point(1112, 383);
-            this.ucArrow2.Name = "ucArrow2";
-            this.ucArrow2.Size = new System.Drawing.Size(100, 50);
-            this.ucArrow2.TabIndex = 27;
-            this.ucArrow2.Text = "左";
-            // 
-            // ucArrow3
-            // 
-            this.ucArrow3.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucArrow3.BorderColor = null;
-            this.ucArrow3.Direction = HZH_Controls.Controls.ArrowDirection.Left_Right;
-            this.ucArrow3.ForeColor = System.Drawing.Color.White;
-            this.ucArrow3.Location = new System.Drawing.Point(1112, 438);
-            this.ucArrow3.Name = "ucArrow3";
-            this.ucArrow3.Size = new System.Drawing.Size(210, 50);
-            this.ucArrow3.TabIndex = 27;
-            this.ucArrow3.Text = "左右";
-            // 
-            // ucArrow4
-            // 
-            this.ucArrow4.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucArrow4.BorderColor = null;
-            this.ucArrow4.Direction = HZH_Controls.Controls.ArrowDirection.Top;
-            this.ucArrow4.ForeColor = System.Drawing.Color.White;
-            this.ucArrow4.Location = new System.Drawing.Point(1148, 494);
-            this.ucArrow4.Name = "ucArrow4";
-            this.ucArrow4.Size = new System.Drawing.Size(64, 84);
-            this.ucArrow4.TabIndex = 27;
-            this.ucArrow4.Text = "上";
-            // 
-            // ucArrow5
-            // 
-            this.ucArrow5.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucArrow5.BorderColor = null;
-            this.ucArrow5.Direction = HZH_Controls.Controls.ArrowDirection.Bottom;
-            this.ucArrow5.ForeColor = System.Drawing.Color.White;
-            this.ucArrow5.Location = new System.Drawing.Point(1148, 584);
-            this.ucArrow5.Name = "ucArrow5";
-            this.ucArrow5.Size = new System.Drawing.Size(64, 84);
-            this.ucArrow5.TabIndex = 27;
-            this.ucArrow5.Text = "下";
-            // 
-            // ucArrow6
-            // 
-            this.ucArrow6.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucArrow6.BorderColor = null;
-            this.ucArrow6.Direction = HZH_Controls.Controls.ArrowDirection.Top_Bottom;
-            this.ucArrow6.ForeColor = System.Drawing.Color.White;
-            this.ucArrow6.Location = new System.Drawing.Point(1222, 495);
-            this.ucArrow6.Name = "ucArrow6";
-            this.ucArrow6.Size = new System.Drawing.Size(64, 173);
-            this.ucArrow6.TabIndex = 27;
-            this.ucArrow6.Text = "上下";
-            // 
             // Form4
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1368, 680);
+            this.ClientSize = new System.Drawing.Size(1506, 680);
+            this.Controls.Add(this.ucThermometer1);
             this.Controls.Add(this.ucArrow5);
             this.Controls.Add(this.ucArrow6);
             this.Controls.Add(this.ucArrow4);
@@ -907,5 +937,6 @@
         private HZH_Controls.Controls.UCArrow ucArrow4;
         private HZH_Controls.Controls.UCArrow ucArrow5;
         private HZH_Controls.Controls.UCArrow ucArrow6;
+        private HZH_Controls.Controls.UCThermometer ucThermometer1;
     }
 }
