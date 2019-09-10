@@ -62,6 +62,7 @@ namespace HZH_Controls.Controls
         /// Gets or sets the lampstand.
         /// </summary>
         /// <value>The lampstand.</value>
+        [Description("灯座颜色"), Category("自定义")]
         public Color Lampstand
         {
             get { return lampstand; }
