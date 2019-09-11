@@ -6,7 +6,7 @@
 
 #### 介绍
 
-c#winfrom自定义控件，`对触屏具有更好的操作支持`，项目是基于framework4.0，完全原生控件开发，`没有使用任何第三方控件`，你可以放心的用在你的项目中。
+c#winform自定义控件，`对触屏具有更好的操作支持`，项目是基于framework4.0，完全原生控件开发，`没有使用任何第三方控件`，你可以放心的用在你的项目中。
 
 博客地址：[https://www.cnblogs.com/bfyx](https://www.cnblogs.com/bfyx/p/11364884.html)
 
