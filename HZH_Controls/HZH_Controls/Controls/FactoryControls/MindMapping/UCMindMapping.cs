@@ -197,7 +197,7 @@ namespace HZH_Controls.Controls
                 return false;
             else
             {
-                if (ItemClicked != null && item.WorkingRectangle.Contains(mouseLocation))
+                if (ItemClicked != null && item.DrawRectangle.Contains(mouseLocation))
                 {
                     ItemClicked(item, null);
                 }

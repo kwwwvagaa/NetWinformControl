@@ -127,7 +127,7 @@ namespace HZH_Controls.Controls
                 if (value == _IsExpansion)
                     return;
                 _IsExpansion = value;
-                if (!value)
+                if (!value && _Childrens != null && _Childrens.Length > 0)
                 {
                     _Childrens.ToList().ForEach(p => { if (p != null) { p.IsExpansion = false; } });
                 }
