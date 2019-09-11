@@ -8,7 +8,7 @@
 
 #### Introduction
 
-c#winfrom custom control, `has better operation support for touch screen`, the project is based on framework4.0, completely native control development, `do not use any third-party controls`, you can use it safely in your project .
+c#winform custom control, `has better operation support for touch screen`, the project is based on framework4.0, completely native control development, `do not use any third-party controls`, you can use it safely in your project .
 
 Blog address: [https://www.cnblogs.com/bfyx](https://www.cnblogs.com/bfyx/p/11364884.html)
 
