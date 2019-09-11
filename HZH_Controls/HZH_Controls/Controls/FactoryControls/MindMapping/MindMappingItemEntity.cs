@@ -196,12 +196,12 @@ namespace HZH_Controls.Controls
         /// Gets the height of the item.
         /// </summary>
         /// <value>The height of the item.</value>
-        private int ItemHeight { private get; private set; }
+        int ItemHeight { get; set; }
         /// <summary>
         /// Gets the width of the item.
         /// </summary>
         /// <value>The width of the item.</value>
-        private int ItemWidth { private get; private set; }
+        int ItemWidth { get; set; }
         /// <summary>
         /// Resets the size.
         /// </summary>

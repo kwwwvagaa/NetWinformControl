@@ -251,12 +251,13 @@ namespace HZH_Controls.Controls
         /// <param name="g">The g.</param>
         private void DrawItem(MindMappingItemEntity item, Graphics g)
         {
+            //节点
             var size = g.MeasureString(item.Text, item.Font);
             item.DrawRectangle = new RectangleF(item.WorkingRectangle.Left + 2, item.WorkingRectangle.Top + (item.WorkingRectangle.Height - size.Height) / 2 + 2, size.Width + 4, size.Height + 4);
             GraphicsPath drawPath = item.DrawRectangle.CreateRoundedRectanglePath(5);
             g.FillPath(new SolidBrush(item.BackColor), drawPath);
             g.DrawString(item.Text, item.Font, new SolidBrush(item.ForeColor), item.DrawRectangle.Location.X + 2, item.DrawRectangle.Location.Y + 2);
-
+            //子节点
             if (item.Childrens != null && item.IsExpansion)
             {
                 for (int i = 0; i < item.Childrens.Length; i++)
@@ -273,6 +274,7 @@ namespace HZH_Controls.Controls
                     DrawItem(child, g);
                 }
             }
+            //连线
             if (item.ParentItem != null)
             {
                 g.DrawLines(new Pen(new SolidBrush(lineColor), 1), new PointF[] 
@@ -284,7 +286,7 @@ namespace HZH_Controls.Controls
                     new PointF(item.DrawRectangle.Left,item.DrawRectangle.Top+item.DrawRectangle.Height/2),
                 });
             }
-
+            //展开折叠按钮
             if (item.Childrens != null && item.Childrens.Length > 0)
             {
                 RectangleF _rect = new RectangleF(item.DrawRectangle.Right + 1, item.DrawRectangle.Top + (item.DrawRectangle.Height - 10) / 2, 10, 10);
