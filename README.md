@@ -654,6 +654,10 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBO
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0910/163155_5bee72e6_301547.png "wdj.png")
 
+##### 37、Mind Mapping
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0911/143628_cfaee8b4_301547.gif "1.gif")
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
