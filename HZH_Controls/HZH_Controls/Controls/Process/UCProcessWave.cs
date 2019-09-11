@@ -323,6 +323,7 @@ namespace HZH_Controls.Controls
             string strValue = ((double)m_value / (double)m_maxValue).ToString("0.%");
             System.Drawing.SizeF sizeF = e.Graphics.MeasureString(strValue, Font);
             e.Graphics.DrawString(strValue, Font, new SolidBrush(ForeColor), new PointF((this.Width - sizeF.Width) / 2, (this.Height - sizeF.Height) / 2 + 1));
+
         }
     }
 }

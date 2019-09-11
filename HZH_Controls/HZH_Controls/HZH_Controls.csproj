@@ -112,6 +112,16 @@
     <Compile Include="Controls\FactoryControls\Lamp\UCSignalLamp.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\FactoryControls\MindMapping\MindMappingItemEntity.cs" />
+    <Compile Include="Controls\FactoryControls\MindMapping\UCMindMapping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FactoryControls\MindMapping\UCMindMappingPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FactoryControls\MindMapping\UCMindMappingPanel.Designer.cs">
+      <DependentUpon>UCMindMappingPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FactoryControls\Pond\UCPond.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -537,6 +547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DateTime\UCTimePanel.resx">
       <DependentUpon>UCTimePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FactoryControls\MindMapping\UCMindMappingPanel.resx">
+      <DependentUpon>UCMindMappingPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\KeyBord\UCKeyBorderAll.resx">
       <DependentUpon>UCKeyBorderAll.cs</DependentUpon>

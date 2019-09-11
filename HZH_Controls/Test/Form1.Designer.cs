@@ -98,6 +98,7 @@
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -1228,6 +1229,16 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(332, 50);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(62, 23);
+            this.button13.TabIndex = 0;
+            this.button13.Text = "思维导图";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1244,6 +1255,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button9);
@@ -1344,6 +1356,7 @@
         private HZH_Controls.Controls.UCListExt ucListExt1;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }
 

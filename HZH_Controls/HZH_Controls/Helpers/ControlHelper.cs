@@ -769,7 +769,7 @@ namespace HZH_Controls
         /// <param name="rect">The rect.</param>
         /// <param name="cornerRadius">The corner radius.</param>
         /// <returns>GraphicsPath.</returns>
-        public static GraphicsPath CreateRoundedRectanglePath(Rectangle rect, int cornerRadius)
+        public static GraphicsPath CreateRoundedRectanglePath(this Rectangle rect, int cornerRadius)
         {
             GraphicsPath roundedRect = new GraphicsPath();
             roundedRect.AddArc(rect.X, rect.Y, cornerRadius * 2, cornerRadius * 2, 180, 90);
@@ -790,7 +790,7 @@ namespace HZH_Controls
         /// <param name="rect">The rect.</param>
         /// <param name="cornerRadius">The corner radius.</param>
         /// <returns>GraphicsPath.</returns>
-        public static GraphicsPath CreateRoundedRectanglePath(RectangleF rect, int cornerRadius)
+        public static GraphicsPath CreateRoundedRectanglePath(this RectangleF rect, int cornerRadius)
         {
             GraphicsPath roundedRect = new GraphicsPath();
             roundedRect.AddArc(rect.X, rect.Y, cornerRadius * 2, cornerRadius * 2, 180, 90);

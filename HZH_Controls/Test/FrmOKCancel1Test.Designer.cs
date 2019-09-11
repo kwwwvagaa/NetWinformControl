@@ -38,6 +38,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3.SuspendLayout();
             this.tabControlExt1.SuspendLayout();
             this.SuspendLayout();
@@ -49,20 +50,20 @@
             // 
             // tabControlExt1
             // 
-            this.tabControlExt1.Controls.Add(this.tabPage7);
-            this.tabControlExt1.Controls.Add(this.tabPage8);
-            this.tabControlExt1.Controls.Add(this.tabPage9);
-            this.tabControlExt1.Controls.Add(this.tabPage10);
+            this.tabControlExt1.Controls.Add(this.tabPage1);
             this.tabControlExt1.Controls.Add(this.tabPage2);
             this.tabControlExt1.Controls.Add(this.tabPage3);
             this.tabControlExt1.Controls.Add(this.tabPage4);
             this.tabControlExt1.Controls.Add(this.tabPage5);
             this.tabControlExt1.Controls.Add(this.tabPage6);
+            this.tabControlExt1.Controls.Add(this.tabPage7);
+            this.tabControlExt1.Controls.Add(this.tabPage8);
+            this.tabControlExt1.Controls.Add(this.tabPage9);
+            this.tabControlExt1.Controls.Add(this.tabPage10);
             this.tabControlExt1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlExt1.IsShowCloseBtn = true;
             this.tabControlExt1.ItemSize = new System.Drawing.Size(142, 50);
             this.tabControlExt1.Location = new System.Drawing.Point(0, 0);
-            this.tabControlExt1.Multiline = true;
             this.tabControlExt1.Name = "tabControlExt1";
             this.tabControlExt1.SelectedIndex = 0;
             this.tabControlExt1.Size = new System.Drawing.Size(528, 321);
@@ -72,10 +73,10 @@
             // 
             // tabPage7
             // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 104);
+            this.tabPage7.Location = new System.Drawing.Point(4, 54);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(520, 213);
+            this.tabPage7.Size = new System.Drawing.Size(520, 263);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -102,10 +103,10 @@
             // 
             // tabPage10
             // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 104);
+            this.tabPage10.Location = new System.Drawing.Point(4, 54);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(520, 213);
+            this.tabPage10.Size = new System.Drawing.Size(520, 263);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "tabPage10";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -142,23 +143,32 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 104);
+            this.tabPage5.Location = new System.Drawing.Point(4, 54);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(520, 213);
+            this.tabPage5.Size = new System.Drawing.Size(520, 263);
             this.tabPage5.TabIndex = 14;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage6
             // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 104);
+            this.tabPage6.Location = new System.Drawing.Point(4, 54);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(520, 213);
+            this.tabPage6.Size = new System.Drawing.Size(520, 263);
             this.tabPage6.TabIndex = 15;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 54);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(520, 263);
+            this.tabPage1.TabIndex = 16;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // FrmOKCancel1Test
             // 
@@ -186,5 +196,6 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }
