@@ -201,7 +201,7 @@ namespace HZH_Controls.Controls
                 {
                     ItemClicked(item, null);
                 }
-                else if (item.ExpansionRectangle.Contains(mouseLocation))
+                if (item.ExpansionRectangle.Contains(mouseLocation))
                 {
                     item.IsExpansion = !item.IsExpansion;
                     return true;
