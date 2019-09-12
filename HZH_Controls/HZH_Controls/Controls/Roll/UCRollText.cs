@@ -83,6 +83,10 @@ namespace HZH_Controls.Controls
         /// Gets or sets the text.
         /// </summary>
         /// <value>The text.</value>
+        [Bindable(true)]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [EditorBrowsable(EditorBrowsableState.Always)]
         public override string Text
         {
             get

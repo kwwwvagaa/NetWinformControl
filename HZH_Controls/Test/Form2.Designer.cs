@@ -199,6 +199,7 @@
             this.ucRollText1.RollStyle = HZH_Controls.Controls.RollStyle.BackAndForth;
             this.ucRollText1.Size = new System.Drawing.Size(555, 30);
             this.ucRollText1.TabIndex = 23;
+            this.ucRollText1.Text = "滚动文字1";
             // 
             // ucWaveChart1
             // 
@@ -225,6 +226,7 @@
             // 
             this.ucProcessEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucProcessEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucProcessEllipse1.Font = new System.Drawing.Font("Arial Unicode MS", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ucProcessEllipse1.ForeColor = System.Drawing.Color.Black;
             this.ucProcessEllipse1.IsShowCoreEllipseBorder = true;
             this.ucProcessEllipse1.Location = new System.Drawing.Point(30, 173);
@@ -233,7 +235,7 @@
             this.ucProcessEllipse1.ShowType = HZH_Controls.Controls.ShowType.Ring;
             this.ucProcessEllipse1.Size = new System.Drawing.Size(150, 150);
             this.ucProcessEllipse1.TabIndex = 21;
-            this.ucProcessEllipse1.Value = 0;
+            this.ucProcessEllipse1.Value = 10;
             this.ucProcessEllipse1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucProcessEllipse1.ValueMargin = 5;
             this.ucProcessEllipse1.ValueType = HZH_Controls.Controls.ValueType.Percent;
@@ -243,6 +245,7 @@
             // 
             this.ucProcessEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucProcessEllipse2.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucProcessEllipse2.Font = new System.Drawing.Font("Arial Unicode MS", 20F);
             this.ucProcessEllipse2.ForeColor = System.Drawing.Color.White;
             this.ucProcessEllipse2.IsShowCoreEllipseBorder = true;
             this.ucProcessEllipse2.Location = new System.Drawing.Point(224, 173);

@@ -22,6 +22,8 @@ namespace Test
 
         private void Form1_Load(object sender, EventArgs e)
         {
+          var bit=  HZH_Controls.FontImages.GetImage(FontIcons.A_fa_adn, 32, Color.FromArgb(255, 77, 59));
+          bit.Save("d:\\3.jpg");
             for (int i = 0; i < 3; i++)
             {
                 TreeNode tn = new TreeNode("  父节点" + i);

@@ -224,7 +224,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The m font
         /// </summary>
-        private Font m_font = new Font("Arial Unicode MS", 20);
+      
         /// <summary>
         /// 获取或设置控件显示的文字的字体。
         /// </summary>
@@ -240,11 +240,11 @@ namespace HZH_Controls.Controls
         {
             get
             {
-                return m_font;
+                return base.Font;
             }
             set
             {
-                m_font = value;
+                base.Font = value;
                 Refresh();
             }
         }
@@ -302,6 +302,7 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             ForeColor = Color.White;
+            Font = new Font("Arial Unicode MS", 20); 
         }
 
         /// <summary>

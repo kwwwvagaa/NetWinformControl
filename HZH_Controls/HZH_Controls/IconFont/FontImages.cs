@@ -264,9 +264,10 @@ namespace HZH_Controls
                     graphics.Clear(backColor.Value);
                 string s = char.ConvertFromUtf32((int)iconText);
                 graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+                graphics.SetGDIHigh();
                 using (Brush brush2 = new SolidBrush(foreColor.Value))
                 {
-                    graphics.DrawString(s, imageFont, brush2, new PointF((imageSize - textSize.Width) / 2.0f, (imageSize - textSize.Height) / 2.0f));
+                    graphics.DrawString(s, imageFont, brush2, new PointF((imageSize - textSize.Width) / 2.0f + 1, (imageSize - textSize.Height) / 2.0f + 1));
                 }
             }
 
