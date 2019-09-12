@@ -54,7 +54,26 @@ namespace HZH_Controls
             }
             return result;
         }
+        /// <summary>
+        /// ASCII编码的数组转换为英文字符串
+        /// </summary>
+        /// <param name="s">字符串</param>
+        /// <returns>结果</returns>
+        public static string ToEnString(this byte[] s)
+        {
+            return ToEncodeString(s, Encoding.ASCII).Trim('\0').Trim();
+        }
 
+        /// <summary>
+        /// 数组按指定编码转换为字符串
+        /// </summary>
+        /// <param name="dealBytes">数组</param>
+        /// <param name="encode">编码</param>
+        /// <returns>结果</returns>
+        public static string ToEncodeString(this byte[] dealBytes, Encoding encode)
+        {
+            return encode.GetString(dealBytes);
+        }
         #region 转换为base64字符串
         /// <summary>
         /// 功能描述:转换为base64字符串

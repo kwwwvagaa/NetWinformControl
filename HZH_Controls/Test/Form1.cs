@@ -238,5 +238,10 @@ namespace Test
             new Form5().Show();
         }
 
+        private void button14_Click(object sender, EventArgs e)
+        {
+            new Form6().Show();
+        }
+
     }
 }
