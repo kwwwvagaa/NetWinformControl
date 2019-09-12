@@ -31,6 +31,14 @@ namespace HZH_Controls.Controls
     /// <seealso cref="System.Windows.Forms.UserControl" />
     internal class UCMindMapping : UserControl
     {
+        private ContextMenuStrip itemContextMenuStrip;
+
+        [Description("节点关联的右键菜单"), Category("自定义")]
+        public ContextMenuStrip ItemContextMenuStrip
+        {
+            get { return itemContextMenuStrip; }
+            set { itemContextMenuStrip = value; }
+        }
         private Color itemBackcolor = Color.FromArgb(255, 77, 59);
 
         [Description("节点背景色，优先级小于数据源中设置的背景色"), Category("自定义")]
@@ -84,6 +92,14 @@ namespace HZH_Controls.Controls
         /// The data source
         /// </summary>
         private MindMappingItemEntity dataSource;
+
+        private MindMappingItemEntity selectEntity;
+        [Description("选中的数据源"), Category("自定义")]
+        public MindMappingItemEntity SelectEntity
+        {
+            get { return selectEntity; }
+           private set { selectEntity = value; }
+        }
         /// <summary>
         /// Gets or sets the data source.
         /// </summary>
@@ -114,7 +130,10 @@ namespace HZH_Controls.Controls
             this.Click += UCMindMapping_Click;
             this.DoubleClick += UCMindMapping_DoubleClick;
             this.Load += UCMindMapping_Load;
+            this.MouseClick += UCMindMapping_MouseClick;
         }
+
+
 
         /// <summary>
         /// Handles the Load event of the UCMindMapping control.
@@ -142,7 +161,7 @@ namespace HZH_Controls.Controls
         {
             var mouseLocation = this.PointToClient(Control.MousePosition);
 
-            bool bln = CheckExpansionDoubleClick(dataSource, mouseLocation);
+            bool bln = CheckDrawRectClick(dataSource, mouseLocation);
             if (bln)
             {
                 ResetSize();
@@ -167,13 +186,25 @@ namespace HZH_Controls.Controls
             }
         }
 
+        void UCMindMapping_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (itemContextMenuStrip != null && e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                bool bln = CheckDrawRectClick(dataSource, e.Location, false);
+                if (bln)
+                {
+                    itemContextMenuStrip.Show(this.PointToScreen(e.Location));
+                }
+            }
+        }
+
         /// <summary>
         /// 双击检查
         /// </summary>
         /// <param name="item">The item.</param>
         /// <param name="mouseLocation">The mouse location.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        private bool CheckExpansionDoubleClick(MindMappingItemEntity item, Point mouseLocation)
+        private bool CheckDrawRectClick(MindMappingItemEntity item, Point mouseLocation, bool blnDoExpansion = true)
         {
             if (item == null)
                 return false;
@@ -181,14 +212,15 @@ namespace HZH_Controls.Controls
             {
                 if (item.DrawRectangle.Contains(mouseLocation))
                 {
-                    item.IsExpansion = !item.IsExpansion;
+                    if (blnDoExpansion)
+                        item.IsExpansion = !item.IsExpansion;
                     return true;
                 }
                 if (item.Childrens != null && item.Childrens.Length > 0)
                 {
                     foreach (var child in item.Childrens)
                     {
-                        var bln = CheckExpansionDoubleClick(child, mouseLocation);
+                        var bln = CheckDrawRectClick(child, mouseLocation, blnDoExpansion);
                         if (bln)
                             return bln;
                     }
@@ -209,10 +241,15 @@ namespace HZH_Controls.Controls
                 return false;
             else
             {
-                if (ItemClicked != null && item.DrawRectangle.Contains(mouseLocation))
+                if (item.DrawRectangle.Contains(mouseLocation))
                 {
-                    ItemClicked(item, null);
+                    selectEntity = item;
+                    if (ItemClicked != null )
+                    {
+                        ItemClicked(item, null);
+                    }
                 }
+               
                 if (item.ExpansionRectangle.Contains(mouseLocation))
                 {
                     item.IsExpansion = !item.IsExpansion;

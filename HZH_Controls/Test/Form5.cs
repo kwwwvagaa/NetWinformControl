@@ -60,5 +60,16 @@ namespace Test
                 MessageBox.Show(exc.ToString(), "错误");
             }
         }
+
+        private void ucMindMappingPanel1_ItemClicked(object sender, EventArgs e)
+        {
+            HZH_Controls.Forms.FrmTips.ShowTipsSuccess(this, ucMindMappingPanel1.SelectEntity.Text);
+        }
+
+        private void aaaaaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ucMindMappingPanel1.SelectEntity.Text = Guid.NewGuid().ToString();
+            ucMindMappingPanel1.Refresh();
+        }
     }
 }

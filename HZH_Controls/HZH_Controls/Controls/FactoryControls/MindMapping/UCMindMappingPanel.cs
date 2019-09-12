@@ -29,8 +29,22 @@ namespace HZH_Controls.Controls
     /// Implements the <see cref="System.Windows.Forms.UserControl" />
     /// </summary>
     /// <seealso cref="System.Windows.Forms.UserControl" />
+    [DefaultEvent("ItemClicked")]
     public partial class UCMindMappingPanel : UserControl
     {
+
+        private ContextMenuStrip itemContextMenuStrip;
+
+        [Description("节点关联的右键菜单"), Category("自定义")]
+        public ContextMenuStrip ItemContextMenuStrip
+        {
+            get { return itemContextMenuStrip; }
+            set
+            {
+                itemContextMenuStrip = value;
+                this.ucMindMapping1.ItemContextMenuStrip = value;
+            }
+        }
 
         private Color itemBackcolor = Color.FromArgb(255, 77, 59);
 
@@ -88,6 +102,14 @@ namespace HZH_Controls.Controls
                 lineColor = value;
                 this.ucMindMapping1.LineColor = value;
             }
+        }
+
+    
+        [Description("选中的数据源"), Category("自定义")]
+        public MindMappingItemEntity SelectEntity
+        {
+            get { return ucMindMapping1.SelectEntity; }
+
         }
         /// <summary>
         /// Initializes a new instance of the <see cref="UCMindMappingPanel"/> class.
