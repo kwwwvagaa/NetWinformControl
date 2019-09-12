@@ -1,3 +1,18 @@
+// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 2019-09-11
+//
+// ***********************************************************************
+// <copyright file="FontImages.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,29 +30,57 @@ namespace HZH_Controls
     /// </summary>
     public static class FontImages
     {
+        /// <summary>
+        /// The m font collection
+        /// </summary>
         private static readonly PrivateFontCollection m_fontCollection = new PrivateFontCollection();
 
+        /// <summary>
+        /// The m fonts awesome
+        /// </summary>
         private static readonly Dictionary<string, Font> m_fontsAwesome = new Dictionary<string, Font>();
+        /// <summary>
+        /// The m fonts elegant
+        /// </summary>
         private static readonly Dictionary<string, Font> m_fontsElegant = new Dictionary<string, Font>();
 
+        /// <summary>
+        /// The m cache maximum size
+        /// </summary>
         private static Dictionary<int, float> m_cacheMaxSize = new Dictionary<int, float>();
+        /// <summary>
+        /// The minimum font size
+        /// </summary>
         private const int MinFontSize = 8;
+        /// <summary>
+        /// The maximum font size
+        /// </summary>
         private const int MaxFontSize = 43;
 
 
         /// <summary>
         /// 构造函数
         /// </summary>
+        /// <exception cref="FileNotFoundException">Font file not found</exception>
         static FontImages()
         {
-            string filenameAwesome = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "IconFont\\FontAwesome.ttf");
-
-            if (!File.Exists(filenameAwesome))
+            string strPath = System.Reflection.Assembly.GetExecutingAssembly().CodeBase.ToLower().Replace("file:///", "");
+            string strDir = System.IO.Path.GetDirectoryName(strPath);
+            if (!Directory.Exists(Path.Combine(strDir, "IconFont")))
             {
-                throw new FileNotFoundException("Font file not found", filenameAwesome);
+                Directory.CreateDirectory(Path.Combine(strDir, "IconFont"));
+            }
+            string strFile = Path.Combine(strDir, "IconFont\\FontAwesome.ttf");
+            if (!File.Exists(strFile))
+            {
+                var fs = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("HZH_Controls.IconFont.FontAwesome.ttf");
+                FileStream sw = new FileStream(strFile, FileMode.Create, FileAccess.Write);
+                fs.CopyTo(sw);
+                sw.Close();
+                fs.Close();
             }
 
-            m_fontCollection.AddFontFile(filenameAwesome);
+            m_fontCollection.AddFontFile(strFile);
 
             float size = MinFontSize;
             for (int i = 0; i <= (MaxFontSize - MinFontSize) * 2; i++)
@@ -47,6 +90,10 @@ namespace HZH_Controls
             }
         }
 
+        /// <summary>
+        /// Gets the font awesome.
+        /// </summary>
+        /// <value>The font awesome.</value>
         public static FontFamily FontAwesome
         {
             get
@@ -62,6 +109,11 @@ namespace HZH_Controls
             }
         }
 
+        /// <summary>
+        /// Gets the elegant icons.
+        /// </summary>
+        /// <value>The elegant icons.</value>
+        /// <exception cref="FileNotFoundException">Font file not found</exception>
         public static FontFamily ElegantIcons
         {
             get
@@ -72,12 +124,22 @@ namespace HZH_Controls
                     {
                         if (m_fontsElegant.Count <= 0)
                         {
-                            string filenameElegant = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "IconFont\\ElegantIcons.ttf");
-                            if (!File.Exists(filenameElegant))
+                            string strPath = System.Reflection.Assembly.GetExecutingAssembly().CodeBase.ToLower().Replace("file:///", "");
+                            string strDir = System.IO.Path.GetDirectoryName(strPath);
+                            if (!Directory.Exists(Path.Combine(strDir, "IconFont")))
                             {
-                                throw new FileNotFoundException("Font file not found", filenameElegant);
+                                Directory.CreateDirectory(Path.Combine(strDir, "IconFont"));
                             }
-                            m_fontCollection.AddFontFile(filenameElegant);
+                            string strFile = Path.Combine(strDir, "IconFont\\ElegantIcons.ttf");
+                            if (!File.Exists(strFile))
+                            {
+                                var fs = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("HZH_Controls.IconFont.ElegantIcons.ttf");
+                                FileStream sw = new FileStream(strFile, FileMode.Create, FileAccess.Write);
+                                fs.CopyTo(sw);
+                                sw.Close();
+                                fs.Close();
+                            }
+                            m_fontCollection.AddFontFile(strFile);
 
                             float size = MinFontSize;
                             for (int i = 0; i <= (MaxFontSize - MinFontSize) * 2; i++)
@@ -119,6 +181,7 @@ namespace HZH_Controls
         /// <param name="foreColor">前景色</param>
         /// <param name="backColor">背景色.</param>
         /// <returns>Bitmap.</returns>
+        /// <exception cref="FileNotFoundException">Font file not found</exception>
         public static Bitmap GetImage(FontIcons iconText, int imageSize = 32, Color? foreColor = null, Color? backColor = null)
         {
             Dictionary<string, Font> _fs;
@@ -132,12 +195,22 @@ namespace HZH_Controls
                     {
                         if (m_fontsElegant.Count <= 0)
                         {
-                            string filenameElegant = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "IconFont\\ElegantIcons.ttf");
-                            if (!File.Exists(filenameElegant))
+                            string strPath = System.Reflection.Assembly.GetExecutingAssembly().CodeBase.ToLower().Replace("file:///", "");
+                            string strDir = System.IO.Path.GetDirectoryName(strPath);
+                            if (!Directory.Exists(Path.Combine(strDir, "IconFont")))
                             {
-                                throw new FileNotFoundException("Font file not found", filenameElegant);
+                                Directory.CreateDirectory(Path.Combine(strDir, "IconFont"));
                             }
-                            m_fontCollection.AddFontFile(filenameElegant);
+                            string strFile = Path.Combine(strDir, "IconFont\\ElegantIcons.ttf");
+                            if (!File.Exists(strFile))
+                            {
+                                var fs = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("HZH_Controls.IconFont.ElegantIcons.ttf");
+                                FileStream sw = new FileStream(strFile, FileMode.Create, FileAccess.Write);
+                                fs.CopyTo(sw);
+                                sw.Close();
+                                fs.Close();
+                            }
+                            m_fontCollection.AddFontFile(strFile);
 
                             float size = MinFontSize;
                             for (int i = 0; i <= (MaxFontSize - MinFontSize) * 2; i++)
@@ -200,12 +273,26 @@ namespace HZH_Controls
             return srcImage;
         }
 
+        /// <summary>
+        /// Gets the size of the icon.
+        /// </summary>
+        /// <param name="iconText">The icon text.</param>
+        /// <param name="graphics">The graphics.</param>
+        /// <param name="font">The font.</param>
+        /// <returns>Size.</returns>
         private static Size GetIconSize(FontIcons iconText, Graphics graphics, Font font)
         {
             string text = char.ConvertFromUtf32((int)iconText);
             return graphics.MeasureString(text, font).ToSize();
         }
 
+        /// <summary>
+        /// Converts to icon.
+        /// </summary>
+        /// <param name="srcBitmap">The source bitmap.</param>
+        /// <param name="size">The size.</param>
+        /// <returns>Icon.</returns>
+        /// <exception cref="ArgumentNullException">srcBitmap</exception>
         private static Icon ToIcon(Bitmap srcBitmap, int size)
         {
             if (srcBitmap == null)

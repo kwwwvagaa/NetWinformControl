@@ -48,6 +48,21 @@
             this.ucledDataTime1 = new HZH_Controls.Controls.UCLEDDataTime();
             this.ucledTime2 = new HZH_Controls.Controls.UCLEDTime();
             this.ucledDate1 = new HZH_Controls.Controls.UCLEDData();
+            this.ucledNum27 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum26 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum25 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum24 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum23 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum22 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum21 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum20 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum19 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum18 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum17 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum16 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum15 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum14 = new HZH_Controls.Controls.UCLEDNum();
+            this.ucledNum13 = new HZH_Controls.Controls.UCLEDNum();
             this.ucledNum12 = new HZH_Controls.Controls.UCLEDNum();
             this.ucledNum11 = new HZH_Controls.Controls.UCLEDNum();
             this.ucledNum10 = new HZH_Controls.Controls.UCLEDNum();
@@ -81,21 +96,6 @@
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucStep2 = new HZH_Controls.Controls.UCStep();
             this.ucStep1 = new HZH_Controls.Controls.UCStep();
-            this.ucledNum13 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum14 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum15 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum16 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum17 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum18 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum19 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum20 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum21 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum22 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum23 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum24 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum25 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum26 = new HZH_Controls.Controls.UCLEDNum();
-            this.ucledNum27 = new HZH_Controls.Controls.UCLEDNum();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -225,6 +225,7 @@
             // 
             this.ucProcessEllipse1.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucProcessEllipse1.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucProcessEllipse1.ForeColor = System.Drawing.Color.Black;
             this.ucProcessEllipse1.IsShowCoreEllipseBorder = true;
             this.ucProcessEllipse1.Location = new System.Drawing.Point(30, 173);
             this.ucProcessEllipse1.MaxValue = 100;
@@ -242,6 +243,7 @@
             // 
             this.ucProcessEllipse2.BackEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
             this.ucProcessEllipse2.CoreEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.ucProcessEllipse2.ForeColor = System.Drawing.Color.White;
             this.ucProcessEllipse2.IsShowCoreEllipseBorder = true;
             this.ucProcessEllipse2.Location = new System.Drawing.Point(224, 173);
             this.ucProcessEllipse2.MaxValue = 100;
@@ -307,6 +309,171 @@
             this.ucledDate1.Size = new System.Drawing.Size(302, 74);
             this.ucledDate1.TabIndex = 15;
             this.ucledDate1.Value = new System.DateTime(2019, 9, 2, 15, 31, 34, 633);
+            // 
+            // ucledNum27
+            // 
+            this.ucledNum27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum27.LineWidth = 8;
+            this.ucledNum27.Location = new System.Drawing.Point(1371, 598);
+            this.ucledNum27.Name = "ucledNum27";
+            this.ucledNum27.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum27.TabIndex = 14;
+            this.ucledNum27.Value = 'U';
+            this.ucledNum27.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_U;
+            // 
+            // ucledNum26
+            // 
+            this.ucledNum26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum26.LineWidth = 8;
+            this.ucledNum26.Location = new System.Drawing.Point(1325, 598);
+            this.ucledNum26.Name = "ucledNum26";
+            this.ucledNum26.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum26.TabIndex = 14;
+            this.ucledNum26.Value = 'r';
+            this.ucledNum26.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_r;
+            // 
+            // ucledNum25
+            // 
+            this.ucledNum25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum25.LineWidth = 8;
+            this.ucledNum25.Location = new System.Drawing.Point(1279, 598);
+            this.ucledNum25.Name = "ucledNum25";
+            this.ucledNum25.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum25.TabIndex = 14;
+            this.ucledNum25.Value = 'P';
+            this.ucledNum25.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_P;
+            // 
+            // ucledNum24
+            // 
+            this.ucledNum24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum24.LineWidth = 8;
+            this.ucledNum24.Location = new System.Drawing.Point(1233, 598);
+            this.ucledNum24.Name = "ucledNum24";
+            this.ucledNum24.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum24.TabIndex = 14;
+            this.ucledNum24.Value = 'o';
+            this.ucledNum24.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_o;
+            // 
+            // ucledNum23
+            // 
+            this.ucledNum23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum23.LineWidth = 8;
+            this.ucledNum23.Location = new System.Drawing.Point(1178, 598);
+            this.ucledNum23.Name = "ucledNum23";
+            this.ucledNum23.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum23.TabIndex = 14;
+            this.ucledNum23.Value = 'L';
+            this.ucledNum23.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_L;
+            // 
+            // ucledNum22
+            // 
+            this.ucledNum22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum22.LineWidth = 8;
+            this.ucledNum22.Location = new System.Drawing.Point(1132, 598);
+            this.ucledNum22.Name = "ucledNum22";
+            this.ucledNum22.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum22.TabIndex = 14;
+            this.ucledNum22.Value = 'J';
+            this.ucledNum22.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_J;
+            // 
+            // ucledNum21
+            // 
+            this.ucledNum21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum21.LineWidth = 8;
+            this.ucledNum21.Location = new System.Drawing.Point(1086, 598);
+            this.ucledNum21.Name = "ucledNum21";
+            this.ucledNum21.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum21.TabIndex = 14;
+            this.ucledNum21.Value = 'h';
+            this.ucledNum21.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_h;
+            // 
+            // ucledNum20
+            // 
+            this.ucledNum20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum20.LineWidth = 8;
+            this.ucledNum20.Location = new System.Drawing.Point(1040, 598);
+            this.ucledNum20.Name = "ucledNum20";
+            this.ucledNum20.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum20.TabIndex = 14;
+            this.ucledNum20.Value = 'H';
+            this.ucledNum20.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_H;
+            // 
+            // ucledNum19
+            // 
+            this.ucledNum19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum19.LineWidth = 8;
+            this.ucledNum19.Location = new System.Drawing.Point(994, 598);
+            this.ucledNum19.Name = "ucledNum19";
+            this.ucledNum19.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum19.TabIndex = 14;
+            this.ucledNum19.Value = 'F';
+            this.ucledNum19.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_F;
+            // 
+            // ucledNum18
+            // 
+            this.ucledNum18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum18.LineWidth = 8;
+            this.ucledNum18.Location = new System.Drawing.Point(948, 598);
+            this.ucledNum18.Name = "ucledNum18";
+            this.ucledNum18.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum18.TabIndex = 14;
+            this.ucledNum18.Value = 'E';
+            this.ucledNum18.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_E;
+            // 
+            // ucledNum17
+            // 
+            this.ucledNum17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum17.LineWidth = 8;
+            this.ucledNum17.Location = new System.Drawing.Point(902, 598);
+            this.ucledNum17.Name = "ucledNum17";
+            this.ucledNum17.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum17.TabIndex = 14;
+            this.ucledNum17.Value = 'd';
+            this.ucledNum17.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_d;
+            // 
+            // ucledNum16
+            // 
+            this.ucledNum16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum16.LineWidth = 8;
+            this.ucledNum16.Location = new System.Drawing.Point(856, 598);
+            this.ucledNum16.Name = "ucledNum16";
+            this.ucledNum16.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum16.TabIndex = 14;
+            this.ucledNum16.Value = 'c';
+            this.ucledNum16.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_c;
+            // 
+            // ucledNum15
+            // 
+            this.ucledNum15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum15.LineWidth = 8;
+            this.ucledNum15.Location = new System.Drawing.Point(807, 598);
+            this.ucledNum15.Name = "ucledNum15";
+            this.ucledNum15.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum15.TabIndex = 14;
+            this.ucledNum15.Value = 'C';
+            this.ucledNum15.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_C;
+            // 
+            // ucledNum14
+            // 
+            this.ucledNum14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum14.LineWidth = 8;
+            this.ucledNum14.Location = new System.Drawing.Point(761, 598);
+            this.ucledNum14.Name = "ucledNum14";
+            this.ucledNum14.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum14.TabIndex = 14;
+            this.ucledNum14.Value = 'b';
+            this.ucledNum14.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_b;
+            // 
+            // ucledNum13
+            // 
+            this.ucledNum13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucledNum13.LineWidth = 8;
+            this.ucledNum13.Location = new System.Drawing.Point(715, 598);
+            this.ucledNum13.Name = "ucledNum13";
+            this.ucledNum13.Size = new System.Drawing.Size(40, 60);
+            this.ucledNum13.TabIndex = 14;
+            this.ucledNum13.Value = 'A';
+            this.ucledNum13.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_A;
             // 
             // ucledNum12
             // 
@@ -769,171 +936,6 @@
         "step5"};
             this.ucStep1.StepWidth = 35;
             this.ucStep1.TabIndex = 0;
-            // 
-            // ucledNum13
-            // 
-            this.ucledNum13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum13.LineWidth = 8;
-            this.ucledNum13.Location = new System.Drawing.Point(715, 598);
-            this.ucledNum13.Name = "ucledNum13";
-            this.ucledNum13.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum13.TabIndex = 14;
-            this.ucledNum13.Value = 'A';
-            this.ucledNum13.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_A;
-            // 
-            // ucledNum14
-            // 
-            this.ucledNum14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum14.LineWidth = 8;
-            this.ucledNum14.Location = new System.Drawing.Point(761, 598);
-            this.ucledNum14.Name = "ucledNum14";
-            this.ucledNum14.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum14.TabIndex = 14;
-            this.ucledNum14.Value = 'b';
-            this.ucledNum14.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_b;
-            // 
-            // ucledNum15
-            // 
-            this.ucledNum15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum15.LineWidth = 8;
-            this.ucledNum15.Location = new System.Drawing.Point(807, 598);
-            this.ucledNum15.Name = "ucledNum15";
-            this.ucledNum15.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum15.TabIndex = 14;
-            this.ucledNum15.Value = 'C';
-            this.ucledNum15.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_C;
-            // 
-            // ucledNum16
-            // 
-            this.ucledNum16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum16.LineWidth = 8;
-            this.ucledNum16.Location = new System.Drawing.Point(856, 598);
-            this.ucledNum16.Name = "ucledNum16";
-            this.ucledNum16.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum16.TabIndex = 14;
-            this.ucledNum16.Value = 'c';
-            this.ucledNum16.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_c;
-            // 
-            // ucledNum17
-            // 
-            this.ucledNum17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum17.LineWidth = 8;
-            this.ucledNum17.Location = new System.Drawing.Point(902, 598);
-            this.ucledNum17.Name = "ucledNum17";
-            this.ucledNum17.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum17.TabIndex = 14;
-            this.ucledNum17.Value = 'd';
-            this.ucledNum17.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_d;
-            // 
-            // ucledNum18
-            // 
-            this.ucledNum18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum18.LineWidth = 8;
-            this.ucledNum18.Location = new System.Drawing.Point(948, 598);
-            this.ucledNum18.Name = "ucledNum18";
-            this.ucledNum18.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum18.TabIndex = 14;
-            this.ucledNum18.Value = 'E';
-            this.ucledNum18.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_E;
-            // 
-            // ucledNum19
-            // 
-            this.ucledNum19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum19.LineWidth = 8;
-            this.ucledNum19.Location = new System.Drawing.Point(994, 598);
-            this.ucledNum19.Name = "ucledNum19";
-            this.ucledNum19.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum19.TabIndex = 14;
-            this.ucledNum19.Value = 'F';
-            this.ucledNum19.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_F;
-            // 
-            // ucledNum20
-            // 
-            this.ucledNum20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum20.LineWidth = 8;
-            this.ucledNum20.Location = new System.Drawing.Point(1040, 598);
-            this.ucledNum20.Name = "ucledNum20";
-            this.ucledNum20.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum20.TabIndex = 14;
-            this.ucledNum20.Value = 'H';
-            this.ucledNum20.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_H;
-            // 
-            // ucledNum21
-            // 
-            this.ucledNum21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum21.LineWidth = 8;
-            this.ucledNum21.Location = new System.Drawing.Point(1086, 598);
-            this.ucledNum21.Name = "ucledNum21";
-            this.ucledNum21.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum21.TabIndex = 14;
-            this.ucledNum21.Value = 'h';
-            this.ucledNum21.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_h;
-            // 
-            // ucledNum22
-            // 
-            this.ucledNum22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum22.LineWidth = 8;
-            this.ucledNum22.Location = new System.Drawing.Point(1132, 598);
-            this.ucledNum22.Name = "ucledNum22";
-            this.ucledNum22.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum22.TabIndex = 14;
-            this.ucledNum22.Value = 'J';
-            this.ucledNum22.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_J;
-            // 
-            // ucledNum23
-            // 
-            this.ucledNum23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum23.LineWidth = 8;
-            this.ucledNum23.Location = new System.Drawing.Point(1178, 598);
-            this.ucledNum23.Name = "ucledNum23";
-            this.ucledNum23.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum23.TabIndex = 14;
-            this.ucledNum23.Value = 'L';
-            this.ucledNum23.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_L;
-            // 
-            // ucledNum24
-            // 
-            this.ucledNum24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum24.LineWidth = 8;
-            this.ucledNum24.Location = new System.Drawing.Point(1233, 598);
-            this.ucledNum24.Name = "ucledNum24";
-            this.ucledNum24.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum24.TabIndex = 14;
-            this.ucledNum24.Value = 'o';
-            this.ucledNum24.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_o;
-            // 
-            // ucledNum25
-            // 
-            this.ucledNum25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum25.LineWidth = 8;
-            this.ucledNum25.Location = new System.Drawing.Point(1279, 598);
-            this.ucledNum25.Name = "ucledNum25";
-            this.ucledNum25.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum25.TabIndex = 14;
-            this.ucledNum25.Value = 'P';
-            this.ucledNum25.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_P;
-            // 
-            // ucledNum26
-            // 
-            this.ucledNum26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum26.LineWidth = 8;
-            this.ucledNum26.Location = new System.Drawing.Point(1325, 598);
-            this.ucledNum26.Name = "ucledNum26";
-            this.ucledNum26.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum26.TabIndex = 14;
-            this.ucledNum26.Value = 'r';
-            this.ucledNum26.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_r;
-            // 
-            // ucledNum27
-            // 
-            this.ucledNum27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucledNum27.LineWidth = 8;
-            this.ucledNum27.Location = new System.Drawing.Point(1371, 598);
-            this.ucledNum27.Name = "ucledNum27";
-            this.ucledNum27.Size = new System.Drawing.Size(40, 60);
-            this.ucledNum27.TabIndex = 14;
-            this.ucledNum27.Value = 'U';
-            this.ucledNum27.ValueChar = HZH_Controls.Controls.LEDNumChar.CHAR_U;
             // 
             // Form2
             // 
