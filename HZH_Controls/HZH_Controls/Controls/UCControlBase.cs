@@ -207,14 +207,14 @@ namespace HZH_Controls.Controls
                     graphicsPath.CloseFigure();
                 }
                 e.Graphics.SetGDIHigh();
+                if (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor)
+                    e.Graphics.FillPath(new SolidBrush(this._fillColor), graphicsPath);
                 if (this._isShowRect)
                 {
                     Color rectColor = this._rectColor;
                     Pen pen = new Pen(rectColor, (float)this._rectWidth);
                     e.Graphics.DrawPath(pen, graphicsPath);
-                }
-                if (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor)
-                    e.Graphics.FillPath(new SolidBrush(this._fillColor), graphicsPath);
+                }              
             }
             base.OnPaint(e);
         }
