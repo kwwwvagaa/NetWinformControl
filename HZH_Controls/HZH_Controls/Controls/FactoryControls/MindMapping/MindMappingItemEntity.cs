@@ -73,13 +73,13 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The back color
         /// </summary>
-        private Color backColor = Color.Transparent;
+        private Color? backColor;
 
         /// <summary>
         /// Gets or sets the color of the back.
         /// </summary>
         /// <value>The color of the back.</value>
-        public Color BackColor
+        public Color? BackColor
         {
             get { return backColor; }
             set { backColor = value; }

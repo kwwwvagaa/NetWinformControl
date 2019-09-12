@@ -31,6 +31,18 @@ namespace HZH_Controls.Controls
     /// <seealso cref="System.Windows.Forms.UserControl" />
     internal class UCMindMapping : UserControl
     {
+        private Color itemBackcolor = Color.FromArgb(255, 77, 59);
+
+        [Description("节点背景色，优先级小于数据源中设置的背景色"), Category("自定义")]
+        public Color ItemBackcolor
+        {
+            get { return itemBackcolor; }
+            set
+            {
+                itemBackcolor = value;
+                Refresh();
+            }
+        }
         /// <summary>
         /// The line color
         /// </summary>
@@ -255,7 +267,11 @@ namespace HZH_Controls.Controls
             var size = g.MeasureString(item.Text, item.Font);
             item.DrawRectangle = new RectangleF(item.WorkingRectangle.Left + 2, item.WorkingRectangle.Top + (item.WorkingRectangle.Height - size.Height) / 2 + 2, size.Width + 4, size.Height + 4);
             GraphicsPath drawPath = item.DrawRectangle.CreateRoundedRectanglePath(5);
-            g.FillPath(new SolidBrush(item.BackColor), drawPath);
+            if (item.BackColor.HasValue)
+                g.FillPath(new SolidBrush(item.BackColor.Value), drawPath);
+            else
+                g.FillPath(new SolidBrush(itemBackcolor), drawPath);
+
             g.DrawString(item.Text, item.Font, new SolidBrush(item.ForeColor), item.DrawRectangle.Location.X + 2, item.DrawRectangle.Location.Y + 2);
             //子节点
             if (item.Childrens != null && item.IsExpansion)

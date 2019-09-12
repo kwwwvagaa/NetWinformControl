@@ -25,8 +25,7 @@ namespace Test
                 {
                     ID = "1",
                     Text = "根节点超长占位符超长占位符超长占位符超长占位符\n节点1",
-                    BackColor = Color.Red,
-                    ForeColor = Color.White,
+                                      ForeColor = Color.White,
                     IsExpansion = true
                 };
                 MindMappingItemEntity[] cs1 = new MindMappingItemEntity[5];
@@ -36,7 +35,7 @@ namespace Test
                     {
                         ID = "1_" + i,
                         Text = "子节点\n节点1_" + i + ((i % 2) == 0 ? "超长占位符超长占位符" : "超长占位符超长占位符超长占位符超长占位符"),
-                        BackColor = Color.Red,
+                      
                         ForeColor = Color.White,
                         IsExpansion = (i % 2) == 0
                     };
@@ -47,7 +46,7 @@ namespace Test
                         {
                             ID = "1_" + i + "_" + j,
                             Text = "孙节点\n节点1_" + i + "_" + j + ((j % 2) == 0 ? "超长占位符超长占位符" : "超长占位符超长占位符超长占位符超长占位符"),
-                            BackColor = Color.Red,
+                            BackColor = Color.Green,
                             ForeColor = Color.White
                         };
                     }

@@ -31,6 +31,19 @@ namespace HZH_Controls.Controls
     /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCMindMappingPanel : UserControl
     {
+
+        private Color itemBackcolor = Color.FromArgb(255, 77, 59);
+
+        [Description("节点背景色，优先级小于数据源中设置的背景色"), Category("自定义")]
+        public Color ItemBackcolor
+        {
+            get { return itemBackcolor; }
+            set
+            {
+                itemBackcolor = value;
+                this.ucMindMapping1.ItemBackcolor = value;
+            }
+        }
         /// <summary>
         /// The data source
         /// </summary>
