@@ -360,7 +360,9 @@ namespace HZH_Controls.Controls
             if (panChildGrid.Height != 0)
                 this.ucDGVChild.Height = panChildGrid.Height;
             if (this.Height != intHeight)
+            {
                 this.Height = intHeight;
+            }
         }
 
         /// <summary>
@@ -403,11 +405,23 @@ namespace HZH_Controls.Controls
                             }
                         }
                     }
-
                 }
                 else
                 {
                     panLeft.Tag = 0;
+                    Control[] cs = panChildGrid.Controls.Find("panLeft", true);
+                    foreach (var item in cs)
+                    {
+                        item.Tag = 0;
+                        item.BackgroundImage = Properties.Resources.caret_right;
+                    }
+
+                    Control[] cs1 = panChildGrid.Controls.Find("panChildGrid", true);
+                    foreach (var item in cs1)
+                    {
+                        item.Height = 0;
+                    }
+
                     panChildGrid.Height = 0;
                     panLeft.BackgroundImage = Properties.Resources.caret_right;
                 }

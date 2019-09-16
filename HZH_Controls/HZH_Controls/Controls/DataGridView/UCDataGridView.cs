@@ -267,6 +267,20 @@ namespace HZH_Controls.Controls
                     ReloadSource();
             }
         }
+
+        [Description("行是否显示滚动条"), Category("自定义")]
+        public bool AutoRowsScroll
+        {
+            get
+            {
+                return this.panRow.AutoScroll;
+            }
+            set
+            {
+                this.panRow.AutoScroll = value;
+            }
+        }
+
         /// <summary>
         /// The m select row
         /// </summary>

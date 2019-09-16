@@ -20,7 +20,6 @@ namespace Test
         private void FrmTemp1Test_Load(object sender, EventArgs e)
         {
             this.ucDataGridView1.RowType = typeof(UCDataGridViewTreeRow);
-
             List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "姓名", Width = 50, WidthType = SizeType.Percent });
@@ -48,7 +47,6 @@ namespace Test
             page.DataSource = lstSource;
             this.ucDataGridView1.Page = page;
             this.ucDataGridView1.First();
-
             //this.ucDataGridView1.DataSource = lstSource;
         }
 

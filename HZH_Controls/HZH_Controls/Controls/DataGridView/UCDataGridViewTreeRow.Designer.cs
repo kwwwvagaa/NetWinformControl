@@ -51,11 +51,11 @@ namespace HZH_Controls.Controls
             this.panCells = new System.Windows.Forms.TableLayoutPanel();
             this.panLeft = new System.Windows.Forms.Panel();
             this.panChildGrid = new System.Windows.Forms.Panel();
+            this.ucDGVChild = new HZH_Controls.Controls.UCDataGridView();
+            this.ucSplitLine_V1 = new HZH_Controls.Controls.UCSplitLine_V();
             this.panChildLeft = new System.Windows.Forms.Panel();
             this.panMain = new System.Windows.Forms.Panel();
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
-            this.ucDGVChild = new HZH_Controls.Controls.UCDataGridView();
-            this.ucSplitLine_V1 = new HZH_Controls.Controls.UCSplitLine_V();
             this.panChildGrid.SuspendLayout();
             this.panMain.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +97,40 @@ namespace HZH_Controls.Controls
             this.panChildGrid.TabIndex = 0;
             this.panChildGrid.SizeChanged += new System.EventHandler(this.panChildGrid_SizeChanged);
             // 
+            // ucDGVChild
+            // 
+            this.ucDGVChild.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucDGVChild.AutoRowsScroll = false;
+            this.ucDGVChild.BackColor = System.Drawing.Color.White;
+            this.ucDGVChild.Columns = null;
+            this.ucDGVChild.DataSource = null;
+            this.ucDGVChild.HeadFont = new System.Drawing.Font("微软雅黑", 12F);
+            this.ucDGVChild.HeadHeight = 40;
+            this.ucDGVChild.HeadPadingLeft = 0;
+            this.ucDGVChild.HeadTextColor = System.Drawing.Color.Black;
+            this.ucDGVChild.IsCloseAutoHeight = false;
+            this.ucDGVChild.IsShowCheckBox = false;
+            this.ucDGVChild.IsShowHead = false;
+            this.ucDGVChild.Location = new System.Drawing.Point(25, 0);
+            this.ucDGVChild.Name = "ucDGVChild";
+            this.ucDGVChild.Page = null;
+            this.ucDGVChild.RowHeight = 40;
+            this.ucDGVChild.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
+            this.ucDGVChild.Size = new System.Drawing.Size(636, 100);
+            this.ucDGVChild.TabIndex = 0;
+            this.ucDGVChild.SizeChanged += new System.EventHandler(this.ucDGVChild_SizeChanged);
+            // 
+            // ucSplitLine_V1
+            // 
+            this.ucSplitLine_V1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.ucSplitLine_V1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucSplitLine_V1.Location = new System.Drawing.Point(24, 0);
+            this.ucSplitLine_V1.Name = "ucSplitLine_V1";
+            this.ucSplitLine_V1.Size = new System.Drawing.Size(1, 0);
+            this.ucSplitLine_V1.TabIndex = 0;
+            this.ucSplitLine_V1.TabStop = false;
+            // 
             // panChildLeft
             // 
             this.panChildLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -126,37 +160,6 @@ namespace HZH_Controls.Controls
             this.ucSplitLine_H1.Size = new System.Drawing.Size(661, 1);
             this.ucSplitLine_H1.TabIndex = 1;
             this.ucSplitLine_H1.TabStop = false;
-            // 
-            // ucDGVChild
-            // 
-            this.ucDGVChild.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucDGVChild.BackColor = System.Drawing.Color.White;
-            this.ucDGVChild.HeadFont = new System.Drawing.Font("微软雅黑", 12F);
-            this.ucDGVChild.HeadHeight = 40;
-            this.ucDGVChild.HeadPadingLeft = 0;
-            this.ucDGVChild.HeadTextColor = System.Drawing.Color.Black;
-            this.ucDGVChild.IsCloseAutoHeight = false;
-            this.ucDGVChild.IsShowCheckBox = false;
-            this.ucDGVChild.IsShowHead = false;
-            this.ucDGVChild.Location = new System.Drawing.Point(25, 0);
-            this.ucDGVChild.Name = "ucDGVChild";
-            this.ucDGVChild.Page = null;
-            this.ucDGVChild.RowHeight = 40;
-            this.ucDGVChild.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
-            this.ucDGVChild.Size = new System.Drawing.Size(636, 100);
-            this.ucDGVChild.TabIndex = 0;
-            this.ucDGVChild.SizeChanged += new System.EventHandler(this.ucDGVChild_SizeChanged);
-            // 
-            // ucSplitLine_V1
-            // 
-            this.ucSplitLine_V1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.ucSplitLine_V1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucSplitLine_V1.Location = new System.Drawing.Point(24, 0);
-            this.ucSplitLine_V1.Name = "ucSplitLine_V1";
-            this.ucSplitLine_V1.Size = new System.Drawing.Size(1, 0);
-            this.ucSplitLine_V1.TabIndex = 0;
-            this.ucSplitLine_V1.TabStop = false;
             // 
             // UCDataGridViewTreeRow
             // 
