@@ -417,12 +417,19 @@ namespace HZH_Controls.Controls
 
             if (Page == null)
             {
-                if (((IList)m_dataSource).Count > intCount)
+                if (m_dataSource == null)
                 {
-                    intXCount = (this.panMain.Width - 10 - 20) / (item.Width + 10);
-                    m_intCellWidth = item.Width + ((this.panMain.Width - 10 - 20) % (item.Width + 10)) / intXCount;
+                    intCount = 0;
                 }
-                intCount = Math.Max(intCount, ((IList)m_dataSource).Count);
+                else
+                {
+                    if (((IList)m_dataSource).Count > intCount)
+                    {
+                        intXCount = (this.panMain.Width - 10 - 20) / (item.Width + 10);
+                        m_intCellWidth = item.Width + ((this.panMain.Width - 10 - 20) % (item.Width + 10)) / intXCount;
+                    }
+                    intCount = Math.Max(intCount, ((IList)m_dataSource).Count);
+                }
             }
 
             CellCount = intCount;
