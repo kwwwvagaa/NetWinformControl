@@ -104,9 +104,7 @@ namespace HZH_Controls.Controls
                 }
             }
         }
-
-
-
+        
         /// <summary>
         /// The m data source
         /// </summary>

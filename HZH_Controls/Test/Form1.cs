@@ -24,10 +24,10 @@ namespace Test
         {         
             for (int i = 0; i < 3; i++)
             {
-                TreeNode tn = new TreeNode("  父节点" + i);
+                TreeNode tn = new TreeNode("父节点" + i);
                 for (int j = 0; j < 3; j++)
                 {
-                    tn.Nodes.Add("    子节点" + j);
+                    tn.Nodes.Add("子节点" + j);
                 }
                 this.treeViewEx1.Nodes.Add(tn);
             }
