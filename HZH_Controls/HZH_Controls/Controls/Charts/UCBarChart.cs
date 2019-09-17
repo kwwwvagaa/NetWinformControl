@@ -641,7 +641,7 @@ namespace HZH_Controls.Controls
                     for (int j = i * intItemNameComCount; j < barChartItems.Length && j < (i + 1) * intItemNameComCount; j++)
                     {
                         Rectangle rectColor = new Rectangle(intLeft + (j % intItemNameComCount) * intItemNameWidth, intTop, 20, intItemNameHeight);
-                        g.FillRectangle(new SolidBrush(barChartItems[j].BarBackColor), rectColor);
+                        g.FillRectangle(new SolidBrush(barChartItems[j].BarBackColor??ControlHelper.Colors[j]), rectColor);
                         g.DrawString(barChartItems[j].ItemName, Font, new SolidBrush(ForeColor), new Point(rectColor.Right + 2, rectColor.Top));
                     }
                 }
@@ -721,7 +721,7 @@ namespace HZH_Controls.Controls
                     RectangleF rect = new RectangleF(_fltLeft + _fltSplitWidth * j + (1F - barChartItems[j].BarPercentWidth) * _fltSplitWidth / 2f, fltValueY,
                     _fltSplitWidth * barChartItems[j].BarPercentWidth, (float)(height - intBottomY) - fltValueY);
 
-                    Color color = barChartItems[j].BarBackColor;
+                    Color color = barChartItems[j].BarBackColor ?? ControlHelper.Colors[j];
 
                     //画柱状
                     if (useGradient)

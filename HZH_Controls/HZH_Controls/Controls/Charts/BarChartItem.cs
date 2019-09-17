@@ -25,11 +25,7 @@ namespace HZH_Controls.Controls
     /// Class BarChartItem.
     /// </summary>
     public class BarChartItem
-    {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BarChartItem"/> class.
-        /// </summary>
-        public BarChartItem() { }
+    {        
         /// <summary>
         /// Initializes a new instance of the <see cref="BarChartItem"/> class.
         /// </summary>
@@ -37,9 +33,9 @@ namespace HZH_Controls.Controls
         /// <param name="_itemName">Name of the item.</param>
         /// <param name="_barPercentWidth">柱状图占平均宽度的百分比，默认0.8，即80%.</param>
         public BarChartItem(
-            Color _barBackColor,
             string _itemName = "",
-            float _barPercentWidth = 0.8f)
+            Color? _barBackColor = null,
+            float _barPercentWidth = 0.9f)
         {
             barBackColor = _barBackColor;
             itemName = _itemName;
@@ -48,13 +44,13 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The bar back color
         /// </summary>
-        private Color barBackColor = Color.FromArgb(255, 77, 59);
+        private Color? barBackColor ;
 
         /// <summary>
         /// Gets or sets the color of the bar back.
         /// </summary>
         /// <value>The color of the bar back.</value>
-        public Color BarBackColor
+        public Color? BarBackColor
         {
             get { return barBackColor; }
             set { barBackColor = value; }
@@ -63,10 +59,10 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The bar percent width
         /// </summary>
-        private float barPercentWidth = 0.8f;
+        private float barPercentWidth = 0.9f;
 
         /// <summary>
-        /// 获取或设置柱状图占平均宽度的百分比，默认0.8，即80%
+        /// 获取或设置柱状图占平均宽度的百分比，默认0.9，即90%
         /// </summary>
         /// <value>The width of the bar percent.</value>
         public float BarPercentWidth
