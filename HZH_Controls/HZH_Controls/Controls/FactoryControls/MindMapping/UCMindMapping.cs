@@ -31,16 +31,30 @@ namespace HZH_Controls.Controls
     /// <seealso cref="System.Windows.Forms.UserControl" />
     internal class UCMindMapping : UserControl
     {
+        /// <summary>
+        /// The item context menu strip
+        /// </summary>
         private ContextMenuStrip itemContextMenuStrip;
 
+        /// <summary>
+        /// Gets or sets the item context menu strip.
+        /// </summary>
+        /// <value>The item context menu strip.</value>
         [Description("节点关联的右键菜单"), Category("自定义")]
         public ContextMenuStrip ItemContextMenuStrip
         {
             get { return itemContextMenuStrip; }
             set { itemContextMenuStrip = value; }
         }
+        /// <summary>
+        /// The item backcolor
+        /// </summary>
         private Color itemBackcolor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the item backcolor.
+        /// </summary>
+        /// <value>The item backcolor.</value>
         [Description("节点背景色，优先级小于数据源中设置的背景色"), Category("自定义")]
         public Color ItemBackcolor
         {
@@ -93,7 +107,14 @@ namespace HZH_Controls.Controls
         /// </summary>
         private MindMappingItemEntity dataSource;
 
+        /// <summary>
+        /// The select entity
+        /// </summary>
         private MindMappingItemEntity selectEntity;
+        /// <summary>
+        /// Gets the select entity.
+        /// </summary>
+        /// <value>The select entity.</value>
         [Description("选中的数据源"), Category("自定义")]
         public MindMappingItemEntity SelectEntity
         {
@@ -116,7 +137,7 @@ namespace HZH_Controls.Controls
             }
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCMindMapping"/> class.
+        /// Initializes a new instance of the <see cref="UCMindMapping" /> class.
         /// </summary>
         public UCMindMapping()
         {
@@ -139,7 +160,7 @@ namespace HZH_Controls.Controls
         /// Handles the Load event of the UCMindMapping control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCMindMapping_Load(object sender, EventArgs e)
         {
             if (this.Parent != null)
@@ -156,7 +177,7 @@ namespace HZH_Controls.Controls
         /// 双击处理，主要用于检测节点双击展开折叠
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCMindMapping_DoubleClick(object sender, EventArgs e)
         {
             var mouseLocation = this.PointToClient(Control.MousePosition);
@@ -173,7 +194,7 @@ namespace HZH_Controls.Controls
         /// 单击处理，主要用于单击节点事件和，展开关闭圆圈处理
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCMindMapping_Click(object sender, EventArgs e)
         {
             var mouseLocation = this.PointToClient(Control.MousePosition);
@@ -186,6 +207,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the MouseClick event of the UCMindMapping control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         void UCMindMapping_MouseClick(object sender, MouseEventArgs e)
         {
             if (itemContextMenuStrip != null && e.Button == System.Windows.Forms.MouseButtons.Right)
@@ -203,6 +229,7 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <param name="item">The item.</param>
         /// <param name="mouseLocation">The mouse location.</param>
+        /// <param name="blnDoExpansion">if set to <c>true</c> [BLN do expansion].</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         private bool CheckDrawRectClick(MindMappingItemEntity item, Point mouseLocation, bool blnDoExpansion = true)
         {

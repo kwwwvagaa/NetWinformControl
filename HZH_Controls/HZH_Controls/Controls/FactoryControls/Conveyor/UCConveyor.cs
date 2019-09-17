@@ -158,7 +158,7 @@ namespace HZH_Controls.Controls
         /// </summary>
         Timer m_timer;
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCConveyor"/> class.
+        /// Initializes a new instance of the <see cref="UCConveyor" /> class.
         /// </summary>
         public UCConveyor()
         {
@@ -180,7 +180,7 @@ namespace HZH_Controls.Controls
         /// Handles the Tick event of the timer control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void timer_Tick(object sender, EventArgs e)
         {
             intLineLeft += 2;
@@ -193,7 +193,7 @@ namespace HZH_Controls.Controls
         /// Handles the SizeChanged event of the UCConveyor control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCConveyor_SizeChanged(object sender, EventArgs e)
         {
             ResetWorkingRect();

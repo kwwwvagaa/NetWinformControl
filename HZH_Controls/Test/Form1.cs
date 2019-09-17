@@ -243,5 +243,10 @@ namespace Test
             new Form6().Show();
         }
 
+        private void button15_Click(object sender, EventArgs e)
+        {
+            new FrmBarCharts().Show();
+        }
+
     }
 }

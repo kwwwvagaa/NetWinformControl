@@ -33,8 +33,15 @@ namespace HZH_Controls.Controls
     public partial class UCMindMappingPanel : UserControl
     {
 
+        /// <summary>
+        /// The item context menu strip
+        /// </summary>
         private ContextMenuStrip itemContextMenuStrip;
 
+        /// <summary>
+        /// Gets or sets the item context menu strip.
+        /// </summary>
+        /// <value>The item context menu strip.</value>
         [Description("节点关联的右键菜单"), Category("自定义")]
         public ContextMenuStrip ItemContextMenuStrip
         {
@@ -46,8 +53,15 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The item backcolor
+        /// </summary>
         private Color itemBackcolor = Color.FromArgb(255, 77, 59);
 
+        /// <summary>
+        /// Gets or sets the item backcolor.
+        /// </summary>
+        /// <value>The item backcolor.</value>
         [Description("节点背景色，优先级小于数据源中设置的背景色"), Category("自定义")]
         public Color ItemBackcolor
         {
@@ -104,7 +118,11 @@ namespace HZH_Controls.Controls
             }
         }
 
-    
+
+        /// <summary>
+        /// Gets the select entity.
+        /// </summary>
+        /// <value>The select entity.</value>
         [Description("选中的数据源"), Category("自定义")]
         public MindMappingItemEntity SelectEntity
         {
@@ -112,7 +130,7 @@ namespace HZH_Controls.Controls
 
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCMindMappingPanel"/> class.
+        /// Initializes a new instance of the <see cref="UCMindMappingPanel" /> class.
         /// </summary>
         public UCMindMappingPanel()
         {
@@ -126,6 +144,11 @@ namespace HZH_Controls.Controls
             ucMindMapping1.ItemClicked += ucMindMapping1_ItemClicked;
         }
 
+        /// <summary>
+        /// Handles the ItemClicked event of the ucMindMapping1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         void ucMindMapping1_ItemClicked(object sender, EventArgs e)
         {
             if (ItemClicked != null)

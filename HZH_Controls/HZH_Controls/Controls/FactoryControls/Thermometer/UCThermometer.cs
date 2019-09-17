@@ -247,7 +247,7 @@ namespace HZH_Controls.Controls
         /// </summary>
         Rectangle m_rectRight;
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCThermometer"/> class.
+        /// Initializes a new instance of the <see cref="UCThermometer" /> class.
         /// </summary>
         public UCThermometer()
         {
@@ -266,7 +266,7 @@ namespace HZH_Controls.Controls
         /// Handles the SizeChanged event of the UCThermometer control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCThermometer_SizeChanged(object sender, EventArgs e)
         {
             m_rectWorking = new Rectangle(this.Width / 2 - this.Width / 8, this.Width / 4, this.Width / 4, this.Height - this.Width / 2);
@@ -369,6 +369,11 @@ namespace HZH_Controls.Controls
             g.DrawString(m_value.ToString("0.##"), Font, new SolidBrush(Color.White), new PointF(rectDi.Left + (rectDi.Width - sizeValue.Width) / 2, rectDi.Top + (rectDi.Height - sizeValue.Height) / 2 + 1));
         }
 
+        /// <summary>
+        /// Gets the unit character.
+        /// </summary>
+        /// <param name="unit">The unit.</param>
+        /// <returns>System.String.</returns>
         private string GetUnitChar(TemperatureUnit unit)
         {
             string strUnit = "℃";
@@ -393,6 +398,11 @@ namespace HZH_Controls.Controls
             return strUnit;
         }
 
+        /// <summary>
+        /// Gets the right value.
+        /// </summary>
+        /// <param name="decValue">The decimal value.</param>
+        /// <returns>System.Decimal.</returns>
         private decimal GetRightValue(decimal decValue)
         {
             //先将左侧的换算为摄氏度

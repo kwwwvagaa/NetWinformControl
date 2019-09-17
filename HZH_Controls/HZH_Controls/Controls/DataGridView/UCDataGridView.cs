@@ -210,8 +210,8 @@ namespace HZH_Controls.Controls
         /// 数据源,支持列表或table，如果使用翻页控件，请使用翻页控件的DataSource
         /// </summary>
         /// <value>The data source.</value>
-        /// <exception cref="System.Exception">数据源不是有效的数据类型，请使用Datatable或列表</exception>
         /// <exception cref="Exception">数据源不是有效的数据类型，请使用Datatable或列表</exception>
+        /// <exception cref="System.Exception">数据源不是有效的数据类型，请使用Datatable或列表</exception>
         [Description("数据源,支持列表或table，如果使用翻页控件，请使用翻页控件的DataSource"), Category("自定义")]
         public object DataSource
         {
@@ -247,8 +247,8 @@ namespace HZH_Controls.Controls
         /// 行元素类型，默认UCDataGridViewItem
         /// </summary>
         /// <value>The type of the row.</value>
-        /// <exception cref="System.Exception">行控件没有实现IDataGridViewRow接口</exception>
         /// <exception cref="Exception">行控件没有实现IDataGridViewRow接口</exception>
+        /// <exception cref="System.Exception">行控件没有实现IDataGridViewRow接口</exception>
         [Description("行控件类型，默认UCDataGridViewRow，如果不满足请自定义行控件实现接口IDataGridViewRow"), Category("自定义")]
         public Type RowType
         {
@@ -268,6 +268,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [automatic rows scroll].
+        /// </summary>
+        /// <value><c>true</c> if [automatic rows scroll]; otherwise, <c>false</c>.</value>
         [Description("行是否显示滚动条"), Category("自定义")]
         public bool AutoRowsScroll
         {
@@ -368,8 +372,8 @@ namespace HZH_Controls.Controls
         /// 翻页控件
         /// </summary>
         /// <value>The page.</value>
-        /// <exception cref="System.Exception">翻页控件没有继承UCPagerControlBase</exception>
         /// <exception cref="Exception">翻页控件没有继承UCPagerControlBase</exception>
+        /// <exception cref="System.Exception">翻页控件没有继承UCPagerControlBase</exception>
         [Description("翻页控件，如果UCPagerControl不满足你的需求，请自定义翻页控件并继承UCPagerControlBase"), Category("自定义")]
         public UCPagerControlBase Page
         {

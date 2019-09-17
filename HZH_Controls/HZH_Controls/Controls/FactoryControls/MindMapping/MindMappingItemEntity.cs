@@ -31,6 +31,9 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <value>The identifier.</value>
         public string ID { get; set; }
+        /// <summary>
+        /// The text
+        /// </summary>
         private string _text;
         /// <summary>
         /// Gets or sets the text.
@@ -85,8 +88,15 @@ namespace HZH_Controls.Controls
             set { backColor = value; }
         }
 
+        /// <summary>
+        /// The font
+        /// </summary>
         private Font font = new Font("微软雅黑", 10);
 
+        /// <summary>
+        /// Gets or sets the font.
+        /// </summary>
+        /// <value>The font.</value>
         public Font Font
         {
             get { return font; }
@@ -111,6 +121,9 @@ namespace HZH_Controls.Controls
             get { return foreColor; }
             set { foreColor = value; }
         }
+        /// <summary>
+        /// The is expansion
+        /// </summary>
         private bool _IsExpansion = false;
         /// <summary>
         /// Gets or sets a value indicating whether the instance is expanded.

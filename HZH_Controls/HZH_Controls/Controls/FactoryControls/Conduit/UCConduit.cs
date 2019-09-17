@@ -144,6 +144,9 @@ namespace HZH_Controls.Controls.Conduit
             }
         }
 
+        /// <summary>
+        /// The conduit width
+        /// </summary>
         int conduitWidth = 50;
 
         /// <summary>
@@ -175,7 +178,7 @@ namespace HZH_Controls.Controls.Conduit
         /// </summary>
         Timer m_timer;
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCConduit"/> class.
+        /// Initializes a new instance of the <see cref="UCConduit" /> class.
         /// </summary>
         public UCConduit()
         {
@@ -198,7 +201,7 @@ namespace HZH_Controls.Controls.Conduit
         /// Handles the Tick event of the timer control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void timer_Tick(object sender, EventArgs e)
         {
             intLineLeft += 2;
@@ -212,7 +215,7 @@ namespace HZH_Controls.Controls.Conduit
         /// Handles the SizeChanged event of the UCConduit control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCConduit_SizeChanged(object sender, EventArgs e)
         {
             intPenWidth = conduitStyle.ToString().StartsWith("H") ? this.Height : this.Width;

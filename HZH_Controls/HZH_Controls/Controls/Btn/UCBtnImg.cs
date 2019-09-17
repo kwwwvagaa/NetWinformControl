@@ -67,7 +67,14 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// The image font icons
+        /// </summary>
         private object imageFontIcons;
+        /// <summary>
+        /// Gets or sets the image font icons.
+        /// </summary>
+        /// <value>The image font icons.</value>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Editor(typeof(ImagePropertyEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public object ImageFontIcons

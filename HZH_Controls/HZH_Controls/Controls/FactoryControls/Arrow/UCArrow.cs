@@ -163,7 +163,7 @@ namespace HZH_Controls.Controls
         /// </summary>
         GraphicsPath m_path;
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCArrow"/> class.
+        /// Initializes a new instance of the <see cref="UCArrow" /> class.
         /// </summary>
         public UCArrow()
         {
@@ -183,7 +183,7 @@ namespace HZH_Controls.Controls
         /// Handles the SizeChanged event of the UCArrow control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCArrow_SizeChanged(object sender, EventArgs e)
         {
             ResetPath();

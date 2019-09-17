@@ -32,6 +32,9 @@ namespace HZH_Controls.Controls
     /// <seealso cref="System.Windows.Forms.UserControl" />
     public class UCValve : UserControl
     {
+        /// <summary>
+        /// Occurs when [open checked].
+        /// </summary>
         [Description("打开状态改变事件"), Category("自定义")]
         public event EventHandler OpenChecked;
         /// <summary>

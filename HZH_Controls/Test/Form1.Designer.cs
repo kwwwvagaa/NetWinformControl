@@ -100,6 +100,7 @@
             this.button14 = new System.Windows.Forms.Button();
             this.ucSplitLine_V1 = new HZH_Controls.Controls.UCSplitLine_V();
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
+            this.button15 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -1253,6 +1254,16 @@
             this.ucSplitLine_H1.TabIndex = 8;
             this.ucSplitLine_H1.TabStop = false;
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(475, 49);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(62, 23);
+            this.button15.TabIndex = 0;
+            this.button15.Text = "柱状图";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1269,6 +1280,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
@@ -1373,6 +1385,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
     }
 }
 

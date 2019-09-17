@@ -113,7 +113,7 @@ namespace HZH_Controls.Controls
         /// </summary>
         Rectangle m_rectWorking;
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCAlarmLamp"/> class.
+        /// Initializes a new instance of the <see cref="UCAlarmLamp" /> class.
         /// </summary>
         public UCAlarmLamp()
         {
@@ -135,7 +135,7 @@ namespace HZH_Controls.Controls
         /// Handles the SizeChanged event of the UCAlarmLamp control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCAlarmLamp_SizeChanged(object sender, EventArgs e)
         {
             m_rectWorking = new Rectangle(10, 0, this.Width - 20, this.Height);
@@ -144,7 +144,7 @@ namespace HZH_Controls.Controls
         /// Handles the Tick event of the timer control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void timer_Tick(object sender, EventArgs e)
         {
             intColorIndex++;

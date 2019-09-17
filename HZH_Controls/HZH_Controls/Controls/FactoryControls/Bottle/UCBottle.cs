@@ -244,7 +244,7 @@ namespace HZH_Controls.Controls
         /// Handles the SizeChanged event of the UCBottle control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCBottle_SizeChanged(object sender, EventArgs e)
         {
             ResetWorkingRect();

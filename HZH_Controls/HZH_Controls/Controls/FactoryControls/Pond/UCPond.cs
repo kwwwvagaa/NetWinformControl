@@ -125,6 +125,10 @@ namespace HZH_Controls.Controls
         /// </summary>
         private Color liquidColor = Color.FromArgb(3, 169, 243);
 
+        /// <summary>
+        /// Gets or sets the color of the liquid.
+        /// </summary>
+        /// <value>The color of the liquid.</value>
         [Description("液体颜色"), Category("自定义")]
         public Color LiquidColor
         {
@@ -132,7 +136,7 @@ namespace HZH_Controls.Controls
             set { liquidColor = value; }
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UCPond"/> class.
+        /// Initializes a new instance of the <see cref="UCPond" /> class.
         /// </summary>
         public UCPond()
         {

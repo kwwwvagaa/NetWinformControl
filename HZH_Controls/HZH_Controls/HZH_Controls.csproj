@@ -33,9 +33,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +46,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Charts\AuxiliaryLine.cs" />
+    <Compile Include="Controls\Charts\Axis.cs" />
+    <Compile Include="Controls\Charts\AxisCollection.cs" />
+    <Compile Include="Controls\Charts\AxisFormat.cs" />
+    <Compile Include="Controls\Charts\AxisLabel.cs" />
+    <Compile Include="Controls\Charts\AxisPosition.cs" />
+    <Compile Include="Controls\Charts\AxisType.cs" />
+    <Compile Include="Controls\Charts\BarChartItem.cs" />
+    <Compile Include="Controls\Charts\ChartPoint.cs" />
+    <Compile Include="Controls\Charts\ChartPointCollection.cs" />
+    <Compile Include="Controls\Charts\ChartPointEventArgs.cs" />
+    <Compile Include="Controls\Charts\ChartPointEventHandler.cs" />
+    <Compile Include="Controls\Charts\ChartsHelper.cs" />
+    <Compile Include="Controls\Charts\GraphDirection.cs" />
+    <Compile Include="Controls\Charts\UCBarChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Charts\UCChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Charts\SelectMode.cs" />
+    <Compile Include="Controls\Charts\SeriesBase.cs" />
+    <Compile Include="Controls\Charts\SeriesCollection.cs" />
+    <Compile Include="Controls\Charts\SeriesCollectionEditor.cs" />
+    <Compile Include="Controls\Charts\SeriesFormat.cs" />
+    <Compile Include="Controls\Charts\Series\BezierSeries.cs" />
+    <Compile Include="Controls\Charts\Series\ColumnSeries.cs" />
+    <Compile Include="Controls\Charts\Series\LabelSeries.cs" />
+    <Compile Include="Controls\Charts\Series\LineSeries.cs" />
+    <Compile Include="Controls\Charts\Series\PointSeries.cs" />
+    <Compile Include="Controls\Charts\Series\StandardLineSeries.cs" />
+    <Compile Include="Controls\Charts\ZoomType.cs" />
     <Compile Include="Controls\FactoryControls\Arrow\UCArrow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -884,6 +919,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
