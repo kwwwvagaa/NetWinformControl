@@ -661,7 +661,7 @@ namespace HZH_Controls.Controls
                     }
                     if (lastItem != null && intSourceCount == m_showCount)
                     {
-                        lastItem.Height = this.panRow.Height - (m_showCount - 1) * m_rowHeight;
+                        lastItem.Height = this.panRow.Height - (m_showCount - 1) * m_rowHeight-2;
                     }
                 }
                 else
