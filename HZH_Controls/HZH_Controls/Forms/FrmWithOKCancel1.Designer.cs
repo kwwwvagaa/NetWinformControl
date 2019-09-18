@@ -67,7 +67,7 @@ namespace HZH_Controls.Forms
             this.btnOK.BtnText = "确定";
             this.btnOK.ConerRadius = 5;
             this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOK.Dock = System.Windows.Forms.DockStyle.Fill;            
+            this.btnOK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnOK.FillColor = System.Drawing.Color.White;
             this.btnOK.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnOK.IsRadius = false;
@@ -81,6 +81,7 @@ namespace HZH_Controls.Forms
             this.btnOK.Size = new System.Drawing.Size(213, 62);
             this.btnOK.TabIndex = 0;
             this.btnOK.TabStop = false;
+            this.btnOK.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnOK.TipsText = "";
             this.btnOK.BtnClick += new System.EventHandler(this.btnOK_BtnClick);
             // 
@@ -107,6 +108,7 @@ namespace HZH_Controls.Forms
             this.btnCancel.Size = new System.Drawing.Size(213, 62);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.TabStop = false;
+            this.btnCancel.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnCancel.TipsText = "";
             this.btnCancel.BtnClick += new System.EventHandler(this.btnCancel_BtnClick);
             // 

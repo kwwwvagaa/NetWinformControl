@@ -48,6 +48,7 @@ namespace HZH_Controls.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAnchorTips));
             this.SuspendLayout();
             // 
             // FrmAnchorTips
@@ -56,6 +57,7 @@ namespace HZH_Controls.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(226, 83);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAnchorTips";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

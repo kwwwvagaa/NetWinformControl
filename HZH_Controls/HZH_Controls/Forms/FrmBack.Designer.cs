@@ -98,6 +98,7 @@ namespace HZH_Controls.Forms
             this.btnBack1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnBack1.Image = ((System.Drawing.Image)(resources.GetObject("btnBack1.Image")));
             this.btnBack1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBack1.ImageFontIcons = null;
             this.btnBack1.IsRadius = true;
             this.btnBack1.IsShowRect = true;
             this.btnBack1.IsShowTips = false;
@@ -110,6 +111,7 @@ namespace HZH_Controls.Forms
             this.btnBack1.TabIndex = 0;
             this.btnBack1.TabStop = false;
             this.btnBack1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBack1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnBack1.TipsText = "";
             this.btnBack1.BtnClick += new System.EventHandler(this.btnBack1_btnClick);
             // 

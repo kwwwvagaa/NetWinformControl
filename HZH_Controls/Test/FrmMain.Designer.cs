@@ -95,6 +95,7 @@
             this.Controls.Add(this.panControl);
             this.Controls.Add(this.ucSplitLine_V1);
             this.Controls.Add(this.tvMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsFullSize = true;
             this.IsShowCloseBtn = true;
             this.Name = "FrmMain";
