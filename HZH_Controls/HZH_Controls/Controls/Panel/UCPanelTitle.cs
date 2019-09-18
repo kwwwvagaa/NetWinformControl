@@ -87,8 +87,15 @@ namespace HZH_Controls.Controls
                 {
                     this.Height = m_intMaxHeight;
                 }
-
-                lblTitle.Image = GetImg();
+               
+                if (isCanExpand)
+                {
+                    lblTitle.Image = GetImg();
+                }
+                else
+                {
+                    lblTitle.Image = null;
+                }              
             }
         }
 

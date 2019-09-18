@@ -25,7 +25,11 @@ namespace HZH_Controls.Controls
     /// Class BarChartItem.
     /// </summary>
     public class BarChartItem
-    {        
+    {
+        public BarChartItem()
+        { 
+        
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="BarChartItem"/> class.
         /// </summary>

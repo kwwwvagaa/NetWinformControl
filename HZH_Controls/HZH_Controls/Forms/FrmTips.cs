@@ -132,6 +132,7 @@ namespace HZH_Controls.Forms
         /// <param name="mode">The mode.</param>
         /// <param name="size">The size.</param>
         /// <param name="state">The state.</param>
+        /// <param name="color">The color.</param>
         /// <returns>FrmTips.</returns>
         public static FrmTips ShowTips(
             Form frm,
@@ -175,6 +176,7 @@ namespace HZH_Controls.Forms
                         }
                         break;
                 }
+
                 frmTips.BackColor = Color.FromArgb((int)state);
 
                 if (state == TipsState.Default)

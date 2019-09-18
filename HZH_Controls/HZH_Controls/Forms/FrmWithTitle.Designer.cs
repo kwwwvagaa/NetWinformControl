@@ -86,7 +86,7 @@ namespace HZH_Controls.Forms
             this.btnClose.Size = new System.Drawing.Size(28, 60);
             this.btnClose.TabIndex = 6;
             this.btnClose.Visible = false;
-            this.btnClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnClose_MouseDown_1);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmWithTitle
             // 

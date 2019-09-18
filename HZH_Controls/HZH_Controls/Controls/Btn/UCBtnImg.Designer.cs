@@ -53,12 +53,10 @@ namespace HZH_Controls.Controls
             // lbl
             // 
             this.lbl.Image = global::HZH_Controls.Properties.Resources.back;
-            this.lbl.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             // 
             // UCBtnImg
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.IsShowTips = true;
             this.Name = "UCBtnImg";
             this.ResumeLayout(false);

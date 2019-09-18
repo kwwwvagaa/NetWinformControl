@@ -384,7 +384,7 @@
     <Compile Include="Controls\KeyBord\UCKeyBorderPay.Designer.cs">
       <DependentUpon>UCKeyBorderPay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\List\TreeViewEx.cs">
+    <Compile Include="Controls\Treeview\TreeViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\List\UCHorizontalList.cs">

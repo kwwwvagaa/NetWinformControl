@@ -74,7 +74,6 @@ namespace HZH_Controls.Controls
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(119)))), ((int)(((byte)(232)))));
             this.label3.Location = new System.Drawing.Point(173, 0);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.label3.Size = new System.Drawing.Size(139, 48);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";

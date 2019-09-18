@@ -85,6 +85,13 @@ namespace HZH_Controls
         {
             TextBox txt = sender as TextBox;
             ColorDialog ColorForm = new ColorDialog();
+            ColorForm.AnyColor = true;
+            List<int> lstCustomColors = new List<int>();
+            for (int i = 0; i < 16; i++)
+            {
+                lstCustomColors.Add(ColorTranslator.ToOle(ControlHelper.Colors[i]));
+            }
+            ColorForm.CustomColors = lstCustomColors.ToArray();
             if (ColorForm.ShowDialog() == DialogResult.OK)
             {
                 Color GetColor = ColorForm.Color;

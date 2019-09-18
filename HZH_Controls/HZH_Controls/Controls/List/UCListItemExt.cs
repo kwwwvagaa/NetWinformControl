@@ -54,6 +54,9 @@ namespace HZH_Controls.Controls
             {
                 label3.Text = value;
                 label3.Visible = !string.IsNullOrEmpty(value);
+                var g = label3.CreateGraphics();
+                var size = g.MeasureString(value, label3.Font);
+                label3.Width = (int)size.Width + 10;
             }
         }
 
@@ -143,6 +146,13 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <value>The data source.</value>
         public ListEntity DataSource { get; private set; }
+
+        [Description("分割线颜色"), Category("自定义")]
+        public Color SplitColor
+        {
+            get { return this.splitLine_H1.BackColor; }
+            set { this.splitLine_H1.BackColor = value; }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UCListItemExt" /> class.

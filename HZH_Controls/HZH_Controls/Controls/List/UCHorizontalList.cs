@@ -77,7 +77,14 @@ namespace HZH_Controls.Controls
                 ReloadSource();
             }
         }
+        private Color selectedColor = Color.FromArgb(255, 77, 59);
 
+        [Description("选中颜色"), Category("自定义")]
+        public Color SelectedColor
+        {
+            get { return selectedColor; }
+            set { selectedColor = value; }
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="UCHorizontalList" /> class.
         /// </summary>
@@ -102,6 +109,7 @@ namespace HZH_Controls.Controls
                     foreach (var item in DataSource)
                     {
                         UCHorizontalListItem uc = new UCHorizontalListItem();
+                        uc.SelectedColor = selectedColor;
                         uc.DataSource = item;
                         uc.SelectedItem += uc_SelectItem;
                         this.panList.Controls.Add(uc);

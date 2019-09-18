@@ -50,7 +50,7 @@ namespace HZH_Controls.Controls
             set
             {
                 _DataSource = value;
-                var g=lblTitle.CreateGraphics();
+                var g = lblTitle.CreateGraphics();
                 int intWidth = ControlHelper.GetStringWidth(value.Value, g, lblTitle.Font);
                 g.Dispose();
                 if (intWidth < 50)
@@ -59,6 +59,14 @@ namespace HZH_Controls.Controls
                 lblTitle.Text = value.Value;
                 SetSelect(false);
             }
+        }
+
+        private Color selectedColor = Color.FromArgb(255, 77, 59);
+
+        public Color SelectedColor
+        {
+            get { return selectedColor; }
+            set { selectedColor = value; }
         }
         /// <summary>
         /// Initializes a new instance of the <see cref="UCHorizontalListItem" /> class.
@@ -91,7 +99,8 @@ namespace HZH_Controls.Controls
         {
             if (bln)
             {
-                lblTitle.ForeColor = Color.FromArgb(255, 77, 59);
+                lblTitle.ForeColor = selectedColor;
+                ucSplitLine_H1.BackColor = selectedColor;
                 ucSplitLine_H1.Visible = true;
                 this.lblTitle.Padding = new Padding(0, 0, 0, 5);
             }

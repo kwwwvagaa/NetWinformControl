@@ -83,16 +83,7 @@ namespace HZH_Controls.Forms
             InitializeComponent();
             InitFormMove(this.lblTitle);
         }
-
-        /// <summary>
-        /// Handles the MouseDown event of the btnClose control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
-        private void btnClose_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.Close();
-        }
+       
 
         /// <summary>
         /// Handles the Shown event of the FrmWithTitle control.
@@ -108,15 +99,6 @@ namespace HZH_Controls.Forms
             }
         }
 
-        /// <summary>
-        /// Handles the 1 event of the btnClose_MouseDown control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
-        private void btnClose_MouseDown_1(object sender, MouseEventArgs e)
-        {
-            this.Close();
-        }
 
         /// <summary>
         /// Handles the VisibleChanged event of the FrmWithTitle control.
@@ -125,6 +107,11 @@ namespace HZH_Controls.Forms
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void FrmWithTitle_VisibleChanged(object sender, EventArgs e)
         {
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

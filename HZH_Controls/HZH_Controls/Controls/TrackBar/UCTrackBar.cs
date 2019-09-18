@@ -29,6 +29,7 @@ namespace HZH_Controls.Controls
     /// Implements the <see cref="System.Windows.Forms.Control" />
     /// </summary>
     /// <seealso cref="System.Windows.Forms.Control" />
+    [DefaultEvent("ValueChanged")]
     public class UCTrackBar : Control
     {
         /// <summary>
@@ -248,7 +249,7 @@ namespace HZH_Controls.Controls
             if (m_lineRectangle.Contains(e.Location) || m_trackRectangle.Contains(e.Location))
             {
                 blnDown = true;
-                Value = ((float)e.Location.X / (float)this.Width) * (maxValue - minValue);
+                Value = minValue+((float)e.Location.X / (float)this.Width) * (maxValue - minValue);
                 ShowTips();
             }
         }
@@ -261,7 +262,7 @@ namespace HZH_Controls.Controls
         {
             if (blnDown)
             {
-                Value = ((float)e.Location.X / (float)this.Width) * (maxValue - minValue);
+                Value = minValue + ((float)e.Location.X / (float)this.Width) * (maxValue - minValue);
                 ShowTips();
             }
         }
@@ -330,10 +331,10 @@ namespace HZH_Controls.Controls
             g.FillPath(new SolidBrush(m_lineColor), pathLine);
 
 
-            GraphicsPath valueLine = ControlHelper.CreateRoundedRectanglePath(new RectangleF(lineWidth, (this.Size.Height - lineWidth) / 2, ((float)m_value / (float)(maxValue - minValue)) * m_lineRectangle.Width, lineWidth), 5);
+            GraphicsPath valueLine = ControlHelper.CreateRoundedRectanglePath(new RectangleF(lineWidth, (this.Size.Height - lineWidth) / 2, ((float)(m_value - minValue) / (float)(maxValue - minValue)) * m_lineRectangle.Width, lineWidth), 5);
             g.FillPath(new SolidBrush(m_valueColor), valueLine);
 
-            m_trackRectangle = new RectangleF(m_lineRectangle.Left - lineWidth + (((float)m_value / (float)(maxValue - minValue)) * (this.Size.Width - lineWidth * 2)), (this.Size.Height - lineWidth * 2) / 2, lineWidth * 2, lineWidth * 2);
+            m_trackRectangle = new RectangleF(m_lineRectangle.Left - lineWidth + (((float)(m_value - minValue) / (float)(maxValue - minValue)) * (this.Size.Width - lineWidth * 2)), (this.Size.Height - lineWidth * 2) / 2, lineWidth * 2, lineWidth * 2);
             g.FillEllipse(new SolidBrush(m_valueColor), m_trackRectangle);
             g.FillEllipse(Brushes.White, new RectangleF(m_trackRectangle.X + m_trackRectangle.Width / 4, m_trackRectangle.Y + m_trackRectangle.Height / 4, m_trackRectangle.Width / 2, m_trackRectangle.Height / 2));
         }

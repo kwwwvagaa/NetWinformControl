@@ -209,6 +209,13 @@ namespace HZH_Controls.Controls
             set { _selectedCanClick = value; }
         }
 
+        private Color splitColor = Color.FromArgb(238, 238, 238);
+        [Description("分割线颜色"), Category("自定义"), Browsable(true)]
+        public Color SplitColor
+        {
+            get { return splitColor; }
+            set { splitColor = value; }
+        }
         /// <summary>
         /// 选中的节点
         /// </summary>
@@ -247,6 +254,7 @@ namespace HZH_Controls.Controls
                 {
                     var item = lst[i];
                     UCListItemExt li = new UCListItemExt();
+                    li.SplitColor = splitColor;
                     li.Height = _itemHeight;
                     li.TitleFont = _titleFont;
                     li.Title2Font = _title2Font;

@@ -405,7 +405,7 @@ namespace HZH_Controls.Controls
 
             //画指针
             g.FillEllipse(new SolidBrush(Color.FromArgb(100, pointerColor.R, pointerColor.G, pointerColor.B)), new Rectangle(m_rectWorking.Left + m_rectWorking.Width / 2 - 10, m_rectWorking.Top + m_rectWorking.Width / 2 - 10, 20, 20));
-            g.FillEllipse(Brushes.Red, new Rectangle(m_rectWorking.Left + m_rectWorking.Width / 2 - 5, m_rectWorking.Top + m_rectWorking.Width / 2 - 5, 10, 10));
+            g.FillEllipse(new SolidBrush(pointerColor), new Rectangle(m_rectWorking.Left + m_rectWorking.Width / 2 - 5, m_rectWorking.Top + m_rectWorking.Width / 2 - 5, 10, 10));
             float fltValueAngle = (fltStartAngle + ((float)(m_value - minValue) / (float)(maxValue - minValue)) * (float)meterDegrees - 180) % 360;
             float intValueY1 = (float)(m_rectWorking.Top + m_rectWorking.Width / 2 - ((m_rectWorking.Width / 2 - 30) * Math.Sin(Math.PI * (fltValueAngle / 180.00F))));
             float intValueX1 = (float)(m_rectWorking.Left + (m_rectWorking.Width / 2 - ((m_rectWorking.Width / 2 - 30) * Math.Cos(Math.PI * (fltValueAngle / 180.00F)))));

@@ -187,7 +187,7 @@ namespace HZH_Controls.Controls
                 return ItemWidth + 50;
             else
             {
-                return 1 + _Childrens.Max(p => p == null ? 0 : p.AllChildrensMaxShowWidth);
+                return ItemWidth + 50 + _Childrens.Max(p => p == null ? 0 : p.AllChildrensMaxShowWidth);
             }
         }
         /// <summary>

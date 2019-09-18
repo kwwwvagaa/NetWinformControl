@@ -80,7 +80,7 @@ namespace HZH_Controls.Controls
                 else
                 {
                     base.DataSource = value;
-                
+
                 }
                 PageIndex = 1;
                 ResetPageCount();
@@ -88,7 +88,7 @@ namespace HZH_Controls.Controls
                 if (ShowSourceChanged != null)
                 {
                     ShowSourceChanged(s);
-                }              
+                }
             }
         }
 
@@ -106,6 +106,11 @@ namespace HZH_Controls.Controls
             {
                 base.PageSize = value;
                 ResetPageCount();
+                var s = GetCurrentSource();
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(s);
+                }
             }
         }
 
@@ -189,7 +194,8 @@ namespace HZH_Controls.Controls
         {
             if (PageSize > 0)
             {
-                PageCount = base.DataSource.Count / base.PageSize + (base.DataSource.Count % base.PageSize > 0 ? 1 : 0);
+                if (base.DataSource != null)
+                    PageCount = base.DataSource.Count / base.PageSize + (base.DataSource.Count % base.PageSize > 0 ? 1 : 0);
             }
             txtPage.MaxValue = PageCount;
             txtPage.MinValue = 1;

@@ -49,6 +49,7 @@ namespace HZH_Controls.Controls
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtMinute = new HZH_Controls.Controls.TextBoxEx();
             this.label4 = new System.Windows.Forms.Label();
             this.txtHour = new HZH_Controls.Controls.TextBoxEx();
@@ -58,7 +59,6 @@ namespace HZH_Controls.Controls
             this.txtMonth = new HZH_Controls.Controls.TextBoxEx();
             this.label1 = new System.Windows.Forms.Label();
             this.txtYear = new HZH_Controls.Controls.TextBoxEx();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,8 +78,21 @@ namespace HZH_Controls.Controls
             this.panel1.Location = new System.Drawing.Point(3, 6);
             this.panel1.MaximumSize = new System.Drawing.Size(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(339, 27);
+            this.panel1.Size = new System.Drawing.Size(330, 27);
             this.panel1.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label5.Location = new System.Drawing.Point(301, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 27);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "分";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtMinute
             // 
@@ -88,7 +101,7 @@ namespace HZH_Controls.Controls
             this.txtMinute.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtMinute.Font = new System.Drawing.Font("Arial Unicode MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtMinute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.txtMinute.InputType = TextInputType.Integer;
+            this.txtMinute.InputType = HZH_Controls.TextInputType.Integer;
             this.txtMinute.Location = new System.Drawing.Point(272, 0);
             this.txtMinute.MaxValue = new decimal(new int[] {
             59,
@@ -134,7 +147,7 @@ namespace HZH_Controls.Controls
             this.txtHour.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtHour.Font = new System.Drawing.Font("Arial Unicode MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.txtHour.InputType = TextInputType.Integer;
+            this.txtHour.InputType = HZH_Controls.TextInputType.Integer;
             this.txtHour.Location = new System.Drawing.Point(211, 0);
             this.txtHour.MaxValue = new decimal(new int[] {
             23,
@@ -181,7 +194,7 @@ namespace HZH_Controls.Controls
             this.txtDay.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtDay.Font = new System.Drawing.Font("Arial Unicode MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.txtDay.InputType = TextInputType.Integer;
+            this.txtDay.InputType = HZH_Controls.TextInputType.Integer;
             this.txtDay.Location = new System.Drawing.Point(144, 0);
             this.txtDay.MaxValue = new decimal(new int[] {
             31,
@@ -228,7 +241,7 @@ namespace HZH_Controls.Controls
             this.txtMonth.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtMonth.Font = new System.Drawing.Font("Arial Unicode MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.txtMonth.InputType = TextInputType.Integer;
+            this.txtMonth.InputType = HZH_Controls.TextInputType.Integer;
             this.txtMonth.Location = new System.Drawing.Point(83, 0);
             this.txtMonth.MaxValue = new decimal(new int[] {
             12,
@@ -276,7 +289,7 @@ namespace HZH_Controls.Controls
             this.txtYear.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtYear.Font = new System.Drawing.Font("Arial Unicode MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.txtYear.InputType = TextInputType.Integer;
+            this.txtYear.InputType = HZH_Controls.TextInputType.Integer;
             this.txtYear.Location = new System.Drawing.Point(0, 0);
             this.txtYear.MaxValue = new decimal(new int[] {
             2099,
@@ -303,30 +316,17 @@ namespace HZH_Controls.Controls
             this.txtYear.TextChanged += new System.EventHandler(this.txtYear_TextChanged);
             this.txtYear.Leave += new System.EventHandler(this.txtYear_Leave);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label5.Location = new System.Drawing.Point(301, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 27);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "分";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // UCDatePickerExt
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.White;
             this.ConerRadius = 5;
             this.Controls.Add(this.panel1);
-            this.IsShowRect = true;
             this.IsRadius = true;
+            this.IsShowRect = true;
             this.Name = "UCDatePickerExt";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(345, 39);
+            this.Size = new System.Drawing.Size(336, 39);
             this.Load += new System.EventHandler(this.UCDatePickerExt_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

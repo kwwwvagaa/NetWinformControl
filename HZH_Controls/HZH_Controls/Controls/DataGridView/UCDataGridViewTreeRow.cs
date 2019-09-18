@@ -408,7 +408,8 @@ namespace HZH_Controls.Controls
                 }
                 else
                 {
-                    panLeft.Tag = 0;
+                    panChildGrid.Height = 0;
+
                     Control[] cs = panChildGrid.Controls.Find("panLeft", true);
                     foreach (var item in cs)
                     {
@@ -421,9 +422,9 @@ namespace HZH_Controls.Controls
                     {
                         item.Height = 0;
                     }
-
-                    panChildGrid.Height = 0;
                     panLeft.BackgroundImage = Properties.Resources.caret_right;
+                    this.Height = m_rowHeight;
+                    panLeft.Tag = 0;
                 }
             }
             finally

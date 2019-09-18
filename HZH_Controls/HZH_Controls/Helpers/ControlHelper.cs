@@ -833,7 +833,6 @@ namespace HZH_Controls
             list.Add(Color.FromArgb(121, 85, 72));
             list.Add(Color.FromArgb(158, 158, 158));
             list.Add(Color.FromArgb(96, 125, 139));
-
             list.Add(Color.FromArgb(252, 117, 85));
             list.Add(Color.FromArgb(172, 113, 191));
             list.Add(Color.FromArgb(115, 131, 253));
@@ -853,6 +852,7 @@ namespace HZH_Controls
             list.Add(Color.FromArgb(0, 206, 209));
             list.Add(Color.FromArgb(0, 178, 238));
             list.Add(Color.FromArgb(56, 142, 142));
+
             Type typeFromHandle = typeof(Color);
             PropertyInfo[] properties = typeFromHandle.GetProperties();
             PropertyInfo[] array = properties;

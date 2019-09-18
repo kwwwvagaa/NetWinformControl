@@ -15,10 +15,5 @@ namespace Test
         {
             InitializeComponent();
         }
-
-        private void tabControlExt1_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
     }
 }

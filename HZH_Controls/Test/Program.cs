@@ -15,19 +15,20 @@ namespace Test
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.ApplicationExit += Application_ApplicationExit;
+            Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            Application.Run(new Form1());
+            Application.Run(new FrmMain());
+        }
+
+        static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        {
+            MessageBox.Show(e.Exception.Message);
         }
 
         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            
+            MessageBox.Show(((Exception)e.ExceptionObject).Message);            
         }
-
-        static void Application_ApplicationExit(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }
