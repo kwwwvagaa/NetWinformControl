@@ -554,7 +554,7 @@ namespace HZH_Controls.Controls
         /// 任务编号:POS
         /// </summary>
         /// <returns>返回值</returns>
-        private void ResetShowCount()
+        public void ResetShowCount()
         {
             if (DesignMode)
             { return; }
@@ -665,7 +665,7 @@ namespace HZH_Controls.Controls
                     }
                     if (lastItem != null && intSourceCount == m_showCount)
                     {
-                        lastItem.Height = this.panRow.Height - (m_showCount - 1) * m_rowHeight-2;
+                        lastItem.Height = this.panRow.Height - (m_showCount - 1) * m_rowHeight - 2;
                     }
                 }
                 else

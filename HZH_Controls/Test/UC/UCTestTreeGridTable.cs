@@ -16,6 +16,17 @@ namespace Test.UC
         public UCTestTreeGridTable()
         {
             InitializeComponent();
+            ucDataGridView1.SizeChanged += ucDataGridView1_SizeChanged;
+        }
+
+        void ucDataGridView1_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.ucDataGridView1.Page != null)
+            {
+                this.ucDataGridView1.ResetShowCount();
+                this.ucDataGridView1.Page.PageSize = this.ucDataGridView1.ShowCount;
+                this.ucDataGridView1.DataSource = this.ucDataGridView1.Page.GetCurrentSource();
+            }
         }
 
         private void UCTestTreeGridTable_Load(object sender, EventArgs e)
