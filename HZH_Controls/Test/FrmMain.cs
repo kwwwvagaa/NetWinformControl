@@ -57,6 +57,7 @@ namespace Test
                 tnControl.Nodes.Add("水波");
                 tnControl.Nodes.Add("有标题的面板");
                 tnControl.Nodes.Add("图标");
+                tnControl.Nodes.Add("滚动条");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -196,6 +197,9 @@ namespace Test
                     break;
                 case "图标":
                     AddControl(new UC.UCTestIcon() { Dock = DockStyle.Fill });
+                    break;
+                case "滚动条":
+                    AddControl(new UC.UCTestScrollbar() { Dock = DockStyle.Fill });
                     break;
 
                 #endregion

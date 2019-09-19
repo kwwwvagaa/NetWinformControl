@@ -498,6 +498,7 @@
             this.Controls.Add(this.ucConduit2);
             this.Controls.Add(this.ucConduit18);
             this.Controls.Add(this.ucConduit17);
+            this.Controls.Add(this.ucConduit1);
             this.Controls.Add(this.ucConduit19);
             this.Controls.Add(this.ucConduit20);
             this.Controls.Add(this.ucConduit21);
@@ -512,7 +513,6 @@
             this.Controls.Add(this.ucConduit26);
             this.Controls.Add(this.ucConduit5);
             this.Controls.Add(this.ucConduit10);
-            this.Controls.Add(this.ucConduit1);
             this.Controls.Add(this.ucBottle1);
             this.Controls.Add(this.ucPond2);
             this.Controls.Add(this.ucBlower4);

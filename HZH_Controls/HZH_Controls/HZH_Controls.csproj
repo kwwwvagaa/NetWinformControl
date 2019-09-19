@@ -58,8 +58,10 @@
     <Compile Include="Controls\Charts\ChartPointCollection.cs" />
     <Compile Include="Controls\Charts\ChartPointEventArgs.cs" />
     <Compile Include="Controls\Charts\ChartPointEventHandler.cs" />
-    <Compile Include="Controls\Charts\ChartsHelper.cs" />
-    <Compile Include="Controls\Charts\GraphDirection.cs" />
+    <Compile Include="Controls\ScrollBar\ScrollbarComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\GraphDirection.cs" />
     <Compile Include="Controls\Charts\UCBarChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -277,6 +279,9 @@
       <DependentUpon>UCProcessWave.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Roll\UCRollText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ScrollBar\UCVScrollbar.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Step\UCStep.cs">
@@ -673,6 +678,9 @@
     <EmbeddedResource Include="Controls\RadioButton\UCRadioButton.resx">
       <DependentUpon>UCRadioButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ScrollBar\UCVScrollbar.resx">
+      <DependentUpon>UCVScrollbar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Split\UCSplitLine_H.resx">
       <DependentUpon>UCSplitLine_H.cs</DependentUpon>
     </EmbeddedResource>
@@ -919,7 +927,27 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\ThumbBottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThumbMiddle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThumbSpanBottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThumbSpanTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThumbTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uparrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downarrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

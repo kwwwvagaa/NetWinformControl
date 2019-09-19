@@ -358,8 +358,7 @@ namespace HZH_Controls.Controls
                 base.OnPaint(null);
             }
 
-            //System.Diagnostics.Debug.WriteLine("Pro: " + m.Msg.ToString("X"));
-
+         
         }
 
 

@@ -591,7 +591,7 @@ namespace HZH_Controls.Controls
                 }
             }
 
-            double num = (data_values != null && data_values.Length != 0) ? ChartsHelper.CalculateMaxSectionFrom(data_values) : 5;
+            double num = (data_values != null && data_values.Length != 0) ? ControlHelper.CalculateMaxSectionFrom(data_values) : 5;
             if (value_max_left > 0)
             {
                 num = value_max_left;
@@ -665,15 +665,15 @@ namespace HZH_Controls.Controls
 			};
             g.DrawLine(pen_normal, array2[0], array2[1]);
             g.DrawLine(pen_normal, array2[1], array2[2]);
-            ChartsHelper.PaintTriangle(g, brush_deep, new Point(intLeftX, intTopY - 8), 4, GraphDirection.Upward);
-            ChartsHelper.PaintTriangle(g, brush_deep, new Point(width - intRightX + 5, height - intBottomY), 4, GraphDirection.Rightward);
+            ControlHelper.PaintTriangle(g, brush_deep, new Point(intLeftX, intTopY - 8), 4, GraphDirection.Upward);
+            ControlHelper.PaintTriangle(g, brush_deep, new Point(width - intRightX + 5, height - intBottomY), 4, GraphDirection.Rightward);
 
 
             //画横向分割线
             for (int j = 0; j <= value_Segment; j++)
             {
                 float value = (float)((double)j * (double)(num - value_min_left) / (double)value_Segment + (double)value_min_left);
-                float num6 = ChartsHelper.ComputePaintLocationY((float)num, value_min_left, height - intTopY - intBottomY, value) + (float)intTopY;
+                float num6 = ControlHelper.ComputePaintLocationY((float)num, value_min_left, height - intTopY - intBottomY, value) + (float)intTopY;
                 if (IsNeedPaintDash(num6))
                 {
                     g.DrawLine(pen_normal, intLeftX - 4, num6, intLeftX - 1, num6);
@@ -687,7 +687,7 @@ namespace HZH_Controls.Controls
             //计算辅助线y坐标
             for (int i = 0; i < auxiliary_lines.Count; i++)
             {
-                auxiliary_lines[i].PaintValue = ChartsHelper.ComputePaintLocationY((float)num, value_min_left, height - intTopY - intBottomY, auxiliary_lines[i].Value) + (float)intTopY;
+                auxiliary_lines[i].PaintValue = ControlHelper.ComputePaintLocationY((float)num, value_min_left, height - intTopY - intBottomY, auxiliary_lines[i].Value) + (float)intTopY;
             }
 
             //画辅助线
@@ -715,7 +715,7 @@ namespace HZH_Controls.Controls
                     {
                         break;
                     }
-                    float fltValueY = ChartsHelper.ComputePaintLocationY((float)num, value_min_left, height - intTopY - intBottomY, (float)data_values[i][j]) + (float)intTopY;
+                    float fltValueY = ControlHelper.ComputePaintLocationY((float)num, value_min_left, height - intTopY - intBottomY, (float)data_values[i][j]) + (float)intTopY;
 
 
                     RectangleF rect = new RectangleF(_fltLeft + _fltSplitWidth * j + (1F - barChartItems[j].BarPercentWidth) * _fltSplitWidth / 2f, fltValueY,
@@ -728,7 +728,7 @@ namespace HZH_Controls.Controls
                     {
                         if (rect.Height > 0f)
                         {
-                            using (LinearGradientBrush brush = new LinearGradientBrush(new PointF(rect.X, rect.Y + rect.Height), new PointF(rect.X, rect.Y), ChartsHelper.GetColorLight(color), color))
+                            using (LinearGradientBrush brush = new LinearGradientBrush(new PointF(rect.X, rect.Y + rect.Height), new PointF(rect.X, rect.Y), ControlHelper.GetColorLight(color), color))
                             {
                                 g.FillRectangle(brush, rect);
                             }

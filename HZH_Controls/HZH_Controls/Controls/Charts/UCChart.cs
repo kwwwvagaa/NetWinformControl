@@ -780,8 +780,7 @@ namespace HZH_Controls.Controls
                 graphics.Clip = new Region(_border);
                 DrawSeries(graphics);
                 DrawMarkLine(graphics);
-                stopwatch.Stop();
-                Debug.WriteLine("It took {stopwatch.ElapsedMilliseconds} milliseconds to redraw.");
+                stopwatch.Stop();                
             }
         }
 
@@ -1278,7 +1277,7 @@ namespace HZH_Controls.Controls
                 MainToolTip.SetToolTip(this, chartPointEventArgs.Content);
             }
             stopwatch.Stop();
-            Debug.WriteLine("It took {stopwatch.ElapsedMilliseconds} to find the data.");
+            
         }
 
         /// <summary>

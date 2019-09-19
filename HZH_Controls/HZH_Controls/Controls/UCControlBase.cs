@@ -196,15 +196,23 @@ namespace HZH_Controls.Controls
                 {
                     this.SetWindowRegion();
                 }
+
                 GraphicsPath graphicsPath = new GraphicsPath();
                 if (this._isShowRect || (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor))
                 {
                     Rectangle clientRectangle = base.ClientRectangle;
-                    graphicsPath.AddArc(0, 0, _cornerRadius, _cornerRadius, 180f, 90f);
-                    graphicsPath.AddArc(clientRectangle.Width - _cornerRadius - 1, 0, _cornerRadius, _cornerRadius, 270f, 90f);
-                    graphicsPath.AddArc(clientRectangle.Width - _cornerRadius - 1, clientRectangle.Height - _cornerRadius - 1, _cornerRadius, _cornerRadius, 0f, 90f);
-                    graphicsPath.AddArc(0, clientRectangle.Height - _cornerRadius - 1, _cornerRadius, _cornerRadius, 90f, 90f);
-                    graphicsPath.CloseFigure();
+                    if (_isRadius)
+                    {
+                        graphicsPath.AddArc(0, 0, _cornerRadius, _cornerRadius, 180f, 90f);
+                        graphicsPath.AddArc(clientRectangle.Width - _cornerRadius - 1, 0, _cornerRadius, _cornerRadius, 270f, 90f);
+                        graphicsPath.AddArc(clientRectangle.Width - _cornerRadius - 1, clientRectangle.Height - _cornerRadius - 1, _cornerRadius, _cornerRadius, 0f, 90f);
+                        graphicsPath.AddArc(0, clientRectangle.Height - _cornerRadius - 1, _cornerRadius, _cornerRadius, 90f, 90f);
+                        graphicsPath.CloseFigure();
+                    }
+                    else
+                    {
+                        graphicsPath.AddRectangle(clientRectangle);
+                    }
                 }
                 e.Graphics.SetGDIHigh();
                 if (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor)
@@ -214,7 +222,7 @@ namespace HZH_Controls.Controls
                     Color rectColor = this._rectColor;
                     Pen pen = new Pen(rectColor, (float)this._rectWidth);
                     e.Graphics.DrawPath(pen, graphicsPath);
-                }              
+                }
             }
             base.OnPaint(e);
         }

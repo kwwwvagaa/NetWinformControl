@@ -797,7 +797,7 @@ namespace HZH_Controls.Controls
             }
             if (!string.IsNullOrEmpty(_title))
             {
-                ChartsHelper.DrawString(g, _title, font, _brush, new PointF(x, y), format, -90f);
+                ControlHelper.DrawString(g, _title, font, _brush, new PointF(x, y), format, -90f);
             }
         }
 
@@ -835,7 +835,7 @@ namespace HZH_Controls.Controls
             if (!string.IsNullOrEmpty(_title))
             {
                 SizeF size = g.MeasureString(_title, font);
-                num = ChartsHelper.ConvertSize(size, -90f).Width + 3f;
+                num = ControlHelper.ConvertSize(size, -90f).Width + 3f;
             }
             if (!_labelVisible || _labels.Count < 1)
             {

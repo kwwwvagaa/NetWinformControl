@@ -541,8 +541,8 @@ namespace HZH_Controls.Controls
                         num = (e.Bounds.Height - base.ImageList.ImageSize.Height) / 2;
                         intLeft += base.ImageList.ImageSize.Width;
                     }
-                   
-                    intLeft += e.Node.Level * 20;
+
+                    intLeft += e.Node.Level * Indent;
 
                     if ((e.State == TreeNodeStates.Selected || e.State == TreeNodeStates.Focused || e.State == (TreeNodeStates.Focused | TreeNodeStates.Selected)) && (this._parentNodeCanSelect || e.Node.Nodes.Count <= 0))
                     {
@@ -555,8 +555,8 @@ namespace HZH_Controls.Controls
                         e.Graphics.DrawString(e.Node.Text, font, new SolidBrush(this._nodeForeColor), (float)e.Bounds.X + intLeft, (float)e.Bounds.Y + ((float)this._nodeHeight - this.treeFontSize.Height) / 2f);
                     }
                     if (CheckBoxes)
-                    {                      
-                        Rectangle rectCheck = new Rectangle(e.Bounds.X + 3 + e.Node.Level * 20, e.Bounds.Y + (e.Bounds.Height - 16) / 2, 16, 16);
+                    {
+                        Rectangle rectCheck = new Rectangle(e.Bounds.X + 3 + e.Node.Level * Indent, e.Bounds.Y + (e.Bounds.Height - 16) / 2, 16, 16);
                         GraphicsPath pathCheck = rectCheck.CreateRoundedRectanglePath(3);
                         e.Graphics.FillPath(new SolidBrush(Color.FromArgb(247, 247, 247)), pathCheck);
                         if (e.Node.Checked)
