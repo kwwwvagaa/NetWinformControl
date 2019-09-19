@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : HZH_Controls
 // Created          : 08-08-2019
 //
@@ -141,6 +141,7 @@ namespace HZH_Controls.Controls
             }
             else
             {
+                string Str = "{"+ lbl.Text + "}";
                 SendKeys.Send(lbl.Text);
             }
             if (KeyClick != null)
