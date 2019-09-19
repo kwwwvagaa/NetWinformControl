@@ -62,10 +62,11 @@ namespace HZH_Controls.Controls.ScrollBar
             control.SizeChanged += control_SizeChanged;
             control.LocationChanged += control_LocationChanged;
             control.Disposed += control_Disposed;
+            
             if (control is TreeView)
             {
                 TreeView tv = (TreeView)control;
-                tv.MouseWheel += tv_MouseWheel;
+                tv.MouseWheel += tv_MouseWheel;                
                 tv.AfterSelect += tv_AfterSelect;
                 tv.AfterExpand += tv_AfterExpand;
                 tv.AfterCollapse += tv_AfterCollapse;
@@ -326,7 +327,7 @@ namespace HZH_Controls.Controls.ScrollBar
             {
                 if (intY >= tns[i].Bounds.Top - tv.Nodes[0].Bounds.Top - 3 && intY <= tns[i].Bounds.Bottom - tv.Nodes[0].Bounds.Top + 3)
                 {
-                    tv.SelectedNode = tns[i];                   
+                    tns[i].EnsureVisible();                   
                     return true;
                 }
                 else if (tns[i].IsExpanded && tns[i].Nodes.Count > 0)
