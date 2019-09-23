@@ -816,9 +816,22 @@ namespace HZH_Controls
         static ControlHelper()
         {
             List<Color> list = new List<Color>();
+            list.Add(Color.FromArgb(55, 162, 218));
+            list.Add(Color.FromArgb(50, 197, 233));
+            list.Add(Color.FromArgb(103, 224, 227));
+            list.Add(Color.FromArgb(159, 230, 184));
+            list.Add(Color.FromArgb(255, 219, 92));
+            list.Add(Color.FromArgb(255, 159, 127));
+            list.Add(Color.FromArgb(251, 114, 147));
+            list.Add(Color.FromArgb(224, 98, 174));
+            list.Add(Color.FromArgb(230, 144, 209));
+            list.Add(Color.FromArgb(231, 188, 243));
+            list.Add(Color.FromArgb(157, 150, 245));
+            list.Add(Color.FromArgb(131, 120, 234));
+            list.Add(Color.FromArgb(150, 191, 255));
+
             list.Add(Color.FromArgb(243, 67, 54));
             list.Add(Color.FromArgb(156, 39, 176));
-            list.Add(Color.FromArgb(233, 30, 99));
             list.Add(Color.FromArgb(103, 58, 183));
             list.Add(Color.FromArgb(63, 81, 181));
             list.Add(Color.FromArgb(33, 150, 243));
@@ -828,6 +841,7 @@ namespace HZH_Controls
             list.Add(Color.FromArgb(139, 195, 74));
             list.Add(Color.FromArgb(76, 175, 80));
             list.Add(Color.FromArgb(204, 219, 57));
+            list.Add(Color.FromArgb(233, 30, 99));
             list.Add(Color.FromArgb(254, 234, 59));
             list.Add(Color.FromArgb(254, 192, 7));
             list.Add(Color.FromArgb(254, 152, 0));
@@ -1368,6 +1382,6 @@ namespace HZH_Controls
         }
         #endregion
 
-       
+
     }
 }

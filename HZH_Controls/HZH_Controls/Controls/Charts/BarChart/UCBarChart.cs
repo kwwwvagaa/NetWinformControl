@@ -927,7 +927,7 @@ namespace HZH_Controls.Controls
             base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Transparent;
             ForeColor = System.Drawing.Color.Black;
-            base.Name = "HslBarChart";
+            base.Name = "UCBarChart";
             base.Size = new System.Drawing.Size(440, 264);
             ResumeLayout(false);
         }

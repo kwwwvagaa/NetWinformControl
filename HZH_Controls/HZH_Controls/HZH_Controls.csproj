@@ -46,18 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Charts\AuxiliaryLine.cs" />
+    <Compile Include="Controls\Charts\BarChart\AuxiliaryLine.cs" />
     <Compile Include="Controls\Charts\Axis.cs" />
     <Compile Include="Controls\Charts\AxisCollection.cs" />
     <Compile Include="Controls\Charts\AxisFormat.cs" />
     <Compile Include="Controls\Charts\AxisLabel.cs" />
     <Compile Include="Controls\Charts\AxisPosition.cs" />
     <Compile Include="Controls\Charts\AxisType.cs" />
-    <Compile Include="Controls\Charts\BarChartItem.cs" />
+    <Compile Include="Controls\Charts\BarChart\BarChartItem.cs" />
     <Compile Include="Controls\Charts\ChartPoint.cs" />
     <Compile Include="Controls\Charts\ChartPointCollection.cs" />
     <Compile Include="Controls\Charts\ChartPointEventArgs.cs" />
     <Compile Include="Controls\Charts\ChartPointEventHandler.cs" />
+    <Compile Include="Controls\Charts\PieChart\UCPieChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Charts\PieChart\PieItem.cs" />
     <Compile Include="Controls\ScrollBar\ScrollbarComponent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -66,7 +70,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Helpers\GraphDirection.cs" />
-    <Compile Include="Controls\Charts\UCBarChart.cs">
+    <Compile Include="Controls\Charts\BarChart\UCBarChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Charts\UCChart.cs">

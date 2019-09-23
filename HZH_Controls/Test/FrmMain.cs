@@ -64,6 +64,7 @@ namespace Test
                 tnControl.Nodes.Add("组织结构图");
                 tnCharts.Nodes.Add("滚动图表");
                 tnCharts.Nodes.Add("柱状图");
+                tnCharts.Nodes.Add("饼状图");
                 this.tvMenu.Nodes.Add(tnCharts);
 
                 TreeNode tnFactory = new TreeNode("  工业控件");
@@ -209,7 +210,10 @@ namespace Test
                     AddControl(new UC.UCTestMindMapping() { Dock = DockStyle.Fill });
                     break;
                 case "柱状图":
-                    AddControl(new UC.UCTestBarcharts());
+                     AddControl(new UC.UCTestBarcharts());
+                    break;
+                case "饼状图":
+                    AddControl(new UC.UCTestPieCharts());
                     break;
                 case "滚动图表":
                     AddControl(new UC.UCTestWaveChart() { Dock = DockStyle.Fill });
