@@ -32,11 +32,6 @@ namespace HZH_Controls.Controls
     public class UCPieChart : UserControl
     {
         /// <summary>
-        /// The percent color
-        /// </summary>
-        private Color percentColor = Color.DodgerBlue;
-
-        /// <summary>
         /// The pie items
         /// </summary>
         private PieItem[] pieItems = new PieItem[0];
@@ -312,25 +307,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        /// <summary>
-        /// Sets the margin paint.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        private void SetMarginPaint(int value)
-        {
-            if (value > 500)
-            {
-                margin = 80;
-            }
-            else if (value > 300)
-            {
-                margin = 60;
-            }
-            else
-            {
-                margin = 40;
-            }
-        }
+   
 
         /// <summary>
         /// Gets the center point.
@@ -343,17 +320,6 @@ namespace HZH_Controls.Controls
             return new Point(base.Width / 2 - 1, base.Height / 2 + (titleSize != SizeF.Empty ? ((int)titleSize.Height) : 0) - 1);
         }
 
-        /// <summary>
-        /// Gets the random color.
-        /// </summary>
-        /// <returns>Color.</returns>
-        private Color GetRandomColor()
-        {
-            int num = random.Next(256);
-            int num2 = random.Next(256);
-            int blue = (num + num2 > 430) ? random.Next(100) : random.Next(200);
-            return Color.FromArgb(num, num2, blue);
-        }
 
         /// <summary>
         /// 引发 <see cref="E:System.Windows.Forms.Control.Paint" /> 事件。
@@ -369,13 +335,10 @@ namespace HZH_Controls.Controls
             if (width > 0 && pieItems.Length != 0)
             {
                 if (!string.IsNullOrEmpty(title))
-                    e.Graphics.DrawString(title, titleFont, new SolidBrush(titleFroeColor), new PointF((this.Width - titleSize.Width) / 2, 5));
-                //e.Graphics.FillEllipse(Brushes.AliceBlue, rectangle);
-                //e.Graphics.DrawEllipse(Pens.DodgerBlue, rectangle);
+                    e.Graphics.DrawString(title, titleFont, new SolidBrush(titleFroeColor), new PointF((this.Width - titleSize.Width) / 2, 5));               
                 Rectangle rect = new Rectangle(rectangle.X - centerPoint.X, rectangle.Y - centerPoint.Y, rectangle.Width, rectangle.Height);
                 e.Graphics.TranslateTransform(centerPoint.X, centerPoint.Y);
                 e.Graphics.RotateTransform(90f);
-                e.Graphics.DrawLine(Pens.DimGray, 0, 0, width, 0);
                 int num = pieItems.Sum((PieItem item) => item.Value);
                 float num2 = 0f;
                 float num3 = -90f;
@@ -460,7 +423,7 @@ namespace HZH_Controls.Controls
             {
                 e.Graphics.FillEllipse(Brushes.AliceBlue, rectangle);
                 e.Graphics.DrawEllipse(Pens.DodgerBlue, rectangle);
-                e.Graphics.DrawString("空", Font, Brushes.DimGray, rectangle, formatCenter);
+                e.Graphics.DrawString("无数据", Font, Brushes.DimGray, rectangle, formatCenter);
             }
             base.OnPaint(e);
         }

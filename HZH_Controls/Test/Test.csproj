@@ -110,6 +110,12 @@
     <Compile Include="UC\UCTestConveyor.Designer.cs">
       <DependentUpon>UCTestConveyor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestCurveChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestCurveChart.Designer.cs">
+      <DependentUpon>UCTestCurveChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestIcon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestConveyor.resx">
       <DependentUpon>UCTestConveyor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestCurveChart.resx">
+      <DependentUpon>UCTestCurveChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestForms.resx">
       <DependentUpon>UCTestForms.cs</DependentUpon>

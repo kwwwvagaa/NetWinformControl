@@ -89,7 +89,7 @@
             this.panControl.Name = "panControl";
             this.panControl.Size = new System.Drawing.Size(815, 707);
             this.panControl.TabIndex = 9;
-            this.scrollbarComponent1.SetUserCustomScrollbar(this.panControl, true);
+            this.scrollbarComponent1.SetUserCustomScrollbar(this.panControl, false);
             // 
             // FrmMain
             // 
