@@ -668,6 +668,10 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBO
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0917/152524_0d8024a8_301547.png "zzt.png")
 
+#### 40、PieChart
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0923/142525_558c4581_301547.png "bzt.png")
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
