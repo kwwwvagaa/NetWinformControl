@@ -616,6 +616,7 @@ namespace HZH_Controls.Controls.Conduit
                     break;
                 #endregion
             }
+            base.Region = new Region(path);
             g.FillPath(new SolidBrush(conduitColor), path);
 
             //渐变色

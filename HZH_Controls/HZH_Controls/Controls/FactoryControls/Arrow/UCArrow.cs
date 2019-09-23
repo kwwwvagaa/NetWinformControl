@@ -296,6 +296,7 @@ namespace HZH_Controls.Controls
             base.OnPaint(e);
             var g = e.Graphics;
             g.SetGDIHigh();
+            base.Region = new Region(m_path);
 
             g.FillPath(new SolidBrush(arrowColor), m_path);
 

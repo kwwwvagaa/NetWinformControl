@@ -247,14 +247,20 @@ namespace HZH_Controls.Controls
             var rectRight = new Rectangle(m_workingRect.Right - conveyorHeight + 5, (inclination >= 0 ? (m_workingRect.Top) : (m_workingRect.Bottom - conveyorHeight)) + 5, conveyorHeight - 10, conveyorHeight - 10);
             g.FillEllipse(new SolidBrush(conveyorColor), rectRight);
             g.FillEllipse(new SolidBrush(Color.White), new Rectangle(rectRight.Left + (rectRight.Width - 6) / 2, rectRight.Top + (rectRight.Height - 6) / 2, 6, 6));
-            
+
             //传送带
             //左端
             GraphicsPath path = new GraphicsPath();
-            path.AddArc(new Rectangle(m_workingRect.Left, (inclination >= 0 ? (m_workingRect.Bottom - conveyorHeight) : m_workingRect.Top), conveyorHeight, conveyorHeight), 90F - (float)inclination, 180F);
+            GraphicsPath pathRegion = new GraphicsPath();
+            path.AddArc(new Rectangle(m_workingRect.Left + 3, (inclination >= 0 ? (m_workingRect.Bottom - conveyorHeight) : m_workingRect.Top) + 3, conveyorHeight - 6, conveyorHeight - 6), 90F - (float)inclination, 180F);
+            pathRegion.AddArc(new Rectangle(m_workingRect.Left, (inclination >= 0 ? (m_workingRect.Bottom - conveyorHeight) : m_workingRect.Top), conveyorHeight, conveyorHeight), 90F - (float)inclination, 180F);
             //右端
-            path.AddArc(new Rectangle(m_workingRect.Right - conveyorHeight, (inclination >= 0 ? (m_workingRect.Top) : (m_workingRect.Bottom - conveyorHeight)), conveyorHeight, conveyorHeight), 270 - (float)inclination, 180F);
+            path.AddArc(new Rectangle(m_workingRect.Right - conveyorHeight + 3, (inclination >= 0 ? (m_workingRect.Top) : (m_workingRect.Bottom - conveyorHeight)) + 3, conveyorHeight - 6, conveyorHeight - 6), 270 - (float)inclination, 180F);
+            pathRegion.AddArc(new Rectangle(m_workingRect.Right - conveyorHeight, (inclination >= 0 ? (m_workingRect.Top) : (m_workingRect.Bottom - conveyorHeight)), conveyorHeight, conveyorHeight), 270 - (float)inclination, 180F);
             path.CloseAllFigures();
+
+            base.Region = new System.Drawing.Region(pathRegion);
+
             g.DrawPath(new Pen(new SolidBrush(conveyorColor), 3), path);
 
             //液体流动

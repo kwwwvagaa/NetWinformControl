@@ -37,9 +37,11 @@
             this.ucConduit7 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit6 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit3 = new HZH_Controls.Controls.Conduit.UCConduit();
+            this.ucConduit4 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit2 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit18 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit17 = new HZH_Controls.Controls.Conduit.UCConduit();
+            this.ucConduit1 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit19 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit20 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit21 = new HZH_Controls.Controls.Conduit.UCConduit();
@@ -54,11 +56,9 @@
             this.ucConduit26 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit5 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucConduit10 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit1 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
             this.ucPond2 = new HZH_Controls.Controls.UCPond();
             this.ucBlower4 = new HZH_Controls.Controls.UCBlower();
-            this.ucConduit4 = new HZH_Controls.Controls.Conduit.UCConduit();
             this.SuspendLayout();
             // 
             // ucValve1
@@ -181,6 +181,19 @@
             this.ucConduit3.Size = new System.Drawing.Size(496, 37);
             this.ucConduit3.TabIndex = 40;
             // 
+            // ucConduit4
+            // 
+            this.ucConduit4.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucConduit4.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_None_Up;
+            this.ucConduit4.ConduitWidth = 50;
+            this.ucConduit4.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucConduit4.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit4.LiquidSpeed = 50;
+            this.ucConduit4.Location = new System.Drawing.Point(935, 313);
+            this.ucConduit4.Name = "ucConduit4";
+            this.ucConduit4.Size = new System.Drawing.Size(87, 37);
+            this.ucConduit4.TabIndex = 39;
+            // 
             // ucConduit2
             // 
             this.ucConduit2.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
@@ -219,6 +232,19 @@
             this.ucConduit17.Name = "ucConduit17";
             this.ucConduit17.Size = new System.Drawing.Size(37, 134);
             this.ucConduit17.TabIndex = 37;
+            // 
+            // ucConduit1
+            // 
+            this.ucConduit1.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucConduit1.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_None_None;
+            this.ucConduit1.ConduitWidth = 50;
+            this.ucConduit1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucConduit1.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit1.LiquidSpeed = 50;
+            this.ucConduit1.Location = new System.Drawing.Point(581, 194);
+            this.ucConduit1.Name = "ucConduit1";
+            this.ucConduit1.Size = new System.Drawing.Size(136, 37);
+            this.ucConduit1.TabIndex = 52;
             // 
             // ucConduit19
             // 
@@ -402,19 +428,6 @@
             this.ucConduit10.Size = new System.Drawing.Size(161, 37);
             this.ucConduit10.TabIndex = 47;
             // 
-            // ucConduit1
-            // 
-            this.ucConduit1.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit1.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_None_None;
-            this.ucConduit1.ConduitWidth = 50;
-            this.ucConduit1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit1.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
-            this.ucConduit1.LiquidSpeed = 50;
-            this.ucConduit1.Location = new System.Drawing.Point(581, 194);
-            this.ucConduit1.Name = "ucConduit1";
-            this.ucConduit1.Size = new System.Drawing.Size(136, 37);
-            this.ucConduit1.TabIndex = 52;
-            // 
             // ucBottle1
             // 
             this.ucBottle1.BottleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
@@ -467,19 +480,6 @@
             this.ucBlower4.Name = "ucBlower4";
             this.ucBlower4.Size = new System.Drawing.Size(116, 154);
             this.ucBlower4.TabIndex = 62;
-            // 
-            // ucConduit4
-            // 
-            this.ucConduit4.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit4.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_None_Up;
-            this.ucConduit4.ConduitWidth = 50;
-            this.ucConduit4.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit4.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
-            this.ucConduit4.LiquidSpeed = 50;
-            this.ucConduit4.Location = new System.Drawing.Point(935, 313);
-            this.ucConduit4.Name = "ucConduit4";
-            this.ucConduit4.Size = new System.Drawing.Size(87, 37);
-            this.ucConduit4.TabIndex = 39;
             // 
             // UCTestConduit
             // 
