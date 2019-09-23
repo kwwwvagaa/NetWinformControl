@@ -61,6 +61,10 @@
     <Compile Include="Controls\ScrollBar\ScrollbarComponent.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ScrollBar\ScrollbarControlDesigner.cs" />
+    <Compile Include="Controls\ScrollBar\UCHScrollbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Helpers\GraphDirection.cs" />
     <Compile Include="Controls\Charts\UCBarChart.cs">
       <SubType>UserControl</SubType>
@@ -302,6 +306,7 @@
     <Compile Include="Controls\TrackBar\UCTrackBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Helpers\WindowsHook.cs" />
     <Compile Include="UIEditor\FrmSelectImage.cs">
       <SubType>Form</SubType>
     </Compile>

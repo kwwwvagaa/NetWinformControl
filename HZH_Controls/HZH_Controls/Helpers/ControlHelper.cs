@@ -1312,5 +1312,62 @@ namespace HZH_Controls
 
             return returnFlag;
         }
+
+        #region 滚动条    English:scroll bar
+        static uint SB_HORZ = 0x0;
+        static uint SB_VERT = 0x1;
+        static uint SB_CTL = 0x2;
+        static uint SB_BOTH = 0x3;
+        [DllImport("user32.dll", SetLastError = true, EntryPoint = "GetScrollInfo")]
+        private static extern int GetScrollInfo(IntPtr hWnd, uint idObject, ref SCROLLINFO psbi);
+
+        /// <summary>
+        ///获取水平滚动条信息
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <returns>Scrollbarinfo.</returns>
+        public static SCROLLINFO GetHScrollBarInfo(IntPtr hWnd)
+        {
+            SCROLLINFO info = new SCROLLINFO();
+            info.cbSize = (uint)Marshal.SizeOf(info);
+            info.fMask = (int)ScrollInfoMask.SIF_ALL;
+            int intRef = GetScrollInfo(hWnd, SB_HORZ, ref info);
+            return info;
+        }
+        /// <summary>
+        /// 获取垂直滚动条信息
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <returns>Scrollbarinfo.</returns>
+        public static SCROLLINFO GetVScrollBarInfo(IntPtr hWnd)
+        {
+            SCROLLINFO info = new SCROLLINFO();
+            info.cbSize = (uint)Marshal.SizeOf(info);
+            info.fMask = (int)ScrollInfoMask.SIF_ALL;
+            int intRef = GetScrollInfo(hWnd, SB_VERT, ref info);
+            return info;
+        }
+        public struct SCROLLINFO
+        {
+            public uint cbSize;
+            public uint fMask;
+            public int nMin;
+            public int nMax;
+            public uint nPage;
+            public int nPos;
+            public int nTrackPos;
+        }
+        public enum ScrollInfoMask : uint
+        {
+            SIF_RANGE = 0x1,
+            SIF_PAGE = 0x2,
+            SIF_POS = 0x4,
+            SIF_DISABLENOSCROLL = 0x8,
+            SIF_TRACKPOS = 0x10,
+            SIF_ALL = (SIF_RANGE | SIF_PAGE | SIF_POS | SIF_TRACKPOS),
+        }
+        #endregion
+
+       
     }
 }

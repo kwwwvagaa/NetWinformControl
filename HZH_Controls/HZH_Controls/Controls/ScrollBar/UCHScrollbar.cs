@@ -1,41 +1,18 @@
-// ***********************************************************************
-// Assembly         : HZH_Controls
-// Created          : 2019-09-19
-//
-// ***********************************************************************
-// <copyright file="UCVScrollbar.cs">
-//     Copyright by Huang Zhenghui(»ÆÕý»Ô) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
-// </copyright>
-//
-// Blog: https://www.cnblogs.com/bfyx
-// GitHub£ºhttps://github.com/kwwwvagaa/NetWinformControl
-// gitee£ºhttps://gitee.com/kwwwvagaa/net_winform_custom_control.git
-//
-// If you use this code, please keep this note.
-// ***********************************************************************
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
-using System.Diagnostics;
-
 
 namespace HZH_Controls.Controls
 {
-
-    /// <summary>
-    /// Class UCVScrollbar.
-    /// Implements the <see cref="HZH_Controls.Controls.UCControlBase" />
-    /// </summary>
-    /// <seealso cref="HZH_Controls.Controls.UCControlBase" />
     [Designer(typeof(ScrollbarControlDesigner))]
     [DefaultEvent("Scroll")]
-    public class UCVScrollbar : UCControlBase
-    {        
+    public class UCHScrollbar : UCControlBase
+    {
+        #region å±žæ€§    English:attribute
         /// <summary>
         /// The mo large change
         /// </summary>
@@ -63,7 +40,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The mo thumb top
         /// </summary>
-        protected int moThumbTop = 0;
+        protected int moThumbLeft = 0;
         /// <summary>
         /// The mo automatic size
         /// </summary>
@@ -88,26 +65,26 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The BTN height
         /// </summary>
-        private int btnHeight = 18;
+        private int btnWidth = 18;
         /// <summary>
         /// The m int thumb minimum height
         /// </summary>
-        private int m_intThumbMinHeight = 15;
+        private int m_intThumbMinWidth = 15;
 
         /// <summary>
         /// Gets or sets the height of the BTN.
         /// </summary>
         /// <value>The height of the BTN.</value>
-        public int BtnHeight
+        public int BtnWidth
         {
-            get { return btnHeight; }
-            set { btnHeight = value; }
+            get { return btnWidth; }
+            set { btnWidth = value; }
         }
         /// <summary>
         /// Gets or sets the large change.
         /// </summary>
         /// <value>The large change.</value>
-        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("×Ô¶¨Òå"), Description("LargeChange")]
+        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("è‡ªå®šä¹‰"), Description("LargeChange")]
         public int LargeChange
         {
             get { return moLargeChange; }
@@ -122,7 +99,7 @@ namespace HZH_Controls.Controls
         /// Gets or sets the small change.
         /// </summary>
         /// <value>The small change.</value>
-        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("×Ô¶¨Òå"), Description("SmallChange")]
+        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("è‡ªå®šä¹‰"), Description("SmallChange")]
         public int SmallChange
         {
             get { return moSmallChange; }
@@ -137,7 +114,7 @@ namespace HZH_Controls.Controls
         /// Gets or sets the minimum.
         /// </summary>
         /// <value>The minimum.</value>
-        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("×Ô¶¨Òå"), Description("Minimum")]
+        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("è‡ªå®šä¹‰"), Description("Minimum")]
         public int Minimum
         {
             get { return moMinimum; }
@@ -152,7 +129,7 @@ namespace HZH_Controls.Controls
         /// Gets or sets the maximum.
         /// </summary>
         /// <value>The maximum.</value>
-        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("×Ô¶¨Òå"), Description("Maximum")]
+        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("è‡ªå®šä¹‰"), Description("Maximum")]
         public int Maximum
         {
             get { return moMaximum; }
@@ -167,7 +144,7 @@ namespace HZH_Controls.Controls
         /// Gets or sets the value.
         /// </summary>
         /// <value>The value.</value>
-        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("×Ô¶¨Òå"), Description("Value")]
+        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DefaultValue(false), Category("è‡ªå®šä¹‰"), Description("Value")]
         public int Value
         {
             get { return moValue; }
@@ -175,23 +152,23 @@ namespace HZH_Controls.Controls
             {
                 moValue = value;
 
-                int nTrackHeight = (this.Height - btnHeight * 2);
-                float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
-                int nThumbHeight = (int)fThumbHeight;
+                int nTrackWidth = (this.Width - btnWidth * 2);
+                float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
+                int nThumbWidth = (int)fThumbWidth;
 
-                if (nThumbHeight > nTrackHeight)
+                if (nThumbWidth > nTrackWidth)
                 {
-                    nThumbHeight = nTrackHeight;
-                    fThumbHeight = nTrackHeight;
+                    nThumbWidth = nTrackWidth;
+                    fThumbWidth = nTrackWidth;
                 }
-                if (nThumbHeight < m_intThumbMinHeight)
+                if (nThumbWidth < m_intThumbMinWidth)
                 {
-                    nThumbHeight = m_intThumbMinHeight;
-                    fThumbHeight = m_intThumbMinHeight;
+                    nThumbWidth = m_intThumbMinWidth;
+                    fThumbWidth = m_intThumbMinWidth;
                 }
 
                 //figure out value
-                int nPixelRange = nTrackHeight - nThumbHeight;
+                int nPixelRange = nTrackWidth - nThumbWidth;
                 int nRealRange = (Maximum - Minimum) - LargeChange;
                 float fPerc = 0.0f;
                 if (nRealRange != 0)
@@ -200,8 +177,8 @@ namespace HZH_Controls.Controls
 
                 }
 
-                float fTop = fPerc * nPixelRange;
-                moThumbTop = (int)fTop;
+                float fLeft = fPerc * nPixelRange;
+                moThumbLeft = (int)fLeft;
 
 
                 Invalidate();
@@ -242,11 +219,9 @@ namespace HZH_Controls.Controls
             get { return thumbColor; }
             set { thumbColor = value; }
         }
+        #endregion
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UCVScrollbar"/> class.
-        /// </summary>
-        public UCVScrollbar()
+        public UCHScrollbar()
         {
             InitializeComponent();
             ConerRadius = 2;
@@ -260,19 +235,16 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SetStyle(ControlStyles.UserPaint, true);
         }
-
         /// <summary>
         /// Initializes the component.
         /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
-            // UCVScrollbar
-            // 
-            this.MinimumSize = new System.Drawing.Size(10, 0);
-            this.Name = "UCVScrollbar";
-            this.Size = new System.Drawing.Size(18, 150);
+
+            this.MinimumSize = new System.Drawing.Size(0, 10);
+            this.Name = "UCHScrollbar";
+            this.Size = new System.Drawing.Size(150, 18);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CustomScrollbar_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CustomScrollbar_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CustomScrollbar_MouseUp);
@@ -280,42 +252,7 @@ namespace HZH_Controls.Controls
 
         }
 
-
-        /// <summary>
-        /// Òý·¢ <see cref="E:System.Windows.Forms.Control.Paint" /> ÊÂ¼þ¡£
-        /// </summary>
-        /// <param name="e">°üº¬ÊÂ¼þÊý¾ÝµÄ <see cref="T:System.Windows.Forms.PaintEventArgs" />¡£</param>
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            e.Graphics.SetGDIHigh();
-
-            //draw thumb
-            int nTrackHeight = (this.Height - btnHeight * 2);
-            float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
-            int nThumbHeight = (int)fThumbHeight;
-
-            if (nThumbHeight > nTrackHeight)
-            {
-                nThumbHeight = nTrackHeight;
-                fThumbHeight = nTrackHeight;
-            }
-            if (nThumbHeight < m_intThumbMinHeight)
-            {
-                nThumbHeight = m_intThumbMinHeight;
-                fThumbHeight = m_intThumbMinHeight;
-            }
-            int nTop = moThumbTop;
-            nTop += btnHeight;
-            e.Graphics.FillPath(new SolidBrush(thumbColor), new Rectangle(1, nTop, this.Width - 3, nThumbHeight).CreateRoundedRectanglePath(this.ConerRadius));
-
-            ControlHelper.PaintTriangle(e.Graphics, new SolidBrush(thumbColor), new Point(this.Width / 2, btnHeight - Math.Min(5, this.Width / 2)), Math.Min(5, this.Width / 2), GraphDirection.Upward);
-            ControlHelper.PaintTriangle(e.Graphics, new SolidBrush(thumbColor), new Point(this.Width / 2, this.Height - (btnHeight - Math.Min(5, this.Width / 2))), Math.Min(5, this.Width / 2), GraphDirection.Downward);
-
-        }
-
-      
-
+        #region é¼ æ ‡äº‹ä»¶    English:Mouse event
         /// <summary>
         /// Handles the MouseDown event of the CustomScrollbar control.
         /// </summary>
@@ -324,53 +261,52 @@ namespace HZH_Controls.Controls
         private void CustomScrollbar_MouseDown(object sender, MouseEventArgs e)
         {
             Point ptPoint = this.PointToClient(Cursor.Position);
-            int nTrackHeight = (this.Height - btnHeight * 2);
-            float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
-            int nThumbHeight = (int)fThumbHeight;
+            int nTrackWidth = (this.Width - btnWidth * 2);
+            float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
+            int nThumbWidth = (int)fThumbWidth;
 
-            if (nThumbHeight > nTrackHeight)
+            if (nThumbWidth > nTrackWidth)
             {
-                nThumbHeight = nTrackHeight;
-                fThumbHeight = nTrackHeight;
+                nThumbWidth = nTrackWidth;
+                fThumbWidth = nTrackWidth;
             }
-            if (nThumbHeight < m_intThumbMinHeight)
+            if (nThumbWidth < m_intThumbMinWidth)
             {
-                nThumbHeight = m_intThumbMinHeight;
-                fThumbHeight = m_intThumbMinHeight;
+                nThumbWidth = m_intThumbMinWidth;
+                fThumbWidth = m_intThumbMinWidth;
             }
 
-            int nTop = moThumbTop;
-            nTop += btnHeight;
+            int nLeft = moThumbLeft;
+            nLeft += btnWidth;
 
 
-            Rectangle thumbrect = new Rectangle(new Point(1, nTop), new Size(this.Width - 2, nThumbHeight));
+            Rectangle thumbrect = new Rectangle(new Point(nLeft, 1), new Size(nThumbWidth, this.Height - 2));
+            //æ»‘å—
             if (thumbrect.Contains(ptPoint))
             {
-
                 //hit the thumb
-                nClickPoint = (ptPoint.Y - nTop);
-                //MessageBox.Show(Convert.ToString((ptPoint.Y - nTop)));
+                nClickPoint = (ptPoint.X - nLeft);
                 this.moThumbMouseDown = true;
             }
             else
             {
-                Rectangle uparrowrect = new Rectangle(new Point(1, 0), new Size(this.Width, btnHeight));
-                if (uparrowrect.Contains(ptPoint))
+                //å·¦æŒ‰é’®
+                Rectangle leftarrowrect = new Rectangle(new Point(0, 1), new Size(btnWidth, this.Height));
+                if (leftarrowrect.Contains(ptPoint))
                 {
-
                     int nRealRange = (Maximum - Minimum) - LargeChange;
-                    int nPixelRange = (nTrackHeight - nThumbHeight);
+                    int nPixelRange = (nTrackWidth - nThumbWidth);
                     if (nRealRange > 0)
                     {
                         if (nPixelRange > 0)
                         {
-                            if ((moThumbTop - SmallChange) < 0)
-                                moThumbTop = 0;
+                            if ((moThumbLeft - SmallChange) < 0)
+                                moThumbLeft = 0;
                             else
-                                moThumbTop -= SmallChange;
+                                moThumbLeft -= SmallChange;
 
                             //figure out value
-                            float fPerc = (float)moThumbTop / (float)nPixelRange;
+                            float fPerc = (float)moThumbLeft / (float)nPixelRange;
                             float fValue = fPerc * (Maximum - LargeChange);
 
                             moValue = (int)fValue;
@@ -387,22 +323,22 @@ namespace HZH_Controls.Controls
                 }
                 else
                 {
-                    Rectangle downarrowrect = new Rectangle(new Point(1, btnHeight + nTrackHeight), new Size(this.Width, btnHeight));
-                    if (downarrowrect.Contains(ptPoint))
+                    Rectangle rightarrowrect = new Rectangle(new Point(btnWidth + nTrackWidth, 1), new Size(btnWidth, this.Height));
+                    if (rightarrowrect.Contains(ptPoint))
                     {
                         int nRealRange = (Maximum - Minimum) - LargeChange;
-                        int nPixelRange = (nTrackHeight - nThumbHeight);
+                        int nPixelRange = (nTrackWidth - nThumbWidth);
                         if (nRealRange > 0)
                         {
                             if (nPixelRange > 0)
                             {
-                                if ((moThumbTop + SmallChange) > nPixelRange)
-                                    moThumbTop = nPixelRange;
+                                if ((moThumbLeft + SmallChange) > nPixelRange)
+                                    moThumbLeft = nPixelRange;
                                 else
-                                    moThumbTop += SmallChange;
+                                    moThumbLeft += SmallChange;
 
                                 //figure out value
-                                float fPerc = (float)moThumbTop / (float)nPixelRange;
+                                float fPerc = (float)moThumbLeft / (float)nPixelRange;
                                 float fValue = fPerc * (Maximum - LargeChange);
 
                                 moValue = (int)fValue;
@@ -419,7 +355,6 @@ namespace HZH_Controls.Controls
                     }
                 }
             }
-          
         }
 
         /// <summary>
@@ -436,49 +371,49 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// Moves the thumb.
         /// </summary>
-        /// <param name="y">The y.</param>
-        private void MoveThumb(int y)
+        /// <param name="x">The y.</param>
+        private void MoveThumb(int x)
         {
             int nRealRange = Maximum - Minimum;
-            int nTrackHeight = (this.Height - btnHeight * 2);
-            float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
-            int nThumbHeight = (int)fThumbHeight;
+            int nTrackWidth = (this.Width - btnWidth * 2);
+            float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
+            int nThumbWidth = (int)fThumbWidth;
 
-            if (nThumbHeight > nTrackHeight)
+            if (nThumbWidth > nTrackWidth)
             {
-                nThumbHeight = nTrackHeight;
-                fThumbHeight = nTrackHeight;
+                nThumbWidth = nTrackWidth;
+                fThumbWidth = nTrackWidth;
             }
-            if (nThumbHeight < m_intThumbMinHeight)
+            if (nThumbWidth < m_intThumbMinWidth)
             {
-                nThumbHeight = m_intThumbMinHeight;
-                fThumbHeight = m_intThumbMinHeight;
+                nThumbWidth = m_intThumbMinWidth;
+                fThumbWidth = m_intThumbMinWidth;
             }
 
             int nSpot = nClickPoint;
 
-            int nPixelRange = (nTrackHeight - nThumbHeight);
+            int nPixelRange = (nTrackWidth - nThumbWidth);
             if (moThumbMouseDown && nRealRange > 0)
             {
                 if (nPixelRange > 0)
                 {
-                    int nNewThumbTop = y - (btnHeight + nSpot);
+                    int nNewThumbLeft = x - (btnWidth + nSpot);
 
-                    if (nNewThumbTop < 0)
+                    if (nNewThumbLeft < 0)
                     {
-                        moThumbTop = nNewThumbTop = 0;
+                        moThumbLeft = nNewThumbLeft = 0;
                     }
-                    else if (nNewThumbTop > nPixelRange)
+                    else if (nNewThumbLeft > nPixelRange)
                     {
-                        moThumbTop = nNewThumbTop = nPixelRange;
+                        moThumbLeft = nNewThumbLeft = nPixelRange;
                     }
                     else
                     {
-                        moThumbTop = y - (btnHeight + nSpot);
+                        moThumbLeft = x - (btnWidth + nSpot);
                     }
 
 
-                    float fPerc = (float)moThumbTop / (float)nPixelRange;
+                    float fPerc = (float)moThumbLeft / (float)nPixelRange;
                     float fValue = fPerc * (Maximum - LargeChange);
                     moValue = (int)fValue;
 
@@ -506,7 +441,7 @@ namespace HZH_Controls.Controls
 
             if (this.moThumbMouseDragging)
             {
-                MoveThumb(e.Y);
+                MoveThumb(e.X);
             }
 
             if (ValueChanged != null)
@@ -515,6 +450,36 @@ namespace HZH_Controls.Controls
             if (Scroll != null)
                 Scroll(this, new EventArgs());
         }
+        #endregion
 
-    } 
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            e.Graphics.SetGDIHigh();
+
+            //draw thumb
+            int nTrackWidth = (this.Width - btnWidth * 2);
+            float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
+            int nThumbWidth = (int)fThumbWidth;
+
+            if (nThumbWidth > nTrackWidth)
+            {
+                nThumbWidth = nTrackWidth;
+                fThumbWidth = nTrackWidth;
+            }
+            if (nThumbWidth < m_intThumbMinWidth)
+            {
+                nThumbWidth = m_intThumbMinWidth;
+                fThumbWidth = m_intThumbMinWidth;
+            }
+            int nLeft = moThumbLeft;
+            nLeft += btnWidth;
+            e.Graphics.FillPath(new SolidBrush(thumbColor), new Rectangle(nLeft, 1, nThumbWidth, this.Height - 3).CreateRoundedRectanglePath(this.ConerRadius));
+
+            ControlHelper.PaintTriangle(e.Graphics, new SolidBrush(thumbColor), new Point(btnWidth - Math.Min(5, this.Height / 2), this.Height / 2), Math.Min(5, this.Height / 2), GraphDirection.Leftward);
+            ControlHelper.PaintTriangle(e.Graphics, new SolidBrush(thumbColor), new Point(this.Width - (btnWidth - Math.Min(5, this.Height / 2)), this.Height / 2), Math.Min(5, this.Height / 2), GraphDirection.Rightward);
+
+        }
+    }
+
 }

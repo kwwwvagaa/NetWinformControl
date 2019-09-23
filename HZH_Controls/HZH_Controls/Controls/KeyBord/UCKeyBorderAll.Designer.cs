@@ -1383,7 +1383,7 @@ namespace HZH_Controls.Controls
             this.label10.Size = new System.Drawing.Size(65, 66);
             this.label10.TabIndex = 2;
             this.label10.Tag = "@";
-            this.label10.Text = "r";
+            this.label10.Text = "t";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.KeyDown_MouseDown);
             // 
@@ -1432,7 +1432,7 @@ namespace HZH_Controls.Controls
             this.label9.Size = new System.Drawing.Size(65, 66);
             this.label9.TabIndex = 2;
             this.label9.Tag = "9";
-            this.label9.Text = "t";
+            this.label9.Text = "r";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.KeyDown_MouseDown);
             // 

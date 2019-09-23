@@ -7,6 +7,7 @@ namespace Test
 {
     static class Program
     {
+        static int hookID;
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -16,9 +17,11 @@ namespace Test
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += Application_ThreadException;
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;           
             Application.Run(new FrmMain());
         }
+
+       
 
         static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {
@@ -27,8 +30,8 @@ namespace Test
 
         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            MessageBox.Show(((Exception)e.ExceptionObject).Message);            
+            MessageBox.Show(((Exception)e.ExceptionObject).Message);
         }
-        
+
     }
 }
