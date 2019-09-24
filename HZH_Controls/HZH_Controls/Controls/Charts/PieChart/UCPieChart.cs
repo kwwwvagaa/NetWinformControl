@@ -415,7 +415,7 @@ namespace HZH_Controls.Controls
 
                 if (centerOfCircleWidth > 0)
                 {
-                    Rectangle rectCenter = new Rectangle(rect.Left + rect.Width / 2 - centerOfCircleWidth / 2, rect.Top + rect.Height / 2 - centerOfCircleWidth / 2, centerOfCircleWidth, centerOfCircleWidth);
+                    Rectangle rectCenter = new Rectangle(rectangle.Left + rectangle.Width / 2 - centerOfCircleWidth / 2, rectangle.Top + rectangle.Height / 2 - centerOfCircleWidth / 2, centerOfCircleWidth, centerOfCircleWidth);
                     e.Graphics.FillEllipse(new SolidBrush(centerOfCircleColor), rectCenter);
                 }
             }
