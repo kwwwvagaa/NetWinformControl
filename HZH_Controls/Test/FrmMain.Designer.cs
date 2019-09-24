@@ -103,6 +103,7 @@
             this.IsFullSize = true;
             this.IsShowCloseBtn = true;
             this.Name = "FrmMain";
+            this.ShowIcon = true;
             this.ShowInTaskbar = true;
             this.Text = "FrmMain";
             this.Title = "控件DEMO";
