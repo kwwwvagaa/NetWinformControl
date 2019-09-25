@@ -678,7 +678,7 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM",
 
 #### 41、雷达图
 
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0925/145031_7dc872bf_301547.png "ldt.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0925/150733_a92c2d24_301547.png "ldt.png")
 
 #### 最后的话
 
