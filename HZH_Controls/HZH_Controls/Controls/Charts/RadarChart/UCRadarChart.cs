@@ -51,6 +51,10 @@ namespace HZH_Controls.Controls
                 Invalidate();
             }
         }
+        [Browsable(true)]
+        [Category("自定义")]
+        [Description("获取或设置是否使用圆代替连线进行分隔")]
+        public bool UseRoundSplit { get; set; }
 
         /// <summary>
         /// The split odd color
@@ -86,7 +90,11 @@ namespace HZH_Controls.Controls
         public Color SplitEvenColor
         {
             get { return splitEvenColor; }
-            set { splitEvenColor = value; }
+            set
+            {
+                splitEvenColor = value;
+                Invalidate();
+            }
         }
 
         /// <summary>
@@ -216,6 +224,7 @@ namespace HZH_Controls.Controls
                 Invalidate();
             }
         }
+
 
 
         /// <summary>
@@ -414,7 +423,7 @@ namespace HZH_Controls.Controls
 
                 for (int j = 0; j < intCount; j++)
                 {
-                    g.FillRectangle(new SolidBrush(lines[i * intLineValueComCount + j].LineColor.Value), new RectangleF(x + (lineValueTypeSize.Width + 25)*j, y + lineValueTypeSize.Height * i, 15, lineValueTypeSize.Height));
+                    g.FillRectangle(new SolidBrush(lines[i * intLineValueComCount + j].LineColor.Value), new RectangleF(x + (lineValueTypeSize.Width + 25) * j, y + lineValueTypeSize.Height * i, 15, lineValueTypeSize.Height));
                     g.DrawString(lines[i * intLineValueComCount + j].Name, Font, new SolidBrush(lines[i * intLineValueComCount + j].LineColor.Value), new PointF(x + (lineValueTypeSize.Width + 25) * j + 20, y + lineValueTypeSize.Height * i));
                 }
             }
@@ -441,26 +450,46 @@ namespace HZH_Controls.Controls
                 }
             }
 
-            for (int i = 0; i < lstRingPoints.Count; i++)
+            if (UseRoundSplit)
             {
-                var ring = lstRingPoints[i];
-                GraphicsPath path = new GraphicsPath();
-                path.AddLines(ring.ToArray());
-                if ((lstRingPoints.Count - i) % 2 == 0)
+                for (int i = 0; i < splitCount; i++)
                 {
-                    g.FillPath(new SolidBrush(splitEvenColor), path);
-                }
-                else
-                {
-                    g.FillPath(new SolidBrush(splitOddColor), path);
+                    RectangleF rect = new RectangleF(centrePoint.X - fltSplitRadiusWidth * (splitCount - i), centrePoint.Y - fltSplitRadiusWidth * (splitCount - i), fltSplitRadiusWidth * (splitCount - i) * 2, fltSplitRadiusWidth * (splitCount - i) * 2);
+                    if (i % 2 == 0)
+                    {
+                        g.FillEllipse(new SolidBrush(splitOddColor), rect);
+                    }
+                    else
+                    {
+                        g.FillEllipse(new SolidBrush(splitEvenColor), rect);
+                    }
+
+                    g.DrawEllipse(new Pen(new SolidBrush(lineColor)), rect);
                 }
             }
-
-            //画环
-            foreach (var ring in lstRingPoints)
+            else
             {
-                ring.Add(ring[0]);
-                g.DrawLines(new Pen(new SolidBrush(lineColor)), ring.ToArray());
+                //间隔颜色
+                for (int i = 0; i < lstRingPoints.Count; i++)
+                {
+                    var ring = lstRingPoints[i];
+                    GraphicsPath path = new GraphicsPath();
+                    path.AddLines(ring.ToArray());
+                    if ((lstRingPoints.Count - i) % 2 == 0)
+                    {
+                        g.FillPath(new SolidBrush(splitEvenColor), path);
+                    }
+                    else
+                    {
+                        g.FillPath(new SolidBrush(splitOddColor), path);
+                    }
+                }
+                //画环
+                foreach (var ring in lstRingPoints)
+                {
+                    ring.Add(ring[0]);
+                    g.DrawLines(new Pen(new SolidBrush(lineColor)), ring.ToArray());
+                }
             }
             //分割线
             foreach (var item in lstRingPoints[0])
