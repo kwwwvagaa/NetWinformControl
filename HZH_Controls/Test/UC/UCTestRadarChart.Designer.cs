@@ -93,7 +93,7 @@
         53D,
         65D};
             radarLine3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(243)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            radarLine3.LineColor = System.Drawing.Color.Red;
+            radarLine3.LineColor = System.Drawing.Color.Green;
             radarLine3.Name = "晚上";
             radarLine3.ShowValueText = false;
             radarLine3.Values = new double[] {
