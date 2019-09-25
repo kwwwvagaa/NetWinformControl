@@ -461,7 +461,7 @@
             this.ucRadarChart6.SplitEvenColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.ucRadarChart6.SplitOddColor = System.Drawing.Color.White;
             this.ucRadarChart6.TabIndex = 0;
-            this.ucRadarChart6.Title = "空气污染度";
+            this.ucRadarChart6.Title = "空气污染度(圆形)";
             this.ucRadarChart6.TitleColor = System.Drawing.Color.Black;
             this.ucRadarChart6.TitleFont = new System.Drawing.Font("微软雅黑", 12F);
             this.ucRadarChart6.UseRoundSplit = true;

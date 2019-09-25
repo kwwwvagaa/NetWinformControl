@@ -28,113 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucPanelTitle2 = new HZH_Controls.Controls.UCPanelTitle();
-            this.ucPanelTitle6 = new HZH_Controls.Controls.UCPanelTitle();
-            this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
-            this.ucPanelTitle3 = new HZH_Controls.Controls.UCPanelTitle();
-            this.ucPanelTitle4 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucPanelTitle5 = new HZH_Controls.Controls.UCPanelTitle();
+            this.ucPanelTitle3 = new HZH_Controls.Controls.UCPanelTitle();
+            this.ucPanelTitle6 = new HZH_Controls.Controls.UCPanelTitle();
+            this.ucPanelTitle4 = new HZH_Controls.Controls.UCPanelTitle();
+            this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
+            this.ucPanelTitle2 = new HZH_Controls.Controls.UCPanelTitle();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ucPanelTitle3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ucPanelTitle2
-            // 
-            this.ucPanelTitle2.BackColor = System.Drawing.Color.Transparent;
-            this.ucPanelTitle2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucPanelTitle2.ConerRadius = 10;
-            this.ucPanelTitle2.FillColor = System.Drawing.Color.White;
-            this.ucPanelTitle2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucPanelTitle2.IsCanExpand = false;
-            this.ucPanelTitle2.IsExpand = false;
-            this.ucPanelTitle2.IsRadius = true;
-            this.ucPanelTitle2.IsShowRect = true;
-            this.ucPanelTitle2.Location = new System.Drawing.Point(13, 5);
-            this.ucPanelTitle2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucPanelTitle2.Name = "ucPanelTitle2";
-            this.ucPanelTitle2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucPanelTitle2.RectWidth = 1;
-            this.ucPanelTitle2.Size = new System.Drawing.Size(316, 182);
-            this.ucPanelTitle2.TabIndex = 2;
-            this.ucPanelTitle2.Title = "不可折叠面板";
-            // 
-            // ucPanelTitle6
-            // 
-            this.ucPanelTitle6.BackColor = System.Drawing.Color.Transparent;
-            this.ucPanelTitle6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.ucPanelTitle6.ConerRadius = 10;
-            this.ucPanelTitle6.FillColor = System.Drawing.Color.White;
-            this.ucPanelTitle6.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucPanelTitle6.IsCanExpand = false;
-            this.ucPanelTitle6.IsExpand = false;
-            this.ucPanelTitle6.IsRadius = true;
-            this.ucPanelTitle6.IsShowRect = true;
-            this.ucPanelTitle6.Location = new System.Drawing.Point(366, 5);
-            this.ucPanelTitle6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucPanelTitle6.Name = "ucPanelTitle6";
-            this.ucPanelTitle6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.ucPanelTitle6.RectWidth = 1;
-            this.ucPanelTitle6.Size = new System.Drawing.Size(316, 182);
-            this.ucPanelTitle6.TabIndex = 2;
-            this.ucPanelTitle6.Title = "不可折叠面板";
-            // 
-            // ucPanelTitle1
-            // 
-            this.ucPanelTitle1.BackColor = System.Drawing.Color.Transparent;
-            this.ucPanelTitle1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucPanelTitle1.ConerRadius = 10;
-            this.ucPanelTitle1.FillColor = System.Drawing.Color.White;
-            this.ucPanelTitle1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucPanelTitle1.IsCanExpand = true;
-            this.ucPanelTitle1.IsExpand = false;
-            this.ucPanelTitle1.IsRadius = true;
-            this.ucPanelTitle1.IsShowRect = true;
-            this.ucPanelTitle1.Location = new System.Drawing.Point(13, 197);
-            this.ucPanelTitle1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucPanelTitle1.Name = "ucPanelTitle1";
-            this.ucPanelTitle1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucPanelTitle1.RectWidth = 1;
-            this.ucPanelTitle1.Size = new System.Drawing.Size(316, 182);
-            this.ucPanelTitle1.TabIndex = 2;
-            this.ucPanelTitle1.Title = "展开的折叠面板";
-            // 
-            // ucPanelTitle3
-            // 
-            this.ucPanelTitle3.BackColor = System.Drawing.Color.Transparent;
-            this.ucPanelTitle3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.ucPanelTitle3.ConerRadius = 10;
-            this.ucPanelTitle3.FillColor = System.Drawing.Color.White;
-            this.ucPanelTitle3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucPanelTitle3.IsCanExpand = true;
-            this.ucPanelTitle3.IsExpand = false;
-            this.ucPanelTitle3.IsRadius = true;
-            this.ucPanelTitle3.IsShowRect = true;
-            this.ucPanelTitle3.Location = new System.Drawing.Point(366, 197);
-            this.ucPanelTitle3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucPanelTitle3.Name = "ucPanelTitle3";
-            this.ucPanelTitle3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.ucPanelTitle3.RectWidth = 1;
-            this.ucPanelTitle3.Size = new System.Drawing.Size(316, 182);
-            this.ucPanelTitle3.TabIndex = 2;
-            this.ucPanelTitle3.Title = "展开的折叠面板";
-            // 
-            // ucPanelTitle4
-            // 
-            this.ucPanelTitle4.BackColor = System.Drawing.Color.Transparent;
-            this.ucPanelTitle4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucPanelTitle4.ConerRadius = 10;
-            this.ucPanelTitle4.FillColor = System.Drawing.Color.White;
-            this.ucPanelTitle4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucPanelTitle4.IsCanExpand = true;
-            this.ucPanelTitle4.IsExpand = true;
-            this.ucPanelTitle4.IsRadius = true;
-            this.ucPanelTitle4.IsShowRect = true;
-            this.ucPanelTitle4.Location = new System.Drawing.Point(13, 389);
-            this.ucPanelTitle4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucPanelTitle4.Name = "ucPanelTitle4";
-            this.ucPanelTitle4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucPanelTitle4.RectWidth = 1;
-            this.ucPanelTitle4.Size = new System.Drawing.Size(316, 34);
-            this.ucPanelTitle4.TabIndex = 2;
-            this.ucPanelTitle4.Title = "收起的折叠面板";
             // 
             // ucPanelTitle5
             // 
@@ -150,11 +52,128 @@
             this.ucPanelTitle5.Location = new System.Drawing.Point(366, 389);
             this.ucPanelTitle5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucPanelTitle5.Name = "ucPanelTitle5";
+            this.ucPanelTitle5.Padding = new System.Windows.Forms.Padding(1);
             this.ucPanelTitle5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucPanelTitle5.RectWidth = 1;
             this.ucPanelTitle5.Size = new System.Drawing.Size(316, 34);
             this.ucPanelTitle5.TabIndex = 2;
             this.ucPanelTitle5.Title = "收起的折叠面板";
+            // 
+            // ucPanelTitle3
+            // 
+            this.ucPanelTitle3.BackColor = System.Drawing.Color.White;
+            this.ucPanelTitle3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.ucPanelTitle3.ConerRadius = 10;
+            this.ucPanelTitle3.Controls.Add(this.label1);
+            this.ucPanelTitle3.FillColor = System.Drawing.Color.White;
+            this.ucPanelTitle3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucPanelTitle3.IsCanExpand = true;
+            this.ucPanelTitle3.IsExpand = false;
+            this.ucPanelTitle3.IsRadius = true;
+            this.ucPanelTitle3.IsShowRect = true;
+            this.ucPanelTitle3.Location = new System.Drawing.Point(366, 197);
+            this.ucPanelTitle3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucPanelTitle3.Name = "ucPanelTitle3";
+            this.ucPanelTitle3.Padding = new System.Windows.Forms.Padding(1);
+            this.ucPanelTitle3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.ucPanelTitle3.RectWidth = 1;
+            this.ucPanelTitle3.Size = new System.Drawing.Size(316, 182);
+            this.ucPanelTitle3.TabIndex = 2;
+            this.ucPanelTitle3.Title = "展开的折叠面板";
+            // 
+            // ucPanelTitle6
+            // 
+            this.ucPanelTitle6.BackColor = System.Drawing.Color.Transparent;
+            this.ucPanelTitle6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.ucPanelTitle6.ConerRadius = 10;
+            this.ucPanelTitle6.FillColor = System.Drawing.Color.White;
+            this.ucPanelTitle6.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucPanelTitle6.IsCanExpand = false;
+            this.ucPanelTitle6.IsExpand = false;
+            this.ucPanelTitle6.IsRadius = true;
+            this.ucPanelTitle6.IsShowRect = true;
+            this.ucPanelTitle6.Location = new System.Drawing.Point(366, 5);
+            this.ucPanelTitle6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucPanelTitle6.Name = "ucPanelTitle6";
+            this.ucPanelTitle6.Padding = new System.Windows.Forms.Padding(1);
+            this.ucPanelTitle6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.ucPanelTitle6.RectWidth = 1;
+            this.ucPanelTitle6.Size = new System.Drawing.Size(316, 182);
+            this.ucPanelTitle6.TabIndex = 2;
+            this.ucPanelTitle6.Title = "不可折叠面板";
+            // 
+            // ucPanelTitle4
+            // 
+            this.ucPanelTitle4.BackColor = System.Drawing.Color.Transparent;
+            this.ucPanelTitle4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucPanelTitle4.ConerRadius = 10;
+            this.ucPanelTitle4.FillColor = System.Drawing.Color.White;
+            this.ucPanelTitle4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucPanelTitle4.IsCanExpand = true;
+            this.ucPanelTitle4.IsExpand = true;
+            this.ucPanelTitle4.IsRadius = true;
+            this.ucPanelTitle4.IsShowRect = true;
+            this.ucPanelTitle4.Location = new System.Drawing.Point(13, 389);
+            this.ucPanelTitle4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucPanelTitle4.Name = "ucPanelTitle4";
+            this.ucPanelTitle4.Padding = new System.Windows.Forms.Padding(1);
+            this.ucPanelTitle4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucPanelTitle4.RectWidth = 1;
+            this.ucPanelTitle4.Size = new System.Drawing.Size(316, 34);
+            this.ucPanelTitle4.TabIndex = 2;
+            this.ucPanelTitle4.Title = "收起的折叠面板";
+            // 
+            // ucPanelTitle1
+            // 
+            this.ucPanelTitle1.BackColor = System.Drawing.Color.White;
+            this.ucPanelTitle1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucPanelTitle1.ConerRadius = 10;
+            this.ucPanelTitle1.FillColor = System.Drawing.Color.White;
+            this.ucPanelTitle1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucPanelTitle1.IsCanExpand = true;
+            this.ucPanelTitle1.IsExpand = false;
+            this.ucPanelTitle1.IsRadius = true;
+            this.ucPanelTitle1.IsShowRect = true;
+            this.ucPanelTitle1.Location = new System.Drawing.Point(13, 197);
+            this.ucPanelTitle1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucPanelTitle1.Name = "ucPanelTitle1";
+            this.ucPanelTitle1.Padding = new System.Windows.Forms.Padding(1);
+            this.ucPanelTitle1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucPanelTitle1.RectWidth = 1;
+            this.ucPanelTitle1.Size = new System.Drawing.Size(316, 182);
+            this.ucPanelTitle1.TabIndex = 2;
+            this.ucPanelTitle1.Title = "展开的折叠面板";
+            // 
+            // ucPanelTitle2
+            // 
+            this.ucPanelTitle2.BackColor = System.Drawing.Color.White;
+            this.ucPanelTitle2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucPanelTitle2.ConerRadius = 10;
+            this.ucPanelTitle2.FillColor = System.Drawing.Color.White;
+            this.ucPanelTitle2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucPanelTitle2.IsCanExpand = false;
+            this.ucPanelTitle2.IsExpand = false;
+            this.ucPanelTitle2.IsRadius = true;
+            this.ucPanelTitle2.IsShowRect = true;
+            this.ucPanelTitle2.Location = new System.Drawing.Point(13, 5);
+            this.ucPanelTitle2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucPanelTitle2.Name = "ucPanelTitle2";
+            this.ucPanelTitle2.Padding = new System.Windows.Forms.Padding(1);
+            this.ucPanelTitle2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucPanelTitle2.RectWidth = 1;
+            this.ucPanelTitle2.Size = new System.Drawing.Size(316, 182);
+            this.ucPanelTitle2.TabIndex = 2;
+            this.ucPanelTitle2.Title = "不可折叠面板";
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(1, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(314, 146);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10";
             // 
             // UCTestPanelTitle
             // 
@@ -168,6 +187,7 @@
             this.Controls.Add(this.ucPanelTitle2);
             this.Name = "UCTestPanelTitle";
             this.Size = new System.Drawing.Size(833, 615);
+            this.ucPanelTitle3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -180,5 +200,6 @@
         private HZH_Controls.Controls.UCPanelTitle ucPanelTitle3;
         private HZH_Controls.Controls.UCPanelTitle ucPanelTitle4;
         private HZH_Controls.Controls.UCPanelTitle ucPanelTitle5;
+        private System.Windows.Forms.Label label1;
     }
 }

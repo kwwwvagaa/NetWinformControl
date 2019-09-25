@@ -30,7 +30,7 @@ namespace HZH_Controls.Controls
     /// Implements the <see cref="HZH_Controls.Controls.UCControlBase" />
     /// </summary>
     /// <seealso cref="HZH_Controls.Controls.UCControlBase" />
-    public partial class UCPanelTitle : UCControlBase
+    public partial class UCPanelTitle : UCControlBase, IContainerControl
     {
         /// <summary>
         /// The m int maximum height
@@ -87,7 +87,7 @@ namespace HZH_Controls.Controls
                 {
                     this.Height = m_intMaxHeight;
                 }
-               
+
                 if (isCanExpand)
                 {
                     lblTitle.Image = GetImg();
@@ -95,7 +95,7 @@ namespace HZH_Controls.Controls
                 else
                 {
                     lblTitle.Image = null;
-                }              
+                }
             }
         }
 
@@ -158,6 +158,7 @@ namespace HZH_Controls.Controls
         public UCPanelTitle()
         {
             InitializeComponent();
+            this.SizeChanged += UCPanelTitle_SizeChanged;
             if (isCanExpand)
             {
                 lblTitle.Image = GetImg();
@@ -242,6 +243,7 @@ namespace HZH_Controls.Controls
             {
                 m_intMaxHeight = this.Height;
             }
+            lblTitle.Width = this.Width;
         }
     }
 }

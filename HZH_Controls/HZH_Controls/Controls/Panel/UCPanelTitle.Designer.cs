@@ -49,7 +49,6 @@ namespace HZH_Controls.Controls
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -60,26 +59,17 @@ namespace HZH_Controls.Controls
             this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblTitle.Location = new System.Drawing.Point(1, 1);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(251, 34);
+            this.lblTitle.Size = new System.Drawing.Size(645, 34);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "面板";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTitle_MouseDown);
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 35);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(251, 135);
-            this.panel1.TabIndex = 1;
             // 
             // UCPanelTitle
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
             this.ConerRadius = 10;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.FillColor = System.Drawing.Color.White;
             this.IsRadius = true;
@@ -87,7 +77,7 @@ namespace HZH_Controls.Controls
             this.Name = "UCPanelTitle";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.Size = new System.Drawing.Size(253, 171);
+            this.Size = new System.Drawing.Size(647, 171);
             this.SizeChanged += new System.EventHandler(this.UCPanelTitle_SizeChanged);
             this.ResumeLayout(false);
 
@@ -99,6 +89,5 @@ namespace HZH_Controls.Controls
         /// The label title
         /// </summary>
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel panel1;
     }
 }
