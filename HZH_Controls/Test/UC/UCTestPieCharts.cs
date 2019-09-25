@@ -10,6 +10,7 @@ using HZH_Controls.Controls;
 
 namespace Test.UC
 {
+    [ToolboxItem(false)]
     public partial class UCTestPieCharts : UserControl
     {
         public UCTestPieCharts()

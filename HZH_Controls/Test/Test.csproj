@@ -212,6 +212,12 @@
     <Compile Include="UC\UCTestProcess.Designer.cs">
       <DependentUpon>UCTestProcess.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestRadarChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestRadarChart.Designer.cs">
+      <DependentUpon>UCTestRadarChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestRollText.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestProcess.resx">
       <DependentUpon>UCTestProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestRadarChart.resx">
+      <DependentUpon>UCTestRadarChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestRollText.resx">
       <DependentUpon>UCTestRollText.cs</DependentUpon>

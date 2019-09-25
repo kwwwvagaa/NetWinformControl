@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace Test.UC
 {
+    [ToolboxItem(false)]
     public partial class UCTestCurveChart : UserControl
     {
         public UCTestCurveChart()

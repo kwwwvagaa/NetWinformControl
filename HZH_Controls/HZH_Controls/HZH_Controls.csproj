@@ -59,6 +59,11 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Charts\PieChart\PieItem.cs" />
+    <Compile Include="Controls\Charts\RadarChart\RadarLine.cs" />
+    <Compile Include="Controls\Charts\RadarChart\RadarPosition.cs" />
+    <Compile Include="Controls\Charts\RadarChart\UCRadarChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\ScrollBar\ScrollbarComponent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -233,7 +238,7 @@
     <Compile Include="Controls\Menu\UCMenuParentItem.Designer.cs">
       <DependentUpon>UCMenuParentItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Meter\UCMeter.cs">
+    <Compile Include="Controls\FactoryControls\Meter\UCMeter.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Navigation\UCCrumbNavigation.cs">

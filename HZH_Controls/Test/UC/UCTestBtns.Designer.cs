@@ -2016,7 +2016,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "UCTestBtns";
-            this.Size = new System.Drawing.Size(993, 793);
+            this.Size = new System.Drawing.Size(635, 793);
             this.Load += new System.EventHandler(this.UCTestBtns_Load);
             this.ucControlBase1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
