@@ -16,7 +16,7 @@ namespace Test
         {
             InitializeComponent();
         }
-        protected override void SetProcessMsg(string strText, int intValue)
+        protected override void BindingProcessMsg(string strText, int intValue)
         {
             label1.Text = strText;
             this.ucProcessLineExt1.Value = intValue;

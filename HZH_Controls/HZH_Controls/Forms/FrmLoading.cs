@@ -35,7 +35,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// The update database worker
         /// </summary>
-        public BackgroundWorker updateDBWorker = new BackgroundWorker();
+        BackgroundWorker updateDBWorker = new BackgroundWorker();
         /// <summary>
         /// 获取或设置加载任务
         /// </summary>
@@ -72,7 +72,7 @@ namespace HZH_Controls.Forms
         /// </summary>
         /// <param name="strText">进度任务名称</param>
         /// <param name="intValue">进度值</param>
-        protected virtual void SetProcessMsg(string strText, int intValue)
+        protected virtual void BindingProcessMsg(string strText, int intValue)
         {
 
         }
@@ -90,7 +90,7 @@ namespace HZH_Controls.Forms
             }
             else
             {
-                SetProcessMsg(strText, intValue);
+                BindingProcessMsg(strText, intValue);
             }
         }
 
