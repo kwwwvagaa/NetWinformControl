@@ -48,14 +48,12 @@ namespace HZH_Controls.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panHead = new System.Windows.Forms.Panel();
             this.panColumns = new System.Windows.Forms.TableLayoutPanel();
             this.panHeadLeft = new System.Windows.Forms.Panel();
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
             this.panRow = new System.Windows.Forms.Panel();
             this.panPage = new System.Windows.Forms.Panel();
-            this.scrollbarComponent1 = new HZH_Controls.Controls.ScrollBar.ScrollbarComponent(this.components);
             this.panHead.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +107,6 @@ namespace HZH_Controls.Controls
             this.panRow.Name = "panRow";
             this.panRow.Size = new System.Drawing.Size(1061, 481);
             this.panRow.TabIndex = 1;
-            this.scrollbarComponent1.SetUserCustomScrollbar(this.panRow, true);
             this.panRow.SizeChanged += new System.EventHandler(this.panRow_SizeChanged);
             // 
             // panPage
@@ -131,7 +128,6 @@ namespace HZH_Controls.Controls
             this.Controls.Add(this.panHead);
             this.Name = "UCDataGridView";
             this.Size = new System.Drawing.Size(1061, 565);
-            this.scrollbarComponent1.SetUserCustomScrollbar(this, true);
             this.Resize += new System.EventHandler(this.UCDataGridView_Resize);
             this.panHead.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -164,7 +160,6 @@ namespace HZH_Controls.Controls
         /// The pan head left
         /// </summary>
         private System.Windows.Forms.Panel panHeadLeft;
-        private ScrollBar.ScrollbarComponent scrollbarComponent1;
 
     }
 }
