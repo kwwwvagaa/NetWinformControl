@@ -68,6 +68,7 @@ namespace Test
                 tnCharts.Nodes.Add("饼状图");
                 tnCharts.Nodes.Add("曲线图");
                 tnCharts.Nodes.Add("雷达图");
+                tnCharts.Nodes.Add("金字塔图");
                 this.tvMenu.Nodes.Add(tnCharts);
 
                 TreeNode tnFactory = new TreeNode("  工业控件");
@@ -206,10 +207,10 @@ namespace Test
                     AddControl(new UC.UCTestPage());
                     break;
                 case "表格":
-                    AddControl(new UC.UCTestGridTable() { Dock = DockStyle.Fill });
+                    AddControl(new UC.UCTestGridTable());
                     break;
                 case "树表格":
-                    AddControl(new UC.UCTestTreeGridTable() { Dock = DockStyle.Fill });
+                    AddControl(new UC.UCTestTreeGridTable());
                     break;
                 case "进度条":
                     AddControl(new UC.UCTestProcess() { Dock = DockStyle.Fill });
@@ -262,6 +263,9 @@ namespace Test
                     break;
                 case "雷达图":
                     AddControl(new UC.UCTestRadarChart() { Dock = DockStyle.Fill });
+                    break;
+                case "金字塔图":
+                    AddControl(new UC.UCTestFunnelChart());
                     break;
                 #endregion
 

@@ -53,6 +53,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Charts\CurveChart\CurveItem.cs" />
+    <Compile Include="Controls\Charts\FunnelChart\FunelChartAlignment.cs" />
+    <Compile Include="Controls\Charts\FunnelChart\FunelChartDirection.cs" />
+    <Compile Include="Controls\Charts\FunnelChart\FunelChartItem.cs" />
+    <Compile Include="Controls\Charts\FunnelChart\UCFunnelChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\Charts\MarkText.cs" />
     <Compile Include="Controls\Charts\MarkTextPositionStyle.cs" />
     <Compile Include="Controls\Charts\PieChart\UCPieChart.cs">
