@@ -59,7 +59,7 @@ namespace HZH_Controls.Controls
             this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblTitle.Location = new System.Drawing.Point(1, 1);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(645, 34);
+            this.lblTitle.Size = new System.Drawing.Size(392, 34);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "面板";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -77,7 +77,7 @@ namespace HZH_Controls.Controls
             this.Name = "UCPanelTitle";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.Size = new System.Drawing.Size(647, 171);
+            this.Size = new System.Drawing.Size(394, 199);
             this.SizeChanged += new System.EventHandler(this.UCPanelTitle_SizeChanged);
             this.ResumeLayout(false);
 

@@ -34,6 +34,7 @@ namespace Test
                 tnForm.Nodes.Add("仅有标题的窗体");
                 tnForm.Nodes.Add("确定取消窗体1");
                 tnForm.Nodes.Add("确定取消窗体2");
+                tnForm.Nodes.Add("资源加载窗体");
                 this.tvMenu.Nodes.Add(tnForm);
 
                 TreeNode tnControl = new TreeNode("  控件");
@@ -138,6 +139,42 @@ namespace Test
                 case "确定取消窗体2":
                     new FrmOKCancel2Test().ShowDialog(this);
                     break;
+                case "资源加载窗体":
+                    FrmTestLoading frmLoading = new FrmTestLoading();
+                    frmLoading.BackgroundWorkAction = delegate()
+                    {
+                        try
+                        {
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(1, "正在初始化配置...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(10, "正在加载第一个资源...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(20, "正在加载第二个资源...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(30, "正在加载第三个资源...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(40, "正在加载第四个资源...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(50, "正在加载第五个资源...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(60, "正在加载第六个资源...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(70, "正在加载第七个资源...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(80, "正在加载第八个资源...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(90, "正在加载第九个资源...");
+                            Thread.Sleep(1000);
+                            frmLoading.CurrentMsg = new KeyValuePair<int, string>(1000, "数据加载完成...");
+                            Thread.Sleep(1000);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("加载资源时出现错误");
+                        }
+                    };
+                    frmLoading.ShowDialog();
+                    break;
                 #endregion
 
                 #region 控件    English:control
@@ -212,7 +249,7 @@ namespace Test
                     AddControl(new UC.UCTestMindMapping() { Dock = DockStyle.Fill });
                     break;
                 case "柱状图":
-                     AddControl(new UC.UCTestBarcharts());
+                    AddControl(new UC.UCTestBarcharts());
                     break;
                 case "饼状图":
                     AddControl(new UC.UCTestPieCharts());
@@ -250,7 +287,7 @@ namespace Test
                 case "警示灯":
                     AddControl(new UC.UCTestSignalLamp());
                     break;
-                case "箭头": 
+                case "箭头":
                     AddControl(new UC.UCTestArrow());
                     break;
                 case "温度计":

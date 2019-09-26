@@ -34,8 +34,6 @@
             this.ucPanelTitle4 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucPanelTitle1 = new HZH_Controls.Controls.UCPanelTitle();
             this.ucPanelTitle2 = new HZH_Controls.Controls.UCPanelTitle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ucPanelTitle3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ucPanelTitle5
@@ -64,7 +62,6 @@
             this.ucPanelTitle3.BackColor = System.Drawing.Color.White;
             this.ucPanelTitle3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucPanelTitle3.ConerRadius = 10;
-            this.ucPanelTitle3.Controls.Add(this.label1);
             this.ucPanelTitle3.FillColor = System.Drawing.Color.White;
             this.ucPanelTitle3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucPanelTitle3.IsCanExpand = true;
@@ -165,16 +162,6 @@
             this.ucPanelTitle2.TabIndex = 2;
             this.ucPanelTitle2.Title = "不可折叠面板";
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(1, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 146);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10";
-            // 
             // UCTestPanelTitle
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -187,7 +174,6 @@
             this.Controls.Add(this.ucPanelTitle2);
             this.Name = "UCTestPanelTitle";
             this.Size = new System.Drawing.Size(833, 615);
-            this.ucPanelTitle3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -200,6 +186,5 @@
         private HZH_Controls.Controls.UCPanelTitle ucPanelTitle3;
         private HZH_Controls.Controls.UCPanelTitle ucPanelTitle4;
         private HZH_Controls.Controls.UCPanelTitle ucPanelTitle5;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -71,6 +71,12 @@
     <Compile Include="Controls\ScrollBar\UCHScrollbar.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLoading.Designer.cs">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\GraphDirection.cs" />
     <Compile Include="Controls\Charts\BarChart\UCBarChart.cs">
       <SubType>UserControl</SubType>
@@ -719,6 +725,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmBack.resx">
       <DependentUpon>FrmBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLoading.resx">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmTips.resx">
       <DependentUpon>FrmTips.cs</DependentUpon>

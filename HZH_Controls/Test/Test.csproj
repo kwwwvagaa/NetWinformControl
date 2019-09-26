@@ -71,6 +71,12 @@
     <Compile Include="FrmTestFrmBack.Designer.cs">
       <DependentUpon>FrmTestFrmBack.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTestLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTestLoading.Designer.cs">
+      <DependentUpon>FrmTestLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmWithTitleTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTestFrmBack.resx">
       <DependentUpon>FrmTestFrmBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTestLoading.resx">
+      <DependentUpon>FrmTestLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWithTitleTest.resx">
       <DependentUpon>FrmWithTitleTest.cs</DependentUpon>
