@@ -244,7 +244,7 @@ namespace Test
                     AddControl(new UC.UCTestScrollbar() { Dock = DockStyle.Fill });
                     break;
                 case "控件水印":
-                    AddControl(new UC.UCTestGraphicalOverlay() { Dock = DockStyle.Fill });
+                    AddControl(new UC.UCTestGraphicalOverlay());
                     break;
                 #endregion
 
