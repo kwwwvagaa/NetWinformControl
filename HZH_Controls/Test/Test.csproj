@@ -128,6 +128,12 @@
     <Compile Include="UC\UCTestFunnelChart.Designer.cs">
       <DependentUpon>UCTestFunnelChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestGraphicalOverlay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestGraphicalOverlay.Designer.cs">
+      <DependentUpon>UCTestGraphicalOverlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestIcon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -361,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestFunnelChart.resx">
       <DependentUpon>UCTestFunnelChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestGraphicalOverlay.resx">
+      <DependentUpon>UCTestGraphicalOverlay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestGridTable.resx">
       <DependentUpon>UCTestGridTable.cs</DependentUpon>

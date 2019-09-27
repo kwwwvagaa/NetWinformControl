@@ -59,6 +59,7 @@ namespace Test
                 tnControl.Nodes.Add("有标题的面板");
                 tnControl.Nodes.Add("图标");
                 tnControl.Nodes.Add("滚动条");
+                tnControl.Nodes.Add("控件水印");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -242,7 +243,9 @@ namespace Test
                 case "滚动条":
                     AddControl(new UC.UCTestScrollbar() { Dock = DockStyle.Fill });
                     break;
-
+                case "控件水印":
+                    AddControl(new UC.UCTestGraphicalOverlay() { Dock = DockStyle.Fill });
+                    break;
                 #endregion
 
                 #region 图表    English:Chart

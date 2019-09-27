@@ -70,6 +70,12 @@
     <Compile Include="Controls\Charts\RadarChart\UCRadarChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\GraphicalOverlay\GraphicalOverlay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GraphicalOverlay\GraphicalOverlay.designer.cs">
+      <DependentUpon>GraphicalOverlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Navigation\CrumbNavigationClickEventArgs.cs" />
     <Compile Include="Controls\Navigation\CrumbNavigationItem.cs" />
     <Compile Include="Controls\ScrollBar\ScrollbarComponent.cs">

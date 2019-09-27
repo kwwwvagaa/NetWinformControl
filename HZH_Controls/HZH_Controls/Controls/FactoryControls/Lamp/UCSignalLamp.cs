@@ -185,15 +185,16 @@ namespace HZH_Controls.Controls
         {
             base.OnPaint(e);
             var g = e.Graphics;
-            g.SetGDIHigh();
+            g.SetGDIHigh();           
+
             Color c1 = lampColor[intColorIndex];
-            g.FillEllipse(new SolidBrush(c1), this.ClientRectangle);
+            g.FillEllipse(new SolidBrush(c1), new Rectangle(this.ClientRectangle.Location, this.ClientRectangle.Size - new Size(1, 1)));
 
             if (isHighlight)
             {
                 GraphicsPath gp = new GraphicsPath();
 
-                Rectangle rec = new Rectangle(5, 5, this.Width - 10, this.Height - 10);
+                Rectangle rec = new Rectangle(5, 5, this.Width - 10 - 1, this.Height - 10 - 1);
                 gp.AddEllipse(rec);
 
                 Color[] surroundColor = new Color[] { c1 };
@@ -205,7 +206,7 @@ namespace HZH_Controls.Controls
 
             if (isShowBorder)
             {
-                g.DrawEllipse(new Pen(new SolidBrush(this.BackColor), 2), new Rectangle(4, 4, this.Width - 8, this.Height - 8));
+                g.DrawEllipse(new Pen(new SolidBrush(this.BackColor), 2), new Rectangle(4, 4, this.Width - 1 - 8, this.Height - 1 - 8));
             }
         }
     }
