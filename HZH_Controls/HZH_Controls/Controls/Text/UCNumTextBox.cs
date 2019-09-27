@@ -141,17 +141,34 @@ namespace HZH_Controls.Controls
             get { return txtNum.Text.ToDecimal(); }
             set { txtNum.Text = value.ToString(); }
         }
-        /// <summary>
-        /// 获取或设置控件显示的文字的字体。
-        /// </summary>
-        /// <value>The font.</value>
-        /// <PermissionSet>
-        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
-        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
-        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
-        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
-        /// </PermissionSet>
-        [Description("字体"), Category("自定义")]
+
+		private decimal increment = 1;
+		/// <summary>
+		/// increment number
+		/// </summary>
+		[Description("单次点击的加减值 默认1")]
+		public decimal Increment
+		{
+			get
+			{
+				return increment;
+			}
+			set
+			{
+				increment = value;
+			}
+		}
+		/// <summary>
+		/// 获取或设置控件显示的文字的字体。
+		/// </summary>
+		/// <value>The font.</value>
+		/// <PermissionSet>
+		///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+		///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+		///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+		///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+		/// </PermissionSet>
+		[Description("字体"), Category("自定义")]
         public new Font Font
         {
             get
@@ -286,7 +303,7 @@ namespace HZH_Controls.Controls
                 AddClick(this, e);
             }
             decimal dec = this.txtNum.Text.ToDecimal();
-            dec++;
+            dec+= increment;
             txtNum.Text = dec.ToString();
 
         }
@@ -303,7 +320,7 @@ namespace HZH_Controls.Controls
                 MinusClick(this, e);
             }
             decimal dec = this.txtNum.Text.ToDecimal();
-            dec--;
+            dec-= increment;
             txtNum.Text = dec.ToString();
         }
 
