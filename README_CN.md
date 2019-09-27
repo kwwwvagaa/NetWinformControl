@@ -690,7 +690,7 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM",
 
 #### 44、控件水印组件
 
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0927/143505_91c808ca_301547.gif "1.gif")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0927/145944_e31fb93c_301547.gif "1.gif")
 
 #### 最后的话
 
