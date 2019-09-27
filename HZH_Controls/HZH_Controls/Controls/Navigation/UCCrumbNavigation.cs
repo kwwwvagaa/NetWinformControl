@@ -30,6 +30,7 @@ namespace HZH_Controls.Controls
     /// Implements the <see cref="System.Windows.Forms.UserControl" />
     /// </summary>
     /// <seealso cref="System.Windows.Forms.UserControl" />
+    [DefaultEvent("ClickItemed")]
     public partial class UCCrumbNavigation : UserControl
     {
         /// <summary>
@@ -54,24 +55,20 @@ namespace HZH_Controls.Controls
         }
 
 
-        /// <summary>
-        /// The m navigations
-        /// </summary>
-        private string[] m_navigations = new string[] { "目录1", "目录2", "目录3" };
+
         /// <summary>
         /// The m paths
         /// </summary>
-        GraphicsPath[] m_paths;
-        /// <summary>
-        /// Gets or sets the navigations.
-        /// </summary>
-        /// <value>The navigations.</value>
-        public string[] Navigations
+        GraphicsPath[] m_paths;     
+
+        private CrumbNavigationItem[] items;
+
+        public CrumbNavigationItem[] Items
         {
-            get { return m_navigations; }
+            get { return items; }
             set
             {
-                m_navigations = value;
+                items = value;
                 if (value == null)
                     m_paths = new GraphicsPath[0];
                 else
@@ -123,6 +120,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        public delegate void CrumbNavigationEventHander(object sender, CrumbNavigationClickEventArgs e);
+        public event CrumbNavigationEventHander ClickItemed;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UCCrumbNavigation" /> class.
         /// </summary>
@@ -136,6 +136,15 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.MouseDown += UCCrumbNavigation_MouseDown;
+            Items = new CrumbNavigationItem[0];
+            if (ControlHelper.IsDesignMode())
+            {
+                Items = new CrumbNavigationItem[3];
+                for (int i = 0; i < 3; i++)
+                {
+                    Items[i] = new CrumbNavigationItem() { Text = "item" + (i + 1), Key = i.ToString() };
+                }
+            }
         }
 
         /// <summary>
@@ -145,15 +154,18 @@ namespace HZH_Controls.Controls
         /// <param name="e">The <see cref="MouseEventArgs" /> instance containing the event data.</param>
         void UCCrumbNavigation_MouseDown(object sender, MouseEventArgs e)
         {
-            if (!DesignMode)
+            if (ClickItemed != null)
             {
-                if (m_paths != null && m_paths.Length > 0)
+                if (!DesignMode)
                 {
-                    for (int i = 0; i < m_paths.Length; i++)
+                    if (m_paths != null && m_paths.Length > 0)
                     {
-                        if (m_paths[i].IsVisible(e.Location))
+                        for (int i = 0; i < m_paths.Length; i++)
                         {
-                            HZH_Controls.Forms.FrmTips.ShowTipsSuccess(this.FindForm(), m_navigations[i]);
+                            if (m_paths[i].IsVisible(e.Location))
+                            {
+                                ClickItemed(this, new CrumbNavigationClickEventArgs() { Index = i, Item = items[i] });
+                            }
                         }
                     }
                 }
@@ -168,16 +180,16 @@ namespace HZH_Controls.Controls
         {
             base.OnPaint(e);
 
-            if (m_navigations != null && m_navigations.Length > 0)
+            if (items != null && items.Length > 0)
             {
                 var g = e.Graphics;
                 g.SetGDIHigh();
                 int intLastX = 0;
-                int intLength = m_navigations.Length;
-                for (int i = 0; i < m_navigations.Length; i++)
+                int intLength = items.Length;
+                for (int i = 0; i < items.Length; i++)
                 {
                     GraphicsPath path = new GraphicsPath();
-                    string strText = m_navigations[i];
+                    string strText = items[i].Text;
                     System.Drawing.SizeF sizeF = g.MeasureString(strText.Replace(" ", "A"), Font);
                     int intTextWidth = (int)sizeF.Width + 1;
                     path.AddLine(new Point(intLastX + 1, 1), new Point(intLastX + 1 + (i == 0 ? 0 : 10) + intTextWidth, 1));
@@ -203,7 +215,7 @@ namespace HZH_Controls.Controls
                     {
                         path.AddLine(new Point(intLastX + 1, this.Height - 1), new Point(intLastX + 1, 1));
                     }
-                    g.FillPath(new SolidBrush(m_navColor), path);
+                    g.FillPath(new SolidBrush((items[i].ItemColor == null || items[i].ItemColor == Color.Empty || items[i].ItemColor == Color.Transparent) ? m_navColor : items[i].ItemColor.Value), path);
 
                     g.DrawString(strText, this.Font, new SolidBrush(this.ForeColor), new PointF(intLastX + 2 + (i == 0 ? 0 : 10), (this.Height - sizeF.Height) / 2 + 1));
                     m_paths[i] = path;
