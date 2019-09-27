@@ -63,11 +63,14 @@
             this.ucSwitch2 = new HZH_Controls.Controls.UCSwitch();
             this.ucSwitch1 = new HZH_Controls.Controls.UCSwitch();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ucNumTextBox2 = new HZH_Controls.Controls.UCNumTextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -76,7 +79,6 @@
             this.groupBox4.Controls.Add(this.ucTextBoxEx3);
             this.groupBox4.Controls.Add(this.ucTextBoxEx2);
             this.groupBox4.Controls.Add(this.ucTextBoxEx1);
-            this.groupBox4.Controls.Add(this.ucNumTextBox1);
             this.groupBox4.Controls.Add(this.textBoxTransparent1);
             this.groupBox4.Location = new System.Drawing.Point(168, 3);
             this.groupBox4.Name = "groupBox4";
@@ -103,7 +105,7 @@
             this.ucTextBoxEx4.IsShowRect = true;
             this.ucTextBoxEx4.IsShowSearchBtn = false;
             this.ucTextBoxEx4.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderAll_EN;
-            this.ucTextBoxEx4.Location = new System.Drawing.Point(6, 275);
+            this.ucTextBoxEx4.Location = new System.Drawing.Point(6, 273);
             this.ucTextBoxEx4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucTextBoxEx4.MaxValue = new decimal(new int[] {
             1000000,
@@ -144,7 +146,7 @@
             this.ucTextBoxEx3.IsShowRect = true;
             this.ucTextBoxEx3.IsShowSearchBtn = false;
             this.ucTextBoxEx3.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderHand;
-            this.ucTextBoxEx3.Location = new System.Drawing.Point(6, 223);
+            this.ucTextBoxEx3.Location = new System.Drawing.Point(6, 206);
             this.ucTextBoxEx3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucTextBoxEx3.MaxValue = new decimal(new int[] {
             1000000,
@@ -185,7 +187,7 @@
             this.ucTextBoxEx2.IsShowRect = true;
             this.ucTextBoxEx2.IsShowSearchBtn = false;
             this.ucTextBoxEx2.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderAll_EN;
-            this.ucTextBoxEx2.Location = new System.Drawing.Point(6, 171);
+            this.ucTextBoxEx2.Location = new System.Drawing.Point(6, 139);
             this.ucTextBoxEx2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucTextBoxEx2.MaxValue = new decimal(new int[] {
             1000000,
@@ -226,7 +228,7 @@
             this.ucTextBoxEx1.IsShowRect = true;
             this.ucTextBoxEx1.IsShowSearchBtn = false;
             this.ucTextBoxEx1.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderNum;
-            this.ucTextBoxEx1.Location = new System.Drawing.Point(7, 119);
+            this.ucTextBoxEx1.Location = new System.Drawing.Point(7, 72);
             this.ucTextBoxEx1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucTextBoxEx1.MaxValue = new decimal(new int[] {
             1000000,
@@ -251,10 +253,15 @@
             // 
             // ucNumTextBox1
             // 
+            this.ucNumTextBox1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ucNumTextBox1.InputType = HZH_Controls.TextInputType.Number;
             this.ucNumTextBox1.IsNumCanInput = true;
             this.ucNumTextBox1.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderNum;
-            this.ucNumTextBox1.Location = new System.Drawing.Point(6, 57);
+            this.ucNumTextBox1.Location = new System.Drawing.Point(40, 30);
             this.ucNumTextBox1.MaxValue = new decimal(new int[] {
             1000000,
             0,
@@ -411,9 +418,9 @@
             this.groupBox6.Controls.Add(this.ucComboxGrid1);
             this.groupBox6.Controls.Add(this.ucComboBox2);
             this.groupBox6.Controls.Add(this.ucComboBox1);
-            this.groupBox6.Location = new System.Drawing.Point(383, 242);
+            this.groupBox6.Location = new System.Drawing.Point(3, 461);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(238, 165);
+            this.groupBox6.Size = new System.Drawing.Size(618, 81);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "下拉列表";
@@ -433,7 +440,7 @@
             this.ucComboxGrid1.IsRadius = false;
             this.ucComboxGrid1.IsShowRect = true;
             this.ucComboxGrid1.ItemWidth = 70;
-            this.ucComboxGrid1.Location = new System.Drawing.Point(7, 124);
+            this.ucComboxGrid1.Location = new System.Drawing.Point(429, 26);
             this.ucComboxGrid1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucComboxGrid1.Name = "ucComboxGrid1";
             this.ucComboxGrid1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -460,7 +467,7 @@
             this.ucComboBox2.IsRadius = false;
             this.ucComboBox2.IsShowRect = true;
             this.ucComboBox2.ItemWidth = 70;
-            this.ucComboBox2.Location = new System.Drawing.Point(7, 71);
+            this.ucComboBox2.Location = new System.Drawing.Point(224, 26);
             this.ucComboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucComboBox2.Name = "ucComboBox2";
             this.ucComboBox2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -482,7 +489,7 @@
             this.ucComboBox1.DropPanelHeight = -1;
             this.ucComboBox1.FillColor = System.Drawing.Color.White;
             this.ucComboBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.ucComboBox1.IsRadius = false;
+            this.ucComboBox1.IsRadius = true;
             this.ucComboBox1.IsShowRect = true;
             this.ucComboBox1.ItemWidth = 70;
             this.ucComboBox1.Location = new System.Drawing.Point(7, 26);
@@ -575,7 +582,7 @@
             this.ucSwitch10.BackColor = System.Drawing.Color.Transparent;
             this.ucSwitch10.Checked = false;
             this.ucSwitch10.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch10.Location = new System.Drawing.Point(136, 146);
+            this.ucSwitch10.Location = new System.Drawing.Point(136, 173);
             this.ucSwitch10.Name = "ucSwitch10";
             this.ucSwitch10.Size = new System.Drawing.Size(86, 34);
             this.ucSwitch10.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
@@ -590,7 +597,7 @@
             this.ucSwitch9.BackColor = System.Drawing.Color.Transparent;
             this.ucSwitch9.Checked = true;
             this.ucSwitch9.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch9.Location = new System.Drawing.Point(136, 106);
+            this.ucSwitch9.Location = new System.Drawing.Point(136, 122);
             this.ucSwitch9.Name = "ucSwitch9";
             this.ucSwitch9.Size = new System.Drawing.Size(86, 34);
             this.ucSwitch9.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
@@ -605,7 +612,7 @@
             this.ucSwitch6.BackColor = System.Drawing.Color.Transparent;
             this.ucSwitch6.Checked = false;
             this.ucSwitch6.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch6.Location = new System.Drawing.Point(136, 60);
+            this.ucSwitch6.Location = new System.Drawing.Point(136, 71);
             this.ucSwitch6.Name = "ucSwitch6";
             this.ucSwitch6.Size = new System.Drawing.Size(86, 34);
             this.ucSwitch6.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
@@ -618,7 +625,7 @@
             this.ucSwitch8.BackColor = System.Drawing.Color.Transparent;
             this.ucSwitch8.Checked = false;
             this.ucSwitch8.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch8.Location = new System.Drawing.Point(22, 146);
+            this.ucSwitch8.Location = new System.Drawing.Point(22, 173);
             this.ucSwitch8.Name = "ucSwitch8";
             this.ucSwitch8.Size = new System.Drawing.Size(86, 34);
             this.ucSwitch8.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
@@ -646,7 +653,7 @@
             this.ucSwitch7.BackColor = System.Drawing.Color.Transparent;
             this.ucSwitch7.Checked = true;
             this.ucSwitch7.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch7.Location = new System.Drawing.Point(22, 106);
+            this.ucSwitch7.Location = new System.Drawing.Point(22, 122);
             this.ucSwitch7.Name = "ucSwitch7";
             this.ucSwitch7.Size = new System.Drawing.Size(86, 34);
             this.ucSwitch7.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
@@ -661,7 +668,7 @@
             this.ucSwitch4.BackColor = System.Drawing.Color.Transparent;
             this.ucSwitch4.Checked = false;
             this.ucSwitch4.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch4.Location = new System.Drawing.Point(22, 60);
+            this.ucSwitch4.Location = new System.Drawing.Point(22, 71);
             this.ucSwitch4.Name = "ucSwitch4";
             this.ucSwitch4.Size = new System.Drawing.Size(86, 34);
             this.ucSwitch4.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
@@ -687,7 +694,7 @@
             this.ucSwitch2.BackColor = System.Drawing.Color.Transparent;
             this.ucSwitch2.Checked = false;
             this.ucSwitch2.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch2.Location = new System.Drawing.Point(136, 186);
+            this.ucSwitch2.Location = new System.Drawing.Point(136, 224);
             this.ucSwitch2.Name = "ucSwitch2";
             this.ucSwitch2.Size = new System.Drawing.Size(86, 34);
             this.ucSwitch2.SwitchType = HZH_Controls.Controls.SwitchType.Line;
@@ -700,7 +707,7 @@
             this.ucSwitch1.BackColor = System.Drawing.Color.Transparent;
             this.ucSwitch1.Checked = true;
             this.ucSwitch1.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch1.Location = new System.Drawing.Point(22, 186);
+            this.ucSwitch1.Location = new System.Drawing.Point(22, 224);
             this.ucSwitch1.Name = "ucSwitch1";
             this.ucSwitch1.Size = new System.Drawing.Size(86, 34);
             this.ucSwitch1.SwitchType = HZH_Controls.Controls.SwitchType.Line;
@@ -720,12 +727,54 @@
             this.groupBox1.Controls.Add(this.ucSwitch3);
             this.groupBox1.Controls.Add(this.ucSwitch4);
             this.groupBox1.Controls.Add(this.ucSwitch7);
-            this.groupBox1.Location = new System.Drawing.Point(383, 3);
+            this.groupBox1.Location = new System.Drawing.Point(383, 174);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(238, 233);
+            this.groupBox1.Size = new System.Drawing.Size(238, 281);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "下拉列表";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ucNumTextBox2);
+            this.groupBox2.Controls.Add(this.ucNumTextBox1);
+            this.groupBox2.Location = new System.Drawing.Point(383, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(238, 165);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "下拉列表";
+            // 
+            // ucNumTextBox2
+            // 
+            this.ucNumTextBox2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ucNumTextBox2.InputType = HZH_Controls.TextInputType.Number;
+            this.ucNumTextBox2.IsNumCanInput = true;
+            this.ucNumTextBox2.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderNum;
+            this.ucNumTextBox2.Location = new System.Drawing.Point(40, 90);
+            this.ucNumTextBox2.MaxValue = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.ucNumTextBox2.MinValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ucNumTextBox2.Name = "ucNumTextBox2";
+            this.ucNumTextBox2.Num = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ucNumTextBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.ucNumTextBox2.Size = new System.Drawing.Size(152, 44);
+            this.ucNumTextBox2.TabIndex = 1;
             // 
             // UCTestForms
             // 
@@ -733,11 +782,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Name = "UCTestForms";
-            this.Size = new System.Drawing.Size(656, 516);
+            this.Size = new System.Drawing.Size(656, 567);
             this.Load += new System.EventHandler(this.UCForms_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -745,6 +795,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -786,5 +837,7 @@
         private HZH_Controls.Controls.UCSwitch ucSwitch2;
         private HZH_Controls.Controls.UCSwitch ucSwitch1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private HZH_Controls.Controls.UCNumTextBox ucNumTextBox2;
     }
 }

@@ -117,6 +117,7 @@ namespace HZH_Controls.Controls
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.lblInput);
             this.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.IsRadius = true;
             this.IsShowRect = true;
             this.Name = "UCCombox";
             this.Size = new System.Drawing.Size(173, 32);

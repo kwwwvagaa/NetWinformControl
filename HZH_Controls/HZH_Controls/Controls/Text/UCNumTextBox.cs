@@ -174,6 +174,19 @@ namespace HZH_Controls.Controls
         /// </summary>
         [Description("减少按钮点击事件"), Category("自定义")]
         public event EventHandler MinusClick;
+
+        private decimal increment = 1;
+        [Description("递增量，大于0的数值"), Category("自定义")]
+        public decimal Increment
+        {
+            get { return increment; }
+            set
+            {
+                if (value <= 0)
+                    return;
+                increment = value;
+            }
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="UCNumTextBox" /> class.
         /// </summary>
@@ -286,7 +299,7 @@ namespace HZH_Controls.Controls
                 AddClick(this, e);
             }
             decimal dec = this.txtNum.Text.ToDecimal();
-            dec++;
+            dec += increment;
             txtNum.Text = dec.ToString();
 
         }
@@ -303,7 +316,7 @@ namespace HZH_Controls.Controls
                 MinusClick(this, e);
             }
             decimal dec = this.txtNum.Text.ToDecimal();
-            dec--;
+            dec -= increment; ;
             txtNum.Text = dec.ToString();
         }
 
