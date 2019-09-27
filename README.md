@@ -692,7 +692,7 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBO
 
 #### 44、GraphicalOverlay
 
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0927/143505_91c808ca_301547.gif "1.gif")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0927/145944_e31fb93c_301547.gif "1.gif")
 
 #### The last words
 
