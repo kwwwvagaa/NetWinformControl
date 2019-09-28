@@ -705,6 +705,9 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM",
 控件根据设置的驱动裁剪有效工作区域来实现无遮挡。
 ``` 
 
+#### 47、倒影组件
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0928/163958_cf233dc5_301547.png "dy.png")
 
 #### 最后的话
 
