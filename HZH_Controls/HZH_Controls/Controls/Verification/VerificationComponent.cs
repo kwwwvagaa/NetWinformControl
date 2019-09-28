@@ -1,4 +1,19 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 2019-09-27
+//
+// ***********************************************************************
+// <copyright file="VerificationComponent.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -10,6 +25,13 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class VerificationComponent.
+    /// Implements the <see cref="System.ComponentModel.Component" />
+    /// Implements the <see cref="System.ComponentModel.IExtenderProvider" />
+    /// </summary>
+    /// <seealso cref="System.ComponentModel.Component" />
+    /// <seealso cref="System.ComponentModel.IExtenderProvider" />
     [ProvideProperty("VerificationModel", typeof(Control))]
     [ProvideProperty("VerificationCustomRegex", typeof(Control))]
     [ProvideProperty("VerificationRequired", typeof(Control))]
@@ -17,18 +39,47 @@ namespace HZH_Controls.Controls
     [DefaultEvent("Verificationed")]
     public class VerificationComponent : Component, IExtenderProvider
     {
+        /// <summary>
+        /// Delegate VerificationedHandle
+        /// </summary>
+        /// <param name="e">The <see cref="VerificationEventArgs"/> instance containing the event data.</param>
         public delegate void VerificationedHandle(VerificationEventArgs e);
+        /// <summary>
+        /// Occurs when [verificationed].
+        /// </summary>
         [Browsable(true), Category("自定义属性"), Description("验证事件"), Localizable(true)]
         public event VerificationedHandle Verificationed;
 
+        /// <summary>
+        /// The m control cache
+        /// </summary>
         Dictionary<Control, VerificationModel> m_controlCache = new Dictionary<Control, VerificationModel>();
+        /// <summary>
+        /// The m control regex cache
+        /// </summary>
         Dictionary<Control, string> m_controlRegexCache = new Dictionary<Control, string>();
+        /// <summary>
+        /// The m control required cache
+        /// </summary>
         Dictionary<Control, bool> m_controlRequiredCache = new Dictionary<Control, bool>();
+        /// <summary>
+        /// The m control MSG cache
+        /// </summary>
         Dictionary<Control, string> m_controlMsgCache = new Dictionary<Control, string>();
+        /// <summary>
+        /// The m control tips
+        /// </summary>
         Dictionary<Control, Forms.FrmAnchorTips> m_controlTips = new Dictionary<Control, Forms.FrmAnchorTips>();
 
+        /// <summary>
+        /// The error tips back color
+        /// </summary>
         private Color errorTipsBackColor = Color.FromArgb(255, 77, 58);
 
+        /// <summary>
+        /// Gets or sets the color of the error tips back.
+        /// </summary>
+        /// <value>The color of the error tips back.</value>
         [Browsable(true), Category("自定义属性"), Description("错误提示背景色"), Localizable(true)]
         public Color ErrorTipsBackColor
         {
@@ -36,8 +87,15 @@ namespace HZH_Controls.Controls
             set { errorTipsBackColor = value; }
         }
 
+        /// <summary>
+        /// The error tips fore color
+        /// </summary>
         private Color errorTipsForeColor = Color.White;
 
+        /// <summary>
+        /// Gets or sets the color of the error tips fore.
+        /// </summary>
+        /// <value>The color of the error tips fore.</value>
         [Browsable(true), Category("自定义属性"), Description("错误提示文字颜色"), Localizable(true)]
         public Color ErrorTipsForeColor
         {
@@ -46,11 +104,18 @@ namespace HZH_Controls.Controls
         }
 
         #region 构造函数    English:Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerificationComponent"/> class.
+        /// </summary>
         public VerificationComponent()
         {
 
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerificationComponent"/> class.
+        /// </summary>
+        /// <param name="container">The container.</param>
         public VerificationComponent(IContainer container)
             : this()
         {
@@ -75,6 +140,11 @@ namespace HZH_Controls.Controls
         #endregion
 
         #region 验证规则    English:Validation rule
+        /// <summary>
+        /// Gets the verification model.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <returns>VerificationModel.</returns>
         [Browsable(true), Category("自定义属性"), Description("验证规则"), DisplayName("VerificationModel"), Localizable(true)]
         public VerificationModel GetVerificationModel(Control control)
         {
@@ -86,6 +156,11 @@ namespace HZH_Controls.Controls
                 return VerificationModel.None;
         }
 
+        /// <summary>
+        /// Sets the verification model.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="vm">The vm.</param>
         public void SetVerificationModel(Control control, VerificationModel vm)
         {
             m_controlCache[control] = vm;
@@ -93,6 +168,11 @@ namespace HZH_Controls.Controls
         #endregion
 
         #region 自定义正则    English:Custom Rules
+        /// <summary>
+        /// Gets the verification custom regex.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <returns>System.String.</returns>
         [Browsable(true), Category("自定义属性"), Description("自定义验证正则表达式"), DisplayName("VerificationCustomRegex"), Localizable(true)]
         public string GetVerificationCustomRegex(Control control)
         {
@@ -104,6 +184,11 @@ namespace HZH_Controls.Controls
                 return "";
         }
 
+        /// <summary>
+        /// Sets the verification custom regex.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="strRegex">The string regex.</param>
         public void SetVerificationCustomRegex(Control control, string strRegex)
         {
             m_controlRegexCache[control] = strRegex;
@@ -111,6 +196,11 @@ namespace HZH_Controls.Controls
         #endregion
 
         #region 必填    English:Must fill
+        /// <summary>
+        /// Gets the verification required.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         [Browsable(true), Category("自定义属性"), Description("是否必填项"), DisplayName("VerificationRequired"), Localizable(true)]
         public bool GetVerificationRequired(Control control)
         {
@@ -119,6 +209,11 @@ namespace HZH_Controls.Controls
             return false;
         }
 
+        /// <summary>
+        /// Sets the verification required.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="blnRequired">if set to <c>true</c> [BLN required].</param>
         public void SetVerificationRequired(Control control, bool blnRequired)
         {
             m_controlRequiredCache[control] = blnRequired;
@@ -126,6 +221,11 @@ namespace HZH_Controls.Controls
         #endregion
 
         #region 提示信息    English:Prompt information
+        /// <summary>
+        /// Gets the verification error MSG.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <returns>System.String.</returns>
         [Browsable(true), Category("自定义属性"), Description("验证错误提示信息，当为空时则使用默认提示信息"), DisplayName("VerificationErrorMsg"), Localizable(true)]
         public string GetVerificationErrorMsg(Control control)
         {
@@ -134,6 +234,11 @@ namespace HZH_Controls.Controls
             return "";
         }
 
+        /// <summary>
+        /// Sets the verification error MSG.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="strErrorMsg">The string error MSG.</param>
         public void SetVerificationErrorMsg(Control control, string strErrorMsg)
         {
             m_controlMsgCache[control] = strErrorMsg;
