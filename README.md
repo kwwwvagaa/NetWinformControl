@@ -698,6 +698,15 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "Test prompt information \nBO
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0928/094554_4b5aa376_301547.png "yz.png")
 
+#### 46, sampling control
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0928/151849_b1b6309f_301547.png "cy.png")
+
+``` csharp
+Notice where the controls cross and there is no occlusion.
+The control crops the effective work area according to the set drive to achieve no occlusion.
+```
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
