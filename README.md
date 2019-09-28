@@ -707,6 +707,9 @@ Notice where the controls cross and there is no occlusion.
 The control crops the effective work area according to the set drive to achieve no occlusion.
 ```
 
+#### 47、Shadow
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0928/163958_cf233dc5_301547.png "dy.png")
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
