@@ -21,7 +21,8 @@ namespace HZH_Controls.Controls
 
             InitializeComponent();
         }
-        private Control owner;      
+        private Control owner;
+        [Browsable(true), Category("自定义属性"), Description("父控件"), Localizable(true)]    
         public Control Owner
         {
             get { return owner; }
@@ -29,11 +30,11 @@ namespace HZH_Controls.Controls
             {
                 // The owner form cannot be set to null.
                 if (value == null)
-                    throw new ArgumentNullException();
+                    return;
 
                 // The owner form can only be set once.
                 if (owner != null)
-                    throw new InvalidOperationException();
+                    return;
 
                 // Save the form for future reference.
                 owner = value;

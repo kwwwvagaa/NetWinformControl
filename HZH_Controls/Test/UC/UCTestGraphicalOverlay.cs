@@ -21,9 +21,9 @@ namespace Test.UC
 
         private void graphicalOverlay1_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.SetGDIHigh();
             if (blnColor)
             {
-                e.Graphics.SetGDIHigh();
                 foreach (Control item in this.Controls)
                 {
                     if (item is Button)

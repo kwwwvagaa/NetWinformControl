@@ -140,11 +140,11 @@ namespace HZH_Controls.Forms
             Color _foreColor = m_foreColor == null ? Color.White : m_foreColor.Value;
             System.Drawing.SizeF sizeText = g.MeasureString(strMsg, _font);
             g.Dispose();
-            var formSize = new Size((int)sizeText.Width + 20, (int)sizeText.Height + 20);
-            if (formSize.Width < 20)
-                formSize.Width = 20;
-            if (formSize.Height < 20)
-                formSize.Height = 20;
+            var formSize = new Size((int)sizeText.Width + 10, (int)sizeText.Height + 10);
+            if (formSize.Width < 10)
+                formSize.Width = 10;
+            if (formSize.Height < 10)
+                formSize.Height = 10;
             if (m_location == AnchorTipsLocation.LEFT || m_location == AnchorTipsLocation.RIGHT)
             {
                 formSize.Width += 20;
@@ -244,7 +244,7 @@ namespace HZH_Controls.Forms
             Graphics gBit = Graphics.FromImage(bit);
             gBit.SetGDIHigh();
             gBit.FillPath(new SolidBrush(_background), path);
-            gBit.DrawString(strMsg, _font, new SolidBrush(_foreColor), rect.Location + new Size(10, 10));
+            gBit.DrawString(strMsg, _font, new SolidBrush(_foreColor), rect, new StringFormat() {  Alignment= StringAlignment.Center, LineAlignment= StringAlignment.Center});
             gBit.Dispose();
             #endregion
 
@@ -264,6 +264,7 @@ namespace HZH_Controls.Forms
         /// <param name="deviation">The deviation.</param>
         /// <param name="fontSize">Size of the font.</param>
         /// <param name="autoCloseTime">The automatic close time.</param>
+        /// <param name="blnTopMost">是否置顶</param>
         /// <returns>FrmAnchorTips.</returns>
         public static FrmAnchorTips ShowTips(
             Control parentControl,
@@ -273,7 +274,8 @@ namespace HZH_Controls.Forms
             Color? foreColor = null,
             Size? deviation = null,
             int fontSize = 10,
-            int autoCloseTime = 5000)
+            int autoCloseTime = 5000,
+            bool blnTopMost=true)
         {
             Point p;
             if (parentControl is Form)
@@ -288,7 +290,7 @@ namespace HZH_Controls.Forms
             {
                 p = p + deviation.Value;
             }
-            return ShowTips(new Rectangle(p, parentControl.Size), strMsg, location, background, foreColor, fontSize, autoCloseTime);
+            return ShowTips(new Rectangle(p, parentControl.Size), strMsg, location, background, foreColor, fontSize, autoCloseTime, parentControl.FindForm(),blnTopMost);
         }
         #endregion
 
@@ -303,6 +305,8 @@ namespace HZH_Controls.Forms
         /// <param name="foreColor">Color of the fore.</param>
         /// <param name="fontSize">Size of the font.</param>
         /// <param name="autoCloseTime">The automatic close time.</param>
+        /// <param name="parentForm">父窗体</param>
+        /// <param name="blnTopMost">是否置顶</param>
         /// <returns>FrmAnchorTips.</returns>
         public static FrmAnchorTips ShowTips(
             Rectangle rectControl,
@@ -311,11 +315,13 @@ namespace HZH_Controls.Forms
             Color? background = null,
             Color? foreColor = null,
             int fontSize = 10,
-            int autoCloseTime = 5000)
+            int autoCloseTime = 5000,
+            Form parentForm = null,
+            bool blnTopMost = true)
         {
             FrmAnchorTips frm = new FrmAnchorTips(rectControl, strMsg, location, background, foreColor, fontSize, autoCloseTime);
-            frm.TopMost = true;
-            frm.Show();
+            frm.TopMost = blnTopMost;
+            frm.Show(parentForm);
             return frm;
         }
         #endregion

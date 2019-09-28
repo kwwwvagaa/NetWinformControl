@@ -302,6 +302,12 @@
     <Compile Include="UC\UCTestValve.Designer.cs">
       <DependentUpon>UCTestValve.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestVerification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestVerification.Designer.cs">
+      <DependentUpon>UCTestVerification.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestWave.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -448,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestValve.resx">
       <DependentUpon>UCTestValve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestVerification.resx">
+      <DependentUpon>UCTestVerification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestWave.resx">
       <DependentUpon>UCTestWave.cs</DependentUpon>

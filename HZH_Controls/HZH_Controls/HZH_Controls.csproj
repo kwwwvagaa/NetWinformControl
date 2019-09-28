@@ -85,6 +85,12 @@
     <Compile Include="Controls\ScrollBar\UCHScrollbar.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\Verification\VerificationAttribute.cs" />
+    <Compile Include="Controls\Verification\VerificationComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Verification\VerificationEventArgs.cs" />
+    <Compile Include="Controls\Verification\VerificationModel.cs" />
     <Compile Include="Forms\FrmLoading.cs">
       <SubType>Form</SubType>
     </Compile>

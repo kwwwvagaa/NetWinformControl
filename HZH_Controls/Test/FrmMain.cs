@@ -60,6 +60,7 @@ namespace Test
                 tnControl.Nodes.Add("图标");
                 tnControl.Nodes.Add("滚动条");
                 tnControl.Nodes.Add("控件水印");
+                tnControl.Nodes.Add("表单验证");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -245,6 +246,9 @@ namespace Test
                     break;
                 case "控件水印":
                     AddControl(new UC.UCTestGraphicalOverlay());
+                    break;
+                case "表单验证":
+                    AddControl(new UC.UCTestVerification() { Dock = DockStyle.Fill });
                     break;
                 #endregion
 

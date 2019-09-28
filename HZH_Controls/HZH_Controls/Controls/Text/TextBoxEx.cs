@@ -369,14 +369,15 @@ namespace HZH_Controls.Controls
         /// 处理 Windows 消息。
         /// </summary>
         /// <param name="m">一个 Windows 消息对象。</param>
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (m.Msg == 15 || m.Msg == 7 || m.Msg == 8)
-            {
-                this.OnPaint(null);
-            }
-        }
+        //protected override void WndProc(ref Message m)
+        //{
+        //    base.WndProc(ref m);
+        //    if (m.Msg == 15 || m.Msg == 7 || m.Msg == 8)
+        //    {
+        //        //this.OnPaint(null);
+        //        Invalidate();
+        //    }
+        //}
 
         /// <summary>
         /// Handles the <see cref="E:TextChanged" /> event.
