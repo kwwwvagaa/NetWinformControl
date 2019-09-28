@@ -54,8 +54,12 @@ namespace HZH_Controls.Controls
 
         private void ConnectPaintEventHandlers(Control control)
         {
-            // Connect the paint event handler for this control.
-            // Remove the existing handler first (if one exists) and replace it.
+
+            Type type = control.GetType();
+            System.Reflection.PropertyInfo pi = type.GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            pi.SetValue(control, true, null);
+           
+            
             control.Paint -= new PaintEventHandler(Control_Paint);
             control.Paint += new PaintEventHandler(Control_Paint);
 

@@ -10,6 +10,7 @@ using HZH_Controls;
 
 namespace Test.UC
 {
+    [ToolboxItem(false)]
     public partial class UCTestGraphicalOverlay : UserControl
     {
         Random r = new Random();
@@ -17,6 +18,12 @@ namespace Test.UC
         public UCTestGraphicalOverlay()
         {
             InitializeComponent();
+            this.Paint += UCTestGraphicalOverlay_Paint;
+        }
+
+        void UCTestGraphicalOverlay_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
 
         private void graphicalOverlay1_Paint(object sender, PaintEventArgs e)
@@ -26,15 +33,35 @@ namespace Test.UC
             {
                 foreach (Control item in this.Controls)
                 {
-                    if (item is Button)
-                    {
-                        e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(100, r.Next(0, 255), r.Next(0, 255), r.Next(0, 255))), item.Bounds);
-                    }
-                    else if (item is Label)
-                    {
-                        e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(100, r.Next(0, 255), r.Next(0, 255), r.Next(0, 255))), item.Bounds);
-                    }
+                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(100, r.Next(0, 255), r.Next(0, 255), r.Next(0, 255))), item.Bounds);
                 }
+                //using (Bitmap bit = new Bitmap(button4.Width, button4.Height))
+                //{
+                //    button4.DrawToBitmap(bit, button4.ClientRectangle);
+                //    using (Bitmap bitNew = new Bitmap(bit.Width, bit.Height / 3))
+                //    {
+                //        using (var g = Graphics.FromImage(bitNew))
+                //        {
+                //            g.DrawImage(bit, new RectangleF(0, 0, bitNew.Width, bitNew.Height), new RectangleF(0, bit.Height - bit.Height / 3, bit.Width, bit.Height / 3), GraphicsUnit.Pixel);
+                //        }
+                //        bitNew.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                //        float flt = 200.0f / bitNew.Height;
+
+                //        for (int i = 0; i < bitNew.Height; i++)
+                //        {
+                //            for (int j = 0; j < bitNew.Width; j++)
+                //            {
+                //                Color c = bitNew.GetPixel(j, i);
+
+                //                int a = 200 - (int)(flt * i);
+                //                if (a < 0)
+                //                    a = 0;
+                //                bitNew.SetPixel(j, i, Color.FromArgb(a, c));
+                //            }
+                //        }
+                //        e.Graphics.DrawImage(bitNew, new Point(button4.Location.X, button4.Location.Y + button4.Height + 1));
+                //    }
+                //}
             }
         }
 

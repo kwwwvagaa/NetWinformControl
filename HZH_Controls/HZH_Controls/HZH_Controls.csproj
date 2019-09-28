@@ -78,6 +78,9 @@
     </Compile>
     <Compile Include="Controls\Navigation\CrumbNavigationClickEventArgs.cs" />
     <Compile Include="Controls\Navigation\CrumbNavigationItem.cs" />
+    <Compile Include="Controls\Sampling\UCSampling.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\ScrollBar\ScrollbarComponent.cs">
       <SubType>Component</SubType>
     </Compile>

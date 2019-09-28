@@ -61,10 +61,11 @@ namespace Test
                 tnControl.Nodes.Add("滚动条");
                 tnControl.Nodes.Add("控件水印");
                 tnControl.Nodes.Add("表单验证");
+                tnControl.Nodes.Add("图片采样控件");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
-                tnControl.Nodes.Add("组织结构图");
+                tnCharts.Nodes.Add("组织结构图");
                 tnCharts.Nodes.Add("滚动图表");
                 tnCharts.Nodes.Add("柱状图");
                 tnCharts.Nodes.Add("饼状图");
@@ -249,6 +250,9 @@ namespace Test
                     break;
                 case "表单验证":
                     AddControl(new UC.UCTestVerification() { Dock = DockStyle.Fill });
+                    break;
+                case "图片采样控件":
+                    AddControl(new UC.UCTestSampling() );
                     break;
                 #endregion
 

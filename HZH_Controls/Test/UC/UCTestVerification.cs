@@ -12,6 +12,7 @@ using System.Drawing.Drawing2D;
 
 namespace Test.UC
 {
+    [ToolboxItem(false)]
     public partial class UCTestVerification : UserControl
     {
         public UCTestVerification()
