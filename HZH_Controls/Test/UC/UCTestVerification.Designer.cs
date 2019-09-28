@@ -80,7 +80,7 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.verificationComponent1 = new HZH_Controls.Controls.VerificationComponent(this.components);
-            this.graphicalOverlay1 = new HZH_Controls.Controls.GraphicalOverlay(this.components);
+            this.graphicalOverlay1 = new HZH_Controls.Controls.GraphicalOverlayComponent(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -880,7 +880,7 @@
         private HZH_Controls.Controls.UCCombox ucCombox2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox2;
-        private HZH_Controls.Controls.GraphicalOverlay graphicalOverlay1;
+        private HZH_Controls.Controls.GraphicalOverlayComponent graphicalOverlay1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;

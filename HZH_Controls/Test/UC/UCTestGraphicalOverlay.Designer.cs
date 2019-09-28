@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.graphicalOverlay1 = new HZH_Controls.Controls.GraphicalOverlay(this.components);
+            this.graphicalOverlay1 = new HZH_Controls.Controls.GraphicalOverlayComponent(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -108,7 +108,7 @@
 
         #endregion
 
-        private HZH_Controls.Controls.GraphicalOverlay graphicalOverlay1;
+        private HZH_Controls.Controls.GraphicalOverlayComponent graphicalOverlay1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

@@ -254,6 +254,12 @@
     <Compile Include="UC\UCTestScrollbar.Designer.cs">
       <DependentUpon>UCTestScrollbar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestShadow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestShadow.Designer.cs">
+      <DependentUpon>UCTestShadow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestSignalLamp.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -436,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestScrollbar.resx">
       <DependentUpon>UCTestScrollbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestShadow.resx">
+      <DependentUpon>UCTestShadow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestSignalLamp.resx">
       <DependentUpon>UCTestSignalLamp.cs</DependentUpon>

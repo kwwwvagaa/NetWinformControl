@@ -1,6 +1,6 @@
 ﻿namespace HZH_Controls.Controls
 {
-    partial class GraphicalOverlay
+    partial class GraphicalOverlayComponent
     {
         /// <summary>
         /// Required designer variable.

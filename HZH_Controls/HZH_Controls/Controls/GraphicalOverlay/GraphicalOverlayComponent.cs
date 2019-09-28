@@ -6,16 +6,16 @@ using System.Windows.Forms;
 namespace HZH_Controls.Controls
 {
     [DefaultEvent("Paint")]
-    public partial class GraphicalOverlay : Component
+    public partial class GraphicalOverlayComponent : Component
     {
         public event EventHandler<PaintEventArgs> Paint;
         
-        public GraphicalOverlay()
+        public GraphicalOverlayComponent()
         {
             InitializeComponent();
         }
 
-        public GraphicalOverlay(IContainer container)
+        public GraphicalOverlayComponent(IContainer container)
         {
             container.Add(this);
 

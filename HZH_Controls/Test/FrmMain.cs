@@ -62,6 +62,7 @@ namespace Test
                 tnControl.Nodes.Add("控件水印");
                 tnControl.Nodes.Add("表单验证");
                 tnControl.Nodes.Add("图片采样控件");
+                tnControl.Nodes.Add("倒影");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -253,6 +254,9 @@ namespace Test
                     break;
                 case "图片采样控件":
                     AddControl(new UC.UCTestSampling() );
+                    break;
+                case "倒影":
+                    AddControl(new UC.UCTestShadow());
                     break;
                 #endregion
 

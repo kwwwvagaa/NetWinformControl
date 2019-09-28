@@ -70,11 +70,11 @@
     <Compile Include="Controls\Charts\RadarChart\UCRadarChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\GraphicalOverlay\GraphicalOverlay.cs">
+    <Compile Include="Controls\GraphicalOverlay\GraphicalOverlayComponent.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\GraphicalOverlay\GraphicalOverlay.designer.cs">
-      <DependentUpon>GraphicalOverlay.cs</DependentUpon>
+    <Compile Include="Controls\GraphicalOverlay\GraphicalOverlayComponent.designer.cs">
+      <DependentUpon>GraphicalOverlayComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Navigation\CrumbNavigationClickEventArgs.cs" />
     <Compile Include="Controls\Navigation\CrumbNavigationItem.cs" />
@@ -87,6 +87,9 @@
     <Compile Include="Controls\ScrollBar\ScrollbarControlDesigner.cs" />
     <Compile Include="Controls\ScrollBar\UCHScrollbar.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Shadow\ShadowComponent.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\Verification\VerificationAttribute.cs" />
     <Compile Include="Controls\Verification\VerificationComponent.cs">
