@@ -170,7 +170,7 @@ namespace HZH_Controls.Controls
                                 {
                                     g.DrawImage(bit, new RectangleF(0, 0, bitNew.Width, bitNew.Height), new RectangleF(0, bit.Height - bit.Height * shadowHeight, bit.Width, bit.Height * shadowHeight), GraphicsUnit.Pixel);
                                 }
-                                bitNew.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                                bitNew.RotateFlip(RotateFlipType.RotateNoneFlipY);
                                 e.Graphics.DrawImage(bitNew, new Point(_control.Location.X, _control.Location.Y + _control.Height + 1));
                                 Color bgColor = GetParentColor(_control);
                                 LinearGradientBrush lgb = new LinearGradientBrush(new Rectangle(_control.Location.X, _control.Location.Y + _control.Height + 1, bitNew.Width, bitNew.Height), Color.FromArgb(50, bgColor), bgColor, 90f);   //75f 表示角度
