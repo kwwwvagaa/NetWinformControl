@@ -135,6 +135,30 @@ namespace HZH_Controls
             {
                 type = typeof(BasisColors);
             }
+            else if (t is BorderColorsTypes)
+            {
+                type = typeof(BorderColors);
+            }
+            else if (t is GradientColorsTypes)
+            {
+                type = typeof(GradientColors);
+            }
+            else if (t is LineColorsTypes)
+            {
+                type = typeof(LineColors);
+            }
+            else if (t is StatusColorsTypes)
+            {
+                type = typeof(StatusColors);
+            }
+            else if (t is TableColorsTypes)
+            {
+                type = typeof(TableColors);
+            }
+            else if (t is TextColorsTypes)
+            {
+                type = typeof(TextColors);
+            }
             if (type == null)
                 return new Color[] { Color.Empty };
             else

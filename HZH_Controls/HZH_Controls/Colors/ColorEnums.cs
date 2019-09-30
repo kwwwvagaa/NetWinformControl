@@ -7,62 +7,62 @@ namespace HZH_Controls
 {
     public enum BasisColorsTypes
     {
-        Light,
-        Medium,
-        Dark
+        Light = 1,
+        Medium = 2,
+        Dark = 3
     }
 
     public enum BorderColorsTypes
     {
-        Green,
-        Blue,
-        Red,
-        Yellow
+        Green = 1,
+        Blue = 2,
+        Red = 3,
+        Yellow = 4
     }
 
     public enum GradientColorsTypes
     {
-        Orange,
-        LightGreen,
-        Green,
-        Blue,
-        BlueGreen,
-        LightViolet,
-        Violet,
-        Gray
+        Orange = 1,
+        LightGreen = 2,
+        Green = 3,
+        Blue = 4,
+        BlueGreen = 5,
+        LightViolet = 6,
+        Violet = 7,
+        Gray = 8
     }
 
     public enum LineColorsTypes
     {
-        MoreLight,
-        Light,
-        Dark,
-        MoreDark
+        MoreLight = 1,
+        Light = 2,
+        Dark = 3,
+        MoreDark = 4
     }
 
     public enum StatusColorsTypes
     {
-        Primary,
-        Success,
-        Warning,
-        Danger,
-        Info
+        Primary = 1,
+        Success = 2,
+        Warning = 3,
+        Danger = 4,
+        Info = 5
     }
 
     public enum TableColorsTypes
     {
-        Green,
-        Blue,
-        Red,
-        Yellow,
-        Gray
+        Green = 1,
+        Blue = 2,
+        Red = 3,
+        Yellow = 4,
+        Gray = 5
     }
 
     public enum TextColorsTypes
     {
-        MoreLight,
-        Light,
-        Dark,
-        MoreDark
+        MoreLight = 1,
+        Light = 2,
+        Dark = 3,
+        MoreDark = 4
     }
 }

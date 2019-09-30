@@ -63,6 +63,7 @@ namespace Test
                 tnControl.Nodes.Add("表单验证");
                 tnControl.Nodes.Add("图片采样控件");
                 tnControl.Nodes.Add("倒影");
+                tnControl.Nodes.Add("内置颜色");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -257,6 +258,9 @@ namespace Test
                     break;
                 case "倒影":
                     AddControl(new UC.UCTestShadow());
+                    break;
+                case "内置颜色":
+                    AddControl(new UC.UCTestColors());
                     break;
                 #endregion
 
