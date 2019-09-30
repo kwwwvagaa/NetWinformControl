@@ -487,25 +487,10 @@ namespace HZH_Controls.Forms
     /// </summary>
     public enum TipsState
     {
-        /// <summary>
-        /// The default
-        /// </summary>
-        Default = -1,
-        /// <summary>
-        /// The success
-        /// </summary>
-        Success = -6566849,
-        /// <summary>
-        /// The information
-        /// </summary>
-        Info = -12477983,
-        /// <summary>
-        /// The warning
-        /// </summary>
-        Warning = -357816,
-        /// <summary>
-        /// The error
-        /// </summary>
+        Default = -12542209,
+        Success = -9977286,
+        Info = -7299687,
+        Warning = -693140,
         Error = -1097849
     }
 }

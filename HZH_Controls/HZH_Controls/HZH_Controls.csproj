@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colors\BasisColors.cs" />
+    <Compile Include="Colors\ColorEnums.cs" />
+    <Compile Include="Colors\BorderColors.cs" />
+    <Compile Include="Colors\ColorExt.cs" />
+    <Compile Include="Colors\GradientColors.cs" />
+    <Compile Include="Colors\StatusColors.cs" />
     <Compile Include="Controls\Charts\AuxiliaryLable.cs" />
     <Compile Include="Controls\Charts\AuxiliaryLine.cs" />
     <Compile Include="Controls\Charts\BarChart\BarChartItem.cs" />
@@ -331,6 +337,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Helpers\WindowsHook.cs" />
+    <Compile Include="Colors\LineColors.cs" />
+    <Compile Include="Colors\TableColors.cs" />
+    <Compile Include="Colors\TextColors.cs" />
     <Compile Include="UIEditor\FrmSelectImage.cs">
       <SubType>Form</SubType>
     </Compile>
