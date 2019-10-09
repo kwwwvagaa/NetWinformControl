@@ -302,6 +302,12 @@
     <Compile Include="UC\UCTestThermometer.Designer.cs">
       <DependentUpon>UCTestThermometer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestTimeLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestTimeLine.Designer.cs">
+      <DependentUpon>UCTestTimeLine.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestTips.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -484,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestThermometer.resx">
       <DependentUpon>UCTestThermometer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestTimeLine.resx">
+      <DependentUpon>UCTestTimeLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestTips.resx">
       <DependentUpon>UCTestTips.cs</DependentUpon>

@@ -9,10 +9,9 @@ using System.Windows.Forms;
 
 namespace Test.UC
 {
-    [ToolboxItem(false)]
-    public partial class UCTestSplitLabel : UserControl
+    public partial class UCTestTimeLine : UserControl
     {
-        public UCTestSplitLabel()
+        public UCTestTimeLine()
         {
             InitializeComponent();
         }

@@ -66,6 +66,7 @@ namespace Test
                 tnControl.Nodes.Add("内置颜色");
                 tnControl.Nodes.Add("导航菜单");
                 tnControl.Nodes.Add("分割线标签");
+                tnControl.Nodes.Add("时间轴");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -270,6 +271,9 @@ namespace Test
                     break;
                 case "分割线标签":
                     AddControl(new UC.UCTestSplitLabel());
+                    break;
+                case "时间轴":
+                    AddControl(new UC.UCTestTimeLine() { Dock = DockStyle.Fill });
                     break;
                 #endregion
 
