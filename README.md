@@ -719,6 +719,10 @@ The control crops the effective work area according to the set drive to achieve 
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1009/110329_4d443363_301547.png "fgx.png")
 
+#### 50、TimeLine
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1009/150312_c4211fcc_301547.png "sjz.png")
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
