@@ -64,6 +64,7 @@ namespace Test
                 tnControl.Nodes.Add("图片采样控件");
                 tnControl.Nodes.Add("倒影");
                 tnControl.Nodes.Add("内置颜色");
+                tnControl.Nodes.Add("导航菜单");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -261,6 +262,9 @@ namespace Test
                     break;
                 case "内置颜色":
                     AddControl(new UC.UCTestColors());
+                    break;
+                case "导航菜单":
+                    AddControl(new UC.UCTestNavigationMenu());
                     break;
                 #endregion
 
