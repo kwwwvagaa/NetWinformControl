@@ -1,4 +1,19 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 2019-10-09
+//
+// ***********************************************************************
+// <copyright file="UCSplitLabel.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +23,17 @@ using System.ComponentModel;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCSplitLabel.
+    /// Implements the <see cref="System.Windows.Forms.Label" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Label" />
     public class UCSplitLabel : Label
     {
+        /// <summary>
+        /// Gets or sets the text.
+        /// </summary>
+        /// <value>The text.</value>
         [Localizable(true)]
         public override string Text
         {
@@ -23,6 +47,16 @@ namespace HZH_Controls.Controls
                 ResetMaxSize();
             }
         }
+        /// <summary>
+        /// 获取或设置控件显示的文字的字体。
+        /// </summary>
+        /// <value>The font.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [Localizable(true)]
         public override Font Font
         {
@@ -36,6 +70,10 @@ namespace HZH_Controls.Controls
                 ResetMaxSize();
             }
         }
+        /// <summary>
+        /// 获取或设置大小，该大小是 <see cref="M:System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)" /> 可以指定的下限。
+        /// </summary>
+        /// <value>The minimum size.</value>
         [Localizable(true)]
         public override Size MinimumSize
         {
@@ -51,6 +89,10 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// 获取或设置大小，该大小是 <see cref="M:System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)" /> 可以指定的上限。
+        /// </summary>
+        /// <value>The maximum size.</value>
         [Localizable(true)]
         public override Size MaximumSize
         {
@@ -64,6 +106,16 @@ namespace HZH_Controls.Controls
                 ResetMaxSize();
             }
         }
+        /// <summary>
+        /// 获取或设置一个值，该值指示是否自动调整控件的大小以完整显示其内容。
+        /// </summary>
+        /// <value><c>true</c> if [automatic size]; otherwise, <c>false</c>.</value>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
         [EditorBrowsable(EditorBrowsableState.Never), Browsable(false)]
         public override bool AutoSize
         {
@@ -78,8 +130,15 @@ namespace HZH_Controls.Controls
         }
 
 
+        /// <summary>
+        /// The line color
+        /// </summary>
         private Color lineColor = LineColors.Light;
 
+        /// <summary>
+        /// Gets or sets the color of the line.
+        /// </summary>
+        /// <value>The color of the line.</value>
         public Color LineColor
         {
             get { return lineColor; }
@@ -90,6 +149,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Resets the maximum size.
+        /// </summary>
         private void ResetMaxSize()
         {
             using (var g = this.CreateGraphics())
@@ -103,6 +165,9 @@ namespace HZH_Controls.Controls
                 this.Width = _width;
             }
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCSplitLabel"/> class.
+        /// </summary>
         public UCSplitLabel()
             : base()
         {
@@ -118,6 +183,11 @@ namespace HZH_Controls.Controls
             this.Width = 200;
         }
 
+        /// <summary>
+        /// Handles the PaddingChanged event of the UCSplitLabel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         void UCSplitLabel_PaddingChanged(object sender, EventArgs e)
         {
             if (Padding.Left < 20)
@@ -126,6 +196,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the <see cref="E:Paint" /> event.
+        /// </summary>
+        /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
