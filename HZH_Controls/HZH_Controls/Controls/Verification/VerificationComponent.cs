@@ -103,6 +103,20 @@ namespace HZH_Controls.Controls
             set { errorTipsForeColor = value; }
         }
 
+        private int autoCloseErrorTipsTime = 3000;
+
+        [Browsable(true), Category("自定义属性"), Description("自动关闭提示事件，当值为0时不自动关闭"), Localizable(true)]
+        public int AutoCloseErrorTipsTime
+        {
+            get { return autoCloseErrorTipsTime; }
+            set
+            {
+                if (value < 0)
+                    return;
+                autoCloseErrorTipsTime = value;
+            }
+        }
+
         #region 构造函数    English:Constructor
         /// <summary>
         /// Initializes a new instance of the <see cref="VerificationComponent"/> class.
@@ -438,11 +452,64 @@ namespace HZH_Controls.Controls
                 }
                 else
                 {
-                    var tips = Forms.FrmAnchorTips.ShowTips(e.VerificationControl, e.ErrorMsg, background: errorTipsBackColor, foreColor: errorTipsForeColor, autoCloseTime: 0, blnTopMost: false);
+                    var tips = Forms.FrmAnchorTips.ShowTips(e.VerificationControl, e.ErrorMsg, background: errorTipsBackColor, foreColor: errorTipsForeColor, autoCloseTime: autoCloseErrorTipsTime, blnTopMost: false);
+                    tips.FormClosing += tips_FormClosing;
                     m_controlTips[e.VerificationControl] = tips;
                 }
             }
         }
-        #endregion
+
+        void tips_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (var item in m_controlTips)
+            {
+                if (item.Value == sender)
+                {
+                    m_controlTips.Remove(item.Key);
+                    break;
+                }
+            }
+        }
+        #endregion        
+        /// <summary>
+        /// 关闭所有错误提示
+        /// </summary>
+        public void CloseErrorTips()
+        {
+            for (int i = 0; i < 1; )
+            {
+                try
+                {
+                    foreach (var item in m_controlTips)
+                    {
+                        if (item.Value != null && !item.Value.IsDisposed)
+                        {
+                            item.Value.Close();
+                        }
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+                i++;
+            }
+
+            m_controlTips.Clear();
+        }
+        /// <summary>
+        /// 关闭指定验证控件的提示
+        /// </summary>
+        /// <param name="verificationControl">验证控件.</param>
+        public void CloseErrorTips(Control verificationControl)
+        {
+            if (m_controlTips.ContainsKey(verificationControl))
+            {
+                if (m_controlTips[verificationControl] != null && !m_controlTips[verificationControl].IsDisposed)
+                {
+                    m_controlTips[verificationControl].Close();
+                }
+            }
+        }
     }
 }
