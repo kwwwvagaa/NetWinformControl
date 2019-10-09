@@ -322,37 +322,24 @@ namespace HZH_Controls.Forms
             FrmAnchorTips frm = new FrmAnchorTips(rectControl, strMsg, location, background, foreColor, fontSize, autoCloseTime);
             frm.TopMost = blnTopMost;
             frm.Show(parentControl);
-            if (parentControl != null)
-            {
-                parentControl.Disposed += (a, b) =>
-                {
+            //if (parentControl != null)
+            //{               
+            //    parentControl.VisibleChanged += (a, b) =>
+            //    {
+            //        try
+            //        {
+            //            Control c = a as Control;
+            //            if (CheckControlClose(c))
+            //            {
+            //                frm.Close();
+            //            }
+            //        }
+            //        catch (Exception ex)
+            //        {
 
-                };
-                parentControl.VisibleChanged += (a, b) =>
-                {
-                    try
-                    {
-                        Control c = a as Control;
-                        if (CheckControlClose(c))
-                        {
-                            frm.Close();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                };
-                parentControl.ParentChanged += (a, b) =>
-                {
-
-                };
-
-                parentControl.HandleDestroyed += (a, b) =>
-                {
-
-                };
-            }
+            //        }
+            //    };               
+            //}
             return frm;
         }
 

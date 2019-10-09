@@ -65,6 +65,7 @@ namespace Test
                 tnControl.Nodes.Add("倒影");
                 tnControl.Nodes.Add("内置颜色");
                 tnControl.Nodes.Add("导航菜单");
+                tnControl.Nodes.Add("分割线标签");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -99,6 +100,7 @@ namespace Test
         {
             panControl.Controls.Clear();
             string strName = e.Node.Text.Trim();
+            this.Title = "控件DEMO--" + strName;
             switch (strName)
             {
                 #region 窗体    English:forms
@@ -265,6 +267,9 @@ namespace Test
                     break;
                 case "导航菜单":
                     AddControl(new UC.UCTestNavigationMenu());
+                    break;
+                case "分割线标签":
+                    AddControl(new UC.UCTestSplitLabel());
                     break;
                 #endregion
 

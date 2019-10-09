@@ -278,6 +278,12 @@
     <Compile Include="UC\UCTestSignalLamp.Designer.cs">
       <DependentUpon>UCTestSignalLamp.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestSplitLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestSplitLabel.Designer.cs">
+      <DependentUpon>UCTestSplitLabel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestStep.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -466,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestSignalLamp.resx">
       <DependentUpon>UCTestSignalLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestSplitLabel.resx">
+      <DependentUpon>UCTestSplitLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestStep.resx">
       <DependentUpon>UCTestStep.cs</DependentUpon>

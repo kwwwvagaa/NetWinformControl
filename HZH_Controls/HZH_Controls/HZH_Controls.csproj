@@ -104,6 +104,9 @@
     <Compile Include="Controls\Shadow\ShadowComponent.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\SplitLabel\UCSplitLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\Verification\VerificationAttribute.cs" />
     <Compile Include="Controls\Verification\VerificationComponent.cs">
       <SubType>Component</SubType>
