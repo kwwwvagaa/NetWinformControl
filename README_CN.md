@@ -721,6 +721,10 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM",
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1009/150312_c4211fcc_301547.png "sjz.png")
 
+#### 51、穿梭框
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1010/113134_99cfa388_301547.gif "1.gif")
+
 #### 最后的话
 
 最后，喜欢请点下stars，如果有其他一些什么常用的控件可以在留言哦
