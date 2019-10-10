@@ -67,6 +67,7 @@ namespace Test
                 tnControl.Nodes.Add("导航菜单");
                 tnControl.Nodes.Add("分割线标签");
                 tnControl.Nodes.Add("时间轴");
+                tnControl.Nodes.Add("穿梭框");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -258,7 +259,7 @@ namespace Test
                     AddControl(new UC.UCTestVerification() { Dock = DockStyle.Fill });
                     break;
                 case "图片采样控件":
-                    AddControl(new UC.UCTestSampling() );
+                    AddControl(new UC.UCTestSampling());
                     break;
                 case "倒影":
                     AddControl(new UC.UCTestShadow());
@@ -274,6 +275,9 @@ namespace Test
                     break;
                 case "时间轴":
                     AddControl(new UC.UCTestTimeLine() { Dock = DockStyle.Fill });
+                    break;
+                case "穿梭框":
+                    AddControl(new UC.UCTestTransfer());
                     break;
                 #endregion
 

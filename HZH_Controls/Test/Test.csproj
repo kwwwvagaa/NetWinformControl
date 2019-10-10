@@ -320,6 +320,12 @@
     <Compile Include="UC\UCTestTrackbar.Designer.cs">
       <DependentUpon>UCTestTrackbar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestTransfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestTransfer.Designer.cs">
+      <DependentUpon>UCTestTransfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestTreeGridTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -499,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestTrackbar.resx">
       <DependentUpon>UCTestTrackbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestTransfer.resx">
+      <DependentUpon>UCTestTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestTreeGridTable.resx">
       <DependentUpon>UCTestTreeGridTable.cs</DependentUpon>

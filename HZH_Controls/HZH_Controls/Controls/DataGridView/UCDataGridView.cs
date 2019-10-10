@@ -337,7 +337,8 @@ namespace HZH_Controls.Controls
                 {
                     Control c = row as Control;
                     UCDataGridView grid = FindChildGrid(c);
-                    lst.AddRange(grid.SelectRows);
+                    if (grid != null)
+                        lst.AddRange(grid.SelectRows);
                 }
             }
             return lst;
@@ -579,7 +580,7 @@ namespace HZH_Controls.Controls
             try
             {
                 ControlHelper.FreezeControl(this.panRow, true);
-                this.panRow.Controls.Clear();
+                //this.panRow.Controls.Clear();
                 Rows = new List<IDataGridViewRow>();
                 if (m_columns == null || m_columns.Count <= 0)
                     return;
@@ -878,6 +879,6 @@ namespace HZH_Controls.Controls
             //    if (this.Height != intHeightCount)
             //        this.Height = intHeightCount;
             //}
-        }
+        }        
     }
 }

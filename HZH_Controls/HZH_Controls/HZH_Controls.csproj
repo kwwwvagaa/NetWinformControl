@@ -113,6 +113,13 @@
     <Compile Include="Controls\TimeLine\UCTimeLine.Designer.cs">
       <DependentUpon>UCTimeLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Transfer\TransferEventArgs.cs" />
+    <Compile Include="Controls\Transfer\UCTransfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Transfer\UCTransfer.Designer.cs">
+      <DependentUpon>UCTransfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Verification\VerificationAttribute.cs" />
     <Compile Include="Controls\Verification\VerificationComponent.cs">
       <SubType>Component</SubType>
@@ -761,6 +768,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TimeLine\UCTimeLine.resx">
       <DependentUpon>UCTimeLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Transfer\UCTransfer.resx">
+      <DependentUpon>UCTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UCControlBase.resx">
       <DependentUpon>UCControlBase.cs</DependentUpon>
