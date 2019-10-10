@@ -723,6 +723,10 @@ The control crops the effective work area according to the set drive to achieve 
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1009/150312_c4211fcc_301547.png "sjz.png")
 
+#### 51、TransferData
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1010/113134_99cfa388_301547.gif "1.gif")
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
