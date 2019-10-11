@@ -187,7 +187,7 @@ namespace HZH_Controls.Controls
                         lbl.ForeColor = ForeColor;
 
                         lbl.Paint += lbl_Paint;
-                        lbl.MouseEnter += lbl_MouseEnter;                    
+                        lbl.MouseEnter += lbl_MouseEnter;
                         lbl.Tag = menu;
                         lbl.Click += lbl_Click;
                         if (menu.AnchorRight)
@@ -227,23 +227,11 @@ namespace HZH_Controls.Controls
                 {
                     selectItem = menu;
 
-                    while (m_lstAnchors.Count > 0)
-                    {
-                        try
-                        {
-                            foreach (var item in m_lstAnchors)
-                            {
-                                item.Value.Hide();
-                            }
-                        }
-                        catch { }
-                    }
-
                     if (ClickItemed != null)
                     {
                         ClickItemed(this, e);
                     }
-                }               
+                }
             }
         }
         /// <summary>

@@ -19,11 +19,14 @@ namespace Test.UC
 
         private void UCTestNavigationMenuExt_Load(object sender, EventArgs e)
         {
+            
             foreach (var item in this.ucNavigationMenuExt1.Items)
             {
                 Control panel1 = CreatePanel(this.ucNavigationMenuExt1.BackColor);
                 item.ShowControl = panel1;
             }
+
+            this.ucNavigationMenuExt1.Items[0].ShowControl = null;
 
             foreach (var item in this.ucNavigationMenuExt2.Items)
             {
