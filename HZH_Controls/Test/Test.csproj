@@ -218,6 +218,12 @@
     <Compile Include="UC\UCTestNavigationMenu.Designer.cs">
       <DependentUpon>UCTestNavigationMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestNavigationMenuExt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestNavigationMenuExt.Designer.cs">
+      <DependentUpon>UCTestNavigationMenuExt.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -454,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestNavigationMenu.resx">
       <DependentUpon>UCTestNavigationMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestNavigationMenuExt.resx">
+      <DependentUpon>UCTestNavigationMenuExt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestPage.resx">
       <DependentUpon>UCTestPage.cs</DependentUpon>

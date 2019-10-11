@@ -83,11 +83,19 @@
       <DependentUpon>GraphicalOverlayComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\NavigationMenu\NavigationMenuItem.cs" />
+    <Compile Include="Controls\NavigationMenu\NavigationMenuItemBase.cs" />
+    <Compile Include="Controls\NavigationMenu\NavigationMenuItemExt.cs" />
     <Compile Include="Controls\NavigationMenu\UCNavigationMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\NavigationMenu\UCNavigationMenu.Designer.cs">
       <DependentUpon>UCNavigationMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenuExt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenuExt.Designer.cs">
+      <DependentUpon>UCNavigationMenuExt.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Navigation\CrumbNavigationClickEventArgs.cs" />
     <Compile Include="Controls\Navigation\CrumbNavigationItem.cs" />
@@ -720,6 +728,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NavigationMenu\UCNavigationMenu.resx">
       <DependentUpon>UCNavigationMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NavigationMenu\UCNavigationMenuExt.resx">
+      <DependentUpon>UCNavigationMenuExt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Navigation\UCCrumbNavigation.resx">
       <DependentUpon>UCCrumbNavigation.cs</DependentUpon>
