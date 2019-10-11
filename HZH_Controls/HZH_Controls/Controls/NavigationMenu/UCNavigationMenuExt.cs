@@ -1,4 +1,19 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 2019-10-11
+//
+// ***********************************************************************
+// <copyright file="UCNavigationMenuExt.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -10,6 +25,11 @@ using HZH_Controls.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCNavigationMenuExt.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCNavigationMenuExt : UserControl
     {
         /// <summary>
@@ -121,6 +141,9 @@ namespace HZH_Controls.Controls
         /// The m LST anchors
         /// </summary>
         Dictionary<NavigationMenuItemExt, FrmAnchor> m_lstAnchors = new Dictionary<NavigationMenuItemExt, FrmAnchor>();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCNavigationMenuExt"/> class.
+        /// </summary>
         public UCNavigationMenuExt()
         {
             InitializeComponent();
@@ -139,6 +162,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Reloads the menu.
+        /// </summary>
         private void ReloadMenu()
         {
             try
@@ -185,6 +211,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the lbl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         void lbl_Click(object sender, EventArgs e)
         {
             Label lbl = sender as Label;
@@ -218,7 +249,7 @@ namespace HZH_Controls.Controls
         /// Handles the MouseEnter event of the lbl control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void lbl_MouseEnter(object sender, EventArgs e)
         {
             Label lbl = sender as Label;
@@ -236,12 +267,12 @@ namespace HZH_Controls.Controls
                 m_lstAnchors[menu].Show();
                 m_lstAnchors[menu].Size = menu.ShowControl.Size;
             }
-        }  
+        }
         /// <summary>
         /// Handles the Paint event of the lbl control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="PaintEventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="PaintEventArgs" /> instance containing the event data.</param>
         void lbl_Paint(object sender, PaintEventArgs e)
         {
             Label lbl = sender as Label;
