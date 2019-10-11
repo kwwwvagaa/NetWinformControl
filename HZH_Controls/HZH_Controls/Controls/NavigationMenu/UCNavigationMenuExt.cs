@@ -30,6 +30,7 @@ namespace HZH_Controls.Controls
     /// Implements the <see cref="System.Windows.Forms.UserControl" />
     /// </summary>
     /// <seealso cref="System.Windows.Forms.UserControl" />
+    [DefaultEvent("ClickItemed")]
     public partial class UCNavigationMenuExt : UserControl
     {
         /// <summary>
