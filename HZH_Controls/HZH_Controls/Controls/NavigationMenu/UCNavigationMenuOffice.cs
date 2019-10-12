@@ -1,19 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : HZH_Controls
-// Created          : 2019-10-11
-//
-// ***********************************************************************
-// <copyright file="UCNavigationMenuExt.cs">
-//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
-// </copyright>
-//
-// Blog: https://www.cnblogs.com/bfyx
-// GitHub：https://github.com/kwwwvagaa/NetWinformControl
-// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
-//
-// If you use this code, please keep this note.
-// ***********************************************************************
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -25,14 +10,49 @@ using HZH_Controls.Forms;
 
 namespace HZH_Controls.Controls
 {
-    /// <summary>
-    /// Class UCNavigationMenuExt.
-    /// Implements the <see cref="System.Windows.Forms.UserControl" />
-    /// </summary>
-    /// <seealso cref="System.Windows.Forms.UserControl" />
-    [DefaultEvent("ClickItemed")]
-    public partial class UCNavigationMenuExt : UserControl
+    public partial class UCNavigationMenuOffice : UserControl
     {
+        private int mainMenuHeight = 25;
+
+        [Description("主菜单高度，大于20的值"), Category("自定义")]
+        public int MainMenuHeight
+        {
+            get { return mainMenuHeight; }
+            set
+            {
+                if (value < 20)
+                    return;
+                mainMenuHeight = value;
+                this.panMenu.Height = value;
+            }
+        }
+        private int expandHeight = 125;
+        [Description("展开后高度"), Category("自定义")]
+        public int ExpandHeight
+        {
+            get { return expandHeight; }
+            set { expandHeight = value; }
+        }
+        private bool isExpand = true;
+        [Description("是否展开"), Category("自定义")]
+        public bool IsExpand
+        {
+            get { return isExpand; }
+            set
+            {
+                isExpand = value;
+                if (value)
+                {
+                    this.Height = expandHeight;
+                    ResetChildControl();
+                }
+                else
+                {
+                    this.Height = this.panMenu.Height;
+                    this.panChilds.Controls.Clear();
+                }
+            }
+        }
         /// <summary>
         /// Occurs when [click itemed].
         /// </summary>
@@ -72,6 +92,11 @@ namespace HZH_Controls.Controls
             {
                 items = value;
                 ReloadMenu();
+                if (value != null && value.Length > 0)
+                {
+                    selectItem = value[0];
+                    ResetChildControl();
+                }
             }
         }
         /// <summary>
@@ -142,12 +167,10 @@ namespace HZH_Controls.Controls
         /// The m LST anchors
         /// </summary>
         Dictionary<NavigationMenuItemExt, FrmAnchor> m_lstAnchors = new Dictionary<NavigationMenuItemExt, FrmAnchor>();
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UCNavigationMenuExt"/> class.
-        /// </summary>
-        public UCNavigationMenuExt()
+        public UCNavigationMenuOffice()
         {
             InitializeComponent();
+            this.SizeChanged += UCNavigationMenuOffice_SizeChanged;
             items = new NavigationMenuItemExt[0];
             if (ControlHelper.IsDesignMode())
             {
@@ -163,6 +186,35 @@ namespace HZH_Controls.Controls
             }
         }
 
+        void UCNavigationMenuOffice_SizeChanged(object sender, EventArgs e)
+        {
+            if (isExpand)
+            {
+                expandHeight = this.Height;
+            }
+        }
+
+        public void ResetChildControl()
+        {
+            if (isExpand)
+            {
+                if (selectItem != null)
+                {
+                    this.panChilds.Controls.Clear();
+                    if (selectItem.ShowControl != null)
+                    {
+                        HZH_Controls.Controls.UCSplitLine_H split = new UCSplitLine_H();
+                        split.BackColor = Color.FromArgb(50, 197, 197, 197);
+                        split.Dock = DockStyle.Top;
+                        this.panChilds.Controls.Add(split);
+                        split.BringToFront();
+                        this.panChilds.Controls.Add(selectItem.ShowControl);
+                        selectItem.ShowControl.Dock = DockStyle.Fill;
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Reloads the menu.
         /// </summary>
@@ -171,7 +223,7 @@ namespace HZH_Controls.Controls
             try
             {
                 ControlHelper.FreezeControl(this, true);
-                this.Controls.Clear();
+                this.panMenu.Controls.Clear();
                 if (items != null && items.Length > 0)
                 {
                     foreach (var item in items)
@@ -190,6 +242,7 @@ namespace HZH_Controls.Controls
                         lbl.MouseEnter += lbl_MouseEnter;
                         lbl.Tag = menu;
                         lbl.Click += lbl_Click;
+                        lbl.DoubleClick += lbl_DoubleClick;
                         if (menu.AnchorRight)
                         {
                             lbl.Dock = DockStyle.Right;
@@ -198,12 +251,10 @@ namespace HZH_Controls.Controls
                         {
                             lbl.Dock = DockStyle.Left;
                         }
-                        this.Controls.Add(lbl);
+                        this.panMenu.Controls.Add(lbl);
 
                         lbl.BringToFront();
                     }
-
-
                 }
             }
             finally
@@ -212,6 +263,10 @@ namespace HZH_Controls.Controls
             }
         }
 
+        void lbl_DoubleClick(object sender, EventArgs e)
+        {
+            IsExpand = !IsExpand;
+        }
         /// <summary>
         /// Handles the Click event of the lbl control.
         /// </summary>
@@ -232,6 +287,14 @@ namespace HZH_Controls.Controls
                         ClickItemed(this, e);
                     }
                 }
+                else
+                {
+                    if (IsExpand)
+                    {
+                        selectItem = menu;
+                        ResetChildControl();
+                    }
+                }
             }
         }
         /// <summary>
@@ -241,20 +304,25 @@ namespace HZH_Controls.Controls
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void lbl_MouseEnter(object sender, EventArgs e)
         {
-            Label lbl = sender as Label;
-            var menu = lbl.Tag as NavigationMenuItemExt;
-            foreach (var item in m_lstAnchors)
+            if (!IsExpand)
             {
-                m_lstAnchors[item.Key].Hide();
-            }
-            if (menu.ShowControl != null)
-            {
-                if (!m_lstAnchors.ContainsKey(menu))
+                Label lbl = sender as Label;
+                var menu = lbl.Tag as NavigationMenuItemExt;
+                foreach (var item in m_lstAnchors)
                 {
-                    m_lstAnchors[menu] = new FrmAnchor(lbl, menu.ShowControl);
+                    m_lstAnchors[item.Key].Hide();
                 }
-                m_lstAnchors[menu].Show(this);
-                m_lstAnchors[menu].Size = menu.ShowControl.Size;
+                if (menu.ShowControl != null)
+                {
+                    if (!m_lstAnchors.ContainsKey(menu))
+                    {
+                        m_lstAnchors[menu] = new FrmAnchor(panMenu, menu.ShowControl, isNotFocus: false);
+
+                    }
+                    m_lstAnchors[menu].BackColor = this.BackColor;
+                    m_lstAnchors[menu].Show(this);
+                    m_lstAnchors[menu].Size = new Size(this.panChilds.Width, expandHeight - mainMenuHeight);
+                }
             }
         }
         /// <summary>

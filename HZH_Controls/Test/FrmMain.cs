@@ -66,6 +66,7 @@ namespace Test
                 tnControl.Nodes.Add("内置颜色");
                 tnControl.Nodes.Add("导航菜单");
                 tnControl.Nodes.Add("扩展导航菜单");
+                tnControl.Nodes.Add("类Office导航菜单");
                 tnControl.Nodes.Add("分割线标签");
                 tnControl.Nodes.Add("时间轴");
                 tnControl.Nodes.Add("穿梭框");
@@ -273,6 +274,9 @@ namespace Test
                     break;
                 case "扩展导航菜单":
                     AddControl(new UC.UCTestNavigationMenuExt());
+                    break;
+                case "类Office导航菜单":
+                     AddControl(new UC.UCTestNavigationMenuOffice());
                     break;
                 case "分割线标签":
                     AddControl(new UC.UCTestSplitLabel());

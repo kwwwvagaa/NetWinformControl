@@ -437,7 +437,7 @@ namespace HZH_Controls.Controls
                     }
                     m_lstAnchors[menu] = new FrmAnchor(lbl, panel, point);
                     m_lstAnchors[menu].FormClosing += UCNavigationMenu_FormClosing;
-                    m_lstAnchors[menu].Show();
+                    m_lstAnchors[menu].Show(this);
                     m_lstAnchors[menu].Size = new Size(size.Width, height);
                 }
             }

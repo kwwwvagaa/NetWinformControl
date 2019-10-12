@@ -97,6 +97,12 @@
     <Compile Include="Controls\NavigationMenu\UCNavigationMenuExt.Designer.cs">
       <DependentUpon>UCNavigationMenuExt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenuOffice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenuOffice.Designer.cs">
+      <DependentUpon>UCNavigationMenuOffice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Navigation\CrumbNavigationClickEventArgs.cs" />
     <Compile Include="Controls\Navigation\CrumbNavigationItem.cs" />
     <Compile Include="Controls\Sampling\UCSampling.cs">
@@ -731,6 +737,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NavigationMenu\UCNavigationMenuExt.resx">
       <DependentUpon>UCNavigationMenuExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NavigationMenu\UCNavigationMenuOffice.resx">
+      <DependentUpon>UCNavigationMenuOffice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Navigation\UCCrumbNavigation.resx">
       <DependentUpon>UCCrumbNavigation.cs</DependentUpon>
