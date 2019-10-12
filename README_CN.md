@@ -713,6 +713,7 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM",
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1009/085904_b118d7cc_301547.png "cd.png")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1011/112138_8b47726f_301547.png "cd.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1012/105648_ac1ac7d0_301547.gif "1.gif")
 
 #### 49、分隔标签线
 
