@@ -200,20 +200,29 @@ namespace HZH_Controls.Controls
             {
                 if (selectItem != null)
                 {
-                    this.panChilds.Controls.Clear();
-                    if (selectItem.ShowControl != null)
+                    try
                     {
-                        HZH_Controls.Controls.UCSplitLine_H split = new UCSplitLine_H();
-                        split.BackColor = Color.FromArgb(50, 197, 197, 197);
-                        split.Dock = DockStyle.Top;
-                        this.panChilds.Controls.Add(split);
-                        split.BringToFront();
-                        this.panChilds.Controls.Add(selectItem.ShowControl);
-                        selectItem.ShowControl.Dock = DockStyle.Fill;
+                        ControlHelper.FreezeControl(this, true);
+                        this.panChilds.Controls.Clear();
+                        if (selectItem.ShowControl != null)
+                        {
+                            HZH_Controls.Controls.UCSplitLine_H split = new UCSplitLine_H();
+                            split.BackColor = Color.FromArgb(50, 197, 197, 197);
+                            split.Dock = DockStyle.Top;
+                            this.panChilds.Controls.Add(split);
+                            split.BringToFront();
+                            this.panChilds.Controls.Add(selectItem.ShowControl);
+                            selectItem.ShowControl.Dock = DockStyle.Fill;
+                        }
+                    }
+                    finally
+                    {
+                        ControlHelper.FreezeControl(this, false);
                     }
                 }
             }
         }
+
 
         /// <summary>
         /// Reloads the menu.
