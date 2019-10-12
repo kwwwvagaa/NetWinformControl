@@ -1,4 +1,19 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 2019-10-12
+//
+// ***********************************************************************
+// <copyright file="UCNavigationMenuOffice.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -10,10 +25,22 @@ using HZH_Controls.Forms;
 
 namespace HZH_Controls.Controls
 {
+    /// <summary>
+    /// Class UCNavigationMenuOffice.
+    /// Implements the <see cref="System.Windows.Forms.UserControl" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class UCNavigationMenuOffice : UserControl
     {
+        /// <summary>
+        /// The main menu height
+        /// </summary>
         private int mainMenuHeight = 25;
 
+        /// <summary>
+        /// Gets or sets the height of the main menu.
+        /// </summary>
+        /// <value>The height of the main menu.</value>
         [Description("主菜单高度，大于20的值"), Category("自定义")]
         public int MainMenuHeight
         {
@@ -26,14 +53,28 @@ namespace HZH_Controls.Controls
                 this.panMenu.Height = value;
             }
         }
+        /// <summary>
+        /// The expand height
+        /// </summary>
         private int expandHeight = 125;
+        /// <summary>
+        /// Gets or sets the height of the expand.
+        /// </summary>
+        /// <value>The height of the expand.</value>
         [Description("展开后高度"), Category("自定义")]
         public int ExpandHeight
         {
             get { return expandHeight; }
             set { expandHeight = value; }
         }
+        /// <summary>
+        /// The is expand
+        /// </summary>
         private bool isExpand = true;
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is expand.
+        /// </summary>
+        /// <value><c>true</c> if this instance is expand; otherwise, <c>false</c>.</value>
         [Description("是否展开"), Category("自定义")]
         public bool IsExpand
         {
@@ -167,6 +208,9 @@ namespace HZH_Controls.Controls
         /// The m LST anchors
         /// </summary>
         Dictionary<NavigationMenuItemExt, FrmAnchor> m_lstAnchors = new Dictionary<NavigationMenuItemExt, FrmAnchor>();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UCNavigationMenuOffice"/> class.
+        /// </summary>
         public UCNavigationMenuOffice()
         {
             InitializeComponent();
@@ -186,6 +230,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the UCNavigationMenuOffice control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         void UCNavigationMenuOffice_SizeChanged(object sender, EventArgs e)
         {
             if (isExpand)
@@ -194,6 +243,9 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Resets the child control.
+        /// </summary>
         public void ResetChildControl()
         {
             if (isExpand)
@@ -272,6 +324,11 @@ namespace HZH_Controls.Controls
             }
         }
 
+        /// <summary>
+        /// Handles the DoubleClick event of the lbl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         void lbl_DoubleClick(object sender, EventArgs e)
         {
             IsExpand = !IsExpand;
@@ -280,7 +337,7 @@ namespace HZH_Controls.Controls
         /// Handles the Click event of the lbl control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void lbl_Click(object sender, EventArgs e)
         {
             Label lbl = sender as Label;
