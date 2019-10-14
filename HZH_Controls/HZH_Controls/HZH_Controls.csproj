@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colors\BasisColors.cs" />
+    <Compile Include="Colors\ColorEnums.cs" />
+    <Compile Include="Colors\BorderColors.cs" />
+    <Compile Include="Colors\ColorExt.cs" />
+    <Compile Include="Colors\GradientColors.cs" />
+    <Compile Include="Colors\StatusColors.cs" />
     <Compile Include="Controls\Charts\AuxiliaryLable.cs" />
     <Compile Include="Controls\Charts\AuxiliaryLine.cs" />
     <Compile Include="Controls\Charts\BarChart\BarChartItem.cs" />
@@ -76,6 +82,27 @@
     <Compile Include="Controls\GraphicalOverlay\GraphicalOverlayComponent.designer.cs">
       <DependentUpon>GraphicalOverlayComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NavigationMenu\NavigationMenuItem.cs" />
+    <Compile Include="Controls\NavigationMenu\NavigationMenuItemBase.cs" />
+    <Compile Include="Controls\NavigationMenu\NavigationMenuItemExt.cs" />
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenu.Designer.cs">
+      <DependentUpon>UCNavigationMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenuExt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenuExt.Designer.cs">
+      <DependentUpon>UCNavigationMenuExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenuOffice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NavigationMenu\UCNavigationMenuOffice.Designer.cs">
+      <DependentUpon>UCNavigationMenuOffice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Navigation\CrumbNavigationClickEventArgs.cs" />
     <Compile Include="Controls\Navigation\CrumbNavigationItem.cs" />
     <Compile Include="Controls\Sampling\UCSampling.cs">
@@ -90,6 +117,22 @@
     </Compile>
     <Compile Include="Controls\Shadow\ShadowComponent.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SplitLabel\UCSplitLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeLine\UCTimeLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeLine\UCTimeLine.Designer.cs">
+      <DependentUpon>UCTimeLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Transfer\TransferEventArgs.cs" />
+    <Compile Include="Controls\Transfer\UCTransfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Transfer\UCTransfer.Designer.cs">
+      <DependentUpon>UCTransfer.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Verification\VerificationAttribute.cs" />
     <Compile Include="Controls\Verification\VerificationComponent.cs">
@@ -331,6 +374,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Helpers\WindowsHook.cs" />
+    <Compile Include="Colors\LineColors.cs" />
+    <Compile Include="Colors\TableColors.cs" />
+    <Compile Include="Colors\TextColors.cs" />
     <Compile Include="UIEditor\FrmSelectImage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -686,6 +732,15 @@
     <EmbeddedResource Include="Controls\Menu\UCMenuParentItem.resx">
       <DependentUpon>UCMenuParentItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NavigationMenu\UCNavigationMenu.resx">
+      <DependentUpon>UCNavigationMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NavigationMenu\UCNavigationMenuExt.resx">
+      <DependentUpon>UCNavigationMenuExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NavigationMenu\UCNavigationMenuOffice.resx">
+      <DependentUpon>UCNavigationMenuOffice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Navigation\UCCrumbNavigation.resx">
       <DependentUpon>UCCrumbNavigation.cs</DependentUpon>
     </EmbeddedResource>
@@ -730,6 +785,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Text\UCTextBoxEx.resx">
       <DependentUpon>UCTextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TimeLine\UCTimeLine.resx">
+      <DependentUpon>UCTimeLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Transfer\UCTransfer.resx">
+      <DependentUpon>UCTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UCControlBase.resx">
       <DependentUpon>UCControlBase.cs</DependentUpon>

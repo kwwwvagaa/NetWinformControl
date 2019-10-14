@@ -230,6 +230,10 @@ namespace HZH_Controls.Controls
                 {
                     ReloadSource();
                 }
+                if (BindingSourceEvent != null)
+                {
+                    BindingSourceEvent(this, null);
+                }
             }
         }
 
@@ -337,7 +341,8 @@ namespace HZH_Controls.Controls
                 {
                     Control c = row as Control;
                     UCDataGridView grid = FindChildGrid(c);
-                    lst.AddRange(grid.SelectRows);
+                    if (grid != null)
+                        lst.AddRange(grid.SelectRows);
                 }
             }
             return lst;
@@ -449,13 +454,15 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// Occurs when [source changed].
         /// </summary>
-        [Description("数据源改变事件"), Category("自定义")]
-        public event DataGridViewEventHandler SourceChanged;
+        [Description("行数据源改变事件"), Category("自定义")]
+        public event DataGridViewEventHandler RowSourceChangedEvent;
         /// <summary>
         /// Occurs when [row custom event].
         /// </summary>
         [Description("预留的自定义的事件，比如你需要在行上放置删改等按钮时，可以通过此事件传递出来"), Category("自定义")]
         public event DataGridViewRowCustomEventHandler RowCustomEvent;
+        [Description("绑定数据源后事件"), Category("自定义")]
+        public event EventHandler BindingSourceEvent;
         #endregion
         #endregion
 
@@ -579,7 +586,7 @@ namespace HZH_Controls.Controls
             try
             {
                 ControlHelper.FreezeControl(this.panRow, true);
-                this.panRow.Controls.Clear();
+                //this.panRow.Controls.Clear();
                 Rows = new List<IDataGridViewRow>();
                 if (m_columns == null || m_columns.Count <= 0)
                     return;
@@ -797,8 +804,8 @@ namespace HZH_Controls.Controls
         /// <param name="e">The <see cref="DataGridViewEventArgs" /> instance containing the event data.</param>
         void RowSourceChanged(object sender, DataGridViewEventArgs e)
         {
-            if (SourceChanged != null)
-                SourceChanged(sender, e);
+            if (RowSourceChangedEvent != null)
+                RowSourceChangedEvent(sender, e);
         }
         /// <summary>
         /// Sets the select row.
@@ -878,6 +885,6 @@ namespace HZH_Controls.Controls
             //    if (this.Height != intHeightCount)
             //        this.Height = intHeightCount;
             //}
-        }
+        }        
     }
 }

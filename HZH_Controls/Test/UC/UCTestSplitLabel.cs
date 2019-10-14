@@ -10,11 +10,11 @@ using System.Windows.Forms;
 namespace Test.UC
 {
     [ToolboxItem(false)]
-    public partial class UCTestSampling : UserControl
+    public partial class UCTestSplitLabel : UserControl
     {
-        public UCTestSampling()
+        public UCTestSplitLabel()
         {
             InitializeComponent();
-        }        
+        }
     }
 }

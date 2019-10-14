@@ -19,6 +19,12 @@ namespace Test
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;           
             Application.Run(new FrmMain());
+            Application.ApplicationExit += Application_ApplicationExit;
+        }
+
+        static void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            Console.WriteLine("程序退出成功");
         }
 
        

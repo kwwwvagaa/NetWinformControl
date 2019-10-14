@@ -710,6 +710,25 @@ The control crops the effective work area according to the set drive to achieve 
 #### 47、Shadow
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0928/163958_cf233dc5_301547.png "dy.png")
+
+#### 48、NavigationMenu
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1009/085904_b118d7cc_301547.png "cd.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1011/112138_8b47726f_301547.png "cd.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1012/105648_ac1ac7d0_301547.gif "1.gif")
+
+#### 49、SplitLabelLine
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1009/110329_4d443363_301547.png "fgx.png")
+
+#### 50、TimeLine
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1009/150312_c4211fcc_301547.png "sjz.png")
+
+#### 51、TransferData
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1010/113134_99cfa388_301547.gif "1.gif")
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.

@@ -144,23 +144,26 @@ namespace HZH_Controls.Controls
         /// <returns>返回true则表示已处理过，否则将进行默认绑定（通常只针对有Text值的控件）</returns>
         public void BindingCellData()
         {
-            for (int i = 0; i < Columns.Count; i++)
+            if (DataSource != null)
             {
-                DataGridViewColumnEntity com = Columns[i];
-                var cs = this.panCells.Controls.Find("lbl_" + com.DataField, false);
-                if (cs != null && cs.Length > 0)
+                for (int i = 0; i < Columns.Count; i++)
                 {
-                    var pro = DataSource.GetType().GetProperty(com.DataField);
-                    if (pro != null)
+                    DataGridViewColumnEntity com = Columns[i];
+                    var cs = this.panCells.Controls.Find("lbl_" + com.DataField, false);
+                    if (cs != null && cs.Length > 0)
                     {
-                        var value = pro.GetValue(DataSource, null);
-                        if (com.Format != null)
+                        var pro = DataSource.GetType().GetProperty(com.DataField);
+                        if (pro != null)
                         {
-                            cs[0].Text = com.Format(value);
-                        }
-                        else
-                        {
-                            cs[0].Text = value.ToStringExt();
+                            var value = pro.GetValue(DataSource, null);
+                            if (com.Format != null)
+                            {
+                                cs[0].Text = com.Format(value);
+                            }
+                            else
+                            {
+                                cs[0].Text = value.ToStringExt();
+                            }
                         }
                     }
                 }

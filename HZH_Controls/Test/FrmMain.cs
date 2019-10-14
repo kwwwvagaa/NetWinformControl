@@ -63,6 +63,13 @@ namespace Test
                 tnControl.Nodes.Add("表单验证");
                 tnControl.Nodes.Add("图片采样控件");
                 tnControl.Nodes.Add("倒影");
+                tnControl.Nodes.Add("内置颜色");
+                tnControl.Nodes.Add("导航菜单");
+                tnControl.Nodes.Add("扩展导航菜单");
+                tnControl.Nodes.Add("类Office导航菜单");
+                tnControl.Nodes.Add("分割线标签");
+                tnControl.Nodes.Add("时间轴");
+                tnControl.Nodes.Add("穿梭框");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -97,6 +104,7 @@ namespace Test
         {
             panControl.Controls.Clear();
             string strName = e.Node.Text.Trim();
+            this.Title = "控件DEMO--" + strName;
             switch (strName)
             {
                 #region 窗体    English:forms
@@ -253,10 +261,31 @@ namespace Test
                     AddControl(new UC.UCTestVerification() { Dock = DockStyle.Fill });
                     break;
                 case "图片采样控件":
-                    AddControl(new UC.UCTestSampling() );
+                    AddControl(new UC.UCTestSampling());
                     break;
                 case "倒影":
                     AddControl(new UC.UCTestShadow());
+                    break;
+                case "内置颜色":
+                    AddControl(new UC.UCTestColors());
+                    break;
+                case "导航菜单":
+                    AddControl(new UC.UCTestNavigationMenu());
+                    break;
+                case "扩展导航菜单":
+                    AddControl(new UC.UCTestNavigationMenuExt());
+                    break;
+                case "类Office导航菜单":
+                     AddControl(new UC.UCTestNavigationMenuOffice());
+                    break;
+                case "分割线标签":
+                    AddControl(new UC.UCTestSplitLabel());
+                    break;
+                case "时间轴":
+                    AddControl(new UC.UCTestTimeLine() { Dock = DockStyle.Fill });
+                    break;
+                case "穿梭框":
+                    AddControl(new UC.UCTestTransfer());
                     break;
                 #endregion
 

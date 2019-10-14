@@ -244,7 +244,7 @@ namespace HZH_Controls.Forms
             Graphics gBit = Graphics.FromImage(bit);
             gBit.SetGDIHigh();
             gBit.FillPath(new SolidBrush(_background), path);
-            gBit.DrawString(strMsg, _font, new SolidBrush(_foreColor), rect, new StringFormat() {  Alignment= StringAlignment.Center, LineAlignment= StringAlignment.Center});
+            gBit.DrawString(strMsg, _font, new SolidBrush(_foreColor), rect, new StringFormat() { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
             gBit.Dispose();
             #endregion
 
@@ -256,7 +256,7 @@ namespace HZH_Controls.Forms
         /// <summary>
         /// Shows the tips.
         /// </summary>
-        /// <param name="parentControl">The parent control.</param>
+        /// <param name="anchorControl">The parent control.</param>
         /// <param name="strMsg">The string MSG.</param>
         /// <param name="location">The location.</param>
         /// <param name="background">The background.</param>
@@ -267,7 +267,7 @@ namespace HZH_Controls.Forms
         /// <param name="blnTopMost">是否置顶</param>
         /// <returns>FrmAnchorTips.</returns>
         public static FrmAnchorTips ShowTips(
-            Control parentControl,
+            Control anchorControl,
             string strMsg,
             AnchorTipsLocation location = AnchorTipsLocation.RIGHT,
             Color? background = null,
@@ -275,22 +275,22 @@ namespace HZH_Controls.Forms
             Size? deviation = null,
             int fontSize = 10,
             int autoCloseTime = 5000,
-            bool blnTopMost=true)
+            bool blnTopMost = true)
         {
             Point p;
-            if (parentControl is Form)
+            if (anchorControl is Form)
             {
-                p = parentControl.Location;
+                p = anchorControl.Location;
             }
             else
             {
-                p = parentControl.Parent.PointToScreen(parentControl.Location);
+                p = anchorControl.Parent.PointToScreen(anchorControl.Location);
             }
             if (deviation != null)
             {
                 p = p + deviation.Value;
             }
-            return ShowTips(new Rectangle(p, parentControl.Size), strMsg, location, background, foreColor, fontSize, autoCloseTime, parentControl.FindForm(),blnTopMost);
+            return ShowTips(new Rectangle(p, anchorControl.Size), strMsg, location, background, foreColor, fontSize, autoCloseTime, anchorControl.Parent, blnTopMost);
         }
         #endregion
 
@@ -316,13 +316,46 @@ namespace HZH_Controls.Forms
             Color? foreColor = null,
             int fontSize = 10,
             int autoCloseTime = 5000,
-            Form parentForm = null,
+            Control parentControl = null,
             bool blnTopMost = true)
         {
             FrmAnchorTips frm = new FrmAnchorTips(rectControl, strMsg, location, background, foreColor, fontSize, autoCloseTime);
             frm.TopMost = blnTopMost;
-            frm.Show(parentForm);
+            frm.Show(parentControl);
+            //if (parentControl != null)
+            //{               
+            //    parentControl.VisibleChanged += (a, b) =>
+            //    {
+            //        try
+            //        {
+            //            Control c = a as Control;
+            //            if (CheckControlClose(c))
+            //            {
+            //                frm.Close();
+            //            }
+            //        }
+            //        catch (Exception ex)
+            //        {
+
+            //        }
+            //    };               
+            //}
             return frm;
+        }
+
+        private static bool CheckControlClose(Control c)
+        {
+            if (c.IsDisposed || !c.Visible)
+                return true;
+            else if (c.Parent != null)
+                return CheckControlClose(c.Parent);
+            else
+            {
+                if (c is Form)
+                    return false;
+                else
+                    return true;
+            }
         }
         #endregion
 

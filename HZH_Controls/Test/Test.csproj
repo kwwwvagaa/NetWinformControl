@@ -104,6 +104,12 @@
     <Compile Include="UC\UCTestBlower.Designer.cs">
       <DependentUpon>UCTestBlower.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestColors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestColors.Designer.cs">
+      <DependentUpon>UCTestColors.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestConduit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -206,6 +212,30 @@
     <Compile Include="UC\UCTestMenu.Designer.cs">
       <DependentUpon>UCTestMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestNavigationMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestNavigationMenu.Designer.cs">
+      <DependentUpon>UCTestNavigationMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTestNavigationMenuExt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestNavigationMenuExt.Designer.cs">
+      <DependentUpon>UCTestNavigationMenuExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTestNavigationMenuOffice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestNavigationMenuOffice.Designer.cs">
+      <DependentUpon>UCTestNavigationMenuOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTestNavigationMenuOfficeItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestNavigationMenuOfficeItem.Designer.cs">
+      <DependentUpon>UCTestNavigationMenuOfficeItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -266,6 +296,12 @@
     <Compile Include="UC\UCTestSignalLamp.Designer.cs">
       <DependentUpon>UCTestSignalLamp.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestSplitLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestSplitLabel.Designer.cs">
+      <DependentUpon>UCTestSplitLabel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestStep.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -284,6 +320,12 @@
     <Compile Include="UC\UCTestThermometer.Designer.cs">
       <DependentUpon>UCTestThermometer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestTimeLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestTimeLine.Designer.cs">
+      <DependentUpon>UCTestTimeLine.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestTips.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -295,6 +337,12 @@
     </Compile>
     <Compile Include="UC\UCTestTrackbar.Designer.cs">
       <DependentUpon>UCTestTrackbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTestTransfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestTransfer.Designer.cs">
+      <DependentUpon>UCTestTransfer.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UCTestTreeGridTable.cs">
       <SubType>UserControl</SubType>
@@ -371,6 +419,9 @@
     <EmbeddedResource Include="UC\UCTestBtns.resx">
       <DependentUpon>UCTestBtns.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestColors.resx">
+      <DependentUpon>UCTestColors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestConduit.resx">
       <DependentUpon>UCTestConduit.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,6 +470,18 @@
     <EmbeddedResource Include="UC\UCTestNavigation.resx">
       <DependentUpon>UCTestNavigation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestNavigationMenu.resx">
+      <DependentUpon>UCTestNavigationMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestNavigationMenuExt.resx">
+      <DependentUpon>UCTestNavigationMenuExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestNavigationMenuOffice.resx">
+      <DependentUpon>UCTestNavigationMenuOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestNavigationMenuOfficeItem.resx">
+      <DependentUpon>UCTestNavigationMenuOfficeItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestPage.resx">
       <DependentUpon>UCTestPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -449,6 +512,9 @@
     <EmbeddedResource Include="UC\UCTestSignalLamp.resx">
       <DependentUpon>UCTestSignalLamp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestSplitLabel.resx">
+      <DependentUpon>UCTestSplitLabel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestStep.resx">
       <DependentUpon>UCTestStep.cs</DependentUpon>
     </EmbeddedResource>
@@ -458,11 +524,17 @@
     <EmbeddedResource Include="UC\UCTestThermometer.resx">
       <DependentUpon>UCTestThermometer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestTimeLine.resx">
+      <DependentUpon>UCTestTimeLine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestTips.resx">
       <DependentUpon>UCTestTips.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestTrackbar.resx">
       <DependentUpon>UCTestTrackbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestTransfer.resx">
+      <DependentUpon>UCTestTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestTreeGridTable.resx">
       <DependentUpon>UCTestTreeGridTable.cs</DependentUpon>

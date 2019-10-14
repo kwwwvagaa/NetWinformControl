@@ -9,12 +9,11 @@ using System.Windows.Forms;
 
 namespace Test.UC
 {
-    [ToolboxItem(false)]
-    public partial class UCTestSampling : UserControl
+    public partial class UCTestTimeLine : UserControl
     {
-        public UCTestSampling()
+        public UCTestTimeLine()
         {
             InitializeComponent();
-        }        
+        }
     }
 }
