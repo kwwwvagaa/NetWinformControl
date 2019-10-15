@@ -729,6 +729,10 @@ The control crops the effective work area according to the set drive to achieve 
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1010/113134_99cfa388_301547.gif "1.gif")
 
+#### 52、QuotePanel
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1015/090854_152076a0_301547.png "qk.png")
+
 #### The last words
 
 Finally, please like to click on the stars, if there are other commonly used controls, you can leave a message.
