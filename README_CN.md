@@ -1,6 +1,3 @@
-## 官网地址
-
-[http://www.hzhControls.com](http://www.hzhControls.com)
 
 # NetWinform自定义控件
 
