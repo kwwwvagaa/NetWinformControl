@@ -1,6 +1,3 @@
-## WebSite
-
-[http://www.hzhControls.com](http://www.hzhControls.com)
 
 # NetWinformCustom Controls
 
