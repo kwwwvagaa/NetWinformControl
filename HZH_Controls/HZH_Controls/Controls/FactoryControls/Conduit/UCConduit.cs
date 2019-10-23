@@ -22,7 +22,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.ComponentModel;
 
-namespace HZH_Controls.Controls.Conduit
+namespace HZH_Controls.Controls
 {
     /// <summary>
     /// Class UCConduit.
@@ -92,7 +92,7 @@ namespace HZH_Controls.Controls.Conduit
             set
             {
                 liquidColor = value;
-                if (liquidDirection != Conduit.LiquidDirection.None)
+                if (liquidDirection != LiquidDirection.None)
                     Refresh();
             }
         }
@@ -113,7 +113,7 @@ namespace HZH_Controls.Controls.Conduit
             set
             {
                 liquidDirection = value;
-                if (value == Conduit.LiquidDirection.None)
+                if (value == LiquidDirection.None)
                     m_timer.Enabled = false;
                 else
                     m_timer.Enabled = true;
@@ -370,7 +370,7 @@ namespace HZH_Controls.Controls.Conduit
                     lstArcs.Add(new ArcEntity() { rect = new Rectangle(this.ClientRectangle.Right - intPenWidth * 2, -1, intPenWidth * 2, intPenWidth * 2), startAngle = 270, sweepAngle = 90 });
                     break;
 
-                case Conduit.ConduitStyle.Horizontal_Tilt_Up:
+                case ConduitStyle.Horizontal_Tilt_Up:
 
                     double angleUp = Math.Atan((this.ClientRectangle.Height - conduitWidth) / (double)this.ClientRectangle.Width);
                     angleUp = angleUp / Math.PI * 180f;
@@ -399,7 +399,7 @@ namespace HZH_Controls.Controls.Conduit
                     });
 
                     break;
-                case Conduit.ConduitStyle.Horizontal_Tilt_Down:
+                case ConduitStyle.Horizontal_Tilt_Down:
                     double angleDown = Math.Atan((this.ClientRectangle.Height - conduitWidth) / (double)this.ClientRectangle.Width);
                     angleDown = angleDown / Math.PI * 180f;
                     path.AddArc(new Rectangle(this.ClientRectangle.Left - conduitWidth, this.ClientRectangle.Top, conduitWidth * 2, conduitWidth * 2), 270, (float)angleDown);
@@ -560,7 +560,7 @@ namespace HZH_Controls.Controls.Conduit
                     lstArcs.Add(new ArcEntity() { rect = new Rectangle(-1, 0, intPenWidth * 2, intPenWidth * 2), startAngle = 180, sweepAngle = 90 });
                     lstArcs.Add(new ArcEntity() { rect = new Rectangle(-1, this.Height - intPenWidth * 2, intPenWidth * 2, intPenWidth * 2), startAngle = 90, sweepAngle = 90 });
                     break;
-                case Conduit.ConduitStyle.Vertical_Tilt_Left:
+                case ConduitStyle.Vertical_Tilt_Left:
                     double angleLeft = Math.Atan((this.ClientRectangle.Width - conduitWidth) / (double)this.ClientRectangle.Height);
                     angleLeft = angleLeft / Math.PI * 180f;
                     path.AddArc(new Rectangle(this.ClientRectangle.Left - 1, ClientRectangle.Top - conduitWidth, conduitWidth * 2, conduitWidth * 2), 180, -1 * (float)angleLeft);
@@ -587,7 +587,7 @@ namespace HZH_Controls.Controls.Conduit
                         new Point(this.ClientRectangle.Right-conduitWidth,this.ClientRectangle.Bottom) 
                     });
                     break;
-                case Conduit.ConduitStyle.Vertical_Tilt_Right:
+                case ConduitStyle.Vertical_Tilt_Right:
                     double angleRight = Math.Atan((this.ClientRectangle.Width - conduitWidth) / (double)this.ClientRectangle.Height);
                     angleRight = angleRight / Math.PI * 180f;
                     path.AddArc(new Rectangle(this.ClientRectangle.Right - conduitWidth * 2, ClientRectangle.Top - conduitWidth, conduitWidth * 2, conduitWidth * 2), 0, (float)angleRight);
@@ -652,11 +652,11 @@ namespace HZH_Controls.Controls.Conduit
             }
 
             //液体流动
-            if (LiquidDirection != Conduit.LiquidDirection.None)
+            if (LiquidDirection != LiquidDirection.None)
             {
                 Pen p = new Pen(new SolidBrush(liquidColor), 4);
                 p.DashPattern = new float[] { 6, 6 };
-                p.DashOffset = intLineLeft * (LiquidDirection == Conduit.LiquidDirection.Forward ? -1 : 1);
+                p.DashOffset = intLineLeft * (LiquidDirection == LiquidDirection.Forward ? -1 : 1);
                 g.DrawPath(p, linePath);
             }
         }

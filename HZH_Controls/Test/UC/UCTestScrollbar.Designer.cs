@@ -106,7 +106,7 @@
             this.ucvScrollbar3 = new HZH_Controls.Controls.UCVScrollbar();
             this.ucvScrollbar2 = new HZH_Controls.Controls.UCVScrollbar();
             this.ucvScrollbar1 = new HZH_Controls.Controls.UCVScrollbar();
-            this.scrollbarComponent1 = new HZH_Controls.Controls.ScrollBar.ScrollbarComponent(this.components);
+            this.scrollbarComponent1 = new HZH_Controls.Controls.ScrollbarComponent(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -615,7 +615,7 @@
 
         #endregion
 
-        private HZH_Controls.Controls.ScrollBar.ScrollbarComponent scrollbarComponent1;
+        private HZH_Controls.Controls.ScrollbarComponent scrollbarComponent1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TreeView treeView1;

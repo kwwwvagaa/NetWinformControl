@@ -39,7 +39,7 @@
             this.ucValve2.AsisBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve2.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve2.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucValve2.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucValve2.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucValve2.LiquidSpeed = 100;
             this.ucValve2.Location = new System.Drawing.Point(215, 200);
             this.ucValve2.Name = "ucValve2";
@@ -55,7 +55,7 @@
             this.ucValve4.AsisBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve4.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve4.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucValve4.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucValve4.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucValve4.LiquidSpeed = 100;
             this.ucValve4.Location = new System.Drawing.Point(215, 49);
             this.ucValve4.Name = "ucValve4";
@@ -71,7 +71,7 @@
             this.ucValve1.AsisBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve1.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucValve1.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucValve1.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucValve1.LiquidSpeed = 100;
             this.ucValve1.Location = new System.Drawing.Point(33, 9);
             this.ucValve1.Name = "ucValve1";
@@ -87,7 +87,7 @@
             this.ucValve3.AsisBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve3.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve3.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucValve3.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucValve3.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucValve3.LiquidSpeed = 100;
             this.ucValve3.Location = new System.Drawing.Point(69, 199);
             this.ucValve3.Name = "ucValve3";

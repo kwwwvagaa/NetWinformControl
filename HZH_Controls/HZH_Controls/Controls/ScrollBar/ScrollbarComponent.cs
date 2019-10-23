@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HZH_Controls.Controls.ScrollBar
+namespace HZH_Controls.Controls
 {
     [ProvideProperty("UserCustomScrollbar", typeof(Control))]
     public class ScrollbarComponent : Component, IExtenderProvider

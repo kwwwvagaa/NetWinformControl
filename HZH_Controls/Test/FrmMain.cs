@@ -70,6 +70,7 @@ namespace Test
                 tnControl.Nodes.Add("分割线标签");
                 tnControl.Nodes.Add("时间轴");
                 tnControl.Nodes.Add("穿梭框");
+                tnControl.Nodes.Add("引用区块");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -286,6 +287,9 @@ namespace Test
                     break;
                 case "穿梭框":
                     AddControl(new UC.UCTestTransfer());
+                    break;
+                case "引用区块":
+                    AddControl(new UC.UCTestPanelQuote());
                     break;
                 #endregion
 

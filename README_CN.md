@@ -1,3 +1,4 @@
+
 # NetWinform自定义控件
 
 ### [English README.md(github)](https://github.com/kwwwvagaa/NetWinformControl/blob/master/README.md)
@@ -726,6 +727,10 @@ HZH_Controls.Forms.FrmAnchorTips.ShowTips(button1, "测试提示信息\nBOTTOM",
 #### 51、穿梭框
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1010/113134_99cfa388_301547.gif "1.gif")
+
+#### 52、引用区块
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1015/090854_152076a0_301547.png "qk.png")
 
 #### 最后的话
 

@@ -242,6 +242,12 @@
     <Compile Include="UC\UCTestPage.Designer.cs">
       <DependentUpon>UCTestPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestPanelQuote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestPanelQuote.Designer.cs">
+      <DependentUpon>UCTestPanelQuote.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestPanelTitle.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -484,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestPage.resx">
       <DependentUpon>UCTestPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestPanelQuote.resx">
+      <DependentUpon>UCTestPanelQuote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestPanelTitle.resx">
       <DependentUpon>UCTestPanelTitle.cs</DependentUpon>

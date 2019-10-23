@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.ucValve1 = new HZH_Controls.Controls.UCValve();
-            this.ucConduit9 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit22 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit24 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit23 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit8 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit7 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit6 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit3 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit4 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit2 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit18 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit17 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit1 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit19 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit20 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit21 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit25 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit14 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit30 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit12 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit27 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit11 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit29 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit28 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit26 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit5 = new HZH_Controls.Controls.Conduit.UCConduit();
-            this.ucConduit10 = new HZH_Controls.Controls.Conduit.UCConduit();
+            this.ucConduit9 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit22 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit24 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit23 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit8 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit7 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit6 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit3 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit4 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit2 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit18 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit17 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit1 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit19 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit20 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit21 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit25 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit14 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit30 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit12 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit27 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit11 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit29 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit28 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit26 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit5 = new HZH_Controls.Controls.UCConduit();
+            this.ucConduit10 = new HZH_Controls.Controls.UCConduit();
             this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
             this.ucPond2 = new HZH_Controls.Controls.UCPond();
             this.ucBlower4 = new HZH_Controls.Controls.UCBlower();
@@ -66,7 +66,7 @@
             this.ucValve1.AsisBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve1.AxisColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucValve1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucValve1.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucValve1.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucValve1.LiquidSpeed = 100;
             this.ucValve1.Location = new System.Drawing.Point(768, 264);
             this.ucValve1.Name = "ucValve1";
@@ -80,10 +80,10 @@
             // ucConduit9
             // 
             this.ucConduit9.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit9.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Down_Down;
+            this.ucConduit9.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Down_Down;
             this.ucConduit9.ConduitWidth = 50;
             this.ucConduit9.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit9.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit9.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit9.LiquidSpeed = 100;
             this.ucConduit9.Location = new System.Drawing.Point(5, 276);
             this.ucConduit9.Name = "ucConduit9";
@@ -93,10 +93,10 @@
             // ucConduit22
             // 
             this.ucConduit22.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit22.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_None_None;
+            this.ucConduit22.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_None_None;
             this.ucConduit22.ConduitWidth = 50;
             this.ucConduit22.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit22.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit22.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit22.LiquidSpeed = 100;
             this.ucConduit22.Location = new System.Drawing.Point(6, 313);
             this.ucConduit22.Name = "ucConduit22";
@@ -106,10 +106,10 @@
             // ucConduit24
             // 
             this.ucConduit24.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit24.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Up_None;
+            this.ucConduit24.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Up_None;
             this.ucConduit24.ConduitWidth = 50;
             this.ucConduit24.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit24.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit24.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit24.LiquidSpeed = 100;
             this.ucConduit24.Location = new System.Drawing.Point(142, 567);
             this.ucConduit24.Name = "ucConduit24";
@@ -119,10 +119,10 @@
             // ucConduit23
             // 
             this.ucConduit23.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit23.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Down_Down;
+            this.ucConduit23.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Down_Down;
             this.ucConduit23.ConduitWidth = 50;
             this.ucConduit23.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit23.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit23.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit23.LiquidSpeed = 100;
             this.ucConduit23.Location = new System.Drawing.Point(72, 462);
             this.ucConduit23.Name = "ucConduit23";
@@ -132,10 +132,10 @@
             // ucConduit8
             // 
             this.ucConduit8.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit8.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Up_Up;
+            this.ucConduit8.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Up_Up;
             this.ucConduit8.ConduitWidth = 50;
             this.ucConduit8.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit8.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit8.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit8.LiquidSpeed = 100;
             this.ucConduit8.Location = new System.Drawing.Point(5, 499);
             this.ucConduit8.Name = "ucConduit8";
@@ -145,10 +145,10 @@
             // ucConduit7
             // 
             this.ucConduit7.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit7.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Down_Up;
+            this.ucConduit7.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Down_Up;
             this.ucConduit7.ConduitWidth = 50;
             this.ucConduit7.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit7.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit7.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit7.LiquidSpeed = 50;
             this.ucConduit7.Location = new System.Drawing.Point(34, 55);
             this.ucConduit7.Name = "ucConduit7";
@@ -158,10 +158,10 @@
             // ucConduit6
             // 
             this.ucConduit6.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit6.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Down_Up;
+            this.ucConduit6.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Down_Up;
             this.ucConduit6.ConduitWidth = 50;
             this.ucConduit6.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit6.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit6.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit6.LiquidSpeed = 50;
             this.ucConduit6.Location = new System.Drawing.Point(624, 276);
             this.ucConduit6.Name = "ucConduit6";
@@ -171,10 +171,10 @@
             // ucConduit3
             // 
             this.ucConduit3.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit3.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Down_None;
+            this.ucConduit3.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Down_None;
             this.ucConduit3.ConduitWidth = 50;
             this.ucConduit3.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit3.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit3.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit3.LiquidSpeed = 50;
             this.ucConduit3.Location = new System.Drawing.Point(306, 18);
             this.ucConduit3.Name = "ucConduit3";
@@ -184,10 +184,10 @@
             // ucConduit4
             // 
             this.ucConduit4.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit4.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_None_Up;
+            this.ucConduit4.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_None_Up;
             this.ucConduit4.ConduitWidth = 50;
             this.ucConduit4.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit4.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit4.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit4.LiquidSpeed = 50;
             this.ucConduit4.Location = new System.Drawing.Point(935, 313);
             this.ucConduit4.Name = "ucConduit4";
@@ -197,10 +197,10 @@
             // ucConduit2
             // 
             this.ucConduit2.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit2.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Up_None;
+            this.ucConduit2.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Up_None;
             this.ucConduit2.ConduitWidth = 50;
             this.ucConduit2.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit2.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit2.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit2.LiquidSpeed = 50;
             this.ucConduit2.Location = new System.Drawing.Point(624, 313);
             this.ucConduit2.Name = "ucConduit2";
@@ -210,10 +210,10 @@
             // ucConduit18
             // 
             this.ucConduit18.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit18.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_Right_Right;
+            this.ucConduit18.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_Right_Right;
             this.ucConduit18.ConduitWidth = 50;
             this.ucConduit18.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit18.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit18.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit18.LiquidSpeed = 50;
             this.ucConduit18.Location = new System.Drawing.Point(545, 193);
             this.ucConduit18.Name = "ucConduit18";
@@ -223,10 +223,10 @@
             // ucConduit17
             // 
             this.ucConduit17.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit17.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_Left_Left;
+            this.ucConduit17.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_Left_Left;
             this.ucConduit17.ConduitWidth = 50;
             this.ucConduit17.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit17.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit17.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit17.LiquidSpeed = 50;
             this.ucConduit17.Location = new System.Drawing.Point(582, 348);
             this.ucConduit17.Name = "ucConduit17";
@@ -236,10 +236,10 @@
             // ucConduit1
             // 
             this.ucConduit1.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit1.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_None_None;
+            this.ucConduit1.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_None_None;
             this.ucConduit1.ConduitWidth = 50;
             this.ucConduit1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit1.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit1.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit1.LiquidSpeed = 50;
             this.ucConduit1.Location = new System.Drawing.Point(581, 194);
             this.ucConduit1.Name = "ucConduit1";
@@ -249,10 +249,10 @@
             // ucConduit19
             // 
             this.ucConduit19.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit19.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_Left_Left;
+            this.ucConduit19.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_Left_Left;
             this.ucConduit19.ConduitWidth = 50;
             this.ucConduit19.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit19.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit19.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit19.LiquidSpeed = 50;
             this.ucConduit19.Location = new System.Drawing.Point(451, 285);
             this.ucConduit19.Name = "ucConduit19";
@@ -262,10 +262,10 @@
             // ucConduit20
             // 
             this.ucConduit20.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit20.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_None_None;
+            this.ucConduit20.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_None_None;
             this.ucConduit20.ConduitWidth = 50;
             this.ucConduit20.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit20.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit20.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit20.LiquidSpeed = 100;
             this.ucConduit20.Location = new System.Drawing.Point(201, 373);
             this.ucConduit20.Name = "ucConduit20";
@@ -275,10 +275,10 @@
             // ucConduit21
             // 
             this.ucConduit21.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit21.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_None_Right;
+            this.ucConduit21.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_None_Right;
             this.ucConduit21.ConduitWidth = 50;
             this.ucConduit21.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit21.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit21.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit21.LiquidSpeed = 100;
             this.ucConduit21.Location = new System.Drawing.Point(164, 309);
             this.ucConduit21.Name = "ucConduit21";
@@ -288,10 +288,10 @@
             // ucConduit25
             // 
             this.ucConduit25.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit25.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_None_None;
+            this.ucConduit25.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_None_None;
             this.ucConduit25.ConduitWidth = 50;
             this.ucConduit25.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit25.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit25.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit25.LiquidSpeed = 100;
             this.ucConduit25.Location = new System.Drawing.Point(143, 499);
             this.ucConduit25.Name = "ucConduit25";
@@ -301,10 +301,10 @@
             // ucConduit14
             // 
             this.ucConduit14.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit14.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_None_Right;
+            this.ucConduit14.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_None_Right;
             this.ucConduit14.ConduitWidth = 50;
             this.ucConduit14.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit14.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit14.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit14.LiquidSpeed = 50;
             this.ucConduit14.Location = new System.Drawing.Point(414, 244);
             this.ucConduit14.Name = "ucConduit14";
@@ -314,10 +314,10 @@
             // ucConduit30
             // 
             this.ucConduit30.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit30.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_None_Right;
+            this.ucConduit30.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_None_Right;
             this.ucConduit30.ConduitWidth = 50;
             this.ucConduit30.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit30.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit30.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit30.LiquidSpeed = 50;
             this.ucConduit30.Location = new System.Drawing.Point(35, 88);
             this.ucConduit30.Name = "ucConduit30";
@@ -327,10 +327,10 @@
             // ucConduit12
             // 
             this.ucConduit12.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit12.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_Right_None;
+            this.ucConduit12.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_Right_None;
             this.ucConduit12.ConduitWidth = 50;
             this.ucConduit12.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit12.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit12.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit12.LiquidSpeed = 50;
             this.ucConduit12.Location = new System.Drawing.Point(451, 444);
             this.ucConduit12.Name = "ucConduit12";
@@ -340,10 +340,10 @@
             // ucConduit27
             // 
             this.ucConduit27.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit27.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_None_None;
+            this.ucConduit27.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_None_None;
             this.ucConduit27.ConduitWidth = 50;
             this.ucConduit27.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit27.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit27.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit27.LiquidSpeed = 50;
             this.ucConduit27.Location = new System.Drawing.Point(486, 445);
             this.ucConduit27.Name = "ucConduit27";
@@ -353,10 +353,10 @@
             // ucConduit11
             // 
             this.ucConduit11.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit11.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_Left_None;
+            this.ucConduit11.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_Left_None;
             this.ucConduit11.ConduitWidth = 50;
             this.ucConduit11.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit11.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit11.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit11.LiquidSpeed = 50;
             this.ucConduit11.Location = new System.Drawing.Point(714, 193);
             this.ucConduit11.Name = "ucConduit11";
@@ -366,10 +366,10 @@
             // ucConduit29
             // 
             this.ucConduit29.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit29.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_Tilt_Left;
+            this.ucConduit29.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_Tilt_Left;
             this.ucConduit29.ConduitWidth = 37;
             this.ucConduit29.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit29.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit29.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit29.LiquidSpeed = 37;
             this.ucConduit29.Location = new System.Drawing.Point(816, 158);
             this.ucConduit29.Name = "ucConduit29";
@@ -379,10 +379,10 @@
             // ucConduit28
             // 
             this.ucConduit28.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit28.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Vertical_Tilt_Right;
+            this.ucConduit28.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Vertical_Tilt_Right;
             this.ucConduit28.ConduitWidth = 37;
             this.ucConduit28.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit28.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit28.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit28.LiquidSpeed = 37;
             this.ucConduit28.Location = new System.Drawing.Point(984, 231);
             this.ucConduit28.Name = "ucConduit28";
@@ -392,10 +392,10 @@
             // ucConduit26
             // 
             this.ucConduit26.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit26.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Tilt_Up;
+            this.ucConduit26.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Tilt_Up;
             this.ucConduit26.ConduitWidth = 37;
             this.ucConduit26.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit26.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Forward;
+            this.ucConduit26.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Forward;
             this.ucConduit26.LiquidSpeed = 37;
             this.ucConduit26.Location = new System.Drawing.Point(72, 124);
             this.ucConduit26.Name = "ucConduit26";
@@ -405,10 +405,10 @@
             // ucConduit5
             // 
             this.ucConduit5.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit5.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_Tilt_Down;
+            this.ucConduit5.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_Tilt_Down;
             this.ucConduit5.ConduitWidth = 37;
             this.ucConduit5.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit5.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit5.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit5.LiquidSpeed = 37;
             this.ucConduit5.Location = new System.Drawing.Point(157, 124);
             this.ucConduit5.Name = "ucConduit5";
@@ -418,10 +418,10 @@
             // ucConduit10
             // 
             this.ucConduit10.ConduitColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucConduit10.ConduitStyle = HZH_Controls.Controls.Conduit.ConduitStyle.Horizontal_None_Down;
+            this.ucConduit10.ConduitStyle = HZH_Controls.Controls.ConduitStyle.Horizontal_None_Down;
             this.ucConduit10.ConduitWidth = 50;
             this.ucConduit10.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucConduit10.LiquidDirection = HZH_Controls.Controls.Conduit.LiquidDirection.Backward;
+            this.ucConduit10.LiquidDirection = HZH_Controls.Controls.LiquidDirection.Backward;
             this.ucConduit10.LiquidSpeed = 50;
             this.ucConduit10.Location = new System.Drawing.Point(290, 207);
             this.ucConduit10.Name = "ucConduit10";
@@ -525,35 +525,35 @@
         #endregion
 
         private HZH_Controls.Controls.UCValve ucValve1;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit9;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit22;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit24;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit23;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit8;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit7;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit6;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit3;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit2;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit18;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit17;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit19;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit20;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit21;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit25;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit14;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit30;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit12;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit27;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit11;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit29;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit28;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit26;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit5;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit10;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit1;
+        private HZH_Controls.Controls.UCConduit ucConduit9;
+        private HZH_Controls.Controls.UCConduit ucConduit22;
+        private HZH_Controls.Controls.UCConduit ucConduit24;
+        private HZH_Controls.Controls.UCConduit ucConduit23;
+        private HZH_Controls.Controls.UCConduit ucConduit8;
+        private HZH_Controls.Controls.UCConduit ucConduit7;
+        private HZH_Controls.Controls.UCConduit ucConduit6;
+        private HZH_Controls.Controls.UCConduit ucConduit3;
+        private HZH_Controls.Controls.UCConduit ucConduit2;
+        private HZH_Controls.Controls.UCConduit ucConduit18;
+        private HZH_Controls.Controls.UCConduit ucConduit17;
+        private HZH_Controls.Controls.UCConduit ucConduit19;
+        private HZH_Controls.Controls.UCConduit ucConduit20;
+        private HZH_Controls.Controls.UCConduit ucConduit21;
+        private HZH_Controls.Controls.UCConduit ucConduit25;
+        private HZH_Controls.Controls.UCConduit ucConduit14;
+        private HZH_Controls.Controls.UCConduit ucConduit30;
+        private HZH_Controls.Controls.UCConduit ucConduit12;
+        private HZH_Controls.Controls.UCConduit ucConduit27;
+        private HZH_Controls.Controls.UCConduit ucConduit11;
+        private HZH_Controls.Controls.UCConduit ucConduit29;
+        private HZH_Controls.Controls.UCConduit ucConduit28;
+        private HZH_Controls.Controls.UCConduit ucConduit26;
+        private HZH_Controls.Controls.UCConduit ucConduit5;
+        private HZH_Controls.Controls.UCConduit ucConduit10;
+        private HZH_Controls.Controls.UCConduit ucConduit1;
         private HZH_Controls.Controls.UCBottle ucBottle1;
         private HZH_Controls.Controls.UCPond ucPond2;
         private HZH_Controls.Controls.UCBlower ucBlower4;
-        private HZH_Controls.Controls.Conduit.UCConduit ucConduit4;
+        private HZH_Controls.Controls.UCConduit ucConduit4;
     }
 }

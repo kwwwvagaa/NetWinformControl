@@ -1,4 +1,19 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : HZH_Controls
+// Created          : 2019-09-30
+//
+// ***********************************************************************
+// <copyright file="ColorExt.cs">
+//     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
+// </copyright>
+//
+// Blog: https://www.cnblogs.com/bfyx
+// GitHub：https://github.com/kwwwvagaa/NetWinformControl
+// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
+//
+// If you use this code, please keep this note.
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -6,9 +21,19 @@ using System.Text;
 
 namespace HZH_Controls
 {
+    /// <summary>
+    /// Class ColorExt.
+    /// </summary>
     public static class ColorExt
     {
         #region 重置内置的颜色    English:Reset color
+        /// <summary>
+        /// Resets the color.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="light">The light.</param>
+        /// <param name="medium">The medium.</param>
+        /// <param name="dark">The dark.</param>
         public static void ResetColor(
             this BasisColors type,
             Color light,
@@ -20,6 +45,14 @@ namespace HZH_Controls
             BasisColors.Dark = dark;
         }
 
+        /// <summary>
+        /// Resets the color.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="green">The green.</param>
+        /// <param name="blue">The blue.</param>
+        /// <param name="red">The red.</param>
+        /// <param name="yellow">The yellow.</param>
         public static void ResetColor(
             this BorderColors type,
             Color green,
@@ -33,6 +66,18 @@ namespace HZH_Controls
             BorderColors.Yellow = yellow;
         }
 
+        /// <summary>
+        /// Resets the color.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="orange">The orange.</param>
+        /// <param name="lightGreen">The light green.</param>
+        /// <param name="green">The green.</param>
+        /// <param name="blue">The blue.</param>
+        /// <param name="blueGreen">The blue green.</param>
+        /// <param name="lightViolet">The light violet.</param>
+        /// <param name="violet">The violet.</param>
+        /// <param name="gray">The gray.</param>
         public static void ResetColor(
             this GradientColors type,
             Color[] orange,
@@ -62,6 +107,14 @@ namespace HZH_Controls
             if (orange != null && orange.Length == 2)
                 GradientColors.Gray = gray;
         }
+        /// <summary>
+        /// Resets the color.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="moreLight">The more light.</param>
+        /// <param name="light">The light.</param>
+        /// <param name="dark">The dark.</param>
+        /// <param name="moreDark">The more dark.</param>
         public static void ResetColor(
             this LineColors type,
             Color moreLight,
@@ -74,6 +127,15 @@ namespace HZH_Controls
             LineColors.Dark = dark;
             LineColors.MoreDark = moreDark;
         }
+        /// <summary>
+        /// Resets the color.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="primary">The primary.</param>
+        /// <param name="success">The success.</param>
+        /// <param name="warning">The warning.</param>
+        /// <param name="danger">The danger.</param>
+        /// <param name="info">The information.</param>
         public static void ResetColor(
             this StatusColors type,
             Color primary,
@@ -89,6 +151,15 @@ namespace HZH_Controls
             StatusColors.Danger = danger;
             StatusColors.Info = info;
         }
+        /// <summary>
+        /// Resets the color.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="green">The green.</param>
+        /// <param name="blue">The blue.</param>
+        /// <param name="red">The red.</param>
+        /// <param name="yellow">The yellow.</param>
+        /// <param name="gray">The gray.</param>
         public static void ResetColor(
             this TableColors type,
             Color green,
@@ -105,6 +176,14 @@ namespace HZH_Controls
             TableColors.Gray = gray;
         }
 
+        /// <summary>
+        /// Resets the color.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="moreLight">The more light.</param>
+        /// <param name="light">The light.</param>
+        /// <param name="dark">The dark.</param>
+        /// <param name="moreDark">The more dark.</param>
         public static void ResetColor(
             this TextColors type,
             Color moreLight,
@@ -126,6 +205,7 @@ namespace HZH_Controls
         /// 创建日期:2019-09-30 11:08:04
         /// 任务编号:POS
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="t">t</param>
         /// <returns>颜色列表</returns>
         public static Color[] GetInternalColor<T>(T t)

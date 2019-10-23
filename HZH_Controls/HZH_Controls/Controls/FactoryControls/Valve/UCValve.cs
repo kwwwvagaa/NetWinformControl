@@ -20,7 +20,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using HZH_Controls.Controls.Conduit;
+using HZH_Controls.Controls;
 using System.ComponentModel;
 
 namespace HZH_Controls.Controls
@@ -173,7 +173,7 @@ namespace HZH_Controls.Controls
             set
             {
                 liquidDirection = value;
-                if (value == Conduit.LiquidDirection.None)
+                if (value == LiquidDirection.None)
                     m_timer.Enabled = false;
                 else
                     m_timer.Enabled = true;
@@ -219,7 +219,7 @@ namespace HZH_Controls.Controls
             set
             {
                 liquidColor = value;
-                if (liquidDirection != Conduit.LiquidDirection.None)
+                if (liquidDirection != LiquidDirection.None)
                     Refresh();
             }
         }
@@ -418,7 +418,7 @@ namespace HZH_Controls.Controls
             {
                 Pen p = new Pen(new SolidBrush(liquidColor), 4);
                 p.DashPattern = new float[] { 6, 6 };
-                p.DashOffset = intLineLeft * (LiquidDirection == Conduit.LiquidDirection.Forward ? -1 : 1);
+                p.DashOffset = intLineLeft * (LiquidDirection == LiquidDirection.Forward ? -1 : 1);
                 g.DrawPath(p, linePath);
             }
         }

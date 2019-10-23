@@ -124,7 +124,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ucSplitLine_V7 = new HZH_Controls.Controls.UCSplitLine_V();
             this.treeViewEx5 = new HZH_Controls.Controls.TreeViewEx();
-            this.scrollbarComponent1 = new HZH_Controls.Controls.ScrollBar.ScrollbarComponent(this.components);
+            this.scrollbarComponent1 = new HZH_Controls.Controls.ScrollbarComponent(this.components);
             this.SuspendLayout();
             // 
             // treeViewEx1
@@ -489,6 +489,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private HZH_Controls.Controls.UCSplitLine_V ucSplitLine_V7;
         private HZH_Controls.Controls.TreeViewEx treeViewEx5;
-        private HZH_Controls.Controls.ScrollBar.ScrollbarComponent scrollbarComponent1;
+        private HZH_Controls.Controls.ScrollbarComponent scrollbarComponent1;
     }
 }

@@ -3,7 +3,7 @@
 // Created          : 2019-09-30
 //
 // ***********************************************************************
-// <copyright file="TextColor.cs">
+// <copyright file="TextColors.cs">
 //     Copyright by Huang Zhenghui(黄正辉) All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
 // </copyright>
 //
