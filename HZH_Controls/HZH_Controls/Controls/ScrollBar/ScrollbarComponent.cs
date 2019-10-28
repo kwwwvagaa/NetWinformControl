@@ -192,7 +192,8 @@ namespace HZH_Controls.Controls
                     {
                         if (m_lstHCache[control].Visible)
                         {
-                            m_lstHCache[control].Parent.Controls.Remove(m_lstHCache[control]);
+                            if (m_lstHCache[control].Parent != null)
+                                m_lstHCache[control].Parent.Controls.Remove(m_lstHCache[control]);
                         }
                     }
                 }
@@ -405,6 +406,8 @@ namespace HZH_Controls.Controls
 
         private int GetTreeNodeMaxX(TreeView tv)
         {
+            if (tv.Nodes.Count == 0) return 0;
+
             return tv.Nodes[0].Bounds.Right;
         }
         void tv_AfterSelect(object sender, TreeViewEventArgs e)
