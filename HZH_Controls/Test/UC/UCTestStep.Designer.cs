@@ -45,7 +45,7 @@
             this.ucStep4.LineWidth = 10;
             this.ucStep4.Location = new System.Drawing.Point(409, 133);
             this.ucStep4.Name = "ucStep4";
-            this.ucStep4.Size = new System.Drawing.Size(418, 86);
+            this.ucStep4.Size = new System.Drawing.Size(362, 86);
             this.ucStep4.StepBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.ucStep4.StepFontColor = System.Drawing.Color.White;
             this.ucStep4.StepForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(157)))), ((int)(((byte)(144)))));
@@ -67,17 +67,17 @@
             this.ucStep6.LineWidth = 10;
             this.ucStep6.Location = new System.Drawing.Point(29, 340);
             this.ucStep6.Name = "ucStep6";
-            this.ucStep6.Size = new System.Drawing.Size(1205, 109);
+            this.ucStep6.Size = new System.Drawing.Size(742, 109);
             this.ucStep6.StepBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.ucStep6.StepFontColor = System.Drawing.Color.White;
             this.ucStep6.StepForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(157)))), ((int)(((byte)(144)))));
             this.ucStep6.StepIndex = 2;
             this.ucStep6.Steps = new string[] {
-        "step1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "step1",
         "step2",
         "step3",
         "step4",
-        "step5aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"};
+        "step5"};
             this.ucStep6.StepWidth = 35;
             this.ucStep6.TabIndex = 1;
             // 
