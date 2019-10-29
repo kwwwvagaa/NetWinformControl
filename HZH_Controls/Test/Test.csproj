@@ -92,12 +92,6 @@
     <Compile Include="UC\UCTestArrow.Designer.cs">
       <DependentUpon>UCTestArrow.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCTestBarcharts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UCTestBarcharts.Designer.cs">
-      <DependentUpon>UCTestBarcharts.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC\UCTestBlower.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,12 +115,6 @@
     </Compile>
     <Compile Include="UC\UCTestConveyor.Designer.cs">
       <DependentUpon>UCTestConveyor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UCTestCurveChart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UCTestCurveChart.Designer.cs">
-      <DependentUpon>UCTestCurveChart.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UCTestFunnelChart.cs">
       <SubType>UserControl</SubType>
@@ -253,12 +241,6 @@
     </Compile>
     <Compile Include="UC\UCTestPanelTitle.Designer.cs">
       <DependentUpon>UCTestPanelTitle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UCTestPieCharts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UCTestPieCharts.Designer.cs">
-      <DependentUpon>UCTestPieCharts.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UCTestProcess.cs">
       <SubType>UserControl</SubType>
@@ -416,9 +398,6 @@
     <EmbeddedResource Include="UC\UCTestArrow.resx">
       <DependentUpon>UCTestArrow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCTestBarcharts.resx">
-      <DependentUpon>UCTestBarcharts.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestBlower.resx">
       <DependentUpon>UCTestBlower.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,9 +412,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestConveyor.resx">
       <DependentUpon>UCTestConveyor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCTestCurveChart.resx">
-      <DependentUpon>UCTestCurveChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestForms.resx">
       <DependentUpon>UCTestForms.cs</DependentUpon>
@@ -496,9 +472,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestPanelTitle.resx">
       <DependentUpon>UCTestPanelTitle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCTestPieCharts.resx">
-      <DependentUpon>UCTestPieCharts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestProcess.resx">
       <DependentUpon>UCTestProcess.cs</DependentUpon>
