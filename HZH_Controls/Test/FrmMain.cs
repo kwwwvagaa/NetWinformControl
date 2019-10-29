@@ -78,6 +78,7 @@ namespace Test
                 tnCharts.Nodes.Add("滚动图表");
                 tnCharts.Nodes.Add("雷达图");
                 tnCharts.Nodes.Add("金字塔图");
+                tnCharts.Nodes.Add("Live Charts");
                 this.tvMenu.Nodes.Add(tnCharts);
 
                 TreeNode tnFactory = new TreeNode("  工业控件");
@@ -303,6 +304,9 @@ namespace Test
                 case "金字塔图":
                     AddControl(new UC.UCTestFunnelChart());
                     break;
+                case "Live Charts":
+                     AddControl(new UC.UCTestLiveCharts());
+                     break;
                 #endregion
 
                 #region 工业    English:Industry

@@ -1,0 +1,801 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LiveCharts.WinForms</name>
+    </assembly>
+    <members>
+        <member name="T:LiveCharts.WinForms.AngularGauge">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Integration.ElementHost"/>
+        </member>
+        <member name="F:LiveCharts.WinForms.AngularGauge.WpfBase">
+            <summary>
+            The WPF base
+            </summary>
+        </member>
+        <member name="M:LiveCharts.WinForms.AngularGauge.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LiveCharts.WinForms.AngularGauge"/> class.
+            </summary>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.Base">
+            <summary>
+            Gets the base.
+            </summary>
+            <value>
+            The base.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.Wedge">
+            <summary>
+            Gets or sets the wedge.
+            </summary>
+            <value>
+            The wedge.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.TickStep">
+            <summary>
+            Gets or sets the tick step.
+            </summary>
+            <value>
+            The tick step.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.LabelsStep">
+            <summary>
+            Gets or sets the labels step.
+            </summary>
+            <value>
+            The labels step.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.FromValue">
+            <summary>
+            Gets or sets from value.
+            </summary>
+            <value>
+            From value.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.ToValue">
+            <summary>
+            Gets or sets to value.
+            </summary>
+            <value>
+            To value.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.Sections">
+            <summary>
+            Gets or sets the sections.
+            </summary>
+            <value>
+            The sections.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.LabelFormatter">
+            <summary>
+            Gets or sets the label formatter.
+            </summary>
+            <value>
+            The label formatter.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.DisableAnimations">
+            <summary>
+            Gets or sets a value indicating whether [disable animations].
+            </summary>
+            <value>
+              <c>true</c> if [disable animations]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.AnimationsSpeed">
+            <summary>
+            Gets or sets the animations speed.
+            </summary>
+            <value>
+            The animations speed.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.TicksForeground">
+            <summary>
+            Gets or sets the ticks foreground.
+            </summary>
+            <value>
+            The ticks foreground.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.SectionsInnerRadius">
+            <summary>
+            Gets or sets the sections inner radius.
+            </summary>
+            <value>
+            The sections inner radius.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.NeedleFill">
+            <summary>
+            Gets or sets the needle fill.
+            </summary>
+            <value>
+            The needle fill.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.LabelsEffect">
+            <summary>
+            Gets or sets the labels effect.
+            </summary>
+            <value>
+            The labels effect.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.AngularGauge.TicksStrokeThickness">
+            <summary>
+            Gets or sets the ticks stroke thickness.
+            </summary>
+            <value>
+            The ticks stroke thickness.
+            </value>
+        </member>
+        <member name="T:LiveCharts.WinForms.CartesianChart">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Integration.ElementHost"/>
+        </member>
+        <member name="F:LiveCharts.WinForms.CartesianChart.WpfBase">
+            <summary>
+            The WPF base
+            </summary>
+        </member>
+        <member name="M:LiveCharts.WinForms.CartesianChart.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LiveCharts.WinForms.CartesianChart"/> class.
+            </summary>
+        </member>
+        <member name="M:LiveCharts.WinForms.CartesianChart.Update(System.Boolean,System.Boolean)">
+            <summary>
+            Updates the specified restart view.
+            </summary>
+            <param name="restartView">if set to <c>true</c> [restart view].</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+        </member>
+        <member name="E:LiveCharts.WinForms.CartesianChart.DataClick">
+            <summary>
+            Occurs when the users clicks any point in the chart
+            </summary>
+        </member>
+        <member name="E:LiveCharts.WinForms.CartesianChart.DataHover">
+            <summary>
+            Occurs when the users hovers over any point in the chart
+            </summary>
+        </member>
+        <member name="E:LiveCharts.WinForms.CartesianChart.UpdaterTick">
+            <summary>
+            Occurs every time the chart updates
+            </summary>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.Base">
+            <summary>
+            Gets the base.
+            </summary>
+            <value>
+            The base.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.AxisY">
+            <summary>
+            Gets or sets the axis y.
+            </summary>
+            <value>
+            The axis y.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.AxisX">
+            <summary>
+            Gets or sets the axis x.
+            </summary>
+            <value>
+            The axis x.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.DefaultLegend">
+            <summary>
+            Gets or sets the default legend.
+            </summary>
+            <value>
+            The default legend.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.Zoom">
+            <summary>
+            Gets or sets the zoom.
+            </summary>
+            <value>
+            The zoom.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.Pan">
+            <summary>
+            Gets or sets the pan.
+            </summary>
+            <value>
+            The pan.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.LegendLocation">
+            <summary>
+            Gets or sets the legend location.
+            </summary>
+            <value>
+            The legend location.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.Series">
+            <summary>
+            Gets or sets the series.
+            </summary>
+            <value>
+            The series.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.AnimationsSpeed">
+            <summary>
+            Gets or sets the animations speed.
+            </summary>
+            <value>
+            The animations speed.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.DisableAnimations">
+            <summary>
+            Gets or sets a value indicating whether [disable animations].
+            </summary>
+            <value>
+              <c>true</c> if [disable animations]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.DataTooltip">
+            <summary>
+            Gets or sets the data tooltip.
+            </summary>
+            <value>
+            The data tooltip.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.Hoverable">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:LiveCharts.WinForms.CartesianChart"/> is hoverable.
+            </summary>
+            <value>
+              <c>true</c> if hoverable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.ScrollMode">
+            <summary>
+            Gets or sets the scroll mode.
+            </summary>
+            <value>
+            The scroll mode.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.ScrollHorizontalFrom">
+            <summary>
+            Gets or sets the scroll horizontal from.
+            </summary>
+            <value>
+            The scroll horizontal from.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.ScrollHorizontalTo">
+            <summary>
+            Gets or sets the scroll horizontal to.
+            </summary>
+            <value>
+            The scroll horizontal to.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.ScrollVerticalFrom">
+            <summary>
+            Gets or sets the scroll vertical from.
+            </summary>
+            <value>
+            The scroll vertical from.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.ScrollVerticalTo">
+            <summary>
+            Gets or sets the scroll vertical to.
+            </summary>
+            <value>
+            The scroll vertical to.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.ScrollBarFill">
+            <summary>
+            Gets or sets the scroll bar fill.
+            </summary>
+            <value>
+            The scroll bar fill.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.Background">
+            <summary>
+            Gets or sets the background.
+            </summary>
+            <value>
+            The background.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.VisualElements">
+            <summary>
+            Gets or sets the visual elements.
+            </summary>
+            <value>
+            The visual elements.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.CartesianChart.UpdaterState">
+            <summary>
+            Gets or sets the state of the updater.
+            </summary>
+            <value>
+            The state of the updater.
+            </value>
+        </member>
+        <member name="T:LiveCharts.WinForms.SolidGauge">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Integration.ElementHost"/>
+        </member>
+        <member name="F:LiveCharts.WinForms.SolidGauge.WpfBase">
+            <summary>
+            The WPF base
+            </summary>
+        </member>
+        <member name="M:LiveCharts.WinForms.SolidGauge.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LiveCharts.WinForms.SolidGauge"/> class.
+            </summary>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.Base">
+            <summary>
+            Gets the base.
+            </summary>
+            <value>
+            The base.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.Uses360Mode">
+            <summary>
+            Gets or sets a value indicating whether [uses360 mode].
+            </summary>
+            <value>
+              <c>true</c> if [uses360 mode]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.DisableAnimations">
+            <summary>
+            Gets or sets a value indicating whether [disable animations].
+            </summary>
+            <value>
+              <c>true</c> if [disable animations]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.From">
+            <summary>
+            Gets or sets from.
+            </summary>
+            <value>
+            From.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.To">
+            <summary>
+            Gets or sets to.
+            </summary>
+            <value>
+            To.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.InnerRadius">
+            <summary>
+            Gets or sets the inner radius.
+            </summary>
+            <value>
+            The inner radius.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.Stroke">
+            <summary>
+            Gets or sets the stroke.
+            </summary>
+            <value>
+            The stroke.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.StrokeThickness">
+            <summary>
+            Gets or sets the stroke thickness.
+            </summary>
+            <value>
+            The stroke thickness.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.ToColor">
+            <summary>
+            Gets or sets to color.
+            </summary>
+            <value>
+            To color.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.FromColor">
+            <summary>
+            Gets or sets from color.
+            </summary>
+            <value>
+            From color.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.GaugeBackground">
+            <summary>
+            Gets or sets the gauge background.
+            </summary>
+            <value>
+            The gauge background.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.AnimationsSpeed">
+            <summary>
+            Gets or sets the animations speed.
+            </summary>
+            <value>
+            The animations speed.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.LabelFormatter">
+            <summary>
+            Gets or sets the label formatter.
+            </summary>
+            <value>
+            The label formatter.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.HighFontSize">
+            <summary>
+            Gets or sets the size of the high font.
+            </summary>
+            <value>
+            The size of the high font.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.FontSize">
+            <summary>
+            Gets or sets the size of the font.
+            </summary>
+            <value>
+            The size of the font.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.FontFamily">
+            <summary>
+            Gets or sets the font family.
+            </summary>
+            <value>
+            The font family.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.FontWeight">
+            <summary>
+            Gets or sets the font weight.
+            </summary>
+            <value>
+            The font weight.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.FontStyle">
+            <summary>
+            Gets or sets the font style.
+            </summary>
+            <value>
+            The font style.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.FontStretch">
+            <summary>
+            Gets or sets the font stretch.
+            </summary>
+            <value>
+            The font stretch.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.SolidGauge.ForeGround">
+            <summary>
+            Gets or sets the fore ground.
+            </summary>
+            <value>
+            The fore ground.
+            </value>
+        </member>
+        <member name="T:LiveCharts.WinForms.GeoMap">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Integration.ElementHost"/>
+        </member>
+        <member name="F:LiveCharts.WinForms.GeoMap.WpfBase">
+            <summary>
+            The WPF base
+            </summary>
+        </member>
+        <member name="M:LiveCharts.WinForms.GeoMap.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LiveCharts.WinForms.GeoMap"/> class.
+            </summary>
+        </member>
+        <member name="E:LiveCharts.WinForms.GeoMap.LandClick">
+            <summary>
+            Occurs when [land click].
+            </summary>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.Base">
+            <summary>
+            Gets the base.
+            </summary>
+            <value>
+            The base.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.LanguagePack">
+            <summary>
+            Gets or sets the language pack.
+            </summary>
+            <value>
+            The language pack.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.DefaultLandFill">
+            <summary>
+            Gets or sets the default land fill.
+            </summary>
+            <value>
+            The default land fill.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.LandStrokeThickness">
+            <summary>
+            Gets or sets the land stroke thickness.
+            </summary>
+            <value>
+            The land stroke thickness.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.LandStroke">
+            <summary>
+            Gets or sets the land stroke.
+            </summary>
+            <value>
+            The land stroke.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.DisableAnimations">
+            <summary>
+            Gets or sets a value indicating whether [disable animations].
+            </summary>
+            <value>
+              <c>true</c> if [disable animations]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.AnimationsSpeed">
+            <summary>
+            Gets or sets the animations speed.
+            </summary>
+            <value>
+            The animations speed.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.Hoverable">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:LiveCharts.WinForms.GeoMap"/> is hoverable.
+            </summary>
+            <value>
+              <c>true</c> if hoverable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.HeatMap">
+            <summary>
+            Gets or sets the heat map.
+            </summary>
+            <value>
+            The heat map.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.GradientStopCollection">
+            <summary>
+            Gets or sets the gradient stop collection.
+            </summary>
+            <value>
+            The gradient stop collection.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.Source">
+            <summary>
+            Gets or sets the source.
+            </summary>
+            <value>
+            The source.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.GeoMap.EnableZoomingAndPanning">
+            <summary>
+            Gets or sets a value indicating whether [enable zooming and panning].
+            </summary>
+            <value>
+            <c>true</c> if [enable zooming and panning]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:LiveCharts.WinForms.PieChart">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Integration.ElementHost"/>
+        </member>
+        <member name="F:LiveCharts.WinForms.PieChart.WpfBase">
+            <summary>
+            The WPF base
+            </summary>
+        </member>
+        <member name="M:LiveCharts.WinForms.PieChart.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LiveCharts.WinForms.PieChart"/> class.
+            </summary>
+        </member>
+        <member name="M:LiveCharts.WinForms.PieChart.Update(System.Boolean,System.Boolean)">
+            <summary>
+            Updates the specified restart view.
+            </summary>
+            <param name="restartView">if set to <c>true</c> [restart view].</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+        </member>
+        <member name="E:LiveCharts.WinForms.PieChart.DataClick">
+            <summary>
+            Occurs when the users clicks any point in the chart
+            </summary>
+        </member>
+        <member name="E:LiveCharts.WinForms.PieChart.DataHover">
+            <summary>
+            Occurs when the users hovers over any point in the chart
+            </summary>
+        </member>
+        <member name="E:LiveCharts.WinForms.PieChart.UpdaterTick">
+            <summary>
+            Occurs every time the chart updates
+            </summary>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.AxisY">
+            <summary>
+            Gets or sets the axis y.
+            </summary>
+            <value>
+            The axis y.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.AxisX">
+            <summary>
+            Gets or sets the axis x.
+            </summary>
+            <value>
+            The axis x.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.DefaultLegend">
+            <summary>
+            Gets or sets the default legend.
+            </summary>
+            <value>
+            The default legend.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.Zoom">
+            <summary>
+            Gets or sets the zoom.
+            </summary>
+            <value>
+            The zoom.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.LegendLocation">
+            <summary>
+            Gets or sets the legend location.
+            </summary>
+            <value>
+            The legend location.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.Series">
+            <summary>
+            Gets or sets the series.
+            </summary>
+            <value>
+            The series.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.AnimationsSpeed">
+            <summary>
+            Gets or sets the animations speed.
+            </summary>
+            <value>
+            The animations speed.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.DisableAnimations">
+            <summary>
+            Gets or sets a value indicating whether [disable animations].
+            </summary>
+            <value>
+              <c>true</c> if [disable animations]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.DataTooltip">
+            <summary>
+            Gets or sets the data tooltip.
+            </summary>
+            <value>
+            The data tooltip.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.InnerRadius">
+            <summary>
+            Gets or sets the inner radius.
+            </summary>
+            <value>
+            The inner radius.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.StartingRotationAngle">
+            <summary>
+            Gets or sets the starting rotation angle.
+            </summary>
+            <value>
+            The starting rotation angle.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.UpdaterState">
+            <summary>
+            Gets or sets the state of the updater.
+            </summary>
+            <value>
+            The state of the updater.
+            </value>
+        </member>
+        <member name="P:LiveCharts.WinForms.PieChart.HoverPushOut">
+            <summary>
+            Gets or sets the units that a slice is pushed out when a user moves the mouse over data point.
+            </summary>
+            <value>
+            The hover push out.
+            </value>
+        </member>
+    </members>
+</doc>
