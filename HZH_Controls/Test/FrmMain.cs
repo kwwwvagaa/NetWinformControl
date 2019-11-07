@@ -48,6 +48,7 @@ namespace Test
                 tnControl.Nodes.Add("横向列表");
                 tnControl.Nodes.Add("分页控件");
                 tnControl.Nodes.Add("表格");
+                tnControl.Nodes.Add("表格-自定义单元格");
                 tnControl.Nodes.Add("树表格");
                 tnControl.Nodes.Add("进度条");
                 tnControl.Nodes.Add("步骤控件");
@@ -220,6 +221,9 @@ namespace Test
                 case "表格":
                     AddControl(new UC.UCTestGridTable());
                     break;
+                case "表格-自定义单元格":
+                    AddControl(new UC.UCTestGridTableCustom());
+                    break;
                 case "树表格":
                     AddControl(new UC.UCTestTreeGridTable());
                     break;
@@ -275,7 +279,7 @@ namespace Test
                     AddControl(new UC.UCTestNavigationMenuExt());
                     break;
                 case "类Office导航菜单":
-                     AddControl(new UC.UCTestNavigationMenuOffice());
+                    AddControl(new UC.UCTestNavigationMenuOffice());
                     break;
                 case "分割线标签":
                     AddControl(new UC.UCTestSplitLabel());
@@ -294,7 +298,7 @@ namespace Test
                 #region 图表    English:Chart
                 case "组织结构图":
                     AddControl(new UC.UCTestMindMapping() { Dock = DockStyle.Fill });
-                    break;             
+                    break;
                 case "滚动图表":
                     AddControl(new UC.UCTestWaveChart() { Dock = DockStyle.Fill });
                     break;
@@ -305,8 +309,8 @@ namespace Test
                     AddControl(new UC.UCTestFunnelChart());
                     break;
                 case "Live Charts":
-                     AddControl(new UC.UCTestLiveCharts());
-                     break;
+                    AddControl(new UC.UCTestLiveCharts());
+                    break;
                 #endregion
 
                 #region 工业    English:Industry

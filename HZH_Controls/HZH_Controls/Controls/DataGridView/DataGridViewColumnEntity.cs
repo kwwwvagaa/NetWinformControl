@@ -60,5 +60,23 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <value>The text align.</value>
         public ContentAlignment TextAlign { get { return _TextAlign; } set { _TextAlign = value; } }
+        /// <summary>
+        /// 自定义的单元格控件，一个实现IDataGridViewCustomCell的Control
+        /// </summary>
+        /// <value>The custom cell.</value>
+        private Type customCellType = null;
+        public Type CustomCellType
+        {
+            get
+            {
+                return customCellType;
+            }
+            set
+            {
+                if (!typeof(IDataGridViewCustomCell).IsAssignableFrom(value) || !value.IsSubclassOf(typeof(System.Windows.Forms.Control)))
+                    throw new Exception("行控件没有实现IDataGridViewCustomCell接口");
+                customCellType = value;
+            }
+        }
     }
 }

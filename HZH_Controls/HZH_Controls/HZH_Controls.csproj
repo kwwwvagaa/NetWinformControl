@@ -67,6 +67,7 @@
     <Compile Include="Controls\Charts\RadarChart\UCRadarChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\DataGridView\IDataGridViewCustomCell.cs" />
     <Compile Include="Controls\GraphicalOverlay\GraphicalOverlayComponent.cs">
       <SubType>Component</SubType>
     </Compile>

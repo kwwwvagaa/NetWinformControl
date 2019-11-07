@@ -198,6 +198,14 @@ namespace HZH_Controls.Controls
                     }
                 }
             }
+            foreach (Control item in this.panCells.Controls)
+            {
+                if (item is IDataGridViewCustomCell)
+                {
+                    IDataGridViewCustomCell cell = item as IDataGridViewCustomCell;
+                    cell.SetBindSource(DataSource);
+                }
+            }
             panLeft.Tag = 0;
             var proChildrens = DataSource.GetType().GetProperty("Childrens");
             if (proChildrens != null)
@@ -329,19 +337,28 @@ namespace HZH_Controls.Controls
                             var item = Columns[i - (IsShowCheckBox ? 1 : 0)];
                             this.panCells.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(item.WidthType, item.Width));
 
-                            Label lbl = new Label();
-                            lbl.Tag = i - (IsShowCheckBox ? 1 : 0);
-                            lbl.Name = "lbl_" + item.DataField;
-                            lbl.Font = new Font("微软雅黑", 12);
-                            lbl.ForeColor = Color.Black;
-                            lbl.AutoSize = false;
-                            lbl.Dock = DockStyle.Fill;
-                            lbl.TextAlign = item.TextAlign;
-                            lbl.MouseDown += (a, b) =>
+                            if (item.CustomCellType == null)
                             {
-                                Item_MouseDown(a, b);
-                            };
-                            c = lbl;
+                                Label lbl = new Label();
+                                lbl.Tag = i - (IsShowCheckBox ? 1 : 0);
+                                lbl.Name = "lbl_" + item.DataField;
+                                lbl.Font = new Font("微软雅黑", 12);
+                                lbl.ForeColor = Color.Black;
+                                lbl.AutoSize = false;
+                                lbl.Dock = DockStyle.Fill;
+                                lbl.TextAlign = item.TextAlign;
+                                lbl.MouseDown += (a, b) =>
+                                {
+                                    Item_MouseDown(a, b);
+                                };
+                                c = lbl;
+                            }
+                            else 
+                            {
+                                Control cc = (Control)Activator.CreateInstance(item.CustomCellType);     
+                                cc.Dock = DockStyle.Fill;
+                                c = cc;
+                            }
                         }
                         this.panCells.Controls.Add(c, i, 0);
                     }
@@ -412,7 +429,7 @@ namespace HZH_Controls.Controls
                     }
                 }
                 else
-                {                  
+                {
 
                     Control[] cs = panChildGrid.Controls.Find("panLeft", true);
                     foreach (var item in cs)
