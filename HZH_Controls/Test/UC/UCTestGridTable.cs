@@ -17,6 +17,7 @@ namespace Test.UC
         {
             InitializeComponent();
             ucDataGridView1.SizeChanged += ucDataGridView1_SizeChanged;
+            ucDataGridView1.IsCloseAutoHeight = false;
         }
 
         void ucDataGridView1_SizeChanged(object sender, EventArgs e)

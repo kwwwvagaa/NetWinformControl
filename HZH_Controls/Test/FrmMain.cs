@@ -76,11 +76,9 @@ namespace Test
                 TreeNode tnCharts = new TreeNode("  图表");
                 tnCharts.Nodes.Add("组织结构图");
                 tnCharts.Nodes.Add("滚动图表");
-                tnCharts.Nodes.Add("柱状图");
-                tnCharts.Nodes.Add("饼状图");
-                tnCharts.Nodes.Add("曲线图");
                 tnCharts.Nodes.Add("雷达图");
                 tnCharts.Nodes.Add("金字塔图");
+                tnCharts.Nodes.Add("Live Charts");
                 this.tvMenu.Nodes.Add(tnCharts);
 
                 TreeNode tnFactory = new TreeNode("  工业控件");
@@ -296,16 +294,7 @@ namespace Test
                 #region 图表    English:Chart
                 case "组织结构图":
                     AddControl(new UC.UCTestMindMapping() { Dock = DockStyle.Fill });
-                    break;
-                case "柱状图":
-                    AddControl(new UC.UCTestBarcharts());
-                    break;
-                case "饼状图":
-                    AddControl(new UC.UCTestPieCharts());
-                    break;
-                case "曲线图":
-                    AddControl(new UC.UCTestCurveChart());
-                    break;
+                    break;             
                 case "滚动图表":
                     AddControl(new UC.UCTestWaveChart() { Dock = DockStyle.Fill });
                     break;
@@ -315,6 +304,9 @@ namespace Test
                 case "金字塔图":
                     AddControl(new UC.UCTestFunnelChart());
                     break;
+                case "Live Charts":
+                     AddControl(new UC.UCTestLiveCharts());
+                     break;
                 #endregion
 
                 #region 工业    English:Industry

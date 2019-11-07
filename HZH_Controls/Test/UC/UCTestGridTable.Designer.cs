@@ -33,7 +33,7 @@
             // 
             // ucDataGridView1
             // 
-            this.ucDataGridView1.AutoRowsScroll = true;
+            this.ucDataGridView1.AutoRowsScroll = false;
             this.ucDataGridView1.BackColor = System.Drawing.Color.White;
             this.ucDataGridView1.Columns = null;
             this.ucDataGridView1.DataSource = null;

@@ -54,11 +54,6 @@
     <Compile Include="Colors\StatusColors.cs" />
     <Compile Include="Controls\Charts\AuxiliaryLable.cs" />
     <Compile Include="Controls\Charts\AuxiliaryLine.cs" />
-    <Compile Include="Controls\Charts\BarChart\BarChartItem.cs" />
-    <Compile Include="Controls\Charts\CurveChart\UCCurve.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Charts\CurveChart\CurveItem.cs" />
     <Compile Include="Controls\Charts\FunnelChart\FunelChartAlignment.cs" />
     <Compile Include="Controls\Charts\FunnelChart\FunelChartDirection.cs" />
     <Compile Include="Controls\Charts\FunnelChart\FunelChartItem.cs" />
@@ -67,10 +62,6 @@
     </Compile>
     <Compile Include="Controls\Charts\MarkText.cs" />
     <Compile Include="Controls\Charts\MarkTextPositionStyle.cs" />
-    <Compile Include="Controls\Charts\PieChart\UCPieChart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Charts\PieChart\PieItem.cs" />
     <Compile Include="Controls\Charts\RadarChart\RadarLine.cs" />
     <Compile Include="Controls\Charts\RadarChart\RadarPosition.cs" />
     <Compile Include="Controls\Charts\RadarChart\UCRadarChart.cs">
@@ -150,9 +141,6 @@
       <DependentUpon>FrmLoading.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\GraphDirection.cs" />
-    <Compile Include="Controls\Charts\BarChart\UCBarChart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Controls\Charts\ZoomType.cs" />
     <Compile Include="Controls\FactoryControls\Arrow\UCArrow.cs">
       <SubType>UserControl</SubType>
