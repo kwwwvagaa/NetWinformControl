@@ -196,6 +196,14 @@ namespace HZH_Controls.Controls
                 {
                     this.SetWindowRegion();
                 }
+                else
+                {
+                    //关闭圆角后显示为原矩形
+                    GraphicsPath g = new GraphicsPath();
+                    g.AddRectangle(base.ClientRectangle);
+                    g.CloseFigure();
+                    base.Region = new Region(g);
+                }
 
                 GraphicsPath graphicsPath = new GraphicsPath();
                 if (this._isShowRect || (_fillColor != Color.Empty && _fillColor != Color.Transparent && _fillColor != this.BackColor))
