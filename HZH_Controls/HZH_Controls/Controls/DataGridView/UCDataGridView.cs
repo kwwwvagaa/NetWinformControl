@@ -98,11 +98,6 @@ namespace HZH_Controls.Controls
             {
                 m_isShowHead = value;
                 panHead.Visible = value;
-                if (m_page != null)
-                {
-                    ResetShowCount();
-                    m_page.PageSize = m_showCount;
-                }
             }
         }
         /// <summary>
@@ -161,25 +156,17 @@ namespace HZH_Controls.Controls
             set { m_rowHeight = value; }
         }
 
-        /// <summary>
-        /// The m show count
-        /// </summary>
-        private int m_showCount = 0;
+
         /// <summary>
         /// Gets the show count.
         /// </summary>
         /// <value>The show count.</value>
-        [Description("可显示个数"), Category("自定义")]
+        [Description("当前高度可显示行个数"), Category("自定义")]
         public int ShowCount
         {
-            get { return m_showCount; }
-            private set
+            get
             {
-                m_showCount = value;
-                if (m_page != null)
-                {
-                    m_page.PageSize = value;
-                }
+                return this.panRow.Height / (m_rowHeight);
             }
         }
 
@@ -263,32 +250,12 @@ namespace HZH_Controls.Controls
                     return;
                 if (!typeof(IDataGridViewRow).IsAssignableFrom(value) || !value.IsSubclassOf(typeof(Control)))
                     throw new Exception("行控件没有实现IDataGridViewRow接口");
-                m_rowType = value;
-                if (value == typeof(UCDataGridViewTreeRow))
-                    IsCloseAutoHeight = true;
-                ResetShowCount();
+                m_rowType = value;                      
                 if (m_columns != null && m_columns.Count > 0)
                     ReloadSource();
             }
         }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether [automatic rows scroll].
-        /// </summary>
-        /// <value><c>true</c> if [automatic rows scroll]; otherwise, <c>false</c>.</value>
-        [Description("行是否显示滚动条"), Category("自定义")]
-        public bool AutoRowsScroll
-        {
-            get
-            {
-                return this.panRow.AutoScroll;
-            }
-            set
-            {
-                this.panRow.AutoScroll = value;
-            }
-        }
-
+      
         /// <summary>
         /// The m select row
         /// </summary>
@@ -368,73 +335,7 @@ namespace HZH_Controls.Controls
             }
             return null;
         }
-
-        /// <summary>
-        /// The m page
-        /// </summary>
-        private UCPagerControlBase m_page = null;
-        /// <summary>
-        /// 翻页控件
-        /// </summary>
-        /// <value>The page.</value>
-        /// <exception cref="Exception">翻页控件没有继承UCPagerControlBase</exception>
-        /// <exception cref="System.Exception">翻页控件没有继承UCPagerControlBase</exception>
-        [Description("翻页控件，如果UCPagerControl不满足你的需求，请自定义翻页控件并继承UCPagerControlBase"), Category("自定义")]
-        public UCPagerControlBase Page
-        {
-            get { return m_page; }
-            set
-            {
-                m_page = value;
-                if (value != null)
-                {
-                    if (!typeof(IPageControl).IsAssignableFrom(value.GetType()) || !value.GetType().IsSubclassOf(typeof(UCPagerControlBase)))
-                        throw new Exception("翻页控件没有继承UCPagerControlBase");
-                    panPage.Visible = value != null;
-                    m_page.ShowSourceChanged += page_ShowSourceChanged;
-                    m_page.Dock = DockStyle.Fill;
-                    //this.panPage.Height = value.Height;
-                    this.panPage.Controls.Clear();
-                    this.panPage.Controls.Add(m_page);
-                    ResetShowCount();
-                    m_page.PageSize = ShowCount;
-                    this.DataSource = m_page.GetCurrentSource();
-                }
-                else
-                {
-                    m_page = null;
-                }
-            }
-        }
-
-        /// <summary>
-        /// The m is automatic height
-        /// </summary>
-        private bool m_isCloseAutoHeight = false;
-        /// <summary>
-        /// 自动适应最大高度(当为true时，需要手动计算高度，请慎用)
-        /// </summary>
-        /// <value><c>true</c> if this instance is automatic height; otherwise, <c>false</c>.</value>
-        [Browsable(false)]
-        public bool IsCloseAutoHeight
-        {
-            get { return m_isCloseAutoHeight; }
-            set
-            {
-                m_isCloseAutoHeight = value;
-                this.AutoScroll = value;
-            }
-        }
-
-        /// <summary>
-        /// Pages the show source changed.
-        /// </summary>
-        /// <param name="currentSource">The current source.</param>
-        void page_ShowSourceChanged(object currentSource)
-        {
-            this.DataSource = currentSource;
-        }
-
+              
         #region 事件
         /// <summary>
         /// The head CheckBox change event
@@ -554,25 +455,6 @@ namespace HZH_Controls.Controls
         }
         #endregion
 
-        /// <summary>
-        /// 功能描述:获取显示个数
-        /// 作　　者:HZH
-        /// 创建日期:2019-03-05 10:02:58
-        /// 任务编号:POS
-        /// </summary>
-        /// <returns>返回值</returns>
-        public void ResetShowCount()
-        {
-            if (DesignMode)
-            { return; }
-            if (this.Height <= 0)
-                return;
-            ShowCount = this.panRow.Height / (m_rowHeight);
-            if (ShowCount == 0)
-                return;
-            int intCha = this.panRow.Height % (m_rowHeight);
-            m_rowHeight += intCha / ShowCount;
-        }
         #endregion
 
         #region 公共函数
@@ -585,16 +467,14 @@ namespace HZH_Controls.Controls
             { return; }
             try
             {
-                ControlHelper.FreezeControl(this.panRow, true);
-                //this.panRow.Controls.Clear();
+                ControlHelper.FreezeControl(this, true);              
                 Rows = new List<IDataGridViewRow>();
                 if (m_columns == null || m_columns.Count <= 0)
                     return;
                 if (m_dataSource != null)
                 {
                     int intIndex = 0;
-                    Control lastItem = null;
-
+                   
                     int intSourceCount = 0;
                     if (m_dataSource is DataTable)
                     {
@@ -628,15 +508,14 @@ namespace HZH_Controls.Controls
                                 row.RowHeight = m_rowHeight;
                             item.Visible = true;
                             item.BringToFront();
-                            if (lastItem == null)
-                                lastItem = item;
+                         
                             Rows.Add(row);
                         }
                         intIndex++;
                     }
 
                     if (intIndex < intSourceCount)
-                    {
+                    {                      
                         for (int i = intIndex; i < intSourceCount; i++)
                         {
                             IDataGridViewRow row = (IDataGridViewRow)Activator.CreateInstance(m_rowType);
@@ -655,25 +534,19 @@ namespace HZH_Controls.Controls
                             row.BindingCellData();
 
 
-                            Control rowControl = (row as Control);
-                            this.panRow.Controls.Add(rowControl);
+                            Control rowControl = (row as Control);                           
                             row.RowHeight = m_rowHeight;
                             rowControl.Dock = DockStyle.Top;
                             row.CellClick += (a, b) => { SetSelectRow(rowControl, b); };
                             row.CheckBoxChangeEvent += (a, b) => { SetSelectRow(rowControl, b); };
                             row.RowCustomEvent += (a, b) => { if (RowCustomEvent != null) { RowCustomEvent(a, b); } };
                             row.SourceChanged += RowSourceChanged;
-                            rowControl.BringToFront();
                             Rows.Add(row);
-
-                            if (lastItem == null)
-                                lastItem = rowControl;
+                            this.panRow.Controls.Add(rowControl);
+                            rowControl.BringToFront();
+                        
                         }
-                    }
-                    if (lastItem != null && intSourceCount == m_showCount)
-                    {
-                        lastItem.Height = this.panRow.Height - (m_showCount - 1) * m_rowHeight - 2;
-                    }
+                    }                 
                 }
                 else
                 {
@@ -685,34 +558,10 @@ namespace HZH_Controls.Controls
             }
             finally
             {
-                ControlHelper.FreezeControl(this.panRow, false);
+                ControlHelper.FreezeControl(this, false);
             }
         }
-
-        //void rowControl_SizeChanged(object sender, EventArgs e)
-        //{
-        //    if (m_isAutoHeight)
-        //    {
-        //        int intHeightCount = 0;
-        //        intHeightCount += (IsShowHead ? this.panHead.Height : 0) + (Page != null ? this.panPage.Height : 0);
-        //        foreach (Control item in this.panRow.Controls)
-        //        {
-        //            intHeightCount += item.Height;
-        //        }
-        //        if (this.Parent.Name == "panChildGrid")
-        //        {
-        //            if (this.Parent.Height != intHeightCount)
-        //                this.Parent.Height = intHeightCount;
-        //        }
-        //        else
-        //        {
-        //            if (this.Height != intHeightCount)
-        //                this.Height = intHeightCount;
-        //        }
-        //    }
-        //}
-
-
+      
         /// <summary>
         /// 快捷键
         /// </summary>
@@ -856,35 +705,8 @@ namespace HZH_Controls.Controls
                 ControlHelper.FreezeControl(this, false);
             }
         }
-        /// <summary>
-        /// Handles the Resize event of the UCDataGridView control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        private void UCDataGridView_Resize(object sender, EventArgs e)
-        {
-            if (this.Height <= 0)
-                return;
-            if (m_isCloseAutoHeight)
-                return;
-            ResetShowCount();
-            ReloadSource();
-        }
+      
         #endregion
-
-        /// <summary>
-        /// Handles the SizeChanged event of the panRow control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        private void panRow_SizeChanged(object sender, EventArgs e)
-        {
-            //if (m_isAutoHeight)
-            //{
-            //    int intHeightCount = (IsShowHead ? this.panHead.Height : 0) + (Page != null ? this.panPage.Height : 0) + panRow.Height;
-            //    if (this.Height != intHeightCount)
-            //        this.Height = intHeightCount;
-            //}
-        }        
+    
     }
 }

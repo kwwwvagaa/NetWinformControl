@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Controls\Navigation\CrumbNavigationClickEventArgs.cs" />
     <Compile Include="Controls\Navigation\CrumbNavigationItem.cs" />
+    <Compile Include="Controls\Page\PageModel.cs" />
     <Compile Include="Controls\Panel\UCPanelQuote.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -258,8 +259,8 @@
       <DependentUpon>UCLEDTime.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\List\IListViewItem.cs" />
-    <Compile Include="Controls\List\IPageControl.cs" />
-    <Compile Include="Controls\List\PageControlEventHandler.cs" />
+    <Compile Include="Controls\Page\IPageControl.cs" />
+    <Compile Include="Controls\Page\PageControlEventHandler.cs" />
     <Compile Include="Controls\List\UCListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -272,16 +273,16 @@
     <Compile Include="Controls\List\UCListViewItem.Designer.cs">
       <DependentUpon>UCListViewItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\List\UCPagerControl.cs">
+    <Compile Include="Controls\Page\UCPagerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\List\UCPagerControl.Designer.cs">
+    <Compile Include="Controls\Page\UCPagerControl.Designer.cs">
       <DependentUpon>UCPagerControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\List\UCPagerControl2.cs">
+    <Compile Include="Controls\Page\UCPagerControl2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\List\UCPagerControl2.Designer.cs">
+    <Compile Include="Controls\Page\UCPagerControl2.Designer.cs">
       <DependentUpon>UCPagerControl2.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Menu\IMenuItem.cs" />
@@ -482,7 +483,7 @@
     <Compile Include="Controls\List\UCListItemExt.Designer.cs">
       <DependentUpon>UCListItemExt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\List\UCPagerControlBase.cs">
+    <Compile Include="Controls\Page\UCPagerControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Process\UCProcessExt.cs">
@@ -705,13 +706,13 @@
     <EmbeddedResource Include="Controls\List\UCListViewItem.resx">
       <DependentUpon>UCListViewItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\List\UCPagerControl.resx">
+    <EmbeddedResource Include="Controls\Page\UCPagerControl.resx">
       <DependentUpon>UCPagerControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\List\UCPagerControl2.resx">
+    <EmbeddedResource Include="Controls\Page\UCPagerControl2.resx">
       <DependentUpon>UCPagerControl2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\List\UCPagerControlBase.resx">
+    <EmbeddedResource Include="Controls\Page\UCPagerControlBase.resx">
       <DependentUpon>UCPagerControlBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Menu\UCMenu.resx">

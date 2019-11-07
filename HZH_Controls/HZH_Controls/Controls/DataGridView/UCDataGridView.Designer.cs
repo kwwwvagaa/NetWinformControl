@@ -53,7 +53,6 @@ namespace HZH_Controls.Controls
             this.panHeadLeft = new System.Windows.Forms.Panel();
             this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
             this.panRow = new System.Windows.Forms.Panel();
-            this.panPage = new System.Windows.Forms.Panel();
             this.panHead.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,18 +104,8 @@ namespace HZH_Controls.Controls
             this.panRow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panRow.Location = new System.Drawing.Point(0, 40);
             this.panRow.Name = "panRow";
-            this.panRow.Size = new System.Drawing.Size(1061, 481);
+            this.panRow.Size = new System.Drawing.Size(1061, 525);
             this.panRow.TabIndex = 1;
-            this.panRow.SizeChanged += new System.EventHandler(this.panRow_SizeChanged);
-            // 
-            // panPage
-            // 
-            this.panPage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panPage.Location = new System.Drawing.Point(0, 521);
-            this.panPage.Name = "panPage";
-            this.panPage.Size = new System.Drawing.Size(1061, 44);
-            this.panPage.TabIndex = 0;
-            this.panPage.Visible = false;
             // 
             // UCDataGridView
             // 
@@ -124,11 +113,9 @@ namespace HZH_Controls.Controls
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panRow);
-            this.Controls.Add(this.panPage);
             this.Controls.Add(this.panHead);
             this.Name = "UCDataGridView";
             this.Size = new System.Drawing.Size(1061, 565);
-            this.Resize += new System.EventHandler(this.UCDataGridView_Resize);
             this.panHead.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -152,10 +139,6 @@ namespace HZH_Controls.Controls
         /// The pan row
         /// </summary>
         private System.Windows.Forms.Panel panRow;
-        /// <summary>
-        /// The pan page
-        /// </summary>
-        private System.Windows.Forms.Panel panPage;
         /// <summary>
         /// The pan head left
         /// </summary>

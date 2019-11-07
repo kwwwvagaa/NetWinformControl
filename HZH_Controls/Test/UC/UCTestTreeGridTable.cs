@@ -15,19 +15,9 @@ namespace Test.UC
     {
         public UCTestTreeGridTable()
         {
-            InitializeComponent();
-            ucDataGridView1.SizeChanged += ucDataGridView1_SizeChanged;
+            InitializeComponent();           
         }
 
-        void ucDataGridView1_SizeChanged(object sender, EventArgs e)
-        {
-            if (this.ucDataGridView1.Page != null)
-            {
-                this.ucDataGridView1.ResetShowCount();
-                this.ucDataGridView1.Page.PageSize = this.ucDataGridView1.ShowCount;
-                this.ucDataGridView1.DataSource = this.ucDataGridView1.Page.GetCurrentSource();
-            }
-        }
 
         private void UCTestTreeGridTable_Load(object sender, EventArgs e)
         {
@@ -55,10 +45,7 @@ namespace Test.UC
                 AddChilds(model, 5);
             }
 
-            var page = new UCPagerControl2();
-            page.DataSource = lstSource;
-            this.ucDataGridView1.Page = page;
-            this.ucDataGridView1.First();
+            this.ucDataGridView1.DataSource = lstSource;
         }
 
         private void AddChilds(TestGridModel tm, int intCount)

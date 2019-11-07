@@ -137,7 +137,6 @@ namespace HZH_Controls.Controls
         {
             InitializeComponent();
             this.ucDGVChild.RowType = this.GetType();
-            this.ucDGVChild.IsCloseAutoHeight = true;
             this.SizeChanged += UCDataGridViewTreeRow_SizeChanged;
             this.ucDGVChild.ItemClick += (a, b) =>
             {
@@ -160,11 +159,14 @@ namespace HZH_Controls.Controls
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCDataGridViewTreeRow_SizeChanged(object sender, EventArgs e)
         {
-            if (this.Parent.Parent.Parent != null && this.Parent.Parent.Parent.Name == "panChildGrid" && this.panLeft.Tag.ToInt() == 1)
+            if (this.Parent != null)
             {
-                int intHeight = this.Parent.Parent.Controls[0].Controls.ToArray().Sum(p => p.Height);
-                if (this.Parent.Parent.Parent.Height != intHeight)
-                    this.Parent.Parent.Parent.Height = intHeight;
+                if (this.Parent.Parent.Parent != null && this.Parent.Parent.Parent.Name == "panChildGrid" && this.panLeft.Tag.ToInt() == 1)
+                {
+                    int intHeight = this.Parent.Parent.Controls[0].Controls.ToArray().Sum(p => p.Height);
+                    if (this.Parent.Parent.Parent.Height != intHeight)
+                        this.Parent.Parent.Parent.Height = intHeight;
+                }
             }
         }
 
@@ -307,14 +309,17 @@ namespace HZH_Controls.Controls
                             box.CheckedChangeEvent += (a, b) =>
                             {
                                 IsChecked = box.Checked;
-                                this.ucDGVChild.Rows.ForEach(p => p.IsChecked = box.Checked);
-                                if (CheckBoxChangeEvent != null)
+                                if (this.ucDGVChild.Rows != null)
                                 {
-                                    CheckBoxChangeEvent(a, new DataGridViewEventArgs()
+                                    this.ucDGVChild.Rows.ForEach(p => p.IsChecked = box.Checked);
+                                    if (CheckBoxChangeEvent != null)
                                     {
-                                        CellControl = box,
-                                        CellIndex = 0
-                                    });
+                                        CheckBoxChangeEvent(a, new DataGridViewEventArgs()
+                                        {
+                                            CellControl = box,
+                                            CellIndex = 0
+                                        });
+                                    }
                                 }
                             };
                             c = box;

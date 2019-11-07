@@ -16,18 +16,8 @@ namespace Test.UC
         public UCTestGridTable()
         {
             InitializeComponent();
-            ucDataGridView1.SizeChanged += ucDataGridView1_SizeChanged;
-            ucDataGridView1.IsCloseAutoHeight = false;
         }
 
-        void ucDataGridView1_SizeChanged(object sender, EventArgs e)
-        {
-            if (this.ucDataGridView1.Page != null)
-            {
-                this.ucDataGridView1.Page.PageSize = this.ucDataGridView1.ShowCount;
-               this.ucDataGridView1.DataSource= this.ucDataGridView1.Page.GetCurrentSource();
-            }
-        }
 
         private void UCTestGridTable_Load(object sender, EventArgs e)
         {
@@ -51,12 +41,8 @@ namespace Test.UC
                     Sex = i % 2
                 };
                 lstSource.Add(model);                
-            }
-
-            var page = new UCPagerControl2();
-            page.DataSource = lstSource;
-            this.ucDataGridView1.Page = page;
-            this.ucDataGridView1.First();
+            }          
+            this.ucDataGridView1.DataSource = lstSource;
         }
 
     }
