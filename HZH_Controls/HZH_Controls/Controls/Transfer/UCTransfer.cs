@@ -122,8 +122,6 @@ namespace HZH_Controls.Controls
         public UCTransfer()
         {
             InitializeComponent();
-            dgvLeft.IsCloseAutoHeight = true;
-            dgvRight.IsCloseAutoHeight = true;
             LeftColumns = new DataGridViewColumnEntity[0];
             RightColumns = new DataGridViewColumnEntity[0];
             LeftDataSource = new object[0];

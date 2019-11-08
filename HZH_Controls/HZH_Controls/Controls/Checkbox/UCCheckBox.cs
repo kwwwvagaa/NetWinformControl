@@ -78,6 +78,7 @@ namespace HZH_Controls.Controls
             get { return _ForeColor; }
             set
             {
+                base.ForeColor = value;
                 label1.ForeColor = value;
                 _ForeColor = value;
             }

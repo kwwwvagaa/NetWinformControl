@@ -1,6 +1,6 @@
 ﻿namespace Test.UC
 {
-    partial class UCTestGridTable
+    partial class UCTestGridTableCustom
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -33,6 +33,7 @@
             // 
             // ucDataGridView1
             // 
+            this.ucDataGridView1.AutoScroll = true;
             this.ucDataGridView1.BackColor = System.Drawing.Color.White;
             this.ucDataGridView1.Columns = null;
             this.ucDataGridView1.DataSource = null;
@@ -47,17 +48,16 @@
             this.ucDataGridView1.Name = "ucDataGridView1";
             this.ucDataGridView1.RowHeight = 41;
             this.ucDataGridView1.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
-            this.ucDataGridView1.Size = new System.Drawing.Size(739, 599);
-            this.ucDataGridView1.TabIndex = 4;
+            this.ucDataGridView1.Size = new System.Drawing.Size(831, 609);
+            this.ucDataGridView1.TabIndex = 5;
             // 
-            // UCTestGridTable
+            // UCTestGridTableCustom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.ucDataGridView1);
-            this.Name = "UCTestGridTable";
-            this.Size = new System.Drawing.Size(739, 599);
-            this.Load += new System.EventHandler(this.UCTestGridTable_Load);
+            this.Name = "UCTestGridTableCustom";
+            this.Size = new System.Drawing.Size(831, 609);
+            this.Load += new System.EventHandler(this.UCTestGridTableCustom_Load);
             this.ResumeLayout(false);
 
         }

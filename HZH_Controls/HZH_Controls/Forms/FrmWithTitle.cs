@@ -113,5 +113,10 @@ namespace HZH_Controls.Forms
         {
             this.Close();
         }
+
+        private void FrmWithTitle_SizeChanged(object sender, EventArgs e)
+        {
+            btnClose.Location = new Point(this.Width - btnClose.Width, btnClose.Location.Y);
+        }
     }
 }

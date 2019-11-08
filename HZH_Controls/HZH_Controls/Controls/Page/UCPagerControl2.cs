@@ -105,12 +105,48 @@ namespace HZH_Controls.Controls
             set
             {
                 base.PageSize = value;
-                ResetPageCount();
-                var s = GetCurrentSource();
-                if (ShowSourceChanged != null)
+                if (PageModel == HZH_Controls.Controls.PageModel.Soure)
                 {
-                    ShowSourceChanged(s);
+                    ResetPageCount();
+                    var s = GetCurrentSource();
+                    if (ShowSourceChanged != null)
+                    {
+                        ShowSourceChanged(s);
+                    }
                 }
+                else
+                {
+                    if (ShowSourceChanged != null)
+                    {
+                        ShowSourceChanged(this);
+                    }
+                }
+            }
+        }
+
+        public override int PageCount
+        {
+            get
+            {
+                return base.PageCount;
+            }
+            set
+            {
+                base.PageCount = value;
+                ReloadPage();
+            }
+        }
+
+        public override int PageIndex
+        {
+            get
+            {
+                return base.PageIndex;
+            }
+            set
+            {
+                base.PageIndex = value;
+                ReloadPage();
             }
         }
 
@@ -122,12 +158,22 @@ namespace HZH_Controls.Controls
             if (PageIndex == 1)
                 return;
             PageIndex = 1;
-            StartIndex = (PageIndex - 1) * PageSize;
             ReloadPage();
-            var s = GetCurrentSource();
-            if (ShowSourceChanged != null)
+            if (PageModel == HZH_Controls.Controls.PageModel.Soure)
             {
-                ShowSourceChanged(s);
+                StartIndex = (PageIndex - 1) * PageSize;
+                var s = GetCurrentSource();
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(s);
+                }
+            }
+            else
+            {
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(this);
+                }
             }
         }
 
@@ -141,13 +187,22 @@ namespace HZH_Controls.Controls
                 return;
             }
             PageIndex--;
-
-            StartIndex = (PageIndex - 1) * PageSize;
             ReloadPage();
-            var s = GetCurrentSource();
-            if (ShowSourceChanged != null)
+            if (PageModel == HZH_Controls.Controls.PageModel.Soure)
             {
-                ShowSourceChanged(s);
+                StartIndex = (PageIndex - 1) * PageSize;
+                var s = GetCurrentSource();
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(s);
+                }
+            }
+            else
+            {
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(this);
+                }
             }
         }
 
@@ -161,12 +216,22 @@ namespace HZH_Controls.Controls
                 return;
             }
             PageIndex++;
-            StartIndex = (PageIndex - 1) * PageSize;
             ReloadPage();
-            var s = GetCurrentSource();
-            if (ShowSourceChanged != null)
+            if (PageModel == HZH_Controls.Controls.PageModel.Soure)
             {
-                ShowSourceChanged(s);
+                StartIndex = (PageIndex - 1) * PageSize;
+                var s = GetCurrentSource();
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(s);
+                }
+            }
+            else
+            {
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(this);
+                }
             }
         }
 
@@ -178,12 +243,22 @@ namespace HZH_Controls.Controls
             if (PageIndex == PageCount)
                 return;
             PageIndex = PageCount;
-            StartIndex = (PageIndex - 1) * PageSize;
             ReloadPage();
-            var s = GetCurrentSource();
-            if (ShowSourceChanged != null)
+            if (PageModel == HZH_Controls.Controls.PageModel.Soure)
             {
-                ShowSourceChanged(s);
+                StartIndex = (PageIndex - 1) * PageSize;
+                var s = GetCurrentSource();
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(s);
+                }
+            }
+            else
+            {
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(this);
+                }
             }
         }
 
@@ -318,11 +393,21 @@ namespace HZH_Controls.Controls
             PageIndex = (sender as UCBtnExt).BtnText.ToInt();
             StartIndex = (PageIndex - 1) * PageSize;
             ReloadPage();
-            var s = GetCurrentSource();
-
-            if (ShowSourceChanged != null)
+            if (PageModel == HZH_Controls.Controls.PageModel.Soure)
             {
-                ShowSourceChanged(s);
+                var s = GetCurrentSource();
+
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(s);
+                }
+            }
+            else
+            {
+                if (ShowSourceChanged != null)
+                {
+                    ShowSourceChanged(this);
+                }
             }
         }
 
@@ -389,10 +474,20 @@ namespace HZH_Controls.Controls
                 PageIndex = txtPage.InputText.ToInt();
                 StartIndex = (PageIndex - 1) * PageSize;
                 ReloadPage();
-                var s = GetCurrentSource();
-                if (ShowSourceChanged != null)
+                if (PageModel == HZH_Controls.Controls.PageModel.Soure)
                 {
-                    ShowSourceChanged(s);
+                    var s = GetCurrentSource();
+                    if (ShowSourceChanged != null)
+                    {
+                        ShowSourceChanged(s);
+                    }
+                }
+                else
+                {
+                    if (ShowSourceChanged != null)
+                    {
+                        ShowSourceChanged(this);
+                    }
                 }
             }
         }

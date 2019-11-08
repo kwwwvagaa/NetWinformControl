@@ -50,11 +50,12 @@ namespace HZH_Controls.Controls
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ucControlBase1 = new HZH_Controls.Controls.UCControlBase();
             this.ucDataGridView1 = new HZH_Controls.Controls.UCDataGridView();
+            this.m_page = new HZH_Controls.Controls.UCPagerControl();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.txtSearch = new HZH_Controls.Controls.UCTextBoxEx();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ucSplitLine_V2 = new HZH_Controls.Controls.UCSplitLine_V();
             this.ucSplitLine_V1 = new HZH_Controls.Controls.UCSplitLine_V();
             this.ucSplitLine_H2 = new HZH_Controls.Controls.UCSplitLine_H();
@@ -75,23 +76,11 @@ namespace HZH_Controls.Controls
             this.panel1.Size = new System.Drawing.Size(447, 333);
             this.panel1.TabIndex = 4;
             // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(5, 47);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(437, 15);
-            this.panel2.TabIndex = 1;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // ucControlBase1
             // 
             this.ucControlBase1.ConerRadius = 5;
             this.ucControlBase1.Controls.Add(this.ucDataGridView1);
+            this.ucControlBase1.Controls.Add(this.m_page);
             this.ucControlBase1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucControlBase1.FillColor = System.Drawing.Color.Transparent;
             this.ucControlBase1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -109,6 +98,7 @@ namespace HZH_Controls.Controls
             // 
             // ucDataGridView1
             // 
+            this.ucDataGridView1.AutoScroll = true;
             this.ucDataGridView1.BackColor = System.Drawing.Color.White;
             this.ucDataGridView1.Columns = null;
             this.ucDataGridView1.DataSource = null;
@@ -117,17 +107,36 @@ namespace HZH_Controls.Controls
             this.ucDataGridView1.HeadHeight = 40;
             this.ucDataGridView1.HeadPadingLeft = 0;
             this.ucDataGridView1.HeadTextColor = System.Drawing.Color.Black;
-            this.ucDataGridView1.IsCloseAutoHeight = false;
             this.ucDataGridView1.IsShowCheckBox = false;
             this.ucDataGridView1.IsShowHead = true;
             this.ucDataGridView1.Location = new System.Drawing.Point(5, 5);
             this.ucDataGridView1.Name = "ucDataGridView1";
-            this.ucDataGridView1.Page = null;
             this.ucDataGridView1.RowHeight = 30;
             this.ucDataGridView1.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
-            this.ucDataGridView1.Size = new System.Drawing.Size(427, 256);
+            this.ucDataGridView1.Size = new System.Drawing.Size(427, 223);
             this.ucDataGridView1.TabIndex = 0;
             this.ucDataGridView1.TabStop = false;
+            // 
+            // m_page
+            // 
+            this.m_page.DataSource = null;
+            this.m_page.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_page.Location = new System.Drawing.Point(5, 228);
+            this.m_page.Name = "m_page";
+            this.m_page.PageCount = 0;
+            this.m_page.PageIndex = 1;
+            this.m_page.PageSize = 10;
+            this.m_page.Size = new System.Drawing.Size(427, 33);
+            this.m_page.StartIndex = 0;
+            this.m_page.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(5, 47);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(437, 15);
+            this.panel2.TabIndex = 1;
             // 
             // txtSearch
             // 
@@ -137,6 +146,7 @@ namespace HZH_Controls.Controls
             this.txtSearch.DecLength = 2;
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSearch.FillColor = System.Drawing.Color.Empty;
+            this.txtSearch.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.txtSearch.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtSearch.InputText = "";
             this.txtSearch.InputType = HZH_Controls.TextInputType.NotControl;
@@ -169,6 +179,11 @@ namespace HZH_Controls.Controls
             this.txtSearch.RegexPattern = "";
             this.txtSearch.Size = new System.Drawing.Size(437, 42);
             this.txtSearch.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ucSplitLine_V2
             // 
@@ -270,5 +285,6 @@ namespace HZH_Controls.Controls
         /// The text search
         /// </summary>
         private UCTextBoxEx txtSearch;
+        private UCPagerControl m_page;
     }
 }

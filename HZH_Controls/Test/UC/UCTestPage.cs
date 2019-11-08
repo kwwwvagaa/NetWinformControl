@@ -32,6 +32,12 @@ namespace Test.UC
             ucPagerControl1.DataSource = lstPage2;
             this.ucPagerControl1.FirstPage();
 
+
+            ucPagerControl22.PageCount = 10;
+            ucPagerControl22.PageIndex = 1;
+
+            ucPagerControl2.PageCount = 10;
+            ucPagerControl2.PageIndex = 1;
         }
     }
 }

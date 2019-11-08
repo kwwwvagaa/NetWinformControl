@@ -101,7 +101,6 @@ namespace HZH_Controls.Controls
             // 
             this.ucDGVChild.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucDGVChild.AutoRowsScroll = false;
             this.ucDGVChild.BackColor = System.Drawing.Color.White;
             this.ucDGVChild.Columns = null;
             this.ucDGVChild.DataSource = null;
@@ -109,12 +108,10 @@ namespace HZH_Controls.Controls
             this.ucDGVChild.HeadHeight = 40;
             this.ucDGVChild.HeadPadingLeft = 0;
             this.ucDGVChild.HeadTextColor = System.Drawing.Color.Black;
-            this.ucDGVChild.IsCloseAutoHeight = false;
             this.ucDGVChild.IsShowCheckBox = false;
             this.ucDGVChild.IsShowHead = false;
             this.ucDGVChild.Location = new System.Drawing.Point(25, 0);
             this.ucDGVChild.Name = "ucDGVChild";
-            this.ucDGVChild.Page = null;
             this.ucDGVChild.RowHeight = 40;
             this.ucDGVChild.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
             this.ucDGVChild.Size = new System.Drawing.Size(636, 100);

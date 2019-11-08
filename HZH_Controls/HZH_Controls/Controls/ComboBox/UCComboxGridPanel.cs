@@ -93,22 +93,19 @@ namespace HZH_Controls.Controls
         /// The string last search text
         /// </summary>
         private string strLastSearchText = string.Empty;
-        /// <summary>
-        /// The m page
-        /// </summary>
-        UCPagerControl m_page = new UCPagerControl();
-
+      
         /// <summary>
         /// Initializes a new instance of the <see cref="UCComboxGridPanel" /> class.
         /// </summary>
         public UCComboxGridPanel()
         {
             InitializeComponent();
-            this.ucDataGridView1.Page = m_page;
-            this.ucDataGridView1.IsCloseAutoHeight = false;
             this.txtSearch.txtInput.TextChanged += txtInput_TextChanged;
             this.ucDataGridView1.ItemClick += ucDataGridView1_ItemClick;
+            m_page.ShowSourceChanged += m_page_ShowSourceChanged;
         }
+
+      
 
         /// <summary>
         /// Handles the ItemClick event of the ucDataGridView1 control.
@@ -172,7 +169,7 @@ namespace HZH_Controls.Controls
             m_page.StartIndex = 0;
             if (!string.IsNullOrEmpty(strText))
             {
-                strText = strText.ToLower();
+                strText = strText.ToLower().Trim();
                 List<object> lst = m_dataSource.FindAll(p => m_columns.Any(c => (c.Format == null ? (p.GetType().GetProperty(c.DataField).GetValue(p, null).ToStringExt()) : c.Format(p.GetType().GetProperty(c.DataField).GetValue(p, null))).ToLower().Contains(strText)));
                 m_page.DataSource = lst;
             }
@@ -181,6 +178,11 @@ namespace HZH_Controls.Controls
                 m_page.DataSource = m_dataSource;
             }
             m_page.Reload();
+        }
+
+        void m_page_ShowSourceChanged(object currentSource)
+        {
+            this.ucDataGridView1.DataSource = currentSource;
         }
     }
 }

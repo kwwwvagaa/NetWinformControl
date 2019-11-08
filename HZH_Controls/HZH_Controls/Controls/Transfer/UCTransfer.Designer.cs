@@ -91,7 +91,7 @@
             // 
             // dgvRight
             // 
-            this.dgvRight.AutoRowsScroll = true;
+           
             this.dgvRight.BackColor = System.Drawing.Color.White;
             this.dgvRight.Columns = null;
             this.dgvRight.DataSource = null;
@@ -100,12 +100,11 @@
             this.dgvRight.HeadHeight = 40;
             this.dgvRight.HeadPadingLeft = 0;
             this.dgvRight.HeadTextColor = System.Drawing.Color.Black;
-            this.dgvRight.IsCloseAutoHeight = false;
+           
             this.dgvRight.IsShowCheckBox = true;
             this.dgvRight.IsShowHead = true;
             this.dgvRight.Location = new System.Drawing.Point(1, 1);
-            this.dgvRight.Name = "dgvRight";
-            this.dgvRight.Page = null;
+            this.dgvRight.Name = "dgvRight";           
             this.dgvRight.RowHeight = 40;
             this.dgvRight.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
             this.dgvRight.Size = new System.Drawing.Size(194, 395);
@@ -196,7 +195,6 @@
             // 
             // dgvLeft
             // 
-            this.dgvLeft.AutoRowsScroll = true;
             this.dgvLeft.BackColor = System.Drawing.Color.White;
             this.dgvLeft.Columns = null;
             this.dgvLeft.DataSource = null;
@@ -205,12 +203,10 @@
             this.dgvLeft.HeadHeight = 40;
             this.dgvLeft.HeadPadingLeft = 0;
             this.dgvLeft.HeadTextColor = System.Drawing.Color.Black;
-            this.dgvLeft.IsCloseAutoHeight = false;
             this.dgvLeft.IsShowCheckBox = true;
             this.dgvLeft.IsShowHead = true;
             this.dgvLeft.Location = new System.Drawing.Point(1, 1);
             this.dgvLeft.Name = "dgvLeft";
-            this.dgvLeft.Page = null;
             this.dgvLeft.RowHeight = 40;
             this.dgvLeft.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
             this.dgvLeft.Size = new System.Drawing.Size(193, 395);

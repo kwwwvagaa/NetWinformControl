@@ -106,6 +106,7 @@ namespace HZH_Controls.Forms
             this.ShowInTaskbar = false;
             this.Text = "FrmWithTitle";
             this.Shown += new System.EventHandler(this.FrmWithTitle_Shown);
+            this.SizeChanged += new System.EventHandler(this.FrmWithTitle_SizeChanged);
             this.VisibleChanged += new System.EventHandler(this.FrmWithTitle_VisibleChanged);
             this.ResumeLayout(false);
 

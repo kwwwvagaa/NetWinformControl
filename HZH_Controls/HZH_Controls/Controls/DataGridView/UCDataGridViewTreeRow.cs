@@ -137,7 +137,6 @@ namespace HZH_Controls.Controls
         {
             InitializeComponent();
             this.ucDGVChild.RowType = this.GetType();
-            this.ucDGVChild.IsCloseAutoHeight = true;
             this.SizeChanged += UCDataGridViewTreeRow_SizeChanged;
             this.ucDGVChild.ItemClick += (a, b) =>
             {
@@ -160,11 +159,14 @@ namespace HZH_Controls.Controls
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         void UCDataGridViewTreeRow_SizeChanged(object sender, EventArgs e)
         {
-            if (this.Parent.Parent.Parent != null && this.Parent.Parent.Parent.Name == "panChildGrid" && this.panLeft.Tag.ToInt() == 1)
+            if (this.Parent != null)
             {
-                int intHeight = this.Parent.Parent.Controls[0].Controls.ToArray().Sum(p => p.Height);
-                if (this.Parent.Parent.Parent.Height != intHeight)
-                    this.Parent.Parent.Parent.Height = intHeight;
+                if (this.Parent.Parent.Parent != null && this.Parent.Parent.Parent.Name == "panChildGrid" && this.panLeft.Tag.ToInt() == 1)
+                {
+                    int intHeight = this.Parent.Parent.Controls[0].Controls.ToArray().Sum(p => p.Height);
+                    if (this.Parent.Parent.Parent.Height != intHeight)
+                        this.Parent.Parent.Parent.Height = intHeight;
+                }
             }
         }
 
@@ -194,6 +196,14 @@ namespace HZH_Controls.Controls
                             cs[0].Text = value.ToStringExt();
                         }
                     }
+                }
+            }
+            foreach (Control item in this.panCells.Controls)
+            {
+                if (item is IDataGridViewCustomCell)
+                {
+                    IDataGridViewCustomCell cell = item as IDataGridViewCustomCell;
+                    cell.SetBindSource(DataSource);
                 }
             }
             panLeft.Tag = 0;
@@ -307,14 +317,17 @@ namespace HZH_Controls.Controls
                             box.CheckedChangeEvent += (a, b) =>
                             {
                                 IsChecked = box.Checked;
-                                this.ucDGVChild.Rows.ForEach(p => p.IsChecked = box.Checked);
-                                if (CheckBoxChangeEvent != null)
+                                if (this.ucDGVChild.Rows != null)
                                 {
-                                    CheckBoxChangeEvent(a, new DataGridViewEventArgs()
+                                    this.ucDGVChild.Rows.ForEach(p => p.IsChecked = box.Checked);
+                                    if (CheckBoxChangeEvent != null)
                                     {
-                                        CellControl = box,
-                                        CellIndex = 0
-                                    });
+                                        CheckBoxChangeEvent(a, new DataGridViewEventArgs()
+                                        {
+                                            CellControl = box,
+                                            CellIndex = 0
+                                        });
+                                    }
                                 }
                             };
                             c = box;
@@ -324,19 +337,28 @@ namespace HZH_Controls.Controls
                             var item = Columns[i - (IsShowCheckBox ? 1 : 0)];
                             this.panCells.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(item.WidthType, item.Width));
 
-                            Label lbl = new Label();
-                            lbl.Tag = i - (IsShowCheckBox ? 1 : 0);
-                            lbl.Name = "lbl_" + item.DataField;
-                            lbl.Font = new Font("微软雅黑", 12);
-                            lbl.ForeColor = Color.Black;
-                            lbl.AutoSize = false;
-                            lbl.Dock = DockStyle.Fill;
-                            lbl.TextAlign = item.TextAlign;
-                            lbl.MouseDown += (a, b) =>
+                            if (item.CustomCellType == null)
                             {
-                                Item_MouseDown(a, b);
-                            };
-                            c = lbl;
+                                Label lbl = new Label();
+                                lbl.Tag = i - (IsShowCheckBox ? 1 : 0);
+                                lbl.Name = "lbl_" + item.DataField;
+                                lbl.Font = new Font("微软雅黑", 12);
+                                lbl.ForeColor = Color.Black;
+                                lbl.AutoSize = false;
+                                lbl.Dock = DockStyle.Fill;
+                                lbl.TextAlign = item.TextAlign;
+                                lbl.MouseDown += (a, b) =>
+                                {
+                                    Item_MouseDown(a, b);
+                                };
+                                c = lbl;
+                            }
+                            else 
+                            {
+                                Control cc = (Control)Activator.CreateInstance(item.CustomCellType);     
+                                cc.Dock = DockStyle.Fill;
+                                c = cc;
+                            }
                         }
                         this.panCells.Controls.Add(c, i, 0);
                     }
@@ -407,7 +429,7 @@ namespace HZH_Controls.Controls
                     }
                 }
                 else
-                {                  
+                {
 
                     Control[] cs = panChildGrid.Controls.Find("panLeft", true);
                     foreach (var item in cs)
