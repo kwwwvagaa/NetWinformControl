@@ -510,6 +510,7 @@ namespace HZH_Controls.Controls
                             item.BringToFront();
                          
                             Rows.Add(row);
+                            row.RowIndex = Rows.IndexOf(row);
                         }
                         intIndex++;
                     }
@@ -533,8 +534,7 @@ namespace HZH_Controls.Controls
                             row.ReloadCells();
                             row.BindingCellData();
 
-
-                            Control rowControl = (row as Control);                           
+                            Control rowControl = (row as Control);
                             row.RowHeight = m_rowHeight;
                             rowControl.Dock = DockStyle.Top;
                             row.CellClick += (a, b) => { SetSelectRow(rowControl, b); };
@@ -542,6 +542,7 @@ namespace HZH_Controls.Controls
                             row.RowCustomEvent += (a, b) => { if (RowCustomEvent != null) { RowCustomEvent(a, b); } };
                             row.SourceChanged += RowSourceChanged;
                             Rows.Add(row);
+                            row.RowIndex = Rows.IndexOf(row);
                             this.panRow.Controls.Add(rowControl);
                             rowControl.BringToFront();
                         

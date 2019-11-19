@@ -82,5 +82,10 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <value>The height of the row.</value>
         int RowHeight { get; set; }
+        /// <summary>
+        /// 行号
+        /// </summary>
+        /// <value>The Index of the row.</value>
+        int RowIndex { get; set; }
     }
 }
