@@ -75,6 +75,12 @@ namespace HZH_Controls.Controls
         }
 
         /// <summary>
+        /// 行号，树状图目前没有给予行号
+        /// </summary>
+        /// <value>The Index of the row.</value>
+        public int RowIndex { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether this instance is show CheckBox.
         /// </summary>
         /// <value><c>true</c> if this instance is show CheckBox; otherwise, <c>false</c>.</value>

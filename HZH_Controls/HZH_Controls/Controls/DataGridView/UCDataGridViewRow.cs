@@ -75,6 +75,12 @@ namespace HZH_Controls.Controls
         }
 
         /// <summary>
+        /// 行号
+        /// </summary>
+        /// <value>The Index of the row.</value>
+        public int RowIndex { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether this instance is show CheckBox.
         /// </summary>
         /// <value><c>true</c> if this instance is show CheckBox; otherwise, <c>false</c>.</value>
@@ -166,7 +172,7 @@ namespace HZH_Controls.Controls
                             }
                         }
                     }
-                }               
+                }
             }
             foreach (Control item in this.panCells.Controls)
             {
@@ -190,7 +196,8 @@ namespace HZH_Controls.Controls
                 CellClick(this, new DataGridViewEventArgs()
                 {
                     CellControl = this,
-                    CellIndex = (sender as Control).Tag.ToInt()
+                    CellIndex = (sender as Control).Tag.ToInt(),
+                    RowIndex = this.RowIndex
                 });
             }
         }
@@ -249,6 +256,7 @@ namespace HZH_Controls.Controls
                                 {
                                     CheckBoxChangeEvent(a, new DataGridViewEventArgs()
                                     {
+                                        RowIndex = this.RowIndex,
                                         CellControl = box,
                                         CellIndex = 0
                                     });
@@ -277,9 +285,9 @@ namespace HZH_Controls.Controls
                                 };
                                 c = lbl;
                             }
-                            else 
+                            else
                             {
-                                Control cc = (Control)Activator.CreateInstance(item.CustomCellType);                              
+                                Control cc = (Control)Activator.CreateInstance(item.CustomCellType);
                                 cc.Dock = DockStyle.Fill;
                                 c = cc;
                             }
