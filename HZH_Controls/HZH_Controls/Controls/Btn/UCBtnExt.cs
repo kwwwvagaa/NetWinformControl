@@ -35,6 +35,14 @@ namespace HZH_Controls.Controls
     public partial class UCBtnExt : UCControlBase
     {
         #region 字段属性
+        private bool enabledMouseEffect = true;
+        [Description("是否启用鼠标效果"), Category("自定义")]
+        public bool EnabledMouseEffect
+        {
+            get { return enabledMouseEffect; }
+            set { enabledMouseEffect = value; }
+        }
+
         /// <summary>
         /// 是否显示角标
         /// </summary>
@@ -164,6 +172,10 @@ namespace HZH_Controls.Controls
             get { return m_tipsColor; }
             set { m_tipsColor = value; }
         }
+        [Description("鼠标效果生效时发生，需要和MouseEffected同时使用，否则无效"), Category("自定义")]
+        public event EventHandler MouseEffecting;
+        [Description("鼠标效果结束时发生，需要和MouseEffecting同时使用，否则无效"), Category("自定义")]
+        public event EventHandler MouseEffected;
         #endregion
         /// <summary>
         /// Initializes a new instance of the <see cref="UCBtnExt" /> class.
@@ -173,6 +185,46 @@ namespace HZH_Controls.Controls
             InitializeComponent();
             this.TabStop = false;
             lblTips.Paint += lblTips_Paint;
+            this.lbl.MouseEnter += lbl_MouseEnter;
+            this.lbl.MouseLeave += lbl_MouseLeave;
+        }
+        Color m_cacheColor = Color.Empty;
+        void lbl_MouseLeave(object sender, EventArgs e)
+        {
+            if (enabledMouseEffect)
+            {
+                if (MouseEffecting != null && MouseEffected != null)
+                {
+                    MouseEffected(this, e);
+                }
+                else
+                {
+                    if (m_cacheColor != Color.Empty)
+                    {
+                        this.FillColor = m_cacheColor;
+                        m_cacheColor = Color.Empty;
+                    }
+                }
+            }
+        }
+
+        void lbl_MouseEnter(object sender, EventArgs e)
+        {
+            if (enabledMouseEffect)
+            {
+                if (MouseEffecting != null && MouseEffected != null)
+                {
+                    MouseEffecting(this, e);
+                }
+                else
+                {
+                    if (FillColor != Color.Empty && FillColor != null)
+                    {
+                        m_cacheColor = this.FillColor;
+                        this.FillColor = Color.FromArgb(230, this.FillColor);
+                    }
+                }
+            }
         }
 
         /// <summary>

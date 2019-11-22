@@ -102,6 +102,12 @@
             this.ucBtnsGroup2 = new HZH_Controls.Controls.UCBtnsGroup();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.ucBtnsGroup1 = new HZH_Controls.Controls.UCBtnsGroup();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.ucBtnImg1 = new HZH_Controls.Controls.UCBtnImg();
+            this.ucBtnImg23 = new HZH_Controls.Controls.UCBtnImg();
+            this.ucBtnImg24 = new HZH_Controls.Controls.UCBtnImg();
+            this.ucBtnImg25 = new HZH_Controls.Controls.UCBtnImg();
+            this.ucBtnImg26 = new HZH_Controls.Controls.UCBtnImg();
             this.ucControlBase1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -112,6 +118,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // ucDropDownBtn1
@@ -128,6 +135,7 @@
             this.ucDropDownBtn1.ConerRadius = 5;
             this.ucDropDownBtn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDropDownBtn1.DropPanelHeight = -1;
+            this.ucDropDownBtn1.EnabledMouseEffect = true;
             this.ucDropDownBtn1.FillColor = System.Drawing.Color.White;
             this.ucDropDownBtn1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDropDownBtn1.ForeColor = System.Drawing.Color.White;
@@ -178,6 +186,7 @@
             this.ucBtnExt3.ConerRadius = 5;
             this.ucBtnExt3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnExt3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnExt3.EnabledMouseEffect = true;
             this.ucBtnExt3.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnExt3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt3.IsRadius = false;
@@ -204,6 +213,7 @@
             this.ucBtnExt4.ConerRadius = 5;
             this.ucBtnExt4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnExt4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnExt4.EnabledMouseEffect = true;
             this.ucBtnExt4.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnExt4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt4.IsRadius = false;
@@ -230,6 +240,7 @@
             this.ucBtnExt5.ConerRadius = 5;
             this.ucBtnExt5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnExt5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnExt5.EnabledMouseEffect = true;
             this.ucBtnExt5.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnExt5.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt5.IsRadius = false;
@@ -255,6 +266,7 @@
             this.ucBtnExt1.BtnText = "圆角10";
             this.ucBtnExt1.ConerRadius = 10;
             this.ucBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt1.EnabledMouseEffect = true;
             this.ucBtnExt1.FillColor = System.Drawing.Color.White;
             this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt1.ForeColor = System.Drawing.Color.White;
@@ -281,6 +293,7 @@
             this.ucBtnExt6.BtnText = "圆角10";
             this.ucBtnExt6.ConerRadius = 10;
             this.ucBtnExt6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt6.EnabledMouseEffect = true;
             this.ucBtnExt6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucBtnExt6.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt6.ForeColor = System.Drawing.Color.White;
@@ -307,6 +320,7 @@
             this.ucBtnExt7.BtnText = "圆角10";
             this.ucBtnExt7.ConerRadius = 10;
             this.ucBtnExt7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt7.EnabledMouseEffect = true;
             this.ucBtnExt7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucBtnExt7.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt7.ForeColor = System.Drawing.Color.White;
@@ -333,6 +347,7 @@
             this.ucBtnExt8.BtnText = "圆角10";
             this.ucBtnExt8.ConerRadius = 10;
             this.ucBtnExt8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt8.EnabledMouseEffect = true;
             this.ucBtnExt8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucBtnExt8.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt8.ForeColor = System.Drawing.Color.White;
@@ -359,6 +374,7 @@
             this.ucBtnExt9.BtnText = "圆角10";
             this.ucBtnExt9.ConerRadius = 10;
             this.ucBtnExt9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt9.EnabledMouseEffect = true;
             this.ucBtnExt9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucBtnExt9.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt9.ForeColor = System.Drawing.Color.White;
@@ -385,6 +401,7 @@
             this.ucBtnExt2.BtnText = "圆角5";
             this.ucBtnExt2.ConerRadius = 5;
             this.ucBtnExt2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt2.EnabledMouseEffect = true;
             this.ucBtnExt2.FillColor = System.Drawing.Color.White;
             this.ucBtnExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt2.ForeColor = System.Drawing.Color.White;
@@ -411,6 +428,7 @@
             this.ucBtnExt10.BtnText = "圆角5";
             this.ucBtnExt10.ConerRadius = 5;
             this.ucBtnExt10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt10.EnabledMouseEffect = true;
             this.ucBtnExt10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucBtnExt10.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt10.ForeColor = System.Drawing.Color.White;
@@ -437,6 +455,7 @@
             this.ucBtnExt11.BtnText = "圆角5";
             this.ucBtnExt11.ConerRadius = 5;
             this.ucBtnExt11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt11.EnabledMouseEffect = true;
             this.ucBtnExt11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucBtnExt11.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt11.ForeColor = System.Drawing.Color.White;
@@ -463,6 +482,7 @@
             this.ucBtnExt12.BtnText = "圆角5";
             this.ucBtnExt12.ConerRadius = 5;
             this.ucBtnExt12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt12.EnabledMouseEffect = true;
             this.ucBtnExt12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucBtnExt12.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt12.ForeColor = System.Drawing.Color.White;
@@ -489,6 +509,7 @@
             this.ucBtnExt13.BtnText = "圆角5";
             this.ucBtnExt13.ConerRadius = 5;
             this.ucBtnExt13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt13.EnabledMouseEffect = true;
             this.ucBtnExt13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucBtnExt13.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt13.ForeColor = System.Drawing.Color.White;
@@ -539,6 +560,7 @@
             this.ucBtnExt33.BtnText = "椭圆";
             this.ucBtnExt33.ConerRadius = 34;
             this.ucBtnExt33.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt33.EnabledMouseEffect = true;
             this.ucBtnExt33.FillColor = System.Drawing.Color.White;
             this.ucBtnExt33.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt33.ForeColor = System.Drawing.Color.White;
@@ -565,6 +587,7 @@
             this.ucBtnExt32.BtnText = "椭圆";
             this.ucBtnExt32.ConerRadius = 34;
             this.ucBtnExt32.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt32.EnabledMouseEffect = true;
             this.ucBtnExt32.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucBtnExt32.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt32.ForeColor = System.Drawing.Color.White;
@@ -591,6 +614,7 @@
             this.ucBtnExt31.BtnText = "椭圆";
             this.ucBtnExt31.ConerRadius = 34;
             this.ucBtnExt31.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt31.EnabledMouseEffect = true;
             this.ucBtnExt31.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucBtnExt31.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt31.ForeColor = System.Drawing.Color.White;
@@ -617,6 +641,7 @@
             this.ucBtnExt30.BtnText = "椭圆";
             this.ucBtnExt30.ConerRadius = 34;
             this.ucBtnExt30.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt30.EnabledMouseEffect = true;
             this.ucBtnExt30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucBtnExt30.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt30.ForeColor = System.Drawing.Color.White;
@@ -643,6 +668,7 @@
             this.ucBtnExt29.BtnText = "椭圆";
             this.ucBtnExt29.ConerRadius = 34;
             this.ucBtnExt29.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt29.EnabledMouseEffect = true;
             this.ucBtnExt29.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucBtnExt29.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt29.ForeColor = System.Drawing.Color.White;
@@ -693,6 +719,7 @@
             this.ucBtnExt28.BtnText = "小";
             this.ucBtnExt28.ConerRadius = 5;
             this.ucBtnExt28.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt28.EnabledMouseEffect = true;
             this.ucBtnExt28.FillColor = System.Drawing.Color.White;
             this.ucBtnExt28.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt28.ForeColor = System.Drawing.Color.White;
@@ -719,6 +746,7 @@
             this.ucBtnExt23.BtnText = "中";
             this.ucBtnExt23.ConerRadius = 5;
             this.ucBtnExt23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt23.EnabledMouseEffect = true;
             this.ucBtnExt23.FillColor = System.Drawing.Color.White;
             this.ucBtnExt23.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt23.ForeColor = System.Drawing.Color.White;
@@ -745,6 +773,7 @@
             this.ucBtnExt16.BtnText = "大";
             this.ucBtnExt16.ConerRadius = 5;
             this.ucBtnExt16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt16.EnabledMouseEffect = true;
             this.ucBtnExt16.FillColor = System.Drawing.Color.White;
             this.ucBtnExt16.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt16.ForeColor = System.Drawing.Color.White;
@@ -771,6 +800,7 @@
             this.ucBtnExt27.BtnText = "小";
             this.ucBtnExt27.ConerRadius = 5;
             this.ucBtnExt27.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt27.EnabledMouseEffect = true;
             this.ucBtnExt27.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucBtnExt27.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt27.ForeColor = System.Drawing.Color.White;
@@ -797,6 +827,7 @@
             this.ucBtnExt20.BtnText = "中";
             this.ucBtnExt20.ConerRadius = 5;
             this.ucBtnExt20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt20.EnabledMouseEffect = true;
             this.ucBtnExt20.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucBtnExt20.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt20.ForeColor = System.Drawing.Color.White;
@@ -823,6 +854,7 @@
             this.ucBtnExt26.BtnText = "小";
             this.ucBtnExt26.ConerRadius = 5;
             this.ucBtnExt26.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt26.EnabledMouseEffect = true;
             this.ucBtnExt26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucBtnExt26.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt26.ForeColor = System.Drawing.Color.White;
@@ -849,6 +881,7 @@
             this.ucBtnExt19.BtnText = "中";
             this.ucBtnExt19.ConerRadius = 5;
             this.ucBtnExt19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt19.EnabledMouseEffect = true;
             this.ucBtnExt19.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucBtnExt19.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt19.ForeColor = System.Drawing.Color.White;
@@ -875,6 +908,7 @@
             this.ucBtnExt17.BtnText = "大";
             this.ucBtnExt17.ConerRadius = 5;
             this.ucBtnExt17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt17.EnabledMouseEffect = true;
             this.ucBtnExt17.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucBtnExt17.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt17.ForeColor = System.Drawing.Color.White;
@@ -901,6 +935,7 @@
             this.ucBtnExt25.BtnText = "小";
             this.ucBtnExt25.ConerRadius = 5;
             this.ucBtnExt25.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt25.EnabledMouseEffect = true;
             this.ucBtnExt25.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucBtnExt25.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt25.ForeColor = System.Drawing.Color.White;
@@ -927,6 +962,7 @@
             this.ucBtnExt15.BtnText = "中";
             this.ucBtnExt15.ConerRadius = 5;
             this.ucBtnExt15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt15.EnabledMouseEffect = true;
             this.ucBtnExt15.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucBtnExt15.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt15.ForeColor = System.Drawing.Color.White;
@@ -953,6 +989,7 @@
             this.ucBtnExt24.BtnText = "小";
             this.ucBtnExt24.ConerRadius = 5;
             this.ucBtnExt24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt24.EnabledMouseEffect = true;
             this.ucBtnExt24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucBtnExt24.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt24.ForeColor = System.Drawing.Color.White;
@@ -979,6 +1016,7 @@
             this.ucBtnExt18.BtnText = "大";
             this.ucBtnExt18.ConerRadius = 5;
             this.ucBtnExt18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt18.EnabledMouseEffect = true;
             this.ucBtnExt18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucBtnExt18.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt18.ForeColor = System.Drawing.Color.White;
@@ -1005,6 +1043,7 @@
             this.ucBtnExt14.BtnText = "中";
             this.ucBtnExt14.ConerRadius = 5;
             this.ucBtnExt14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt14.EnabledMouseEffect = true;
             this.ucBtnExt14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucBtnExt14.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt14.ForeColor = System.Drawing.Color.White;
@@ -1031,6 +1070,7 @@
             this.ucBtnExt21.BtnText = "大";
             this.ucBtnExt21.ConerRadius = 5;
             this.ucBtnExt21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt21.EnabledMouseEffect = true;
             this.ucBtnExt21.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucBtnExt21.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt21.ForeColor = System.Drawing.Color.White;
@@ -1057,6 +1097,7 @@
             this.ucBtnExt22.BtnText = "大";
             this.ucBtnExt22.ConerRadius = 5;
             this.ucBtnExt22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt22.EnabledMouseEffect = true;
             this.ucBtnExt22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucBtnExt22.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt22.ForeColor = System.Drawing.Color.White;
@@ -1107,6 +1148,7 @@
             this.ucBtnImg16.BtnText = "";
             this.ucBtnImg16.ConerRadius = 10;
             this.ucBtnImg16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg16.EnabledMouseEffect = true;
             this.ucBtnImg16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucBtnImg16.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1137,6 +1179,7 @@
             this.ucBtnImg11.BtnText = "";
             this.ucBtnImg11.ConerRadius = 10;
             this.ucBtnImg11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg11.EnabledMouseEffect = true;
             this.ucBtnImg11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucBtnImg11.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1167,6 +1210,7 @@
             this.ucBtnImg6.BtnText = "";
             this.ucBtnImg6.ConerRadius = 10;
             this.ucBtnImg6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg6.EnabledMouseEffect = true;
             this.ucBtnImg6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucBtnImg6.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1197,6 +1241,7 @@
             this.ucBtnImg15.BtnText = "";
             this.ucBtnImg15.ConerRadius = 10;
             this.ucBtnImg15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg15.EnabledMouseEffect = true;
             this.ucBtnImg15.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucBtnImg15.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1227,6 +1272,7 @@
             this.ucBtnImg10.BtnText = "";
             this.ucBtnImg10.ConerRadius = 10;
             this.ucBtnImg10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg10.EnabledMouseEffect = true;
             this.ucBtnImg10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucBtnImg10.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1257,6 +1303,7 @@
             this.ucBtnImg14.BtnText = "";
             this.ucBtnImg14.ConerRadius = 10;
             this.ucBtnImg14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg14.EnabledMouseEffect = true;
             this.ucBtnImg14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucBtnImg14.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1287,6 +1334,7 @@
             this.ucBtnImg9.BtnText = "";
             this.ucBtnImg9.ConerRadius = 10;
             this.ucBtnImg9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg9.EnabledMouseEffect = true;
             this.ucBtnImg9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucBtnImg9.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1317,6 +1365,7 @@
             this.ucBtnImg5.BtnText = "";
             this.ucBtnImg5.ConerRadius = 10;
             this.ucBtnImg5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg5.EnabledMouseEffect = true;
             this.ucBtnImg5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucBtnImg5.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1347,6 +1396,7 @@
             this.ucBtnImg13.BtnText = "";
             this.ucBtnImg13.ConerRadius = 10;
             this.ucBtnImg13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg13.EnabledMouseEffect = true;
             this.ucBtnImg13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucBtnImg13.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1377,6 +1427,7 @@
             this.ucBtnImg8.BtnText = "";
             this.ucBtnImg8.ConerRadius = 10;
             this.ucBtnImg8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg8.EnabledMouseEffect = true;
             this.ucBtnImg8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucBtnImg8.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1407,6 +1458,7 @@
             this.ucBtnImg12.BtnText = "";
             this.ucBtnImg12.ConerRadius = 10;
             this.ucBtnImg12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg12.EnabledMouseEffect = true;
             this.ucBtnImg12.FillColor = System.Drawing.Color.White;
             this.ucBtnImg12.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1437,6 +1489,7 @@
             this.ucBtnImg4.BtnText = "";
             this.ucBtnImg4.ConerRadius = 10;
             this.ucBtnImg4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg4.EnabledMouseEffect = true;
             this.ucBtnImg4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucBtnImg4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1467,6 +1520,7 @@
             this.ucBtnImg7.BtnText = "";
             this.ucBtnImg7.ConerRadius = 10;
             this.ucBtnImg7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg7.EnabledMouseEffect = true;
             this.ucBtnImg7.FillColor = System.Drawing.Color.White;
             this.ucBtnImg7.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1497,6 +1551,7 @@
             this.ucBtnImg3.BtnText = "";
             this.ucBtnImg3.ConerRadius = 10;
             this.ucBtnImg3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg3.EnabledMouseEffect = true;
             this.ucBtnImg3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucBtnImg3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1527,6 +1582,7 @@
             this.ucBtnImg2.BtnText = "";
             this.ucBtnImg2.ConerRadius = 10;
             this.ucBtnImg2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg2.EnabledMouseEffect = true;
             this.ucBtnImg2.FillColor = System.Drawing.Color.White;
             this.ucBtnImg2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1591,6 +1647,7 @@
             this.ucBtnImg21.ConerRadius = 1;
             this.ucBtnImg21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnImg21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnImg21.EnabledMouseEffect = true;
             this.ucBtnImg21.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnImg21.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1632,6 +1689,7 @@
             this.ucBtnImg20.ConerRadius = 1;
             this.ucBtnImg20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnImg20.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnImg20.EnabledMouseEffect = true;
             this.ucBtnImg20.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnImg20.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1673,6 +1731,7 @@
             this.ucBtnImg22.ConerRadius = 1;
             this.ucBtnImg22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnImg22.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnImg22.EnabledMouseEffect = true;
             this.ucBtnImg22.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnImg22.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1723,6 +1782,7 @@
             this.ucBtnImg19.ConerRadius = 10;
             this.ucBtnImg19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnImg19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnImg19.EnabledMouseEffect = true;
             this.ucBtnImg19.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnImg19.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1754,6 +1814,7 @@
             this.ucBtnImg18.ConerRadius = 10;
             this.ucBtnImg18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnImg18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnImg18.EnabledMouseEffect = true;
             this.ucBtnImg18.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnImg18.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1785,6 +1846,7 @@
             this.ucBtnImg17.ConerRadius = 10;
             this.ucBtnImg17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnImg17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucBtnImg17.EnabledMouseEffect = true;
             this.ucBtnImg17.FillColor = System.Drawing.Color.Transparent;
             this.ucBtnImg17.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnImg17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -1834,6 +1896,7 @@
             this.ucDropDownBtn5.ConerRadius = 5;
             this.ucDropDownBtn5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDropDownBtn5.DropPanelHeight = -1;
+            this.ucDropDownBtn5.EnabledMouseEffect = true;
             this.ucDropDownBtn5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.ucDropDownBtn5.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDropDownBtn5.ForeColor = System.Drawing.Color.White;
@@ -1869,6 +1932,7 @@
             this.ucDropDownBtn4.ConerRadius = 5;
             this.ucDropDownBtn4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDropDownBtn4.DropPanelHeight = -1;
+            this.ucDropDownBtn4.EnabledMouseEffect = true;
             this.ucDropDownBtn4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(0)))));
             this.ucDropDownBtn4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDropDownBtn4.ForeColor = System.Drawing.Color.White;
@@ -1904,6 +1968,7 @@
             this.ucDropDownBtn3.ConerRadius = 5;
             this.ucDropDownBtn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDropDownBtn3.DropPanelHeight = -1;
+            this.ucDropDownBtn3.EnabledMouseEffect = true;
             this.ucDropDownBtn3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.ucDropDownBtn3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDropDownBtn3.ForeColor = System.Drawing.Color.White;
@@ -1939,6 +2004,7 @@
             this.ucDropDownBtn2.ConerRadius = 5;
             this.ucDropDownBtn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDropDownBtn2.DropPanelHeight = -1;
+            this.ucDropDownBtn2.EnabledMouseEffect = true;
             this.ucDropDownBtn2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucDropDownBtn2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDropDownBtn2.ForeColor = System.Drawing.Color.White;
@@ -2004,19 +2070,199 @@
             this.ucBtnsGroup1.Size = new System.Drawing.Size(194, 50);
             this.ucBtnsGroup1.TabIndex = 0;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.ucBtnImg26);
+            this.groupBox6.Controls.Add(this.ucBtnImg25);
+            this.groupBox6.Controls.Add(this.ucBtnImg24);
+            this.groupBox6.Controls.Add(this.ucBtnImg23);
+            this.groupBox6.Controls.Add(this.ucBtnImg1);
+            this.groupBox6.Location = new System.Drawing.Point(3, 773);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(617, 75);
+            this.groupBox6.TabIndex = 21;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "鼠标效果及自定义效果";
+            // 
+            // ucBtnImg1
+            // 
+            this.ucBtnImg1.BackColor = System.Drawing.Color.White;
+            this.ucBtnImg1.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnImg1.BtnFont = new System.Drawing.Font("微软雅黑", 15F);
+            this.ucBtnImg1.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg1.BtnText = "";
+            this.ucBtnImg1.ConerRadius = 10;
+            this.ucBtnImg1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg1.EnabledMouseEffect = true;
+            this.ucBtnImg1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.ucBtnImg1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnImg1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg1.Image = ((System.Drawing.Image)(resources.GetObject("ucBtnImg1.Image")));
+            this.ucBtnImg1.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg1.ImageFontIcons = ((object)(resources.GetObject("ucBtnImg1.ImageFontIcons")));
+            this.ucBtnImg1.IsRadius = true;
+            this.ucBtnImg1.IsShowRect = false;
+            this.ucBtnImg1.IsShowTips = false;
+            this.ucBtnImg1.Location = new System.Drawing.Point(15, 26);
+            this.ucBtnImg1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnImg1.Name = "ucBtnImg1";
+            this.ucBtnImg1.RectColor = System.Drawing.Color.Gainsboro;
+            this.ucBtnImg1.RectWidth = 1;
+            this.ucBtnImg1.Size = new System.Drawing.Size(80, 31);
+            this.ucBtnImg1.TabIndex = 19;
+            this.ucBtnImg1.TabStop = false;
+            this.ucBtnImg1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnImg1.TipsText = "";
+            this.ucBtnImg1.MouseEffecting += new System.EventHandler(this.ucBtnImg1_MouseEffecting);
+            this.ucBtnImg1.MouseEffected += new System.EventHandler(this.ucBtnImg1_MouseEffected);
+            // 
+            // ucBtnImg23
+            // 
+            this.ucBtnImg23.BackColor = System.Drawing.Color.White;
+            this.ucBtnImg23.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnImg23.BtnFont = new System.Drawing.Font("微软雅黑", 15F);
+            this.ucBtnImg23.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg23.BtnText = "";
+            this.ucBtnImg23.ConerRadius = 10;
+            this.ucBtnImg23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg23.EnabledMouseEffect = true;
+            this.ucBtnImg23.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.ucBtnImg23.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnImg23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg23.Image = ((System.Drawing.Image)(resources.GetObject("ucBtnImg23.Image")));
+            this.ucBtnImg23.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg23.ImageFontIcons = ((object)(resources.GetObject("ucBtnImg23.ImageFontIcons")));
+            this.ucBtnImg23.IsRadius = true;
+            this.ucBtnImg23.IsShowRect = false;
+            this.ucBtnImg23.IsShowTips = false;
+            this.ucBtnImg23.Location = new System.Drawing.Point(141, 26);
+            this.ucBtnImg23.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnImg23.Name = "ucBtnImg23";
+            this.ucBtnImg23.RectColor = System.Drawing.Color.Gainsboro;
+            this.ucBtnImg23.RectWidth = 1;
+            this.ucBtnImg23.Size = new System.Drawing.Size(80, 31);
+            this.ucBtnImg23.TabIndex = 19;
+            this.ucBtnImg23.TabStop = false;
+            this.ucBtnImg23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg23.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnImg23.TipsText = "";
+            this.ucBtnImg23.MouseEffecting += new System.EventHandler(this.ucBtnImg1_MouseEffecting);
+            this.ucBtnImg23.MouseEffected += new System.EventHandler(this.ucBtnImg1_MouseEffected);
+            // 
+            // ucBtnImg24
+            // 
+            this.ucBtnImg24.BackColor = System.Drawing.Color.White;
+            this.ucBtnImg24.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnImg24.BtnFont = new System.Drawing.Font("微软雅黑", 15F);
+            this.ucBtnImg24.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg24.BtnText = "";
+            this.ucBtnImg24.ConerRadius = 10;
+            this.ucBtnImg24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg24.EnabledMouseEffect = true;
+            this.ucBtnImg24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.ucBtnImg24.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnImg24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg24.Image = ((System.Drawing.Image)(resources.GetObject("ucBtnImg24.Image")));
+            this.ucBtnImg24.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg24.ImageFontIcons = ((object)(resources.GetObject("ucBtnImg24.ImageFontIcons")));
+            this.ucBtnImg24.IsRadius = true;
+            this.ucBtnImg24.IsShowRect = false;
+            this.ucBtnImg24.IsShowTips = false;
+            this.ucBtnImg24.Location = new System.Drawing.Point(256, 26);
+            this.ucBtnImg24.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnImg24.Name = "ucBtnImg24";
+            this.ucBtnImg24.RectColor = System.Drawing.Color.Gainsboro;
+            this.ucBtnImg24.RectWidth = 1;
+            this.ucBtnImg24.Size = new System.Drawing.Size(80, 31);
+            this.ucBtnImg24.TabIndex = 19;
+            this.ucBtnImg24.TabStop = false;
+            this.ucBtnImg24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg24.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnImg24.TipsText = "";
+            this.ucBtnImg24.MouseEffecting += new System.EventHandler(this.ucBtnImg1_MouseEffecting);
+            this.ucBtnImg24.MouseEffected += new System.EventHandler(this.ucBtnImg1_MouseEffected);
+            // 
+            // ucBtnImg25
+            // 
+            this.ucBtnImg25.BackColor = System.Drawing.Color.White;
+            this.ucBtnImg25.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnImg25.BtnFont = new System.Drawing.Font("微软雅黑", 15F);
+            this.ucBtnImg25.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg25.BtnText = "";
+            this.ucBtnImg25.ConerRadius = 10;
+            this.ucBtnImg25.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg25.EnabledMouseEffect = true;
+            this.ucBtnImg25.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.ucBtnImg25.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnImg25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg25.Image = ((System.Drawing.Image)(resources.GetObject("ucBtnImg25.Image")));
+            this.ucBtnImg25.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg25.ImageFontIcons = ((object)(resources.GetObject("ucBtnImg25.ImageFontIcons")));
+            this.ucBtnImg25.IsRadius = true;
+            this.ucBtnImg25.IsShowRect = false;
+            this.ucBtnImg25.IsShowTips = false;
+            this.ucBtnImg25.Location = new System.Drawing.Point(370, 26);
+            this.ucBtnImg25.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnImg25.Name = "ucBtnImg25";
+            this.ucBtnImg25.RectColor = System.Drawing.Color.Gainsboro;
+            this.ucBtnImg25.RectWidth = 1;
+            this.ucBtnImg25.Size = new System.Drawing.Size(80, 31);
+            this.ucBtnImg25.TabIndex = 19;
+            this.ucBtnImg25.TabStop = false;
+            this.ucBtnImg25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg25.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnImg25.TipsText = "";
+            this.ucBtnImg25.MouseEffecting += new System.EventHandler(this.ucBtnImg1_MouseEffecting);
+            this.ucBtnImg25.MouseEffected += new System.EventHandler(this.ucBtnImg1_MouseEffected);
+            // 
+            // ucBtnImg26
+            // 
+            this.ucBtnImg26.BackColor = System.Drawing.Color.White;
+            this.ucBtnImg26.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnImg26.BtnFont = new System.Drawing.Font("微软雅黑", 15F);
+            this.ucBtnImg26.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg26.BtnText = "";
+            this.ucBtnImg26.ConerRadius = 10;
+            this.ucBtnImg26.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnImg26.EnabledMouseEffect = true;
+            this.ucBtnImg26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.ucBtnImg26.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnImg26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.ucBtnImg26.Image = ((System.Drawing.Image)(resources.GetObject("ucBtnImg26.Image")));
+            this.ucBtnImg26.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg26.ImageFontIcons = ((object)(resources.GetObject("ucBtnImg26.ImageFontIcons")));
+            this.ucBtnImg26.IsRadius = true;
+            this.ucBtnImg26.IsShowRect = false;
+            this.ucBtnImg26.IsShowTips = false;
+            this.ucBtnImg26.Location = new System.Drawing.Point(502, 26);
+            this.ucBtnImg26.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnImg26.Name = "ucBtnImg26";
+            this.ucBtnImg26.RectColor = System.Drawing.Color.Gainsboro;
+            this.ucBtnImg26.RectWidth = 1;
+            this.ucBtnImg26.Size = new System.Drawing.Size(80, 31);
+            this.ucBtnImg26.TabIndex = 19;
+            this.ucBtnImg26.TabStop = false;
+            this.ucBtnImg26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ucBtnImg26.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnImg26.TipsText = "";
+            this.ucBtnImg26.MouseEffecting += new System.EventHandler(this.ucBtnImg1_MouseEffecting);
+            this.ucBtnImg26.MouseEffected += new System.EventHandler(this.ucBtnImg1_MouseEffected);
+            // 
             // UCTestBtns
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox13);
             this.Controls.Add(this.groupBox12);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "UCTestBtns";
-            this.Size = new System.Drawing.Size(635, 793);
+            this.Size = new System.Drawing.Size(635, 885);
             this.Load += new System.EventHandler(this.UCTestBtns_Load);
             this.ucControlBase1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -2028,6 +2274,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2107,5 +2354,11 @@
         private HZH_Controls.Controls.UCBtnsGroup ucBtnsGroup2;
         private System.Windows.Forms.GroupBox groupBox12;
         private HZH_Controls.Controls.UCBtnsGroup ucBtnsGroup1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private HZH_Controls.Controls.UCBtnImg ucBtnImg26;
+        private HZH_Controls.Controls.UCBtnImg ucBtnImg25;
+        private HZH_Controls.Controls.UCBtnImg ucBtnImg24;
+        private HZH_Controls.Controls.UCBtnImg ucBtnImg23;
+        private HZH_Controls.Controls.UCBtnImg ucBtnImg1;
     }
 }
