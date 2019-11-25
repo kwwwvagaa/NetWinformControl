@@ -391,6 +391,7 @@ namespace HZH_Controls.Controls
                 { return; }
 
                 ControlHelper.FreezeControl(this.panHead, true);
+                this.panRow.Controls.Clear();
                 this.panColumns.Controls.Clear();
                 this.panColumns.ColumnStyles.Clear();
 
