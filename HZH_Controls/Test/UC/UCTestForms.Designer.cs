@@ -29,13 +29,34 @@
         private void InitializeComponent()
         {
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ucDatePickerExt3 = new HZH_Controls.Controls.UCDatePickerExt();
+            this.ucDatePickerExt2 = new HZH_Controls.Controls.UCDatePickerExt();
+            this.ucDatePickerExt1 = new HZH_Controls.Controls.UCDatePickerExt();
+            this.ucSwitch10 = new HZH_Controls.Controls.UCSwitch();
+            this.ucSwitch5 = new HZH_Controls.Controls.UCSwitch();
+            this.ucSwitch9 = new HZH_Controls.Controls.UCSwitch();
+            this.ucSwitch1 = new HZH_Controls.Controls.UCSwitch();
+            this.ucSwitch6 = new HZH_Controls.Controls.UCSwitch();
+            this.ucSwitch2 = new HZH_Controls.Controls.UCSwitch();
+            this.ucSwitch8 = new HZH_Controls.Controls.UCSwitch();
+            this.ucSwitch3 = new HZH_Controls.Controls.UCSwitch();
+            this.ucSwitch4 = new HZH_Controls.Controls.UCSwitch();
+            this.ucSwitch7 = new HZH_Controls.Controls.UCSwitch();
+            this.ucNumTextBox2 = new HZH_Controls.Controls.UCNumTextBox();
+            this.ucNumTextBox1 = new HZH_Controls.Controls.UCNumTextBox();
+            this.ucComboxGrid1 = new HZH_Controls.Controls.UCComboxGrid();
+            this.ucComboBox2 = new HZH_Controls.Controls.UCCombox();
+            this.ucComboBox1 = new HZH_Controls.Controls.UCCombox();
             this.ucTextBoxEx4 = new HZH_Controls.Controls.UCTextBoxEx();
             this.ucTextBoxEx3 = new HZH_Controls.Controls.UCTextBoxEx();
             this.ucTextBoxEx2 = new HZH_Controls.Controls.UCTextBoxEx();
             this.ucTextBoxEx1 = new HZH_Controls.Controls.UCTextBoxEx();
-            this.ucNumTextBox1 = new HZH_Controls.Controls.UCNumTextBox();
             this.textBoxTransparent1 = new HZH_Controls.Controls.TextBoxTransparent();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ucCheckBox4 = new HZH_Controls.Controls.UCCheckBox();
             this.ucCheckBox3 = new HZH_Controls.Controls.UCCheckBox();
             this.ucCheckBox2 = new HZH_Controls.Controls.UCCheckBox();
@@ -44,27 +65,6 @@
             this.ucRadioButton3 = new HZH_Controls.Controls.UCRadioButton();
             this.ucRadioButton2 = new HZH_Controls.Controls.UCRadioButton();
             this.ucRadioButton1 = new HZH_Controls.Controls.UCRadioButton();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.ucComboxGrid1 = new HZH_Controls.Controls.UCComboxGrid();
-            this.ucComboBox2 = new HZH_Controls.Controls.UCCombox();
-            this.ucComboBox1 = new HZH_Controls.Controls.UCCombox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.ucDatePickerExt3 = new HZH_Controls.Controls.UCDatePickerExt();
-            this.ucDatePickerExt2 = new HZH_Controls.Controls.UCDatePickerExt();
-            this.ucDatePickerExt1 = new HZH_Controls.Controls.UCDatePickerExt();
-            this.ucSwitch10 = new HZH_Controls.Controls.UCSwitch();
-            this.ucSwitch9 = new HZH_Controls.Controls.UCSwitch();
-            this.ucSwitch6 = new HZH_Controls.Controls.UCSwitch();
-            this.ucSwitch8 = new HZH_Controls.Controls.UCSwitch();
-            this.ucSwitch5 = new HZH_Controls.Controls.UCSwitch();
-            this.ucSwitch7 = new HZH_Controls.Controls.UCSwitch();
-            this.ucSwitch4 = new HZH_Controls.Controls.UCSwitch();
-            this.ucSwitch3 = new HZH_Controls.Controls.UCSwitch();
-            this.ucSwitch2 = new HZH_Controls.Controls.UCSwitch();
-            this.ucSwitch1 = new HZH_Controls.Controls.UCSwitch();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ucNumTextBox2 = new HZH_Controls.Controls.UCNumTextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -86,6 +86,437 @@
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "文本框";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.ucCheckBox4);
+            this.groupBox3.Controls.Add(this.ucCheckBox3);
+            this.groupBox3.Controls.Add(this.ucCheckBox2);
+            this.groupBox3.Controls.Add(this.ucCheckBox1);
+            this.groupBox3.Controls.Add(this.ucRadioButton4);
+            this.groupBox3.Controls.Add(this.ucRadioButton3);
+            this.groupBox3.Controls.Add(this.ucRadioButton2);
+            this.groupBox3.Controls.Add(this.ucRadioButton1);
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(149, 327);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "单选/复选";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.ucComboxGrid1);
+            this.groupBox6.Controls.Add(this.ucComboBox2);
+            this.groupBox6.Controls.Add(this.ucComboBox1);
+            this.groupBox6.Location = new System.Drawing.Point(3, 461);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(618, 81);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "下拉列表";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.ucDatePickerExt3);
+            this.groupBox7.Controls.Add(this.ucDatePickerExt2);
+            this.groupBox7.Controls.Add(this.ucDatePickerExt1);
+            this.groupBox7.Location = new System.Drawing.Point(3, 336);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(374, 119);
+            this.groupBox7.TabIndex = 8;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "日历";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ucSwitch10);
+            this.groupBox1.Controls.Add(this.ucSwitch5);
+            this.groupBox1.Controls.Add(this.ucSwitch9);
+            this.groupBox1.Controls.Add(this.ucSwitch1);
+            this.groupBox1.Controls.Add(this.ucSwitch6);
+            this.groupBox1.Controls.Add(this.ucSwitch2);
+            this.groupBox1.Controls.Add(this.ucSwitch8);
+            this.groupBox1.Controls.Add(this.ucSwitch3);
+            this.groupBox1.Controls.Add(this.ucSwitch4);
+            this.groupBox1.Controls.Add(this.ucSwitch7);
+            this.groupBox1.Location = new System.Drawing.Point(383, 174);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(238, 281);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "下拉列表";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ucNumTextBox2);
+            this.groupBox2.Controls.Add(this.ucNumTextBox1);
+            this.groupBox2.Location = new System.Drawing.Point(383, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(238, 165);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "下拉列表";
+            // 
+            // ucDatePickerExt3
+            // 
+            this.ucDatePickerExt3.BackColor = System.Drawing.Color.Transparent;
+            this.ucDatePickerExt3.ConerRadius = 5;
+            this.ucDatePickerExt3.CurrentTime = new System.DateTime(2019, 8, 8, 15, 17, 11, 0);
+            this.ucDatePickerExt3.FillColor = System.Drawing.Color.Transparent;
+            this.ucDatePickerExt3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucDatePickerExt3.IsRadius = true;
+            this.ucDatePickerExt3.IsShowRect = true;
+            this.ucDatePickerExt3.Location = new System.Drawing.Point(224, 62);
+            this.ucDatePickerExt3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucDatePickerExt3.Name = "ucDatePickerExt3";
+            this.ucDatePickerExt3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.ucDatePickerExt3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ucDatePickerExt3.RectWidth = 1;
+            this.ucDatePickerExt3.Size = new System.Drawing.Size(128, 39);
+            this.ucDatePickerExt3.TabIndex = 0;
+            this.ucDatePickerExt3.TimeFontSize = 20;
+            this.ucDatePickerExt3.TimeType = HZH_Controls.Controls.DateTimePickerType.Time;
+            // 
+            // ucDatePickerExt2
+            // 
+            this.ucDatePickerExt2.BackColor = System.Drawing.Color.Transparent;
+            this.ucDatePickerExt2.ConerRadius = 5;
+            this.ucDatePickerExt2.CurrentTime = new System.DateTime(2019, 8, 8, 15, 17, 11, 0);
+            this.ucDatePickerExt2.FillColor = System.Drawing.Color.Transparent;
+            this.ucDatePickerExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucDatePickerExt2.IsRadius = true;
+            this.ucDatePickerExt2.IsShowRect = true;
+            this.ucDatePickerExt2.Location = new System.Drawing.Point(7, 62);
+            this.ucDatePickerExt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucDatePickerExt2.Name = "ucDatePickerExt2";
+            this.ucDatePickerExt2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.ucDatePickerExt2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ucDatePickerExt2.RectWidth = 1;
+            this.ucDatePickerExt2.Size = new System.Drawing.Size(210, 39);
+            this.ucDatePickerExt2.TabIndex = 0;
+            this.ucDatePickerExt2.TimeFontSize = 20;
+            this.ucDatePickerExt2.TimeType = HZH_Controls.Controls.DateTimePickerType.Date;
+            // 
+            // ucDatePickerExt1
+            // 
+            this.ucDatePickerExt1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDatePickerExt1.ConerRadius = 5;
+            this.ucDatePickerExt1.CurrentTime = new System.DateTime(2019, 8, 8, 15, 17, 11, 0);
+            this.ucDatePickerExt1.FillColor = System.Drawing.Color.Transparent;
+            this.ucDatePickerExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucDatePickerExt1.IsRadius = true;
+            this.ucDatePickerExt1.IsShowRect = true;
+            this.ucDatePickerExt1.Location = new System.Drawing.Point(7, 17);
+            this.ucDatePickerExt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucDatePickerExt1.Name = "ucDatePickerExt1";
+            this.ucDatePickerExt1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.ucDatePickerExt1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ucDatePickerExt1.RectWidth = 1;
+            this.ucDatePickerExt1.Size = new System.Drawing.Size(335, 39);
+            this.ucDatePickerExt1.TabIndex = 0;
+            this.ucDatePickerExt1.TimeFontSize = 20;
+            this.ucDatePickerExt1.TimeType = HZH_Controls.Controls.DateTimePickerType.DateTime;
+            // 
+            // ucSwitch10
+            // 
+            this.ucSwitch10.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch10.Checked = false;
+            this.ucSwitch10.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch10.FalseTextColr = System.Drawing.Color.Green;
+            this.ucSwitch10.Location = new System.Drawing.Point(136, 173);
+            this.ucSwitch10.Name = "ucSwitch10";
+            this.ucSwitch10.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch10.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
+            this.ucSwitch10.TabIndex = 9;
+            this.ucSwitch10.Texts = new string[] {
+        "确定",
+        "取消"};
+            this.ucSwitch10.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch10.TrueTextColr = System.Drawing.Color.Black;
+            // 
+            // ucSwitch5
+            // 
+            this.ucSwitch5.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch5.Checked = true;
+            this.ucSwitch5.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch5.FalseTextColr = System.Drawing.Color.White;
+            this.ucSwitch5.Location = new System.Drawing.Point(136, 20);
+            this.ucSwitch5.Name = "ucSwitch5";
+            this.ucSwitch5.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch5.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
+            this.ucSwitch5.TabIndex = 13;
+            this.ucSwitch5.Texts = new string[0];
+            this.ucSwitch5.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch5.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // ucSwitch9
+            // 
+            this.ucSwitch9.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch9.Checked = true;
+            this.ucSwitch9.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch9.FalseTextColr = System.Drawing.Color.White;
+            this.ucSwitch9.Location = new System.Drawing.Point(136, 122);
+            this.ucSwitch9.Name = "ucSwitch9";
+            this.ucSwitch9.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch9.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
+            this.ucSwitch9.TabIndex = 10;
+            this.ucSwitch9.Texts = new string[] {
+        "确定",
+        "取消"};
+            this.ucSwitch9.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch9.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // ucSwitch1
+            // 
+            this.ucSwitch1.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch1.Checked = true;
+            this.ucSwitch1.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch1.FalseTextColr = System.Drawing.Color.White;
+            this.ucSwitch1.Location = new System.Drawing.Point(22, 224);
+            this.ucSwitch1.Name = "ucSwitch1";
+            this.ucSwitch1.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch1.SwitchType = HZH_Controls.Controls.SwitchType.Line;
+            this.ucSwitch1.TabIndex = 18;
+            this.ucSwitch1.Texts = new string[0];
+            this.ucSwitch1.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch1.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // ucSwitch6
+            // 
+            this.ucSwitch6.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch6.Checked = false;
+            this.ucSwitch6.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch6.FalseTextColr = System.Drawing.Color.White;
+            this.ucSwitch6.Location = new System.Drawing.Point(136, 71);
+            this.ucSwitch6.Name = "ucSwitch6";
+            this.ucSwitch6.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch6.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
+            this.ucSwitch6.TabIndex = 11;
+            this.ucSwitch6.Texts = new string[0];
+            this.ucSwitch6.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch6.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // ucSwitch2
+            // 
+            this.ucSwitch2.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch2.Checked = false;
+            this.ucSwitch2.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch2.FalseTextColr = System.Drawing.Color.White;
+            this.ucSwitch2.Location = new System.Drawing.Point(136, 224);
+            this.ucSwitch2.Name = "ucSwitch2";
+            this.ucSwitch2.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch2.SwitchType = HZH_Controls.Controls.SwitchType.Line;
+            this.ucSwitch2.TabIndex = 17;
+            this.ucSwitch2.Texts = new string[0];
+            this.ucSwitch2.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch2.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // ucSwitch8
+            // 
+            this.ucSwitch8.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch8.Checked = false;
+            this.ucSwitch8.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch8.FalseTextColr = System.Drawing.Color.White;
+            this.ucSwitch8.Location = new System.Drawing.Point(22, 173);
+            this.ucSwitch8.Name = "ucSwitch8";
+            this.ucSwitch8.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch8.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.ucSwitch8.TabIndex = 12;
+            this.ucSwitch8.Texts = new string[] {
+        "确定",
+        "取消"};
+            this.ucSwitch8.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch8.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // ucSwitch3
+            // 
+            this.ucSwitch3.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch3.Checked = true;
+            this.ucSwitch3.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch3.FalseTextColr = System.Drawing.Color.White;
+            this.ucSwitch3.Location = new System.Drawing.Point(22, 20);
+            this.ucSwitch3.Name = "ucSwitch3";
+            this.ucSwitch3.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch3.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.ucSwitch3.TabIndex = 16;
+            this.ucSwitch3.Texts = new string[0];
+            this.ucSwitch3.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch3.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // ucSwitch4
+            // 
+            this.ucSwitch4.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch4.Checked = false;
+            this.ucSwitch4.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch4.FalseTextColr = System.Drawing.Color.White;
+            this.ucSwitch4.Location = new System.Drawing.Point(22, 71);
+            this.ucSwitch4.Name = "ucSwitch4";
+            this.ucSwitch4.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch4.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.ucSwitch4.TabIndex = 15;
+            this.ucSwitch4.Texts = new string[0];
+            this.ucSwitch4.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch4.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // ucSwitch7
+            // 
+            this.ucSwitch7.BackColor = System.Drawing.Color.Transparent;
+            this.ucSwitch7.Checked = true;
+            this.ucSwitch7.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ucSwitch7.FalseTextColr = System.Drawing.Color.Green;
+            this.ucSwitch7.Location = new System.Drawing.Point(22, 122);
+            this.ucSwitch7.Name = "ucSwitch7";
+            this.ucSwitch7.Size = new System.Drawing.Size(86, 34);
+            this.ucSwitch7.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.ucSwitch7.TabIndex = 14;
+            this.ucSwitch7.Texts = new string[] {
+        "确定",
+        "取消"};
+            this.ucSwitch7.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucSwitch7.TrueTextColr = System.Drawing.Color.Black;
+            // 
+            // ucNumTextBox2
+            // 
+            this.ucNumTextBox2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ucNumTextBox2.InputType = HZH_Controls.TextInputType.Number;
+            this.ucNumTextBox2.IsNumCanInput = true;
+            this.ucNumTextBox2.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderNum;
+            this.ucNumTextBox2.Location = new System.Drawing.Point(40, 90);
+            this.ucNumTextBox2.MaxValue = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.ucNumTextBox2.MinValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ucNumTextBox2.Name = "ucNumTextBox2";
+            this.ucNumTextBox2.Num = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.ucNumTextBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.ucNumTextBox2.Size = new System.Drawing.Size(152, 44);
+            this.ucNumTextBox2.TabIndex = 1;
+            // 
+            // ucNumTextBox1
+            // 
+            this.ucNumTextBox1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ucNumTextBox1.InputType = HZH_Controls.TextInputType.Number;
+            this.ucNumTextBox1.IsNumCanInput = true;
+            this.ucNumTextBox1.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderNum;
+            this.ucNumTextBox1.Location = new System.Drawing.Point(40, 30);
+            this.ucNumTextBox1.MaxValue = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.ucNumTextBox1.MinValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ucNumTextBox1.Name = "ucNumTextBox1";
+            this.ucNumTextBox1.Num = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ucNumTextBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.ucNumTextBox1.Size = new System.Drawing.Size(152, 44);
+            this.ucNumTextBox1.TabIndex = 1;
+            // 
+            // ucComboxGrid1
+            // 
+            this.ucComboxGrid1.BackColor = System.Drawing.Color.Transparent;
+            this.ucComboxGrid1.BackColorExt = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboxGrid1.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ucComboxGrid1.ConerRadius = 5;
+            this.ucComboxGrid1.DropPanelHeight = -1;
+            this.ucComboxGrid1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboxGrid1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.ucComboxGrid1.GridColumns = null;
+            this.ucComboxGrid1.GridDataSource = null;
+            this.ucComboxGrid1.GridRowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
+            this.ucComboxGrid1.IsRadius = false;
+            this.ucComboxGrid1.IsShowRect = true;
+            this.ucComboxGrid1.ItemWidth = 70;
+            this.ucComboxGrid1.Location = new System.Drawing.Point(429, 26);
+            this.ucComboxGrid1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucComboxGrid1.Name = "ucComboxGrid1";
+            this.ucComboxGrid1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboxGrid1.RectWidth = 1;
+            this.ucComboxGrid1.SelectedIndex = -1;
+            this.ucComboxGrid1.SelectedValue = "";
+            this.ucComboxGrid1.SelectSource = null;
+            this.ucComboxGrid1.Size = new System.Drawing.Size(173, 32);
+            this.ucComboxGrid1.Source = null;
+            this.ucComboxGrid1.TabIndex = 10;
+            this.ucComboxGrid1.TextField = "Name";
+            this.ucComboxGrid1.TextValue = null;
+            this.ucComboxGrid1.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            // 
+            // ucComboBox2
+            // 
+            this.ucComboBox2.BackColor = System.Drawing.Color.Transparent;
+            this.ucComboBox2.BackColorExt = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboBox2.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ucComboBox2.ConerRadius = 5;
+            this.ucComboBox2.DropPanelHeight = -1;
+            this.ucComboBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboBox2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.ucComboBox2.IsRadius = false;
+            this.ucComboBox2.IsShowRect = true;
+            this.ucComboBox2.ItemWidth = 70;
+            this.ucComboBox2.Location = new System.Drawing.Point(224, 26);
+            this.ucComboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucComboBox2.Name = "ucComboBox2";
+            this.ucComboBox2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboBox2.RectWidth = 1;
+            this.ucComboBox2.SelectedIndex = -1;
+            this.ucComboBox2.SelectedValue = "";
+            this.ucComboBox2.Size = new System.Drawing.Size(173, 32);
+            this.ucComboBox2.Source = null;
+            this.ucComboBox2.TabIndex = 5;
+            this.ucComboBox2.TextValue = null;
+            this.ucComboBox2.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            // 
+            // ucComboBox1
+            // 
+            this.ucComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.ucComboBox1.BackColorExt = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ucComboBox1.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.ucComboBox1.ConerRadius = 5;
+            this.ucComboBox1.DropPanelHeight = -1;
+            this.ucComboBox1.FillColor = System.Drawing.Color.White;
+            this.ucComboBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.ucComboBox1.IsRadius = true;
+            this.ucComboBox1.IsShowRect = true;
+            this.ucComboBox1.ItemWidth = 70;
+            this.ucComboBox1.Location = new System.Drawing.Point(7, 26);
+            this.ucComboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucComboBox1.Name = "ucComboBox1";
+            this.ucComboBox1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ucComboBox1.RectWidth = 1;
+            this.ucComboBox1.SelectedIndex = -1;
+            this.ucComboBox1.SelectedValue = "";
+            this.ucComboBox1.Size = new System.Drawing.Size(173, 32);
+            this.ucComboBox1.Source = null;
+            this.ucComboBox1.TabIndex = 5;
+            this.ucComboBox1.TextValue = null;
+            this.ucComboBox1.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             // 
             // ucTextBoxEx4
             // 
@@ -251,37 +682,6 @@
             this.ucTextBoxEx1.Size = new System.Drawing.Size(195, 42);
             this.ucTextBoxEx1.TabIndex = 2;
             // 
-            // ucNumTextBox1
-            // 
-            this.ucNumTextBox1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ucNumTextBox1.InputType = HZH_Controls.TextInputType.Number;
-            this.ucNumTextBox1.IsNumCanInput = true;
-            this.ucNumTextBox1.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderNum;
-            this.ucNumTextBox1.Location = new System.Drawing.Point(40, 30);
-            this.ucNumTextBox1.MaxValue = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.ucNumTextBox1.MinValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.ucNumTextBox1.Name = "ucNumTextBox1";
-            this.ucNumTextBox1.Num = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ucNumTextBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.ucNumTextBox1.Size = new System.Drawing.Size(152, 44);
-            this.ucNumTextBox1.TabIndex = 1;
-            // 
             // textBoxTransparent1
             // 
             this.textBoxTransparent1.BackAlpha = 10;
@@ -311,23 +711,6 @@
             this.textBoxTransparent1.Size = new System.Drawing.Size(164, 20);
             this.textBoxTransparent1.TabIndex = 0;
             this.textBoxTransparent1.Text = "这是一个透明文本框";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.ucCheckBox4);
-            this.groupBox3.Controls.Add(this.ucCheckBox3);
-            this.groupBox3.Controls.Add(this.ucCheckBox2);
-            this.groupBox3.Controls.Add(this.ucCheckBox1);
-            this.groupBox3.Controls.Add(this.ucRadioButton4);
-            this.groupBox3.Controls.Add(this.ucRadioButton3);
-            this.groupBox3.Controls.Add(this.ucRadioButton2);
-            this.groupBox3.Controls.Add(this.ucRadioButton1);
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(149, 327);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "单选/复选";
             // 
             // ucCheckBox4
             // 
@@ -412,369 +795,6 @@
             this.ucRadioButton1.Size = new System.Drawing.Size(126, 30);
             this.ucRadioButton1.TabIndex = 0;
             this.ucRadioButton1.TextValue = "单选按钮1";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.ucComboxGrid1);
-            this.groupBox6.Controls.Add(this.ucComboBox2);
-            this.groupBox6.Controls.Add(this.ucComboBox1);
-            this.groupBox6.Location = new System.Drawing.Point(3, 461);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(618, 81);
-            this.groupBox6.TabIndex = 7;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "下拉列表";
-            // 
-            // ucComboxGrid1
-            // 
-            this.ucComboxGrid1.BackColor = System.Drawing.Color.Transparent;
-            this.ucComboxGrid1.BackColorExt = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ucComboxGrid1.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ucComboxGrid1.ConerRadius = 5;
-            this.ucComboxGrid1.DropPanelHeight = -1;
-            this.ucComboxGrid1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ucComboxGrid1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.ucComboxGrid1.GridColumns = null;
-            this.ucComboxGrid1.GridDataSource = null;
-            this.ucComboxGrid1.GridRowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
-            this.ucComboxGrid1.IsRadius = false;
-            this.ucComboxGrid1.IsShowRect = true;
-            this.ucComboxGrid1.ItemWidth = 70;
-            this.ucComboxGrid1.Location = new System.Drawing.Point(429, 26);
-            this.ucComboxGrid1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucComboxGrid1.Name = "ucComboxGrid1";
-            this.ucComboxGrid1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ucComboxGrid1.RectWidth = 1;
-            this.ucComboxGrid1.SelectedIndex = -1;
-            this.ucComboxGrid1.SelectedValue = "";
-            this.ucComboxGrid1.SelectSource = null;
-            this.ucComboxGrid1.Size = new System.Drawing.Size(173, 32);
-            this.ucComboxGrid1.Source = null;
-            this.ucComboxGrid1.TabIndex = 10;
-            this.ucComboxGrid1.TextField = "Name";
-            this.ucComboxGrid1.TextValue = null;
-            this.ucComboxGrid1.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucComboBox2
-            // 
-            this.ucComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.ucComboBox2.BackColorExt = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ucComboBox2.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ucComboBox2.ConerRadius = 5;
-            this.ucComboBox2.DropPanelHeight = -1;
-            this.ucComboBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ucComboBox2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.ucComboBox2.IsRadius = false;
-            this.ucComboBox2.IsShowRect = true;
-            this.ucComboBox2.ItemWidth = 70;
-            this.ucComboBox2.Location = new System.Drawing.Point(224, 26);
-            this.ucComboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucComboBox2.Name = "ucComboBox2";
-            this.ucComboBox2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ucComboBox2.RectWidth = 1;
-            this.ucComboBox2.SelectedIndex = -1;
-            this.ucComboBox2.SelectedValue = "";
-            this.ucComboBox2.Size = new System.Drawing.Size(173, 32);
-            this.ucComboBox2.Source = null;
-            this.ucComboBox2.TabIndex = 5;
-            this.ucComboBox2.TextValue = null;
-            this.ucComboBox2.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucComboBox1
-            // 
-            this.ucComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.ucComboBox1.BackColorExt = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ucComboBox1.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.ucComboBox1.ConerRadius = 5;
-            this.ucComboBox1.DropPanelHeight = -1;
-            this.ucComboBox1.FillColor = System.Drawing.Color.White;
-            this.ucComboBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.ucComboBox1.IsRadius = true;
-            this.ucComboBox1.IsShowRect = true;
-            this.ucComboBox1.ItemWidth = 70;
-            this.ucComboBox1.Location = new System.Drawing.Point(7, 26);
-            this.ucComboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucComboBox1.Name = "ucComboBox1";
-            this.ucComboBox1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ucComboBox1.RectWidth = 1;
-            this.ucComboBox1.SelectedIndex = -1;
-            this.ucComboBox1.SelectedValue = "";
-            this.ucComboBox1.Size = new System.Drawing.Size(173, 32);
-            this.ucComboBox1.Source = null;
-            this.ucComboBox1.TabIndex = 5;
-            this.ucComboBox1.TextValue = null;
-            this.ucComboBox1.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.ucDatePickerExt3);
-            this.groupBox7.Controls.Add(this.ucDatePickerExt2);
-            this.groupBox7.Controls.Add(this.ucDatePickerExt1);
-            this.groupBox7.Location = new System.Drawing.Point(3, 336);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(374, 119);
-            this.groupBox7.TabIndex = 8;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "日历";
-            // 
-            // ucDatePickerExt3
-            // 
-            this.ucDatePickerExt3.BackColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt3.ConerRadius = 5;
-            this.ucDatePickerExt3.CurrentTime = new System.DateTime(2019, 8, 8, 15, 17, 11, 0);
-            this.ucDatePickerExt3.FillColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucDatePickerExt3.IsRadius = true;
-            this.ucDatePickerExt3.IsShowRect = true;
-            this.ucDatePickerExt3.Location = new System.Drawing.Point(224, 62);
-            this.ucDatePickerExt3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucDatePickerExt3.Name = "ucDatePickerExt3";
-            this.ucDatePickerExt3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.ucDatePickerExt3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ucDatePickerExt3.RectWidth = 1;
-            this.ucDatePickerExt3.Size = new System.Drawing.Size(128, 39);
-            this.ucDatePickerExt3.TabIndex = 0;
-            this.ucDatePickerExt3.TimeFontSize = 20;
-            this.ucDatePickerExt3.TimeType = HZH_Controls.Controls.DateTimePickerType.Time;
-            // 
-            // ucDatePickerExt2
-            // 
-            this.ucDatePickerExt2.BackColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt2.ConerRadius = 5;
-            this.ucDatePickerExt2.CurrentTime = new System.DateTime(2019, 8, 8, 15, 17, 11, 0);
-            this.ucDatePickerExt2.FillColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucDatePickerExt2.IsRadius = true;
-            this.ucDatePickerExt2.IsShowRect = true;
-            this.ucDatePickerExt2.Location = new System.Drawing.Point(7, 62);
-            this.ucDatePickerExt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucDatePickerExt2.Name = "ucDatePickerExt2";
-            this.ucDatePickerExt2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.ucDatePickerExt2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ucDatePickerExt2.RectWidth = 1;
-            this.ucDatePickerExt2.Size = new System.Drawing.Size(210, 39);
-            this.ucDatePickerExt2.TabIndex = 0;
-            this.ucDatePickerExt2.TimeFontSize = 20;
-            this.ucDatePickerExt2.TimeType = HZH_Controls.Controls.DateTimePickerType.Date;
-            // 
-            // ucDatePickerExt1
-            // 
-            this.ucDatePickerExt1.BackColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt1.ConerRadius = 5;
-            this.ucDatePickerExt1.CurrentTime = new System.DateTime(2019, 8, 8, 15, 17, 11, 0);
-            this.ucDatePickerExt1.FillColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucDatePickerExt1.IsRadius = true;
-            this.ucDatePickerExt1.IsShowRect = true;
-            this.ucDatePickerExt1.Location = new System.Drawing.Point(7, 17);
-            this.ucDatePickerExt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucDatePickerExt1.Name = "ucDatePickerExt1";
-            this.ucDatePickerExt1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.ucDatePickerExt1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ucDatePickerExt1.RectWidth = 1;
-            this.ucDatePickerExt1.Size = new System.Drawing.Size(335, 39);
-            this.ucDatePickerExt1.TabIndex = 0;
-            this.ucDatePickerExt1.TimeFontSize = 20;
-            this.ucDatePickerExt1.TimeType = HZH_Controls.Controls.DateTimePickerType.DateTime;
-            // 
-            // ucSwitch10
-            // 
-            this.ucSwitch10.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch10.Checked = false;
-            this.ucSwitch10.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch10.Location = new System.Drawing.Point(136, 173);
-            this.ucSwitch10.Name = "ucSwitch10";
-            this.ucSwitch10.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch10.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
-            this.ucSwitch10.TabIndex = 9;
-            this.ucSwitch10.Texts = new string[] {
-        "确定",
-        "取消"};
-            this.ucSwitch10.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucSwitch9
-            // 
-            this.ucSwitch9.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch9.Checked = true;
-            this.ucSwitch9.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch9.Location = new System.Drawing.Point(136, 122);
-            this.ucSwitch9.Name = "ucSwitch9";
-            this.ucSwitch9.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch9.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
-            this.ucSwitch9.TabIndex = 10;
-            this.ucSwitch9.Texts = new string[] {
-        "确定",
-        "取消"};
-            this.ucSwitch9.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucSwitch6
-            // 
-            this.ucSwitch6.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch6.Checked = false;
-            this.ucSwitch6.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch6.Location = new System.Drawing.Point(136, 71);
-            this.ucSwitch6.Name = "ucSwitch6";
-            this.ucSwitch6.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch6.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
-            this.ucSwitch6.TabIndex = 11;
-            this.ucSwitch6.Texts = new string[0];
-            this.ucSwitch6.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucSwitch8
-            // 
-            this.ucSwitch8.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch8.Checked = false;
-            this.ucSwitch8.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch8.Location = new System.Drawing.Point(22, 173);
-            this.ucSwitch8.Name = "ucSwitch8";
-            this.ucSwitch8.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch8.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.ucSwitch8.TabIndex = 12;
-            this.ucSwitch8.Texts = new string[] {
-        "确定",
-        "取消"};
-            this.ucSwitch8.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucSwitch5
-            // 
-            this.ucSwitch5.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch5.Checked = true;
-            this.ucSwitch5.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch5.Location = new System.Drawing.Point(136, 20);
-            this.ucSwitch5.Name = "ucSwitch5";
-            this.ucSwitch5.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch5.SwitchType = HZH_Controls.Controls.SwitchType.Quadrilateral;
-            this.ucSwitch5.TabIndex = 13;
-            this.ucSwitch5.Texts = new string[0];
-            this.ucSwitch5.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucSwitch7
-            // 
-            this.ucSwitch7.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch7.Checked = true;
-            this.ucSwitch7.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch7.Location = new System.Drawing.Point(22, 122);
-            this.ucSwitch7.Name = "ucSwitch7";
-            this.ucSwitch7.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch7.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.ucSwitch7.TabIndex = 14;
-            this.ucSwitch7.Texts = new string[] {
-        "确定",
-        "取消"};
-            this.ucSwitch7.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucSwitch4
-            // 
-            this.ucSwitch4.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch4.Checked = false;
-            this.ucSwitch4.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch4.Location = new System.Drawing.Point(22, 71);
-            this.ucSwitch4.Name = "ucSwitch4";
-            this.ucSwitch4.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch4.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.ucSwitch4.TabIndex = 15;
-            this.ucSwitch4.Texts = new string[0];
-            this.ucSwitch4.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucSwitch3
-            // 
-            this.ucSwitch3.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch3.Checked = true;
-            this.ucSwitch3.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch3.Location = new System.Drawing.Point(22, 20);
-            this.ucSwitch3.Name = "ucSwitch3";
-            this.ucSwitch3.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch3.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.ucSwitch3.TabIndex = 16;
-            this.ucSwitch3.Texts = new string[0];
-            this.ucSwitch3.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucSwitch2
-            // 
-            this.ucSwitch2.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch2.Checked = false;
-            this.ucSwitch2.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch2.Location = new System.Drawing.Point(136, 224);
-            this.ucSwitch2.Name = "ucSwitch2";
-            this.ucSwitch2.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch2.SwitchType = HZH_Controls.Controls.SwitchType.Line;
-            this.ucSwitch2.TabIndex = 17;
-            this.ucSwitch2.Texts = new string[0];
-            this.ucSwitch2.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // ucSwitch1
-            // 
-            this.ucSwitch1.BackColor = System.Drawing.Color.Transparent;
-            this.ucSwitch1.Checked = true;
-            this.ucSwitch1.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ucSwitch1.Location = new System.Drawing.Point(22, 224);
-            this.ucSwitch1.Name = "ucSwitch1";
-            this.ucSwitch1.Size = new System.Drawing.Size(86, 34);
-            this.ucSwitch1.SwitchType = HZH_Controls.Controls.SwitchType.Line;
-            this.ucSwitch1.TabIndex = 18;
-            this.ucSwitch1.Texts = new string[0];
-            this.ucSwitch1.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ucSwitch10);
-            this.groupBox1.Controls.Add(this.ucSwitch5);
-            this.groupBox1.Controls.Add(this.ucSwitch9);
-            this.groupBox1.Controls.Add(this.ucSwitch1);
-            this.groupBox1.Controls.Add(this.ucSwitch6);
-            this.groupBox1.Controls.Add(this.ucSwitch2);
-            this.groupBox1.Controls.Add(this.ucSwitch8);
-            this.groupBox1.Controls.Add(this.ucSwitch3);
-            this.groupBox1.Controls.Add(this.ucSwitch4);
-            this.groupBox1.Controls.Add(this.ucSwitch7);
-            this.groupBox1.Location = new System.Drawing.Point(383, 174);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(238, 281);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "下拉列表";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.ucNumTextBox2);
-            this.groupBox2.Controls.Add(this.ucNumTextBox1);
-            this.groupBox2.Location = new System.Drawing.Point(383, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(238, 165);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "下拉列表";
-            // 
-            // ucNumTextBox2
-            // 
-            this.ucNumTextBox2.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ucNumTextBox2.InputType = HZH_Controls.TextInputType.Number;
-            this.ucNumTextBox2.IsNumCanInput = true;
-            this.ucNumTextBox2.KeyBoardType = HZH_Controls.Controls.KeyBoardType.UCKeyBorderNum;
-            this.ucNumTextBox2.Location = new System.Drawing.Point(40, 90);
-            this.ucNumTextBox2.MaxValue = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.ucNumTextBox2.MinValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.ucNumTextBox2.Name = "ucNumTextBox2";
-            this.ucNumTextBox2.Num = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.ucNumTextBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.ucNumTextBox2.Size = new System.Drawing.Size(152, 44);
-            this.ucNumTextBox2.TabIndex = 1;
             // 
             // UCTestForms
             // 

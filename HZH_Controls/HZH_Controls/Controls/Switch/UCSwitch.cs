@@ -57,6 +57,18 @@ namespace HZH_Controls.Controls
                 Refresh();
             }
         }
+        private Color m_trueTextColr = Color.White;
+
+        [Description("选中时文本颜色"), Category("自定义")]
+        public Color TrueTextColr
+        {
+            get { return m_trueTextColr; }
+            set
+            {
+                m_trueTextColr = value;
+                Refresh();
+            }
+        }
 
         /// <summary>
         /// The m false color
@@ -74,6 +86,19 @@ namespace HZH_Controls.Controls
             set
             {
                 m_falseColor = value;
+                Refresh();
+            }
+        }
+
+        private Color m_falseTextColr = Color.White;
+        [Description("没有选中时文本颜色"), Category("自定义")]
+
+        public Color FalseTextColr
+        {
+            get { return m_falseTextColr; }
+            set
+            {
+                m_falseTextColr = value;
                 Refresh();
             }
         }
@@ -233,7 +258,7 @@ namespace HZH_Controls.Controls
                     {
                         System.Drawing.SizeF sizeF = g.MeasureString(strText.Replace(" ", "A"), Font);
                         int intTextY = (this.Height - (int)sizeF.Height) / 2 + 2;
-                        g.DrawString(strText, Font, Brushes.White, new Point((this.Height - 2 - 4) / 2, intTextY));
+                        g.DrawString(strText, Font, new SolidBrush(m_trueTextColr), new Point((this.Height - 2 - 4) / 2, intTextY));
                     }
                 }
                 else
@@ -247,7 +272,7 @@ namespace HZH_Controls.Controls
                     {
                         System.Drawing.SizeF sizeF = g.MeasureString(strText.Replace(" ", "A"), Font);
                         int intTextY = (this.Height - (int)sizeF.Height) / 2 + 2;
-                        g.DrawString(strText, Font, Brushes.White, new Point(this.Width - 2 - (this.Height - 2 - 4) / 2 - ((this.Height - 2 - 4) / 2) / 2 - (int)sizeF.Width / 2, intTextY));
+                        g.DrawString(strText, Font, new SolidBrush(m_falseTextColr), new Point(this.Width - 2 - (this.Height - 2 - 4) / 2 - ((this.Height - 2 - 4) / 2) / 2 - (int)sizeF.Width / 2, intTextY));
                     }
                 }
             }
@@ -293,7 +318,7 @@ namespace HZH_Controls.Controls
                     {
                         System.Drawing.SizeF sizeF = g.MeasureString(strText.Replace(" ", "A"), Font);
                         int intTextY = (this.Height - (int)sizeF.Height) / 2 + 2;
-                        g.DrawString(strText, Font, Brushes.White, new Point((this.Height - 2 - 4) / 2, intTextY));
+                        g.DrawString(strText, Font, new SolidBrush(m_trueTextColr), new Point((this.Height - 2 - 4) / 2, intTextY));
                     }
                 }
                 else
@@ -314,7 +339,7 @@ namespace HZH_Controls.Controls
                     {
                         System.Drawing.SizeF sizeF = g.MeasureString(strText.Replace(" ", "A"), Font);
                         int intTextY = (this.Height - (int)sizeF.Height) / 2 + 2;
-                        g.DrawString(strText, Font, Brushes.White, new Point(this.Width - 2 - (this.Height - 2 - 4) / 2 - ((this.Height - 2 - 4) / 2) / 2 - (int)sizeF.Width / 2, intTextY));
+                        g.DrawString(strText, Font, new SolidBrush(m_falseTextColr), new Point(this.Width - 2 - (this.Height - 2 - 4) / 2 - ((this.Height - 2 - 4) / 2) / 2 - (int)sizeF.Width / 2, intTextY));
                     }
                 }
             }
