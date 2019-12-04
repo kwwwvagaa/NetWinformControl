@@ -29,16 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ucMindMappingPanel1 = new HZH_Controls.Controls.UCMindMappingPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.aaaaaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ucMindMappingPanel1 = new HZH_Controls.Controls.UCMindMappingPanel();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aaaaaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 26);
+            // 
+            // aaaaaToolStripMenuItem
+            // 
+            this.aaaaaToolStripMenuItem.Name = "aaaaaToolStripMenuItem";
+            this.aaaaaToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.aaaaaToolStripMenuItem.Text = "更改随机文本";
+            this.aaaaaToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // ucMindMappingPanel1
             // 
             this.ucMindMappingPanel1.AutoScroll = true;
             this.ucMindMappingPanel1.BackColor = System.Drawing.Color.White;
+            this.ucMindMappingPanel1.ContextMenuStrip = this.contextMenuStrip1;
             this.ucMindMappingPanel1.DataSource = null;
             this.ucMindMappingPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucMindMappingPanel1.ItemBackcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
@@ -48,20 +63,6 @@
             this.ucMindMappingPanel1.Name = "ucMindMappingPanel1";
             this.ucMindMappingPanel1.Size = new System.Drawing.Size(707, 581);
             this.ucMindMappingPanel1.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aaaaaToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
-            // 
-            // aaaaaToolStripMenuItem
-            // 
-            this.aaaaaToolStripMenuItem.Name = "aaaaaToolStripMenuItem";
-            this.aaaaaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aaaaaToolStripMenuItem.Text = "更改随机文本";
-            this.aaaaaToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // UCTestMindMapping
             // 
