@@ -207,7 +207,7 @@ namespace HZH_Controls.Controls
             {
                 if (value != null)
                 {
-                    if (!(m_dataSource is DataTable) && (!typeof(IList).IsAssignableFrom(value.GetType())))
+                    if (!(value is DataTable) && (!typeof(IList).IsAssignableFrom(value.GetType())))
                     {
                         throw new Exception("数据源不是有效的数据类型，请使用Datatable或列表");
                     }
