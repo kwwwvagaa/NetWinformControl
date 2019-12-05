@@ -158,17 +158,32 @@ namespace HZH_Controls.Controls
                     var cs = this.panCells.Controls.Find("lbl_" + com.DataField, false);
                     if (cs != null && cs.Length > 0)
                     {
-                        var pro = DataSource.GetType().GetProperty(com.DataField);
-                        if (pro != null)
+                        if (DataSource is DataRow row)
                         {
-                            var value = pro.GetValue(DataSource, null);
                             if (com.Format != null)
                             {
-                                cs[0].Text = com.Format(value);
+                                cs[0].Text = com.Format(row[com.DataField]);
                             }
                             else
                             {
-                                cs[0].Text = value.ToStringExt();
+                                cs[0].Text = row[com.DataField].ToStringExt();
+                            }
+                        }
+                        else
+                        {
+                            var pro = DataSource.GetType().GetProperty(com.DataField);
+
+                            if (pro != null)
+                            {
+                                var value = pro.GetValue(DataSource, null);
+                                if (com.Format != null)
+                                {
+                                    cs[0].Text = com.Format(value);
+                                }
+                                else
+                                {
+                                    cs[0].Text = value.ToStringExt();
+                                }
                             }
                         }
                     }
