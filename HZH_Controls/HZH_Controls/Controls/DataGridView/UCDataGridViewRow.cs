@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : HZH_Controls
 // Created          : 08-09-2019
 //
@@ -158,8 +158,9 @@ namespace HZH_Controls.Controls
                     var cs = this.panCells.Controls.Find("lbl_" + com.DataField, false);
                     if (cs != null && cs.Length > 0)
                     {
-                        if (DataSource is DataRow row)
+                        if (DataSource is DataRow)
                         {
+                            DataRow row=DataSource as DataRow;
                             if (com.Format != null)
                             {
                                 cs[0].Text = com.Format(row[com.DataField]);
