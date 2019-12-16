@@ -35,7 +35,7 @@ namespace HZH_Controls.Controls
     public partial class UCBtnExt : UCControlBase
     {
         #region 字段属性
-        private bool enabledMouseEffect = true;
+        private bool enabledMouseEffect = false;
         [Description("是否启用鼠标效果"), Category("自定义")]
         public bool EnabledMouseEffect
         {
