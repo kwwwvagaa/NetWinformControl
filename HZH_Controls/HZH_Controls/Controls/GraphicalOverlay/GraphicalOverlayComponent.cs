@@ -79,6 +79,8 @@ namespace HZH_Controls.Controls
 
         private void Control_Paint(object sender, PaintEventArgs e)
         {
+            if (e == null) return;
+
             // As each control on the form is repainted, this handler is called.
 
             Control control = sender as Control;
