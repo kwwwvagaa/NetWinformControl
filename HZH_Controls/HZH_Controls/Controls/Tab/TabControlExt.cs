@@ -272,6 +272,7 @@ namespace HZH_Controls.Controls
         private void PaintTabBackground(System.Drawing.Graphics graph, int index, System.Drawing.Drawing2D.GraphicsPath path)
         {
             Rectangle rect = this.GetTabRect(index);
+            if (rect.Width == 0 || rect.Height == 0) return;
             System.Drawing.Brush buttonBrush = new System.Drawing.Drawing2D.LinearGradientBrush(rect, _headerBackColor, _headerBackColor, LinearGradientMode.Vertical);  //非选中时候的 TabPage 页头部背景色
             graph.FillPath(buttonBrush, path);
             //if (index == this.SelectedIndex)
