@@ -74,7 +74,7 @@ namespace HZH_Controls.Controls
             set
             {
                 rightColumns = value;
-                this.dgvRight.Columns = leftColumns.ToList();
+                this.dgvRight.Columns = rightColumns.ToList();
             }
         }
 
