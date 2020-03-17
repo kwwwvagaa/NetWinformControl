@@ -221,7 +221,7 @@ namespace HZH_Controls.Controls
                     if (FillColor != Color.Empty && FillColor != null)
                     {
                         m_cacheColor = this.FillColor;
-                        this.FillColor = Color.FromArgb(230, this.FillColor);
+                        this.FillColor = this.FillColor.ChangeColor(-0.2f);
                     }
                 }
             }
