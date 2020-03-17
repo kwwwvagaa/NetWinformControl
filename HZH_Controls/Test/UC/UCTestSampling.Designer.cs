@@ -36,6 +36,11 @@
             this.ucSampling4 = new HZH_Controls.Controls.UCSampling();
             this.ucSampling2 = new HZH_Controls.Controls.UCSampling();
             this.ucSampling3 = new HZH_Controls.Controls.UCSampling();
+            this.ucSampling7 = new HZH_Controls.Controls.UCSampling();
+            this.ucSampling8 = new HZH_Controls.Controls.UCSampling();
+            this.ucSampling9 = new HZH_Controls.Controls.UCSampling();
+            this.ucSampling10 = new HZH_Controls.Controls.UCSampling();
+            this.ucSampling11 = new HZH_Controls.Controls.UCSampling();
             this.SuspendLayout();
             // 
             // label1
@@ -113,10 +118,85 @@
             this.ucSampling3.TabIndex = 1;
             this.ucSampling3.Transparent = null;
             // 
+            // ucSampling7
+            // 
+            this.ucSampling7.Alpha = 0;
+            this.ucSampling7.ColorThreshold = 10;
+            this.ucSampling7.Location = new System.Drawing.Point(655, 460);
+            this.ucSampling7.Name = "ucSampling7";
+            this.ucSampling7.SamplingImag = ((System.Drawing.Bitmap)(resources.GetObject("ucSampling7.SamplingImag")));
+            this.ucSampling7.Size = new System.Drawing.Size(218, 189);
+            this.ucSampling7.TabIndex = 3;
+            this.ucSampling7.Transparent = null;
+            this.ucSampling7.Paint += new System.Windows.Forms.PaintEventHandler(this.ucSampling10_Paint);
+            this.ucSampling7.MouseEnter += new System.EventHandler(this.ucSampling10_MouseEnter);
+            this.ucSampling7.MouseLeave += new System.EventHandler(this.ucSampling10_MouseLeave);
+            // 
+            // ucSampling8
+            // 
+            this.ucSampling8.Alpha = 0;
+            this.ucSampling8.ColorThreshold = 10;
+            this.ucSampling8.Location = new System.Drawing.Point(659, 609);
+            this.ucSampling8.Name = "ucSampling8";
+            this.ucSampling8.SamplingImag = ((System.Drawing.Bitmap)(resources.GetObject("ucSampling8.SamplingImag")));
+            this.ucSampling8.Size = new System.Drawing.Size(176, 199);
+            this.ucSampling8.TabIndex = 4;
+            this.ucSampling8.Transparent = null;
+            this.ucSampling8.Paint += new System.Windows.Forms.PaintEventHandler(this.ucSampling10_Paint);
+            this.ucSampling8.MouseEnter += new System.EventHandler(this.ucSampling10_MouseEnter);
+            this.ucSampling8.MouseLeave += new System.EventHandler(this.ucSampling10_MouseLeave);
+            // 
+            // ucSampling9
+            // 
+            this.ucSampling9.Alpha = 0;
+            this.ucSampling9.ColorThreshold = 10;
+            this.ucSampling9.Location = new System.Drawing.Point(449, 609);
+            this.ucSampling9.Name = "ucSampling9";
+            this.ucSampling9.SamplingImag = ((System.Drawing.Bitmap)(resources.GetObject("ucSampling9.SamplingImag")));
+            this.ucSampling9.Size = new System.Drawing.Size(215, 199);
+            this.ucSampling9.TabIndex = 5;
+            this.ucSampling9.Transparent = null;
+            this.ucSampling9.Paint += new System.Windows.Forms.PaintEventHandler(this.ucSampling10_Paint);
+            this.ucSampling9.MouseEnter += new System.EventHandler(this.ucSampling10_MouseEnter);
+            this.ucSampling9.MouseLeave += new System.EventHandler(this.ucSampling10_MouseLeave);
+            // 
+            // ucSampling10
+            // 
+            this.ucSampling10.Alpha = 0;
+            this.ucSampling10.ColorThreshold = 10;
+            this.ucSampling10.Location = new System.Drawing.Point(409, 460);
+            this.ucSampling10.Name = "ucSampling10";
+            this.ucSampling10.SamplingImag = ((System.Drawing.Bitmap)(resources.GetObject("ucSampling10.SamplingImag")));
+            this.ucSampling10.Size = new System.Drawing.Size(230, 203);
+            this.ucSampling10.TabIndex = 6;
+            this.ucSampling10.Transparent = null;
+            this.ucSampling10.Paint += new System.Windows.Forms.PaintEventHandler(this.ucSampling10_Paint);
+            this.ucSampling10.MouseEnter += new System.EventHandler(this.ucSampling10_MouseEnter);
+            this.ucSampling10.MouseLeave += new System.EventHandler(this.ucSampling10_MouseLeave);
+            // 
+            // ucSampling11
+            // 
+            this.ucSampling11.Alpha = 0;
+            this.ucSampling11.ColorThreshold = 10;
+            this.ucSampling11.Location = new System.Drawing.Point(518, 394);
+            this.ucSampling11.Name = "ucSampling11";
+            this.ucSampling11.SamplingImag = ((System.Drawing.Bitmap)(resources.GetObject("ucSampling11.SamplingImag")));
+            this.ucSampling11.Size = new System.Drawing.Size(250, 189);
+            this.ucSampling11.TabIndex = 7;
+            this.ucSampling11.Transparent = null;
+            this.ucSampling11.Paint += new System.Windows.Forms.PaintEventHandler(this.ucSampling10_Paint);
+            this.ucSampling11.MouseEnter += new System.EventHandler(this.ucSampling10_MouseEnter);
+            this.ucSampling11.MouseLeave += new System.EventHandler(this.ucSampling10_MouseLeave);
+            // 
             // UCTestSampling
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.ucSampling11);
+            this.Controls.Add(this.ucSampling10);
+            this.Controls.Add(this.ucSampling9);
+            this.Controls.Add(this.ucSampling8);
+            this.Controls.Add(this.ucSampling7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ucSampling6);
             this.Controls.Add(this.ucSampling3);
@@ -125,7 +205,7 @@
             this.Controls.Add(this.ucSampling5);
             this.Controls.Add(this.ucSampling4);
             this.Name = "UCTestSampling";
-            this.Size = new System.Drawing.Size(1010, 450);
+            this.Size = new System.Drawing.Size(1010, 821);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +220,11 @@
         private HZH_Controls.Controls.UCSampling ucSampling1;
         private HZH_Controls.Controls.UCSampling ucSampling2;
         private HZH_Controls.Controls.UCSampling ucSampling3;
+        private HZH_Controls.Controls.UCSampling ucSampling7;
+        private HZH_Controls.Controls.UCSampling ucSampling8;
+        private HZH_Controls.Controls.UCSampling ucSampling9;
+        private HZH_Controls.Controls.UCSampling ucSampling10;
+        private HZH_Controls.Controls.UCSampling ucSampling11;
 
 
     }

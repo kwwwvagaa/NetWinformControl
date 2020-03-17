@@ -139,6 +139,12 @@ namespace HZH_Controls.Controls
         /// </summary>
         GraphicsPath m_borderPath = new GraphicsPath();
 
+        [Browsable(true), Category("自定义属性"), Description("边界"), Localizable(true)]
+        public GraphicsPath BorderPath
+        {
+            get { return m_borderPath; }           
+        }
+
         /// <summary>
         /// Handles the SizeChanged event of the UCSampling control.
         /// </summary>
@@ -247,15 +253,14 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <param name="e">包含事件数据的 <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
         protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
+        {          
             e.Graphics.SetGDIHigh();
 
             this.Region = new System.Drawing.Region(m_borderPath);
            
             if (_bitCache != null)
                 e.Graphics.DrawImage(_bitCache, 0, 0);
-           
+            base.OnPaint(e);
         }
     }
 }
