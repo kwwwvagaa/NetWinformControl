@@ -772,9 +772,7 @@ namespace HZH_Controls.Controls
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                panHead.Location = new Point(0, this.VerticalScroll.Value + this.panRow.Location.Y - panHead.Height - 2);
-                timer1.Enabled = true;
-                scrollIndex = 0;
+                panHead.Location = new Point(0, this.VerticalScroll.Value + this.panRow.Location.Y - panHead.Height - 2);              
             }
         }
 
@@ -782,14 +780,6 @@ namespace HZH_Controls.Controls
         {
 
         }
-        int scrollIndex = 0;
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (scrollIndex > 1000)
-                timer1.Enabled = false;
-            panHead.Location = new Point(0, this.VerticalScroll.Value + this.panRow.Location.Y - panHead.Height - 2);
-            scrollIndex++;
-        }
-
+      
     }
 }
