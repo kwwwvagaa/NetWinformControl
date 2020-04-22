@@ -37,6 +37,7 @@
             this.ucDataGridView1.BackColor = System.Drawing.Color.White;
             this.ucDataGridView1.Columns = null;
             this.ucDataGridView1.DataSource = null;
+            this.ucDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucDataGridView1.HeadFont = new System.Drawing.Font("微软雅黑", 12F);
             this.ucDataGridView1.HeadHeight = 40;
             this.ucDataGridView1.HeadPadingLeft = 0;
@@ -47,13 +48,13 @@
             this.ucDataGridView1.Name = "ucDataGridView1";
             this.ucDataGridView1.RowHeight = 41;
             this.ucDataGridView1.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
-            this.ucDataGridView1.Size = new System.Drawing.Size(722, 583);
+            this.ucDataGridView1.Size = new System.Drawing.Size(739, 599);
             this.ucDataGridView1.TabIndex = 4;
             // 
             // UCTestGridTable
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.ucDataGridView1);
             this.Name = "UCTestGridTable";
             this.Size = new System.Drawing.Size(739, 599);

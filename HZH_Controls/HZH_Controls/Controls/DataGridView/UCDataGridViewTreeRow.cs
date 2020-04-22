@@ -74,6 +74,21 @@ namespace HZH_Controls.Controls
             set;
         }
 
+        private int rowLevel = 0;
+        /// <summary>
+        /// 折叠的第几层，用于缩进
+        /// </summary>
+        public int RowLevel
+        {
+            get { return rowLevel; }
+            set
+            {
+                rowLevel = value;
+                this.Padding = new Padding(this.panLeft.Width / 2 * value, this.Padding.Top, this.panLeft.Right, this.Padding.Bottom);
+                this.ucSplitLine_V1.Visible = value > 0;
+            }
+        }
+
         /// <summary>
         /// 行号，树状图目前没有给予行号
         /// </summary>
@@ -134,6 +149,42 @@ namespace HZH_Controls.Controls
                 this.Height = value;
             }
         }
+        private List<UCDataGridViewTreeRow> childrenRows = new List<UCDataGridViewTreeRow>();
+
+        public List<UCDataGridViewTreeRow> ChildrenRows
+        {
+            get { return childrenRows; }
+            set { childrenRows = value; }
+        }
+        private bool? isOpened = false;
+        /// <summary>
+        /// 是否打开状态
+        /// </summary>
+        public bool? IsOpened
+        {
+            get { return isOpened; }
+            set
+            {
+                isOpened = value;
+                if (value.HasValue)
+                {
+                    panLeft.Enabled = true;
+                    if (value.Value)
+                    {
+                        panLeft.BackgroundImage = Properties.Resources.caret_down;
+                    }
+                    else
+                    {
+                        panLeft.BackgroundImage = Properties.Resources.caret_right;
+                    }
+                }
+                else
+                {
+                    panLeft.BackgroundImage = null;
+                    panLeft.Enabled = false;
+                }
+            }
+        }
         #endregion
 
         /// <summary>
@@ -142,45 +193,11 @@ namespace HZH_Controls.Controls
         public UCDataGridViewTreeRow()
         {
             InitializeComponent();
-            this.ucDGVChild.RowType = this.GetType();
-            this.SizeChanged += UCDataGridViewTreeRow_SizeChanged;
-            this.ucDGVChild.ItemClick += (a, b) =>
-            {
-                if (CellClick != null)
-                {
-                    CellClick(a, new DataGridViewEventArgs()
-                    {
-                        CellControl = (a as Control),
-                        CellIndex = (a as Control).Tag.ToInt()
-                    });
-                }
-            };
-            this.ucDGVChild.AutoScroll = false;
         }
-
-        /// <summary>
-        /// Handles the SizeChanged event of the UCDataGridViewTreeRow control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        void UCDataGridViewTreeRow_SizeChanged(object sender, EventArgs e)
-        {
-            if (this.Parent != null)
-            {
-                if (this.Parent.Parent.Parent != null && this.Parent.Parent.Parent.Name == "panChildGrid" && this.panLeft.Tag.ToInt() == 1)
-                {
-                    int intHeight = this.Parent.Parent.Controls[0].Controls.ToArray().Sum(p => p.Height);
-                    if (this.Parent.Parent.Parent.Height != intHeight)
-                        this.Parent.Parent.Parent.Height = intHeight;
-                }
-            }
-        }
-
 
         /// <summary>
         /// 绑定数据到Cell
         /// </summary>
-        /// <returns>返回true则表示已处理过，否则将进行默认绑定（通常只针对有Text值的控件）</returns>
         public void BindingCellData()
         {
             for (int i = 0; i < Columns.Count; i++)
@@ -212,47 +229,22 @@ namespace HZH_Controls.Controls
                     cell.SetBindSource(DataSource);
                 }
             }
-            panLeft.Tag = 0;
+            IsOpened = false;
             var proChildrens = DataSource.GetType().GetProperty("Childrens");
             if (proChildrens != null)
             {
                 var value = proChildrens.GetValue(DataSource, null);
                 if (value != null)
                 {
-                    int intSourceCount = 0;
-                    if (value is DataTable)
-                    {
-                        intSourceCount = (value as DataTable).Rows.Count;
-                    }
-                    else if (typeof(IList).IsAssignableFrom(value.GetType()))
-                    {
-                        intSourceCount = (value as IList).Count;
-                    }
-                    if (intSourceCount > 0)
-                    {
-                        panLeft.BackgroundImage = Properties.Resources.caret_right;
-                        panLeft.Enabled = true;
-                        panChildGrid.Tag = value;
-                    }
-                    else
-                    {
-                        panLeft.BackgroundImage = null;
-                        panLeft.Enabled = false;
-                        panChildGrid.Tag = null;
-                    }
                 }
                 else
                 {
-                    panLeft.BackgroundImage = null;
-                    panLeft.Enabled = false;
-                    panChildGrid.Tag = null;
+                    IsOpened = null;
                 }
             }
             else
             {
-                panLeft.BackgroundImage = null;
-                panLeft.Enabled = false;
-                panChildGrid.Tag = null;
+                IsOpened = null;
             }
         }
 
@@ -308,6 +300,7 @@ namespace HZH_Controls.Controls
                         intColumnsCount++;
                     }
                     this.panCells.ColumnCount = intColumnsCount;
+                    bool blnFirst = true;
                     for (int i = 0; i < intColumnsCount; i++)
                     {
                         Control c = null;
@@ -320,29 +313,16 @@ namespace HZH_Controls.Controls
                             box.TextValue = "";
                             box.Size = new Size(30, 30);
                             box.Dock = DockStyle.Fill;
-                            box.CheckedChangeEvent += (a, b) =>
-                            {
-                                IsChecked = box.Checked;
-                                if (this.ucDGVChild.Rows != null)
-                                {
-                                    this.ucDGVChild.Rows.ForEach(p => p.IsChecked = box.Checked);
-                                    if (CheckBoxChangeEvent != null)
-                                    {
-                                        CheckBoxChangeEvent(a, new DataGridViewEventArgs()
-                                        {
-                                            CellControl = box,
-                                            CellIndex = 0
-                                        });
-                                    }
-                                }
-                            };
                             c = box;
                         }
                         else
                         {
                             var item = Columns[i - (IsShowCheckBox ? 1 : 0)];
-                            this.panCells.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(item.WidthType, item.Width));
-
+                            var w = item.Width - (blnFirst ? (this.panLeft.Width / 2 * rowLevel) : 0);
+                            if (w < 5)
+                                w = 5;
+                            this.panCells.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(item.WidthType, w));
+                            blnFirst = false;
                             if (item.CustomCellType == null)
                             {
                                 Label lbl = new Label();
@@ -359,9 +339,9 @@ namespace HZH_Controls.Controls
                                 };
                                 c = lbl;
                             }
-                            else 
+                            else
                             {
-                                Control cc = (Control)Activator.CreateInstance(item.CustomCellType);     
+                                Control cc = (Control)Activator.CreateInstance(item.CustomCellType);
                                 cc.Dock = DockStyle.Fill;
                                 c = cc;
                             }
@@ -377,21 +357,7 @@ namespace HZH_Controls.Controls
             }
         }
 
-        /// <summary>
-        /// Handles the SizeChanged event of the panChildGrid control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        private void panChildGrid_SizeChanged(object sender, EventArgs e)
-        {
-            int intHeight = RowHeight + panChildGrid.Height;
-            if (panChildGrid.Height != 0)
-                this.ucDGVChild.Height = panChildGrid.Height;
-            if (this.Height != intHeight)
-            {
-                this.Height = intHeight;
-            }
-        }
+
 
         /// <summary>
         /// Handles the MouseDown event of the panLeft control.
@@ -402,57 +368,74 @@ namespace HZH_Controls.Controls
         {
             try
             {
+                if (!IsOpened.HasValue)
+                    return;
                 ControlHelper.FreezeControl(this.FindForm(), true);
-                if (panLeft.Tag.ToInt() == 0)
+                if (!IsOpened.Value)
                 {
-                    var value = panChildGrid.Tag;
-                    if (value != null)
+
+                    IsOpened = !IsOpened;
+                    if (childrenRows.Count > 0)
                     {
-                        panLeft.BackgroundImage = Properties.Resources.caret_down;
-                        panLeft.Tag = 1;
-                        int intSourceCount = 0;
-                        if (value is DataTable)
+                        childrenRows.ForEach(p =>
                         {
-                            intSourceCount = (value as DataTable).Rows.Count;
-                        }
-                        else if (typeof(IList).IsAssignableFrom(value.GetType()))
+                            p.IsChecked = IsChecked;
+                            p.Visible = true;
+                        });
+                    }
+                    else
+                    {
+                        var proChildrens = DataSource.GetType().GetProperty("Childrens");
+                        if (proChildrens != null)
                         {
-                            intSourceCount = (value as IList).Count;
-                        }
-                        this.panChildGrid.Height = RowHeight * intSourceCount;
-                        if (panChildGrid.Height > 0)
-                        {
-                            if (value != this.ucDGVChild.DataSource)
+                            var value = proChildrens.GetValue(DataSource, null);
+                            int intSourceCount = 0;
+                            if (value is DataTable)
                             {
-                                this.ucDGVChild.Columns = Columns;
-                                this.ucDGVChild.RowHeight = RowHeight;
-                                this.ucDGVChild.HeadPadingLeft = this.panLeft.Width;
-                                this.ucDGVChild.IsShowCheckBox = IsShowCheckBox;
-                                this.ucDGVChild.DataSource = value;
-                                this.ucDGVChild.Rows.ForEach(p => p.IsChecked = this.IsChecked);
+                                intSourceCount = (value as DataTable).Rows.Count;
+                            }
+                            else if (typeof(IList).IsAssignableFrom(value.GetType()))
+                            {
+                                intSourceCount = (value as IList).Count;
+                            }
+                            for (int i = intSourceCount - 1; i >= 0; i--)
+                            {
+                                UCDataGridViewTreeRow row = new UCDataGridViewTreeRow();
+                                if (value is DataTable)
+                                {
+                                    row.DataSource = (value as DataTable).Rows[i];
+                                }
+                                else
+                                {
+                                    row.DataSource = (value as IList)[i];
+                                }
+                                row.RowLevel = RowLevel + 1;
+                                row.Columns = Columns;
+                                row.IsShowCheckBox = IsShowCheckBox;
+                                row.ReloadCells();
+                                row.BindingCellData();
+
+                                Control rowControl = (row as Control);
+                                row.RowHeight = m_rowHeight;
+                                rowControl.Dock = DockStyle.Top;
+                                row.CellClick += (a, b) => { CellClick(rowControl, b); };
+                                row.CheckBoxChangeEvent += (a, b) => { CheckBoxChangeEvent(rowControl, b); };
+                                row.RowCustomEvent += (a, b) => { if (RowCustomEvent != null) { RowCustomEvent(a, b); } };
+                                row.SourceChanged += SourceChanged;
+                                ChildrenRows.Add(row);
+                                row.RowIndex = ChildrenRows.IndexOf(row);
+                                this.Parent.Controls.Add(rowControl);
+                                var index = this.Parent.Controls.GetChildIndex(this);
+                                this.Parent.Controls.SetChildIndex(row, index);
+
                             }
                         }
                     }
                 }
                 else
                 {
-
-                    Control[] cs = panChildGrid.Controls.Find("panLeft", true);
-                    foreach (var item in cs)
-                    {
-                        item.Tag = 0;
-                        item.BackgroundImage = Properties.Resources.caret_right;
-                    }
-
-                    Control[] cs1 = panChildGrid.Controls.Find("panChildGrid", true);
-                    foreach (var item in cs1)
-                    {
-                        item.Height = 0;
-                    }
-                    panChildGrid.Height = 0;
-                    panLeft.BackgroundImage = Properties.Resources.caret_right;
+                    HideChildrenRows(this);
                     this.Height = m_rowHeight;
-                    panLeft.Tag = 0;
                 }
             }
             finally
@@ -461,14 +444,17 @@ namespace HZH_Controls.Controls
             }
         }
 
-        /// <summary>
-        /// Handles the SizeChanged event of the ucDGVChild control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        private void ucDGVChild_SizeChanged(object sender, EventArgs e)
+        private void HideChildrenRows(UCDataGridViewTreeRow row)
         {
-
+            if (row.ChildrenRows.Count > 0)
+            {
+                foreach (var item in row.ChildrenRows)
+                {
+                    HideChildrenRows(item);
+                    item.Hide();
+                }
+                row.IsOpened = false;
+            }
         }
     }
 }

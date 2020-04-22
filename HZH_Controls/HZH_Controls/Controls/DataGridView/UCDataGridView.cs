@@ -507,6 +507,8 @@ namespace HZH_Controls.Controls
 
         #endregion
 
+       
+
         #region 公共函数
         /// <summary>
         /// 刷新数据
@@ -779,7 +781,6 @@ namespace HZH_Controls.Controls
         private void UCDataGridView_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-      
+        }      
     }
 }
