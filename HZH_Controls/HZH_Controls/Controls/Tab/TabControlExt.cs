@@ -64,6 +64,8 @@ namespace HZH_Controls.Controls
         [Description("是否显示关闭按钮"), Category("自定义")]
         public bool IsShowCloseBtn { get; set; }
 
+        [Description("不可关闭的标签序号列表，下标0"), Category("自定义")]
+        public int[] UncloseTabIndexs { get; set; }
         /// <summary>
         /// The back color
         /// </summary>
@@ -83,6 +85,15 @@ namespace HZH_Controls.Controls
                 _backColor = value;
                 base.Invalidate(true);
             }
+        }
+
+        private Color closeBtnColor = Color.FromArgb(255, 85, 51);
+
+        [Description("关闭按钮颜色")]
+        public Color CloseBtnColor
+        {
+            get { return closeBtnColor; }
+            set { closeBtnColor = value; }
         }
 
         /// <summary>
@@ -257,9 +268,14 @@ namespace HZH_Controls.Controls
             this.PaintTabImage(e.Graphics, index);
             if (IsShowCloseBtn)
             {
+                if (UncloseTabIndexs != null)
+                {
+                    if (UncloseTabIndexs.ToList().Contains(index))
+                        return;
+                }
                 Rectangle rect = this.GetTabRect(index);
-                e.Graphics.DrawLine(new Pen(_borderColor, 1F), new Point(rect.Right - 15, rect.Top + 5), new Point(rect.Right - 5, rect.Top + 15));
-                e.Graphics.DrawLine(new Pen(_borderColor, 1F), new Point(rect.Right - 5, rect.Top + 5), new Point(rect.Right - 15, rect.Top + 15));
+                e.Graphics.DrawLine(new Pen(closeBtnColor, 1F), new Point(rect.Right - 15, rect.Top + 5), new Point(rect.Right - 5, rect.Top + 15));
+                e.Graphics.DrawLine(new Pen(closeBtnColor, 1F), new Point(rect.Right - 5, rect.Top + 5), new Point(rect.Right - 15, rect.Top + 15));
             }
         }
 
@@ -489,6 +505,11 @@ namespace HZH_Controls.Controls
                         int index = GetMouseDownTabHead(mouseLocation);
                         if (index >= 0)
                         {
+                            if (UncloseTabIndexs != null)
+                            {
+                                if (UncloseTabIndexs.ToList().Contains(index))
+                                    return;
+                            }
                             Rectangle rect = this.GetTabRect(index);
                             var closeRect = new Rectangle(rect.Right - 15, rect.Top + 5, 10, 10);
                             if (closeRect.Contains(mouseLocation))

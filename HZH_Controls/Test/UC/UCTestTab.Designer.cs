@@ -64,6 +64,9 @@
             this.tabControlExt1.Size = new System.Drawing.Size(573, 421);
             this.tabControlExt1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControlExt1.TabIndex = 1;
+            this.tabControlExt1.UncloseTabIndexs = new int[] {
+        0,
+        1};
             // 
             // tabPage1
             // 
