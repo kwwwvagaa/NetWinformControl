@@ -40,6 +40,5 @@ namespace Test.UC
                 e.Graphics.FillPath(new SolidBrush(Color.FromArgb(50, Color.White)), uc.BorderPath);
             }
         }
-
     }
 }

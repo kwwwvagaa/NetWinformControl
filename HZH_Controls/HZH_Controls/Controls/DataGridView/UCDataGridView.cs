@@ -96,8 +96,21 @@ namespace HZH_Controls.Controls
             get { return m_isShowHead; }
             set
             {
-                m_isShowHead = value;
-                panHead.Visible = value;
+                if (m_isShowHead != value)
+                {
+                    m_isShowHead = value;
+                    panHead.Visible = value;
+                    if (value)
+                    {
+                        this.panRow.Location = new Point(0, panHead.Height);
+                        this.panRow.Height = this.panRow.Height - panHead.Height;
+                    }
+                    else
+                    {
+                        this.panRow.Location = new Point(0, 0);
+                        this.panRow.Height = this.panRow.Height + panHead.Height;
+                    }
+                }
             }
         }
         /// <summary>
@@ -250,12 +263,12 @@ namespace HZH_Controls.Controls
                     return;
                 if (!typeof(IDataGridViewRow).IsAssignableFrom(value) || !value.IsSubclassOf(typeof(Control)))
                     throw new Exception("行控件没有实现IDataGridViewRow接口");
-                m_rowType = value;                      
+                m_rowType = value;
                 if (m_columns != null && m_columns.Count > 0)
                     ReloadSource();
             }
         }
-      
+
         /// <summary>
         /// The m select row
         /// </summary>
@@ -335,7 +348,7 @@ namespace HZH_Controls.Controls
             }
             return null;
         }
-              
+
         #region 事件
         /// <summary>
         /// The head CheckBox change event
@@ -391,12 +404,48 @@ namespace HZH_Controls.Controls
                 { return; }
 
                 ControlHelper.FreezeControl(this.panHead, true);
+
                 this.panRow.Controls.Clear();
                 this.panColumns.Controls.Clear();
                 this.panColumns.ColumnStyles.Clear();
 
+
                 if (m_columns != null && m_columns.Count() > 0)
                 {
+                    int _width = 0;
+                    m_columns.ForEach(p =>
+                    {
+                        if (p.WidthType == SizeType.Absolute)
+                        {
+                            _width += p.Width;
+                        }
+                        else if (p.WidthType == SizeType.Percent)
+                        {
+                            _width += (int)((p.Width / 100f) * this.Width);
+                        }
+                    });
+                    if (m_isShowCheckBox)
+                        _width += 30;
+                    if (_width > this.Width)
+                    {
+                        this.panRow.Width = _width;
+                        this.panHead.Width = _width;
+                    }
+                    else
+                    {
+                        if (m_columns.Any(p => p.WidthType == SizeType.AutoSize))
+                        {
+                            this.panRow.Width = this.Width;
+                            this.panHead.Width = this.Width;
+                        }
+                        else
+                        {
+                            this.panRow.Width = _width;
+                            this.panHead.Width = _width;
+                        }
+                    }
+                    m_columns.FindAll(p => p.WidthType == SizeType.Absolute);
+                    m_columns.FindAll(p => p.WidthType == SizeType.Percent);
                     int intColumnsCount = m_columns.Count();
                     if (m_isShowCheckBox)
                     {
@@ -468,14 +517,15 @@ namespace HZH_Controls.Controls
             { return; }
             try
             {
-                ControlHelper.FreezeControl(this, true);              
+                ControlHelper.FreezeControl(this, true);
+                panHead.Location = new Point(0, 0);
                 Rows = new List<IDataGridViewRow>();
                 if (m_columns == null || m_columns.Count <= 0)
                     return;
                 if (m_dataSource != null)
                 {
                     int intIndex = 0;
-                   
+
                     int intSourceCount = 0;
                     if (m_dataSource is DataTable)
                     {
@@ -509,7 +559,7 @@ namespace HZH_Controls.Controls
                                 row.RowHeight = m_rowHeight;
                             item.Visible = true;
                             item.BringToFront();
-                         
+
                             Rows.Add(row);
                             row.RowIndex = Rows.IndexOf(row);
                         }
@@ -517,7 +567,7 @@ namespace HZH_Controls.Controls
                     }
 
                     if (intIndex < intSourceCount)
-                    {                      
+                    {
                         for (int i = intIndex; i < intSourceCount; i++)
                         {
                             IDataGridViewRow row = (IDataGridViewRow)Activator.CreateInstance(m_rowType);
@@ -546,9 +596,11 @@ namespace HZH_Controls.Controls
                             row.RowIndex = Rows.IndexOf(row);
                             this.panRow.Controls.Add(rowControl);
                             rowControl.BringToFront();
-                        
+
                         }
-                    }                 
+                    }
+
+                    this.panRow.Height = intSourceCount * RowHeight;
                 }
                 else
                 {
@@ -563,7 +615,7 @@ namespace HZH_Controls.Controls
                 ControlHelper.FreezeControl(this, false);
             }
         }
-      
+
         /// <summary>
         /// 快捷键
         /// </summary>
@@ -707,8 +759,37 @@ namespace HZH_Controls.Controls
                 ControlHelper.FreezeControl(this, false);
             }
         }
-      
+
         #endregion
-    
+
+        private void UCDataGridView_SizeChanged(object sender, EventArgs e)
+        {
+            //LoadColumns();
+            //ReloadSource();
+        }
+
+        private void UCDataGridView_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
+            {
+                panHead.Location = new Point(0, this.VerticalScroll.Value + this.panRow.Location.Y - panHead.Height - 2);
+                timer1.Enabled = true;
+                scrollIndex = 0;
+            }
+        }
+
+        private void UCDataGridView_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        int scrollIndex = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (scrollIndex > 1000)
+                timer1.Enabled = false;
+            panHead.Location = new Point(0, this.VerticalScroll.Value + this.panRow.Location.Y - panHead.Height - 2);
+            scrollIndex++;
+        }
+
     }
 }

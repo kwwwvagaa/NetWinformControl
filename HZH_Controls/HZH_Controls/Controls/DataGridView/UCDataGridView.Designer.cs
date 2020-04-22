@@ -48,11 +48,13 @@ namespace HZH_Controls.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panHead = new System.Windows.Forms.Panel();
             this.panColumns = new System.Windows.Forms.TableLayoutPanel();
             this.panHeadLeft = new System.Windows.Forms.Panel();
-            this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
             this.panRow = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ucSplitLine_H1 = new HZH_Controls.Controls.UCSplitLine_H();
             this.panHead.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +63,6 @@ namespace HZH_Controls.Controls
             this.panHead.Controls.Add(this.panColumns);
             this.panHead.Controls.Add(this.panHeadLeft);
             this.panHead.Controls.Add(this.ucSplitLine_H1);
-            this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHead.Location = new System.Drawing.Point(0, 0);
             this.panHead.Name = "panHead";
             this.panHead.Size = new System.Drawing.Size(1061, 40);
@@ -88,6 +89,18 @@ namespace HZH_Controls.Controls
             this.panHeadLeft.Size = new System.Drawing.Size(0, 39);
             this.panHeadLeft.TabIndex = 2;
             // 
+            // panRow
+            // 
+            this.panRow.Location = new System.Drawing.Point(0, 40);
+            this.panRow.Name = "panRow";
+            this.panRow.Size = new System.Drawing.Size(1061, 525);
+            this.panRow.TabIndex = 1;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ucSplitLine_H1
             // 
             this.ucSplitLine_H1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
@@ -98,24 +111,17 @@ namespace HZH_Controls.Controls
             this.ucSplitLine_H1.TabIndex = 0;
             this.ucSplitLine_H1.TabStop = false;
             // 
-            // panRow
-            // 
-            this.panRow.AutoScroll = true;
-            this.panRow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panRow.Location = new System.Drawing.Point(0, 40);
-            this.panRow.Name = "panRow";
-            this.panRow.Size = new System.Drawing.Size(1061, 525);
-            this.panRow.TabIndex = 1;
-            // 
             // UCDataGridView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panRow);
             this.Controls.Add(this.panHead);
+            this.Controls.Add(this.panRow);
             this.Name = "UCDataGridView";
             this.Size = new System.Drawing.Size(1061, 565);
+            this.Scroll += new System.Windows.Forms.ScrollEventHandler(this.UCDataGridView_Scroll);
+            this.SizeChanged += new System.EventHandler(this.UCDataGridView_SizeChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.UCDataGridView_Paint);
             this.panHead.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -143,6 +149,7 @@ namespace HZH_Controls.Controls
         /// The pan head left
         /// </summary>
         private System.Windows.Forms.Panel panHeadLeft;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }

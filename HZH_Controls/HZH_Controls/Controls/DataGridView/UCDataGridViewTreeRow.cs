@@ -155,7 +155,7 @@ namespace HZH_Controls.Controls
                     });
                 }
             };
-
+            this.ucDGVChild.AutoScroll = false;
         }
 
         /// <summary>

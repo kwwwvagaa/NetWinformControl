@@ -15,7 +15,7 @@ namespace Test.UC
     {
         public UCTestTreeGridTable()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
 
@@ -24,10 +24,10 @@ namespace Test.UC
             this.ucDataGridView1.RowType = typeof(UCDataGridViewTreeRow);
             List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "ID", HeadText = "编号", Width = 70, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "姓名", Width = 50, WidthType = SizeType.Percent });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Age", HeadText = "年龄", Width = 50, WidthType = SizeType.Percent });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "生日", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((DateTime)a).ToString("yyyy-MM-dd"); } });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "性别", Width = 50, WidthType = SizeType.Percent, Format = (a) => { return ((int)a) == 0 ? "女" : "男"; } });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Name", HeadText = "姓名", Width = 150, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Age", HeadText = "年龄", Width = 150, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "生日", Width = 150, WidthType = SizeType.Absolute, Format = (a) => { return ((DateTime)a).ToString("yyyy-MM-dd"); } });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "性别", Width = 150, WidthType = SizeType.Absolute, Format = (a) => { return ((int)a) == 0 ? "女" : "男"; } });
             this.ucDataGridView1.Columns = lstCulumns;
             this.ucDataGridView1.IsShowCheckBox = true;
             List<object> lstSource = new List<object>();
@@ -59,7 +59,7 @@ namespace Test.UC
                 {
                     ID = i.ToString(),
                     Age = 3 * i,
-                    Name = intCount + "——" + i,
+                    Name = "姓名——" + i,
                     Birthday = DateTime.Now.AddYears(-10),
                     Sex = i % 2
                 };
