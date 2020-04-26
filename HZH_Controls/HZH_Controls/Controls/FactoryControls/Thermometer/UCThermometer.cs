@@ -131,7 +131,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The split count
         /// </summary>
-        private int splitCount = 0;
+        private int splitCount = 1;
         /// <summary>
         /// 刻度分隔份数
         /// </summary>
