@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : HZH_Controls
 // Created          : 08-15-2019
 //
@@ -123,7 +123,6 @@ namespace HZH_Controls.Controls
                 }
             }
         }
-
         public override int PageCount
         {
             get
@@ -132,10 +131,18 @@ namespace HZH_Controls.Controls
             }
             set
             {
-                base.PageCount = value;
+                if (PageModel == HZH_Controls.Controls.PageModel.Soure)
+                {
+                    base.PageCount = value;
+                }
+                else
+                {
+                    txtPage.MaxValue = base.PageCount = value;
+                }
                 ReloadPage();
             }
         }
+      
 
         public override int PageIndex
         {
