@@ -32,6 +32,9 @@
             this.tvMenu = new HZH_Controls.Controls.TreeViewEx();
             this.ucSplitLine_V1 = new HZH_Controls.Controls.UCSplitLine_V();
             this.panControl = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tvMenu
@@ -84,8 +87,29 @@
             this.panControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panControl.Location = new System.Drawing.Point(209, 61);
             this.panControl.Name = "panControl";
-            this.panControl.Size = new System.Drawing.Size(815, 707);
+            this.panControl.Size = new System.Drawing.Size(815, 669);
             this.panControl.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(209, 730);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(815, 38);
+            this.panel1.TabIndex = 0;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(252, 11);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(311, 17);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "HZHControls控件库 官网 http://www.hzhcontrols.com";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // FrmMain
             // 
@@ -93,6 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.panControl);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ucSplitLine_V1);
             this.Controls.Add(this.tvMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -102,11 +127,14 @@
             this.ShowIcon = true;
             this.ShowInTaskbar = true;
             this.Text = "FrmMain";
-            this.Title = "控件DEMO";
+            this.Title = "HZHControls控件库 DEMO";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Controls.SetChildIndex(this.tvMenu, 0);
             this.Controls.SetChildIndex(this.ucSplitLine_V1, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panControl, 0);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -116,5 +144,7 @@
         private HZH_Controls.Controls.TreeViewEx tvMenu;
         private HZH_Controls.Controls.UCSplitLine_V ucSplitLine_V1;
         private System.Windows.Forms.Panel panControl;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

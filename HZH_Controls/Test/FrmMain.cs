@@ -104,7 +104,7 @@ namespace Test
         {
             panControl.Controls.Clear();
             string strName = e.Node.Text.Trim();
-            this.Title = "控件DEMO--" + strName;
+            this.Title = "HZHControls控件库DEMO--" + strName;
             switch (strName)
             {
                 #region 窗体    English:forms
@@ -349,6 +349,11 @@ namespace Test
         {
             //c.Dock = DockStyle.Fill;
             this.panControl.Controls.Add(c);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.hzhcontrols.com");
         }
 
     }
