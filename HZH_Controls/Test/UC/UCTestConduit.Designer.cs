@@ -56,6 +56,7 @@
             this.ucConduit26 = new HZH_Controls.Controls.UCConduit();
             this.ucConduit5 = new HZH_Controls.Controls.UCConduit();
             this.ucConduit10 = new HZH_Controls.Controls.UCConduit();
+            this.ucBottle2 = new HZH_Controls.Controls.UCBottle();
             this.ucBottle1 = new HZH_Controls.Controls.UCBottle();
             this.ucPond2 = new HZH_Controls.Controls.UCPond();
             this.ucBlower4 = new HZH_Controls.Controls.UCBlower();
@@ -428,10 +429,34 @@
             this.ucConduit10.Size = new System.Drawing.Size(161, 37);
             this.ucConduit10.TabIndex = 47;
             // 
+            // ucBottle2
+            // 
+            this.ucBottle2.BottleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBottle2.BottleMouthColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.ucBottle2.Direction = HZH_Controls.Controls.Direction.Up;
+            this.ucBottle2.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            this.ucBottle2.Location = new System.Drawing.Point(935, 8);
+            this.ucBottle2.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.ucBottle2.Name = "ucBottle2";
+            this.ucBottle2.NO = "1#";
+            this.ucBottle2.Size = new System.Drawing.Size(73, 150);
+            this.ucBottle2.TabIndex = 53;
+            this.ucBottle2.Title = "12345";
+            this.ucBottle2.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
             // ucBottle1
             // 
             this.ucBottle1.BottleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.ucBottle1.BottleMouthColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.ucBottle1.Direction = HZH_Controls.Controls.Direction.Down;
             this.ucBottle1.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
             this.ucBottle1.Location = new System.Drawing.Point(798, 8);
             this.ucBottle1.MaxValue = new decimal(new int[] {
@@ -480,6 +505,8 @@
             this.ucBlower4.Name = "ucBlower4";
             this.ucBlower4.Size = new System.Drawing.Size(116, 154);
             this.ucBlower4.TabIndex = 62;
+            this.ucBlower4.TurnAround = HZH_Controls.Controls.TurnAround.None;
+            this.ucBlower4.TurnSpeed = 100;
             // 
             // UCTestConduit
             // 
@@ -513,6 +540,7 @@
             this.Controls.Add(this.ucConduit26);
             this.Controls.Add(this.ucConduit5);
             this.Controls.Add(this.ucConduit10);
+            this.Controls.Add(this.ucBottle2);
             this.Controls.Add(this.ucBottle1);
             this.Controls.Add(this.ucPond2);
             this.Controls.Add(this.ucBlower4);
@@ -555,5 +583,6 @@
         private HZH_Controls.Controls.UCPond ucPond2;
         private HZH_Controls.Controls.UCBlower ucBlower4;
         private HZH_Controls.Controls.UCConduit ucConduit4;
+        private HZH_Controls.Controls.UCBottle ucBottle2;
     }
 }

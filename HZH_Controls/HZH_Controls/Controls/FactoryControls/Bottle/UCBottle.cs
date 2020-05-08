@@ -224,6 +224,19 @@ namespace HZH_Controls.Controls
             }
         }
 
+        private Direction direction = Direction.Down;
+
+        [Description("瓶子方向，默认朝下"), Category("自定义")]
+        public Direction Direction
+        {
+            get { return direction; }
+            set
+            {
+                direction = value;
+                Refresh();
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UCBottle" /> class.
         /// </summary>
@@ -257,7 +270,11 @@ namespace HZH_Controls.Controls
         {
             var g = this.CreateGraphics();
             var size = g.MeasureString(title, Font);
-            m_workingRect = new Rectangle(0, (int)size.Height + 10, this.Width, this.Height - ((int)size.Height + 10) - 15);
+            if (direction == HZH_Controls.Controls.Direction.Down)
+                m_workingRect = new Rectangle(0, (int)size.Height + 10, this.Width, this.Height - ((int)size.Height + 10) - 15);
+            else
+                m_workingRect = new Rectangle(0, 15, this.Width, this.Height - ((int)size.Height + 10) - 15);
+
         }
 
         /// <summary>
@@ -269,100 +286,202 @@ namespace HZH_Controls.Controls
             base.OnPaint(e);
             var g = e.Graphics;
             g.SetGDIHigh();
-            //写文字
-            var size = g.MeasureString(title, Font);
-            g.DrawString(title, Font, new SolidBrush(ForeColor), new PointF((this.Width - size.Width) / 2, 2));
 
-            //画空瓶子
-            GraphicsPath pathPS = new GraphicsPath();
-            Point[] psPS = new Point[] 
-            {       
-                new Point(m_workingRect.Left, m_workingRect.Top),
-                new Point(m_workingRect.Right - 1, m_workingRect.Top),
-                new Point(m_workingRect.Right - 1, m_workingRect.Bottom - 15),
-                new Point(m_workingRect.Right - 1 - m_workingRect.Width / 4, m_workingRect.Bottom),
-                new Point(m_workingRect.Left + m_workingRect.Width / 4, m_workingRect.Bottom),
-                new Point(m_workingRect.Left, m_workingRect.Bottom - 15),
-            };
-            pathPS.AddLines(psPS);
-            pathPS.CloseAllFigures();
-            g.FillPath(new SolidBrush(bottleColor), pathPS);
-            //画液体
-            decimal decYTHeight = (m_value / maxValue) * m_workingRect.Height;
-            GraphicsPath pathYT = new GraphicsPath();
-            Rectangle rectYT = Rectangle.Empty;
-            if (decYTHeight < 15)
+
+            if (direction == HZH_Controls.Controls.Direction.Down)
             {
-                PointF[] psYT = new PointF[] 
-                { 
-                    new PointF((float)(m_workingRect.Left+(15-decYTHeight))+3,(float)(m_workingRect.Bottom-decYTHeight)),                   
-                    new PointF((float)(m_workingRect.Right-(15-decYTHeight))-3,(float)(m_workingRect.Bottom-decYTHeight)),  
-                    new PointF(m_workingRect.Right-1-m_workingRect.Width/4, m_workingRect.Bottom),
-                    new PointF(m_workingRect.Left+m_workingRect.Width/4, m_workingRect.Bottom),
+                //写文字
+                var size = g.MeasureString(title, Font);
+                g.DrawString(title, Font, new SolidBrush(ForeColor), new PointF((this.Width - size.Width) / 2, 2));
+                //画空瓶子
+                GraphicsPath pathPS = new GraphicsPath();
+                Point[] psPS = new Point[] 
+                {       
+                    new Point(m_workingRect.Left, m_workingRect.Top),
+                    new Point(m_workingRect.Right - 1, m_workingRect.Top),
+                    new Point(m_workingRect.Right - 1, m_workingRect.Bottom - 15),
+                    new Point(m_workingRect.Right - 1 - m_workingRect.Width / 4, m_workingRect.Bottom),
+                    new Point(m_workingRect.Left + m_workingRect.Width / 4, m_workingRect.Bottom),
+                    new Point(m_workingRect.Left, m_workingRect.Bottom - 15),
                 };
-                pathYT.AddLines(psYT);
-                pathYT.CloseAllFigures();
-                rectYT = new Rectangle((m_workingRect.Left + (15 - (int)decYTHeight)) + 3, m_workingRect.Bottom - (int)decYTHeight - 5, m_workingRect.Width - (int)(15 - decYTHeight) * 2 - 8, 10);
+                pathPS.AddLines(psPS);
+                pathPS.CloseAllFigures();
+                g.FillPath(new SolidBrush(bottleColor), pathPS);
+                //画液体
+                decimal decYTHeight = (m_value / maxValue) * m_workingRect.Height;
+                GraphicsPath pathYT = new GraphicsPath();
+                Rectangle rectYT = Rectangle.Empty;
+                if (decYTHeight < 15)
+                {
+                    PointF[] psYT = new PointF[] 
+                    { 
+                        new PointF((float)(m_workingRect.Left+(15-decYTHeight))+3,(float)(m_workingRect.Bottom-decYTHeight)),                   
+                        new PointF((float)(m_workingRect.Right-(15-decYTHeight))-3,(float)(m_workingRect.Bottom-decYTHeight)),  
+                        new PointF(m_workingRect.Right-1-m_workingRect.Width/4, m_workingRect.Bottom),
+                        new PointF(m_workingRect.Left+m_workingRect.Width/4, m_workingRect.Bottom),
+                    };
+                    pathYT.AddLines(psYT);
+                    pathYT.CloseAllFigures();
+                    rectYT = new Rectangle((m_workingRect.Left + (15 - (int)decYTHeight)) + 3, m_workingRect.Bottom - (int)decYTHeight - 5, m_workingRect.Width - (int)(15 - decYTHeight) * 2 - 8, 10);
+                }
+                else
+                {
+                    PointF[] psYT = new PointF[] 
+                    { 
+                        new PointF(m_workingRect.Left,(float)(m_workingRect.Bottom-decYTHeight)),
+                        new PointF(m_workingRect.Right-1,(float)(m_workingRect.Bottom-decYTHeight)),
+                        new PointF(m_workingRect.Right-1,m_workingRect.Bottom-15),
+                        new PointF(m_workingRect.Right-1-m_workingRect.Width/4, m_workingRect.Bottom),
+                        new PointF(m_workingRect.Left+m_workingRect.Width/4, m_workingRect.Bottom),
+                        new PointF(m_workingRect.Left,m_workingRect.Bottom-15),
+                    };
+                    pathYT.AddLines(psYT);
+                    pathYT.CloseAllFigures();
+                    rectYT = new Rectangle(m_workingRect.Left, m_workingRect.Bottom - (int)decYTHeight - 5, m_workingRect.Width, 10);
+                }
+
+                g.FillPath(new SolidBrush(liquidColor), pathYT);
+                g.FillPath(new SolidBrush(Color.FromArgb(50, bottleMouthColor)), pathYT);
+                //画液体面
+                g.FillEllipse(new SolidBrush(liquidColor), rectYT);
+                g.FillEllipse(new SolidBrush(Color.FromArgb(50, Color.White)), rectYT);
+
+                //画高亮
+                int intCount = m_workingRect.Width / 2 / 4;
+                int intSplit = (255 - 100) / intCount;
+                for (int i = 0; i < intCount; i++)
+                {
+                    int _penWidth = m_workingRect.Width / 2 - 4 * i;
+                    if (_penWidth <= 0)
+                        _penWidth = 1;
+                    g.DrawLine(new Pen(new SolidBrush(Color.FromArgb(10, Color.White)), _penWidth), new Point(m_workingRect.Width / 2, m_workingRect.Top), new Point(m_workingRect.Width / 2, m_workingRect.Bottom - 15));
+                    if (_penWidth == 1)
+                        break;
+                }
+
+                //画瓶底
+                g.FillEllipse(new SolidBrush(bottleColor), new RectangleF(m_workingRect.Left, m_workingRect.Top - 5, m_workingRect.Width - 2, 10));
+                g.FillEllipse(new SolidBrush(Color.FromArgb(50, Color.White)), new RectangleF(m_workingRect.Left, m_workingRect.Top - 5, m_workingRect.Width - 2, 10));
+                //画瓶口
+                g.FillRectangle(new SolidBrush(bottleMouthColor), new Rectangle(m_workingRect.Left + m_workingRect.Width / 4, m_workingRect.Bottom, m_workingRect.Width / 2, 15));
+                //画瓶颈阴影
+                GraphicsPath pathPJ = new GraphicsPath();
+                Point[] psPJ = new Point[] 
+                {       
+                    new Point(m_workingRect.Left, m_workingRect.Bottom-15),
+                    new Point(m_workingRect.Right-1, m_workingRect.Bottom-15),
+                    new Point(m_workingRect.Right-1-m_workingRect.Width/4, m_workingRect.Bottom),
+                    new Point(m_workingRect.Left+m_workingRect.Width/4, m_workingRect.Bottom)               
+                };
+                pathPJ.AddLines(psPJ);
+                pathPJ.CloseAllFigures();
+                g.FillPath(new SolidBrush(Color.FromArgb(50, bottleMouthColor)), pathPJ);
+
+                //写编号
+                if (!string.IsNullOrEmpty(m_NO))
+                {
+                    var nosize = g.MeasureString(m_NO, Font);
+                    g.DrawString(m_NO, Font, new SolidBrush(ForeColor), new PointF((this.Width - nosize.Width) / 2, m_workingRect.Top + 10));
+                }
             }
             else
             {
-                PointF[] psYT = new PointF[] 
-                { 
-                    new PointF(m_workingRect.Left,(float)(m_workingRect.Bottom-decYTHeight)),
-                    new PointF(m_workingRect.Right-1,(float)(m_workingRect.Bottom-decYTHeight)),
-                    new PointF(m_workingRect.Right-1,m_workingRect.Bottom-15),
-                    new PointF(m_workingRect.Right-1-m_workingRect.Width/4, m_workingRect.Bottom),
-                    new PointF(m_workingRect.Left+m_workingRect.Width/4, m_workingRect.Bottom),
-                    new PointF(m_workingRect.Left,m_workingRect.Bottom-15),
+                //写文字
+                var size = g.MeasureString(title, Font);
+                g.DrawString(title, Font, new SolidBrush(ForeColor), new PointF((this.Width - size.Width) / 2, this.Height - size.Height - 2));
+                //画空瓶子
+                GraphicsPath pathPS = new GraphicsPath();
+                Point[] psPS = new Point[] 
+                {       
+                    new Point(m_workingRect.Left + m_workingRect.Width / 4, m_workingRect.Top),
+                    new Point(m_workingRect.Right - 1- m_workingRect.Width / 4, m_workingRect.Top),
+                    new Point(m_workingRect.Right - 1, m_workingRect.Top + 15),
+                    new Point(m_workingRect.Right - 1, m_workingRect.Bottom),
+                    new Point(m_workingRect.Left , m_workingRect.Bottom),
+                    new Point(m_workingRect.Left, m_workingRect.Top + 15),
                 };
-                pathYT.AddLines(psYT);
-                pathYT.CloseAllFigures();
-                rectYT = new Rectangle(m_workingRect.Left, m_workingRect.Bottom - (int)decYTHeight - 5, m_workingRect.Width, 10);
-            }
+                pathPS.AddLines(psPS);
+                pathPS.CloseAllFigures();
+                g.FillPath(new SolidBrush(bottleColor), pathPS);
+                //画液体
+                decimal decYTHeight = (m_value / maxValue) * m_workingRect.Height;
+                GraphicsPath pathYT = new GraphicsPath();
+                Rectangle rectYT = Rectangle.Empty;
+                if (decYTHeight > m_workingRect.Height - 15)
+                {
+                    PointF[] psYT = new PointF[] 
+                    { 
+                        new PointF((float)(m_workingRect.Left+(decYTHeight-(m_workingRect.Height-15)))+3,(float)(m_workingRect.Bottom-decYTHeight)),                   
+                        new PointF((float)(m_workingRect.Right-(decYTHeight-(m_workingRect.Height-15)))-3,(float)(m_workingRect.Bottom-decYTHeight)),  
+                        new PointF(m_workingRect.Right-1, m_workingRect.Top+15),
+                        new PointF(m_workingRect.Left, m_workingRect.Top+15),
+                    };
+                    pathYT.AddLines(psYT);
+                    pathYT.CloseAllFigures();
+                    rectYT = new Rectangle(m_workingRect.Left + (int)(decYTHeight - (m_workingRect.Height - 15)) + 3, (int)(m_workingRect.Bottom - decYTHeight), m_workingRect.Width - (int)(decYTHeight - (m_workingRect.Height - 15)) * 2 - 8, 10);
+                }
+                else
+                {
+                    PointF[] psYT = new PointF[] 
+                    { 
+                        new PointF(m_workingRect.Left,(float)(m_workingRect.Bottom-decYTHeight)),
+                        new PointF(m_workingRect.Right-1,(float)(m_workingRect.Bottom-decYTHeight)),
+                        new PointF(m_workingRect.Right-1,m_workingRect.Bottom),
+                        new PointF(m_workingRect.Left,m_workingRect.Bottom),
+                    };
+                    pathYT.AddLines(psYT);
+                    pathYT.CloseAllFigures();
+                    rectYT = new Rectangle(m_workingRect.Left, m_workingRect.Bottom - (int)decYTHeight - 5, m_workingRect.Width, 10);
+                }
 
-            g.FillPath(new SolidBrush(liquidColor), pathYT);
-            g.FillPath(new SolidBrush(Color.FromArgb(50, bottleMouthColor)), pathYT);
-            //画液体面
-            g.FillEllipse(new SolidBrush(liquidColor), rectYT);
-            g.FillEllipse(new SolidBrush(Color.FromArgb(50, Color.White)), rectYT);
-
-            //画高亮
-            int intCount = m_workingRect.Width / 2 / 4;
-            int intSplit = (255 - 100) / intCount;
-            for (int i = 0; i < intCount; i++)
-            {
-                int _penWidth = m_workingRect.Width / 2 - 4 * i;
-                if (_penWidth <= 0)
-                    _penWidth = 1;
-                g.DrawLine(new Pen(new SolidBrush(Color.FromArgb(10, Color.White)), _penWidth), new Point(m_workingRect.Width / 2, m_workingRect.Top), new Point(m_workingRect.Width / 2, m_workingRect.Bottom - 15));
-                if (_penWidth == 1)
-                    break;
-            }
-
-            //画瓶底
-            g.FillEllipse(new SolidBrush(bottleColor), new RectangleF(m_workingRect.Left, m_workingRect.Top - 5, m_workingRect.Width - 2, 10));
-            g.FillEllipse(new SolidBrush(Color.FromArgb(50, Color.White)), new RectangleF(m_workingRect.Left, m_workingRect.Top - 5, m_workingRect.Width - 2, 10));
-            //画瓶口
-            g.FillRectangle(new SolidBrush(bottleMouthColor), new Rectangle(m_workingRect.Left + m_workingRect.Width / 4, m_workingRect.Bottom, m_workingRect.Width / 2, 15));
-            //画瓶颈阴影
-            GraphicsPath pathPJ = new GraphicsPath();
-            Point[] psPJ = new Point[] 
-            {       
-                new Point(m_workingRect.Left, m_workingRect.Bottom-15),
-                new Point(m_workingRect.Right-1, m_workingRect.Bottom-15),
-                new Point(m_workingRect.Right-1-m_workingRect.Width/4, m_workingRect.Bottom),
-                new Point(m_workingRect.Left+m_workingRect.Width/4, m_workingRect.Bottom)               
-            };
-            pathPJ.AddLines(psPJ);
-            pathPJ.CloseAllFigures();
-            g.FillPath(new SolidBrush(Color.FromArgb(50, bottleMouthColor)), pathPJ);
-
-            //写编号
-            if (!string.IsNullOrEmpty(m_NO))
-            {
-                var nosize = g.MeasureString(m_NO, Font);
-                g.DrawString(m_NO, Font, new SolidBrush(ForeColor), new PointF((this.Width - nosize.Width) / 2, m_workingRect.Top + 10));
+                g.FillPath(new SolidBrush(liquidColor), pathYT);
+                g.FillPath(new SolidBrush(Color.FromArgb(50, bottleMouthColor)), pathYT);
+                //画液体面
+                g.FillEllipse(new SolidBrush(liquidColor), rectYT);
+                g.FillEllipse(new SolidBrush(Color.FromArgb(50, Color.White)), rectYT);
+                //画高亮
+                int intCount = m_workingRect.Width / 2 / 4;
+                int intSplit = (255 - 100) / intCount;
+                for (int i = 0; i < intCount; i++)
+                {
+                    int _penWidth = m_workingRect.Width / 2 - 4 * i;
+                    if (_penWidth <= 0)
+                        _penWidth = 1;
+                    g.DrawLine(new Pen(new SolidBrush(Color.FromArgb(10, Color.White)), _penWidth), new Point(m_workingRect.Width / 2, m_workingRect.Top + 15), new Point(m_workingRect.Width / 2, m_workingRect.Bottom));
+                    if (_penWidth == 1)
+                        break;
+                }
+                //画瓶底
+                g.FillEllipse(new SolidBrush(liquidColor), new RectangleF(m_workingRect.Left, m_workingRect.Bottom - 5, m_workingRect.Width - 2, 10));
+                g.FillEllipse(new SolidBrush(Color.FromArgb(50, liquidColor)), new RectangleF(m_workingRect.Left, m_workingRect.Bottom - 5, m_workingRect.Width - 2, 10));
+                //画瓶口
+                g.FillRectangle(new SolidBrush(bottleMouthColor), new Rectangle(m_workingRect.Left + m_workingRect.Width / 4, m_workingRect.Top - 15 + 1, m_workingRect.Width / 2, 15));
+                //画瓶颈阴影
+                GraphicsPath pathPJ = new GraphicsPath();
+                Point[] psPJ = new Point[] 
+                {       
+                    new Point(m_workingRect.Left+m_workingRect.Width/4, m_workingRect.Top),
+                    new Point(m_workingRect.Right-1-m_workingRect.Width/4, m_workingRect.Top),
+                    new Point(m_workingRect.Right-1, m_workingRect.Top+15),
+                    new Point(m_workingRect.Left,  m_workingRect.Top+15)               
+                };
+                pathPJ.AddLines(psPJ);
+                pathPJ.CloseAllFigures();
+                g.FillPath(new SolidBrush(Color.FromArgb(50, bottleMouthColor)), pathPJ);
+                //写编号
+                if (!string.IsNullOrEmpty(m_NO))
+                {
+                    var nosize = g.MeasureString(m_NO, Font);
+                    g.DrawString(m_NO, Font, new SolidBrush(ForeColor), new PointF((this.Width - nosize.Width) / 2, m_workingRect.Bottom - nosize.Height - 10));
+                }
             }
         }
+
+
+    }
+    public enum Direction
+    {
+        Up,
+        Down
     }
 }
