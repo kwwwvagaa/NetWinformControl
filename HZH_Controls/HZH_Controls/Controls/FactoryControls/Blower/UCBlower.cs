@@ -117,9 +117,7 @@ namespace HZH_Controls.Controls
             get { return turnAround; }
             set
             {
-                turnAround = value;
-                if (ControlHelper.IsDesignMode())
-                    return;
+                turnAround = value;               
                 if (value == HZH_Controls.Controls.TurnAround.None)
                 {
                     timer1.Enabled = false;
@@ -144,9 +142,7 @@ namespace HZH_Controls.Controls
             {
                 if (value < 100 || value > 1000)
                     return;
-                turnSpeed = value;
-                if (ControlHelper.IsDesignMode())
-                    return;
+                turnSpeed = value;               
                 timer1.Interval = value;
             }
         }

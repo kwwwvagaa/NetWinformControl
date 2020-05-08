@@ -414,11 +414,13 @@ namespace HZH_Controls.Controls
                         new PointF((float)(m_workingRect.Left+(decYTHeight-(m_workingRect.Height-15)))+3,(float)(m_workingRect.Bottom-decYTHeight)),                   
                         new PointF((float)(m_workingRect.Right-(decYTHeight-(m_workingRect.Height-15)))-3,(float)(m_workingRect.Bottom-decYTHeight)),  
                         new PointF(m_workingRect.Right-1, m_workingRect.Top+15),
+                        new PointF(m_workingRect.Right-1, m_workingRect.Bottom),
+                        new PointF(m_workingRect.Left, m_workingRect.Bottom),
                         new PointF(m_workingRect.Left, m_workingRect.Top+15),
                     };
                     pathYT.AddLines(psYT);
                     pathYT.CloseAllFigures();
-                    rectYT = new Rectangle(m_workingRect.Left + (int)(decYTHeight - (m_workingRect.Height - 15)) + 3, (int)(m_workingRect.Bottom - decYTHeight), m_workingRect.Width - (int)(decYTHeight - (m_workingRect.Height - 15)) * 2 - 8, 10);
+                    rectYT = new Rectangle(m_workingRect.Left + (int)(decYTHeight - (m_workingRect.Height - 15)) +1, (int)(m_workingRect.Bottom - decYTHeight - 4), m_workingRect.Width - (int)(decYTHeight - (m_workingRect.Height - 15)) * 2-2 , 10);
                 }
                 else
                 {

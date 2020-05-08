@@ -445,9 +445,9 @@
             this.ucBottle2.NO = "1#";
             this.ucBottle2.Size = new System.Drawing.Size(73, 150);
             this.ucBottle2.TabIndex = 53;
-            this.ucBottle2.Title = "12345";
+            this.ucBottle2.Title = "";
             this.ucBottle2.Value = new decimal(new int[] {
-            50,
+            90,
             0,
             0,
             0});
@@ -470,7 +470,7 @@
             this.ucBottle1.TabIndex = 53;
             this.ucBottle1.Title = "";
             this.ucBottle1.Value = new decimal(new int[] {
-            50,
+            10,
             0,
             0,
             0});
@@ -505,7 +505,7 @@
             this.ucBlower4.Name = "ucBlower4";
             this.ucBlower4.Size = new System.Drawing.Size(116, 154);
             this.ucBlower4.TabIndex = 62;
-            this.ucBlower4.TurnAround = HZH_Controls.Controls.TurnAround.None;
+            this.ucBlower4.TurnAround = HZH_Controls.Controls.TurnAround.Clockwise;
             this.ucBlower4.TurnSpeed = 100;
             // 
             // UCTestConduit
