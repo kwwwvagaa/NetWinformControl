@@ -665,6 +665,9 @@
     <EmbeddedResource Include="Controls\DateTime\UCTimePanel.resx">
       <DependentUpon>UCTimePanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FactoryControls\Blower\UCBlower.resx">
+      <DependentUpon>UCBlower.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FactoryControls\MindMapping\UCMindMappingPanel.resx">
       <DependentUpon>UCMindMappingPanel.cs</DependentUpon>
     </EmbeddedResource>

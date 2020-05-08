@@ -110,6 +110,47 @@ namespace HZH_Controls.Controls
                 Refresh();
             }
         }
+        TurnAround turnAround = TurnAround.None;
+        [Description("风叶旋转方向,None表示不旋转"), Category("自定义")]
+        public TurnAround TurnAround
+        {
+            get { return turnAround; }
+            set
+            {
+                turnAround = value;
+                if (ControlHelper.IsDesignMode())
+                    return;
+                if (value == HZH_Controls.Controls.TurnAround.None)
+                {
+                    timer1.Enabled = false;
+                    jiaodu = 0;
+                    Refresh();
+                }
+                else
+                    timer1.Enabled = true;
+            }
+        }
+
+        private int turnSpeed = 100;
+        private int jiaodu = 0;
+        private Timer timer1;
+        private IContainer components;
+
+        [Description("风叶旋转速度，100-1000，值越小 速度越快"), Category("自定义")]
+        public int TurnSpeed
+        {
+            get { return turnSpeed; }
+            set
+            {
+                if (value < 100 || value > 1000)
+                    return;
+                turnSpeed = value;
+                if (ControlHelper.IsDesignMode())
+                    return;
+                timer1.Interval = value;
+            }
+        }
+
 
         /// <summary>
         /// The m rect working
@@ -121,6 +162,7 @@ namespace HZH_Controls.Controls
         /// </summary>
         public UCBlower()
         {
+            InitializeComponent();
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.DoubleBuffer, true);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
@@ -238,7 +280,7 @@ namespace HZH_Controls.Controls
             float fltSplitValue = 360F / (float)_splitCount;
             for (int i = 0; i <= _splitCount; i++)
             {
-                float fltAngle = (fltSplitValue * i - 180) % 360;
+                float fltAngle = (fltSplitValue * i - 180) % 360 + jiaodu;
                 float fltY1 = (float)(_rect.Top + _rect.Width / 2 - ((_rect.Width / 2) * Math.Sin(Math.PI * (fltAngle / 180.00F))));
                 float fltX1 = (float)(_rect.Left + (_rect.Width / 2 - ((_rect.Width / 2) * Math.Cos(Math.PI * (fltAngle / 180.00F)))));
                 float fltY2 = 0;
@@ -252,6 +294,41 @@ namespace HZH_Controls.Controls
 
             g.FillEllipse(new SolidBrush(fanColor), new Rectangle(_rect.Left + _rect.Width / 2 - _rect.Width / 4 + 2, _rect.Top + _rect.Width / 2 - _rect.Width / 4 + 2, _rect.Width / 2 - 4, _rect.Width / 2 - 4));
             g.FillEllipse(new SolidBrush(Color.FromArgb(50, Color.White)), new Rectangle(_rect.Left - 5, _rect.Top - 5, _rect.Width + 10, _rect.Height + 10));
+        }
+
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // UCBlower
+            // 
+            this.Name = "UCBlower";
+            this.ResumeLayout(false);
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (turnAround == HZH_Controls.Controls.TurnAround.Clockwise)
+            {
+                jiaodu += 15;
+                if (jiaodu == 45)
+                    jiaodu = 0;
+            }
+            else if (turnAround == HZH_Controls.Controls.TurnAround.Counterclockwise)
+            {
+                jiaodu -= 15;
+                if (jiaodu == -45)
+                    jiaodu = 0;
+            }
+
+            Refresh();
         }
     }
     /// <summary>
@@ -294,5 +371,23 @@ namespace HZH_Controls.Controls
         /// Up
         /// </summary>
         Up
+    }
+    /// <summary>
+    /// 旋转方向
+    /// </summary>
+    public enum TurnAround
+    {
+        /// <summary>
+        /// 不旋转
+        /// </summary>
+        None,
+        /// <summary>
+        /// 顺时针
+        /// </summary>
+        Clockwise,
+        /// <summary>
+        /// 逆时针
+        /// </summary>
+        Counterclockwise
     }
 }
