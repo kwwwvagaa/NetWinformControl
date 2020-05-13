@@ -68,6 +68,24 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\DataGridView\IDataGridViewCustomCell.cs" />
+    <Compile Include="Controls\FactoryControls\DialAisle\UCDialAisle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FactoryControls\DialAisle\UCDialAisle.Designer.cs">
+      <DependentUpon>UCDialAisle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FactoryControls\Rotor\UCRotor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FactoryControls\Rotor\UCRotor.Designer.cs">
+      <DependentUpon>UCRotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FactoryControls\Turntable\UCTurntable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FactoryControls\Turntable\UCTurntable.Designer.cs">
+      <DependentUpon>UCTurntable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GraphicalOverlay\GraphicalOverlayComponent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -670,6 +688,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FactoryControls\MindMapping\UCMindMappingPanel.resx">
       <DependentUpon>UCMindMappingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FactoryControls\Rotor\UCRotor.resx">
+      <DependentUpon>UCRotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FactoryControls\Turntable\UCTurntable.resx">
+      <DependentUpon>UCTurntable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\KeyBord\UCKeyBorderAll.resx">
       <DependentUpon>UCKeyBorderAll.cs</DependentUpon>

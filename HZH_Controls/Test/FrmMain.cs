@@ -92,6 +92,9 @@ namespace Test
                 tnFactory.Nodes.Add("警示灯");
                 tnFactory.Nodes.Add("箭头");
                 tnFactory.Nodes.Add("温度计");
+                tnFactory.Nodes.Add("转子");
+                tnFactory.Nodes.Add("多通道转盘");
+                tnFactory.Nodes.Add("转盘");
                 this.tvMenu.Nodes.Add(tnFactory);
             }
             finally
@@ -340,6 +343,15 @@ namespace Test
                     break;
                 case "温度计":
                     AddControl(new UC.UCTestThermometer());
+                    break;
+                case "转子":
+                    AddControl(new UC.UCTestRotor());
+                    break;
+                case "多通道转盘":
+                    AddControl(new UC.UCTestDialAisle());
+                    break;
+                case "转盘":
+                    AddControl(new UC.UCTestTurntable());
                     break;
                 #endregion
             }

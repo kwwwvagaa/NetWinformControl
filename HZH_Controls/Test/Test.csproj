@@ -133,6 +133,12 @@
     <Compile Include="UC\UCTestConveyor.Designer.cs">
       <DependentUpon>UCTestConveyor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestDialAisle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestDialAisle.Designer.cs">
+      <DependentUpon>UCTestDialAisle.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestFunnelChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -526,6 +532,12 @@
     <Compile Include="UC\UCTestRollText.Designer.cs">
       <DependentUpon>UCTestRollText.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestRotor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestRotor.Designer.cs">
+      <DependentUpon>UCTestRotor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestSampling.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -610,6 +622,12 @@
     <Compile Include="UC\UCTestTreeview.Designer.cs">
       <DependentUpon>UCTestTreeview.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestTurntable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestTurntable.Designer.cs">
+      <DependentUpon>UCTestTurntable.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestValve.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -679,6 +697,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestConveyor.resx">
       <DependentUpon>UCTestConveyor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestDialAisle.resx">
+      <DependentUpon>UCTestDialAisle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestForms.resx">
       <DependentUpon>UCTestForms.cs</DependentUpon>
@@ -872,6 +893,9 @@
     <EmbeddedResource Include="UC\UCTestRollText.resx">
       <DependentUpon>UCTestRollText.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestRotor.resx">
+      <DependentUpon>UCTestRotor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestSampling.resx">
       <DependentUpon>UCTestSampling.cs</DependentUpon>
     </EmbeddedResource>
@@ -913,6 +937,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestTreeview.resx">
       <DependentUpon>UCTestTreeview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestTurntable.resx">
+      <DependentUpon>UCTestTurntable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestValve.resx">
       <DependentUpon>UCTestValve.cs</DependentUpon>

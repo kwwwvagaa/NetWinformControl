@@ -435,7 +435,7 @@
             this.ucBottle2.BottleMouthColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.ucBottle2.Direction = HZH_Controls.Controls.Direction.Up;
             this.ucBottle2.LiquidColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            this.ucBottle2.Location = new System.Drawing.Point(935, 8);
+            this.ucBottle2.Location = new System.Drawing.Point(1011, 39);
             this.ucBottle2.MaxValue = new decimal(new int[] {
             100,
             0,
@@ -443,7 +443,7 @@
             0});
             this.ucBottle2.Name = "ucBottle2";
             this.ucBottle2.NO = "1#";
-            this.ucBottle2.Size = new System.Drawing.Size(73, 150);
+            this.ucBottle2.Size = new System.Drawing.Size(36, 119);
             this.ucBottle2.TabIndex = 53;
             this.ucBottle2.Title = "";
             this.ucBottle2.Value = new decimal(new int[] {
