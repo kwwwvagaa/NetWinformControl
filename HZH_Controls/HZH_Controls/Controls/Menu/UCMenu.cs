@@ -227,6 +227,7 @@ namespace HZH_Controls.Controls
             if (m_isShowFirstItem && m_lstParentItems != null && m_lstParentItems.Count > 0)
             {
                 parentItem_SelectedItem(m_lstParentItems[0], null);
+
             }
         }
 
@@ -292,12 +293,16 @@ namespace HZH_Controls.Controls
                     if (blnChildren)
                     {
                         Control cMenu = menuitem as Control;
-                        int index = m_lstParentItems.IndexOf(cMenu);
+                        int index = m_lstParentItems.IndexOf(cMenu);                       
+
                         for (int i = 0; i <= index; i++)
                         {
                             m_lstParentItems[i].Dock = DockStyle.Top;
-                            this.Controls.SetChildIndex(m_lstParentItems[i], 1);
+                            this.Controls.SetChildIndex(m_lstParentItems[i], 0);
                         }
+                        this.Controls.SetChildIndex(m_panChildren, 0);
+                        
+
                         for (int i = index + 1; i < m_lstParentItems.Count; i++)
                         {
                             m_lstParentItems[i].Dock = DockStyle.Bottom;
@@ -327,7 +332,7 @@ namespace HZH_Controls.Controls
                         foreach (var item in m_lstParentItems)
                         {
                             item.Dock = DockStyle.Top;
-                            this.Controls.SetChildIndex(item, 1);
+                            this.Controls.SetChildIndex(item, 0);
                         }
                     }
                 }
