@@ -159,6 +159,12 @@ namespace HZH_Controls.Controls
         public UCDatePickerExt()
         {
             InitializeComponent();
+            this.SizeChanged += UCDatePickerExt_SizeChanged;
+        }
+
+        void UCDatePickerExt_SizeChanged(object sender, EventArgs e)
+        {
+            var a = this.Height;
         }
 
         /// <summary>
@@ -170,7 +176,8 @@ namespace HZH_Controls.Controls
         {
             SetTimeToControl();
             panel1.Height = this.txtDay.Height;
-            panel1.Height = this.txtHour.Height;
+
+            panel1.Width = this.Width - 6;
             SetEvent(this);
         }
 
