@@ -35,6 +35,10 @@ GitHub：[https://github.com/kwwwvagaa/NetWinformControl](https://github.com/kww
 Install-Package HZH_Controls
 ```
 
+``` csharp
+以下列出内容仅为部分控件，更多控件效果，请下载源码查看Demo运行效果！
+```
+
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0903/084635_85b9e4a3_301547.gif "1.gif")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0903/084848_9aaca7d2_301547.gif "3.gif")
 
