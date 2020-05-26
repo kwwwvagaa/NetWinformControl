@@ -132,6 +132,7 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <value>The current time.</value>
         [Description("时间"), Category("自定义")]
+        [Localizable(true)]
         public DateTime CurrentTime
         {
             get { return currentTime; }
