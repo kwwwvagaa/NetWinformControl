@@ -127,6 +127,12 @@
     <Compile Include="UC\UCTestConduit.Designer.cs">
       <DependentUpon>UCTestConduit.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestContextMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestContextMenu.Designer.cs">
+      <DependentUpon>UCTestContextMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestConveyor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -694,6 +700,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestConduit.resx">
       <DependentUpon>UCTestConduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestContextMenu.resx">
+      <DependentUpon>UCTestContextMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestConveyor.resx">
       <DependentUpon>UCTestConveyor.cs</DependentUpon>

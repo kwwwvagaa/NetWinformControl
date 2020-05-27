@@ -141,6 +141,16 @@
     <Compile Include="Controls\TimeLine\UCTimeLine.Designer.cs">
       <DependentUpon>UCTimeLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ToolStripRendererEx\ControlPaintEx.cs" />
+    <Compile Include="Controls\ToolStripRendererEx\GraphicsPathHelper.cs" />
+    <Compile Include="Controls\ToolStripRendererEx\InterpolationModeGraphics.cs" />
+    <Compile Include="Controls\ToolStripRendererEx\ProfessionalToolStripRendererEx.cs" />
+    <Compile Include="Controls\ToolStripRendererEx\RegionHelper.cs" />
+    <Compile Include="Controls\ToolStripRendererEx\RenderHelper.cs" />
+    <Compile Include="Controls\ToolStripRendererEx\RoundStyle.cs" />
+    <Compile Include="Controls\ToolStripRendererEx\SmoothingModeGraphics.cs" />
+    <Compile Include="Controls\ToolStripRendererEx\TextRenderingHintGraphics.cs" />
+    <Compile Include="Controls\ToolStripRendererEx\ToolStripColorTable.cs" />
     <Compile Include="Controls\Transfer\TransferEventArgs.cs" />
     <Compile Include="Controls\Transfer\UCTransfer.cs">
       <SubType>UserControl</SubType>

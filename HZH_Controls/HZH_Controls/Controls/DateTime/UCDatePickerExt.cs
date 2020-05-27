@@ -132,6 +132,7 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <value>The current time.</value>
         [Description("时间"), Category("自定义")]
+        [Localizable(true)]
         public DateTime CurrentTime
         {
             get { return currentTime; }
@@ -147,11 +148,16 @@ namespace HZH_Controls.Controls
         /// </summary>
         private void SetTimeToControl()
         {
-            this.txtYear.Text = currentTime.Year.ToString();
-            this.txtMonth.Text = currentTime.Month.ToString().PadLeft(2, '0');
-            this.txtDay.Text = currentTime.Day.ToString().PadLeft(2, '0');
-            this.txtHour.Text = currentTime.Hour.ToString().PadLeft(2, '0');
-            this.txtMinute.Text = currentTime.Minute.ToString().PadLeft(2, '0');
+            var y = CurrentTime.Year;
+            var M = CurrentTime.Month;
+            var d = CurrentTime.Day;
+            var h = CurrentTime.Hour;
+            var m = CurrentTime.Minute;
+            this.txtYear.Text = y.ToString();
+            this.txtMonth.Text = M.ToString().PadLeft(2, '0');
+            this.txtDay.Text = d.ToString().PadLeft(2, '0');
+            this.txtHour.Text = h.ToString().PadLeft(2, '0');
+            this.txtMinute.Text = m.ToString().PadLeft(2, '0');
         }
         /// <summary>
         /// Initializes a new instance of the <see cref="UCDatePickerExt" /> class.
