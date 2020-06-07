@@ -495,7 +495,7 @@ namespace HZH_Controls.Controls
         /// <param name="m">一个 Windows 消息对象。</param>
         protected override void WndProc(ref Message m)
         {
-            base.WndProc(ref m); //必须放在前面，否则设置了不显示关闭按钮的标签将无法被选中
+            base.WndProc(ref m); //必须放在前面，否则设置了不显示关闭按钮的标签将无法被选中.
             if (m.Msg == 0x0201) // WM_LBUTTONDOWN
             {
                 if (!DesignMode)
