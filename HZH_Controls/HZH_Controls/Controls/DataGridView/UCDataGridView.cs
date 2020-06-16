@@ -576,8 +576,7 @@ namespace HZH_Controls.Controls
                                 row.RowHeight = m_rowHeight;
                             item.Visible = true;
                             item.Width = panHead.Width;
-                            item.BringToFront();
-
+                           
                             Rows.Add(row);
                             row.RowIndex = Rows.IndexOf(row);
                         }
@@ -606,16 +605,13 @@ namespace HZH_Controls.Controls
                             Control rowControl = (row as Control);
                             rowControl.Width = panHead.Width;
                             row.RowHeight = m_rowHeight;
-                            rowControl.Dock = DockStyle.Top;
                             row.CellClick += (a, b) => { SetSelectRow(rowControl, b); };
                             row.CheckBoxChangeEvent += (a, b) => { SetSelectRow(rowControl, b); };
                             row.RowCustomEvent += (a, b) => { if (RowCustomEvent != null) { RowCustomEvent(a, b); } };
                             row.SourceChanged += RowSourceChanged;
                             Rows.Add(row);
                             row.RowIndex = Rows.IndexOf(row);
-                            this.panRow.Controls.Add(rowControl);
-                            rowControl.BringToFront();
-
+                            this.panRow.Controls.Add(rowControl);                           
                         }
                     }
 
