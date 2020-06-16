@@ -129,6 +129,7 @@ namespace HZH_Controls.Controls
             {
                 m_headHeight = value;
                 panHead.Height = value;
+                this.Padding = new Padding(0, value, 0, 0);
             }
         }
 

@@ -33,7 +33,6 @@
             // 
             // ucDataGridView1
             // 
-            this.ucDataGridView1.AutoScroll = true;
             this.ucDataGridView1.BackColor = System.Drawing.Color.White;
             this.ucDataGridView1.Columns = null;
             this.ucDataGridView1.DataSource = null;
@@ -46,9 +45,10 @@
             this.ucDataGridView1.IsShowHead = true;
             this.ucDataGridView1.Location = new System.Drawing.Point(0, 0);
             this.ucDataGridView1.Name = "ucDataGridView1";
+            this.ucDataGridView1.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
             this.ucDataGridView1.RowHeight = 41;
             this.ucDataGridView1.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
-            this.ucDataGridView1.Size = new System.Drawing.Size(831, 609);
+            this.ucDataGridView1.Size = new System.Drawing.Size(1090, 643);
             this.ucDataGridView1.TabIndex = 5;
             // 
             // UCTestGridTableCustom
@@ -56,7 +56,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.ucDataGridView1);
             this.Name = "UCTestGridTableCustom";
-            this.Size = new System.Drawing.Size(831, 609);
+            this.Size = new System.Drawing.Size(1090, 643);
             this.Load += new System.EventHandler(this.UCTestGridTableCustom_Load);
             this.ResumeLayout(false);
 
