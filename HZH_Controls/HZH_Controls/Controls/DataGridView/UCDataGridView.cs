@@ -348,7 +348,21 @@ namespace HZH_Controls.Controls
             }
             return null;
         }
-
+        [Bindable(false)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool AutoScroll
+        {
+            get
+            {
+                return base.AutoScroll;
+            }
+            set
+            {
+                base.AutoScroll = value;
+            }
+        }
         #region 事件
         /// <summary>
         /// The head CheckBox change event
@@ -379,6 +393,7 @@ namespace HZH_Controls.Controls
         public event EventHandler BindingSourceEvent;
         #endregion
         #endregion
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UCDataGridView" /> class.
@@ -428,19 +443,19 @@ namespace HZH_Controls.Controls
                         _width += 30;
                     if (_width > this.Width)
                     {
-                        this.panRow.Width = _width;
+                        //this.panRow.Width = _width;
                         this.panHead.Width = _width;
                     }
                     else
                     {
                         if (m_columns.Any(p => p.WidthType == SizeType.AutoSize))
                         {
-                            this.panRow.Width = this.Width;
+                            //this.panRow.Width = this.Width;
                             this.panHead.Width = this.Width;
                         }
                         else
                         {
-                            this.panRow.Width = _width;
+                            //this.panRow.Width = _width;
                             this.panHead.Width = _width;
                         }
                     }
@@ -507,7 +522,7 @@ namespace HZH_Controls.Controls
 
         #endregion
 
-       
+
 
         #region 公共函数
         /// <summary>
@@ -560,6 +575,7 @@ namespace HZH_Controls.Controls
                             if (row.RowHeight != m_rowHeight)
                                 row.RowHeight = m_rowHeight;
                             item.Visible = true;
+                            item.Width = panHead.Width;
                             item.BringToFront();
 
                             Rows.Add(row);
@@ -588,6 +604,7 @@ namespace HZH_Controls.Controls
                             row.BindingCellData();
 
                             Control rowControl = (row as Control);
+                            rowControl.Width = panHead.Width;
                             row.RowHeight = m_rowHeight;
                             rowControl.Dock = DockStyle.Top;
                             row.CellClick += (a, b) => { SetSelectRow(rowControl, b); };
@@ -602,7 +619,7 @@ namespace HZH_Controls.Controls
                         }
                     }
 
-                    this.panRow.Height = intSourceCount * RowHeight;
+                    //this.panRow.Height = intSourceCount * RowHeight;
                 }
                 else
                 {
@@ -772,15 +789,20 @@ namespace HZH_Controls.Controls
 
         private void UCDataGridView_Scroll(object sender, ScrollEventArgs e)
         {
-            if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
-            {
-                panHead.Location = new Point(0, this.VerticalScroll.Value + this.panRow.Location.Y - panHead.Height - 2);              
-            }
+            //if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
+            //{
+            //    panHead.Location = new Point(0, this.VerticalScroll.Value + this.panRow.Location.Y - panHead.Height - 2);              
+            //}
         }
 
-        private void UCDataGridView_Paint(object sender, PaintEventArgs e)
+        private void panRow_Scroll(object sender, ScrollEventArgs e)
         {
-
-        }      
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll && this.panRow.Controls.Count>0)
+            {
+                Console.WriteLine(this.panRow.HorizontalScroll.Value);
+                Console.WriteLine(this.panRow.Controls[0].Location.X);
+                panHead.Location = new Point(this.panRow.HorizontalScroll.Value*-1 , 0);
+            }
+        }
     }
 }
