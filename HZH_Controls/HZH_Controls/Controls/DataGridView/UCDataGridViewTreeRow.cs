@@ -417,6 +417,7 @@ namespace HZH_Controls.Controls
 
                                 Control rowControl = (row as Control);
                                 row.RowHeight = m_rowHeight;
+                                rowControl.Width = this.Width;
                                 //rowControl.Dock = DockStyle.Top;
                                 row.CellClick += (a, b) => { CellClick(rowControl, b); };
                                 row.CheckBoxChangeEvent += (a, b) => { CheckBoxChangeEvent(rowControl, b); };
@@ -424,6 +425,7 @@ namespace HZH_Controls.Controls
                                 row.SourceChanged += SourceChanged;
                                 ChildrenRows.Add(row);
                                 row.RowIndex = ChildrenRows.IndexOf(row);
+
                                 this.Parent.Controls.Add(rowControl);
                                 var index = this.Parent.Controls.GetChildIndex(this);
                                 this.Parent.Controls.SetChildIndex(row, index+1);
