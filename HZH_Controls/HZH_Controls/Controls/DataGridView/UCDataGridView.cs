@@ -576,7 +576,7 @@ namespace HZH_Controls.Controls
                                 row.RowHeight = m_rowHeight;
                             item.Visible = true;
                             item.Width = panHead.Width;
-                           
+
                             Rows.Add(row);
                             row.RowIndex = Rows.IndexOf(row);
                         }
@@ -605,13 +605,14 @@ namespace HZH_Controls.Controls
                             Control rowControl = (row as Control);
                             rowControl.Width = panHead.Width;
                             row.RowHeight = m_rowHeight;
-                            row.CellClick += (a, b) => { SetSelectRow(rowControl, b); };
+                            row.CellClick += (a, b) => { this.FindForm().ActiveControl = this; rowControl.Focus(); SetSelectRow(rowControl, b); };
                             row.CheckBoxChangeEvent += (a, b) => { SetSelectRow(rowControl, b); };
                             row.RowCustomEvent += (a, b) => { if (RowCustomEvent != null) { RowCustomEvent(a, b); } };
                             row.SourceChanged += RowSourceChanged;
                             Rows.Add(row);
                             row.RowIndex = Rows.IndexOf(row);
-                            this.panRow.Controls.Add(rowControl);                           
+                            this.panRow.Controls.Add(rowControl);
+                           
                         }
                     }
 
@@ -793,11 +794,11 @@ namespace HZH_Controls.Controls
 
         private void panRow_Scroll(object sender, ScrollEventArgs e)
         {
-            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll && this.panRow.Controls.Count>0)
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll && this.panRow.Controls.Count > 0)
             {
                 Console.WriteLine(this.panRow.HorizontalScroll.Value);
                 Console.WriteLine(this.panRow.Controls[0].Location.X);
-                panHead.Location = new Point(this.panRow.HorizontalScroll.Value*-1 , 0);
+                panHead.Location = new Point(this.panRow.HorizontalScroll.Value * -1, 0);
             }
         }
     }
