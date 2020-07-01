@@ -151,9 +151,11 @@ namespace HZH_Controls.Controls
             set
             {
                 moValue = value;
-
+                if (moValue > moMaximum)
+                    moValue = moMaximum;
                 int nTrackWidth = (this.Width - btnWidth * 2);
-                float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
+                float fThumbWidth = nTrackWidth - Maximum;
+                //float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
                 int nThumbWidth = (int)fThumbWidth;
 
                 if (nThumbWidth > nTrackWidth)
@@ -260,9 +262,14 @@ namespace HZH_Controls.Controls
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         private void CustomScrollbar_MouseDown(object sender, MouseEventArgs e)
         {
+            if (Maximum <= 0)
+            {
+                return;
+            }
             Point ptPoint = this.PointToClient(Cursor.Position);
             int nTrackWidth = (this.Width - btnWidth * 2);
-            float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
+            float fThumbWidth = nTrackWidth - Maximum;
+            //float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
             int nThumbWidth = (int)fThumbWidth;
 
             if (nThumbWidth > nTrackWidth)
@@ -366,6 +373,7 @@ namespace HZH_Controls.Controls
         {
             this.moThumbMouseDown = false;
             this.moThumbMouseDragging = false;
+            Application.DoEvents();
         }
 
         /// <summary>
@@ -376,7 +384,8 @@ namespace HZH_Controls.Controls
         {
             int nRealRange = Maximum - Minimum;
             int nTrackWidth = (this.Width - btnWidth * 2);
-            float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
+            // float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
+            float fThumbWidth = nTrackWidth - Maximum;
             int nThumbWidth = (int)fThumbWidth;
 
             if (nThumbWidth > nTrackWidth)
@@ -414,11 +423,13 @@ namespace HZH_Controls.Controls
 
 
                     float fPerc = (float)moThumbLeft / (float)nPixelRange;
-                    float fValue = fPerc * (Maximum - LargeChange);
+                    float fValue = fPerc * (Maximum - (nNewThumbLeft == nPixelRange ? 0 : LargeChange));
+                    //float fValue = fPerc * (Maximum - LargeChange);
+                    if (Math.Abs(moValue - fValue) >= 1)
+                        Application.DoEvents();
+                    else
+                        return;
                     moValue = (int)fValue;
-
-                    Application.DoEvents();
-
                     Invalidate();
                 }
             }
@@ -456,26 +467,30 @@ namespace HZH_Controls.Controls
         {
             base.OnPaint(e);
             e.Graphics.SetGDIHigh();
-
-            //draw thumb
-            int nTrackWidth = (this.Width - btnWidth * 2);
-            float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
-            int nThumbWidth = (int)fThumbWidth;
-
-            if (nThumbWidth > nTrackWidth)
+            if (Maximum > 0)
             {
-                nThumbWidth = nTrackWidth;
-                fThumbWidth = nTrackWidth;
-            }
-            if (nThumbWidth < m_intThumbMinWidth)
-            {
-                nThumbWidth = m_intThumbMinWidth;
-                fThumbWidth = m_intThumbMinWidth;
-            }
-            int nLeft = moThumbLeft;
-            nLeft += btnWidth;
-            e.Graphics.FillPath(new SolidBrush(thumbColor), new Rectangle(nLeft, 1, nThumbWidth, this.Height - 3).CreateRoundedRectanglePath(this.ConerRadius));
+                //draw thumb
+                int nTrackWidth = (this.Width - btnWidth * 2);
+                //float fThumbWidth = ((float)LargeChange / (float)Maximum) * nTrackWidth;
+                float fThumbWidth = nTrackWidth - Maximum;
+                int nThumbWidth = (int)fThumbWidth;
 
+                if (nThumbWidth > nTrackWidth)
+                {
+                    nThumbWidth = nTrackWidth;
+                    fThumbWidth = nTrackWidth;
+                }
+                if (nThumbWidth < m_intThumbMinWidth)
+                {
+                    nThumbWidth = m_intThumbMinWidth;
+                    fThumbWidth = m_intThumbMinWidth;
+                }
+                int nLeft = moThumbLeft;
+                nLeft += btnWidth;
+                if (nLeft + nThumbWidth > this.Width - btnWidth)
+                    nLeft = this.Width - btnWidth - nThumbWidth;
+                e.Graphics.FillPath(new SolidBrush(thumbColor), new Rectangle(nLeft, 1, nThumbWidth, this.Height - 3).CreateRoundedRectanglePath(this.ConerRadius));
+            }
             ControlHelper.PaintTriangle(e.Graphics, new SolidBrush(thumbColor), new Point(btnWidth - Math.Min(5, this.Height / 2), this.Height / 2), Math.Min(5, this.Height / 2), GraphDirection.Leftward);
             ControlHelper.PaintTriangle(e.Graphics, new SolidBrush(thumbColor), new Point(this.Width - (btnWidth - Math.Min(5, this.Height / 2)), this.Height / 2), Math.Min(5, this.Height / 2), GraphDirection.Rightward);
 

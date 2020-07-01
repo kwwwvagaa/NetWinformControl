@@ -209,7 +209,7 @@ namespace HZH_Controls
                 }
                 SetControlEnableds(lstCs.ToArray(), false);
             }
-            ThreadPool.QueueUserWorkItem(delegate(object a)
+            ThreadPool.QueueUserWorkItem(delegate (object a)
             {
                 try
                 {
@@ -912,13 +912,13 @@ namespace HZH_Controls
         public static Point[] GetRhombusFromRectangle(Rectangle rect)
         {
             return new Point[5]
-			{
-				new Point(rect.X, rect.Y + rect.Height / 2),
-				new Point(rect.X + rect.Width / 2, rect.Y + rect.Height - 1),
-				new Point(rect.X + rect.Width - 1, rect.Y + rect.Height / 2),
-				new Point(rect.X + rect.Width / 2, rect.Y),
-				new Point(rect.X, rect.Y + rect.Height / 2)
-			};
+            {
+                new Point(rect.X, rect.Y + rect.Height / 2),
+                new Point(rect.X + rect.Width / 2, rect.Y + rect.Height - 1),
+                new Point(rect.X + rect.Width - 1, rect.Y + rect.Height / 2),
+                new Point(rect.X + rect.Width / 2, rect.Y),
+                new Point(rect.X, rect.Y + rect.Height / 2)
+            };
         }
 
         /// <summary>
@@ -1298,9 +1298,9 @@ namespace HZH_Controls
         public static PointF[] GetPointsFrom(string points, float soureWidth, float sourceHeight, float width, float height, float dx = 0f, float dy = 0f)
         {
             string[] array = points.Split(new char[1]
-			{
-				' '
-			}, StringSplitOptions.RemoveEmptyEntries);
+            {
+                ' '
+            }, StringSplitOptions.RemoveEmptyEntries);
             PointF[] array2 = new PointF[array.Length];
             for (int i = 0; i < array.Length; i++)
             {
@@ -1334,8 +1334,24 @@ namespace HZH_Controls
         static uint SB_CTL = 0x2;
         static uint SB_BOTH = 0x3;
         [DllImport("user32.dll", SetLastError = true, EntryPoint = "GetScrollInfo")]
-        private static extern int GetScrollInfo(IntPtr hWnd, uint idObject, ref SCROLLINFO psbi);
+        private static extern int GetScrollInfo(IntPtr hWnd, uint fnBar, ref SCROLLINFO psbi);
+        [DllImport("user32.dll")]//[return: MarshalAs(UnmanagedType.Bool)]
+        private static extern int SetScrollInfo(IntPtr handle, uint fnBar, ref SCROLLINFO si, bool fRedraw);
 
+        [DllImport("user32.dll", EntryPoint = "PostMessage")]
+        private static extern bool PostMessage(IntPtr handle, int msg, uint wParam, uint lParam);
+        [DllImport("User32.dll", EntryPoint = "SendMessage")]
+        private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        /// <summary>
+        /// ShowScrollBar
+        /// </summary>
+        /// <param name="hWnd">hWnd</param>
+        /// <param name="wBar">0:horizontal,1:vertical,3:both</param>
+        /// <param name="bShow">bShow</param>
+        /// <returns></returns>
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool ShowScrollBar(IntPtr hWnd, int wBar, bool bShow);
         /// <summary>
         ///获取水平滚动条信息
         /// </summary>
@@ -1344,8 +1360,8 @@ namespace HZH_Controls
         public static SCROLLINFO GetHScrollBarInfo(IntPtr hWnd)
         {
             SCROLLINFO info = new SCROLLINFO();
-            info.cbSize = (uint)Marshal.SizeOf(info);
-            info.fMask = (int)ScrollInfoMask.SIF_ALL;
+            info.cbSize = (int)Marshal.SizeOf(info);
+            info.fMask = (int)ScrollInfoMask.SIF_DISABLENOSCROLL | (int)ScrollInfoMask.SIF_ALL;
             int intRef = GetScrollInfo(hWnd, SB_HORZ, ref info);
             return info;
         }
@@ -1357,20 +1373,21 @@ namespace HZH_Controls
         public static SCROLLINFO GetVScrollBarInfo(IntPtr hWnd)
         {
             SCROLLINFO info = new SCROLLINFO();
-            info.cbSize = (uint)Marshal.SizeOf(info);
-            info.fMask = (int)ScrollInfoMask.SIF_ALL;
+            info.cbSize = (int)Marshal.SizeOf(info);
+            info.fMask = (int)ScrollInfoMask.SIF_DISABLENOSCROLL | (int)ScrollInfoMask.SIF_ALL;
             int intRef = GetScrollInfo(hWnd, SB_VERT, ref info);
             return info;
         }
         public struct SCROLLINFO
         {
-            public uint cbSize;
-            public uint fMask;
+            public int cbSize;
+            public int fMask;
             public int nMin;
             public int nMax;
-            public uint nPage;
+            public int nPage;
             public int nPos;
             public int nTrackPos;
+            public int ScrollMax { get { return nMax + 1 - nPage; } }
         }
         public enum ScrollInfoMask : uint
         {
@@ -1380,6 +1397,66 @@ namespace HZH_Controls
             SIF_DISABLENOSCROLL = 0x8,
             SIF_TRACKPOS = 0x10,
             SIF_ALL = (SIF_RANGE | SIF_PAGE | SIF_POS | SIF_TRACKPOS),
+            SB_THUMBTRACK = 5,
+            WM_HSCROLL = 0x0114,
+            WM_VSCROLL = 0x0115,
+            SB_LINEUP = 0,
+            SB_LINEDOWN = 1,
+            SB_LINELEFT = 0,
+            SB_LINERIGHT = 1,
+        }
+
+        public static void SetVScrollValue(IntPtr handle, int value)
+        {
+            var info = GetVScrollBarInfo(handle);
+            info.nPos = value;
+            SetScrollInfo(handle, SB_VERT, ref info, true);
+            PostMessage(handle, (int)ScrollInfoMask.WM_VSCROLL, MakeLong((short)ScrollInfoMask.SB_THUMBTRACK, highPart: (short)info.nPos), 0);
+        }
+        public static void SetHScrollValue(IntPtr handle, int value)
+        {
+            var info = GetHScrollBarInfo(handle);
+            info.nPos = value;
+            SetScrollInfo(handle, SB_HORZ, ref info, true);
+            PostMessage(handle, (int)ScrollInfoMask.WM_HSCROLL, MakeLong((short)ScrollInfoMask.SB_THUMBTRACK, highPart: (short)info.nPos), 0);
+        }
+        private static uint MakeLong(short lowPart, short highPart)
+        {
+            return (ushort)lowPart | (uint)(highPart << 16);
+        }
+        /// <summary>
+        /// 控件向上滚动一个单位
+        /// </summary>
+        /// <param name="handle">控件句柄</param>
+        public static void ScrollUp(IntPtr handle)
+        {
+            SendMessage(handle, (int)ScrollInfoMask.WM_VSCROLL, (int)ScrollInfoMask.SB_LINEUP, 0);
+        }
+
+        /// <summary>
+        /// 控件向下滚动一个单位
+        /// </summary>
+        /// <param name="handle">控件句柄</param>
+        public static void ScrollDown(IntPtr handle)
+        {
+            SendMessage(handle, (int)ScrollInfoMask.WM_VSCROLL, (int)ScrollInfoMask.SB_LINEDOWN, 0);
+        }
+        /// <summary>
+        /// 控件向左滚动一个单位
+        /// </summary>
+        /// <param name="handle">控件句柄</param>
+        public static void ScrollLeft(IntPtr handle)
+        {
+            SendMessage(handle, (int)ScrollInfoMask.WM_HSCROLL, (int)ScrollInfoMask.SB_LINELEFT, 0);
+        }
+
+        /// <summary>
+        /// 控件向右滚动一个单位
+        /// </summary>
+        /// <param name="handle">控件句柄</param>
+        public static void ScrollRight(IntPtr handle)
+        {
+            SendMessage(handle, (int)ScrollInfoMask.WM_VSCROLL, (int)ScrollInfoMask.SB_LINERIGHT, 0);
         }
         #endregion
 

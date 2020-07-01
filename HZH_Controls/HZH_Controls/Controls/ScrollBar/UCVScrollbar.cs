@@ -35,7 +35,7 @@ namespace HZH_Controls.Controls
     [Designer(typeof(ScrollbarControlDesigner))]
     [DefaultEvent("Scroll")]
     public class UCVScrollbar : UCControlBase
-    {        
+    {
         /// <summary>
         /// The mo large change
         /// </summary>
@@ -43,7 +43,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The mo small change
         /// </summary>
-        protected int moSmallChange = 1;
+        protected int moSmallChange = 5;
         /// <summary>
         /// The mo minimum
         /// </summary>
@@ -92,7 +92,7 @@ namespace HZH_Controls.Controls
         /// <summary>
         /// The m int thumb minimum height
         /// </summary>
-        private int m_intThumbMinHeight = 15;
+        private int m_intThumbMinHeight = 30;
 
         /// <summary>
         /// Gets or sets the height of the BTN.
@@ -176,7 +176,8 @@ namespace HZH_Controls.Controls
                 moValue = value;
 
                 int nTrackHeight = (this.Height - btnHeight * 2);
-                float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
+                //float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
+                float fThumbHeight = nTrackHeight - Maximum;
                 int nThumbHeight = (int)fThumbHeight;
 
                 if (nThumbHeight > nTrackHeight)
@@ -289,32 +290,34 @@ namespace HZH_Controls.Controls
         {
             base.OnPaint(e);
             e.Graphics.SetGDIHigh();
-
-            //draw thumb
-            int nTrackHeight = (this.Height - btnHeight * 2);
-            float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
-            int nThumbHeight = (int)fThumbHeight;
-
-            if (nThumbHeight > nTrackHeight)
+            if (Maximum > 0)
             {
-                nThumbHeight = nTrackHeight;
-                fThumbHeight = nTrackHeight;
-            }
-            if (nThumbHeight < m_intThumbMinHeight)
-            {
-                nThumbHeight = m_intThumbMinHeight;
-                fThumbHeight = m_intThumbMinHeight;
-            }
-            int nTop = moThumbTop;
-            nTop += btnHeight;
-            e.Graphics.FillPath(new SolidBrush(thumbColor), new Rectangle(1, nTop, this.Width - 3, nThumbHeight).CreateRoundedRectanglePath(this.ConerRadius));
+                //draw thumb
+                int nTrackHeight = (this.Height - btnHeight * 2);
+                //float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
+                float fThumbHeight = nTrackHeight - Maximum;
+                int nThumbHeight = (int)fThumbHeight;
 
+                if (nThumbHeight > nTrackHeight)
+                {
+                    nThumbHeight = nTrackHeight;
+                    fThumbHeight = nTrackHeight;
+                }
+                if (nThumbHeight < m_intThumbMinHeight)
+                {
+                    nThumbHeight = m_intThumbMinHeight;
+                    fThumbHeight = m_intThumbMinHeight;
+                }
+                int nTop = moThumbTop;
+                nTop += btnHeight;
+                if (nTop + nThumbHeight > this.Height - btnHeight)
+                    nTop = this.Height - btnHeight - nThumbHeight;
+                e.Graphics.FillPath(new SolidBrush(thumbColor), new Rectangle(1, nTop, this.Width - 3, nThumbHeight).CreateRoundedRectanglePath(this.ConerRadius));
+            }
             ControlHelper.PaintTriangle(e.Graphics, new SolidBrush(thumbColor), new Point(this.Width / 2, btnHeight - Math.Min(5, this.Width / 2)), Math.Min(5, this.Width / 2), GraphDirection.Upward);
             ControlHelper.PaintTriangle(e.Graphics, new SolidBrush(thumbColor), new Point(this.Width / 2, this.Height - (btnHeight - Math.Min(5, this.Width / 2))), Math.Min(5, this.Width / 2), GraphDirection.Downward);
 
         }
-
-      
 
         /// <summary>
         /// Handles the MouseDown event of the CustomScrollbar control.
@@ -323,9 +326,12 @@ namespace HZH_Controls.Controls
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         private void CustomScrollbar_MouseDown(object sender, MouseEventArgs e)
         {
+            if (Maximum <= 0)
+                return;
             Point ptPoint = this.PointToClient(Cursor.Position);
             int nTrackHeight = (this.Height - btnHeight * 2);
-            float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
+            //float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
+            float fThumbHeight = nTrackHeight - Maximum;
             int nThumbHeight = (int)fThumbHeight;
 
             if (nThumbHeight > nTrackHeight)
@@ -419,7 +425,7 @@ namespace HZH_Controls.Controls
                     }
                 }
             }
-          
+
         }
 
         /// <summary>
@@ -441,7 +447,8 @@ namespace HZH_Controls.Controls
         {
             int nRealRange = Maximum - Minimum;
             int nTrackHeight = (this.Height - btnHeight * 2);
-            float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
+            //float fThumbHeight = ((float)LargeChange / (float)Maximum) * nTrackHeight;
+            float fThumbHeight = nTrackHeight - Maximum;
             int nThumbHeight = (int)fThumbHeight;
 
             if (nThumbHeight > nTrackHeight)
@@ -479,11 +486,19 @@ namespace HZH_Controls.Controls
 
 
                     float fPerc = (float)moThumbTop / (float)nPixelRange;
-                    float fValue = fPerc * (Maximum - LargeChange);
+                    float fValue = fPerc * (Maximum - (nNewThumbTop == nPixelRange ? 0 : LargeChange));
+                    try
+                    {
+                        if (Math.Abs(moValue - fValue) >= 1)
+                            Application.DoEvents();
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    catch
+                    { }
                     moValue = (int)fValue;
-
-                    Application.DoEvents();
-
                     Invalidate();
                 }
             }
@@ -516,5 +531,5 @@ namespace HZH_Controls.Controls
                 Scroll(this, new EventArgs());
         }
 
-    } 
+    }
 }
