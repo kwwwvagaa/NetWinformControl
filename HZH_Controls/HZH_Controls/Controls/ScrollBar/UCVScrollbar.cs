@@ -487,19 +487,18 @@ namespace HZH_Controls.Controls
 
                     float fPerc = (float)moThumbTop / (float)nPixelRange;
                     float fValue = fPerc * (Maximum - (nNewThumbTop == nPixelRange ? 0 : LargeChange));
-                    try
+                    if (Math.Abs(moValue - fValue) < 1)
                     {
-                        if (Math.Abs(moValue - fValue) >= 1)
-                            Application.DoEvents();
-                        else
-                        {
-                            return;
-                        }
+                        return;
                     }
-                    catch
-                    { }
                     moValue = (int)fValue;
                     Invalidate();
+
+                    try
+                    {
+                        Application.DoEvents();
+                    }
+                    catch { }
                 }
             }
         }

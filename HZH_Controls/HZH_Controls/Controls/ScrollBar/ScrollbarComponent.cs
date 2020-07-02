@@ -488,18 +488,6 @@ namespace HZH_Controls.Controls
                     }
                     blnHasVScrollbar = _height > dgv.Height;
                 }
-
-                //var dgvt = dgv.GetType();
-                //var piH = dgvt.GetProperty("HorizontalScrollBar", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
-                //var objH = piH.GetValue(dgv, null);
-                //ScrollBar h = (ScrollBar)objH;
-                //blnHasHScrollbar = h.Visible;
-                //var piV = dgvt.GetProperty("VerticalScrollBar", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
-                //var objV = piV.GetValue(dgv, null);
-                //ScrollBar v = (ScrollBar)objV;
-                //blnHasVScrollbar = v.Visible;
-
-
                 barV.Maximum = dgv.Rows.Count;
                 barV.Visible = blnHasVScrollbar;
                 barV.Value = dgv.FirstDisplayedScrollingRowIndex; ;
