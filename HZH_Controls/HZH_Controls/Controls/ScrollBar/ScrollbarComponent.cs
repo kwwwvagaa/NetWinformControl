@@ -56,6 +56,14 @@ namespace HZH_Controls.Controls
             {
                 return true;
             }
+            //else if (extendee is ListView)
+            //{
+            //    return true;
+            //}
+            else if (extendee is DataGridView)
+            {
+                return true;
+            }
             return false;
         }
 
@@ -99,8 +107,22 @@ namespace HZH_Controls.Controls
             {
                 ListBox lb = (ListBox)control;
                 lb.DataSourceChanged += Lb_DataSourceChanged;
-                lb.SelectedIndexChanged += Lb_SelectedIndexChanged;
+                lb.SelectedIndexChanged += Lb_SelectedIndexChanged;                
             }
+            //else if (control is ListView)
+            //{
+            //    ListView lv = (ListView)control;
+
+            //}
+            else if (control is DataGridView)
+            {
+                DataGridView dgv = (DataGridView)control;
+                dgv.DataSourceChanged += dgv_DataSourceChanged;
+                dgv.RowsAdded += dgv_RowsAdded;
+                dgv.RowsRemoved += dgv_RowsRemoved;
+                dgv.Scroll += dgv_Scroll;
+            }
+
             control.VisibleChanged += control_VisibleChanged;
             control.SizeChanged += control_SizeChanged;
             control.LocationChanged += control_LocationChanged;
@@ -109,6 +131,44 @@ namespace HZH_Controls.Controls
             control_SizeChanged(control, null);
         }
 
+        void dgv_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.NewValue == e.OldValue)
+                return;
+            DataGridView dgv = (DataGridView)sender;
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+            {
+                if (m_lstHCache.ContainsKey(dgv))
+                {
+                    m_lstHCache[dgv].Value = e.NewValue;
+                }
+            }
+            else if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
+            {
+                if (m_lstVCache.ContainsKey(dgv))
+                {
+                    m_lstVCache[dgv].Value = e.NewValue;
+                }
+            }
+        }
+
+        void dgv_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            Control control = sender as Control;
+            control_SizeChanged(control, null);
+        }
+
+        void dgv_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            Control control = sender as Control;
+            control_SizeChanged(control, null);
+        }
+
+        void dgv_DataSourceChanged(object sender, EventArgs e)
+        {
+            Control control = sender as Control;
+            control_SizeChanged(control, null);
+        }
 
         private void Lb_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -199,6 +259,40 @@ namespace HZH_Controls.Controls
                         blnHasHScrollbar = true;
                     }
                     else
+                    {
+                        blnHasVScrollbar = false;
+                        blnHasHScrollbar = false;
+                    }
+                }
+                else if (control is DataGridView)
+                {
+                    var dgv = (DataGridView)control;
+                    if (dgv.ScrollBars == ScrollBars.Both || dgv.ScrollBars == ScrollBars.Vertical)
+                    {
+                        int _height = dgv.RowTemplate.Height * dgv.Rows.Count;
+                        if (dgv.ColumnHeadersVisible)
+                        {
+                            _height += dgv.ColumnHeadersHeight;
+                        }
+                        blnHasVScrollbar = _height > dgv.Height;
+                    }
+                    if (dgv.ScrollBars == ScrollBars.Both || dgv.ScrollBars == ScrollBars.Horizontal)
+                    {
+                        int _width = 0;
+                        foreach (DataGridViewColumn com in dgv.Columns)
+                        {
+                            _width += com.Width;
+                        }
+                        if (dgv.RowHeadersVisible)
+                        {
+                            _width += dgv.RowHeadersWidth;
+                        }
+                        blnHasHScrollbar = _width > dgv.Width;
+                    }
+                }
+                else if (control is ListView)
+                {
+                    if (!((ListView)control).Scrollable)
                     {
                         blnHasVScrollbar = false;
                         blnHasHScrollbar = false;
@@ -360,7 +454,7 @@ namespace HZH_Controls.Controls
                 var lb = control as ListBox;
                 if (intoV.ScrollMax <= 1)
                 {
-                    var v= lb.ItemHeight*lb.Items.Count-lb.Height;
+                    var v = lb.ItemHeight * lb.Items.Count - lb.Height;
                     if (v > 0)
                         barV.Maximum = v;
                     else
@@ -372,6 +466,43 @@ namespace HZH_Controls.Controls
                 }
                 barV.Visible = intoV.ScrollMax > 0 && intoV.nMax > 0 && intoV.nPage > 0;
                 barV.Value = intoV.nPos * lb.ItemHeight;
+                barV.BringToFront();
+            }
+            else if (control is ListView)
+            {
+                barV.Maximum = intoV.ScrollMax;
+                barV.Visible = intoV.ScrollMax > 0 && intoV.nMax > 0 && intoV.nPage > 0;
+                barV.Value = intoV.nPos;
+                barV.BringToFront();
+            }
+            else if (control is DataGridView)
+            {
+                bool blnHasVScrollbar = false;
+                var dgv = (DataGridView)control;
+                if (dgv.ScrollBars == ScrollBars.Both || dgv.ScrollBars == ScrollBars.Vertical)
+                {
+                    int _height = dgv.RowTemplate.Height * dgv.Rows.Count;
+                    if (dgv.ColumnHeadersVisible)
+                    {
+                        _height += dgv.ColumnHeadersHeight;
+                    }
+                    blnHasVScrollbar = _height > dgv.Height;
+                }
+
+                //var dgvt = dgv.GetType();
+                //var piH = dgvt.GetProperty("HorizontalScrollBar", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+                //var objH = piH.GetValue(dgv, null);
+                //ScrollBar h = (ScrollBar)objH;
+                //blnHasHScrollbar = h.Visible;
+                //var piV = dgvt.GetProperty("VerticalScrollBar", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+                //var objV = piV.GetValue(dgv, null);
+                //ScrollBar v = (ScrollBar)objV;
+                //blnHasVScrollbar = v.Visible;
+
+
+                barV.Maximum = dgv.Rows.Count;
+                barV.Visible = blnHasVScrollbar;
+                barV.Value = dgv.FirstDisplayedScrollingRowIndex; ;
                 barV.BringToFront();
             }
         }
@@ -429,10 +560,40 @@ namespace HZH_Controls.Controls
             }
             else if (control is ListBox)
             {
-                var lb = control as ListBox;                
+                var lb = control as ListBox;
                 barH.Maximum = intoH.ScrollMax * lb.ItemHeight;
                 barH.Visible = intoH.ScrollMax > 0 && intoH.nMax > 0 && intoH.nPage > 0;
                 barH.Value = intoH.nPos * lb.ItemHeight;
+                barH.BringToFront();
+            }
+            else if (control is ListView)
+            {
+                barH.Maximum = intoH.ScrollMax;
+                barH.Visible = intoH.ScrollMax > 0 && intoH.nMax > 0 && intoH.nPage > 0;
+                barH.Value = intoH.nPos;
+                barH.BringToFront();
+            }
+            else if (control is DataGridView)
+            {
+                bool blnHasHScrollbar = false;
+                var dgv = (DataGridView)control;
+                int _width = 0;
+                if (dgv.ScrollBars == ScrollBars.Both || dgv.ScrollBars == ScrollBars.Horizontal)
+                {
+                    foreach (DataGridViewColumn com in dgv.Columns)
+                    {
+                        _width += com.Width;
+                    }
+                    if (dgv.RowHeadersVisible)
+                    {
+                        _width += dgv.RowHeadersWidth;
+                    }
+                    blnHasHScrollbar = _width > dgv.Width;
+                }
+                if (blnHasHScrollbar)
+                    barH.Maximum = _width - dgv.Width;
+                barH.Visible = blnHasHScrollbar;
+                barH.Value = dgv.FirstDisplayedScrollingColumnHiddenWidth;
                 barH.BringToFront();
             }
         }
@@ -464,6 +625,40 @@ namespace HZH_Controls.Controls
                     blnHasHScrollbar = true;
                 }
                 else
+                {
+                    blnHasVScrollbar = false;
+                    blnHasHScrollbar = false;
+                }
+            }
+            else if (control is DataGridView)
+            {
+                var dgv = (DataGridView)control;
+                if (dgv.ScrollBars == ScrollBars.Both || dgv.ScrollBars == ScrollBars.Vertical)
+                {
+                    int _height = dgv.RowTemplate.Height * dgv.Rows.Count;
+                    if (dgv.ColumnHeadersVisible)
+                    {
+                        _height += dgv.ColumnHeadersHeight;
+                    }
+                    blnHasVScrollbar = _height > dgv.Height;
+                }
+                if (dgv.ScrollBars == ScrollBars.Both || dgv.ScrollBars == ScrollBars.Horizontal)
+                {
+                    int _width = 0;
+                    foreach (DataGridViewColumn com in dgv.Columns)
+                    {
+                        _width += com.Width;
+                    }
+                    if (dgv.RowHeadersVisible)
+                    {
+                        _width += dgv.RowHeadersWidth;
+                    }
+                    blnHasHScrollbar = _width > dgv.Width;
+                }
+            }
+            else if (control is ListView)
+            {
+                if (!((ListView)control).Scrollable)
                 {
                     blnHasVScrollbar = false;
                     blnHasHScrollbar = false;
@@ -560,6 +755,16 @@ namespace HZH_Controls.Controls
                 {
                     ControlHelper.SetVScrollValue(c.Handle, bar.Value / ((c as ListBox).ItemHeight));
                 }
+                else if (c is ListView)
+                {
+                    ControlHelper.SetVScrollValue(c.Handle, bar.Value);
+                }
+                else if (c is DataGridView)
+                {
+                    var dgv = (DataGridView)c;
+                    if(bar.Value>0)
+                    dgv.FirstDisplayedScrollingRowIndex = bar.Value - 1;
+                }
             }
         }
 
@@ -592,6 +797,15 @@ namespace HZH_Controls.Controls
                 else if (c is ListBox)
                 {
                     ControlHelper.SetHScrollValue(c.Handle, bar.Value);
+                }
+                else if (c is ListView)
+                {
+                    ControlHelper.SetHScrollValue(c.Handle, bar.Value);
+                }
+                else if (c is DataGridView)
+                {
+                    var dgv = (DataGridView)c;
+                    dgv.HorizontalScrollingOffset = bar.Value;
                 }
             }
         }
