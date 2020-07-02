@@ -323,7 +323,7 @@
             this.uchScrollbar6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.uchScrollbar6.RectWidth = 1;
             this.uchScrollbar6.Size = new System.Drawing.Size(375, 22);
-            this.uchScrollbar6.SmallChange = 1;
+            this.uchScrollbar6.SmallChange = 5;
             this.uchScrollbar6.TabIndex = 5;
             this.uchScrollbar6.ThumbColor = System.Drawing.Color.White;
             this.uchScrollbar6.Value = 0;
@@ -346,7 +346,7 @@
             this.uchScrollbar4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.uchScrollbar4.RectWidth = 1;
             this.uchScrollbar4.Size = new System.Drawing.Size(375, 22);
-            this.uchScrollbar4.SmallChange = 1;
+            this.uchScrollbar4.SmallChange = 5;
             this.uchScrollbar4.TabIndex = 5;
             this.uchScrollbar4.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.uchScrollbar4.Value = 0;
@@ -369,7 +369,7 @@
             this.uchScrollbar5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.uchScrollbar5.RectWidth = 1;
             this.uchScrollbar5.Size = new System.Drawing.Size(375, 18);
-            this.uchScrollbar5.SmallChange = 1;
+            this.uchScrollbar5.SmallChange = 5;
             this.uchScrollbar5.TabIndex = 5;
             this.uchScrollbar5.ThumbColor = System.Drawing.Color.White;
             this.uchScrollbar5.Value = 0;
@@ -392,7 +392,7 @@
             this.uchScrollbar3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.uchScrollbar3.RectWidth = 1;
             this.uchScrollbar3.Size = new System.Drawing.Size(375, 18);
-            this.uchScrollbar3.SmallChange = 1;
+            this.uchScrollbar3.SmallChange = 5;
             this.uchScrollbar3.TabIndex = 5;
             this.uchScrollbar3.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.uchScrollbar3.Value = 0;
@@ -415,7 +415,7 @@
             this.uchScrollbar2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.uchScrollbar2.RectWidth = 1;
             this.uchScrollbar2.Size = new System.Drawing.Size(375, 22);
-            this.uchScrollbar2.SmallChange = 1;
+            this.uchScrollbar2.SmallChange = 5;
             this.uchScrollbar2.TabIndex = 5;
             this.uchScrollbar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.uchScrollbar2.Value = 0;
@@ -438,7 +438,7 @@
             this.uchScrollbar1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.uchScrollbar1.RectWidth = 1;
             this.uchScrollbar1.Size = new System.Drawing.Size(375, 18);
-            this.uchScrollbar1.SmallChange = 1;
+            this.uchScrollbar1.SmallChange = 5;
             this.uchScrollbar1.TabIndex = 5;
             this.uchScrollbar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.uchScrollbar1.Value = 0;
@@ -461,7 +461,7 @@
             this.ucvScrollbar6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ucvScrollbar6.RectWidth = 1;
             this.ucvScrollbar6.Size = new System.Drawing.Size(23, 343);
-            this.ucvScrollbar6.SmallChange = 1;
+            this.ucvScrollbar6.SmallChange = 5;
             this.ucvScrollbar6.TabIndex = 4;
             this.ucvScrollbar6.ThumbColor = System.Drawing.Color.White;
             this.ucvScrollbar6.Value = 0;
@@ -484,7 +484,7 @@
             this.ucvScrollbar5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ucvScrollbar5.RectWidth = 1;
             this.ucvScrollbar5.Size = new System.Drawing.Size(18, 343);
-            this.ucvScrollbar5.SmallChange = 1;
+            this.ucvScrollbar5.SmallChange = 5;
             this.ucvScrollbar5.TabIndex = 4;
             this.ucvScrollbar5.ThumbColor = System.Drawing.Color.White;
             this.ucvScrollbar5.Value = 0;
@@ -507,7 +507,7 @@
             this.ucvScrollbar4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ucvScrollbar4.RectWidth = 1;
             this.ucvScrollbar4.Size = new System.Drawing.Size(23, 343);
-            this.ucvScrollbar4.SmallChange = 1;
+            this.ucvScrollbar4.SmallChange = 5;
             this.ucvScrollbar4.TabIndex = 4;
             this.ucvScrollbar4.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucvScrollbar4.Value = 0;
@@ -530,7 +530,7 @@
             this.ucvScrollbar3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ucvScrollbar3.RectWidth = 1;
             this.ucvScrollbar3.Size = new System.Drawing.Size(18, 343);
-            this.ucvScrollbar3.SmallChange = 1;
+            this.ucvScrollbar3.SmallChange = 5;
             this.ucvScrollbar3.TabIndex = 4;
             this.ucvScrollbar3.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.ucvScrollbar3.Value = 0;
@@ -553,7 +553,7 @@
             this.ucvScrollbar2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ucvScrollbar2.RectWidth = 1;
             this.ucvScrollbar2.Size = new System.Drawing.Size(24, 343);
-            this.ucvScrollbar2.SmallChange = 1;
+            this.ucvScrollbar2.SmallChange = 5;
             this.ucvScrollbar2.TabIndex = 4;
             this.ucvScrollbar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.ucvScrollbar2.Value = 0;
@@ -576,7 +576,7 @@
             this.ucvScrollbar1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ucvScrollbar1.RectWidth = 1;
             this.ucvScrollbar1.Size = new System.Drawing.Size(18, 343);
-            this.ucvScrollbar1.SmallChange = 1;
+            this.ucvScrollbar1.SmallChange = 5;
             this.ucvScrollbar1.TabIndex = 4;
             this.ucvScrollbar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.ucvScrollbar1.Value = 0;

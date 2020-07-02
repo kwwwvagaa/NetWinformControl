@@ -248,9 +248,7 @@
     <Compile Include="UC\UCTestLiveCharts\Cartesian\DataPagination\DataPaginationExample.Designer.cs">
       <DependentUpon>DataPaginationExample.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCTestLiveCharts\Cartesian\DateTime\DateTimeExample.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="UC\UCTestLiveCharts\Cartesian\DateTime\DateTimeExample.cs" />
     <Compile Include="UC\UCTestLiveCharts\Cartesian\DateTime\DateTimeExample.Designer.cs">
       <DependentUpon>DateTimeExample.cs</DependentUpon>
     </Compile>
@@ -501,6 +499,12 @@
     </Compile>
     <Compile Include="UC\UCTestNavigationMenuOfficeItem.Designer.cs">
       <DependentUpon>UCTestNavigationMenuOfficeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTestNewBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestNewBar.Designer.cs">
+      <DependentUpon>UCTestNewBar.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UCTestPage.cs">
       <SubType>UserControl</SubType>
@@ -883,6 +887,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestNavigationMenuOfficeItem.resx">
       <DependentUpon>UCTestNavigationMenuOfficeItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestNewBar.resx">
+      <DependentUpon>UCTestNewBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestPage.resx">
       <DependentUpon>UCTestPage.cs</DependentUpon>

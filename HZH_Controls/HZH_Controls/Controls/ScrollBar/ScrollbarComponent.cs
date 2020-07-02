@@ -50,10 +50,11 @@ namespace HZH_Controls.Controls
             }
             else if (extendee is RichTextBox)
             {
-                // RichTextBox control = (RichTextBox)extendee;
-
                 return true;
-
+            }
+            else if (extendee is ListBox)
+            {
+                return true;
             }
             return false;
         }
@@ -72,14 +73,6 @@ namespace HZH_Controls.Controls
             if (!blnUserCustomScrollbar)
                 return;
 
-            control_SizeChanged(control, null);
-            control.VisibleChanged += control_VisibleChanged;
-            control.SizeChanged += control_SizeChanged;
-            control.LocationChanged += control_LocationChanged;
-            control.Disposed += control_Disposed;
-
-            control.MouseWheel += Control_MouseWheel;
-
             if (control is TreeView)
             {
                 TreeView tv = (TreeView)control;
@@ -95,7 +88,38 @@ namespace HZH_Controls.Controls
                 txt.TextChanged += txt_TextChanged;
                 txt.KeyDown += txt_KeyDown;
             }
-           
+            else if (control is RichTextBox)
+            {
+                RichTextBox txt = (RichTextBox)control;
+                //txt.MouseWheel += txt_MouseWheel;
+                txt.TextChanged += txt_TextChanged;
+                txt.KeyDown += txt_KeyDown;
+            }
+            else if (control is ListBox)
+            {
+                ListBox lb = (ListBox)control;
+                lb.DataSourceChanged += Lb_DataSourceChanged;
+                lb.SelectedIndexChanged += Lb_SelectedIndexChanged;
+            }
+            control.VisibleChanged += control_VisibleChanged;
+            control.SizeChanged += control_SizeChanged;
+            control.LocationChanged += control_LocationChanged;
+            control.Disposed += control_Disposed;
+            control.MouseWheel += Control_MouseWheel;
+            control_SizeChanged(control, null);
+        }
+
+
+        private void Lb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Control c = sender as Control;
+            SetVMaxNum(c);
+        }
+
+        private void Lb_DataSourceChanged(object sender, EventArgs e)
+        {
+            Control c = sender as Control;
+            control_SizeChanged(c, null);
         }
 
         private void Control_MouseWheel(object sender, MouseEventArgs e)
@@ -208,6 +232,14 @@ namespace HZH_Controls.Controls
                     }
                     else
                     {
+                        if (blnHasHScrollbar)
+                        {
+                            m_lstVCache[control].Height = control.Height - m_lstVCache[control].Width;
+                        }
+                        else
+                        {
+                            m_lstVCache[control].Height = control.Height;
+                        }
                         SetVMaxNum(control);
                     }
                 }
@@ -248,6 +280,14 @@ namespace HZH_Controls.Controls
                     }
                     else
                     {
+                        if (blnHasHScrollbar)
+                        {
+                            m_lstHCache[control].Width = control.Width - m_lstHCache[control].Height;
+                        }
+                        else
+                        {
+                            m_lstHCache[control].Width = control.Width;
+                        }
                         SetHMaxNum(control);
                     }
                 }
@@ -272,7 +312,7 @@ namespace HZH_Controls.Controls
                 return;
             var intoV = ControlHelper.GetVScrollBarInfo(control.Handle);
             UCVScrollbar barV = m_lstVCache[control];
-            if (control is ScrollableControl )
+            if (control is ScrollableControl)
             {
                 barV.Maximum = intoV.ScrollMax;
                 barV.Visible = intoV.ScrollMax > 0 && intoV.nMax > 0 && intoV.nPage > 0;
@@ -315,6 +355,25 @@ namespace HZH_Controls.Controls
                 barV.Value = intoV.nPos;
                 barV.BringToFront();
             }
+            else if (control is ListBox)
+            {
+                var lb = control as ListBox;
+                if (intoV.ScrollMax <= 1)
+                {
+                    var v= lb.ItemHeight*lb.Items.Count-lb.Height;
+                    if (v > 0)
+                        barV.Maximum = v;
+                    else
+                        barV.Maximum = intoV.ScrollMax * lb.ItemHeight;
+                }
+                else
+                {
+                    barV.Maximum = intoV.ScrollMax * lb.ItemHeight;
+                }
+                barV.Visible = intoV.ScrollMax > 0 && intoV.nMax > 0 && intoV.nPage > 0;
+                barV.Value = intoV.nPos * lb.ItemHeight;
+                barV.BringToFront();
+            }
         }
         private void SetHMaxNum(Control control)
         {
@@ -342,7 +401,7 @@ namespace HZH_Controls.Controls
                 //barH.Maximum = GetTreeNodeMaxX(control as TreeView);
                 //barH.Value = (control as TreeView).AutoScrollOffset.X;
             }
-            else if (control is TextBoxBase)
+            else if (control is TextBox)
             {
                 TextBox txt = (TextBox)control;
                 barH.Maximum = intoH.ScrollMax;
@@ -366,6 +425,14 @@ namespace HZH_Controls.Controls
                 barH.Maximum = intoH.ScrollMax;
                 barH.Visible = blnHasHScrollbar;
                 barH.Value = intoH.nPos;
+                barH.BringToFront();
+            }
+            else if (control is ListBox)
+            {
+                var lb = control as ListBox;                
+                barH.Maximum = intoH.ScrollMax * lb.ItemHeight;
+                barH.Visible = intoH.ScrollMax > 0 && intoH.nMax > 0 && intoH.nPage > 0;
+                barH.Value = intoH.nPos * lb.ItemHeight;
                 barH.BringToFront();
             }
         }
@@ -415,6 +482,7 @@ namespace HZH_Controls.Controls
                     {
                         m_lstVCache[control].Height = control.Height;
                     }
+                    SetVMaxNum(control);
                 }
 
                 if (m_lstHCache.ContainsKey(control))
@@ -428,6 +496,7 @@ namespace HZH_Controls.Controls
                     //{
                     m_lstHCache[control].Width = control.Width;
                     //}
+                    SetHMaxNum(control);
                 }
             }
         }
@@ -450,7 +519,10 @@ namespace HZH_Controls.Controls
             {
                 m_lstHCache[control].Visible = control.Visible;
             }
-
+            if (control.Visible)
+            {
+                control_SizeChanged(control, null);
+            }
         }
 
         private const int HSCROLL = 0x100000;
@@ -482,7 +554,11 @@ namespace HZH_Controls.Controls
                 }
                 else if (c is RichTextBox)
                 {
-                    ControlHelper.SetVScrollValue(c.Handle, bar.Value );
+                    ControlHelper.SetVScrollValue(c.Handle, bar.Value);
+                }
+                else if (c is ListBox)
+                {
+                    ControlHelper.SetVScrollValue(c.Handle, bar.Value / ((c as ListBox).ItemHeight));
                 }
             }
         }
@@ -513,6 +589,10 @@ namespace HZH_Controls.Controls
                 {
                     ControlHelper.SetHScrollValue(c.Handle, bar.Value);
                 }
+                else if (c is ListBox)
+                {
+                    ControlHelper.SetHScrollValue(c.Handle, bar.Value);
+                }
             }
         }
 
@@ -527,124 +607,21 @@ namespace HZH_Controls.Controls
             control_SizeChanged(sender as Control, null);
         }
 
-        // void tv_AfterSelect(object sender, TreeViewEventArgs e)
-        // {
-        //     TreeView tv = (TreeView)sender;
-        //     if (m_lstVCache.ContainsKey(tv))
-        //     {
-        //         m_lstVCache[tv].Value = tv.Nodes.Count > 0 ? Math.Abs(tv.Nodes[0].Bounds.Top) : 0;
-        //     }
-        // }
-
-        ///// <summary>
-        ///// Sets the TreeView scroll location.
-        ///// </summary>
-        ///// <param name="tv">The tv.</param>
-        ///// <param name="tns">The TNS.</param>
-        ///// <param name="intY">The int y.</param>
-        ///// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        //private bool SetTreeViewVScrollLocation(TreeView tv, TreeNodeCollection tns, int intY)
-        //{
-        //    for (int i = 0; i < tns.Count; i++)
-        //    {
-        //        if (intY >= tns[i].Bounds.Top - tv.Nodes[0].Bounds.Top - 3 && intY <= tns[i].Bounds.Bottom - tv.Nodes[0].Bounds.Top + 3)
-        //        {
-        //            tns[i].EnsureVisible();
-        //            return true;
-        //        }
-        //        else if (tns[i].IsExpanded && tns[i].Nodes.Count > 0)
-        //        {
-        //            bool bln = SetTreeViewVScrollLocation(tv, tns[i].Nodes, intY);
-        //            if (bln)
-        //                return true;
-        //        }
-        //    }
-        //    return false;
-        //}
         #endregion
 
         #region TextBox处理    English:TextBox Processing
 
         void txt_TextChanged(object sender, EventArgs e)
         {
-            TextBox txt = sender as TextBox;
+            Control txt = sender as Control;
             control_SizeChanged(txt, null);
-
-            //if (m_lstVCache.ContainsKey(txt))
-            //{
-            //    using (var g = txt.CreateGraphics())
-            //    {
-            //        var size = g.MeasureString(txt.Text.Substring(0, txt.SelectionStart), txt.Font);
-            //        m_lstVCache[txt].Value = (int)size.Height;
-            //    }
-            //}
         }
-        //private void SetTextBoxVScrollLocation(TextBox txt, int intY)
-        //{
-        //    using (var g = txt.CreateGraphics())
-        //    {
-        //        for (int i = 0; i < txt.Lines.Length; i++)
-        //        {
-        //            string str = string.Join("\n", txt.Lines.Take(i + 1));
-        //            var size = g.MeasureString(str, txt.Font);
-        //            if (size.Height >= intY)
-        //            {
-        //                txt.SelectionStart = str.Length;
-        //                txt.ScrollToCaret();
-        //                return;
-        //            }
-        //        }
-        //    }
-        //}
 
         void txt_KeyDown(object sender, KeyEventArgs e)
         {
-            TextBox txt = sender as TextBox;
+            Control txt = sender as Control;
             control_SizeChanged(txt, null);
-            //if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
-            //{
-            //    TextBox txt = (TextBox)sender;
-            //    if (m_lstVCache.ContainsKey(txt))
-            //    {
-            //        using (var g = txt.CreateGraphics())
-            //        {
-            //            var size = g.MeasureString(txt.Text.Substring(0, txt.SelectionStart), txt.Font);
-            //            m_lstVCache[txt].Value = (int)size.Height;
-            //        }
-            //    }
-            //}
         }
-
-        //void txt_MouseWheel(object sender, MouseEventArgs e)
-        //{
-        //    TextBox txt = (TextBox)sender;
-        //    if (m_lstVCache.ContainsKey(txt))
-        //    {
-        //        using (var g = txt.CreateGraphics())
-        //        {
-        //            StringBuilder str = new StringBuilder();
-        //            for (int i = 0; i < System.Windows.Forms.SystemInformation.MouseWheelScrollLines; i++)
-        //            {
-        //                str.AppendLine("A");
-        //            }
-        //            var height = (int)g.MeasureString(str.ToString(), txt.Font).Height;
-        //            if (e.Delta < 0)
-        //            {
-        //                if (height + m_lstVCache[txt].Value > m_lstVCache[txt].Maximum)
-        //                    m_lstVCache[txt].Value = m_lstVCache[txt].Maximum;
-        //                else
-        //                    m_lstVCache[txt].Value += height;
-        //            }
-        //            else
-        //            {
-        //                if (m_lstVCache[txt].Value - height < 0)
-        //                    m_lstVCache[txt].Value = 0;
-        //                else
-        //                    m_lstVCache[txt].Value -= height;
-        //            }
-        //        }
-        //    }
-        //}
         #endregion
     }
 }
