@@ -16,6 +16,21 @@ namespace Test.UC
         public UCTestScrollbar()
         {
             InitializeComponent();
+            DataTable dt = new DataTable();
+            for (int i = 0; i < 10; i++)
+            {
+                dt.Columns.Add(i.ToString());
+            }
+            for (int i = 0; i < 50; i++)
+            {
+                DataRow dr = dt.NewRow();
+                for (int j = 0; j < 10; j++)
+                {
+                    dr[j] =i+""+ j;
+                }
+                dt.Rows.Add(dr);
+            }
+            this.dataGridView1.DataSource = dt;
         }
 
         private void UCTestScrollbar_Load(object sender, EventArgs e)

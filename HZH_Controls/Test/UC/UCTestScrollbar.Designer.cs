@@ -92,8 +92,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.uchScrollbar6 = new HZH_Controls.Controls.UCHScrollbar();
             this.uchScrollbar4 = new HZH_Controls.Controls.UCHScrollbar();
             this.uchScrollbar5 = new HZH_Controls.Controls.UCHScrollbar();
@@ -108,6 +110,7 @@
             this.ucvScrollbar1 = new HZH_Controls.Controls.UCVScrollbar();
             this.scrollbarComponent1 = new HZH_Controls.Controls.ScrollbarComponent(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -273,7 +276,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 15F);
+            this.textBox1.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox1.Location = new System.Drawing.Point(504, 22);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -283,6 +286,61 @@
             this.textBox1.Text = "Textbox滚动条\r\n支持上下键，滑轮，文字改变\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n1\r\n2\r\n3\r\n4\r\n5\r\n67\r\n8\r\n9\r\n1\r" +
     "\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n7\r\n";
             this.scrollbarComponent1.SetUserCustomScrollbar(this.textBox1, true);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Items.AddRange(new object[] {
+            "listbox滚动条",
+            "1",
+            "2",
+            "3",
+            "3",
+            "4",
+            "45",
+            "35",
+            "23",
+            "452542",
+            "54",
+            "23",
+            "45",
+            "345",
+            "236",
+            "425",
+            "46",
+            "2545",
+            "43",
+            "534",
+            "5",
+            "235",
+            "5445",
+            "2324"});
+            this.listBox1.Location = new System.Drawing.Point(965, 22);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(109, 220);
+            this.listBox1.TabIndex = 7;
+            this.scrollbarComponent1.SetUserCustomScrollbar(this.listBox1, true);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(920, 268);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(277, 211);
+            this.dataGridView1.TabIndex = 8;
+            this.scrollbarComponent1.SetUserCustomScrollbar(this.dataGridView1, true);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(899, 12);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Panel滚动条aaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccccccccccccccccc" +
+    "cdddddddddddddddddddddddeeeeeeeeeeeeeeeeeefffffffffffffffffffffff";
             // 
             // panel2
             // 
@@ -294,16 +352,6 @@
             this.panel2.Size = new System.Drawing.Size(246, 93);
             this.panel2.TabIndex = 6;
             this.scrollbarComponent1.SetUserCustomScrollbar(this.panel2, true);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(899, 12);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Panel滚动条aaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccccccccccccccccc" +
-    "cdddddddddddddddddddddddeeeeeeeeeeeeeeeeeefffffffffffffffffffffff";
             // 
             // uchScrollbar6
             // 
@@ -585,6 +633,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.uchScrollbar6);
             this.Controls.Add(this.uchScrollbar4);
@@ -606,6 +656,7 @@
             this.Load += new System.EventHandler(this.UCTestScrollbar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -615,7 +666,6 @@
 
         #endregion
 
-        private HZH_Controls.Controls.ScrollbarComponent scrollbarComponent1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TreeView treeView1;
@@ -632,7 +682,10 @@
         private HZH_Controls.Controls.UCHScrollbar uchScrollbar4;
         private HZH_Controls.Controls.UCHScrollbar uchScrollbar5;
         private HZH_Controls.Controls.UCHScrollbar uchScrollbar6;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
+        private HZH_Controls.Controls.ScrollbarComponent scrollbarComponent1;
     }
 }
