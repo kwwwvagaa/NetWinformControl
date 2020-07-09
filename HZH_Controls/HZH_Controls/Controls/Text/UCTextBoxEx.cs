@@ -107,6 +107,19 @@ namespace HZH_Controls.Controls
                 btnKeybord.Visible = value;
             }
         }
+       
+        [Description("获取或设置一个字符，该值指示文本框中的密码。")]
+        public char PasswordChar
+        {
+            get
+            {
+                return txtInput.PasswordChar;
+            }
+            set
+            {
+                txtInput.PasswordChar = value;
+            }
+        } 
         /// <summary>
         /// 获取或设置控件显示的文字的字体。
         /// </summary>

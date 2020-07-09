@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.tvMenu = new HZH_Controls.Controls.TreeViewEx();
             this.ucSplitLine_V1 = new HZH_Controls.Controls.UCSplitLine_V();
             this.panControl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.scrollbarComponent1 = new HZH_Controls.Controls.ScrollbarComponent(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +71,7 @@
             this.tvMenu.TabIndex = 7;
             this.tvMenu.TipFont = new System.Drawing.Font("Arial Unicode MS", 12F);
             this.tvMenu.TipImage = ((System.Drawing.Image)(resources.GetObject("tvMenu.TipImage")));
+            this.scrollbarComponent1.SetUserCustomScrollbar(this.tvMenu, true);
             this.tvMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterSelect);
             // 
             // ucSplitLine_V1
@@ -89,6 +92,7 @@
             this.panControl.Name = "panControl";
             this.panControl.Size = new System.Drawing.Size(815, 669);
             this.panControl.TabIndex = 9;
+            this.scrollbarComponent1.SetUserCustomScrollbar(this.panControl, true);
             // 
             // panel1
             // 
@@ -146,5 +150,6 @@
         private System.Windows.Forms.Panel panControl;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private HZH_Controls.Controls.ScrollbarComponent scrollbarComponent1;
     }
 }

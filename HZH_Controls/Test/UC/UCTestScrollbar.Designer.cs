@@ -29,65 +29,65 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("节点0");
-            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("节点1");
-            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("节点2");
-            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("节点3");
-            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("节点4");
-            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("节点5");
-            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("节点6");
-            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("节点7");
-            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("节点8");
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("节点9");
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("节点10");
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("节点11");
-            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("节点0", new System.Windows.Forms.TreeNode[] {
-            treeNode48,
-            treeNode49,
-            treeNode50,
-            treeNode51,
-            treeNode52,
-            treeNode53,
-            treeNode54,
-            treeNode55,
-            treeNode56,
-            treeNode57,
-            treeNode58,
-            treeNode59});
-            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("节点1");
-            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("节点2");
-            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("节点3");
-            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("节点4");
-            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("节点5");
-            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("节点6");
-            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("节点7");
-            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("节点8");
-            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("节点9");
-            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("节点10");
-            System.Windows.Forms.TreeNode treeNode71 = new System.Windows.Forms.TreeNode("节点11");
-            System.Windows.Forms.TreeNode treeNode72 = new System.Windows.Forms.TreeNode("节点12");
-            System.Windows.Forms.TreeNode treeNode73 = new System.Windows.Forms.TreeNode("节点13");
-            System.Windows.Forms.TreeNode treeNode74 = new System.Windows.Forms.TreeNode("节点14");
-            System.Windows.Forms.TreeNode treeNode75 = new System.Windows.Forms.TreeNode("节点15");
-            System.Windows.Forms.TreeNode treeNode76 = new System.Windows.Forms.TreeNode("节点16");
-            System.Windows.Forms.TreeNode treeNode77 = new System.Windows.Forms.TreeNode("节点17");
-            System.Windows.Forms.TreeNode treeNode78 = new System.Windows.Forms.TreeNode("节点18");
-            System.Windows.Forms.TreeNode treeNode79 = new System.Windows.Forms.TreeNode("节点19");
-            System.Windows.Forms.TreeNode treeNode80 = new System.Windows.Forms.TreeNode("节点20");
-            System.Windows.Forms.TreeNode treeNode81 = new System.Windows.Forms.TreeNode("节点21");
-            System.Windows.Forms.TreeNode treeNode82 = new System.Windows.Forms.TreeNode("节点22");
-            System.Windows.Forms.TreeNode treeNode83 = new System.Windows.Forms.TreeNode("节点23");
-            System.Windows.Forms.TreeNode treeNode84 = new System.Windows.Forms.TreeNode("节点24");
-            System.Windows.Forms.TreeNode treeNode85 = new System.Windows.Forms.TreeNode("节点25");
-            System.Windows.Forms.TreeNode treeNode86 = new System.Windows.Forms.TreeNode("节点26");
-            System.Windows.Forms.TreeNode treeNode87 = new System.Windows.Forms.TreeNode("节点27");
-            System.Windows.Forms.TreeNode treeNode88 = new System.Windows.Forms.TreeNode("节点28");
-            System.Windows.Forms.TreeNode treeNode89 = new System.Windows.Forms.TreeNode("节点29");
-            System.Windows.Forms.TreeNode treeNode90 = new System.Windows.Forms.TreeNode("节点30");
-            System.Windows.Forms.TreeNode treeNode91 = new System.Windows.Forms.TreeNode("节点31");
-            System.Windows.Forms.TreeNode treeNode92 = new System.Windows.Forms.TreeNode("节点32");
-            System.Windows.Forms.TreeNode treeNode93 = new System.Windows.Forms.TreeNode("节点33");
-            System.Windows.Forms.TreeNode treeNode94 = new System.Windows.Forms.TreeNode("节点34");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("节点0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("节点1");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("节点2");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("节点3");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("节点4");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("节点5");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("节点6");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("节点7");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("节点8");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("节点9");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("节点10");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("节点11");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("节点0", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12});
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("节点1");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("节点2");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("节点3");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("节点4");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("节点5");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("节点6");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("节点7");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("节点8");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("节点9");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("节点10");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("节点11");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("节点12");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("节点13");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("节点14");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("节点15");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("节点16");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("节点17");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("节点18");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("节点19");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("节点20");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("节点21");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("节点22");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("节点23");
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("节点24");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("节点25");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("节点26");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("节点27");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("节点28");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("节点29");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("节点30");
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("节点31");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("节点32");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("节点33");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("节点34");
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -109,9 +109,12 @@
             this.ucvScrollbar2 = new HZH_Controls.Controls.UCVScrollbar();
             this.ucvScrollbar1 = new HZH_Controls.Controls.UCVScrollbar();
             this.scrollbarComponent1 = new HZH_Controls.Controls.ScrollbarComponent(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -140,136 +143,136 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(309, 22);
             this.treeView1.Name = "treeView1";
-            treeNode48.Name = "节点0";
-            treeNode48.Text = "节点0";
-            treeNode49.Name = "节点1";
-            treeNode49.Text = "节点1";
-            treeNode50.Name = "节点2";
-            treeNode50.Text = "节点2";
-            treeNode51.Name = "节点3";
-            treeNode51.Text = "节点3";
-            treeNode52.Name = "节点4";
-            treeNode52.Text = "节点4";
-            treeNode53.Name = "节点5";
-            treeNode53.Text = "节点5";
-            treeNode54.Name = "节点6";
-            treeNode54.Text = "节点6";
-            treeNode55.Name = "节点7";
-            treeNode55.Text = "节点7";
-            treeNode56.Name = "节点8";
-            treeNode56.Text = "节点8";
-            treeNode57.Name = "节点9";
-            treeNode57.Text = "节点9";
-            treeNode58.Name = "节点10";
-            treeNode58.Text = "节点10";
-            treeNode59.Name = "节点11";
-            treeNode59.Text = "节点11";
-            treeNode60.Name = "节点0";
-            treeNode60.Text = "节点0";
-            treeNode61.Name = "节点1";
-            treeNode61.Text = "节点1";
-            treeNode62.Name = "节点2";
-            treeNode62.Text = "节点2";
-            treeNode63.Name = "节点3";
-            treeNode63.Text = "节点3";
-            treeNode64.Name = "节点4";
-            treeNode64.Text = "节点4";
-            treeNode65.Name = "节点5";
-            treeNode65.Text = "节点5";
-            treeNode66.Name = "节点6";
-            treeNode66.Text = "节点6";
-            treeNode67.Name = "节点7";
-            treeNode67.Text = "节点7";
-            treeNode68.Name = "节点8";
-            treeNode68.Text = "节点8";
-            treeNode69.Name = "节点9";
-            treeNode69.Text = "节点9";
-            treeNode70.Name = "节点10";
-            treeNode70.Text = "节点10";
-            treeNode71.Name = "节点11";
-            treeNode71.Text = "节点11";
-            treeNode72.Name = "节点12";
-            treeNode72.Text = "节点12";
-            treeNode73.Name = "节点13";
-            treeNode73.Text = "节点13";
-            treeNode74.Name = "节点14";
-            treeNode74.Text = "节点14";
-            treeNode75.Name = "节点15";
-            treeNode75.Text = "节点15";
-            treeNode76.Name = "节点16";
-            treeNode76.Text = "节点16";
-            treeNode77.Name = "节点17";
-            treeNode77.Text = "节点17";
-            treeNode78.Name = "节点18";
-            treeNode78.Text = "节点18";
-            treeNode79.Name = "节点19";
-            treeNode79.Text = "节点19";
-            treeNode80.Name = "节点20";
-            treeNode80.Text = "节点20";
-            treeNode81.Name = "节点21";
-            treeNode81.Text = "节点21";
-            treeNode82.Name = "节点22";
-            treeNode82.Text = "节点22";
-            treeNode83.Name = "节点23";
-            treeNode83.Text = "节点23";
-            treeNode84.Name = "节点24";
-            treeNode84.Text = "节点24";
-            treeNode85.Name = "节点25";
-            treeNode85.Text = "节点25";
-            treeNode86.Name = "节点26";
-            treeNode86.Text = "节点26";
-            treeNode87.Name = "节点27";
-            treeNode87.Text = "节点27";
-            treeNode88.Name = "节点28";
-            treeNode88.Text = "节点28";
-            treeNode89.Name = "节点29";
-            treeNode89.Text = "节点29";
-            treeNode90.Name = "节点30";
-            treeNode90.Text = "节点30";
-            treeNode91.Name = "节点31";
-            treeNode91.Text = "节点31";
-            treeNode92.Name = "节点32";
-            treeNode92.Text = "节点32";
-            treeNode93.Name = "节点33";
-            treeNode93.Text = "节点33";
-            treeNode94.Name = "节点34";
-            treeNode94.Text = "节点34";
+            treeNode1.Name = "节点0";
+            treeNode1.Text = "节点0";
+            treeNode2.Name = "节点1";
+            treeNode2.Text = "节点1";
+            treeNode3.Name = "节点2";
+            treeNode3.Text = "节点2";
+            treeNode4.Name = "节点3";
+            treeNode4.Text = "节点3";
+            treeNode5.Name = "节点4";
+            treeNode5.Text = "节点4";
+            treeNode6.Name = "节点5";
+            treeNode6.Text = "节点5";
+            treeNode7.Name = "节点6";
+            treeNode7.Text = "节点6";
+            treeNode8.Name = "节点7";
+            treeNode8.Text = "节点7";
+            treeNode9.Name = "节点8";
+            treeNode9.Text = "节点8";
+            treeNode10.Name = "节点9";
+            treeNode10.Text = "节点9";
+            treeNode11.Name = "节点10";
+            treeNode11.Text = "节点10";
+            treeNode12.Name = "节点11";
+            treeNode12.Text = "节点11";
+            treeNode13.Name = "节点0";
+            treeNode13.Text = "节点0";
+            treeNode14.Name = "节点1";
+            treeNode14.Text = "节点1";
+            treeNode15.Name = "节点2";
+            treeNode15.Text = "节点2";
+            treeNode16.Name = "节点3";
+            treeNode16.Text = "节点3";
+            treeNode17.Name = "节点4";
+            treeNode17.Text = "节点4";
+            treeNode18.Name = "节点5";
+            treeNode18.Text = "节点5";
+            treeNode19.Name = "节点6";
+            treeNode19.Text = "节点6";
+            treeNode20.Name = "节点7";
+            treeNode20.Text = "节点7";
+            treeNode21.Name = "节点8";
+            treeNode21.Text = "节点8";
+            treeNode22.Name = "节点9";
+            treeNode22.Text = "节点9";
+            treeNode23.Name = "节点10";
+            treeNode23.Text = "节点10";
+            treeNode24.Name = "节点11";
+            treeNode24.Text = "节点11";
+            treeNode25.Name = "节点12";
+            treeNode25.Text = "节点12";
+            treeNode26.Name = "节点13";
+            treeNode26.Text = "节点13";
+            treeNode27.Name = "节点14";
+            treeNode27.Text = "节点14";
+            treeNode28.Name = "节点15";
+            treeNode28.Text = "节点15";
+            treeNode29.Name = "节点16";
+            treeNode29.Text = "节点16";
+            treeNode30.Name = "节点17";
+            treeNode30.Text = "节点17";
+            treeNode31.Name = "节点18";
+            treeNode31.Text = "节点18";
+            treeNode32.Name = "节点19";
+            treeNode32.Text = "节点19";
+            treeNode33.Name = "节点20";
+            treeNode33.Text = "节点20";
+            treeNode34.Name = "节点21";
+            treeNode34.Text = "节点21";
+            treeNode35.Name = "节点22";
+            treeNode35.Text = "节点22";
+            treeNode36.Name = "节点23";
+            treeNode36.Text = "节点23";
+            treeNode37.Name = "节点24";
+            treeNode37.Text = "节点24";
+            treeNode38.Name = "节点25";
+            treeNode38.Text = "节点25";
+            treeNode39.Name = "节点26";
+            treeNode39.Text = "节点26";
+            treeNode40.Name = "节点27";
+            treeNode40.Text = "节点27";
+            treeNode41.Name = "节点28";
+            treeNode41.Text = "节点28";
+            treeNode42.Name = "节点29";
+            treeNode42.Text = "节点29";
+            treeNode43.Name = "节点30";
+            treeNode43.Text = "节点30";
+            treeNode44.Name = "节点31";
+            treeNode44.Text = "节点31";
+            treeNode45.Name = "节点32";
+            treeNode45.Text = "节点32";
+            treeNode46.Name = "节点33";
+            treeNode46.Text = "节点33";
+            treeNode47.Name = "节点34";
+            treeNode47.Text = "节点34";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode60,
-            treeNode61,
-            treeNode62,
-            treeNode63,
-            treeNode64,
-            treeNode65,
-            treeNode66,
-            treeNode67,
-            treeNode68,
-            treeNode69,
-            treeNode70,
-            treeNode71,
-            treeNode72,
-            treeNode73,
-            treeNode74,
-            treeNode75,
-            treeNode76,
-            treeNode77,
-            treeNode78,
-            treeNode79,
-            treeNode80,
-            treeNode81,
-            treeNode82,
-            treeNode83,
-            treeNode84,
-            treeNode85,
-            treeNode86,
-            treeNode87,
-            treeNode88,
-            treeNode89,
-            treeNode90,
-            treeNode91,
-            treeNode92,
-            treeNode93,
-            treeNode94});
+            treeNode13,
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18,
+            treeNode19,
+            treeNode20,
+            treeNode21,
+            treeNode22,
+            treeNode23,
+            treeNode24,
+            treeNode25,
+            treeNode26,
+            treeNode27,
+            treeNode28,
+            treeNode29,
+            treeNode30,
+            treeNode31,
+            treeNode32,
+            treeNode33,
+            treeNode34,
+            treeNode35,
+            treeNode36,
+            treeNode37,
+            treeNode38,
+            treeNode39,
+            treeNode40,
+            treeNode41,
+            treeNode42,
+            treeNode43,
+            treeNode44,
+            treeNode45,
+            treeNode46,
+            treeNode47});
             this.treeView1.Size = new System.Drawing.Size(159, 97);
             this.treeView1.TabIndex = 2;
             this.scrollbarComponent1.SetUserCustomScrollbar(this.treeView1, true);
@@ -629,10 +632,31 @@
             this.ucvScrollbar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.ucvScrollbar1.Value = 0;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.label3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1093, 19);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(159, 223);
+            this.flowLayoutPanel1.TabIndex = 9;
+            this.scrollbarComponent1.SetUserCustomScrollbar(this.flowLayoutPanel1, true);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 432);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "panel滚动条\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n1\r\n2\r\n3\r\n4\r\n5\r\n67\r\n8\r\n9\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7" +
+    "\r\n8\r\n9\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n7";
+            // 
             // UCTestScrollbar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
@@ -652,13 +676,15 @@
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.panel1);
             this.Name = "UCTestScrollbar";
-            this.Size = new System.Drawing.Size(1228, 569);
+            this.Size = new System.Drawing.Size(1296, 569);
             this.Load += new System.EventHandler(this.UCTestScrollbar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,5 +713,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private HZH_Controls.Controls.ScrollbarComponent scrollbarComponent1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label3;
     }
 }
