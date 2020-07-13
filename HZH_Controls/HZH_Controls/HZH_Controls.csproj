@@ -68,6 +68,18 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\DataGridView\IDataGridViewCustomCell.cs" />
+    <Compile Include="Controls\DateTime\UCDatePickerExt2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DateTime\UCDatePickerExt2.Designer.cs">
+      <DependentUpon>UCDatePickerExt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateTime\UCDateTimeSelectPan2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DateTime\UCDateTimeSelectPan2.Designer.cs">
+      <DependentUpon>UCDateTimeSelectPan2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FactoryControls\DialAisle\UCDialAisle.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -687,8 +699,14 @@
     <EmbeddedResource Include="Controls\DateTime\UCDatePickerExt.resx">
       <DependentUpon>UCDatePickerExt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DateTime\UCDatePickerExt2.resx">
+      <DependentUpon>UCDatePickerExt2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DateTime\UCDateTimeSelectPan.resx">
       <DependentUpon>UCDateTimeSelectPan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DateTime\UCDateTimeSelectPan2.resx">
+      <DependentUpon>UCDateTimeSelectPan2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DateTime\UCTimePanel.resx">
       <DependentUpon>UCTimePanel.cs</DependentUpon>

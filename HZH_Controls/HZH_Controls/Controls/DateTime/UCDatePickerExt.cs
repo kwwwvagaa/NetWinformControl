@@ -170,7 +170,7 @@ namespace HZH_Controls.Controls
 
         void UCDatePickerExt_SizeChanged(object sender, EventArgs e)
         {
-            var a = this.Height;
+           
         }
 
         /// <summary>

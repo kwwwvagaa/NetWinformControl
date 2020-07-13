@@ -102,6 +102,7 @@ namespace HZH_Controls.Controls
             this.btnMinute.ConerRadius = 5;
             this.btnMinute.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinute.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMinute.EnabledMouseEffect = false;
             this.btnMinute.FillColor = System.Drawing.Color.White;
             this.btnMinute.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnMinute.IsRadius = true;
@@ -115,6 +116,7 @@ namespace HZH_Controls.Controls
             this.btnMinute.Size = new System.Drawing.Size(80, 31);
             this.btnMinute.TabIndex = 1;
             this.btnMinute.TabStop = false;
+            this.btnMinute.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnMinute.TipsText = "";
             this.btnMinute.BtnClick += new System.EventHandler(this.btnTime_BtnClick);
             // 
@@ -136,6 +138,7 @@ namespace HZH_Controls.Controls
             this.btnHour.ConerRadius = 5;
             this.btnHour.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHour.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnHour.EnabledMouseEffect = false;
             this.btnHour.FillColor = System.Drawing.Color.White;
             this.btnHour.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnHour.IsRadius = true;
@@ -149,6 +152,7 @@ namespace HZH_Controls.Controls
             this.btnHour.Size = new System.Drawing.Size(80, 31);
             this.btnHour.TabIndex = 1;
             this.btnHour.TabStop = false;
+            this.btnHour.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnHour.TipsText = "";
             this.btnHour.BtnClick += new System.EventHandler(this.btnTime_BtnClick);
             // 
@@ -170,6 +174,7 @@ namespace HZH_Controls.Controls
             this.btnDay.ConerRadius = 5;
             this.btnDay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDay.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDay.EnabledMouseEffect = false;
             this.btnDay.FillColor = System.Drawing.Color.White;
             this.btnDay.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnDay.IsRadius = true;
@@ -183,6 +188,7 @@ namespace HZH_Controls.Controls
             this.btnDay.Size = new System.Drawing.Size(80, 31);
             this.btnDay.TabIndex = 1;
             this.btnDay.TabStop = false;
+            this.btnDay.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnDay.TipsText = "";
             this.btnDay.BtnClick += new System.EventHandler(this.btnTime_BtnClick);
             // 
@@ -204,6 +210,7 @@ namespace HZH_Controls.Controls
             this.btnMonth.ConerRadius = 5;
             this.btnMonth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMonth.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMonth.EnabledMouseEffect = false;
             this.btnMonth.FillColor = System.Drawing.Color.White;
             this.btnMonth.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnMonth.IsRadius = true;
@@ -217,6 +224,7 @@ namespace HZH_Controls.Controls
             this.btnMonth.Size = new System.Drawing.Size(80, 31);
             this.btnMonth.TabIndex = 1;
             this.btnMonth.TabStop = false;
+            this.btnMonth.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnMonth.TipsText = "";
             this.btnMonth.BtnClick += new System.EventHandler(this.btnTime_BtnClick);
             // 
@@ -238,6 +246,7 @@ namespace HZH_Controls.Controls
             this.btnYear.ConerRadius = 5;
             this.btnYear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYear.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnYear.EnabledMouseEffect = false;
             this.btnYear.FillColor = System.Drawing.Color.White;
             this.btnYear.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnYear.IsRadius = true;
@@ -251,6 +260,7 @@ namespace HZH_Controls.Controls
             this.btnYear.Size = new System.Drawing.Size(80, 31);
             this.btnYear.TabIndex = 1;
             this.btnYear.TabStop = false;
+            this.btnYear.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnYear.TipsText = "";
             this.btnYear.BtnClick += new System.EventHandler(this.btnTime_BtnClick);
             // 
@@ -274,6 +284,7 @@ namespace HZH_Controls.Controls
             this.btnCancel.BtnText = "取   消";
             this.btnCancel.ConerRadius = 5;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.EnabledMouseEffect = false;
             this.btnCancel.FillColor = System.Drawing.Color.White;
             this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnCancel.IsRadius = true;
@@ -287,6 +298,7 @@ namespace HZH_Controls.Controls
             this.btnCancel.Size = new System.Drawing.Size(129, 36);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.TabStop = false;
+            this.btnCancel.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnCancel.TipsText = "";
             this.btnCancel.BtnClick += new System.EventHandler(this.btnCancel_BtnClick);
             // 
@@ -300,6 +312,7 @@ namespace HZH_Controls.Controls
             this.btnOk.BtnText = "确  定";
             this.btnOk.ConerRadius = 5;
             this.btnOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOk.EnabledMouseEffect = false;
             this.btnOk.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.btnOk.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnOk.IsRadius = true;
@@ -313,6 +326,7 @@ namespace HZH_Controls.Controls
             this.btnOk.Size = new System.Drawing.Size(129, 36);
             this.btnOk.TabIndex = 1;
             this.btnOk.TabStop = false;
+            this.btnOk.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.btnOk.TipsText = "";
             this.btnOk.BtnClick += new System.EventHandler(this.btnOk_BtnClick);
             // 
@@ -333,6 +347,7 @@ namespace HZH_Controls.Controls
             this.panTime.Column = 0;
             this.panTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panTime.FirstEvent = false;
+            this.panTime.IsShowBorder = false;
             this.panTime.Location = new System.Drawing.Point(48, 0);
             this.panTime.Name = "panTime";
             this.panTime.Row = 0;
