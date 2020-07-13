@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
+    [ToolboxItem(false)]
     public partial class UCDateTimeSelectPan2 : UserControl
     {
         /// <summary>
