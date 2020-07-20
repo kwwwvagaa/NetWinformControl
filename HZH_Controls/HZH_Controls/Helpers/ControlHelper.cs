@@ -1562,5 +1562,18 @@ namespace HZH_Controls
 
             return Color.FromArgb(color.A, (int)red, (int)green, (int)blue);
         }
+        
+        
+        /// <summary>
+        /// 相对于屏幕显示的位置
+        /// </summary>
+        /// <param name="screen">窗体需要显示的屏幕</param>
+        /// <param name="left">left</param>
+        /// <param name="top">top</param>
+        /// <returns></returns>
+        public static Point GetScreenLocation(Screen screen,int left,int top)
+        {
+            return new Point(screen.Bounds.Left + left, screen.Bounds.Top + top);
+        }
     }
 }
