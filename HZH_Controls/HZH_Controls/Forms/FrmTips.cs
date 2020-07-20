@@ -246,7 +246,15 @@ namespace HZH_Controls.Forms
                                  {
                                      p.ShowAlign
                                  };
-                Size size = Screen.PrimaryScreen.Bounds.Size;
+                Screen currentScreen = Screen.PrimaryScreen;
+                
+                var firstTip = FrmTips.m_lstTips.FirstOrDefault();
+                if (firstTip != null && firstTip.Owner != null)
+                {
+                    currentScreen = Screen.FromControl(firstTip.Owner);
+                }
+
+                Size size = currentScreen.Bounds.Size;
                 foreach (var item in enumerable)
                 {
                     List<FrmTips> list = FrmTips.m_lstTips.FindAll((FrmTips p) => p.ShowAlign == item.Key.ShowAlign);
@@ -255,36 +263,36 @@ namespace HZH_Controls.Forms
                         FrmTips frmTips = list[i];
                         if (frmTips.InvokeRequired)
                         {
-                            frmTips.BeginInvoke(new MethodInvoker(delegate()
+                            frmTips.BeginInvoke(new MethodInvoker(delegate ()
                             {
                                 switch (item.Key.ShowAlign)
                                 {
                                     case ContentAlignment.BottomCenter:
-                                        frmTips.Location = new Point((size.Width - frmTips.Width) / 2, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
+                                        frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, (size.Width - frmTips.Width) / 2, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
                                         break;
                                     case ContentAlignment.BottomLeft:
-                                        frmTips.Location = new Point(10, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
+                                        frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, 10, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
                                         break;
                                     case ContentAlignment.BottomRight:
-                                        frmTips.Location = new Point(size.Width - frmTips.Width - 10, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
+                                        frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, size.Width - frmTips.Width - 10, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
                                         break;
                                     case ContentAlignment.MiddleCenter:
-                                        frmTips.Location = new Point((size.Width - frmTips.Width) / 2, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
+                                        frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, (size.Width - frmTips.Width) / 2, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
                                         break;
                                     case ContentAlignment.MiddleLeft:
-                                        frmTips.Location = new Point(10, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
+                                        frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, 10, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
                                         break;
                                     case ContentAlignment.MiddleRight:
-                                        frmTips.Location = new Point(size.Width - frmTips.Width - 10, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
+                                        frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, size.Width - frmTips.Width - 10, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
                                         break;
                                     case ContentAlignment.TopCenter:
-                                        frmTips.Location = new Point((size.Width - frmTips.Width) / 2, 10 + (i + 1) * (frmTips.Height + 10));
+                                        frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, (size.Width - frmTips.Width) / 2, 10 + (i + 1) * (frmTips.Height + 10));
                                         break;
                                     case ContentAlignment.TopLeft:
-                                        frmTips.Location = new Point(10, 10 + (i + 1) * (frmTips.Height + 10));
+                                        frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, 10, 10 + (i + 1) * (frmTips.Height + 10));
                                         break;
                                     case ContentAlignment.TopRight:
-                                        frmTips.Location = new Point(size.Width - frmTips.Width - 10, 10 + (i + 1) * (frmTips.Height + 10));
+                                        frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, size.Width - frmTips.Width - 10, 10 + (i + 1) * (frmTips.Height + 10));
                                         break;
                                     default:
                                         break;
@@ -296,31 +304,31 @@ namespace HZH_Controls.Forms
                             switch (item.Key.ShowAlign)
                             {
                                 case ContentAlignment.BottomCenter:
-                                    frmTips.Location = new Point((size.Width - frmTips.Width) / 2, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
+                                    frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, (size.Width - frmTips.Width) / 2, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
                                     break;
                                 case ContentAlignment.BottomLeft:
-                                    frmTips.Location = new Point(10, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
+                                    frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, 10, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
                                     break;
                                 case ContentAlignment.BottomRight:
-                                    frmTips.Location = new Point(size.Width - frmTips.Width - 10, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
+                                    frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, size.Width - frmTips.Width - 10, size.Height - 100 - (i + 1) * (frmTips.Height + 10));
                                     break;
                                 case ContentAlignment.MiddleCenter:
-                                    frmTips.Location = new Point((size.Width - frmTips.Width) / 2, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
+                                    frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, (size.Width - frmTips.Width) / 2, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
                                     break;
                                 case ContentAlignment.MiddleLeft:
-                                    frmTips.Location = new Point(10, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
+                                    frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, 10, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
                                     break;
                                 case ContentAlignment.MiddleRight:
-                                    frmTips.Location = new Point(size.Width - frmTips.Width - 10, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
+                                    frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, size.Width - frmTips.Width - 10, size.Height - (size.Height - list.Count * (frmTips.Height + 10)) / 2 - (i + 1) * (frmTips.Height + 10));
                                     break;
                                 case ContentAlignment.TopCenter:
-                                    frmTips.Location = new Point((size.Width - frmTips.Width) / 2, 10 + (i + 1) * (frmTips.Height + 10));
+                                    frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, (size.Width - frmTips.Width) / 2, 10 + (i + 1) * (frmTips.Height + 10));
                                     break;
                                 case ContentAlignment.TopLeft:
-                                    frmTips.Location = new Point(10, 10 + (i + 1) * (frmTips.Height + 10));
+                                    frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, 10, 10 + (i + 1) * (frmTips.Height + 10));
                                     break;
                                 case ContentAlignment.TopRight:
-                                    frmTips.Location = new Point(size.Width - frmTips.Width - 10, 10 + (i + 1) * (frmTips.Height + 10));
+                                    frmTips.Location = ControlHelper.GetScreenLocation(currentScreen, size.Width - frmTips.Width - 10, 10 + (i + 1) * (frmTips.Height + 10));
                                     break;
                                 default:
                                     break;
