@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : HZH_Controls
 // Created          : 08-08-2019
 //
@@ -245,10 +245,11 @@ namespace HZH_Controls.Forms
             timer1.Enabled = this.Visible;
             if (this.Visible)
             {
+                Screen currentScreen = Screen.FromControl(m_parentControl);
                 Point p = m_parentControl.Parent.PointToScreen(m_parentControl.Location);
                 int intX = 0;
                 int intY = 0;
-                if (p.Y + m_parentControl.Height + m_size.Height > Screen.PrimaryScreen.Bounds.Height)
+                if (p.Y + m_parentControl.Height + m_size.Height > currentScreen.Bounds.Height)
                 {
                     intY = p.Y - m_size.Height - 1;
                     blnDown = false;
@@ -259,9 +260,10 @@ namespace HZH_Controls.Forms
                     blnDown = true;
                 }
 
-                if (p.X + m_size.Width > Screen.PrimaryScreen.Bounds.Width)
+
+                if (p.X + m_size.Width > currentScreen.Bounds.Width)
                 {
-                    intX = Screen.PrimaryScreen.Bounds.Width - m_size.Width;
+                    intX = currentScreen.Bounds.Width - m_size.Width;
 
                 }
                 else
@@ -273,7 +275,7 @@ namespace HZH_Controls.Forms
                     intX += m_deviation.Value.X;
                     intY += m_deviation.Value.Y;
                 }
-                this.Location = new Point(intX, intY);
+                this.Location = ControlHelper.GetScreenLocation(currentScreen, intX, intY);
             }
         }
 
