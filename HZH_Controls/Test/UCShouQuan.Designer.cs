@@ -158,7 +158,7 @@
             this.ucPanelTitle2.RectWidth = 1;
             this.ucPanelTitle2.Size = new System.Drawing.Size(682, 359);
             this.ucPanelTitle2.TabIndex = 2;
-            this.ucPanelTitle2.Title = "捐赠/授权付款方式";
+            this.ucPanelTitle2.Title = "请作者喝杯可乐？";
             // 
             // pictureBox1
             // 
