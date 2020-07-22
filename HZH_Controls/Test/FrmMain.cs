@@ -25,7 +25,8 @@ namespace Test
             try
             {
                 ControlHelper.FreezeControl(this, true);
-                TreeNode tnForm = new TreeNode("  窗体");
+                this.tvMenu.Nodes.Add("关于授权");
+                TreeNode tnForm = new TreeNode("  窗体");               
                 tnForm.Nodes.Add("提示窗体");
                 tnForm.Nodes.Add("多输入窗体");
                 tnForm.Nodes.Add("气泡提示窗体");
@@ -97,6 +98,7 @@ namespace Test
                 tnFactory.Nodes.Add("多通道转盘");
                 tnFactory.Nodes.Add("转盘");
                 this.tvMenu.Nodes.Add(tnFactory);
+                AddControl(new UCShouQuan());
             }
             finally
             {
@@ -111,6 +113,9 @@ namespace Test
             this.Title = "HZHControls控件库DEMO--" + strName;
             switch (strName)
             {
+                case "关于授权":
+                    AddControl(new UCShouQuan());
+                    break;
                 #region 窗体    English:forms
                 case "提示窗体":
                     if (FrmDialog.ShowDialog(this, "是否再显示一个没有取消按钮的提示框？", "模式窗体测试", true) == System.Windows.Forms.DialogResult.OK)

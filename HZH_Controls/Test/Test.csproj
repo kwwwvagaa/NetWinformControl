@@ -103,6 +103,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestGridModel.cs" />
+    <Compile Include="UCShouQuan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCShouQuan.Designer.cs">
+      <DependentUpon>UCShouQuan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestArrow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -684,6 +690,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCShouQuan.resx">
+      <DependentUpon>UCShouQuan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestArrow.resx">
       <DependentUpon>UCTestArrow.cs</DependentUpon>
     </EmbeddedResource>
