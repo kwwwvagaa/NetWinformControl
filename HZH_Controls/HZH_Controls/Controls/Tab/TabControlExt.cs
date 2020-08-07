@@ -495,6 +495,7 @@ namespace HZH_Controls.Controls
         /// <param name="m">一个 Windows 消息对象。</param>
         protected override void WndProc(ref Message m)
         {
+			 base.WndProc(ref m);
             if (m.Msg == 0x0201) // WM_LBUTTONDOWN
             {
                 if (!DesignMode)
@@ -522,7 +523,7 @@ namespace HZH_Controls.Controls
                 }
             }
 
-            base.WndProc(ref m);
+           
         }
         /// <summary>
         /// 在调度键盘或输入消息之前，在消息循环内对它们进行预处理。
