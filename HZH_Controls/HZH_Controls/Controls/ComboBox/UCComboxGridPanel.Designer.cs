@@ -98,7 +98,6 @@ namespace HZH_Controls.Controls
             // 
             // ucDataGridView1
             // 
-            this.ucDataGridView1.AutoScroll = true;
             this.ucDataGridView1.BackColor = System.Drawing.Color.White;
             this.ucDataGridView1.Columns = null;
             this.ucDataGridView1.DataSource = null;
@@ -111,6 +110,7 @@ namespace HZH_Controls.Controls
             this.ucDataGridView1.IsShowHead = true;
             this.ucDataGridView1.Location = new System.Drawing.Point(5, 5);
             this.ucDataGridView1.Name = "ucDataGridView1";
+            this.ucDataGridView1.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
             this.ucDataGridView1.RowHeight = 30;
             this.ucDataGridView1.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
             this.ucDataGridView1.Size = new System.Drawing.Size(427, 223);
@@ -125,6 +125,7 @@ namespace HZH_Controls.Controls
             this.m_page.Name = "m_page";
             this.m_page.PageCount = 0;
             this.m_page.PageIndex = 1;
+            this.m_page.PageModel = HZH_Controls.Controls.PageModel.Soure;
             this.m_page.PageSize = 10;
             this.m_page.Size = new System.Drawing.Size(427, 33);
             this.m_page.StartIndex = 0;

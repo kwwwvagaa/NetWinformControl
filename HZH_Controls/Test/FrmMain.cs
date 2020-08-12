@@ -26,7 +26,7 @@ namespace Test
             {
                 ControlHelper.FreezeControl(this, true);
                 this.tvMenu.Nodes.Add("关于授权");
-                TreeNode tnForm = new TreeNode("  窗体");               
+                TreeNode tnForm = new TreeNode("  窗体");
                 tnForm.Nodes.Add("提示窗体");
                 tnForm.Nodes.Add("多输入窗体");
                 tnForm.Nodes.Add("气泡提示窗体");
@@ -96,7 +96,9 @@ namespace Test
                 tnFactory.Nodes.Add("温度计");
                 tnFactory.Nodes.Add("转子");
                 tnFactory.Nodes.Add("多通道转盘");
+                tnFactory.Nodes.Add("椭圆转盘");
                 tnFactory.Nodes.Add("转盘");
+                tnFactory.Nodes.Add("注射器");
                 this.tvMenu.Nodes.Add(tnFactory);
                 AddControl(new UCShouQuan());
             }
@@ -359,8 +361,14 @@ namespace Test
                 case "多通道转盘":
                     AddControl(new UC.UCTestDialAisle());
                     break;
+                case "椭圆转盘":
+                    AddControl(new UC.UCTestUCEllipseDialAisle());
+                    break;
                 case "转盘":
                     AddControl(new UC.UCTestTurntable());
+                    break;
+                case "注射器":
+                    AddControl(new UC.UCTestSyringe());
                     break;
                 #endregion
             }

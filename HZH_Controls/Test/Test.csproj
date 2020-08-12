@@ -254,7 +254,9 @@
     <Compile Include="UC\UCTestLiveCharts\Cartesian\DataPagination\DataPaginationExample.Designer.cs">
       <DependentUpon>DataPaginationExample.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCTestLiveCharts\Cartesian\DateTime\DateTimeExample.cs" />
+    <Compile Include="UC\UCTestLiveCharts\Cartesian\DateTime\DateTimeExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UC\UCTestLiveCharts\Cartesian\DateTime\DateTimeExample.Designer.cs">
       <DependentUpon>DateTimeExample.cs</DependentUpon>
     </Compile>
@@ -584,6 +586,12 @@
     <Compile Include="UC\UCTestStep.Designer.cs">
       <DependentUpon>UCTestStep.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestSyringe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestSyringe.Designer.cs">
+      <DependentUpon>UCTestSyringe.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -637,6 +645,12 @@
     </Compile>
     <Compile Include="UC\UCTestTurntable.Designer.cs">
       <DependentUpon>UCTestTurntable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTestUCEllipseDialAisle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestUCEllipseDialAisle.Designer.cs">
+      <DependentUpon>UCTestUCEllipseDialAisle.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UCTestValve.cs">
       <SubType>UserControl</SubType>
@@ -930,6 +944,9 @@
     <EmbeddedResource Include="UC\UCTestStep.resx">
       <DependentUpon>UCTestStep.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestSyringe.resx">
+      <DependentUpon>UCTestSyringe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestTab.resx">
       <DependentUpon>UCTestTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -956,6 +973,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestTurntable.resx">
       <DependentUpon>UCTestTurntable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestUCEllipseDialAisle.resx">
+      <DependentUpon>UCTestUCEllipseDialAisle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestValve.resx">
       <DependentUpon>UCTestValve.cs</DependentUpon>
