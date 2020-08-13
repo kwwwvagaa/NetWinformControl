@@ -149,6 +149,9 @@
     <Compile Include="Controls\Panel\UCPanelQuote.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\Process\UCProcessRoll.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\Sampling\UCSampling.cs">
       <SubType>UserControl</SubType>
     </Compile>
