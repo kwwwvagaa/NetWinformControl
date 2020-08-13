@@ -24,7 +24,15 @@ namespace HZH_Controls.Controls
         public bool Roll
         {
             get { return timer.Enabled; }
-            set { timer.Enabled = value; }
+            set
+            {
+                timer.Enabled = value;
+                if (!value)
+                {
+                    workRect = new Rectangle(-this.Width / 3, 0, this.Width / 3, this.Height);
+                    Invalidate();
+                }
+            }
         }
 
         [Description("滚动间隔时间"), Category("自定义")]
@@ -65,11 +73,11 @@ namespace HZH_Controls.Controls
             base.OnPaint(e);
             var g = e.Graphics;
             g.SetGDIHigh();
-            var r1 = new RectangleF(new Point(workRect.Left - 1, workRect.Top), new Size(workRect.Width / 3+1, workRect.Height));
+            var r1 = new RectangleF(new Point(workRect.Left - 1, workRect.Top), new Size(workRect.Width / 3 + 1, workRect.Height));
             var r2 = new RectangleF(new Point(workRect.Right - workRect.Width / 3, workRect.Top), new Size(workRect.Width / 3, workRect.Height));
             LinearGradientBrush lgb1 = new LinearGradientBrush(r1, Color.FromArgb(0, rollColor), rollColor, 0f);
             LinearGradientBrush lgb2 = new LinearGradientBrush(r2, rollColor, Color.FromArgb(0, rollColor), 0f);
-            g.FillRectangle(lgb1, new Rectangle(new Point(workRect.Left , workRect.Top), new Size(workRect.Width / 3, workRect.Height)));
+            g.FillRectangle(lgb1, new Rectangle(new Point(workRect.Left, workRect.Top), new Size(workRect.Width / 3, workRect.Height)));
             g.FillRectangle(new SolidBrush(rollColor), new RectangleF(workRect.Left + workRect.Width / 3 - 1, workRect.Top, workRect.Width / 3 + 3, workRect.Height));
             g.FillRectangle(lgb2, r2);
         }

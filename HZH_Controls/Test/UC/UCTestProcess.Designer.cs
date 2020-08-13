@@ -55,7 +55,7 @@
             // ucProcessRoll1
             // 
             this.ucProcessRoll1.BackColor = System.Drawing.Color.White;
-            this.ucProcessRoll1.Location = new System.Drawing.Point(34, 658);
+            this.ucProcessRoll1.Location = new System.Drawing.Point(34, 653);
             this.ucProcessRoll1.Name = "ucProcessRoll1";
             this.ucProcessRoll1.Roll = true;
             this.ucProcessRoll1.RollColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
