@@ -121,6 +121,12 @@
     <Compile Include="UC\UCTestBlower.Designer.cs">
       <DependentUpon>UCTestBlower.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCTestCalendarNotes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTestCalendarNotes.Designer.cs">
+      <DependentUpon>UCTestCalendarNotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCTestColors.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -715,6 +721,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestBtns.resx">
       <DependentUpon>UCTestBtns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTestCalendarNotes.resx">
+      <DependentUpon>UCTestCalendarNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCTestColors.resx">
       <DependentUpon>UCTestColors.cs</DependentUpon>

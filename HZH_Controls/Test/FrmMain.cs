@@ -74,6 +74,7 @@ namespace Test
                 tnControl.Nodes.Add("穿梭框");
                 tnControl.Nodes.Add("引用区块");
                 tnControl.Nodes.Add("右键菜单");
+                tnControl.Nodes.Add("日历备忘录");
                 this.tvMenu.Nodes.Add(tnControl);
 
                 TreeNode tnCharts = new TreeNode("  图表");
@@ -306,6 +307,9 @@ namespace Test
                     break;
                 case "右键菜单":
                     AddControl(new UC.UCTestContextMenu());
+                    break;
+                case "日历备忘录":
+                    AddControl(new UC.UCTestCalendarNotes());
                     break;
                 #endregion
 

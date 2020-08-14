@@ -68,6 +68,18 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\DataGridView\IDataGridViewCustomCell.cs" />
+    <Compile Include="Controls\DateTime\UCCalendarNotes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DateTime\UCCalendarNotes.Designer.cs">
+      <DependentUpon>UCCalendarNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateTime\UCCalendarNotes_Week.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DateTime\UCCalendarNotes_Week.Designer.cs">
+      <DependentUpon>UCCalendarNotes_Week.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DateTime\UCDatePickerExt2.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -716,6 +728,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DataGridView\UCDataGridViewTreeRow.resx">
       <DependentUpon>UCDataGridViewTreeRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DateTime\UCCalendarNotes.resx">
+      <DependentUpon>UCCalendarNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DateTime\UCCalendarNotes_Week.resx">
+      <DependentUpon>UCCalendarNotes_Week.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DateTime\UCDatePickerExt.resx">
       <DependentUpon>UCDatePickerExt.cs</DependentUpon>
