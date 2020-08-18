@@ -18,6 +18,7 @@ namespace HZH_Controls.Controls
         /// <param name="note">节点</param>
         /// <returns>是否刷新列表显示</returns>
         public delegate bool ClickNoteEvent(NoteEntity note);
+        public delegate void AddNoteEvent(DateTime beginTime);
         /// <summary>
         /// 点击节点时间
         /// </summary>
@@ -26,6 +27,9 @@ namespace HZH_Controls.Controls
 
         [Description("点击关闭按钮事件"), Category("自定义")]
         public event EventHandler CloseClick;
+
+        [Description("点击添加按钮事件"), Category("自定义")]
+        public event AddNoteEvent AddClick;
         private object dataSource;
 
         List<NoteEntity> _dataSource;
@@ -34,6 +38,7 @@ namespace HZH_Controls.Controls
         /// 每个时间点的数据
         /// </summary>
         Dictionary<int, List<NoteEntity>> m_lstHourSource = new Dictionary<int, List<NoteEntity>>();
+        Dictionary<int, Rectangle> m_lstAddRect = new Dictionary<int, Rectangle>();
         Dictionary<NoteEntity, Rectangle> m_lstRects = new Dictionary<NoteEntity, Rectangle>();
         int maxSplit = 1;
         int splitWidth = 1;
@@ -61,6 +66,8 @@ namespace HZH_Controls.Controls
         }
         [Description("是否显示关闭按钮"), Category("自定义")]
         public bool ShowCloseButton { get { return lblClose.Visible; } set { lblClose.Visible = value; } }
+        [Description("是否显示添加按钮"), Category("自定义")]
+        public bool ShowAddButton { get { return lblAdd.Visible; } set { lblAdd.Visible = value; } }
         DateTime m_dt = DateTime.Now;
 
         [Description("当前日期"), Category("自定义")]
@@ -192,6 +199,9 @@ namespace HZH_Controls.Controls
                         index++;
                     }
                 }
+
+                Rectangle rectAdd = new Rectangle(5, 20 + i * 50, 35, 30);
+                m_lstAddRect[i] = rectAdd;
             }
         }
 
@@ -248,17 +258,22 @@ namespace HZH_Controls.Controls
             for (int i = 0; i < 24; i++)
             {
                 g.DrawString(i.ToString().PadLeft(2, '0') + ":00", new Font("Arial Unicode MS", 9), new SolidBrush(splitTimeForeColor), new PointF(5, 2 + i * 50));
-                g.DrawLine(new Pen(new SolidBrush(splitLineColor), 1), new Point(40, 10 + i * 50), new Point(panMain.Width - 10, 10 + i * 50));
+                g.DrawLine(new Pen(new SolidBrush(splitLineColor), 1), new Point(40, 10 + i * 50), new Point(panMain.Width, 10 + i * 50));
 
             }
             g.DrawString("00:00", new Font("Arial Unicode MS", 9), new SolidBrush(splitTimeForeColor), new PointF(5, 2 + 24 * 50));
-            g.DrawLine(new Pen(new SolidBrush(splitLineColor), 1), new Point(40, 10 + 24 * 50), new Point(panMain.Width - 10, 10 + 24 * 50));
+            g.DrawLine(new Pen(new SolidBrush(splitLineColor), 1), new Point(40, 10 + 24 * 50), new Point(panMain.Width, 10 + 24 * 50));
 
             foreach (var item in m_lstRects)
             {
                 g.FillPath(new SolidBrush(item.Key.NoteColor), item.Value.CreateRoundedRectanglePath(5));
                 g.DrawLine(new Pen(new SolidBrush(item.Key.NoteLeftLineColor), 2), new Point(item.Value.Left + 1, item.Value.Top + 2), new Point(item.Value.Left + 1, item.Value.Bottom - 2));
                 g.DrawString(item.Key.Title, new Font("微软雅黑", 9), new SolidBrush(item.Key.NoteForeColor), new Rectangle(item.Value.Left + 4, item.Value.Top + 1, item.Value.Width - 4, item.Value.Height - 1));
+            }
+
+            foreach (var item in m_lstAddRect)
+            {
+                g.DrawString("+", new Font("微软雅黑", 15), new SolidBrush(splitTimeForeColor), item.Value, new StringFormat() {  Alignment= StringAlignment.Center, LineAlignment= StringAlignment.Center});
             }
         }
 
@@ -283,6 +298,16 @@ namespace HZH_Controls.Controls
 
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
+                foreach (var item in m_lstAddRect)
+                {
+                    if (item.Value.Contains(e.Location))
+                    {
+                        if (AddClick != null)
+                            AddClick(DateTime.Parse(CurrentTime.ToString("yyyy-MM-dd") + " " + item.Key + ":00:00"));
+                        return;
+                    }
+                }
+
                 foreach (var item in m_lstRects)
                 {
                     if (item.Value.Contains(e.Location))
@@ -302,7 +327,7 @@ namespace HZH_Controls.Controls
                             }
                             ControlHelper.FreezeControl(panel1, false);
                         }
-                        break;
+                        return;
                     }
                 }
             }
@@ -328,6 +353,12 @@ namespace HZH_Controls.Controls
                 //this.ActiveControl = panMain;
                 panMain.Focus();
             }
+        }
+
+        private void lblAdd_Click(object sender, EventArgs e)
+        {
+            if (AddClick != null)
+                AddClick(DateTime.Parse(CurrentTime.ToString("yyyy-MM-dd")));
         }
     }
 }

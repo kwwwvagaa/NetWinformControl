@@ -1308,6 +1308,7 @@
             this.ucCalendarNotes_Week1.DataSource = null;
             this.ucCalendarNotes_Week1.Location = new System.Drawing.Point(1, 1);
             this.ucCalendarNotes_Week1.Name = "ucCalendarNotes_Week1";
+            this.ucCalendarNotes_Week1.ShowAddButton = true;
             this.ucCalendarNotes_Week1.ShowCloseButton = true;
             this.ucCalendarNotes_Week1.Size = new System.Drawing.Size(439, 344);
             this.ucCalendarNotes_Week1.SplitLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
@@ -1316,6 +1317,7 @@
             this.ucCalendarNotes_Week1.Visible = false;
             this.ucCalendarNotes_Week1.ClickNote += new HZH_Controls.Controls.UCCalendarNotes_Week.ClickNoteEvent(this.ucCalendarNotes_Week1_ClickNote);
             this.ucCalendarNotes_Week1.CloseClick += new System.EventHandler(this.ucCalendarNotes_Week1_CloseClick);
+            this.ucCalendarNotes_Week1.AddClick += this.ucCalendarNotes_Week1_AddClick;
             // 
             // btnMouthNext
             // 
