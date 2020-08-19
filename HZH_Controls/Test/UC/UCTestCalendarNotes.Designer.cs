@@ -28,22 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucCalendarNotes_Week1 = new HZH_Controls.Controls.UCCalendarNotes_Week();
             this.ucCalendarNotes1 = new HZH_Controls.Controls.UCCalendarNotes();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // ucCalendarNotes_Week1
-            // 
-            this.ucCalendarNotes_Week1.BackColor = System.Drawing.Color.White;
-            this.ucCalendarNotes_Week1.CurrentTime = new System.DateTime(2020, 8, 13, 22, 14, 47, 0);
-            this.ucCalendarNotes_Week1.DataSource = null;
-            this.ucCalendarNotes_Week1.Location = new System.Drawing.Point(530, 43);
-            this.ucCalendarNotes_Week1.Name = "ucCalendarNotes_Week1";
-            this.ucCalendarNotes_Week1.ShowCloseButton = true;
-            this.ucCalendarNotes_Week1.Size = new System.Drawing.Size(490, 405);
-            this.ucCalendarNotes_Week1.SplitLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.ucCalendarNotes_Week1.SplitTimeForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.ucCalendarNotes_Week1.TabIndex = 3;
             // 
             // ucCalendarNotes1
             // 
@@ -57,21 +44,32 @@
             this.ucCalendarNotes1.TabIndex = 2;
             this.ucCalendarNotes1.TipColor = System.Drawing.Color.Green;
             this.ucCalendarNotes1.ClickNote += new HZH_Controls.Controls.UCCalendarNotes.ClickNoteEvent(this.ucCalendarNotes1_ClickNote);
+            this.ucCalendarNotes1.AddClick += new HZH_Controls.Controls.UCCalendarNotes_Week.AddNoteEvent(this.ucCalendarNotes1_AddClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 428);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(287, 12);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "*测试模拟一次、每天、每周、每月、每年的计划处理\r\n";
             // 
             // UCTestCalendarNotes
             // 
-            this.Controls.Add(this.ucCalendarNotes_Week1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ucCalendarNotes1);
             this.Name = "UCTestCalendarNotes";
             this.Size = new System.Drawing.Size(1076, 620);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private HZH_Controls.Controls.UCCalendarNotes ucCalendarNotes1;
-        private HZH_Controls.Controls.UCCalendarNotes_Week ucCalendarNotes_Week1;
+        private System.Windows.Forms.Label label1;
 
     }
 }

@@ -303,7 +303,10 @@ namespace HZH_Controls.Controls
                     if (item.Value.Contains(e.Location))
                     {
                         if (AddClick != null)
+                        {
                             AddClick(DateTime.Parse(CurrentTime.ToString("yyyy-MM-dd") + " " + item.Key + ":00:00"));
+                            panMain.Invalidate();
+                        }
                         return;
                     }
                 }
@@ -358,7 +361,10 @@ namespace HZH_Controls.Controls
         private void lblAdd_Click(object sender, EventArgs e)
         {
             if (AddClick != null)
+            {
                 AddClick(DateTime.Parse(CurrentTime.ToString("yyyy-MM-dd")));
+                panMain.Invalidate();
+            }
         }
     }
 }
