@@ -94,6 +94,20 @@ namespace Test.UC
                         thisDt = thisDt.AddDays(7);
                     }
                 }
+                else if (item.LoopType == 3)
+                {
+                    DateTime thisDt = item.BeginDateTime;
+                    while (thisDt <= item.EndDateTime)
+                    {
+                        DateTime noteBeginTime = DateTime.Parse(thisDt.ToString("yyyy-MM-dd") + " " + item.LoopBeginTime.ToString("HH:mm:ss"));
+                        DateTime noteEndTime = noteBeginTime.Add(item.LoopDuration);
+                        if (noteBeginTime >= item.BeginDateTime && noteEndTime < item.EndDateTime)//是否在整个计划范围时间内
+                        {
+                            lst.Add(new NoteEntity() { Title = item.Title, Note = item.Msg, BeginTime = noteBeginTime, EndTime = noteEndTime, DataSource = item });
+                        }
+                        thisDt = thisDt.AddMonths(1);
+                    }
+                }
                 //月，年类似周
             }
 
@@ -103,6 +117,7 @@ namespace Test.UC
         private bool ucCalendarNotes1_ClickNote(NoteEntity note)
         {
             TestEntity entity = (TestEntity)note.DataSource;
+
             //对entity进行修改、删除操作
             entity.Title += "修改1次；";
             //加载数据
@@ -113,6 +128,7 @@ namespace Test.UC
             MessageBox.Show("修改成功");
             return true;
         }
+   
 
         private void ucCalendarNotes1_AddClick(DateTime beginTime)
         {

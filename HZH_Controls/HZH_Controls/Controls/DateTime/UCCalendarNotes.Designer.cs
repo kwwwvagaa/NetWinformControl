@@ -31,6 +31,10 @@
             this.panTop = new System.Windows.Forms.Panel();
             this.lblMouth = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
+            this.btnMouthNext = new HZH_Controls.Controls.UCBtnExt();
+            this.btnYearNext = new HZH_Controls.Controls.UCBtnExt();
+            this.btbMouthLast = new HZH_Controls.Controls.UCBtnExt();
+            this.btnYearLast = new HZH_Controls.Controls.UCBtnExt();
             this.panWeek = new System.Windows.Forms.TableLayoutPanel();
             this.lblWeek_7 = new System.Windows.Forms.Label();
             this.lblWeek_6 = new System.Windows.Forms.Label();
@@ -115,10 +119,6 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.ucCalendarNotes_Week1 = new HZH_Controls.Controls.UCCalendarNotes_Week();
-            this.btnMouthNext = new HZH_Controls.Controls.UCBtnExt();
-            this.btnYearNext = new HZH_Controls.Controls.UCBtnExt();
-            this.btbMouthLast = new HZH_Controls.Controls.UCBtnExt();
-            this.btnYearLast = new HZH_Controls.Controls.UCBtnExt();
             this.ucSplitLine_H2 = new HZH_Controls.Controls.UCSplitLine_H();
             this.ucSplitLine_V4 = new HZH_Controls.Controls.UCSplitLine_V();
             this.ucSplitLine_V5 = new HZH_Controls.Controls.UCSplitLine_V();
@@ -170,6 +170,110 @@
             this.lblYear.TabIndex = 2;
             this.lblYear.Text = "-年 ▼";
             this.lblYear.Click += new System.EventHandler(this.lblYear_Click);
+            // 
+            // btnMouthNext
+            // 
+            this.btnMouthNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnMouthNext.BtnBackColor = System.Drawing.Color.Transparent;
+            this.btnMouthNext.BtnFont = new System.Drawing.Font("微软雅黑", 11F);
+            this.btnMouthNext.BtnForeColor = System.Drawing.Color.White;
+            this.btnMouthNext.BtnText = "▶";
+            this.btnMouthNext.ConerRadius = 5;
+            this.btnMouthNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMouthNext.EnabledMouseEffect = false;
+            this.btnMouthNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.btnMouthNext.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnMouthNext.IsRadius = false;
+            this.btnMouthNext.IsShowRect = false;
+            this.btnMouthNext.IsShowTips = false;
+            this.btnMouthNext.Location = new System.Drawing.Point(257, 4);
+            this.btnMouthNext.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMouthNext.Name = "btnMouthNext";
+            this.btnMouthNext.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.btnMouthNext.RectWidth = 1;
+            this.btnMouthNext.Size = new System.Drawing.Size(20, 31);
+            this.btnMouthNext.TabIndex = 1;
+            this.btnMouthNext.TabStop = false;
+            this.btnMouthNext.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.btnMouthNext.TipsText = "";
+            // 
+            // btnYearNext
+            // 
+            this.btnYearNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnYearNext.BtnBackColor = System.Drawing.Color.Transparent;
+            this.btnYearNext.BtnFont = new System.Drawing.Font("微软雅黑", 11F);
+            this.btnYearNext.BtnForeColor = System.Drawing.Color.White;
+            this.btnYearNext.BtnText = "▶";
+            this.btnYearNext.ConerRadius = 5;
+            this.btnYearNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnYearNext.EnabledMouseEffect = false;
+            this.btnYearNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.btnYearNext.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnYearNext.IsRadius = false;
+            this.btnYearNext.IsShowRect = false;
+            this.btnYearNext.IsShowTips = false;
+            this.btnYearNext.Location = new System.Drawing.Point(115, 3);
+            this.btnYearNext.Margin = new System.Windows.Forms.Padding(0);
+            this.btnYearNext.Name = "btnYearNext";
+            this.btnYearNext.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.btnYearNext.RectWidth = 1;
+            this.btnYearNext.Size = new System.Drawing.Size(20, 31);
+            this.btnYearNext.TabIndex = 1;
+            this.btnYearNext.TabStop = false;
+            this.btnYearNext.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.btnYearNext.TipsText = "";
+            // 
+            // btbMouthLast
+            // 
+            this.btbMouthLast.BackColor = System.Drawing.Color.Transparent;
+            this.btbMouthLast.BtnBackColor = System.Drawing.Color.Transparent;
+            this.btbMouthLast.BtnFont = new System.Drawing.Font("微软雅黑", 11F);
+            this.btbMouthLast.BtnForeColor = System.Drawing.Color.White;
+            this.btbMouthLast.BtnText = "◀";
+            this.btbMouthLast.ConerRadius = 5;
+            this.btbMouthLast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btbMouthLast.EnabledMouseEffect = false;
+            this.btbMouthLast.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.btbMouthLast.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btbMouthLast.IsRadius = false;
+            this.btbMouthLast.IsShowRect = false;
+            this.btbMouthLast.IsShowTips = false;
+            this.btbMouthLast.Location = new System.Drawing.Point(174, 4);
+            this.btbMouthLast.Margin = new System.Windows.Forms.Padding(0);
+            this.btbMouthLast.Name = "btbMouthLast";
+            this.btbMouthLast.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.btbMouthLast.RectWidth = 1;
+            this.btbMouthLast.Size = new System.Drawing.Size(20, 31);
+            this.btbMouthLast.TabIndex = 0;
+            this.btbMouthLast.TabStop = false;
+            this.btbMouthLast.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.btbMouthLast.TipsText = "";
+            // 
+            // btnYearLast
+            // 
+            this.btnYearLast.BackColor = System.Drawing.Color.Transparent;
+            this.btnYearLast.BtnBackColor = System.Drawing.Color.Transparent;
+            this.btnYearLast.BtnFont = new System.Drawing.Font("微软雅黑", 11F);
+            this.btnYearLast.BtnForeColor = System.Drawing.Color.White;
+            this.btnYearLast.BtnText = "◀";
+            this.btnYearLast.ConerRadius = 5;
+            this.btnYearLast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnYearLast.EnabledMouseEffect = false;
+            this.btnYearLast.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.btnYearLast.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.btnYearLast.IsRadius = false;
+            this.btnYearLast.IsShowRect = false;
+            this.btnYearLast.IsShowTips = false;
+            this.btnYearLast.Location = new System.Drawing.Point(22, 3);
+            this.btnYearLast.Margin = new System.Windows.Forms.Padding(0);
+            this.btnYearLast.Name = "btnYearLast";
+            this.btnYearLast.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.btnYearLast.RectWidth = 1;
+            this.btnYearLast.Size = new System.Drawing.Size(20, 31);
+            this.btnYearLast.TabIndex = 0;
+            this.btnYearLast.TabStop = false;
+            this.btnYearLast.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.btnYearLast.TipsText = "";
             // 
             // panWeek
             // 
@@ -1303,6 +1407,9 @@
             // 
             // ucCalendarNotes_Week1
             // 
+            this.ucCalendarNotes_Week1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucCalendarNotes_Week1.BackColor = System.Drawing.Color.White;
             this.ucCalendarNotes_Week1.CurrentTime = new System.DateTime(2020, 8, 14, 21, 46, 6, 827);
             this.ucCalendarNotes_Week1.DataSource = null;
@@ -1317,111 +1424,6 @@
             this.ucCalendarNotes_Week1.Visible = false;
             this.ucCalendarNotes_Week1.ClickNote += new HZH_Controls.Controls.UCCalendarNotes_Week.ClickNoteEvent(this.ucCalendarNotes_Week1_ClickNote);
             this.ucCalendarNotes_Week1.CloseClick += new System.EventHandler(this.ucCalendarNotes_Week1_CloseClick);
-            this.ucCalendarNotes_Week1.AddClick += this.ucCalendarNotes_Week1_AddClick;
-            // 
-            // btnMouthNext
-            // 
-            this.btnMouthNext.BackColor = System.Drawing.Color.Transparent;
-            this.btnMouthNext.BtnBackColor = System.Drawing.Color.Transparent;
-            this.btnMouthNext.BtnFont = new System.Drawing.Font("微软雅黑", 11F);
-            this.btnMouthNext.BtnForeColor = System.Drawing.Color.White;
-            this.btnMouthNext.BtnText = "▶";
-            this.btnMouthNext.ConerRadius = 5;
-            this.btnMouthNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMouthNext.EnabledMouseEffect = false;
-            this.btnMouthNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.btnMouthNext.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnMouthNext.IsRadius = false;
-            this.btnMouthNext.IsShowRect = false;
-            this.btnMouthNext.IsShowTips = false;
-            this.btnMouthNext.Location = new System.Drawing.Point(257, 4);
-            this.btnMouthNext.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMouthNext.Name = "btnMouthNext";
-            this.btnMouthNext.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.btnMouthNext.RectWidth = 1;
-            this.btnMouthNext.Size = new System.Drawing.Size(20, 31);
-            this.btnMouthNext.TabIndex = 1;
-            this.btnMouthNext.TabStop = false;
-            this.btnMouthNext.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.btnMouthNext.TipsText = "";
-            // 
-            // btnYearNext
-            // 
-            this.btnYearNext.BackColor = System.Drawing.Color.Transparent;
-            this.btnYearNext.BtnBackColor = System.Drawing.Color.Transparent;
-            this.btnYearNext.BtnFont = new System.Drawing.Font("微软雅黑", 11F);
-            this.btnYearNext.BtnForeColor = System.Drawing.Color.White;
-            this.btnYearNext.BtnText = "▶";
-            this.btnYearNext.ConerRadius = 5;
-            this.btnYearNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnYearNext.EnabledMouseEffect = false;
-            this.btnYearNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.btnYearNext.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnYearNext.IsRadius = false;
-            this.btnYearNext.IsShowRect = false;
-            this.btnYearNext.IsShowTips = false;
-            this.btnYearNext.Location = new System.Drawing.Point(115, 3);
-            this.btnYearNext.Margin = new System.Windows.Forms.Padding(0);
-            this.btnYearNext.Name = "btnYearNext";
-            this.btnYearNext.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.btnYearNext.RectWidth = 1;
-            this.btnYearNext.Size = new System.Drawing.Size(20, 31);
-            this.btnYearNext.TabIndex = 1;
-            this.btnYearNext.TabStop = false;
-            this.btnYearNext.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.btnYearNext.TipsText = "";
-            // 
-            // btbMouthLast
-            // 
-            this.btbMouthLast.BackColor = System.Drawing.Color.Transparent;
-            this.btbMouthLast.BtnBackColor = System.Drawing.Color.Transparent;
-            this.btbMouthLast.BtnFont = new System.Drawing.Font("微软雅黑", 11F);
-            this.btbMouthLast.BtnForeColor = System.Drawing.Color.White;
-            this.btbMouthLast.BtnText = "◀";
-            this.btbMouthLast.ConerRadius = 5;
-            this.btbMouthLast.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btbMouthLast.EnabledMouseEffect = false;
-            this.btbMouthLast.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.btbMouthLast.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btbMouthLast.IsRadius = false;
-            this.btbMouthLast.IsShowRect = false;
-            this.btbMouthLast.IsShowTips = false;
-            this.btbMouthLast.Location = new System.Drawing.Point(174, 4);
-            this.btbMouthLast.Margin = new System.Windows.Forms.Padding(0);
-            this.btbMouthLast.Name = "btbMouthLast";
-            this.btbMouthLast.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.btbMouthLast.RectWidth = 1;
-            this.btbMouthLast.Size = new System.Drawing.Size(20, 31);
-            this.btbMouthLast.TabIndex = 0;
-            this.btbMouthLast.TabStop = false;
-            this.btbMouthLast.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.btbMouthLast.TipsText = "";
-            // 
-            // btnYearLast
-            // 
-            this.btnYearLast.BackColor = System.Drawing.Color.Transparent;
-            this.btnYearLast.BtnBackColor = System.Drawing.Color.Transparent;
-            this.btnYearLast.BtnFont = new System.Drawing.Font("微软雅黑", 11F);
-            this.btnYearLast.BtnForeColor = System.Drawing.Color.White;
-            this.btnYearLast.BtnText = "◀";
-            this.btnYearLast.ConerRadius = 5;
-            this.btnYearLast.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnYearLast.EnabledMouseEffect = false;
-            this.btnYearLast.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.btnYearLast.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnYearLast.IsRadius = false;
-            this.btnYearLast.IsShowRect = false;
-            this.btnYearLast.IsShowTips = false;
-            this.btnYearLast.Location = new System.Drawing.Point(22, 3);
-            this.btnYearLast.Margin = new System.Windows.Forms.Padding(0);
-            this.btnYearLast.Name = "btnYearLast";
-            this.btnYearLast.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
-            this.btnYearLast.RectWidth = 1;
-            this.btnYearLast.Size = new System.Drawing.Size(20, 31);
-            this.btnYearLast.TabIndex = 0;
-            this.btnYearLast.TabStop = false;
-            this.btnYearLast.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-            this.btnYearLast.TipsText = "";
             // 
             // ucSplitLine_H2
             // 

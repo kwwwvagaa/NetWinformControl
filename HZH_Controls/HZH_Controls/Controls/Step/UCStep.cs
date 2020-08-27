@@ -131,7 +131,7 @@ namespace HZH_Controls.Controls
 			get { return m_steps; }
 			set
 			{
-				if (m_steps == null || m_steps.Length < 1)
+                if (value == null || value.Length < 1)
 					return;
 				m_steps = value;
 				Refresh();

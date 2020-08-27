@@ -37,10 +37,10 @@
             this.ucCalendarNotes1.BackColor = System.Drawing.Color.White;
             this.ucCalendarNotes1.CurrentTime = new System.DateTime(2020, 8, 13, 0, 0, 0, 0);
             this.ucCalendarNotes1.DataSource = null;
-            this.ucCalendarNotes1.Location = new System.Drawing.Point(28, 43);
+            this.ucCalendarNotes1.Location = new System.Drawing.Point(28, 3);
             this.ucCalendarNotes1.Name = "ucCalendarNotes1";
             this.ucCalendarNotes1.SelectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ucCalendarNotes1.Size = new System.Drawing.Size(441, 346);
+            this.ucCalendarNotes1.Size = new System.Drawing.Size(722, 422);
             this.ucCalendarNotes1.TabIndex = 2;
             this.ucCalendarNotes1.TipColor = System.Drawing.Color.Green;
             this.ucCalendarNotes1.ClickNote += new HZH_Controls.Controls.UCCalendarNotes.ClickNoteEvent(this.ucCalendarNotes1_ClickNote);
