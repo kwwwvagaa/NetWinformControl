@@ -42,6 +42,7 @@
             this.panMain = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblClose = new System.Windows.Forms.Label();
+            this.lblAdd = new System.Windows.Forms.Label();
             this.panWeek.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,16 +76,16 @@
             this.panWeek.Name = "panWeek";
             this.panWeek.RowCount = 1;
             this.panWeek.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panWeek.Size = new System.Drawing.Size(438, 51);
+            this.panWeek.Size = new System.Drawing.Size(394, 51);
             this.panWeek.TabIndex = 3;
             // 
             // lblRight
             // 
             this.lblRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblRight.Font = new System.Drawing.Font("宋体", 15F);
-            this.lblRight.Location = new System.Drawing.Point(415, 0);
+            this.lblRight.Location = new System.Drawing.Point(373, 0);
             this.lblRight.Name = "lblRight";
-            this.lblRight.Size = new System.Drawing.Size(20, 51);
+            this.lblRight.Size = new System.Drawing.Size(18, 51);
             this.lblRight.TabIndex = 8;
             this.lblRight.Text = "▶";
             this.lblRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,9 +96,9 @@
             this.lblWeek_7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWeek_7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblWeek_7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.lblWeek_7.Location = new System.Drawing.Point(359, 0);
+            this.lblWeek_7.Location = new System.Drawing.Point(323, 0);
             this.lblWeek_7.Name = "lblWeek_7";
-            this.lblWeek_7.Size = new System.Drawing.Size(50, 51);
+            this.lblWeek_7.Size = new System.Drawing.Size(44, 51);
             this.lblWeek_7.TabIndex = 6;
             this.lblWeek_7.Text = "六";
             this.lblWeek_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -108,9 +109,9 @@
             this.lblWeek_6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWeek_6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblWeek_6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.lblWeek_6.Location = new System.Drawing.Point(303, 0);
+            this.lblWeek_6.Location = new System.Drawing.Point(273, 0);
             this.lblWeek_6.Name = "lblWeek_6";
-            this.lblWeek_6.Size = new System.Drawing.Size(50, 51);
+            this.lblWeek_6.Size = new System.Drawing.Size(44, 51);
             this.lblWeek_6.TabIndex = 5;
             this.lblWeek_6.Text = "五";
             this.lblWeek_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,9 +122,9 @@
             this.lblWeek_5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWeek_5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblWeek_5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.lblWeek_5.Location = new System.Drawing.Point(247, 0);
+            this.lblWeek_5.Location = new System.Drawing.Point(223, 0);
             this.lblWeek_5.Name = "lblWeek_5";
-            this.lblWeek_5.Size = new System.Drawing.Size(50, 51);
+            this.lblWeek_5.Size = new System.Drawing.Size(44, 51);
             this.lblWeek_5.TabIndex = 4;
             this.lblWeek_5.Text = "四";
             this.lblWeek_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,9 +135,9 @@
             this.lblWeek_4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWeek_4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblWeek_4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.lblWeek_4.Location = new System.Drawing.Point(191, 0);
+            this.lblWeek_4.Location = new System.Drawing.Point(173, 0);
             this.lblWeek_4.Name = "lblWeek_4";
-            this.lblWeek_4.Size = new System.Drawing.Size(50, 51);
+            this.lblWeek_4.Size = new System.Drawing.Size(44, 51);
             this.lblWeek_4.TabIndex = 3;
             this.lblWeek_4.Text = "三";
             this.lblWeek_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,9 +148,9 @@
             this.lblWeek_3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWeek_3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblWeek_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.lblWeek_3.Location = new System.Drawing.Point(135, 0);
+            this.lblWeek_3.Location = new System.Drawing.Point(123, 0);
             this.lblWeek_3.Name = "lblWeek_3";
-            this.lblWeek_3.Size = new System.Drawing.Size(50, 51);
+            this.lblWeek_3.Size = new System.Drawing.Size(44, 51);
             this.lblWeek_3.TabIndex = 2;
             this.lblWeek_3.Text = "二";
             this.lblWeek_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,9 +161,9 @@
             this.lblWeek_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWeek_2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblWeek_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.lblWeek_2.Location = new System.Drawing.Point(79, 0);
+            this.lblWeek_2.Location = new System.Drawing.Point(73, 0);
             this.lblWeek_2.Name = "lblWeek_2";
-            this.lblWeek_2.Size = new System.Drawing.Size(50, 51);
+            this.lblWeek_2.Size = new System.Drawing.Size(44, 51);
             this.lblWeek_2.TabIndex = 1;
             this.lblWeek_2.Text = "一";
             this.lblWeek_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -175,7 +176,7 @@
             this.lblWeek_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.lblWeek_1.Location = new System.Drawing.Point(23, 0);
             this.lblWeek_1.Name = "lblWeek_1";
-            this.lblWeek_1.Size = new System.Drawing.Size(50, 51);
+            this.lblWeek_1.Size = new System.Drawing.Size(44, 51);
             this.lblWeek_1.TabIndex = 0;
             this.lblWeek_1.Text = "日";
             this.lblWeek_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,7 +210,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panMain.Location = new System.Drawing.Point(0, 0);
             this.panMain.Name = "panMain";
-            this.panMain.Size = new System.Drawing.Size(465, 1220);
+            this.panMain.Size = new System.Drawing.Size(482, 1220);
             this.panMain.TabIndex = 5;
             this.panMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panMain_Paint);
             this.panMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panMain_MouseClick);
@@ -217,6 +218,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panWeek);
+            this.panel2.Controls.Add(this.lblAdd);
             this.panel2.Controls.Add(this.lblClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -236,6 +238,19 @@
             this.lblClose.Text = "✖";
             this.lblClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
+            // 
+            // lblAdd
+            // 
+            this.lblAdd.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblAdd.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.lblAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.lblAdd.Location = new System.Drawing.Point(394, 0);
+            this.lblAdd.Name = "lblAdd";
+            this.lblAdd.Size = new System.Drawing.Size(44, 51);
+            this.lblAdd.TabIndex = 8;
+            this.lblAdd.Text = "添加\r\n日程";
+            this.lblAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAdd.Click += new System.EventHandler(this.lblAdd_Click);
             // 
             // UCCalendarNotes_Week
             // 
@@ -269,5 +284,6 @@
         private System.Windows.Forms.Panel panMain;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblClose;
+        private System.Windows.Forms.Label lblAdd;
     }
 }

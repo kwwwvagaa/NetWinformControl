@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>log.ico</ApplicationIcon>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
@@ -1021,6 +1021,7 @@
   <ItemGroup>
     <Content Include="log.ico" />
     <None Include="Resources\rowicon.png" />
+    <Content Include="logo.ico" />
     <Content Include="UC\UCTestLiveCharts\Cartesian\FunnelChart\Resources\fingerprint.png" />
     <Content Include="UC\UCTestLiveCharts\Cartesian\FunnelChart\Resources\user.png" />
     <Content Include="UC\UCTestLiveCharts\Cartesian\FunnelChart\Resources\view.png" />

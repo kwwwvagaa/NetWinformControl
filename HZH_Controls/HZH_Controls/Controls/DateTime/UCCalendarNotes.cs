@@ -22,7 +22,8 @@ namespace HZH_Controls.Controls
         /// </summary>
         [Description("点击节点事件"), Category("自定义")]
         public event ClickNoteEvent ClickNote;
-
+        [Description("点击添加按钮事件"), Category("自定义")]
+        public event UCCalendarNotes_Week.AddNoteEvent AddClick;
         private object dataSource;
 
         List<NoteEntity> _dataSource;
@@ -322,6 +323,12 @@ namespace HZH_Controls.Controls
                 return ClickNote(note);
             }
             return default(bool);
+        }
+
+        private void ucCalendarNotes_Week1_AddClick(DateTime beginTime)
+        {
+            if (AddClick != null)
+                AddClick(beginTime);
         }
 
     }

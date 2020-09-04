@@ -107,7 +107,7 @@ namespace HZH_Controls.Controls
                 btnKeybord.Visible = value;
             }
         }
-       
+
         [Description("获取或设置一个字符，该值指示文本框中的密码。")]
         public char PasswordChar
         {
@@ -119,7 +119,7 @@ namespace HZH_Controls.Controls
             {
                 txtInput.PasswordChar = value;
             }
-        } 
+        }
         /// <summary>
         /// 获取或设置控件显示的文字的字体。
         /// </summary>
@@ -509,6 +509,10 @@ namespace HZH_Controls.Controls
                     {
                         UCKeyBorderNum key = new UCKeyBorderNum();
                         m_frmAnchor = new Forms.FrmAnchor(this, key);
+                        key.EnterClick += (a, b) =>
+                        {
+                            m_frmAnchor.Hide();
+                        };
                         m_frmAnchor.VisibleChanged += (a, b) =>
                         {
                             if (m_frmAnchor.Visible)
