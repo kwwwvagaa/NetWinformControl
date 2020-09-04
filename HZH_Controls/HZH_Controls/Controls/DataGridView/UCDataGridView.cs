@@ -316,15 +316,24 @@ namespace HZH_Controls.Controls
                 if (m_selectRow != null)
                     lst.AddRange(new List<IDataGridViewRow>() { m_selectRow });
             }
-            if (Rows != null && Rows.Count > 0)
+            if (Rows != null && Rows.Count > 0 && m_rowType == typeof(UCDataGridViewTreeRow))
             {
-                foreach (var row in Rows)
+                foreach (UCDataGridViewTreeRow row in Rows)
                 {
-                    Control c = row as Control;
-                    UCDataGridView grid = FindChildGrid(c);
-                    if (grid != null)
-                        lst.AddRange(grid.SelectRows);
+                    lst.AddRange(FindTreeRowSelected(row));
                 }
+            }
+            return lst;
+        }
+
+        private List<IDataGridViewRow> FindTreeRowSelected(UCDataGridViewTreeRow row)
+        {
+            List<IDataGridViewRow> lst = new List<IDataGridViewRow>();
+            var _lst = row.ChildrenRows.FindAll(p => p.IsChecked);
+            lst.AddRange(_lst);
+            foreach (UCDataGridViewTreeRow _row in row.ChildrenRows)
+            {
+                lst.AddRange(FindTreeRowSelected(_row));
             }
             return lst;
         }
@@ -613,7 +622,7 @@ namespace HZH_Controls.Controls
                             Rows.Add(row);
                             row.RowIndex = Rows.IndexOf(row);
                             this.panRow.Controls.Add(rowControl);
-                           
+
                         }
                     }
 

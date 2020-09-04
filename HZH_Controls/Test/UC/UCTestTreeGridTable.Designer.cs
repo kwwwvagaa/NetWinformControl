@@ -30,11 +30,11 @@
         {
             this.ucDataGridView1 = new HZH_Controls.Controls.UCDataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ucDataGridView1
             // 
-            this.ucDataGridView1.AutoScroll = true;
             this.ucDataGridView1.BackColor = System.Drawing.Color.White;
             this.ucDataGridView1.Columns = null;
             this.ucDataGridView1.DataSource = null;
@@ -46,6 +46,7 @@
             this.ucDataGridView1.IsShowHead = true;
             this.ucDataGridView1.Location = new System.Drawing.Point(0, 0);
             this.ucDataGridView1.Name = "ucDataGridView1";
+            this.ucDataGridView1.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
             this.ucDataGridView1.RowHeight = 41;
             this.ucDataGridView1.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
             this.ucDataGridView1.Size = new System.Drawing.Size(807, 655);
@@ -60,10 +61,21 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "*树表格第一列将作为展开缩进处理，请根据实际情况设置具体像素的宽度，请勿使用百分比宽度";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(591, 677);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "获取选中行";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UCTestTreeGridTable
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ucDataGridView1);
             this.Name = "UCTestTreeGridTable";
@@ -78,5 +90,6 @@
 
         private HZH_Controls.Controls.UCDataGridView ucDataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

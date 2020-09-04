@@ -313,6 +313,7 @@ namespace HZH_Controls.Controls
                             box.TextValue = "";
                             box.Size = new Size(30, 30);
                             box.Dock = DockStyle.Fill;
+                            box.CheckedChangeEvent += box_CheckedChangeEvent;
                             c = box;
                         }
                         else
@@ -355,6 +356,11 @@ namespace HZH_Controls.Controls
             {
                 ControlHelper.FreezeControl(this, false);
             }
+        }
+
+        void box_CheckedChangeEvent(object sender, EventArgs e)
+        {
+            IsChecked = ((UCCheckBox)sender).Checked;
         }
 
 

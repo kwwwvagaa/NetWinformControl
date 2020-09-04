@@ -67,5 +67,10 @@ namespace Test.UC
                 AddChilds(model, intCount - 1);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var c = this.ucDataGridView1.SelectRows.Count;
+        }
     }
 }
