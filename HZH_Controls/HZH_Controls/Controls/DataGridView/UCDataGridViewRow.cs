@@ -195,8 +195,17 @@ namespace HZH_Controls.Controls
                 if (item is IDataGridViewCustomCell)
                 {
                     IDataGridViewCustomCell cell = item as IDataGridViewCustomCell;
+                    cell.RowCustomEvent += cell_RowCustomEvent;
                     cell.SetBindSource(DataSource);
                 }
+            }
+        }
+
+        void cell_RowCustomEvent(object sender, DataGridViewRowCustomEventArgs e)
+        {
+            if (RowCustomEvent != null)
+            {
+                RowCustomEvent(sender, e);
             }
         }
 
