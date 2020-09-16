@@ -14,13 +14,9 @@
 // If you use this code, please keep this note.
 // ***********************************************************************
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace HZH_Controls.Controls
 {
@@ -100,7 +96,8 @@ namespace HZH_Controls.Controls
                 {
                     Graphics g = this.CreateGraphics();
                     var size = g.MeasureString(value, this.Font);
-                    rectText = new Rectangle(0, (this.Height - rectText.Height) / 2 + 1, (int)size.Width, (int)size.Height);
+                    rectText = new Rectangle(_ISChangeReset ? 0 : rectText.X, (this.Height - rectText.Height) / 2 + 1, (int)size.Width, (int)size.Height);
+
                 }
                 else
                 {
@@ -113,6 +110,14 @@ namespace HZH_Controls.Controls
         /// The roll style
         /// </summary>
         private RollStyle _RollStyle = RollStyle.LeftToRight;
+
+        /// <summary>
+        /// 文本改变是否重新从边缘运动
+        /// </summary>
+        private bool _ISChangeReset = false;
+
+
+
 
         /// <summary>
         /// Gets or sets the roll style.
@@ -137,6 +142,20 @@ namespace HZH_Controls.Controls
             }
         }
 
+
+
+        [Description("文本改变是否重新从边缘运动"), Category("自定义")]
+        public bool ISChangeReset
+        {
+            get { return _ISChangeReset; }
+            set
+            {
+                _ISChangeReset = value;
+            }
+        }
+
+
+
         /// <summary>
         /// The move step
         /// </summary>
@@ -158,7 +177,9 @@ namespace HZH_Controls.Controls
             set
             {
                 if (value <= 0)
+                {
                     return;
+                }
 
                 _moveSleepTime = value;
                 m_timer.Interval = value;
@@ -213,7 +234,10 @@ namespace HZH_Controls.Controls
         void m_timer_Tick(object sender, EventArgs e)
         {
             if (rectText == Rectangle.Empty)
+            {
                 return;
+            }
+
             if (_RollStyle == HZH_Controls.Controls.RollStyle.BackAndForth && rectText.Width >= this.Width)
             {
                 return;
