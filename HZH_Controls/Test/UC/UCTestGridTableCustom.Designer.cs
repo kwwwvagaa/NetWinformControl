@@ -50,6 +50,7 @@
             this.ucDataGridView1.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
             this.ucDataGridView1.Size = new System.Drawing.Size(1090, 643);
             this.ucDataGridView1.TabIndex = 5;
+            this.ucDataGridView1.RowCustomEvent += new HZH_Controls.Controls.DataGridViewRowCustomEventHandler(this.ucDataGridView1_RowCustomEvent);
             // 
             // UCTestGridTableCustom
             // 

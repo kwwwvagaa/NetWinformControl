@@ -15,13 +15,24 @@ namespace Test.UC
         {
             InitializeComponent();
         }
-
+        private TestGridModel m_object = null;
+        public object DataSource
+        {
+            get
+            {
+                return m_object;
+            }
+        }
         public void SetBindSource(object obj)
         {
             if (obj is TestGridModel)
             {
+                m_object = (TestGridModel)obj;
                 this.BackgroundImage = Properties.Resources.rowicon;
             }
         }
+
+
+        public event HZH_Controls.Controls.DataGridViewRowCustomEventHandler RowCustomEvent;
     }
 }

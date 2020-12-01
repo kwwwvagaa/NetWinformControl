@@ -32,5 +32,8 @@ namespace HZH_Controls.Controls
         /// </summary>
         /// <value>The name of the event.</value>
         public string EventName { get; set; }
+
+        public object Data { get; set; }
+
     }
 }

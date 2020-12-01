@@ -45,5 +45,10 @@ namespace Test.UC
             }
             this.ucDataGridView1.DataSource = lstSource;
         }
+
+        private void ucDataGridView1_RowCustomEvent(object sender, DataGridViewRowCustomEventArgs e)
+        {
+            HZH_Controls.Forms.FrmTips.ShowTipsSuccess(this.FindForm(), "你点击了："+e.EventName);
+        }
     }
 }
