@@ -221,11 +221,42 @@ namespace HZH_Controls.Controls
             set
             {
                 lines = value;
+                if (lines != null)
+                {
+                    int c = lines.Length;
+                    showLinesIndex = new int[c];
+                    for (int i = 0; i < c; i++)
+                    {
+                        showLinesIndex[i] = i;
+                    }
+                }
+                else
+                {
+                    showLinesIndex = null;
+                }
                 Invalidate();
             }
         }
 
+        private bool showCheck = false;
+        [Browsable(true)]
+        [Category("自定义")]
+        [Description("获取或设置项目是否可选")]
+        public bool ShowCheck
+        {
+            get { return showCheck; }
+            set { showCheck = value; }
+        }
 
+        private int[] showLinesIndex;
+        [Browsable(true)]
+        [Category("自定义")]
+        [Description("当ShowCheck=true时，显示的线条索引，每次修改Lines此属性将被覆盖")]
+        public int[] ShowLinesIndex
+        {
+            get { return showLinesIndex; }
+            set { showLinesIndex = value; }
+        }
 
         /// <summary>
         /// The title size
@@ -247,6 +278,9 @@ namespace HZH_Controls.Controls
         /// The int line value row count
         /// </summary>
         int intLineValueRowCount = 0;
+
+        List<RectangleF> m_lstLineTitleRects = new List<RectangleF>();
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UCRadarChart"/> class.
         /// </summary>
@@ -257,6 +291,7 @@ namespace HZH_Controls.Controls
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.SetStyle(ControlStyles.Selectable, true);
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.MouseClick += UCRadarChart_MouseClick;
             this.SetStyle(ControlStyles.UserPaint, true);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.SizeChanged += UCRadarChart_SizeChanged;
@@ -264,8 +299,8 @@ namespace HZH_Controls.Controls
             radarPositions = new RadarPosition[0];
             if (ControlHelper.IsDesignMode())
             {
-                radarPositions = new RadarPosition[6];
-                for (int i = 0; i < 6; i++)
+                radarPositions = new RadarPosition[7];
+                for (int i = 0; i < 7; i++)
                 {
                     radarPositions[i] = new RadarPosition
                     {
@@ -293,6 +328,30 @@ namespace HZH_Controls.Controls
                     }
                 }
             }
+        }
+        void UCRadarChart_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!showCheck)
+                return;
+            for (int i = 0; i < m_lstLineTitleRects.Count; i++)
+            {
+                if (m_lstLineTitleRects[i].Contains(e.Location))
+                {
+                    var lst = showLinesIndex.ToList();
+                    if (lst.Contains(i))
+                    {
+                        lst.Remove(i);
+                    }
+                    else
+                    {
+                        lst.Add(i);
+                    }
+                    showLinesIndex = lst.ToArray();
+                    Invalidate();
+                    return;
+                }
+            }
+
         }
 
         /// <summary>
@@ -337,8 +396,8 @@ namespace HZH_Controls.Controls
             var min = Math.Min(this.Width, this.Height - titleSize.Height - lineTypePanelHeight);
             var rectWorking = new RectangleF((this.Width - min) / 2 + 10, titleSize.Height + lineTypePanelHeight + 10, min - 10, min - 10);
             //处理文字
-            float fltSplitAngle = 360F / radarPositions.Length;
-            float fltRadiusWidth = rectWorking.Width / 2;
+            float fltSplitAngle = 360.0000000F / radarPositions.Length;
+            float fltRadiusWidth = rectWorking.Width / 2.0000000F;
             float minX = rectWorking.Left;
             float maxX = rectWorking.Right;
             float minY = rectWorking.Top;
@@ -423,7 +482,15 @@ namespace HZH_Controls.Controls
 
                 for (int j = 0; j < intCount; j++)
                 {
-                    g.FillRectangle(new SolidBrush(lines[i * intLineValueComCount + j].LineColor.Value), new RectangleF(x + (lineValueTypeSize.Width + 25) * j, y + lineValueTypeSize.Height * i, 15, lineValueTypeSize.Height));
+                    //标题可选
+                    var _r = new RectangleF(x + (lineValueTypeSize.Width + 25) * j, y + lineValueTypeSize.Height * i, 15, lineValueTypeSize.Height);
+                    m_lstLineTitleRects.Add(_r);
+                    if (showCheck && !showLinesIndex.ToList().Contains(j))
+                    {
+                        g.DrawRectangle(new Pen(new SolidBrush(lines[i * intLineValueComCount + j].LineColor.Value), 2), _r.X, _r.Y, _r.Width, _r.Height);
+                    }
+                    else
+                        g.FillRectangle(new SolidBrush(lines[i * intLineValueComCount + j].LineColor.Value), _r);
                     g.DrawString(lines[i * intLineValueComCount + j].Name, Font, new SolidBrush(lines[i * intLineValueComCount + j].LineColor.Value), new PointF(x + (lineValueTypeSize.Width + 25) * j + 20, y + lineValueTypeSize.Height * i));
                 }
             }
@@ -500,6 +567,8 @@ namespace HZH_Controls.Controls
             //值
             for (int i = 0; i < lines.Length; i++)
             {
+                if (showCheck && !showLinesIndex.ToList().Contains(i))
+                    continue;
                 var line = lines[i];
                 if (line.Values.Length != radarPositions.Length)//如果数据长度和节点长度不一致则不绘制
                     continue;
@@ -510,7 +579,7 @@ namespace HZH_Controls.Controls
                 {
                     float fltAngle = 270 + fltSplitAngle * j;
                     fltAngle = fltAngle % 360;
-                    PointF _point = GetPointByAngle(centrePoint, fltAngle, fltRadiusWidth * (float)(line.Values[j] / radarPositions[i].MaxValue));
+                    PointF _point = GetPointByAngle(centrePoint, fltAngle, fltRadiusWidth * (float)((line.Values[j] - radarPositions[j].MinValue) / (radarPositions[j].MaxValue - radarPositions[j].MinValue)));
                     ps.Add(_point);
                 }
                 ps.Add(ps[0]);

@@ -16,6 +16,7 @@ namespace Test.UC
         public UCTestTreeGridTable()
         {
             InitializeComponent();
+            
         }
 
 

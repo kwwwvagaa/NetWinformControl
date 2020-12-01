@@ -15,6 +15,7 @@ namespace Test.UC
         public UCTestGridTableCustom()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
 
         private void UCTestGridTableCustom_Load(object sender, EventArgs e)

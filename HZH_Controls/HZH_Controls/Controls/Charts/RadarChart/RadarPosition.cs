@@ -9,5 +9,6 @@ namespace HZH_Controls.Controls
     {
         public string Text { get; set; }
         public double MaxValue { get; set; }
+        public double MinValue { get; set; }
     }
 }
