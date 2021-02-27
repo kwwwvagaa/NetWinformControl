@@ -175,6 +175,15 @@ namespace HZH_Controls.Controls
         /// </summary>
         private Panel m_panChildren = null;
 
+        private int itemHeight = -1;
+        /// <summary>
+        /// item高度，当等于负数时不指定，使用自动高度
+        /// </summary>
+        public int ItemHeight
+        {
+            get { return itemHeight; }
+            set { itemHeight = value; }
+        }
         /// <summary>
         /// Reloads the items.
         /// </summary>
@@ -195,6 +204,8 @@ namespace HZH_Controls.Controls
                             parentItem.SetStyle(m_parentItemStyles);
                         parentItem.SelectedItem += parentItem_SelectedItem;
                         Control c = parentItem as Control;
+                        if (itemHeight <= 0)
+                            c.Height = itemHeight;
                         c.Dock = DockStyle.Top;
                         if (parent.Childrens.Count <= 0)
                         {
@@ -318,6 +329,8 @@ namespace HZH_Controls.Controls
                                 parentItem.SetStyle(m_childrenItemStyles);
                             parentItem.SelectedItem += parentItem_SelectedItem;
                             Control c = parentItem as Control;
+                            if (itemHeight <= 0)
+                                c.Height = itemHeight;
                             if (intItemHeigth == 0)
                                 intItemHeigth = c.Height;
                             c.Dock = DockStyle.Top;
@@ -353,6 +366,8 @@ namespace HZH_Controls.Controls
                                 parentItem.SetStyle(m_childrenItemStyles);
                             parentItem.SelectedItem += parentItem_SelectedItem;
                             Control c = parentItem as Control;
+                            if (itemHeight <= 0)
+                                c.Height = itemHeight;
                             if (intItemHeigth == 0)
                                 intItemHeigth = c.Height;
                             c.Dock = DockStyle.Top;
