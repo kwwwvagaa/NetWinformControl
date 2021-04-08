@@ -204,7 +204,7 @@ namespace HZH_Controls.Controls
                             parentItem.SetStyle(m_parentItemStyles);
                         parentItem.SelectedItem += parentItem_SelectedItem;
                         Control c = parentItem as Control;
-                        if (itemHeight <= 0)
+                        if (itemHeight > 0)
                             c.Height = itemHeight;
                         c.Dock = DockStyle.Top;
                         if (parent.Childrens.Count <= 0)
@@ -329,7 +329,7 @@ namespace HZH_Controls.Controls
                                 parentItem.SetStyle(m_childrenItemStyles);
                             parentItem.SelectedItem += parentItem_SelectedItem;
                             Control c = parentItem as Control;
-                            if (itemHeight <= 0)
+                            if (itemHeight > 0)
                                 c.Height = itemHeight;
                             if (intItemHeigth == 0)
                                 intItemHeigth = c.Height;
@@ -366,7 +366,7 @@ namespace HZH_Controls.Controls
                                 parentItem.SetStyle(m_childrenItemStyles);
                             parentItem.SelectedItem += parentItem_SelectedItem;
                             Control c = parentItem as Control;
-                            if (itemHeight <= 0)
+                            if (itemHeight > 0)
                                 c.Height = itemHeight;
                             if (intItemHeigth == 0)
                                 intItemHeigth = c.Height;
