@@ -2,8 +2,7 @@
 
 本项目已加入 [dotNET China](https://gitee.com/dotnetchina) 组织。
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0324/104832_92d3f0d5_301547.png "黄正辉 MIP.png")
-# Website
+# 官网
 
 ### [http://www.hzhcontrols.com/](http://www.hzhcontrols.com/)
 
