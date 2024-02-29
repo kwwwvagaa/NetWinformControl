@@ -29,7 +29,7 @@ GitHub：[https://github.com/kwwwvagaa/NetWinformControl](https://github.com/kww
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0905/180337_91c70c54_301547.jpeg "zanshangma.jpg")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0905/180345_49207d1d_301547.jpeg "zfb1.jpg")
 
-#### 源码仅用于交流学习，开源协议为[Apache License 2.0](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/LICENSE)，如商业使用请进群联系群主授权
+#### 源码仅用于交流学习，开源协议为[MPL 2.0](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/LICENSE)，如商业使用请进群联系群主授权
 
 #### 来都来了，点个`Star`再走吧
 
