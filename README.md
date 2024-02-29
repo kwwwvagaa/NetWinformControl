@@ -27,7 +27,7 @@ Welcome to exchange discussion: [Click to join QQ group 568015492](//shang.qq.co
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0905/180337_91c70c54_301547.jpeg "zanshangma.jpg")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0905/180345_49207d1d_301547.jpeg "zfb1.jpg")
 
-#### The source code is only for exchange learning. The open source agreement is [Apache License 2.0](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/LICENSE). For commercial use, please contact the group owner.
+#### The source code is only for exchange learning. The open source agreement is [MPL 2.0](https://gitee.com/kwwwvagaa/net_winform_custom_control/blob/master/LICENSE). For commercial use, please contact the group owner.
 
 #### Come here, come to a `Star` and let's go.
 
