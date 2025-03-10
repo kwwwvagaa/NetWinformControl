@@ -1,3 +1,6 @@
+### GitHub is often not connected and cannot submit updates. Please check gitee for the latest code,
+### Gitee address: https://gitee.com/kwwwvagaa/net_winform_custom_control
+
 # Website
 
 ### [https://www.hzhcontrol.cn/](https://www.hzhcontrols.cn/)
