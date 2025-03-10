@@ -1,10 +1,7 @@
-## 特别声明
-
-本项目已加入 [dotNET China](https://gitee.com/dotnetchina) 组织。
 
 # 官网
 
-### [http://www.hzhcontrols.com/](http://www.hzhcontrols.com/)
+### [https://www.hzhcontrols.cn/](https://www.hzhcontrols.cn/)
 
 # NetWinform自定义控件
 
