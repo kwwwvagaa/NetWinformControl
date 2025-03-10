@@ -1,6 +1,6 @@
 # Website
 
-### [http://www.hzhcontrols.com/](http://www.hzhcontrols.com/)
+### [https://www.hzhcontrol.cn/](https://www.hzhcontrols.cn/)
 
 # NetWinformCustom Controls
 
