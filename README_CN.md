@@ -1,3 +1,5 @@
+### github时常连不上无法提交更新，最新代码，请前往Gitee查看，
+### Gitee地址：https://gitee.com/kwwwvagaa/net_winform_custom_control
 
 # 官网
 
